@@ -1,0 +1,55 @@
+extends layout
+
+block pageDescription
+  meta(name="description" content="About me and this website")
+
+block pageContent
+  main#about
+    article(typeof="Person")
+      h1 About Me
+      h2 I am #[span(property="name") Iiro Jäppinen],
+      meta(property="email" content="iiro+contact (at) jappinen.fi")
+      p a #[span(property="jobTitle") UX/UI designer] and math student from #[span(property="address" typeof="PostalAddress") #[span(property="addressLocality") Helsinki], #[span(property="addressCountry") Finland]]. 
+        | I'm currently working at #[a(href="https://www.verkkokauppa.com" property="worksFor" typeof="Organization") #[span(property="legalName" target="_blank") Verkkokauppa.com]]. 
+        | Before that I helped build #[span(property="affiliation" typeof="Organization") #[a(href="https://www.humblebundle.com" property="legalName" target="_blank") Humble Bundle] in #[span(property="address" typeof="PostalAddress") #[span(property="addressLocality") San Francisco], #[span(property="addressRegion") California]]].
+      p You can contact me about projects for OS X, iOS, Android and Web. I provide a contact form on this site you can use to send me an email. A suitable machine can also read my email address from this page.
+      h2 More About My Work
+      p I'm a UX/UI designer at #[a(href="https://www.verkkokauppa.com" target="_blank") Verkkokauppa.com], a large Finnish electronics retailer. 
+        | There I work as part of the planning team to make sure new features are well defined before the engineers start coding them. 
+        | My day-to-day work consists of tracking down and refining feature requests, coordinating with both engineers and management. 
+        | I mostly work with #[a(href="http://bohemiancoding.com/sketch/") Sketch], a vector program for OS X. Other than that, I trust only my Moleskine with my secrets. 
+      p Before starting at Verkkokauppa.com in Autumn 2014, I was interning in San Francisco for Humble Bundle.
+        | That was a direct continuation of my freelance work with them; in 2010 I helped start up the first ever Bundle by designing its website.
+        | The humble promotion has since evolved into a huge global success in the indie gaming community.
+        | I've been very lucky to have been able to be part of it since its inception.
+      h2 Iiro Jäppinen design
+      p I also have my own business name, founded in 2011. Although my time is limited, feel free to contact me about possible projects.
+        | During this time I've worked with many clients over the internet, designing a wide range of projects from OS X to iOS apps, Android apps, and websites.
+        | I've participated in projects such as #[a(href="http://unity3d.com" target="_blank") Unity], #[a(href="http://growl.info" target="_blank") Growl], #[a(href="http://www.wolfire.com/overgrowth" target="_blank") Overgrowth], #[a(href="http://www.squirrelapp.com" target="_blank") Squirrel], #[a(href="http://spectacleapp.com" target="_blank") Spectacle] and #[a(href="http://dexpot.de" target="_blank") Dexpot].
+      h2 More About My Studies
+      p I'm currently enrolled at the #[a(href="http://mathstat.helsinki.fi/english/index.html" target="_blank") Department of Mathematics and Statistics] in the #[a(href="http://www.helsinki.fi/university/" target="_blank") University of Helsinki]. 
+        | I have completed nearly all of my BSc studies.
+        | I did my BSc thesis on ‘Studying Evolution in the Snowdrift Game with Adaptive Dynamics’.
+        | For my minor studies I was at the department of Microbiology in the #[a(href="http://www.helsinki.fi/university/" target="_blank") University of Helsinki], studying Genetics.
+        | My studies have been on a lower gear for a while now as I've focused more on building my career.
+      p Before university, I graduated as an abitur from the #[a(href="http://www.hel.fi/hki/kuvatl/fi/Koulun+esittely/HKTL+International" target="_blank") Helsinki Upper Secondary School of Visual Arts], in 2009. 
+        | There I studied a lot art in different forms, but eventually aligned more to mathematics in search for more cognitive load and challenge.
+    article
+      h1 About This Site
+      p This website is hosted on a shared server at #[a(href="https://www.webfaction.com" target="_blank") WebFaction]'s servers in Amsterdam, Netherlands, inside the European Union.
+        | From the bottom up, the server is running CentOS 6 with a shell account with multiple isolated applications.
+        | This website runs in a Node application.
+        | For SSL termination WebFaction provides an NGINX front-end proxy server.
+      p I'm using the Connect middleware to render #[a(href="http://jade-lang.com" target="_blank") Jade] HTML5 templates on-the-fly and cache to memory, with stylesheets written in #[a(href="http://learnboost.github.io/stylus/" target="_blank") Stylus] #[i (enhanced with Nib)] and then compiled to CSS. 
+        | Static files are served from memory using the filecache middleware, with Stylus updating the CSS on every request.
+        | This means the website is always cached in memory, but changing something in the layout or style is instant rather than requiring an application restart.
+      p The contact form uses WebFaction's internal sendmail binary with the help of Nodemailer.
+        | There is some front-end HTML5 form validation and basic RegEx validation of the email address in the application.
+      p Additional HTML5 features include page prefetching, so that navigating between pages happens almost instantly after the initial load.
+        | I've also enabled some access keys to help navigate the site on the keyboard.
+        | This about page and the Resume page are also filled with microdata from Schema.org, so they are sufficiently machine-readable.
+      p This site is served over SSL, made possible by #[a(href="http://www.startssl.com" target="_blank") StartSSL], a certificate authority operated by StartCom.
+        | Their key feature is pricing their products by the amount of manual work they require. 
+        | This means that a Class 2 validation of a customer's identity #[i (valid for a year)] costs only $59, and during its validity creating a certificate is free. 
+        | I'm using a wildcard certificate for *.jappinen.me. 
+        | StartSSL certificates are supported by most major web browsers, but for S/MIME certificates their #[a(href="http://www.startssl.com/certs/" target="_blank") root certificates] may need to be installed.

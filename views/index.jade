@@ -1,0 +1,11 @@
+extends layout
+
+block pageDescription
+  meta(name="description" content="UX/UI designer and math student from Helsinki, Finland")
+
+block pageContent
+  main#index
+    article(typeof="Person")
+      h1(property="name") Iiro Jäppinen
+      meta(property="email" content="iiro+contact (at) jappinen.fi")
+      p #[span(property="jobTitle") UX/UI designer] from #[span(property="address" typeof="PostalAddress") #[span(property="addressLocality") Helsinki], #[span(property="addressCountry") Finland]]
