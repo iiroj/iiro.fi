@@ -14,9 +14,6 @@ var connect           = require('connect')
                     gzip: true,
                     deflate: true
                   }
-    transporter = nodemailer.createTransport(sendmailTransport({
-                    path: '/usr/sbin/sendmail'
-                  }))
 
 // Use compression
 app.use(filecache(files, fcOptions, function(err, cache) {
