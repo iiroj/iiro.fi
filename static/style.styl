@@ -15,16 +15,9 @@ breakOff = 69*unit
 a
 	color inherit
 
-html, body
-	height 100%
-
 body
-	background-attachment fixed
-	background-image linear-gradient(45deg, alpha(lighten(black, 20), 1) 0%,alpha(lighten(black, 20), 0.95) 100%), url(image.jpg)
-	background-position left center
-	background-repeat no-repeat
-	background-size cover
-	color alpha(white, 0.8)
+  background-color white
+  color lighten(black, 0.2)
 	font-family Roboto, sans-serif
 	font-size 2*unit
 	font-smoothing antialiased
@@ -56,9 +49,9 @@ label[for='nav-checkbox']
 		display none
 
 #nav-checkbox
-	fixed left 1.5*unit top 7*unit
+	fixed left 2*unit top 7*unit
 	appearance none
-	background-color alpha(white, 0.8)
+	background-color black
 	border none
 	border-radius (1/4)*unit
 	cursor pointer
@@ -67,33 +60,33 @@ label[for='nav-checkbox']
 	margin 0
 	outline none
 	transition left transitionStyle, background transitionStyle
-	width 3*unit
+	width 2*unit
 	z-index 4
 	&:checked
-		background-color white
+		background-color black
 		left 22.5*unit
 		&:before, &:after
-			background-color white
+			background-color black
 	&:checked + label
 		fixed bottom 0 left 20*unit top 0 right 0
 		opacity 1
 		width auto
 	&:checked ~ #nav-overlay
-		opacity 0.6
+		opacity 0.4
 		z-index 2
 	&:checked ~ #nav
 		width 20*unit
 
 	&:before, &:after
-		background-color alpha(white, 0.8)
+		background-color black
 		border-radius (1/4)*unit
 		content ""
 		display block
 		height (1/4)*unit
-		width 3*unit
-		relative bottom 0.75*unit
+		width 2*unit
+		relative bottom 0.5*unit
 	&:after
-		relative top 0.5*unit
+		relative top 0.25*unit
 
 	@media (min-width breakOff)
 		display none
@@ -110,8 +103,7 @@ label[for='nav-checkbox']
 		display none
 
 #nav
-	background lighten(black, 10)
-	box-shadow 2px 0 20px rgba(0, 0, 0, 0.2)
+	background white
 	box-sizing border-box
 	fixed bottom 0 left 0 top 0
 	float left
@@ -124,8 +116,8 @@ label[for='nav-checkbox']
 	ul
 		li
 			&.active a
-					box-shadow inset 2px 0 alpha(white, 0.6)
-					color white
+					box-shadow inset 2px 0 alpha(black, 0.6)
+					color black
 					position relative
 			a
 				display block
@@ -134,9 +126,9 @@ label[for='nav-checkbox']
 				text-decoration none
 
 				&:hover
-					background-color alpha(white, 0.1)
+					background-color alpha(black, 0.1)
 				&:active
-					background-color alpha(white, 0.2)
+					background-color alpha(black, 0.2)
 
 	@media (min-width breakOff)
 		background none
@@ -167,17 +159,13 @@ label[for='nav-checkbox']
 		@media (min-width breakOff)
 			margin 0 22*unit
 
-// Index page
-body.Home
-	background-image linear-gradient(45deg, alpha(lighten(black, 20), 0.9) 0%,alpha(lighten(black, 20), 0.6) 100%), url(image.jpg)
-
 // Resume page
 #resume
 	article:not(#resume-page)
 		margin-bottom 4*unit
 	article#resume-page
 		background-color white
-		box-shadow 0 0 0 1px rgba(0, 0, 0, 0.4), 0 10px 40px rgba(0, 0, 0, 0.4)
+		box-shadow 0 0 0 1px rgba(0, 0, 0, 0.05), 0 10px 40px rgba(0, 0, 0, 0.1)
 		box-sizing border-box
 		color black
 		font-family 'Times New Roman', Times, serif
@@ -257,56 +245,56 @@ body.Résumé
 		text-align justify
 
 // Contact page
-#contact
-	.message
-		background-color white
-		border-radius (1/4)*unit
-		box-shadow 0 2px 4px rgba(0, 0, 0, 0.2)
-		margin 4*unit 0
-		padding unit 2*unit
-
-		&.success
-			background-color alpha(white, 0.2)
-		&.error
-			background-color alpha(rgb(255, 100, 100), 0.2)
-	form#post
-		margin-top 4*unit
-
-		input:not([type='submit']), textarea
-			appearance none
-			background none
-			border none
-			border-bottom 2px solid alpha(white, 0.3)
-			border-radius 0
-			box-sizing border-box
-			color white
-			font-family inherit
-			font-size 2*unit
-			line-height 3*unit
-			max-width 100%
-			padding unit
-			width 100%
-
-			&:focus
-				border-bottom 2px solid white
-				outline none
-		input[type='submit']
-			appearance none
-			background-color alpha(white, 0.1)
-			border none
-			border-radius (1/4)*unit
-			box-shadow 0 2px 4px rgba(0, 0, 0, 0.2)
-			color white
-			cursor pointer
-			display block
-			font-family inherit
-			font-size 2*unit
-			outline none
-			padding unit 2*unit
-			transition box-shadow transitionStyle
-
-			&:hover
-				box-shadow 0 4px 8px rgba(0, 0, 0, 0.2)
-			&:active
-				background-color alpha(white, 0.2)
-				transition none
+// #contact
+// 	.message
+// 		background-color white
+// 		border-radius (1/4)*unit
+// 		box-shadow 0 2px 4px rgba(0, 0, 0, 0.2)
+// 		margin 4*unit 0
+// 		padding unit 2*unit
+//
+// 		&.success
+// 			background-color alpha(white, 0.2)
+// 		&.error
+// 			background-color alpha(rgb(255, 100, 100), 0.2)
+// 	form#post
+// 		margin-top 4*unit
+//
+// 		input:not([type='submit']), textarea
+// 			appearance none
+// 			background none
+// 			border none
+// 			border-bottom 2px solid alpha(white, 0.3)
+// 			border-radius 0
+// 			box-sizing border-box
+// 			color white
+// 			font-family inherit
+// 			font-size 2*unit
+// 			line-height 3*unit
+// 			max-width 100%
+// 			padding unit
+// 			width 100%
+//
+// 			&:focus
+// 				border-bottom 2px solid white
+// 				outline none
+// 		input[type='submit']
+// 			appearance none
+// 			background-color alpha(white, 0.1)
+// 			border none
+// 			border-radius (1/4)*unit
+// 			box-shadow 0 2px 4px rgba(0, 0, 0, 0.2)
+// 			color white
+// 			cursor pointer
+// 			display block
+// 			font-family inherit
+// 			font-size 2*unit
+// 			outline none
+// 			padding unit 2*unit
+// 			transition box-shadow transitionStyle
+//
+// 			&:hover
+// 				box-shadow 0 4px 8px rgba(0, 0, 0, 0.2)
+// 			&:active
+// 				background-color alpha(white, 0.2)
+// 				transition none

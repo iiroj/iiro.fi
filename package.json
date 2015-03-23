@@ -14,10 +14,8 @@
   "dependencies": {
     "connect": "*",
     "connect-route": "*",
-    "filecache": "*",
     "jade": "*",
-    "nodemailer": "*",
-    "nodemailer-sendmail-transport": "*"
+    "serve-static": "*"
   },
   "devDependencies": {
     "nib": "*",
