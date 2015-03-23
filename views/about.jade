@@ -34,22 +34,3 @@ block pageContent
         | My studies have been on a lower gear for a while now as I've focused more on building my career.
       p Before university, I graduated as an abitur from the #[a(href="http://www.hel.fi/hki/kuvatl/fi/Koulun+esittely/HKTL+International" target="_blank") Helsinki Upper Secondary School of Visual Arts], in 2009. 
         | There I studied a lot art in different forms, but eventually aligned more to mathematics in search for more cognitive load and challenge.
-    article
-      h1 About This Site
-      p This website is hosted on a shared server at #[a(href="https://www.webfaction.com" target="_blank") WebFaction]'s servers in Amsterdam, Netherlands, inside the European Union.
-        | From the bottom up, the server is running CentOS 6 with a shell account with multiple isolated applications.
-        | This website runs in a Node application.
-        | For SSL termination WebFaction provides an NGINX front-end proxy server.
-      p I'm using the Connect middleware to render #[a(href="http://jade-lang.com" target="_blank") Jade] HTML5 templates on-the-fly and cache to memory, with stylesheets written in #[a(href="http://learnboost.github.io/stylus/" target="_blank") Stylus] #[i (enhanced with Nib)] and then compiled to CSS. 
-        | Static files are served from memory using the filecache middleware, with Stylus updating the CSS on every request.
-        | This means the website is always cached in memory, but changing something in the layout or style is instant rather than requiring an application restart.
-      p The contact form uses WebFaction's internal sendmail binary with the help of Nodemailer.
-        | There is some front-end HTML5 form validation and basic RegEx validation of the email address in the application.
-      p Additional HTML5 features include page prefetching, so that navigating between pages happens almost instantly after the initial load.
-        | I've also enabled some access keys to help navigate the site on the keyboard.
-        | This about page and the Resume page are also filled with microdata from Schema.org, so they are sufficiently machine-readable.
-      p This site is served over SSL, made possible by #[a(href="http://www.startssl.com" target="_blank") StartSSL], a certificate authority operated by StartCom.
-        | Their key feature is pricing their products by the amount of manual work they require. 
-        | This means that a Class 2 validation of a customer's identity #[i (valid for a year)] costs only $59, and during its validity creating a certificate is free. 
-        | I'm using a wildcard certificate for *.jappinen.me. 
-        | StartSSL certificates are supported by most major web browsers, but for S/MIME certificates their #[a(href="http://www.startssl.com/certs/" target="_blank") root certificates] may need to be installed.
