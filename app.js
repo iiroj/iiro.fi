@@ -6,7 +6,7 @@ var connect           = require('connect')
     stylus            = require('stylus')
 
     app         = connect()
-    port        = '8081'
+    port        = '8080'
     files       = __dirname + '/static'
     views       = __dirname + '/views/'
 
