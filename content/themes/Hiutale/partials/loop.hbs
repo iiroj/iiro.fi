@@ -1,0 +1,27 @@
+<ol>
+  {{#foreach posts}}
+  <li>
+    <a href="{{url}}">
+      <article class="{{post_class}}" property="blogPosts">
+        {{#if image}}
+        <figure class="post-image" style="background-image:url({{image}})"></figure>
+        {{/if}}
+        <header class="post-header">
+          <h2 class="post-title">{{{title}}}</h2>
+        </header>
+        <section class="post-excerpt">
+          <p>{{excerpt words="26"}}</p>
+        </section>
+        <footer class="post-meta">
+          {{#if featured}}
+            <aside class="post-featured">Featured post</aside>
+          {{/if}}
+          <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+        </footer>
+      </article>
+    </a>
+  </li>
+  {{/foreach}}
+</ol>
+
+{{pagination}}

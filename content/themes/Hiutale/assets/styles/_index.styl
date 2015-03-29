@@ -1,0 +1,102 @@
+main#posts
+  margin -3*unit auto 0 auto
+  max-width 80*unit
+  padding 0 6*unit
+
+  ol
+    li
+      padding 6*unit 0
+
+      &+li
+        border-top 2px dotted rgba(0, 0, 0, 0.05)
+
+      a
+        border-radius 0.25*unit
+        display block
+        text-decoration none
+
+        article.post
+          figure.post-image
+            background-size cover
+            background-position 50% 50%
+            border-radius 3px
+            height 0
+            margin 0
+            opacity 0.4
+            padding 0 0 40% 0
+            transition opacity transitionStyle
+
+          header.post-header
+            font-size 3*unit
+            line-height 6*unit
+
+            h2.post-title
+              font-weight 300
+
+          section.post-excerpt
+            color alpha(textColor, 0.4)
+            margin-bottom unit
+            transition color transitionStyle
+
+          footer.post-meta
+            color alpha(textColor, 0.4)
+            transition color transitionStyle
+
+            aside.post-featured
+              background-color alpha(textColor, 0.1)
+              border-radius 3px
+              display inline-block
+              font-size 0.75em
+              font-weight 600
+              margin-right unit
+              padding 0 unit
+              vertical-align top
+            time
+              font-style italic
+
+        &:hover
+          article.post
+            figure.post-image, section.post-excerpt, footer.post-meta
+              color alpha(textColor, 1)
+              opacity 1
+
+  nav#pagination
+    text-align center
+
+    a
+      background-color alpha(textColor, 0.1)
+      border-radius 3*unit
+      display inline-block
+      color alpha(textColor, 0.4)
+      font-size 0.75em
+      font-weight 600
+      height 6*unit
+      line-height: 6*unit
+      text-decoration none
+      width 6*unit
+
+article#blog-info
+  border-top 2px dotted rgba(0, 0, 0, 0.05)
+  padding 6*unit 6*unit 0 6*unit
+  margin 0 auto 12*unit auto
+  max-width 80*unit
+
+  figure#blog-logo
+    background-position 50% 50%
+    background-size cover
+    border-radius 3*unit
+    float left
+    height 6*unit
+    margin 0 unit 0 0
+    vertical-align middle
+    width 6*unit
+  > div
+    margin-left 8*unit
+
+    h1#blog-title
+      font-size 3*unit
+      font-weight 300
+      line-height 3*unit
+    h2#blog-description
+      color alpha(textColor, 0.4)
+      font-style italic

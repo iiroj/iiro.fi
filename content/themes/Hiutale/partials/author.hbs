@@ -1,0 +1,11 @@
+<footer id="post-author">
+  {{#author}}
+  {{#if image}}
+  <figure id="author-image" style="background-image:url({{image}})"></figure>
+  {{/if}}
+  <p id="author-name">{{name}}</p>
+  {{#if @blog.description}}
+    <p id="author-bio">{{bio}}</p>
+  {{/if}}
+  {{/author}}
+</footer>

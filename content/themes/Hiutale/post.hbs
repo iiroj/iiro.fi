@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{#post}}
+
+<article id="post" class="{{post_class}}" role="main" typeof="BlogPosting">
+    <header class="post-header {{#if image}}image{{/if}}">
+      {{#if image}}
+      <div class="post-image" style="background-image:url({{image}})"></div>
+      {{/if}}
+      <div class="post-header-content">
+        <section class="post-meta">
+          <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+        </section>
+        <h1 class="post-title">{{title}}</h1>
+      </div>
+    </header>
+    <section class="post-content styled-content">
+      {{content}}
+    </section>
+    {{> 'author'}}
+</article>
+
+{{/post}}
