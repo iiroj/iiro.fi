@@ -2,7 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>{{meta_title}}</title>
+    {{#is "home"}}
+      <title>{{meta_title}}</title>
+    {{else}}
+    <title>{{meta_title}} - {{@blog.title}}</title>
+    {{/is}}
     <meta name="description" content="{{meta_description}}" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
