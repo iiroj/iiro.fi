@@ -1,10 +1,78 @@
 body
   background-color rgb(230, 230, 230)
+  color rgb(120, 120, 120)
   font-family 'Droid Serif', serif
+  font-size 14px
+  line-height 24px
 
-  h1
-    absolute top 50%
-    color rgb(255, 255, 255)
-    text-align center
-    transform translateY(-50%)
+body > input[type=checkbox]
+  display none
+body > label
+  display block
+  opacity 0
+  z-index -1
+
+article#index
+  background-color rgb(255, 255, 255)
+  box-shadow 0 1px 3px rgba(0, 0, 0, 0.1)
+  box-sizing border-box
+  margin 0 auto
+  max-width 320px
+  min-height 480px
+  overflow hidden
+  left 50%
+  position absolute
+  text-align center
+  transform translateX(-50%)
+  top 0
+  width 100%
+
+  header
+    figure
+      background-image url(profile.jpg)
+      background-position 50% 50%
+      background-size cover
+      display inline-block
+      height 128px
+      margin 0
+      width 100%
+    h1
+      display inline-block
+      font-size 2em
+      line-height 48px
+      padding 0 8px
+      vertical-align middle
+
+  section
+    margin-bottom 8px
+    padding 0 8px
+
+    h2
+      margin-bottom 8px
+  footer
+    absolute bottom 0
     width 100%
+
+    nav
+      ul
+        li
+          border-top 1px solid rgba(0, 0, 0, 0.1)
+
+          > *
+            color inherit
+            display block
+            line-height 40px
+            text-decoration none
+
+            &:hover
+              background-color rgba(0, 0, 0, 0.05)
+              cursor pointer
+            &:active
+              background-color rgba(0, 0, 0, 0.1)
+              transition background-color 0.2s ease-out
+
+  @media (min-height 480px)
+    top 50%
+    transform translate(-50%, -50%)
+  @media (min-width 320px)
+    border-radius 2px
