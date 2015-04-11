@@ -161,6 +161,7 @@ article#index header h1 {
   vertical-align: middle;
 }
 article#index section {
+  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
   margin-bottom: 8px;
   padding: 0 8px;
 }
@@ -170,6 +171,7 @@ article#index section h2 {
 article#index footer {
   position: absolute;
   bottom: 0;
+  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
   width: 100%;
 }
 article#index footer nav ul li {
