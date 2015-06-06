@@ -14,7 +14,7 @@ gulp.task('styles', function() {
   return gulp.src('styles/default.styl')
     .pipe(stylus({ use: nib(),  import: ['nib']}))
     .pipe(concat('main.css'))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('public'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())

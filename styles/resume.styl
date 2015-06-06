@@ -1,62 +1,14 @@
-#toggle-resume:checked + #overlay-resume
-  fixed top 0 right 0 bottom 0 left 0
-  opacity 1
-  transition opacity 0.2s ease-out
-  z-index 2
+body#resume
 
-  &:hover
-    cursor pointer
-
-#toggle-resume:checked ~ #resume-border article#resume
-  height auto
-  margin 0 auto
-  min-height 297mm
-  opacity 1
-  padding 24px
-  top 0
-  z-index 3
-
-  @media (min-height 297mm)
-    top 50%
-    transform translate(-50%, -50%)
-  @media (min-width 210mm)
-    padding 48px
-    margin 24px auto
-
-#resume-border
-  margin 24px
-
-  article#resume
-    absolute top 100vh left 50%
+  article.resume
     background-color rgb(255, 255, 255)
     box-shadow 0 10px 50px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1)
     box-sizing border-box
-    display block
-    height 0
     max-width 210mm
-    opacity 0
-    overflow hidden
-    transform translateX(-50%)
-    transition top 0.2s ease-out, padding 0.2s ease-out, margin 0.2s ease-out
     width 100%
-
-    label#close-resume
-      absolute top 32px right 24px
-      background-color rgba(0, 0, 0, 0.1)
-      border-radius 50%
-      height 32px
-      line-height 32px
-      text-align center
-      transition top 0.2s ease-out, right 0.2s ease-out, background-color 0.2s ease-out
-      width 32px
-
-      @media (min-width 210mm)
-        right 48px
-        top 56px
-
-      &:hover
-        background-color rgba(0, 0, 0, 0.2)
-        cursor pointer
+    height auto
+    min-height 297mm
+    padding 24px
 
     header
       margin-bottom 16px
@@ -97,3 +49,7 @@
           position absolute
         ul li time
               margin-left 20%
+
+    @media (min-width 210mm)
+      padding 48px
+      margin 24px auto
