@@ -212,9 +212,6 @@ body#index div.content footer ul li a:hover {
     height: 100%;
   }
 }
-body#resume {
-  padding-bottom: 24px;
-}
 body#resume article.resume {
   background-color: #fff;
   box-shadow: 0 10px 50px rgba(0,0,0,0.1), 0 4px 4px rgba(0,0,0,0.1);
@@ -276,6 +273,11 @@ body#resume article.resume section ul li aside {
   body#resume article.resume {
     padding: 48px;
     margin: 24px auto 0 auto;
+  }
+}
+@media (min-width: 210mm) {
+  body#resume {
+    padding-bottom: 24px;
   }
 }
 @media print {
