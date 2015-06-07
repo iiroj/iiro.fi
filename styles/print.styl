@@ -1,32 +1,22 @@
 @media print
-  body
+  body#resume
     background-color rgb(255, 255, 255)
 
-  #toggle-resume:checked ~ article#index
-    display none
-  #toggle-resume:checked ~ #resume-border
-    margin 0
-  #toggle-resume:checked ~ #resume-border article#resume
-    color rgb(0, 0, 0) !important
-    box-shadow none
-    font-size 10pt
-    left 0
-    line-height 14pt
-    margin 0 auto
-    min-height 0
-    padding 48px 0 48px 48px
-    position relative
-    top 0
-    transform none
+    article.resume
+      color rgb(0, 0, 0) !important
+      box-shadow none
+      font-size 10pt
+      line-height 14pt
+      margin 0 auto
+      min-height 0
+      padding 48px 0 48px 48px
 
-    label#close-resume
-      display none
-    header
-      h1
-        font-size 18pt
-        line-height 24pt
-    section
-      h2
-        position absolute
-      ul li time
-            margin-left 20%
+      header
+        h1
+          font-size 18pt
+          line-height 24pt
+      section
+        h2
+          position absolute
+        ul li time
+              margin-left 20%
