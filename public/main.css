@@ -152,6 +152,11 @@ body#index div.content article {
   -webkit-align-self: center;
   align-self: center;
   -ms-flex-item-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
   -webkit-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
@@ -161,7 +166,13 @@ body#index div.content article {
   margin-bottom: 24px;
   width: 100%;
 }
-body#index div.content article h1 {
+body#index div.content article header {
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
+  width: 100%;
+}
+body#index div.content article header h1 {
   font-size: 24px;
 }
 body#index div.content footer {
