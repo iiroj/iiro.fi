@@ -143,7 +143,6 @@ body#index div.content {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  justify-contents: center;
   min-height: 50%;
   padding: 24px;
   text-align: center;
@@ -164,13 +163,12 @@ body#index div.content article {
   -ms-flex: 1;
   flex: 1;
   margin-bottom: 24px;
-  width: 100%;
 }
 body#index div.content article header {
   -webkit-align-self: center;
   align-self: center;
   -ms-flex-item-align: center;
-  width: 100%;
+  margin: auto;
 }
 body#index div.content article header h1 {
   font-size: 24px;
