@@ -124,9 +124,10 @@ body#index {
   height: 100%;
 }
 body#index figure.picture {
-  background-image: url("profile.jpg");
-  background-position: 50% 50%;
+  background: url("PB101836.jpg");
+  background-position: 100% 0%;
   background-size: cover;
+  box-shadow: inset -2px 0 2px rgba(0,0,0,0.1);
   height: 50%;
   margin: 0;
   width: 100%;
