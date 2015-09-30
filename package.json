@@ -16,7 +16,6 @@
     "gulp-concat": "*",
     "gulp-minify-css": "*",
     "gulp-rename": "*",
-    "gulp-stylus": "*",
-    "nib": "*"
+    "gulp-sass": "*"
   }
 }

@@ -1,7 +1,6 @@
 // Load plugins
 var gulp = require('gulp'),
-    stylus = require('gulp-stylus'),
-    nib = require('nib'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     rename = require('gulp-rename'),
@@ -11,8 +10,8 @@ var gulp = require('gulp'),
 
 // Styles
 gulp.task('styles', function() {
-  return gulp.src('styles/default.styl')
-    .pipe(stylus({ use: nib(),  import: ['nib']}))
+  return gulp.src('styles/default.scss')
+    .pipe(sass())
     .pipe(concat('main.css'))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('public'))
@@ -28,5 +27,5 @@ gulp.task('default', ['clean'], function() {
 
 // Watch
 gulp.task('watch', function() {
-  gulp.watch('styles/**/*.styl', ['styles']);
+  gulp.watch('styles/**/*.scss', ['styles']);
 });

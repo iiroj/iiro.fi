@@ -1,0 +1,62 @@
+body#resume {
+
+  article.resume {
+    background-color: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    max-width: 210mm;
+    width: 100%;
+    height: auto;
+    min-height: 297mm;
+    padding: 24px;
+
+    header {
+      margin-bottom: 16px;
+
+      h1 { font-size: 24px }
+      p {
+        color: darken(white, 20);
+        font-style: italic
+      }
+    }
+
+    section {
+      position: relative;
+
+      &+ section { margin-top: 8px }
+      h2 { font-weight: bold }
+      ul {
+        li {
+          &+ li { margin-top: 8px }
+          time {
+            color: darken(white, 20);
+            float: left;
+            font-style: italic
+          }
+          h3 {
+            font-weight: bold;
+            margin-left: 40%
+          }
+          p { margin-left: 40% }
+          aside {
+            margin-left: 40%;
+            color: darken(white, 20);
+            font-style: italic;
+          }
+        }
+      }
+
+      @media (min-width: 210mm) {
+        h2 { position: absolute }
+        ul li time { margin-left: 20% }
+      }
+    }
+
+    @media (min-width: 210mm) {
+      padding: 48px;
+      margin: 24px auto 0 auto
+    }
+  }
+
+  @media (min-width: 210mm) { padding-bottom: 24px }
+}
