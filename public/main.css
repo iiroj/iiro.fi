@@ -144,7 +144,7 @@ body#index {
 
 body#resume article.resume {
   background-color: white;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   max-width: 210mm;
   width: 100%;
