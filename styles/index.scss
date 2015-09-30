@@ -17,6 +17,7 @@ body#index {
     flex-direction: column;
     min-height: 50%;
     padding: 24px;
+    text-align: center;
 
     article {
       display: flex;
@@ -25,19 +26,16 @@ body#index {
       margin-bottom: 24px;
       width: 100%;
 
-      aside {
-        color: darken(white, 20);
-        float: left;
+      header {
+        align-self: center;
+        margin: auto;
 
-        em { font-style: italic }
+        h1 { font-size: 24px; }
       }
-
-      h1, h2, address { margin-left: 25% }
     }
 
     footer {
       align-self: flex-end;
-      text-align: center;
       width: 100%;
 
       ul {
