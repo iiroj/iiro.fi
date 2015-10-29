@@ -1,12 +1,12 @@
 // Load plugins
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
+var gulp         = require('gulp'),
+    sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    cache = require('gulp-cache'),
-    del = require('del');
+    minifycss    = require('gulp-minify-css'),
+    rename       = require('gulp-rename'),
+    concat       = require('gulp-concat'),
+    cache        = require('gulp-cache'),
+    shell        = require('gulp-shell');
 
 // Styles
 gulp.task('styles', function() {
@@ -20,12 +20,15 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('public'))
 });
 
-// Default task
-gulp.task('default', ['clean'], function() {
-    gulp.start('styles');
+gulp.task('styles', function() {
+    shell.task([
+        'devd -ol public/'
+    ]);
+    gulp.watch('styles/**/*.scss', ['styles']);
 });
+gulp.task('devd', shell.task('/usr/local/bin/devd -ol public/'))
 
-// Watch
-gulp.task('watch', function() {
-  gulp.watch('styles/**/*.scss', ['styles']);
-});
+gulp.task('default', function() {
+    gulp.start('styles');
+    gulp.start('devd');
+})
