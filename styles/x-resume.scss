@@ -4,9 +4,10 @@ x-resume {
   box-sizing: border-box;
   color: black;
   display: block;
+  flex-grow: 1;
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   line-height: 1.5rem;
-  margin: 3rem auto 0 auto;
+  margin: 0 auto;
   max-width: 210mm;
   padding: 1.5rem;
 
@@ -57,7 +58,7 @@ x-resume {
 
   @media (min-width: 720px) {
     padding: 3rem;
-    margin: 3rem auto
+    margin-bottom: 3rem;
   }
 }
 

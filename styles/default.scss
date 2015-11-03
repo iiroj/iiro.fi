@@ -21,7 +21,13 @@ body {
   transition: opacity 0.2s ease-in
 }
 
-div#x-container {height: 100%;}
+div#x-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  padding-top: 3rem;
+}
 
 @import 'x-nav.scss';
 @import 'x-tabs.scss';

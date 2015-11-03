@@ -1,13 +1,7 @@
 x-about {
-  box-sizing: border-box;
-  display: flex;
-  height: 100%;
-  padding-top: 3rem;
-  position: relative;
+  margin: 1rem 0;
+  padding: 0 1rem;
   text-align: center;
-
-  > div {margin: auto;
-  padding: 1rem;}
 
   figure#profile-pic {
     background-image: url('profile.jpg');
