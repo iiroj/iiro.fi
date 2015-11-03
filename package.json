@@ -5,17 +5,20 @@
     "name": "Iiro Jäppinen",
     "email": "iiro@jappinen.fi"
   },
-  "description": "",
-  "readme": "",
-  "license": "",
+  "description": "A single-page-app built with web components",
+  "readme": "README.md",
+  "license": "LICENCE",
   "devDependencies": {
     "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-cache": "*",
     "gulp-concat": "*",
+    "gulp-minify": "*",
     "gulp-minify-css": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-shell": "*"
+  },
+  "dependencies": {
+    "webcomponents.js": "*"
   }
 }

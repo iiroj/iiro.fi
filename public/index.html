@@ -5,26 +5,29 @@
 	<title>Iiro Jäppinen</title>
 	<meta name="description" content="UX/UI designer from Helsinki, Finland">
 	<meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1">
-	<link rel="stylesheet" href="main.min.css">
+  <link rel="stylesheet" href="main.min.css">
+  <script>
+    tabs = [{
+      name:'About',
+      title:'Iiro Jäppinen',
+      url:'/',
+      component:'x-about'
+    },{
+      name:'Résumé',
+      title:'Résumé of Iiro Jäppinen',
+      url:'/resume',
+      component:'x-resume'
+    }];
+  </script>
+  <script src="webcomponents.min.js"></script>
+  <link rel="import" href="templates.html">
 </head>
-<body vocab="http://schema.org/" id="index">
-	<figure class="picture"></figure>
-	<div class="content">
-		<article>
-			<header>
-				<h1>Iiro Jäppinen</h1>
-				<p>I'm a UX/UI designer from Helsinki, Finland.</p>
-			</header>
-		</article>
-		<footer>
-			<nav>
-				<ul>
-					<li><a href="mailto:iiro@jappinen.fi">Email</a></li>
-					<li><a href="/resume">Résumé</label></a></li>
-					<li><a href="https://dribbble.com/iiroj">Dribbble</a></li>
-				</ul>
-			</nav>
-		</footer>
-	</div>
+<body>
+    <x-nav>
+      <h1>Iiro Jäppinen</h1>
+      <x-tabs></x-tabs>
+    </x-nav>
+    <div id="x-container"></div>
 </body>
+<script src="main.min.js"></script>
 </html>

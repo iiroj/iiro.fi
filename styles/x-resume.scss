@@ -1,0 +1,81 @@
+x-resume {
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  color: black;
+  display: block;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  line-height: 1.5rem;
+  margin: 3rem auto 0 auto;
+  max-width: 210mm;
+  padding: 1.5rem;
+
+  a:hover {text-decoration: underline}
+
+  header {
+    margin-bottom: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      color: darken(white, 20);
+      font-style: italic
+    }
+  }
+
+  section {
+    position: relative;
+
+    &+ section { margin-top: 0.5rem }
+    ul {
+      li {
+        &+ li { margin-top: 0.5rem }
+        time {
+          color: darken(white, 20);
+          float: left;
+          font-style: italic
+        }
+        h3 {
+          font-weight: bold;
+          margin-left: 40%
+        }
+        p { margin-left: 40% }
+        aside {
+          margin-left: 40%;
+          color: darken(white, 20);
+          font-style: italic;
+        }
+      }
+    }
+
+    @media (min-width: 720px) {
+      h2 { position: absolute }
+      ul li time { margin-left: 20% }
+    }
+  }
+
+  @media (min-width: 720px) {
+    padding: 3rem;
+    margin: 3rem auto
+  }
+}
+
+@media print {
+  x-resume {
+    box-shadow: none;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 11pt;
+    line-height: 14pt;
+    padding: 3rem 3rem 0 3rem;
+
+    header h1 {
+        font-size: 18pt;
+        line-height: 24pt
+    }
+    section {
+      h2 { position: absolute }
+      ul li time { margin-left: 20% }
+    }
+  }
+}

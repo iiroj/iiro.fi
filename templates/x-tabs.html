@@ -1,0 +1,28 @@
+<script>
+  (function() {
+    var xTabsProto = Object.create(HTMLOListElement.prototype);
+    xTabsProto.createdCallback = function() {
+      var xTabs = this;
+      xTabs.setAttribute('role', 'navigation');
+      tabs.forEach(function(y) {
+        var a = document.createElement('a');
+        a.innerHTML = y.name;
+        a.setAttribute('tab', y.url);
+        if (y.url == window.location.pathname) {
+          a.setAttribute('active', true)
+        } else {
+          a.setAttribute('active', false)
+        }
+        xTabs.appendChild(a)
+      })
+    }
+    xTabsProto.attachedCallback = function() {
+      this.addEventListener('click', function(e) {
+        if (e.target.tagName == 'A') {
+          navigationRender(e.target.getAttribute('tab'))
+        }
+      })
+    }
+    document.registerElement('x-tabs', { prototype: xTabsProto });
+  })();
+</script>

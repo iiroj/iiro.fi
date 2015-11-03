@@ -1,17 +1,29 @@
 @import 'reset.scss';
-@import 'font.scss';
 
-$point: 8px;
+$color--background: rgb(242, 242, 242);
+$color--text: rgb(77, 77, 77);
 
-html { height: 100% }
+html {height: 100%}
+
 body {
-  background-color: darken(white, 5);
-  color: darken(white, 50);
-  font-family: 'Droid Serif', serif;
-  font-size: 14px;
-  line-height: 24px
+    background-color: $color--background;
+    color: $color--text;
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    font-size: 16px;
+    line-height: 1.5rem;
+    height: 100%;
+
+    @media print { background-color: white }
 }
 
-@import 'index.scss';
-@import 'resume.scss';
-@import 'print.scss';
+*[unresolved] {
+  opacity: 0;
+  transition: opacity 0.2s ease-in
+}
+
+div#x-container {height: 100%;}
+
+@import 'x-nav.scss';
+@import 'x-tabs.scss';
+@import 'x-about.scss';
+@import 'x-resume.scss';

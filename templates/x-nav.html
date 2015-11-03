@@ -1,0 +1,23 @@
+<script>
+  (function() {
+    var xNavProto = Object.create(HTMLElement.prototype);
+    xNavProto.createdCallback = function() {
+      this.setAttribute('role', 'banner');
+      this.setAttribute('overlay', false)
+    };
+    xNavProto.attachedCallback = function() {
+      if (window.scrollY > 0) {
+        this.setAttribute('overlay', true)
+      }
+      var xNav = this;
+      window.addEventListener('scroll', function() {
+        if (this.scrollY > 0) {
+          xNav.setAttribute('overlay', true)
+        } else {
+          xNav.setAttribute('overlay', false)
+        }
+      }, false)
+    }
+    document.registerElement('x-nav', { prototype: xNavProto });
+  })();
+</script>
