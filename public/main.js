@@ -1,19 +1,10 @@
 // Functions
 
-function activeTab() {
-  var x = document.getElementsByTagName('x-tabs')[0].childNodes;
-  for (i=0; i < x.length; i++) {
-    if (x[i].getAttribute('tab') == tab.url) {
-      x[i].setAttribute('active',true)
-    } else {x[i].setAttribute('active',false)}
-  }
-}
-
 function render(x) {
-  var host = document.getElementById('x-container');
-  host.textContent = '';
-  host.appendChild(document.createElement(x));
-  activeTab()
+  var container = document.getElementById('x-container');
+  container.textContent = '';
+  container.appendChild(document.createElement(x));
+  document.getElementsByTagName('x-tabs')[0].setAttribute('active', tab.url);
 }
 
 function initialRender() {
