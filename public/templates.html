@@ -63,7 +63,12 @@
           xNav.removeAttribute('opaque')
         }
       }, false)
-    }
+    };
+    xNavProto.attributeChangedCallback = function() {
+      if (this.hasAttribute('opaque')) {
+        this.setAttribute('opaque')
+      }
+    };
     document.registerElement('x-nav', { prototype: xNavProto });
   })();
 </script>
