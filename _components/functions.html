@@ -13,7 +13,7 @@
 
   function render(x) {
     var container = document.getElementById('x-container')
-    container.textContent = ''
+    while (container.firstChild) container.removeChild(container.firstChild)
     container.appendChild(document.createElement(x))
     document.getElementsByTagName('x-tabs')[0].setAttribute('active', tab.url)
   }
