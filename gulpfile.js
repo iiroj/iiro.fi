@@ -40,7 +40,8 @@ gulp.task('scripts', function() {
 gulp.task('components', function() {
   gulp.src('_components/*.html')
     .pipe(minifyscript())
-    .pipe(gulp.dest('public/component'))
+    .pipe(concat('components.html'))
+    .pipe(gulp.dest('public'))
 })
 
 gulp.task('devd', shell.task('devd -ol public/ \ /resume=http://devd.io:8000 \ /contact=http://devd.io:8000'))

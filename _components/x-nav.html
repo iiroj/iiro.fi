@@ -1,4 +1,3 @@
-<link rel="import" href="/component/x-tabs.html">
 <script>
   (function() {
     var xNavProto = Object.create(HTMLElement.prototype)
@@ -20,7 +19,7 @@
     };
     xNavProto.attributeChangedCallback = function() {
       if (this.hasAttribute('opaque')) {
-        this.setAttribute('opaque')
+        this.setAttribute('opaque','')
       }
     }
     document.registerElement('x-nav', { prototype: xNavProto })

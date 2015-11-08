@@ -1,3 +1,32 @@
+<template id="x-about--template">
+  <figure id="profile-pic"></figure>
+  <header>
+    <h1>Iiro Jäppinen</h1>
+    <p>I'm a UX/UI designer from Helsinki, Finland.</p>
+  </header>
+  <footer>
+    <nav>
+      <a class="link-email" href="mailto:iiro@jappinen.fi">
+        <h3>iiro@jappinen.fi</h3>
+        <aside>Best way to reach me!</aside>
+      </a>
+      <a class="link-resume">
+        <h3>Résumé</h3>
+        <aside>You can print the page</aside>
+      </a>
+      <a class="link-dribbble" href="https://dribbble.com/iiroj">
+        <h3>Dribbble</h3>
+        <aside>Not really up-to-date</aside>
+      </a>
+      <a class="link-github" href="https://github.com/iiroj">
+        <h3>GitHub</h3>
+        <aside>It's an empty profile</aside>
+      </a>
+    </nav>
+  </footer>
+</template>
+<script>!function(){document._currentScript=document._currentScript||document.currentScript;var e=document._currentScript.ownerDocument,t=Object.create(HTMLElement.prototype);t.createdCallback=function(){var t=e.querySelector("#x-about--template"),n=document.importNode(t.content,!0);this.appendChild(n),this.setAttribute("role","article")},t.attachedCallback=function(){var e=this.getElementsByClassName("link-resume")[0];e.addEventListener("click",function(e){navigationRender("/resume")})},t.detachedCallback=function(){var e=this.getElementsByClassName("link-resume")[0];e.removeEventListener("click")},document.registerElement("x-about",{prototype:t})}();</script>
+<script>!function(){var t=Object.create(HTMLElement.prototype);t.createdCallback=function(){this.setAttribute("role","banner")},t.attachedCallback=function(){window.scrollY>0&&this.setAttribute("opaque","");var t=this;window.addEventListener("scroll",function(){this.scrollY>0?t.setAttribute("opaque",""):t.removeAttribute("opaque")},!1)},t.attributeChangedCallback=function(){this.hasAttribute("opaque")&&this.setAttribute("opaque","")},document.registerElement("x-nav",{prototype:t})}();</script>
 <template id="x-resume--template" role="article">
   <header>
     <h1 property="name">Iiro Jäppinen</h1>
@@ -100,3 +129,4 @@
   </section>
 </template>
 <script>!function(){document._currentScript=document._currentScript||document.currentScript;var t=document._currentScript.ownerDocument,e=Object.create(HTMLElement.prototype);e.createdCallback=function(){var e=t.querySelector("#x-resume--template"),r=document.importNode(e.content,!0);this.appendChild(r),this.setAttribute("role","article"),this.setAttribute("vocab","//schema.org")},document.registerElement("x-resume",{prototype:e})}();</script>
+<script>!function(){var t=Object.create(HTMLOListElement.prototype);t.createdCallback=function(){this.setAttribute("role","navigation");var t=this;tabs.forEach(function(e){var i=document.createElement("a");i.innerHTML=e.name,i.setAttribute("url",e.url),t.appendChild(i)})},t.attachedCallback=function(){if(this.addEventListener("click",function(t){"A"==t.target.tagName&&navigationRender(t.target.getAttribute("url"))}),this.hasAttribute("active")){var t=this.children;for(i=0;i<t.length;i++)t[i].getAttribute("url")==this.getAttribute("active")&&t[i].setAttribute("active","")}},t.attributeChangedCallback=function(t){if("active"==t){var e=this.children;for(i=0;i<e.length;i++)e[i].getAttribute("url")==this.getAttribute("active")?e[i].setAttribute("active",""):e[i].removeAttribute("active")}},document.registerElement("x-tabs",{prototype:t})}();</script>
