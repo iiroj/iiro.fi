@@ -1,0 +1,47 @@
+<template id="x-about--template">
+  <figure id="profile-pic"></figure>
+  <header>
+    <h1>Iiro Jäppinen</h1>
+    <p>I'm a UX/UI designer from Helsinki, Finland.</p>
+  </header>
+  <footer>
+    <nav>
+      <a class="link-email" href="mailto:iiro@jappinen.fi">
+        <h3>iiro@jappinen.fi</h3>
+        <aside>Best way to reach me!</aside>
+      </a>
+      <a class="link-resume">
+        <h3>Résumé</h3>
+        <aside>You can print the page</aside>
+      </a>
+      <a class="link-dribbble" href="https://dribbble.com/iiroj">
+        <h3>Dribbble</h3>
+        <aside>Not really up-to-date</aside>
+      </a>
+      <a class="link-github" href="https://github.com/iiroj">
+        <h3>GitHub</h3>
+        <aside>It's an empty profile</aside>
+      </a>
+    </nav>
+  </footer>
+</template>
+<script>
+  (function() {
+    document._currentScript = document._currentScript || document.currentScript;
+    var importDoc   = document._currentScript.ownerDocument,
+        xAboutProto = Object.create(HTMLElement.prototype);
+    xAboutProto.createdCallback = function() {
+      var template = importDoc.querySelector('#x-about--template');
+      var clone    = document.importNode(template.content, true);
+      this.appendChild(clone);
+      this.setAttribute('role', 'article');
+    };
+    xAboutProto.attachedCallback = function() {
+      var linkResume = document.getElementsByClassName('link-resume')[0];
+      linkResume.addEventListener('click', function(e) {
+          navigationRender('/resume')
+      })
+    };
+    document.registerElement('x-about', {prototype: xAboutProto});
+  })();
+</script>

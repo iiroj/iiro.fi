@@ -4,8 +4,10 @@
 	<meta charset="utf-8">
 	<title>Iiro Jäppinen</title>
 	<meta name="description" content="UX/UI designer from Helsinki, Finland">
+  <link rel="favicon" href="/media/favicon.ico">
+  <link rel="apple-touch-icon" href="/media/apple-touch-icon.png">
 	<meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1">
-  <link rel="stylesheet" href="main.min.css">
+  <link rel="stylesheet" href="/main.min.css">
   <script>
     tabs = [{
       name:'About',
@@ -19,8 +21,11 @@
       component:'x-resume'
     }];
   </script>
-  <script src="webcomponents.min.js"></script>
-  <link rel="import" href="templates.html">
+  <script src="/webcomponents.min.js"></script>
+  <link rel="import" href="/component/x-nav.html">
+  <link rel="import" href="/component/x-about.html">
+  <link rel="import" href="/component/x-resume.html">
+  <script src="/main.min.js"></script>
 </head>
 <body>
     <x-nav>
@@ -29,5 +34,4 @@
     </x-nav>
     <div id="x-container"></div>
 </body>
-<script src="main.min.js"></script>
 </html>

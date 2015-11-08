@@ -8,47 +8,46 @@ var gulp         = require('gulp'),
     concat       = require('gulp-concat'),
     shell        = require('gulp-shell');
 
-gulp.task('styles', function() {
-  gulp.src('styles/default.scss')
-  .pipe(sass())
-  .pipe(concat('main.css'))
-  .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-  .pipe(rename({ suffix: '.min' }))
-  .pipe(minifycss())
-  .pipe(gulp.dest('public'))
+gulp.task('scss', function() {
+  gulp.src('_scss/default.scss')
+    .pipe(sass())
+    .pipe(concat('main.css'))
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(minifycss())
+    .pipe(gulp.dest('public'))
 })
 
-gulp.task('resources', function() {
-  gulp.src('node_modules/webcomponents.js/webcomponents.min.js')
-  .pipe(gulp.dest('public'));
-  gulp.src(['resources/*.jpg', 'resources/*.svg'])
-  .pipe(gulp.dest('public'))
+gulp.task('media', function() {
+  gulp.src(['_media/*.jpg', '_media/*.png', '_media/*.svg'])
+    .pipe(gulp.dest('public/media'))
 })
 
 gulp.task('scripts', function() {
-  gulp.src('scripts/*.js')
-  .pipe(concat('main.js'))
-  .pipe(minify({
-    ext:{
-      min:'.min.js'
-    }
-  }))
-  .pipe(gulp.dest('public'))
+  gulp.src('node_modules/webcomponents.js/webcomponents.min.js')
+    .pipe(gulp.dest('public'));
+  gulp.src('_scripts/*.js')
+    .pipe(concat('main.js'))
+    .pipe(minify({
+      ext:{
+        min:'.min.js'
+      }
+    }))
+    .pipe(gulp.dest('public'))
 })
 
-gulp.task('templates', function() {
-  gulp.src('templates/*.html')
-  .pipe(concat('templates.html'))
-  .pipe(gulp.dest('public'));
+gulp.task('components', function() {
+  gulp.src('_components/*.html')
+    .pipe(gulp.dest('public/component'));
 })
 
 gulp.task('devd', shell.task('devd -ol public/ \ /resume=http://devd.io:8000 \ /contact=http://devd.io:8000'))
 
 gulp.task('watch', function() {
-  gulp.watch('resources/*', ['resources']);
-  gulp.watch('styles/*.scss', ['styles']);
-  gulp.watch('scripts/*.js', ['scripts']);
-  gulp.watch('templates/*.html', ['templates']);
+  gulp.watch('_media/*', ['media']);
+  gulp.watch('_scss/*.scss', ['scss']);
+  gulp.watch('_scripts/*.js', ['scripts']);
+  gulp.watch('_components/*.html', ['components']);
 })
 
 gulp.task('default', function() {
