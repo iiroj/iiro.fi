@@ -27,21 +27,25 @@
 </template>
 <script>
   (function() {
-    document._currentScript = document._currentScript || document.currentScript;
+    document._currentScript = document._currentScript || document.currentScript
     var importDoc   = document._currentScript.ownerDocument,
-        xAboutProto = Object.create(HTMLElement.prototype);
+        xAboutProto = Object.create(HTMLElement.prototype)
     xAboutProto.createdCallback = function() {
-      var template = importDoc.querySelector('#x-about--template');
-      var clone    = document.importNode(template.content, true);
-      this.appendChild(clone);
-      this.setAttribute('role', 'article');
-    };
+      var template = importDoc.querySelector('#x-about--template'),
+          clone    = document.importNode(template.content, true)
+      this.appendChild(clone)
+      this.setAttribute('role', 'article')
+    }
     xAboutProto.attachedCallback = function() {
-      var linkResume = document.getElementsByClassName('link-resume')[0];
+      var linkResume = this.getElementsByClassName('link-resume')[0]
       linkResume.addEventListener('click', function(e) {
           navigationRender('/resume')
       })
-    };
-    document.registerElement('x-about', {prototype: xAboutProto});
+    }
+    xAboutProto.detachedCallback = function () {
+      var linkResume = this.getElementsByClassName('link-resume')[0]
+      linkResume.removeEventListener('click')
+    }
+    document.registerElement('x-about', {prototype: xAboutProto})
   })();
 </script>

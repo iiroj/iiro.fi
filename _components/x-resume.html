@@ -101,16 +101,16 @@
 </template>
 <script>
   (function() {
-    document._currentScript = document._currentScript || document.currentScript;
+    document._currentScript = document._currentScript || document.currentScript
     var importDoc    = document._currentScript.ownerDocument,
-        xResumeProto = Object.create(HTMLElement.prototype);
+        xResumeProto = Object.create(HTMLElement.prototype)
     xResumeProto.createdCallback = function() {
-      var template = importDoc.querySelector('#x-resume--template');
-      var clone    = document.importNode(template.content, true);
-      this.appendChild(clone);
-      this.setAttribute('role', 'article');
-      this.setAttribute('vocab', '//schema.org');
-    };
-    document.registerElement('x-resume', {prototype: xResumeProto});
-  })();
+      var template = importDoc.querySelector('#x-resume--template')
+      var clone    = document.importNode(template.content, true)
+      this.appendChild(clone)
+      this.setAttribute('role', 'article')
+      this.setAttribute('vocab', '//schema.org')
+    }
+    document.registerElement('x-resume', {prototype: xResumeProto})
+  })()
 </script>

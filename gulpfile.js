@@ -3,10 +3,11 @@ var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minify       = require('gulp-minify'),
+    minifyscript = require('gulp-minify-inline-scripts'),
     minifycss    = require('gulp-minify-css'),
     rename       = require('gulp-rename'),
     concat       = require('gulp-concat'),
-    shell        = require('gulp-shell');
+    shell        = require('gulp-shell')
 
 gulp.task('scss', function() {
   gulp.src('_scss/default.scss')
@@ -25,7 +26,7 @@ gulp.task('media', function() {
 
 gulp.task('scripts', function() {
   gulp.src('node_modules/webcomponents.js/webcomponents.min.js')
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public'))
   gulp.src('_scripts/*.js')
     .pipe(concat('main.js'))
     .pipe(minify({
@@ -38,20 +39,21 @@ gulp.task('scripts', function() {
 
 gulp.task('components', function() {
   gulp.src('_components/*.html')
-    .pipe(gulp.dest('public/component'));
+    .pipe(minifyscript())
+    .pipe(gulp.dest('public/component'))
 })
 
 gulp.task('devd', shell.task('devd -ol public/ \ /resume=http://devd.io:8000 \ /contact=http://devd.io:8000'))
 
 gulp.task('watch', function() {
-  gulp.watch('_media/*', ['media']);
-  gulp.watch('_scss/*.scss', ['scss']);
-  gulp.watch('_scripts/*.js', ['scripts']);
-  gulp.watch('_components/*.html', ['components']);
+  gulp.watch('_media/*', ['media'])
+  gulp.watch('_scss/*.scss', ['scss'])
+  gulp.watch('_scripts/*.js', ['scripts'])
+  gulp.watch('_components/*.html', ['components'])
 })
 
 gulp.task('default', function() {
-  gulp.start('scripts');
-  gulp.start('watch');
-  gulp.start('devd');
+  gulp.start('scripts')
+  gulp.start('watch')
+  gulp.start('devd')
 })

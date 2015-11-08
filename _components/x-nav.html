@@ -1,15 +1,15 @@
 <link rel="import" href="/component/x-tabs.html">
 <script>
   (function() {
-    var xNavProto = Object.create(HTMLElement.prototype);
+    var xNavProto = Object.create(HTMLElement.prototype)
     xNavProto.createdCallback = function() {
-      this.setAttribute('role', 'banner');
-    };
+      this.setAttribute('role', 'banner')
+    }
     xNavProto.attachedCallback = function() {
       if (window.scrollY > 0) {
         this.setAttribute('opaque', '')
       }
-      var xNav = this;
+      var xNav = this
       window.addEventListener('scroll', function() {
         if (this.scrollY > 0) {
           xNav.setAttribute('opaque', '')
@@ -22,7 +22,7 @@
       if (this.hasAttribute('opaque')) {
         this.setAttribute('opaque')
       }
-    };
-    document.registerElement('x-nav', { prototype: xNavProto });
-  })();
+    }
+    document.registerElement('x-nav', { prototype: xNavProto })
+  })()
 </script>

@@ -1,13 +1,13 @@
 <script>
   (function() {
-    var xTabsProto = Object.create(HTMLOListElement.prototype);
+    var xTabsProto = Object.create(HTMLOListElement.prototype)
     xTabsProto.createdCallback = function() {
-      this.setAttribute('role', 'navigation');
-      var xTabs = this;
+      this.setAttribute('role', 'navigation')
+      var xTabs = this
       tabs.forEach(function(y) {
-        var x = document.createElement('a');
-        x.innerHTML = y.name;
-        x.setAttribute('url', y.url);
+        var x = document.createElement('a')
+        x.innerHTML = y.name
+        x.setAttribute('url', y.url)
         xTabs.appendChild(x)
       })
     }
@@ -16,7 +16,7 @@
         if (e.target.tagName == 'A') {
           navigationRender(e.target.getAttribute('url'))
         }
-      });
+      })
       if (this.hasAttribute('active')) {
         var x = this.children
         for (i=0; i < x.length; i++) {
@@ -36,6 +36,6 @@
         }
       }
     }
-    document.registerElement('x-tabs', { prototype: xTabsProto });
-  })();
+    document.registerElement('x-tabs', { prototype: xTabsProto })
+  })()
 </script>
