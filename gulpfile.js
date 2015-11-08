@@ -27,14 +27,6 @@ gulp.task('media', function() {
 gulp.task('scripts', function() {
   gulp.src('node_modules/webcomponents.js/webcomponents-lite.min.js')
     .pipe(gulp.dest('public'))
-  gulp.src('_scripts/*.js')
-    .pipe(concat('main.js'))
-    .pipe(minify({
-      ext:{
-        min:'.min.js'
-      }
-    }))
-    .pipe(gulp.dest('public'))
 })
 
 gulp.task('components', function() {
@@ -49,7 +41,6 @@ gulp.task('devd', shell.task('devd -ol public/ \ /resume=http://devd.io:8000 \ /
 gulp.task('watch', function() {
   gulp.watch('_media/*', ['media'])
   gulp.watch('_scss/*.scss', ['scss'])
-  gulp.watch('_scripts/*.js', ['scripts'])
   gulp.watch('_components/*.html', ['components'])
 })
 

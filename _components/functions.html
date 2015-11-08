@@ -1,0 +1,49 @@
+<script type="text/javascript">
+  tabs = [{
+    name:'About',
+    title:'Iiro Jäppinen',
+    url:'/',
+    component:'x-about'
+  },{
+    name:'Résumé',
+    title:'Résumé of Iiro Jäppinen',
+    url:'/resume',
+    component:'x-resume'
+  }]
+
+  function render(x) {
+    var container = document.getElementById('x-container')
+    container.textContent = ''
+    container.appendChild(document.createElement(x))
+    document.getElementsByTagName('x-tabs')[0].setAttribute('active', tab.url)
+  }
+
+  function initialRender() {
+    tab = tabs.filter(function(y) {return y.url == window.location.pathname})[0]
+    history.replaceState(tab, tab.title, tab.url)
+    document.title = tab.title
+    render(tab.component)
+  }
+
+  function navigationRender(x) {
+    if (x !== tab.url) {
+      tab = tabs.filter(function(y) {return y.url == x})[0]
+      history.pushState(tab, tab.title, tab.url)
+      document.title = tab.title
+      render(tab.component)
+    }
+  }
+
+  document.addEventListener("readystatechange", function(event) {
+    initialRender()
+  })
+
+  window.addEventListener('HTMLImportsLoaded', function() {
+    initialRender()
+    console.log("HTMLImportsLoaded")
+  })
+
+  window.onpopstate = function() {
+    initialRender()
+  }
+</script>
