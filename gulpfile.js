@@ -25,7 +25,7 @@ gulp.task('media', function() {
 })
 
 gulp.task('scripts', function() {
-  gulp.src('node_modules/webcomponents.js/webcomponents.min.js')
+  gulp.src('node_modules/webcomponents.js/webcomponents-lite.min.js')
     .pipe(gulp.dest('public'))
   gulp.src('_scripts/*.js')
     .pipe(concat('main.js'))
