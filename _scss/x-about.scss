@@ -4,7 +4,7 @@ x-about {
   text-align: center;
 
   figure#profile-pic {
-    background-image: url('/media/profile.jpg');
+    background-image: url(/media/profile.jpg);
     background-size: contain;
     border-radius: 50%;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -42,10 +42,10 @@ x-about {
           margin: 0 auto 0.5rem auto;
           width: 2rem;
         }
-        &.link-email::before { background-image: url('/media/icon-email.svg')}
-        &.link-resume::before { background-image: url('/media/icon-resume.svg')}
-        &.link-dribbble::before { background-image: url('/media/icon-dribbble.svg')}
-        &.link-github::before { background-image: url('/media/icon-github.svg')}
+        &.link-email::before { background-image: url(/media/icon-email.svg)}
+        &.link-resume::before { background-image: url(/media/icon-resume.svg)}
+        &.link-dribbble::before { background-image: url(/media/icon-dribbble.svg)}
+        &.link-github::before { background-image: url(/media/icon-github.svg)}
       }
     }
   }

@@ -5,6 +5,7 @@ var gulp         = require('gulp'),
     minify       = require('gulp-minify'),
     minifyscript = require('gulp-minify-inline-scripts'),
     minifycss    = require('gulp-minify-css'),
+    base64       = require('gulp-base64'),
     rename       = require('gulp-rename'),
     concat       = require('gulp-concat'),
     shell        = require('gulp-shell')
@@ -16,6 +17,10 @@ gulp.task('scss', function() {
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
+    .pipe(base64({
+            baseDir: "public",
+            extensions: ['jpg', 'svg']
+     }))
     .pipe(gulp.dest('public'))
 })
 
@@ -36,7 +41,7 @@ gulp.task('components', function() {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('devd', shell.task('devd -ol public/ \ /resume=http://devd.io:8000 \ /contact=http://devd.io:8000'))
+gulp.task('devd', shell.task('devd -ol public/ \ /about=http://devd.io:8000 \ /resume=http://devd.io:8000 \ /downloads=http://devd.io:8000'))
 
 gulp.task('watch', function() {
   gulp.watch('_media/*', ['media'])

@@ -1,0 +1,28 @@
+x-downloads {
+  header {
+    h1 {}
+  }
+  section {
+    ul {
+      li {
+        a {
+          background-color: white;
+          border-radius: 0.125rem;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.1);
+          display: block;
+          padding: 1rem;
+
+          img {
+            height: 4rem;
+            margin-right: 1rem;
+            vertical-align: middle;
+            width: 4rem;
+          }
+          p {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
