@@ -2,7 +2,7 @@
 var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minify       = require('gulp-minify'),
+    inline       = require('gulp-inline-source'),
     minifyscript = require('gulp-minify-inline-scripts'),
     minifycss    = require('gulp-minify-css'),
     base64       = require('gulp-base64'),
@@ -10,26 +10,20 @@ var gulp         = require('gulp'),
     concat       = require('gulp-concat'),
     shell        = require('gulp-shell')
 
-gulp.task('scss', function() {
-  gulp.src('_scss/default.scss')
+gulp.task('styles', function() {
+  return gulp.src('_styles/default.scss')
     .pipe(sass())
     .pipe(concat('main.css'))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
     .pipe(base64({
-            baseDir: "public",
+            baseDir: "_media",
             extensions: ['jpg', 'svg']
      }))
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest('_static'))
 })
 
-gulp.task('media', function() {
-  gulp.src(['_media/*.jpg', '_media/*.png', '_media/*.svg'])
-    .pipe(gulp.dest('public/media'))
-})
-
-gulp.task('scripts', function() {
+gulp.task('webcomponents', function() {
   gulp.src('node_modules/webcomponents.js/webcomponents-lite.min.js')
     .pipe(gulp.dest('public'))
 })
@@ -41,16 +35,24 @@ gulp.task('components', function() {
     .pipe(gulp.dest('public'))
 })
 
+gulp.task('static', ['styles', 'webcomponents', 'components'], function() {
+  gulp.src(['_static/*.png', '_static/*.ico'])
+    .pipe(gulp.dest('public'))
+  gulp.src('_static/*.html')
+    .pipe(inline())
+    .pipe(gulp.dest('public'))
+})
+
 gulp.task('devd', shell.task('devd -ol public/ \ /about=http://devd.io:8000 \ /resume=http://devd.io:8000 \ /downloads=http://devd.io:8000'))
 
 gulp.task('watch', function() {
-  gulp.watch('_media/*', ['media'])
-  gulp.watch('_scss/*.scss', ['scss'])
+  gulp.watch('_static/*', ['static'])
+  gulp.watch('_styles/*.scss', ['styles'])
   gulp.watch('_components/*.html', ['components'])
 })
 
 gulp.task('default', function() {
-  gulp.start('scripts')
+  gulp.start('static')
   gulp.start('watch')
   gulp.start('devd')
 })

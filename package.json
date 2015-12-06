@@ -11,9 +11,9 @@
   "devDependencies": {
     "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-concat": "*",
     "gulp-base64": "*",
-    "gulp-minify": "*",
+    "gulp-concat": "*",
+    "gulp-inline-source": "*",
     "gulp-minify-css": "*",
     "gulp-minify-inline-scripts": "*",
     "gulp-rename": "*",
