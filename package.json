@@ -14,8 +14,8 @@
     "gulp-base64": "*",
     "gulp-concat": "*",
     "gulp-inline-source": "*",
+    "gulp-minify": "*",
     "gulp-minify-css": "*",
-    "gulp-minify-inline-scripts": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-shell": "*"

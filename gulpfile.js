@@ -3,7 +3,7 @@ var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     inline       = require('gulp-inline-source'),
-    minifyscript = require('gulp-minify-inline-scripts'),
+    minify       = require('gulp-minify'),
     minifycss    = require('gulp-minify-css'),
     base64       = require('gulp-base64'),
     rename       = require('gulp-rename'),
@@ -24,18 +24,23 @@ gulp.task('styles', function() {
 })
 
 gulp.task('webcomponents', function() {
-  gulp.src('node_modules/webcomponents.js/webcomponents-lite.min.js')
+  gulp.src('node_modules/webcomponents.js/CustomElements.min.js')
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('components', function() {
-  gulp.src('_components/*.html')
-    .pipe(minifyscript())
-    .pipe(concat('components.html'))
+gulp.task('scripts', function() {
+  gulp.src('_scripts/*.js')
+    .pipe(concat('app.js'))
+    .pipe(minify({
+      ext:{
+            src:'-debug.js',
+            min:'.js'
+        },
+    }))
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('static', ['styles', 'webcomponents', 'components'], function() {
+gulp.task('static', ['styles', 'webcomponents', 'scripts'], function() {
   gulp.src(['_static/*.png', '_static/*.ico'])
     .pipe(gulp.dest('public'))
   gulp.src('_static/*.html')
@@ -48,7 +53,7 @@ gulp.task('devd', shell.task('devd -ol public/ \ /about=http://devd.io:8000 \ /r
 gulp.task('watch', function() {
   gulp.watch('_static/*', ['static'])
   gulp.watch('_styles/*.scss', ['styles'])
-  gulp.watch('_components/*.html', ['components'])
+  gulp.watch('_scripts/*.js', ['scripts'])
 })
 
 gulp.task('default', function() {
