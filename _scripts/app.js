@@ -1,15 +1,3 @@
-tabs = [{
-  name:'About',
-  title:'Iiro Jäppinen',
-  url:'/',
-  component:'x-about'
-},{
-  name:'Résumé',
-  title:'Résumé of Iiro Jäppinen',
-  url:'/resume',
-  component:'x-resume'
-}]
-
 function render(x) {
   var container = document.getElementById('x-container')
   while (container.firstChild) container.removeChild(container.firstChild)

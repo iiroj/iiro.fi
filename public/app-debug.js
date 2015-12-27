@@ -1,3 +1,15 @@
+var tabs = [{
+  name:'About',
+  title:'Iiro Jäppinen',
+  url:'/',
+  component:'x-about'
+},{
+  name:'Résumé',
+  title:'Résumé of Iiro Jäppinen',
+  url:'/resume',
+  component:'x-resume'
+}]
+
 document.registerElement('x-about', {prototype:
   Object.create(HTMLElement.prototype, {
     createdCallback: {
@@ -116,18 +128,6 @@ document.registerElement('x-tabs', { prototype:
     }
   })
 })
-
-tabs = [{
-  name:'About',
-  title:'Iiro Jäppinen',
-  url:'/',
-  component:'x-about'
-},{
-  name:'Résumé',
-  title:'Résumé of Iiro Jäppinen',
-  url:'/resume',
-  component:'x-resume'
-}]
 
 function render(x) {
   var container = document.getElementById('x-container')
