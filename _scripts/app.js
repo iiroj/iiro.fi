@@ -21,10 +21,7 @@ function navigationRender(x) {
   }
 }
 
-window.addEventListener('WebComponentsReady', function() {
-  initialRender()
-})
-
+initialRender()
 window.onpopstate = function() {
   initialRender()
 }

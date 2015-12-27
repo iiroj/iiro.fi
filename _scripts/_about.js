@@ -19,7 +19,9 @@ document.registerElement('x-about', {prototype:
     detachedCallback: {
       value: function () {
         var linkResume = this.getElementsByClassName('link-resume')[0]
-        linkResume.removeEventListener('click')
+        linkResume.removeEventListener('click', function(e) {
+            navigationRender('/resume')
+        })
       }
     }
   })
