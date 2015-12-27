@@ -1,23 +1,30 @@
-var xNavProto = Object.create(HTMLElement.prototype)
-xNavProto.createdCallback = function() {
-  this.setAttribute('role', 'banner')
-}
-xNavProto.attachedCallback = function() {
-  if (window.scrollY > 0) {
-    this.setAttribute('opaque', '')
-  }
-  var xNav = this
-  window.addEventListener('scroll', function() {
-    if (this.scrollY > 0) {
-      xNav.setAttribute('opaque', '')
-    } else {
-      xNav.removeAttribute('opaque')
+var xNavProto = Object.create(HTMLElement.prototype, {
+  createdCallback: {
+    value: function() {
+      this.setAttribute('role', 'banner')
     }
-  }, false)
-};
-xNavProto.attributeChangedCallback = function() {
-  if (this.hasAttribute('opaque')) {
-    this.setAttribute('opaque','')
+  },
+  attachedCallback: {
+    value: function() {
+      if (window.scrollY > 0) {
+        this.setAttribute('opaque', '')
+      }
+      var xNav = this
+      window.addEventListener('scroll', function() {
+        if (this.scrollY > 0) {
+          xNav.setAttribute('opaque', '')
+        } else {
+          xNav.removeAttribute('opaque')
+        }
+      }, false)
+    }
+  },
+  attributeChangedCallback: {
+    value: function() {
+      if (this.hasAttribute('opaque')) {
+        this.setAttribute('opaque','')
+      }
+    }
   }
-}
+})
 document.registerElement('x-nav', { prototype: xNavProto })
