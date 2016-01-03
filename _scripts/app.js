@@ -1,27 +1,22 @@
 var tabs = [{
-  name: 'About',
   title: 'Iiro Jäppinen',
   descr: 'UX/UI designer from Helsinki, Finland',
   url: '/'
 },{
-  name: 'Résumé',
   title: 'Résumé of Iiro Jäppinen',
   descr: '',
   url: '/resume'
 }]
+var tab = tabs.filter(function(y) {return y.url == window.location.pathname})[0],
+    nav = [].slice.call(document.getElementById('navigation').getElementsByTagName('a'))
 
 function updatePage(x) {
   if (arguments.length == 1) {
     tab = tabs.filter(function(y) {return y.url == x})[0]
-  } else {
-    tab = tabs.filter(function(y) {return y.url == window.location.pathname})[0]
   }
   history.replaceState(tab, tab.title, tab.url)
   document.title = tab.title
   document.getElementsByTagName('meta')[1].setAttribute('content', tab.descr)
-
-  var tabLinks  = [].slice.call(document.getElementById('navigation').getElementsByTagName('a')),
-      activeTab = tabLinks.filter(function(x) {return x.getAttribute('href') == window.location.pathname})[0]
 
   for (var i in tabLinks) {
     if (tabLinks[i].getAttribute('href') == window.location.pathname) {
