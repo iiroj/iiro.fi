@@ -23,11 +23,6 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('_static'))
 })
 
-gulp.task('webcomponents', function() {
-  gulp.src('node_modules/webcomponents.js/CustomElements.min.js')
-    .pipe(gulp.dest('public'))
-})
-
 gulp.task('scripts', function() {
   gulp.src('_scripts/*.js')
     .pipe(concat('app.js'))
@@ -40,7 +35,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('static', ['styles', 'webcomponents', 'scripts'], function() {
+gulp.task('static', ['styles', 'scripts'], function() {
   gulp.src(['_static/*.png', '_static/*.ico'])
     .pipe(gulp.dest('public'))
   gulp.src('_static/*.html')
