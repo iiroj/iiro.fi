@@ -155,6 +155,4 @@ function navigationRender(x) {
 }
 
 initialRender()
-window.onpopstate = function() {
-  initialRender()
-}
+window.onpopstate = initialRender()

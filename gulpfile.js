@@ -48,7 +48,7 @@ gulp.task('static', ['styles', 'webcomponents', 'scripts'], function() {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('devd', shell.task('devd -ol public/ \ /about=http://devd.io:8000 \ /resume=http://devd.io:8000 \ /downloads=http://devd.io:8000'))
+gulp.task('devd', shell.task('devd -ol public/ \ /about=http://devd.io:8000 \ /resume=http://devd.io:8000 \ /resources=http://devd.io:8000'))
 
 gulp.task('watch', function() {
   gulp.watch('_static/*', ['static'])
