@@ -10,7 +10,9 @@ var pages = [{
 }]
 
 // Set initial page and history.state
-var tabs = Array.prototype.slice.call(document.getElementById('navigation').getElementsByTagName('a'))
+var page = pages.filter(function(x) {return x.url == window.location.pathname})[0],
+    tabs = Array.prototype.slice.call(document.getElementById('navigation').getElementsByTagName('a'))
+history.replaceState(page, page.title, page.url)
 
 // Listen to scroll and add shadows to navigation bar
 if (window.scrollY > 0) {
@@ -68,12 +70,11 @@ function render(x) {
 
 // Initial page load
 document.addEventListener('DOMContentLoaded', function() {
-  page = pages.filter(function(x) {return x.url == window.location.pathname})[0]
   render(page.url)
 })
 // Window history page load
 window.onpopstate = function(event) {
-  if ( history.state !== page ) {
+  if ( history.state != page ) {
     page = history.state
     render(page.url)
   }
