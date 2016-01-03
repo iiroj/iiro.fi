@@ -18,11 +18,11 @@ function updatePage(x) {
   document.title = tab.title
   document.getElementsByTagName('meta')[1].setAttribute('content', tab.descr)
 
-  for (var i in tabLinks) {
-    if (tabLinks[i].getAttribute('href') == window.location.pathname) {
-      tabLinks[i].setAttribute('active','')
+  for (var i in nav) {
+    if (nav[i].getAttribute('href') == window.location.pathname) {
+      nav[i].setAttribute('active','')
     } else {
-      tabLinks[i].removeAttribute('active','')
+      nav[i].removeAttribute('active','')
     }
   }
 }
