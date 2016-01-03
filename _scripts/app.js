@@ -1,17 +1,33 @@
 // Define available pages
 var pages = [{
+  name: 'About',
+  template: 'about--template',
   title: 'Iiro Jäppinen',
-  url: '/',
-  template: 'about--template'
+  url: '/'
 },{
+  name: 'Résumé',
+  template: 'resume--template',
   title: 'Résumé of Iiro Jäppinen',
-  url: '/resume',
-  template: 'resume--template'
+  url: '/resume'
 }]
 
+// Create tabs
+var tabContainer = document.getElementById('navigation').getElementsByTagName('ul')[0],
+    tabs         = []
+tabContainer.innerText = ''
+for (var i in pages) {
+  var li = document.createElement('li'),
+      a  = document.createElement('a')
+      t  = document.createTextNode(pages[i].name)
+  li.appendChild(a).appendChild(t)
+  a.setAttribute('href', pages[i].url)
+  a.setAttribute('navigation','')
+  tabContainer.appendChild(li)
+  tabs.push(a)
+}
+
 // Set initial page and history.state
-var page = pages.filter(function(x) {return x.url == window.location.pathname})[0],
-    tabs = Array.prototype.slice.call(document.getElementById('navigation').getElementsByTagName('a'))
+var page = pages.filter(function(x) {return x.url == window.location.pathname})[0]
 history.replaceState(page, page.title, page.url)
 
 // Listen to scroll and add shadows to navigation bar
@@ -49,7 +65,6 @@ function navigation(x) {
 
 // Render page
 function render(x) {
-
   var template  = document.getElementById(page.template),
       clone     = document.importNode(template.content, true),
       container = document.getElementById('container')
@@ -74,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 // Window history page load
 window.onpopstate = function(event) {
-  if ( history.state != page ) {
+  if ( page !== history.state) {
     page = history.state
     render(page.url)
   }
