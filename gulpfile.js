@@ -43,7 +43,7 @@ gulp.task('static', ['styles', 'scripts'], function() {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('devd', shell.task('devd -ol public/'))
+gulp.task('devd', shell.task('devd -ol public/ \ /resume=http://devd.io:8000/'))
 
 gulp.task('watch', function() {
   gulp.watch('_static/*', ['static'])

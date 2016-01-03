@@ -27,6 +27,7 @@ div#container {
   justify-content: center;
   min-height: 100%;
   padding-top: 3rem;
+  transition: opacity 0.2s ease;
 }
 
 @import 'nav.scss';
