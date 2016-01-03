@@ -10,9 +10,7 @@ var pages = [{
 }]
 
 // Set initial page and history.state
-var page = pages.filter(function(x) {return x.url == window.location.pathname})[0],
-    tabs = Array.prototype.slice.call(document.getElementById('navigation').getElementsByTagName('a'))
-history.replaceState(page, page.title, page.url)
+var tabs = Array.prototype.slice.call(document.getElementById('navigation').getElementsByTagName('a'))
 
 // Listen to scroll and add shadows to navigation bar
 if (window.scrollY > 0) {
@@ -40,13 +38,16 @@ function updateTabs() {
 
 // Re-render page on navigation links
 function navigation(x) {
-  page = pages.filter(function(y) {return y.url == x})[0]
-  render(x)
-  history.pushState(page, page.title, page.url)
+  if (x !== page.url) {
+    page = pages.filter(function(y) {return y.url == x})[0]
+    history.pushState(page, page.title, page.url)
+    render(page.url)
+  }
 }
 
 // Render page
 function render(x) {
+
   var template  = document.getElementById(page.template),
       clone     = document.importNode(template.content, true),
       container = document.getElementById('container')
@@ -60,15 +61,20 @@ function render(x) {
   for (var i in nav) {
     nav[i].addEventListener('click', function(event) {
       event.preventDefault()
-      var target = this.getAttribute('href')
-      if (target !== page.url) {
-        navigation(target)
-      }
+      navigation(this.getAttribute('href'))
     })
   }
 }
 
 // Initial page load
 document.addEventListener('DOMContentLoaded', function() {
+  page = pages.filter(function(x) {return x.url == window.location.pathname})[0]
   render(page.url)
 })
+// Window history page load
+window.onpopstate = function(event) {
+  if ( history.state !== page ) {
+    page = history.state
+    render(page.url)
+  }
+}
