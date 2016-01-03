@@ -7,8 +7,8 @@ var tabs = [{
   descr: '',
   url: '/resume'
 }]
-var tab = tabs.filter(function(y) {return y.url == window.location.pathname})[0],
-    nav = [].slice.call(document.getElementById('navigation').getElementsByTagName('a'))
+var tab      = tabs.filter(function(y) {return y.url == window.location.pathname})[0],
+    navLinks = [].slice.call(document.getElementById('navigation').getElementsByTagName('a'))
 
 function updatePage(x) {
   if (arguments.length == 1) {
@@ -18,11 +18,11 @@ function updatePage(x) {
   document.title = tab.title
   document.getElementsByTagName('meta')[1].setAttribute('content', tab.descr)
 
-  for (var i in nav) {
-    if (nav[i].getAttribute('href') == window.location.pathname) {
-      nav[i].setAttribute('active','')
+  for (var i in navLinks) {
+    if (navLinks[i].getAttribute('href') == window.location.pathname) {
+      navLinks[i].setAttribute('active','')
     } else {
-      nav[i].removeAttribute('active','')
+      navLinks[i].removeAttribute('active','')
     }
   }
 }
