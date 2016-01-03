@@ -21,7 +21,7 @@ body {
   transition: opacity 0.2s ease-in
 }
 
-div#x-container {
+div#container {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -29,7 +29,6 @@ div#x-container {
   padding-top: 3rem;
 }
 
-@import 'x-nav.scss';
-@import 'x-tabs.scss';
-@import 'x-about.scss';
-@import 'x-resume.scss';
+@import 'nav.scss';
+@import 'about.scss';
+@import 'resume.scss';
