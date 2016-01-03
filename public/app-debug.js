@@ -29,9 +29,8 @@ function updatePage(x) {
 updatePage()
 
 function render() {
-  var res    = this.responseText,
-      frag   = document.getElementById('container')
-  frag.innerHTML = res
+  var res    = this.responseText
+  document.getElementById('container').innerHTML = res
   links = document.getElementsByTagName('a')
 }
 
@@ -43,9 +42,8 @@ function request(x) {
   updatePage(x)
 }
 
-var links = document.getElementsByTagName('a')
-for (var i in links) {
-  links[i].onclick = function(e) {
+for (var i in navLinks) {
+  navLinks[i].onclick = function(e) {
     e.preventDefault()
     request(this.getAttribute('href'))
   }
