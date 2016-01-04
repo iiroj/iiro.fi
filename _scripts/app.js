@@ -15,7 +15,7 @@ var pages     = [{
     navUl     = nav.getElementsByTagName('ul')[0],
     navArray  = []
 
-navUl.innerText = ''
+navUl.innerHTML = ''
 history.replaceState(page, page.title, page.url)
 
 function createNav(i) {
