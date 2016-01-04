@@ -32,7 +32,7 @@ gulp.task('scripts', function() {
             min:'.js'
         },
     }))
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest('_static'))
 })
 
 gulp.task('static', ['styles', 'scripts'], function() {
