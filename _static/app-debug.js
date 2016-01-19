@@ -9,14 +9,11 @@ var pages     = [{
                   title: 'Résumé of Iiro Jäppinen',
                   url: '/resume'
                 }],
-    page      = pages.filter(function(x) {return x.url == window.location.pathname})[0]
+    page      = pages.filter(function(x) {return x.url == window.location.pathname})[0],
     container = document.getElementById('container'),
     nav       = document.getElementById('navigation'),
     navUl     = nav.getElementsByTagName('ul')[0],
     navArray  = []
-
-navUl.innerHTML = ''
-history.replaceState(page, page.title, page.url)
 
 function createNav(i) {
   var navLi = document.createElement('li'),
@@ -25,6 +22,10 @@ function createNav(i) {
   navLi.appendChild(navA).appendChild(navAT)
   navA.setAttribute('href', pages[i].url)
   navA.setAttribute('navigation','')
+  navA.addEventListener('click', function(event) {
+    event.preventDefault()
+    navigation(this.getAttribute('href'))
+  })
   navUl.appendChild(navLi)
   navArray.push(navA)
 }
@@ -52,17 +53,11 @@ function render(x) {
       clone    = document.importNode(template.content, true)
   while (container.childElementCount !== 0) { container.children[0].remove() }
   container.appendChild(clone)
-  document.title = page.title
   activeNavA()
-
-  var links = Array.prototype.slice.call(document.querySelectorAll('a[navigation]'))
-  for (var i in links) {
-    links[i].addEventListener('click', function(event) {
-      event.preventDefault()
-      navigation(this.getAttribute('href'))
-    })
-  }
 }
+
+navUl.innerHTML = ''
+history.replaceState(page, page.title, page.url)
 
 for (var i in pages) {
   createNav(i)
@@ -74,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   render(page.url)
 })
+
 window.addEventListener('scroll', function() {
   if (this.scrollY > 0) {
     nav.setAttribute('opaque', '')
@@ -81,6 +77,7 @@ window.addEventListener('scroll', function() {
     nav.removeAttribute('opaque')
   }
 }, false)
+
 window.onpopstate = function(event) {
   if ( page !== history.state) {
     page = history.state

@@ -1,4 +1,4 @@
-main#resume {
+#resume {
   background-color: white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -63,7 +63,7 @@ main#resume {
 }
 
 @media print {
-  main#resume {
+  #resume {
     box-shadow: none;
     font-family: "Times New Roman", Times, serif;
     font-size: 11pt;
