@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100%;
-  padding-top: 3rem;
+  padding: 4rem 0;
   transition: opacity 0.2s ease;
 
   > main { transition: opacity 0.2s ease-out }

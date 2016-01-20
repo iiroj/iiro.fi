@@ -50,8 +50,12 @@ function navigation(x) {
 
 function render(x) {
   var template = document.getElementById(page.template),
-      clone    = document.importNode(template.content, true)
-  while (container.childElementCount !== 0) { container.children[0].remove() }
+      clone    = document.importNode(template.content, true),
+      child
+  while (container.childElementCount !== 0) {
+    child = container.children[0]
+    child.remove()
+  }
   container.appendChild(clone)
   activeNavA()
 }
