@@ -2,9 +2,9 @@
 var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
+    cssnano      = require("gulp-cssnano"),
     inline       = require('gulp-inline-source'),
     minify       = require('gulp-minify'),
-    minifycss    = require('gulp-minify-css'),
     base64       = require('gulp-base64'),
     rename       = require('gulp-rename'),
     concat       = require('gulp-concat'),
@@ -14,8 +14,8 @@ gulp.task('styles', function() {
   return gulp.src('_styles/default.scss')
     .pipe(sass())
     .pipe(concat('main.css'))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(minifycss())
+    .pipe(autoprefixer('last 2 version'))
+    .pipe(cssnano())
     .pipe(base64({
             baseDir: "_media",
             extensions: ['jpg', 'svg']

@@ -13,14 +13,11 @@
     "gulp-autoprefixer": "*",
     "gulp-base64": "*",
     "gulp-concat": "*",
+    "gulp-cssnano": "*",
     "gulp-inline-source": "*",
     "gulp-minify": "*",
-    "gulp-minify-css": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-shell": "*"
-  },
-  "dependencies": {
-    "webcomponents.js": "*"
   }
 }
