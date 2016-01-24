@@ -14,6 +14,7 @@ var pages     = [{
     navUl     = nav.getElementsByTagName("ul")[0],
     navArray  = []
 
+// if navigation target is not the current page, render
 function navigation(x) {
   if (x !== page.url) {
     page = pages.filter(function(y) {return y.url == x})[0]
@@ -22,6 +23,7 @@ function navigation(x) {
   }
 }
 
+// render current page and activate tab
 function render() {
   var container = document.getElementById("container"),
       template  = document.getElementById(page.template),
@@ -42,6 +44,7 @@ function render() {
   }
 }
 
+// prevent about page's resume link from reloading page
 function aboutPageResumeLink() {
   document.getElementsByClassName("link-resume")[0].addEventListener("click", function(event) {
     event.preventDefault()
@@ -49,10 +52,13 @@ function aboutPageResumeLink() {
   })
 }
 
+// fill initial history state
 history.replaceState(page, page.title, page.url)
 
+// clear javascript message
 navUl.innerHTML = ""
 
+// create tab links for navigation
 pages.map(function(x) {
   var navLi = document.createElement("li"),
       navA  = document.createElement("a"),
@@ -68,12 +74,15 @@ pages.map(function(x) {
   navArray.push(navA)
 })
 
+// set nav bar initially opaque if needed
 if (window.scrollY > 0) {
   nav.setAttribute("opaque", "")
 }
 
+// initial render
 render()
 
+// listen to scroll and make nav bar opaque
 window.addEventListener("scroll", function() {
   if (this.scrollY > 0) {
     nav.setAttribute("opaque", "")
@@ -82,6 +91,7 @@ window.addEventListener("scroll", function() {
   }
 }, false)
 
+// re-render on history navigation
 window.onpopstate = function(event) {
   if ( page !== history.state) {
     page = history.state
