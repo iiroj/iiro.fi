@@ -37,6 +37,16 @@ function render(x) {
       x.removeAttribute("active")
     }
   })
+  if (page.url == "/") {
+    aboutPageResumeLink()
+  }
+}
+
+function aboutPageResumeLink() {
+  document.getElementsByClassName("link-resume")[0].addEventListener("click", function(event) {
+    event.preventDefault()
+    navigation(this.getAttribute("href"))
+  })
 }
 
 history.replaceState(page, page.title, page.url)
