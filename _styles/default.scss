@@ -21,10 +21,12 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100%;
-  padding: 4rem 0;
-  transition: opacity 0.2s ease;
+  padding: 3rem 0 0 0;
+  transition: padding 0.2s ease;
 
   > main { transition: opacity 0.2s ease-out }
+
+  @media (min-width: 720px) { padding: 4rem 0 }
 }
 
 @import 'nav.scss';
