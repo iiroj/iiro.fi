@@ -1,14 +1,14 @@
 var pages     = [{
-                  name: "About",
-                  template: "about--template",
-                  title: "Iiro Jäppinen",
-                  url: "/"
-                },{
-                  name: "Résumé",
-                  template: "resume--template",
-                  title: "Résumé of Iiro Jäppinen",
-                  url: "/resume"
-                }],
+      name: "About",
+      template: "about--template",
+      title: "Iiro Jäppinen",
+      url: "/"
+    },{
+      name: "Résumé",
+      template: "resume--template",
+      title: "Résumé of Iiro Jäppinen",
+      url: "/resume"
+    }],
     page      = pages.filter(function(x) {return x.url == window.location.pathname})[0],
     nav       = document.getElementById("navigation"),
     navUl     = nav.getElementsByTagName("ul")[0],
@@ -18,11 +18,11 @@ function navigation(x) {
   if (x !== page.url) {
     page = pages.filter(function(y) {return y.url == x})[0]
     history.pushState(page, page.title, page.url)
-    render(page.url)
+    render()
   }
 }
 
-function render(x) {
+function render() {
   var container = document.getElementById("container"),
       template  = document.getElementById(page.template),
       clone     = document.importNode(template.content, true)
@@ -72,7 +72,7 @@ if (window.scrollY > 0) {
   nav.setAttribute("opaque", "")
 }
 
-render(page.url)
+render()
 
 window.addEventListener("scroll", function() {
   if (this.scrollY > 0) {
@@ -85,6 +85,6 @@ window.addEventListener("scroll", function() {
 window.onpopstate = function(event) {
   if ( page !== history.state) {
     page = history.state
-    render(page.url)
+    render()
   }
 }
