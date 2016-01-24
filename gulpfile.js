@@ -8,7 +8,7 @@ var gulp         = require('gulp'),
     base64       = require('gulp-base64'),
     rename       = require('gulp-rename'),
     concat       = require('gulp-concat'),
-    shell        = require('gulp-shell')
+    webserver    = require('gulp-webserver')
 
 gulp.task('styles', function() {
   return gulp.src('_styles/default.scss')
@@ -43,16 +43,25 @@ gulp.task('static', ['styles', 'scripts'], function() {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('devd', shell.task('devd -ol public/ \ /resume=http://devd.io:8000/'))
-
 gulp.task('watch', function() {
   gulp.watch('_static/*', ['static'])
   gulp.watch('_styles/*.scss', ['styles'])
   gulp.watch('_scripts/*.js', ['scripts'])
 })
 
+gulp.task("webserver", function() {
+  gulp.src('public')
+    .pipe(webserver({
+      livereload: true,
+      directoryListing: false,
+      open: true,
+      proxies: [{source: '/resume', target: 'http://localhost:8000/'}]
+    }))
+})
+
 gulp.task('default', function() {
   gulp.start('static')
   gulp.start('watch')
-  gulp.start('devd')
+  gulp.start('webserver')
+
 })

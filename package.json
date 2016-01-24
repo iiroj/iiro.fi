@@ -18,6 +18,6 @@
     "gulp-minify": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
-    "gulp-shell": "*"
+    "gulp-webserver": "*"
   }
 }
