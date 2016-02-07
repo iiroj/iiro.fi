@@ -1,7 +1,6 @@
 #resume {
   background-color: white;
   box-sizing: border-box;
-  color: black;
   display: block;
   flex-grow: 1;
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
@@ -37,20 +36,15 @@
         }
         h3 {
           font-weight: bold;
-          margin-left: 40%
+          margin-left: 20%
         }
-        p { margin-left: 40% }
+        p { margin-left: 20% }
         aside {
-          margin-left: 40%;
+          margin-left: 20%;
           color: darken(white, 20);
           font-style: italic;
         }
       }
-    }
-
-    @media (min-width: 720px) {
-      h2 { position: absolute }
-      ul li time { margin-left: 20% }
     }
   }
 }
@@ -58,6 +52,7 @@
 @media print {
   #resume {
     box-shadow: none;
+    color: black;
     font-family: "Times New Roman", Times, serif;
     font-size: 11pt;
     line-height: 14pt;
@@ -69,7 +64,10 @@
     }
     section {
       h2 { position: absolute }
-      ul li time { margin-left: 20% }
+      ul li {
+        h3, p, aside { margin-left: 40% }
+        time { margin-left: 20% }
+      }
     }
   }
 }
