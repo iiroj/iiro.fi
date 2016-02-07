@@ -1,15 +1,13 @@
 #resume {
   background-color: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   color: black;
   display: block;
   flex-grow: 1;
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   line-height: 1.5rem;
-  margin: 0 auto;
   max-width: 210mm;
-  padding: 1.5rem;
+  padding: 1rem;
 
   a:hover {text-decoration: underline}
 
@@ -54,10 +52,6 @@
       h2 { position: absolute }
       ul li time { margin-left: 20% }
     }
-  }
-
-  @media (min-width: 720px) {
-    padding: 3rem;
   }
 }
 
