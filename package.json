@@ -11,11 +11,10 @@
   "devDependencies": {
     "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-base64": "*",
     "gulp-concat": "*",
     "gulp-cssnano": "*",
-    "gulp-inline-source": "*",
-    "gulp-minify": "*",
+    "gulp-inline": "*",
+    "gulp-uglify": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-webserver": "*"
