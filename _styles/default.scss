@@ -17,6 +17,9 @@ body {
 }
 
 #container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   min-height: 100%;
   padding: 3rem 0 0 0;
   transition: padding 0.2s ease;
@@ -25,5 +28,5 @@ body {
 }
 
 @import 'nav.scss';
-@import 'about.scss';
+@import 'home.scss';
 @import 'resume.scss';

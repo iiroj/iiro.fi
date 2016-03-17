@@ -25,7 +25,7 @@ gulp.task("scripts", function() {
 })
 
 gulp.task("static", ["styles", "scripts"], function() {
-  gulp.src(["_static/apple-touch-icon.png", "_static/favicon.ico"])
+  gulp.src(["_static/apple-touch-icon.png", "_static/favicon.ico", "_static/about.jpg"])
     .pipe(gulp.dest("public"))
   gulp.src("_static/*.html")
     .pipe(inline({

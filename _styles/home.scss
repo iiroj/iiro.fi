@@ -1,4 +1,6 @@
-#about {
+#home {
+  align-self: center;
+  margin: 0 auto;
   padding: 1rem;
 
   header {
@@ -8,23 +10,16 @@
       font-size: 1.5rem;
     }
   }
-  footer {
+  section {
     nav {
       a {
-        display: block;
+        display: flex;
         margin-top: 1rem;
 
         &:hover {
-          svg {
-            margin: 0.25rem 1rem 0 0;
-          }
+          svg { margin: 0.25rem 1rem 0 0 }
         }
 
-        aside {
-          color: transparentize($color--text, 0.6);
-          font-size: 0.75rem;
-          line-height: 0.75rem;
-        }
         svg {
           background-size: 2rem;
           background-repeat: no-repeat;
@@ -36,6 +31,16 @@
           margin: 0.25rem 0.5rem 0 0;
           transition: margin 0.2s ease-out;
           width: 2rem;
+        }
+
+        div {
+          float: left;
+
+          aside {
+            color: transparentize($color--text, 0.6);
+            font-size: 0.75rem;
+            line-height: 0.75rem;
+          }
         }
       }
     }

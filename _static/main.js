@@ -1,6 +1,6 @@
 var pages     = [{
-      name: "About",
-      template: "about--template",
+      name: "Home",
+      template: "home--template",
       title: "Iiro Jäppinen",
       url: "/"
     },{
@@ -19,6 +19,7 @@ function navigation(x) {
   if (x !== page.url) {
     page = pages.filter(function(y) {return y.url == x})[0]
     history.pushState(page, page.title, page.url)
+    document.title = page.title
     render()
   }
 }
@@ -39,21 +40,11 @@ function render() {
       x.removeAttribute("active")
     }
   })
-  if (page.url == "/") {
-    aboutPageResumeLink()
-  }
-}
-
-// prevent about page's resume link from reloading page
-function aboutPageResumeLink() {
-  document.getElementsByClassName("link-resume")[0].addEventListener("click", function(event) {
-    event.preventDefault()
-    navigation(this.getAttribute("href"))
-  })
 }
 
 // fill initial history state
 history.replaceState(page, page.title, page.url)
+document.title = page.title
 
 // clear javascript message
 navUl.innerHTML = ""
