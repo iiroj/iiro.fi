@@ -10,12 +10,9 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
-	<nav id="navigation">
-		<ul>Needs JavaScript</ul>
-	</nav>
-	<div id="container"><h1></div>
+	<div id="container"></div>
 	<template id="home--template">
-		<main id="home">
+		<article id="home">
 		  <header>
 		    <h1>Iiro Jäppinen</h1>
 		    <p>UX/UI designer from Helsinki, Finland.</p>
@@ -29,6 +26,15 @@
 								<div>
 					        <h3>iiro@jappinen.fi</h3>
 					        <aside>Best way to reach me!</aside>
+								</div>
+				      </a>
+						</li>
+						<li>
+				      <a class="link-resume" href="/resume">
+								<img src="/icon-resume.svg">
+								<div>
+					        <h3>Résumé</h3>
+					        <aside>You can print the page</aside>
 								</div>
 				      </a>
 						</li>
@@ -62,10 +68,13 @@
 					</ul>
 		    </nav>
 			</section>
-		</main>
+		</article>
 	</template>
 	<template id="resume--template">
-		<main id="resume" vocab="//schema.org">
+		<nav id="navigation">
+			<a href="/" navigation>Back</a>
+		</nav>
+		<article id="resume">
 		  <header>
 		    <h1 property="name">Iiro Jäppinen</h1>
 		    <p>Résumé,
@@ -75,23 +84,19 @@
 		  <section>
 		    <h2>Education</h2>
 		    <ul>
-		      <li property="affiliation" typeof="EducationalOrganization">
+		      <li>
 		        <time datetime="2009">2009 -</time>
 						<div>
 			        <h3>BSc</h3>
-			        <p><span property="description">Department of Mathematics and Statistics</span>, <span property="name">University of Helsinki</span><span property="address" typeof="PostalAddress">
-			        <meta property="addressLocality" content="Helsinki"/>
-			        <meta property="addressCountry" content="Finland"/></span></p>
-			        <aside property="description">197 credits in biomathematics, minor in genetics.</aside>
+			        <p>Department of Mathematics and Statistics, University of Helsinki</p>
+			        <aside>197 credits in biomathematics, minor in genetics.</aside>
 						</div>
 		      </li>
-		      <li property="affiliation" typeof="EducationalOrganization">
+		      <li>
 		        <time datetime="2009">2006 - 2009</time>
 						<div>
 			        <h3>Abitur</h3>
-			        <p><span property="name">Helsinki Upper Secondary School of Visual Art</span><span property="address" typeof="PostalAddress">
-			        <meta property="addressLocality" content="Helsinki"/>
-			        <meta property="addressCountry" content="Finland"/></span></p>
+			        <p>Helsinki Upper Secondary School of Visual Art</p>
 						</div>
 		      </li>
 		    </ul>
@@ -99,112 +104,110 @@
 		  <section>
 		    <h2>Experience</h2>
 		    <ul>
-		      <li property="worksFor" typeof="Organization">
+		      <li>
 		        <time datetime="2014-11">11.2014 -</time>
 						<div>
-			        <a href="https://www.verkkokauppa.com" target="_blank"><h3 property="name">Verkkokauppa.com Oy (VERK)</h3></a>
-			        <p property="makesOffer">UX Designer</p>
-			        <aside property="description">UX/UI design and project management</aside>
+			        <a href="https://www.verkkokauppa.com" target="_blank"><h3>Verkkokauppa.com Oy (VERK)</h3></a>
+			        <p>UX Designer</p>
+			        <aside>UX/UI design and project management</aside>
 						</div>
 		      </li>
-		      <li property="affiliation" typeof="Organization">
+		      <li>
 		        <time datetime="2014-01">1.2014 - 9.2014</time>
 						<div>
-			        <a href="https://www.humblebundle.com" target="_blank"><h3 property="name">Humble Bundle, inc. (YC W11)</h3></a>
-			        <p property="makesOffer">Software Engineer</p>
-			        <aside property="description">J-1 Internship in San Francisco, California — UX/UI design</aside>
+			        <a href="https://www.humblebundle.com" target="_blank"><h3>Humble Bundle, inc. (YC W11)</h3></a>
+			        <p>Software Engineer</p>
+			        <aside>J-1 Internship in San Francisco, California — UX/UI design</aside>
 						</div>
 		      </li>
-		      <li property="affiliation" typeof="Organization">
+		      <li>
 		        <time datetime="2012">2012</time>
 						<div>
-			        <a href="https://unity3d.com" target="_blank"><h3 property="name">Unity Technologies </h3></a>
-			        <p property="makesOffer">Icon Design</p>
-			        <aside property="description">Unity 4 Editor user interface icons</aside>
+			        <a href="https://unity3d.com" target="_blank"><h3>Unity Technologies </h3></a>
+			        <p>Icon Design</p>
+			        <aside>Unity 4 Editor user interface icons</aside>
 						</div>
 		      </li>
-		      <li property="affiliation" typeof="Organization">
+		      <li>
 		        <time datetime="2011">2011 - 2013</time>
 						<div>
-			        <a href="https://www.humblebundle.com" target="_blank"><h3 property="name">Humble Bundle, inc. (YC W11)</h3></a>
-			        <p property="makesOffer">Web Design</p>
-			        <aside property="description">Freelance web design and branding</aside>
+			        <a href="https://www.humblebundle.com" target="_blank"><h3>Humble Bundle, inc. (YC W11)</h3></a>
+			        <p>Web Design</p>
+			        <aside>Freelance web design and branding</aside>
 						</div>
 		      </li>
-		      <li property="worksFor" typeof="Organization">
+		      <li>
 		        <time datetime="2011">2011 -</time>
 						<div>
-			        <h3 property="name">Iiro Jäppinen design</h3>
-			        <p property="makesOffer">UX/UI Design</p>
-			        <aside property="description">Various projects under own business name</aside>
-			        <meta property="founder" content="Iiro Jäppinen">
-			        <meta property="vatId" content="FI23933153">
+			        <h3>Iiro Jäppinen design</h3>
+			        <p>UX/UI Design</p>
+			        <aside>Various projects under own business name</aside>
 						</div>
 		      </li>
-		      <li property="affiliation" typeof="Organization">
+		      <li>
 		        <time datetime="2009">2009-2010</time>
 						<div>
-			        <a href="http://www.wolfire.com" target="_blank"><h3 property="name">Wolfire Games</h3></a>
-			        <p property="makesOffer">User Interface Design</p>
-			        <aside property="description">Freelance interface design</aside>
+			        <a href="http://www.wolfire.com" target="_blank"><h3>Wolfire Games</h3></a>
+			        <p>User Interface Design</p>
+			        <aside>Freelance interface design</aside>
 						</div>
 		      </li>
 		    </ul>
 		  </section>
-		  <section typeof="ItemList">
-		    <h2 property="name">Languages</h2>
+		  <section>
+		    <h2>Languages</h2>
 		    <ul>
 		      <li>
-						<time></time>
+						<time datetime=""></time>
 						<div>
-			        <h3 property="itemListElement">Finnish</h3>
-			        <aside property="description">Native</aside>
+			        <h3>Finnish</h3>
+			        <aside>Native</aside>
 						</div>
 		      </li>
 		      <li>
-						<time></time>
+						<time datetime=""></time>
 						<div>
-			        <h3 property="itemListElement">English</h3>
-			        <aside property="description">CEFR Level B2 / Vantage or Upper Intermediate</aside>
+			        <h3>English</h3>
+			        <aside>CEFR Level B2 / Vantage or Upper Intermediate</aside>
 						</div>
 		      </li>
 		    </ul>
 		  </section>
-		  <section typeof="ItemList">
-		    <h2 property="name">Skills</h2>
+		  <section>
+		    <h2>Skills</h2>
 		    <ul>
 		      <li>
-						<time></time>
+						<time datetime=""></time>
 						<div>
-		        	<h3 property="itemListElement">User Experience and Interface design</h3>
+		        	<h3>User Experience and Interface design</h3>
 						</div>
 		      </li>
 		      <li>
-						<time></time>
+						<time datetime=""></time>
 						<div>
-		        	<h3 property="itemListElement">Project management</h3>
+		        	<h3>Project management</h3>
 						</div>
 		      </li>
 					<li>
-						<time></time>
+						<time datetime=""></time>
 						<div>
-		        	<h3 property="itemListElement">Front-end / web design and development</h3>
+		        	<h3>Front-end / web design and development</h3>
 						</div>
 		      </li>
 		    </ul>
 		  </section>
-			<section typeof="ItemList">
-		    <h2 property="name">Certifications</h2>
+			<section>
+		    <h2>Certifications</h2>
 		    <ul>
 		      <li>
-						<time datetime="20016-03">3.2016</time>
+						<time datetime="2016-03">3.2016</time>
 						<div>
-		        	<h3 property="itemListElement">Certified ScrumMaster®</h3>
+		        	<h3>Certified ScrumMaster®</h3>
 						</div>
 		      </li>
 		    </ul>
 		  </section>
-		</main>
+		</article>
 	</template>
 	<script type="text/javascript" src="/main.js"></script>
 </body>

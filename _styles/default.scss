@@ -17,14 +17,10 @@ body {
 }
 
 #container {
+  align-items: center;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   min-height: 100%;
-  padding: 3rem 0 0 0;
-  transition: padding 0.2s ease;
-
-  > main { transition: opacity 0.2s ease-out }
+  justify-content: center;
 }
 
 @import 'nav.scss';
