@@ -32,7 +32,7 @@
 				      </a>
 						</li>
 						<li>
-				      <a class="link-resume" href="/resume">
+				      <a class="link-resume" href="/resume" navigation="">
 								<svg width="32" height="32" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>icon-resume</title><g fill="none" fill-rule="evenodd"><path d="M23 11h-4V1l8 8v22H5V1h10" stroke="#504D3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6l3 3h-3V6zM7 3h10v9.005a1 1 0 0 0 .997.995H25v16H7V3z" fill="#F0EEDB"/></g></svg>
 								<div>
 					        <h3>Résumé</h3>
@@ -212,7 +212,7 @@
 		</article>
 	</template>
 	<script type="text/javascript">
-function navigation(e){e!==page.url&&(page=pages.filter(function(t){return t.url==e})[0],history.pushState(page,page.title,page.url),document.title=page.title,render())}function render(){for(var e=document.getElementById("container"),t=document.getElementById(page.template),n=document.importNode(t.content,!0);0!==e.childElementCount;)e.children[0].remove();e.appendChild(n),navBar()}function navBar(){if("/"!=page.url){var e=document.getElementById("navigation");window.scrollY>0&&e.setAttribute("opaque",""),window.addEventListener("scroll",function(){this.scrollY>0?e.setAttribute("opaque",""):e.removeAttribute("opaque")},!1)}}function navLinks(){}var pages=[{name:"Home",template:"home--template",title:"Iiro Jäppinen",url:"/"},{name:"Résumé",template:"resume--template",title:"Résumé of Iiro Jäppinen",url:"/resume"}],page=pages.filter(function(e){return e.url==window.location.pathname})[0];history.replaceState(page,page.title,page.url),document.title=page.title,render(),window.onpopstate=function(e){page!==history.state&&(page=history.state,render())};
+function navigation(e){e!==page.url&&(page=pages.filter(function(t){return t.url==e})[0],history.pushState(page,page.title,page.url),document.title=page.title,render())}function render(){for(var e=document.getElementById("container"),t=document.getElementById(page.template),n=document.importNode(t.content,!0);0!==e.childElementCount;)e.children[0].remove();e.appendChild(n),navBar(),navLinks()}function navBar(){if("/"!=page.url){var e=document.getElementById("navigation");window.scrollY>0&&e.setAttribute("opaque",""),window.addEventListener("scroll",function(){this.scrollY>0?e.setAttribute("opaque",""):e.removeAttribute("opaque")},!1)}}function navLinks(){for(var e=document.querySelectorAll("[navigation]"),t=0;t<e.length;++t)e[t].addEventListener("click",function(e){e.preventDefault(),navigation(this.getAttribute("href"))})}var pages=[{name:"Home",template:"home--template",title:"Iiro Jäppinen",url:"/"},{name:"Résumé",template:"resume--template",title:"Résumé of Iiro Jäppinen",url:"/resume"}],page=pages.filter(function(e){return e.url==window.location.pathname})[0];history.replaceState(page,page.title,page.url),document.title=page.title,render(),window.onpopstate=function(e){page!==history.state&&(page=history.state,render())};
 </script>
 </body>
 </html>

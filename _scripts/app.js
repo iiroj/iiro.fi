@@ -31,15 +31,15 @@ function render() {
   }
   container.appendChild(clone)
   navBar()
+  navLinks()
 }
 
+// create navbar on pages other than home
 function navBar() {
   if (page.url == "/") {
     return
   }
-
   var nav = document.getElementById("navigation")
-
   if (window.scrollY > 0) {
     nav.setAttribute("opaque", "")
   }
@@ -52,8 +52,15 @@ function navBar() {
   }, false)
 }
 
+// capture navigation links and render
 function navLinks() {
-
+  var links = document.querySelectorAll("[navigation]")
+  for (var i = 0; i < links.length; ++i) {
+    links[i].addEventListener("click", function(event){
+      event.preventDefault()
+      navigation(this.getAttribute("href"))
+    })
+  }
 }
 
 // fill initial history state
