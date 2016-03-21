@@ -26,9 +26,8 @@ function render() {
   var container = document.getElementById("container"),
       template  = document.getElementById(page.template),
       clone     = document.importNode(template.content, true)
-  while (container.childElementCount !== 0) {
-    container.children[0].remove()
-  }
+
+  container.innerHTML = null
   container.appendChild(clone)
   navBar()
   navLinks()
