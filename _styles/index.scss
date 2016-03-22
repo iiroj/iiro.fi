@@ -1,3 +1,5 @@
+@import "default.scss";
+
 #home {
   margin: auto;
   padding: 3rem 1rem;
@@ -36,7 +38,7 @@
           float: left;
 
           aside {
-            color: transparentize($color--text, 0.6);
+            color: rgb(154, 154, 154);
             font-size: 0.75rem;
             line-height: 0.75rem;
           }

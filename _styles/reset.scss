@@ -1,4 +1,4 @@
-html, body, div, span, h1, h2, h3, p, a, address, img, i, ul, li, article, aside, figure, footer, header, nav, section, {
+html, body, div, span, h1, h2, h3, p, a, i, ul, li, article, aside, header, nav, section, {
   border: 0;
   box-sizing: border-box;
   color: inherit;
@@ -10,7 +10,7 @@ html, body, div, span, h1, h2, h3, p, a, address, img, i, ul, li, article, aside
   vertical-align: baseline;
 }
 
-article, aside, figure, footer, header, nav, section {display: block}
+article, aside, header, nav, section {display: block}
 body {line-height: 1}
-ol, ul {list-style: none}
+ul {list-style: none}
 a {cursor: pointer}

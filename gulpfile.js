@@ -5,32 +5,22 @@ var gulp         = require("gulp"),
     cssnano      = require("gulp-cssnano"),
     inline       = require("gulp-inline"),
     rename       = require("gulp-rename"),
-    concat       = require("gulp-concat"),
-    uglify       = require("gulp-uglify"),
     webserver    = require("gulp-webserver")
 
 gulp.task("styles", function() {
-  return gulp.src("_styles/default.scss")
+  return gulp.src(["_styles/index.scss", "_styles/resume.scss"])
     .pipe(sass())
-    .pipe(concat("main.css"))
     .pipe(autoprefixer("last 2 version"))
     .pipe(cssnano())
     .pipe(gulp.dest("_static"))
 })
 
-gulp.task("scripts", function() {
-  return gulp.src("_scripts/*.js")
-    .pipe(concat("main.js"))
-    .pipe(gulp.dest("_static"))
-})
-
-gulp.task("static", ["styles", "scripts"], function() {
+gulp.task("static", ["styles"], function() {
   gulp.src(["_static/apple-touch-icon.png", "_static/favicon.ico", "_static/about.jpg"])
     .pipe(gulp.dest("public"))
   gulp.src("_static/*.html")
     .pipe(inline({
-      base: '_static/',
-      js: uglify
+      base: '_static/'
     }))
     .pipe(gulp.dest("public"))
 })
@@ -38,14 +28,12 @@ gulp.task("static", ["styles", "scripts"], function() {
 gulp.task("watch", function() {
   gulp.watch("_static/*", ["static"])
   gulp.watch("_styles/*.scss", ["styles"])
-  gulp.watch("_scripts/*.js", ["scripts"])
 })
 
 gulp.task("webserver", function() {
   gulp.src("public")
     .pipe(webserver({
       directoryListing: false,
-      fallback: "index.html",
       host: "localhost",
       livereload: true,
       open: true,
