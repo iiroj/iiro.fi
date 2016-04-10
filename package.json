@@ -13,7 +13,6 @@
     "gulp-autoprefixer": "*",
     "gulp-cssnano": "*",
     "gulp-inline": "*",
-    "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-webserver": "*"
   }

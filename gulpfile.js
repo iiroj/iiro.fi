@@ -4,7 +4,6 @@ var gulp         = require("gulp"),
     autoprefixer = require("gulp-autoprefixer"),
     cssnano      = require("gulp-cssnano"),
     inline       = require("gulp-inline"),
-    rename       = require("gulp-rename"),
     webserver    = require("gulp-webserver")
 
 gulp.task("styles", function() {
