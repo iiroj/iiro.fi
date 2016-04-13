@@ -2,7 +2,7 @@
 baseurl: "https://iiro.jappinen.fi/"
 languageCode: "en-fi"
 title: "Iiro Jäppinen"
-canonifyurls: false
+canonifyurls: true
 disableRSS: true
 disableSitemap: true
 params:
