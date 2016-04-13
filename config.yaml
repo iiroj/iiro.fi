@@ -1,0 +1,17 @@
+---
+baseurl: "https://iiro.jappinen.fi/"
+languageCode: "en-fi"
+title: "Iiro Jäppinen"
+canonifyurls: false
+disableRSS: true
+disableSitemap: true
+params:
+    Author: "Iiro Jäppinen"
+    Email: "iiro@jappinen.fi"
+menu:
+  main:
+      - Name: "Blog"
+        Post: "<i class='post'>soon</i>"
+        Weight: 2
+        URL: ""
+...

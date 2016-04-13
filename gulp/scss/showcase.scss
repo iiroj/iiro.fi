@@ -1,0 +1,38 @@
+#showcase {
+  article {
+    text-align: center;
+
+    figure {
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+      background-size: 67%;
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+      padding-bottom: 50%;
+      width: 100%;
+    }
+    a {
+      display: block;
+      padding: 1rem 1rem 0 1rem;
+
+      p {
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    background-position: 0 0;
+  }
+}
+
+#tuneinstructor {
+  background-image: url(tuneinstructor.jpg);
+}
+#spectacle {
+  background-image: url(spectacle.jpg);
+}
+#growl {
+  background-image: url(growl.jpg);
+}

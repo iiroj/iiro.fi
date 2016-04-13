@@ -1,0 +1,10 @@
+{{ partial "meta.html" . }}
+<body>
+  {{ partial "nav.html" . }}
+  <div id="container">
+    <main id="{{ .Section }}">
+      {{ .Content }}
+    </main>
+  </div>
+</body>
+</html>

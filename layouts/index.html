@@ -1,0 +1,15 @@
+{{ partial "meta.html" . }}
+<body>
+  {{ partial "nav.html" . }}
+  <div id="container">
+    <main id="home">
+      <h1>{{ .Title }}</h1>
+      <section>
+        {{range where .Data.Pages "Type" "home"}}
+          {{.Content }}
+        {{ end }}
+      </section>
+    </main>
+  </div>
+</body>
+</html>

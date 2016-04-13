@@ -1,0 +1,73 @@
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="well well-sm">
+                    <h3>Another Hugo Post<br> <small>Nothing special, but one post is boring.</small></h3>
+                    <hr>
+                    
+
+<h2 id="toml-yaml-json-oh-my:fa77c077e3fbd48e440da594382c44fa">TOML, YAML, JSON &mdash; Oh my!</h2>
+
+<p>One of the nifty Hugo features we should cover: flexible configuration and front matter formats! This entry has front
+matter in <code>toml</code>, unlike the last one which used <code>yaml</code>, and <code>json</code> is also available if that&rsquo;s your preference.</p>
+
+<p>The <code>toml</code> front matter used on this entry:</p>
+
+<pre><code>+++
+title = &quot;Another Hugo Post&quot;
+description = &quot;Nothing special, but one post is boring.&quot;
+date = &quot;2014-09-02&quot;
+categories = [ &quot;example&quot;, &quot;configuration&quot; ]
+tags = [
+    &quot;example&quot;,
+    &quot;hugo&quot;,
+    &quot;toml&quot;
+]
++++
+</code></pre>
+
+<p>This flexibility also extends to your site&rsquo;s global configuration file. You&rsquo;re free to use any format you prefer::simply
+name the file <code>config.yaml</code>, <code>config.toml</code> or <code>config.json</code>, and go on your merry way.</p>
+
+<h2 id="json-example:fa77c077e3fbd48e440da594382c44fa">JSON Example</h2>
+
+<p>How would this entry&rsquo;s front matter look in <code>json</code>? That&rsquo;s easy enough to demonstrate:</p>
+
+<pre><code>{
+    &quot;title&quot;: &quot;Another Hugo Post&quot;,
+    &quot;description&quot;: &quot;Nothing special, but one post is boring.&quot;,
+    &quot;date&quot;: &quot;2014-09-02&quot;,
+    &quot;categories&quot;: [ &quot;example&quot;, &quot;configuration&quot; ],
+    &quot;tags&quot;: [
+        &quot;example&quot;,
+        &quot;hugo&quot;,
+        &quot;toml&quot;
+    ],
+}
+</code></pre>
+
+            </div>
+        </div>
+
+        
+        <div class="col-md-3">
+            <div class="well well-sm"> 
+                <h4>September 2, 2014<br>
+                <small>158 words</small></h4>
+                <hr>
+                <strong>Categories</strong>
+                <ul class="list-unstyled">
+                
+                    <li><a href="/categories/example">example</a></li>
+                
+                    <li><a href="/categories/configuration">configuration</a></li>
+                
+                </ul>
+                <hr>
+                <strong>Tags</strong><br>
+                <a class="label label-default" href="/tags/example">example</a> <a class="label label-default" href="/tags/hugo">hugo</a> <a class="label label-default" href="/tags/toml">toml</a> 
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+@import "reset.scss";
+
+html {height: 100%}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: rgb(77, 77, 77);
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-size: 16px;
+  min-height: 100%;
+  line-height: 1.5rem;
+}
+
+#container {
+  margin: 0 auto;
+  max-width: 45rem;
+  padding: 3rem 0;
+
+  @media print {
+    max-width: 210mm;
+  }
+}
+
+main > h1 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+    margin: 1rem 0;
+}
+
+@import "nav.scss";
+@import "index.scss";
+@import "showcase.scss";
+@import "resume.scss";
