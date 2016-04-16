@@ -1,4 +1,6 @@
 #nav {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   width: 100%;
@@ -20,7 +22,7 @@
       margin-left: 1rem;
     }
 
-    &[active] { box-shadow: inset 0 1px rgb(255, 255, 255), inset 0 3px rgb(40, 150, 222) }
+    &[active] { box-shadow: inset 0 -1px rgb(255, 255, 255), inset 0 -3px rgb(40, 150, 222) }
 
     > i.post {
       display: inline-block;
@@ -35,19 +37,6 @@
       position: relative;
     }
   }
-
-  &::after {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 200%;
-  position: absolute;
-  transform: skewY(-2deg);
-  width: 100%;
-  z-index: -1;
-}
 
   @media print {
     display: none;
