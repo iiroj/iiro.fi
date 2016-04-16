@@ -3,7 +3,10 @@
   {{ partial "nav.html" . }}
   <div id="container">
     <main id="home">
-      <h1>{{ .Title }}</h1>
+      <header>
+        <div></div>
+        <h1>{{ .Title }}</h1>
+      </header>
       <section>
         {{range where .Data.Pages "Type" "home"}}
           {{.Content }}

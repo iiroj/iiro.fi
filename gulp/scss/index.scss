@@ -1,6 +1,23 @@
 #home {
   padding: 0 1rem;
 
+  header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    padding-bottom: 2rem;
+    text-align: center;
+
+    div {
+      background-image: url(/profile.jpg);
+      background-size: contain;
+      border-radius: 50%;
+      height: 8rem;
+      margin: 0 auto 2rem auto;
+      width: 8rem;
+    }
+    h1 { font-size: 1.5rem }
+  }
+
   p { margin-bottom: 1rem }
   ul li {
     a {
