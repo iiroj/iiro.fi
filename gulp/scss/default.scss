@@ -5,8 +5,9 @@ html {height: 100%}
 body {
   background-color: rgb(255, 255, 255);
   color: rgb(77, 77, 77);
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: "Source Sans Pro", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   font-size: 16px;
+  font-weight: 400;
   min-height: 100%;
   line-height: 1.5rem;
 }
@@ -19,6 +20,11 @@ body {
   @media print {
     max-width: 210mm;
   }
+}
+
+h1, h2, h3 {
+  font-family: "Roboto Slab";
+  font-weight: 300;
 }
 
 main > h1 {
