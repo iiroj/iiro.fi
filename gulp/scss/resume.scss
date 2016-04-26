@@ -1,7 +1,6 @@
 #resume {
   box-sizing: border-box;
   line-height: 1.5rem;
-  max-width: 210mm;
   padding: 1rem;
 
   a:hover {text-decoration: underline}
@@ -58,6 +57,7 @@
       flex-grow: 1;
       font-size: 11pt;
       line-height: 14pt;
+      max-width: 210mm;
       padding: 0 3rem;
 
       header h1 {
