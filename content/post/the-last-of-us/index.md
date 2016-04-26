@@ -2,7 +2,7 @@
 title: "You won't take this one"
 description: "The Last of Us Remastered Review"
 date: "2015-04-25"
-image: "post/the-last-of-us-remastered-cover.jpg"
+image: "cover.jpg"
 ---
 
 ## Spoilers ahead
@@ -11,7 +11,7 @@ Somehow I've managed to avoid this critically acclaimed game for this long, but 
 
 ### The game in a nutshell
 
-The Last of Us Remastered is an upgraded version of the original PS3 game, optimized for 1080p60 for the Playstation 4. It's a Naughty Dog game, so it's very similar in style and gameplay to the Uncharted series. By similar, I mean it's probably got the same game engine, and definitely the same protagonist model, just a bit older and wiser. In The Last of Us you are Joel, a man trying to survive in a world after the zombie apocalypse. A young girl named Ellie tags along, and together you must go cross-county. When I say must, I mean that this game is a linear action game, and there is little choice in exploration and pace. After 200 hours of The [Witcher 3](http://thewitcher.com/en/witcher3), this was definitely a change, but not strictly a bad one.
+[The Last of Us Remastered](https://www.playstation.com/en-us/games/the-last-of-us-remastered-ps4/) is an upgraded version of the original PS3 game, optimized for 1080p60 for the Playstation 4. It's a Naughty Dog game, so it's very similar in style and gameplay to the Uncharted series. By similar, I mean it's probably got the same game engine, and definitely the same protagonist model, just a bit older and wiser. In The Last of Us you are Joel, a man trying to survive in a world after the zombie apocalypse. A young girl named Ellie tags along, and together you must go cross-county. When I say must, I mean that this game is a linear action game, and there is little choice in exploration and pace. After 200 hours of The [Witcher 3](http://thewitcher.com/en/witcher3), this was definitely a change, but not strictly a bad one.
 
 ### Good
 
