@@ -12,7 +12,7 @@ body {
 .container {
     margin: 0 auto;
     max-width: 45rem;
-    padding: 3rem 0;
+    padding: 3rem 1rem;
 
     @media print {
         max-width: 210mm;
