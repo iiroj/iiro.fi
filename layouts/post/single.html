@@ -4,10 +4,8 @@
 	{{ partial "nav.html" . }}
 	<header class="header">
 		<h1>{{ .Title }}</h1>
-		<div>
-			<span class="reading-time">{{ .ReadingTime }} minute read, </span>
-        	<time datetime="{{ .Date }}" class="post-time">posted on {{ .Date.Format "January 2, 2006" }}</time>
-        </div>
+		<h2>{{ .Description }}</h2>
+    	<p><time class="reading-time">{{ .ReadingTime }}</time> minute read, posted on <time datetime="{{ .Date }}" class="post-time">{{ .Date.Format "January 2, 2006" }}</time></p>
 	</header>
 	<section class="container markdown">
 		{{ .Content }}
@@ -17,11 +15,9 @@
 	<footer id="prev-post" class="container">
 		<a href="{{ .PrevInSection.Permalink }}" class="post--preview">
 			<article>
-				<header>
-		            <h1>{{ .PrevInSection.Title }}</h1>
-		        	<p><time class="reading-time">{{ .PrevInSection.ReadingTime }}</time> minute read, posted on <time datetime="{{ .PrevInSection.Date }}" class="post-time">{{ .PrevInSection.Date.Format "January 2, 2006" }}</time></p>
-		        </header>
-		        <section>{{ .PrevInSection.Description }}</section>
+				<h1>{{ .PrevInSection.Title }}</h1>
+            	<h2>{{ .PrevInSection.Description }}</h2>
+            	<p><time class="reading-time">{{ .PrevInSection.ReadingTime }}</time> minute read, posted on <time datetime="{{ .PrevInSection.Date }}" class="post-time">{{ .PrevInSection.Date.Format "January 2, 2006" }}</time></p>
 			</article>
 		</a>
 	</footer>
