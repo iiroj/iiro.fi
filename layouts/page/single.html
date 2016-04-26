@@ -1,10 +1,8 @@
 {{ partial "meta.html" . }}
 <body>
-  {{ partial "nav.html" . }}
-  <div id="container">
-    <main id="{{ .Section }}">
-      {{ .Content }}
+    {{ partial "nav.html" . }}
+    <main id="{{ .Section }}" class="container">
+        {{ .Content }}
     </main>
-  </div>
 </body>
 </html>

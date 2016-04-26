@@ -1,0 +1,11 @@
+<li>
+    <a href="{{ .Permalink }}" class="post--preview">
+        <article>
+            <header>
+                <h1>{{ .Title }}</h1>
+                <p><time class="reading-time">{{ .ReadingTime }}</time> minute read, posted on <time datetime="{{ .Date }}" class="post-time">{{ .Date.Format "January 2, 2006" }}</time></p>
+            </header>
+            <section>{{ .Description }}</section>
+        </article>
+    </a>
+</li>

@@ -1,10 +1,10 @@
 <nav id="nav">
-  <div>
+    <div>
     {{ $currentNode := . }}
     {{ range .Site.Menus.main }}
-      <a href="{{.URL}}"{{if ($currentNode.IsMenuCurrent "main" .) }} active{{end}}>
-        {{ .Pre }}{{ .Name }}{{ .Post }}
-      </a>
+        <a href="{{.URL}}"{{if ($currentNode.IsMenuCurrent "main" .) }} active{{end}}>
+            {{ .Pre }}{{ .Name }}{{ .Post }}
+        </a>
     {{end}}
-  </div>
+    </div>
 </nav>

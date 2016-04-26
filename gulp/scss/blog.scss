@@ -1,0 +1,46 @@
+.post {
+    > #nav {
+        background-color: rgb(242, 242, 242);
+        box-shadow: none;
+
+        a[active] { box-shadow: inset 0 -2px rgb(77, 77, 77) }
+    }
+    header div { color: rgb(154, 154, 154) }
+}
+
+#blog ul li+li { box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05); } 
+
+#prev-post {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.post--preview {
+    position: relative;
+
+    &:visited::after {
+        background-color: red;
+        content: "";
+        display: block;
+        height: 1rem;
+        position: relative;
+        width: 1rem;
+    }
+    article {
+        padding: 1rem;
+
+        &:hover section { color: inherit; }
+        header {
+            margin-bottom: 0.5rem;
+
+            p {
+                color: rgb(154, 154, 154);
+                font-size: 0.75em;
+                line-height: 0.75;
+            }
+        }
+        section {
+            color: rgb(154, 154, 154);
+            transition: color 0.2s ease;
+        }
+    }
+}

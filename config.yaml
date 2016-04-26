@@ -10,8 +10,7 @@ params:
     Email: "iiro@jappinen.fi"
 menu:
   main:
-      - Name: "Blog"
-        Post: "<i class='post'>soon</i>"
+      - Name: "Posts"
         Weight: 2
-        URL: ""
+        URL: "/post"
 ...

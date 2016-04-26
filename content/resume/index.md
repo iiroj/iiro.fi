@@ -1,6 +1,6 @@
 ---
-title: "Résumé of Iiro Jäppinen"
-description: "Printable online résumé"
+title: "Résumé"
+description: "Printable online résumé of Iiro Jäppinen"
 date: "2016-04-13"
 type: "page"
 menu:
