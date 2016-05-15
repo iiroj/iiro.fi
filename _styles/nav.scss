@@ -1,0 +1,56 @@
+#navigation {
+  display: flex;
+  height: 3rem;
+  position: fixed;
+  top: 0;
+  transition: background 0.2s ease-in, box-shadow 0.2s ease-in;
+  width: 100%;
+  z-index: 2;
+
+  &[opaque] {
+    background-color: white;
+    background: $gradient;
+    background-size: 100vw 100vh;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  p {
+    line-height: 3rem;
+    padding: 0 1rem;
+    position: relative;
+
+    &:after {
+      background-color: transparentize($color--text, 0.9);
+      content: "";
+      display: block;
+      height: 1.5rem;
+      position: absolute;
+      right: 0;
+      top: 0.75rem;
+      width: 1px;
+    }
+  }
+
+  ul {
+    line-height: 3rem;
+    margin: 0 1rem;
+    position: relative;
+    vertical-align: top;
+
+    li {
+      display: inline-block;
+
+      & + li { margin-left: 1rem }
+      a {
+        float: left;
+        transition: box-shadow 0.2s ease-in;
+        vertical-align: middle;
+
+        &[active] {
+          box-shadow: inset 0 -2px $color--text;
+        }
+      }
+    }
+  }
+
+@media print {display: none}
+}

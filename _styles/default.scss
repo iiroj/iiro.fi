@@ -1,0 +1,36 @@
+@import 'reset.scss';
+
+$gradient: linear-gradient(135deg, rgb(255,254,249) 0%,rgb(249,253,255) 100%);
+$color--text: rgb(77, 77, 77);
+
+html {height: 100%}
+
+body {
+    background-color: white;
+    background: $gradient;
+    background-size: 100vw 100vh;
+    color: $color--text;
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    font-size: 16px;
+    line-height: 1.5rem;
+    height: 100%;
+
+    @media print { background-color: white }
+}
+
+#container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  padding: 3rem 0 0 0;
+  transition: padding 0.2s ease;
+
+  > main { transition: opacity 0.2s ease-out }
+
+  @media (min-width: 720px) { padding: 4rem 0 }
+}
+
+@import 'nav.scss';
+@import 'about.scss';
+@import 'resume.scss';
