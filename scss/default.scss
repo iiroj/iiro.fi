@@ -1,0 +1,76 @@
+@import "reset.scss";
+
+body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(77, 77, 77);
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+header {
+    background-color: rgb(210, 224, 196);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: -2em;
+    min-height: 20em;
+    padding: 3em 1em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: -1;
+
+    h1 { font-size: 1.5em }
+
+    #profile {
+        background-image: url(/profile.jpg);
+        background-size: contain;
+        border-radius: 50%;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        height: 8em;
+        margin: 0 auto 1em auto;
+        width: 8em;
+    }
+
+    &::after {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.05);
+        bottom: -15%;
+        content: "";
+        display: block;
+        height: 25%;
+        left: 0;
+        position: absolute;
+        transform: skewY(-2deg);
+        width: 100%;
+    }
+}
+
+section {
+    p { margin-bottom: 1em }
+}
+
+footer {
+    ul li {
+        &+li { margin-top: 1em }
+        a {
+            display: flex;
+            line-height: 32px;
+            text-decoration: none;
+
+            &:hover { svg { margin-right: 2em } }
+            svg {
+                margin-right: 1em;
+                transition: margin 0.2s ease-out;
+            }
+        }
+    }
+}
+
+section, footer {
+    margin: 3em auto;
+    max-width: 40em;
+    padding: 0 1em;
+}
