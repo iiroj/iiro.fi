@@ -41,7 +41,7 @@ header {
 }
 
 section {
-    margin: 1em;
+    margin: 2em;
     text-align: justify;
 
     p { margin-bottom: 1em }
@@ -55,21 +55,19 @@ section {
 }
 
 footer {
-    margin: 1em;
+    margin: 0 2em;
 
     ul {
+        display: flex;
+        justify-content: space-around;
+
         li {
-            &+li { margin-top: 1em }
             a {
-                display: flex;
-                line-height: 32px;
-                text-decoration: none;
-    
-                &:hover { svg { margin-right: 2em } }
-                svg {
-                    margin-right: 1em;
-                    transition: margin 0.2s ease-out;
-                }
+                display: inline-block;
+                margin-top: 0.5em;
+                transition: margin 0.2s ease-out;
+
+                &:hover { margin-top: 0 }
             }
         }
     }
