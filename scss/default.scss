@@ -65,9 +65,12 @@ footer {
             a {
                 display: inline-block;
                 margin-top: 0.5em;
-                transition: margin 0.2s ease-out;
+                transition: all 0.2s ease-out;
 
-                &:hover { margin-top: 0 }
+                &:hover {
+                    margin-top: 0;
+                    padding-bottom: 0.5em;
+                }
             }
         }
     }
