@@ -34,7 +34,7 @@ gulp.task('webserver', function() {
         host: 'localhost',
         livereload: true,
         open: true,
-        port: 8080
+        port: 8000
     }));
 });
 
