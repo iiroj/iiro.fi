@@ -2,7 +2,11 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37Zogp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
+  src:
+    local('Roboto Slab Regular'),
+    local('RobotoSlab-Regular'),
+    url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37Zogp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2'),
+    url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZrrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
