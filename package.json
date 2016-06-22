@@ -1,19 +1,19 @@
 {
-    "name": "iiro.jappinen.fi",
-    "version": "0.1.0",
-    "author": {
-        "name": "Iiro Jäppinen",
-        "email": "iiro@jappinen.fi"
-    },
-    "description": "",
-    "readme": "",
-    "license": "",
-    "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^3.1.0",
-        "gulp-cssnano": "^2.1.2",
-        "gulp-inline": "^0.1.1",
-        "gulp-sass": "^2.3.1",
-        "gulp-webserver": "^0.9.1"
-    }
+  "name": "iiro.jappinen.fi",
+  "version": "0.1.0",
+  "author": {
+    "name": "Iiro Jäppinen",
+    "email": "iiro@jappinen.fi"
+  },
+  "description": "",
+  "readme": "",
+  "license": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-inline": "^0.1.1",
+    "gulp-sass": "^2.3.1",
+    "gulp-webserver": "^0.9.1"
+  }
 }
