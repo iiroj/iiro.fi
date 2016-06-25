@@ -3,7 +3,6 @@ const cssnano      = require('gulp-cssnano');
 const gulp         = require('gulp');
 const inline       = require('gulp-inline');
 const sass         = require('gulp-sass');
-const sourcemaps   = require('gulp-sourcemaps');
 const webserver    = require('gulp-webserver');
 
 gulp.task('scss', function() {
