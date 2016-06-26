@@ -1,4 +1,4 @@
-html, body, div, span, h1, h2, h3, p, a, i, ul, li, article, aside, figure, header, nav, section, footer {
+html, body, div, h1, p, a, ul, li, header, section, footer {
   border: 0;
   box-sizing: border-box;
   color: inherit;
@@ -7,10 +7,16 @@ html, body, div, span, h1, h2, h3, p, a, i, ul, li, article, aside, figure, head
   margin: 0;
   padding: 0;
   text-decoration: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
-article, aside, header, nav, section {display: block}
-body {line-height: 1}
-ul {list-style: none}
-a {cursor: pointer}
+article, header, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ul {
+  list-style: none; }
+
+a {
+  cursor: pointer; }
