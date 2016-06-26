@@ -3,18 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "npm run build-scss",
-    "postbuild": "npm run build-html",
-    "build-css": "postcss -u autoprefixer --autoprefixer.browsers 'last 2 version' -u cssnano -o src/static/style.css",
-    "postbuild-css": "npm run build-html",
-    "build-html": "inline-source --root ./src/static src/index.html > dist/index.html",
-    "build-scss": "node-sass src/scss/index.scss | npm run build-css",
-    "server": "live-server dist/ --quiet --watch src/",
     "start": "npm run watch & npm run server",
-    "watch": "npm run watch-assets & npm run watch-scss & npm run watch-html",
-    "watch-assets": "onchange 'src/static/{*.ico,*.jpg,*.png}' -i -- cp src/static/{*.ico,*.jpg,*.png} dist/",
-    "watch-scss": "onchange 'src/scss/*.scss' -i -- npm run build-scss",
-    "watch-html": "onchange 'src/index.html' -i -- npm run build-html"
+    "build": "npm run build:scss && npm run build:css && npm run build:html",
+    "build:scss": "node-sass src/scss/index.scss | postcss -u autoprefixer --autoprefixer.browsers 'last 2 version' -o src/static/style.css",
+    "build:css": "postcss -u cssnano -o src/static/style.min.css src/static/style.css",
+    "build:html": "inline-source --root ./src/static src/index.html > dist/index.html",
+    "server": "live-server dist/ --quiet --watch dist/",
+    "watch": "npm run watch:assets & npm run watch:dynamic",
+    "watch:assets": "onchange 'src/static/{*.ico,*.jpg,*.png}' -i -- cp src/static/{*.ico,*.jpg,*.png} dist/",
+    "watch:dynamic": "onchange 'src/scss/*.scss' 'src/index.html' -i -- npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
