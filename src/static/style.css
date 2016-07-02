@@ -71,8 +71,15 @@ body {
     margin-right: 1rem;
     width: 2rem; }
 
-.footer {
-  margin-bottom: 1rem; }
+.section {
+  text-align: justify; }
+  .section p {
+    margin-top: 1rem; }
+  .section a {
+    box-shadow: inset 0 -1px 0 #d2e0c4;
+    transition: box-shadow 0.1s ease-in-out; }
+    .section a:hover {
+      box-shadow: inset 0 -1.5rem 0 #d2e0c4; }
 
 .link {
   display: -ms-flexbox;
@@ -93,14 +100,4 @@ body {
     line-height: 2rem;
     padding-left: 0.5rem;
     transition: box-shadow 0.1s ease-in-out; }
-
-.section {
-  text-align: justify; }
-  .section p {
-    margin-top: 1rem; }
-  .section a {
-    box-shadow: inset 0 -1px 0 #d2e0c4;
-    transition: box-shadow 0.1s ease-in-out; }
-    .section a:hover {
-      box-shadow: inset 0 -1.5rem 0 #d2e0c4; }
 
