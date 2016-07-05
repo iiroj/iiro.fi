@@ -40,17 +40,32 @@ a {
   src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37Zogp9Q8gbYrhqGlRav_IXfk.woff2) format("woff2"), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZrrIa-7acMAeDBVuclsi6Gc.woff) format("woff");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
 
+html {
+  height: 100%; }
+
 body {
-  background-color: white;
+  background-color: #f2f2f2;
   color: #4d4d4d;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
   font-family: "Roboto Slab", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
+  -ms-flex-pack: center;
+      justify-content: center;
   line-height: 1.5rem;
   margin: 0 auto;
   max-width: 40rem;
-  padding: 2rem;
-  position: relative; }
+  min-height: 100%; }
+  body main {
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transform: skewY(2deg); }
+    body main > * {
+      transform: skewY(-2deg); }
 
 .header {
   display: -ms-flexbox;
