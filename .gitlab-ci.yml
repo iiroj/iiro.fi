@@ -15,7 +15,7 @@ build:
       - build
     key: "$CI_BUILD_REF"
     untracked: true
-  artefacts:
+  artifacts:
     paths:
       - node_modules
 
