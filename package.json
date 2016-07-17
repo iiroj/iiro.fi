@@ -7,10 +7,10 @@
     "build": "npm run build:scss && npm run build:css && npm run build:html",
     "build:scss": "node-sass src/scss/index.scss | postcss -u autoprefixer --autoprefixer.browsers 'last 2 version' -o src/static/style.css",
     "build:css": "postcss -u cssnano -o src/static/style.min.css src/static/style.css",
-    "build:html": "inline-source --root ./src/static src/index.html > dist/index.html",
-    "server": "live-server dist/ --quiet --watch dist/",
+    "build:html": "inline-source --root ./src/static src/index.html > build/index.html",
+    "server": "live-server build/ --quiet --watch build/",
     "watch": "npm run watch:assets & npm run watch:dynamic",
-    "watch:assets": "onchange 'src/static/{*.ico,*.jpg,*.png}' -i -- cp src/static/{*.ico,*.jpg,*.png} dist/",
+    "watch:assets": "onchange 'src/static/{*.ico,*.jpg,*.png}' -i -- cp src/static/{*.ico,*.jpg,*.png} build/",
     "watch:dynamic": "onchange 'src/scss/*.scss' 'src/index.html' -i -- npm run build"
   },
   "devDependencies": {
