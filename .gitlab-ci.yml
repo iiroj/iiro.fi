@@ -15,9 +15,6 @@ build:
       - build
     key: "$CI_BUILD_REF"
     untracked: true
-  artifacts:
-    paths:
-      - node_modules
 
 deploy:
   stage: deploy
