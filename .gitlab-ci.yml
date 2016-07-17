@@ -1,5 +1,6 @@
 stages:
   - build
+  - deploy
 
 build:
   stage: build
@@ -7,4 +8,14 @@ build:
     - npm install
     - mkdir -p build
     - npm run build
+  cache:
+    paths:
+      - node_modules/
+      - build/
+    key: "$CI_BUILD_NAME"
+    untracked: true
+
+deploy:
+  stage: deploy
+  script:
     - cp build/* /var/www/iiro.fi/
