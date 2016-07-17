@@ -1,6 +1,5 @@
 stages:
   - build
-  - deploy
 
 build:
   stage: build
@@ -9,9 +8,8 @@ build:
     - mkdir -p build
     - npm run build
     - cp build/* /var/www/iiro.fi/
-
-cache:
-  paths:
-    - node_modules
-  key: "$CI_BUILD_REF"
-  untracked: true
+  cache:
+    paths:
+      - node_modules
+    key: "$CI_BUILD_REF"
+    untracked: true
