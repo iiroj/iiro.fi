@@ -7,6 +7,7 @@ build:
     - npm install
     - mkdir -p build
     - npm run build
+    - rm -fr /var/www/iiro.fi/*
     - cp build/* /var/www/iiro.fi/
   cache:
     paths:
