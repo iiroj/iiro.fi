@@ -8,12 +8,11 @@ build:
     - npm install
     - mkdir -p build
     - npm run build
-    - ls .
-  cache:
+  artifacts:
     paths:
       - build/
 
 deploy:
   stage: deploy
   script:
-    - cp ./build/* /var/www/iiro.fi/
+    - cp build/* /var/www/iiro.fi/
