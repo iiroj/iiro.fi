@@ -9,13 +9,14 @@ build:
     - mkdir -p build
     - npm run build
     - cp build/* /var/www/iiro.fi/
-  cache:
-    paths:
-      - node_modules
-      - build
-    key: "$CI_BUILD_REF"
-    untracked: true
 
 deploy:
   stage: deploy
   script: cp build/* /var/www/iiro.fi/
+
+cache:
+  paths:
+    - node_modules
+    - build
+  key: "$CI_BUILD_REF"
+  untracked: true
