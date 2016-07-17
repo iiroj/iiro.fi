@@ -2,11 +2,6 @@ stages:
   - build
   - deploy
 
-clone:
-  stage: build
-  script:
-    - git clone git@gitlab.com:iiroj/iiro.fi.git .
-
 build:
   stage: build
   script:
