@@ -1,6 +1,5 @@
 stages:
   - build
-  - deploy
 
 build:
   stage: build
@@ -8,11 +7,4 @@ build:
     - npm install
     - mkdir -p build
     - npm run build
-  artifacts:
-    paths:
-      - build/
-
-deploy:
-  stage: deploy
-  script:
     - cp build/* /var/www/iiro.fi/
