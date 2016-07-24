@@ -37,7 +37,7 @@ html {
   height: 100%; }
 
 body {
-  background-color: #f2f2f2;
+  background-color: white;
   color: #4d4d4d;
   display: -ms-flexbox;
   display: flex;
@@ -53,12 +53,7 @@ body {
   max-width: 40rem;
   min-height: 100%; }
   body main {
-    background-color: white;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    transform: skewY(2deg); }
-    body main > * {
-      transform: skewY(-2deg); }
+    padding: 2rem; }
 
 .header {
   display: -ms-flexbox;
