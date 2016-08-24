@@ -1,17 +1,31 @@
 stages:
+  - install
+  - build
   - deploy
+
+cache:
+  key: "$CI_PROJECT_NAME"
+  paths:
+    - node_modules
+    - build
+
+install:
+  stage: install
+  environment: Production
+  script:
+    - npm install
+
+build:
+  stage: build
+  environment: Production
+  script:
+    - rm -r build/*
+    - mkdir -p build
+    - npm run build
 
 deploy:
   stage: deploy
   environment: Production
   script:
-    - npm install
-    - mkdir -p build
-    - npm run build
-    - rm -fr /var/www/iiro.fi/*
+    - rm -r /var/www/iiro.fi/*
     - cp build/* /var/www/iiro.fi/
-  cache:
-    paths:
-      - node_modules
-    key: "$CI_BUILD_REF"
-    untracked: true
