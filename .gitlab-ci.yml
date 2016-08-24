@@ -19,7 +19,7 @@ build:
   stage: build
   environment: Production
   script:
-    - rm -r build/*
+    - rm -frv build/*
     - mkdir -p build
     - npm run build
 
@@ -27,5 +27,5 @@ deploy:
   stage: deploy
   environment: Production
   script:
-    - rm -r /var/www/iiro.fi/*
+    - rm -frv /var/www/iiro.fi/*
     - cp build/* /var/www/iiro.fi/
