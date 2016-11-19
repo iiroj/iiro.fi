@@ -15,12 +15,12 @@
     "watch:dynamic": "onchange 'src/scss/*.scss' 'src/index.html' -i -- npm run build"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "cssnano": "^3.7.1",
-    "inline-source-cli": "^1.1.1",
-    "live-server": "^1.0.0",
-    "node-sass": "^3.8.0",
-    "onchange": "^2.5.0",
-    "postcss-cli": "^2.5.2"
+    "autoprefixer": "*",
+    "cssnano": "*",
+    "inline-source-cli": "*",
+    "live-server": "*",
+    "node-sass": "*",
+    "onchange": "*",
+    "postcss-cli": "*"
   }
 }
