@@ -1,0 +1,18 @@
+.back {
+  composes: fadeIn from '_template.module.css';
+  animation-delay: 0.3s;
+}
+
+.back {
+  composes: button from '_template.module.css';
+  left: 1rem;
+  position: fixed;
+  top: 1.25rem;
+  z-index: 10;
+}
+
+@media print {
+  .back {
+    display: none !important;
+  }
+}

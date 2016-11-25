@@ -1,0 +1,37 @@
+.container {
+  composes: fadeIn from '_template.module.css';
+}
+
+.about {
+  composes: container from '_template.module.css';
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.about h1, h2 {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.about strong {
+  font-weight: 500;
+}
+
+.about p {
+  margin-bottom: 0.5rem;
+}
+
+.darkGrey {
+  color: rgb(116, 116, 116);
+}
+
+.mediumGrey {
+  color: rgb(154, 154, 154);
+}
+
+.columns {
+  composes: container from '_template.module.css';
+  margin: 1rem auto 2rem auto;
+  display: flex;
+  flex-direction: row;
+}

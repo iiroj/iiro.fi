@@ -1,0 +1,86 @@
+.main {
+  composes: fadeIn from '_template.module.css';
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 38rem;
+  padding: 4rem 1rem;
+}
+
+.hgroup {
+  padding-bottom: 2rem;
+}
+
+.title {
+  composes: fancyFontFamily from '_template.module.css';
+}
+
+.subtitle, .meta {
+  color: rgb(142, 142, 142);
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+.post h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.post p {
+  margin-bottom: 0.5rem;
+}
+
+.post em {
+  font-style: oblique;
+}
+
+.post strong {
+  font-weight: 500;
+}
+
+.post s {
+  color: rgb(116, 116, 116);
+  text-decoration: line-through;
+}
+
+.post ul, ol {
+  list-style-type: square;
+  margin: 0 -0.5rem 0.5rem -0.5rem;;
+  padding: 0 1rem;
+}
+
+.post ol {
+  list-style-type: decimal;
+}
+
+.post hr {
+  border: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  height: 1px;
+  margin: 2rem -1rem;
+}
+
+.post img {
+  display: block;
+  margin: 3rem auto;
+  max-height: 75vh;
+  max-width: 100%;
+}
+
+.post blockquote {
+  box-shadow: inset 2px 0 0 rgba(0, 0, 0, 0.1);
+  margin: 0 -0.5rem;
+  padding: 0 1rem;
+}
+
+.post blockquote cite {
+  color: rgb(142, 142, 142);
+  display: block;
+}
+
+.post code {
+  background-color: rgb(242, 242, 242);
+  border-radius: 2px;
+  padding: 2px 4px;
+}

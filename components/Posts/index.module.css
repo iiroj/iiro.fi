@@ -1,0 +1,21 @@
+.container {
+  composes: container from '_template.module.css';
+  margin: 0 auto;
+  padding: 0 1rem 4rem 1rem;
+}
+
+.container h2 {
+  font-weight: 500;
+  margin-bottom:0.5rem;
+}
+
+.list {
+  list-style-type: square;
+  margin: 0 -0.5rem;
+  padding: 0 1rem;
+}
+
+.post h2 {
+  font-weight: inherit;
+  margin: 0;
+}

@@ -1,0 +1,9 @@
+.container {
+  composes: fadeIn from '_template.module.css';
+}
+
+.comingLater {
+  composes: fancyFontFamily from '_template.module.css';
+  padding: 4rem 1rem;
+  text-align: center;
+}
