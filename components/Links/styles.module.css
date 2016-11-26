@@ -18,10 +18,20 @@
   margin-bottom: 1rem;
 }
 
+.list > div li {
+  flex: 1;
+}
+
 .list .link {
+  align-items: center;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
+}
+
+.list .link:hover {
+  box-shadow: none;
 }
 
 .link img {
@@ -32,6 +42,9 @@
 
 .link h2 {
   font-weight: inherit;
-  margin: 0.5rem 0 0 0;
   line-height: 1rem;
+}
+
+.link:hover h2 {
+  box-shadow: inset 0 -1rem 0 rgb(255, 222, 128);
 }
