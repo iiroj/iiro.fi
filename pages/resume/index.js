@@ -36,7 +36,7 @@ function Resume () {
               <h1 className={styles.name}>Iiro Jäppinen</h1>
               <div>
                 <h2>Résumé</h2>
-                <time dateTime='2016-11-25'>November 25th 2016</time>
+                <time dateTime='2016-11-25'>Fri Now 25 2016</time>
               </div>
             </header>
             <section className={styles.section}>
