@@ -7,76 +7,69 @@ import { default as email } from './link-email.svg'
 import { default as linkedin } from './link-linkedin.svg'
 import { default as dribbble } from './link-dribbble.svg'
 import { default as github } from './link-github.svg'
-import { default as gitlab } from './link-gitlab.svg'
 
 function Links () {
   return (
     <article className={styles.container}>
-      <h2>Links</h2>
       <ul className={styles.list}>
-        <li>
-          <Link
-            to={'/resume/'}
-            className={styles.link}
-          >
-            <img src={resume} />
-            <span>Résumé</span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            to={'/portfolio/'}
-            className={styles.link}
-          >
-            <img src={portfolio} />
-            <span>Portfolio</span>
-          </Link>
-        </li>
-        <li>
-          <a
-            href='mailto:iiro@jappinen.fi'
-            className={styles.link}
-          >
-            <img src={email} />
-            <span>Email</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://fi.linkedin.com/in/iiroj'
-            className={styles.link}
-          >
-            <img src={linkedin} />
-            <span>LinkedIn</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://dribbble.com/iiroj'
-            className={styles.link}
-          >
-            <img src={dribbble} />
-            <span>Dribbble</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://github.com/iiroj'
-            className={styles.link}
-          >
-            <img src={github} />
-            <span>GitHub</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://gitlab.com/u/iiroj'
-            className={styles.link}
-          >
-            <img src={gitlab} />
-            <span>GitLab</span>
-          </a>
-        </li>
+        <div>
+          <li>
+            <Link
+              to={'/resume/'}
+              className={styles.link}
+            >
+              <img src={resume} />
+              <h2>Résumé</h2>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={'/portfolio/'}
+              className={styles.link}
+            >
+              <img src={portfolio} />
+              <h2>Portfolio</h2>
+            </Link>
+          </li>
+          <li>
+            <a
+              href='mailto:iiro@jappinen.fi'
+              className={styles.link}
+            >
+              <img src={email} />
+              <h2>Email</h2>
+            </a>
+          </li>
+        </div>
+        <div>
+          <li>
+            <a
+              href='https://fi.linkedin.com/in/iiroj'
+              className={styles.link}
+            >
+              <img src={linkedin} />
+              <h2>LinkedIn</h2>
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://dribbble.com/iiroj'
+              className={styles.link}
+            >
+              <img src={dribbble} />
+              <h2>Dribbble</h2>
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://github.com/iiroj'
+              className={styles.link}
+            >
+              <img src={github} />
+              <h2>GitHub</h2>
+            </a>
+          </li>
+        </div>
       </ul>
     </article>
   )
