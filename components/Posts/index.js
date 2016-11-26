@@ -4,22 +4,23 @@ import styles from './index.module.css'
 
 function Posts (props) {
   const posts = props.posts.map((post) => {
+    const postRawDate = post.data.date
+    const postDate = new Date(postRawDate).toDateString()
+
     return (
       <li key={post.path} >
-        <article className={styles.post}>
-          <h2>
-            <Link to={post.path}>
-              {post.data.title}
-            </Link>
-          </h2>
-        </article>
+        <Link to={post.path}>
+          <article className={styles.post}>
+            <h1 className={styles.heading}>{post.data.title}</h1>
+            <time className={styles.time} dateTime={postRawDate}>{postDate}</time>
+          </article>
+      </Link>
       </li>
     )
   })
 
   return (
     <div className={styles.container}>
-      <h2>Posts</h2>
       <ul className={styles.list}>
         {posts}
       </ul>

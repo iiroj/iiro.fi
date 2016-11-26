@@ -1,21 +1,44 @@
 .container {
   composes: container from '_template.module.css';
   margin: 0 auto;
-  padding: 0 1rem 4rem 1rem;
-}
-
-.container h2 {
-  font-weight: 500;
-  margin: 0 0 0.5rem 0;
-}
-
-.list {
-  list-style-type: square;
-  margin: 0 -0.5rem;
   padding: 0 1rem;
 }
 
-.post h2 {
-  font-weight: inherit;
+.list li + li {
+  margin-top: 0.5rem;
+}
+
+.post {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 1px 1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem;
+  transition: box-shadow 0.2s ease-out;
+}
+
+.post:hover {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post:active {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  composes: fancyFontFamily from '_template.module.css';
+  line-height: 1rem;
   margin: 0;
+}
+
+.time {
+  color: rgb(142, 142, 142);
+  line-height: 1.2rem;
+  font-style: oblique;
 }
