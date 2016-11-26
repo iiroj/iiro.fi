@@ -1,6 +1,6 @@
 .container {
   composes: container from '_template.module.css';
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
   padding: 0 1rem;
 }
 
