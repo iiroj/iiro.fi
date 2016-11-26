@@ -55,7 +55,6 @@ function Index (props) {
       />
       <main className={styles.about}>
         <header>
-          <h1>About me</h1>
           <p><strong>I'm Iiro Jäppinen</strong>. I design user interfaces, icons and logos. Lately I’ve been defining user stories and turning them into valuable experiences.</p>
         </header>
         <section>
@@ -63,10 +62,8 @@ function Index (props) {
           <p className={styles.mediumGrey}><strong>Before that</strong> I helped design the <a href='https://www.humblebundle.com' target='_blank' rel='noopener noreferrer'>Humble Indie Bundle</a> brand and concept. I moved to San Francisco in the process but have then returned to Helsinki, Finland. You can reach me online for the occasional icon.</p>
         </section>
       </main>
-      <div className={styles.columns}>
-        <Links />
-        <Posts posts={posts} />
-      </div>
+      <Links />
+      <Posts posts={posts} />
     </div>
   )
 }

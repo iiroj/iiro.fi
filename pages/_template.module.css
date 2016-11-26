@@ -35,7 +35,7 @@
 }
 
 .root a:hover {
-  box-shadow: inset 0 -1.5rem 0 rgb(255, 222, 128);
+  box-shadow: inset 0 -1rem 0 rgb(255, 222, 128);
 }
 
 .root a:active {
