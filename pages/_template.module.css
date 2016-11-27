@@ -74,17 +74,23 @@
   }
 }
 
-.button {
-  background-color: rgb(242, 242, 242);
-  border-radius: 0.75rem;
-  box-shadow: none !important;
-  padding: 0 1rem;
-  transition:
-    background-color 0.3s ease-out;
-  display: inline-block;
+.shadow {
+  background-color: rgb(255, 255, 255);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 1px 1px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  transition: box-shadow 0.2s ease-out;
 }
 
-.button:hover {
-  background-color: rgb(255, 222, 128);
-  transition: none;
+.shadow:hover {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shadow:active {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 4px 8px rgba(0, 0, 0, 0.1);
 }
