@@ -3,7 +3,7 @@
   color: white;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 75vh;
   justify-content: center;
   overflow: hidden;
   padding: 2rem 0;
