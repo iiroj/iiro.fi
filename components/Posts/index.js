@@ -14,7 +14,7 @@ function Posts (props) {
             <h1 className={styles.heading}>{post.data.title}</h1>
             <time className={styles.time} dateTime={postRawDate}>{postDate}</time>
           </article>
-      </Link>
+        </Link>
       </li>
     )
   })
