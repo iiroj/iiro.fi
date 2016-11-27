@@ -71,7 +71,7 @@ function Post (props) {
         ]}
       />
       <Back />
-      <main className={styles.main}>
+      <main className={styles.post}>
         <hgroup className={styles.hgroup}>
           <h1 className={styles.title}>{postTitle}</h1>
           <h6 className={styles.meta}>
@@ -81,7 +81,7 @@ function Post (props) {
           </h6>
         </hgroup>
         <div
-          className={styles.post}
+          className={styles.postBody}
           dangerouslySetInnerHTML={{ __html: body }}
         />
       </main>

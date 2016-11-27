@@ -1,9 +1,9 @@
-.main {
+.post {
   composes: fadeIn from '_template.module.css';
   box-sizing: border-box;
   margin: 0 auto;
   max-width: 38rem;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .hgroup {
@@ -21,65 +21,69 @@
   margin: 0;
 }
 
-.post h1, h2, h3, h4, h5, h6 {
+.postBody {
+  composes: underlineA from '_template.module.css';
+}
+
+.postBody h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: 500;
   margin: 1rem 0;
 }
 
-.post p {
+.postBody p {
   margin-bottom: 0.5rem;
 }
 
-.post em {
+.postBody em {
   font-style: oblique;
 }
 
-.post strong {
+.postBody strong {
   font-weight: 500;
 }
 
-.post s {
+.postBody s {
   color: rgb(116, 116, 116);
   text-decoration: line-through;
 }
 
-.post ul, ol {
+.postBody ul, .postBody ol {
   list-style-type: square;
   margin: 0 -0.5rem 0.5rem -0.5rem;;
   padding: 0 1rem;
 }
 
-.post ol {
+.postBody ol {
   list-style-type: decimal;
 }
 
-.post hr {
+.postBody hr {
   border: none;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   height: 1px;
   margin: 2rem -1rem;
 }
 
-.post img {
+.postBody img {
   display: block;
   margin: 3rem auto;
   max-height: 75vh;
   max-width: 100%;
 }
 
-.post blockquote {
+.postBody blockquote {
   box-shadow: inset 2px 0 0 rgba(0, 0, 0, 0.1);
   margin: 0 -0.5rem;
   padding: 0 1rem;
 }
 
-.post blockquote cite {
+.postBody blockquote cite {
   color: rgb(142, 142, 142);
   display: block;
 }
 
-.post code {
+.postBody code {
   background-color: rgb(242, 242, 242);
   border-radius: 2px;
   padding: 2px 4px;
