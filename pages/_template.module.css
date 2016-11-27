@@ -21,24 +21,23 @@
 .root {
   composes: defaultFontFamily;
   composes: defaultFontStyle;
-  min-height: 100%;
 }
 
 .root *::selection {
   background-color: rgb(206, 204, 255);
 }
 
-.root a {
+.underlineA a {
   box-shadow: inset 0 -4px 0 rgb(255, 222, 128);
   color: inherit;
   text-decoration: none;
 }
 
-.root a:hover {
+.underlineA a:hover {
   box-shadow: inset 0 -1rem 0 rgb(255, 222, 128);
 }
 
-.root a:active {
+.underlineA a:active {
   color: rgb(0, 0, 0);
 }
 

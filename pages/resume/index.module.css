@@ -5,10 +5,11 @@
 
 .resume {
   composes: container from '_template.module.css';
+  composes: underlineA from '_template.module.css';
   background-color: white;
   display: flex;
   flex-wrap: wrap;
-  margin: 4rem auto;
+  margin: 2rem auto;
   max-width: 210mm;
   padding-bottom: 0;
   position: relative;

@@ -4,6 +4,7 @@
 
 .about {
   composes: container from '_template.module.css';
+  composes: underlineA from '_template.module.css';
   margin: 1rem auto;
   padding: 0 1rem;
 }
