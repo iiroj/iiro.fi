@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-
-import styles from './VerkkokauppaCom.module.css'
+import styles from './index.module.css'
 
 const iphone = require('./iphone.png')
 const ipad = require('./ipad.png')
