@@ -3,10 +3,10 @@ export function modifyWebpackConfig (config, env) {
     resolve: {
       root: [
         `${__dirname}/components`,
-        `${__dirname}/layouts`,
-        `${__dirname}/pages`
+        `${__dirname}/pages`,
+        `${__dirname}/utils`
       ],
-      extensions: ['', '.js', '.jsx', '.css', '.module.css']
+      extensions: ['', '.js', '.js', '.css', '.module.css', '.scss']
     }
   })
   return config
