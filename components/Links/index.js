@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import styles from './styles.module.css'
+import styles from './index.module.css'
 import { default as resume } from './link-resume.svg'
 import { default as portfolio } from './link-portfolio.svg'
 import { default as email } from './link-email.svg'
