@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import Back from 'Back'
+import About from 'About'
 import { config } from 'config'
 import styles from './index.module.css'
 
@@ -84,6 +85,7 @@ function Post (props) {
           className={styles.postBody}
           dangerouslySetInnerHTML={{ __html: body }}
         />
+      <About />
       </main>
     </div>
   )
