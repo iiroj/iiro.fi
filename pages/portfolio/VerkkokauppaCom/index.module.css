@@ -27,6 +27,7 @@
   min-height: 640px;
   position: relative;
   flex: auto;
+  width: 100%;
 }
 
 .iphone {
