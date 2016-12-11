@@ -23,8 +23,14 @@ function HTML (props) {
         <link rel='icon' sizes='600x600' href='/icon.png' />
         <link rel='apple-touch-icon' href='/icon.png' />
         <link
+          rel='preload'
+          href={prefixLink(`/bundle.js?t=${BUILD_TIME}`)}
+          as='script'
+        />
+        <link
+          rel='preload stylesheet'
           href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700'
-          rel='stylesheet subresource'
+          as='stylesheet'
         />
         {head.title.toComponent()}
         {head.meta.toComponent()}
@@ -37,8 +43,8 @@ function HTML (props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         <script
+          async
           src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)}
-          defer
         />
       </body>
     </html>
