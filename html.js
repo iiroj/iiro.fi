@@ -30,7 +30,7 @@ function HTML (props) {
         <link
           rel='preload stylesheet'
           href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700'
-          as='stylesheet'
+          as='style'
         />
         {head.title.toComponent()}
         {head.meta.toComponent()}
