@@ -84,8 +84,17 @@
   display: block;
 }
 
+.postBody pre {
+  background-color: rgb(242, 242, 242);
+  border-radius: 2px;
+  overflow-x: scroll;
+  padding: 1rem;
+}
+
 .postBody code {
   background-color: rgb(242, 242, 242);
   border-radius: 2px;
+  font-family: 'Menlo', monospace;
+  font-size: 0.8rem;
   padding: 2px 4px;
 }
