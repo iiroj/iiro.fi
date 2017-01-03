@@ -1,4 +1,4 @@
-# @iiro.fi/blog
+# iiro.fi
 
 A static blog made with [Gatsby](https://github.com/gatsbyjs/gatsby).
 
