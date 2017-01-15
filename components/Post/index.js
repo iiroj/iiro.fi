@@ -72,21 +72,23 @@ function Post (props) {
         ]}
       />
       <Back />
-      <main className={styles.post}>
-        <hgroup className={styles.hgroup}>
-          <h1 className={styles.title}>{postTitle}</h1>
-          <h6 className={styles.meta}>
-            <span>On </span>
-            <time dateTime={postRawDate}>{postDate}</time>
-            <span>, by {config.authorName}</span>
-          </h6>
-        </hgroup>
-        <div
-          className={styles.postBody}
-          dangerouslySetInnerHTML={{ __html: body }}
-        />
-        <About />
-      </main>
+      <div className={styles.postContainer}>
+        <main className={styles.post}>
+          <hgroup className={styles.hgroup}>
+            <h1 className={styles.title}>{postTitle}</h1>
+            <h6 className={styles.meta}>
+              <span>On </span>
+              <time dateTime={postRawDate}>{postDate}</time>
+              <span>, by {config.authorName}</span>
+            </h6>
+          </hgroup>
+          <div
+            className={styles.postBody}
+            dangerouslySetInnerHTML={{ __html: body }}
+          />
+        </main>
+      </div>
+      <About />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 .container {
-  composes: fadeIn from '_template.module.css';
+  composes: wrapper from '_template.module.css';
 }
 
 .about {

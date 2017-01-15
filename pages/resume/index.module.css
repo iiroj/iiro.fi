@@ -1,6 +1,5 @@
 .wrapper {
   composes: wrapper from '_template.module.css';
-  composes: fadeIn from '_template.module.css';
 }
 
 .resume {

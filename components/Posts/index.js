@@ -8,7 +8,7 @@ function Posts (props) {
     const postDate = new Date(postRawDate).toDateString()
 
     return (
-      <li key={post.path} >
+      <li className={styles.listItem} key={post.path}>
         <Link to={post.path}>
           <article className={styles.post}>
             <h1 className={styles.heading}>{post.data.title}</h1>
