@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Back from 'Back'
+import Image from 'Image'
 import { config } from 'config'
 import styles from './index.module.css'
 
@@ -32,7 +33,7 @@ function Resume () {
         <article className={styles.resume}>
           <div className={styles.leftColumn}>
             <header className={styles.header}>
-              <img className={styles.headerPicture} src='/profile.jpg' />
+              <Image />
               <h1 className={styles.name}>Iiro Jäppinen</h1>
               <div>
                 <h2>Résumé</h2>

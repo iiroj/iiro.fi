@@ -9,6 +9,20 @@
   padding: 0 1rem;
 }
 
+.header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header img {
+  margin: 0 1rem 0.5rem 0;
+}
+
+.headerText {
+  composes: fancyFontFamily from '_template.module.css';
+}
+
 .about h1, h2 {
   font-weight: 500;
   margin-bottom: 0.5rem;
