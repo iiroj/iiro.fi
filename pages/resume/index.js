@@ -41,7 +41,7 @@ function Resume () {
               </div>
             </header>
             <section className={styles.section}>
-              <p>I am an UX/UI designer with a passion for precise pixels and intelligent solutions. I hate meetings and will rather make decisions and plans in person when needed. I love agile methods and became a Scrum Certified <a href='https://www.scrumalliance.org/community/profile/ijappinen'>Product Owner</a> and <a href='https://www.scrumalliance.org/community/profile/ijappinen'>Scrum Master</a>.</p>
+              <p>I am an UX/UI designer with a passion for precise pixels and intelligent solutions. I love agile methods and became a Scrum Certified <a href='https://www.scrumalliance.org/community/profile/ijappinen'>Product Owner</a> and <a href='https://www.scrumalliance.org/community/profile/ijappinen'>Scrum Master</a>. I prefer workshops and demo sessions to boring meetings without purpose.</p>
               <p>As an <strong>UX designer</strong> I aim to understand users and create solutions perfect for them. I believe fancy designs are not worth anything unless they are intuitive and usable.</p>
               <p>As an <strong>UI designer</strong> I want to create visually stunning designs that delight and guide users to their goals. I help developers with styling and layout thanks to my knowledge of modern<s>ish</s> web technologies.</p>
             </section>
