@@ -16,6 +16,12 @@
     "deploy": "./utils/deploy.sh"
   },
   "dependencies": {
+    "gatsby": "*",
+    "react-dom": "*",
+    "react-helmet": "*",
+    "react": "*"
+  },
+  "devDependencies": {
     "babel-eslint": "*",
     "babel-plugin-add-module-exports": "*",
     "babel-plugin-transform-class-properties": "*",
@@ -30,10 +36,6 @@
     "eslint-plugin-react": "*",
     "eslint-plugin-standard": "*",
     "eslint": "*",
-    "gatsby": "*",
-    "react-dom": "*",
-    "react-helmet": "*",
-    "react": "*",
     "toml-js": "*"
   },
   "private": true,
