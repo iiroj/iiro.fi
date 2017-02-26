@@ -13,6 +13,13 @@ export default function VerkkokauppaCom () {
           As the resident web designer,
           I oversee the visual direction of Verkkokauppa.com's
           website.</p>
+          <a
+            href="https://www.verkkokauppa.com/"
+            target="_blank"
+            className={styles.headerLink}
+          >
+            Visit Verkkokauppa.com
+          </a>
         </div>
         <div className={styles.frontPageContainer}>
           <img
