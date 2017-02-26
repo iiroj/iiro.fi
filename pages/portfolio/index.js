@@ -23,7 +23,7 @@ export default function Portfolio () {
   return (
     <div>
       <Helmet
-        title='Portfolio'
+        title='Portfolio of Iiro Jäppinen'
         script={[
           {'type': 'application/ld+json', 'innerHTML': breadcrumb}
         ]}
