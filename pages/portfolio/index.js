@@ -36,6 +36,9 @@ export default function Portfolio () {
           <h1>Portfolio of Iiro Jäppinen</h1>
         </header>
         <VerkkokauppaCom />
+        <aside>
+          <p className={styles.more}>With more coming soon...</p>
+        </aside>
       </div>
     </div>
   )

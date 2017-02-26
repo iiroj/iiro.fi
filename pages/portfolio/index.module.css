@@ -55,3 +55,9 @@
   padding: 2rem 3rem 4rem;
   text-align: center;
 }
+
+.more {
+  composes: fancyFontFamily from '_template.module.css';
+  margin: 4rem auto;
+  text-align: center;
+}
