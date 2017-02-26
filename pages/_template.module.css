@@ -1,3 +1,7 @@
+body {
+  background: rgb(242, 242, 242);
+}
+
 .defaultFontStyle {
   color: rgb(77, 77, 77);
   font-size: 14px;
@@ -25,6 +29,11 @@
 
 .root *::selection {
   background-color: rgb(206, 204, 255);
+}
+
+.root a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .underlineA a {
