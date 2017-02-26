@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import 'utils/reset.scss'
+import 'reset.css/reset.css'
 import styles from '_template.module.css'
 
 function Template (props) {
@@ -18,3 +18,4 @@ Template.propTypes = {
 }
 
 export default Template
+  
