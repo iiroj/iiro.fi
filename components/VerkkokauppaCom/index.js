@@ -32,6 +32,9 @@ export default function VerkkokauppaCom () {
           <img
             className={styles.frontPageImage}
             src="verkkokauppa.com/frontpage.jpg"
+            srcSet="verkkokauppa.com/frontpage.jpg 1x,
+                    verkkokauppa.com/frontpage@2x.jpg 2x,
+                    verkkokauppa.com/frontpage@3x.jpg 3x"
           />
         </div>
       </header>
@@ -50,15 +53,30 @@ export default function VerkkokauppaCom () {
             src="verkkokauppa.com/list.png"
             srcSet="verkkokauppa.com/list.png 1x,
                     verkkokauppa.com/list@2x.png 2x,
-                    verkkokauppa.com/list@3x.png 3"
+                    verkkokauppa.com/list@3x.png 3x"
           />
           <img
             src="verkkokauppa.com/dialog.png"
             srcSet="verkkokauppa.com/dialog.png 1x,
                     verkkokauppa.com/dialog@2x.png 2x,
-                    verkkokauppa.com/dialog@3x.png 3"
+                    verkkokauppa.com/dialog@3x.png 3x"
           />
         </figure>
+      </section>
+      <section className={styles.ipad}>
+        <img
+          className={styles.ipadImage}
+          src="verkkokauppa.com/ipad.jpg"
+          srcSet="verkkokauppa.com/ipad.jpg 1x,
+                  verkkokauppa.com/ipad@2x.jpg 2x,
+                  verkkokauppa.com/ipad@3x.jpg 3x"
+        />
+        <div className={styles.ipadText}>
+          <h2 className={styles.ipadTextHeading}>Self-Service order pickup</h2>
+          <p>Customers need to check their order in for pick-up at the Verkkokauppa.com Helsinki store, because of the massive amount of daily customers.</p>
+          <p>To ease this process we created a self-service kiosk. I designed the UI to be intuitive and simple. It should make obvious that you are picking up the right order, without exposing any personally identifiable information.</p>
+          <p>The self-service kiosk is used for more than 50 % of daily pick-ups.</p>
+        </div>
       </section>
       <aside className={styles.priceBarometer}>
         <img
@@ -66,7 +84,7 @@ export default function VerkkokauppaCom () {
           src="verkkokauppa.com/price-barometer.png"
           srcSet="verkkokauppa.com/price-barometer.png 1x,
                   verkkokauppa.com/price-barometer@2x.png 2x,
-                  verkkokauppa.com/price-barometer@3x.png 3"
+                  verkkokauppa.com/price-barometer@3x.png 3x"
         />
         <Barometer className={styles.priceBarometerGraph} />
       </aside>
