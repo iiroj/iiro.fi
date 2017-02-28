@@ -58,7 +58,7 @@
   max-width: 480px;
 }
 
-.headerLink {
+.buttonLink {
   background-color: white;
   border-radius: 2px;
   color: #333333 !important;
@@ -71,12 +71,12 @@
   transition: color 125ms ease-in, box-shadow 125ms ease-in;
 }
 
-.headerLink:hover {
+.buttonLink:hover {
   color: #2171CC !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.headerLink:active {
+.buttonLink:active {
   color: #333333 !important;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
@@ -134,7 +134,7 @@
 .ipad {
   background-color: #A4ABB3;
   box-sizing: border-box;
-  clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 94%);
+  clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
   display: flex;
   align-items: center;
   height: 480px;
@@ -149,7 +149,6 @@
   display: block;
   left: 50%;
   min-width: 100%;
-  object-fit: fill;
   opacity: 0.2;
   position: absolute;
   top: 50%;
@@ -179,6 +178,7 @@
 .priceBarometerGraph {
   height: 120px;
   left: 50%;
+  margin-bottom: 2rem;
   position: relative;
   transform: translateX(-50%);
   width: 1920px;
@@ -188,4 +188,58 @@
   display: block;
   margin: 0 auto -48px auto;
   width: 368px;
+}
+
+.icons {
+  align-items: center;
+  background-color: black;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4rem 1rem 3rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.iconsGrid {
+  display: block;
+  left: 50%;
+  min-height : 100%;
+  min-width: 100%;
+  opacity: 0.4;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.icons h2 {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 300;
+  position: relative;
+  z-index: 2;
+}
+
+.iconExamples {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.iconExamples img {
+  display: block;
+  height: 256px;
+  margin: 0 1rem;
+  width: 256px;
+}
+
+.iconExamples a {
+  margin: 0;
 }

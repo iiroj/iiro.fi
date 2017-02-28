@@ -16,7 +16,7 @@ export default function VerkkokauppaCom () {
           <a
             href="https://www.verkkokauppa.com/"
             target="_blank"
-            className={styles.headerLink}
+            className={styles.buttonLink}
           >
             Visit Verkkokauppa.com
           </a>
@@ -88,6 +88,41 @@ export default function VerkkokauppaCom () {
         />
         <Barometer className={styles.priceBarometerGraph} />
       </aside>
+      <section className={styles.icons}>
+        <img
+          className={styles.iconsGrid}
+          src="verkkokauppa.com/icons.jpg"
+        />
+        <h2 className={styles.heading}>Icon Aficionado</h2>
+        <div className={styles.iconExamples}>
+          <div className={styles.iconGrowl}>
+            <img
+              src="verkkokauppa.com/growl.png"
+              srcSet="verkkokauppa.com/growl.png 1x,
+                      verkkokauppa.com/growl@2x.png 2x,
+                      verkkokauppa.com/growl@3x.png 3x"
+            />
+            <a
+              href="http://growl.info"
+              target="_blank"
+              className={styles.buttonLink}
+            >Growl</a>
+          </div>
+          <div className={styles.iconTuneInstructor}>
+            <img
+              src="verkkokauppa.com/tuneinstructor.png"
+              srcSet="verkkokauppa.com/tuneinstructor.png 1x,
+                      verkkokauppa.com/tuneinstructor@2x.png 2x,
+                      verkkokauppa.com/tuneinstructor@3x.png 3x"
+            />
+            <a
+              href="https://www.tune-instructor.de/en/"
+              target="_blank"
+              className={styles.buttonLink}
+            >Tune•Instructor</a>
+          </div>
+        </div>
+      </section>
     </article>
   )
 }
