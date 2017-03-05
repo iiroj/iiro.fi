@@ -11,7 +11,7 @@ export default function VerkkokauppaCom () {
           <h1 className={styles.heading}>Verkkokauppa.com</h1>
           <p>UX/UI designer since November 2014.
           As the resident web designer,
-          I oversee the visual direction of Verkkokauppa.com's
+          I oversee the visual direction of Verkkokauppa.com’s
           website.</p>
           <a
             href="https://www.verkkokauppa.com/"
@@ -78,7 +78,7 @@ export default function VerkkokauppaCom () {
           <p>The self-service kiosk is used for more than 50 % of daily pick-ups.</p>
         </div>
       </section>
-      <aside className={styles.priceBarometer}>
+      <section className={styles.priceBarometer}>
         <img
           className={styles.priceBarometerImage}
           src="verkkokauppa.com/price-barometer.png"
@@ -87,8 +87,13 @@ export default function VerkkokauppaCom () {
                   verkkokauppa.com/price-barometer@3x.png 3x"
         />
         <Barometer className={styles.priceBarometerGraph} />
-      </aside>
-      <section className={styles.icons}>
+        <div className={styles.priceBarometerText}>
+          <h2 className={styles.heading}>Making customers informed</h2>
+          <p><a href="https://www.verkkokauppa.com/en/investors/" target="_blank">Verkkokauppa.com</a> is the most transparent low cost online retailer in Finland… while being probably always cheaper.</p>
+          <p>To empower customers in their self-service shopping we created a way to estimate the price fluctuations of products. Customers are able to judge themselves how much cheaper Verkkokauppa.com is. We also tell customers the value of their product as used-goods, so they can  be confident reselling and fighting e-waste.</p>
+        </div>
+      </section>
+      <aside className={styles.icons}>
         <img
           className={styles.iconsGrid}
           src="verkkokauppa.com/icons.jpg"
@@ -122,7 +127,7 @@ export default function VerkkokauppaCom () {
             >Tune•Instructor</a>
           </div>
         </div>
-      </section>
+      </aside>
     </article>
   )
 }
