@@ -10,6 +10,7 @@
     "develop": "gatsby develop",
     "start": "yarn run develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "prebuild": "rm -fr ./public",
     "build": "gatsby build",
     "deploy": "aws s3 sync ./public/ s3://iiro.fi --delete --sse AES256 --size-only",
     "publish": "npm run build && npm run deploy"
