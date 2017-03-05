@@ -1,36 +1,36 @@
 .ipad {
-  background-color: #A4ABB3;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  height: 480px;
-  margin-bottom: 2rem;
-  overflow: hidden;
-  padding: 0 1rem;
-  position: relative;
-  width: 100%;
+    background-color: #A4ABB3;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 480px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    padding: 0 1rem;
+    position: relative;
+    width: 100%;
 }
 
 .ipadImage {
-  display: block;
-  left: 50%;
-  min-width: 100%;
-  opacity: 0.2;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+    display: block;
+    left: 50%;
+    min-width: 100%;
+    opacity: 0.2;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .ipadText {
-  color: white;
-  margin: 1rem auto;
-  max-width: 480px;
-  position: relative;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  z-index: 2;
+    color: white;
+    margin: 1rem auto;
+    max-width: 480px;
+    position: relative;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }
 
 .ipadTextHeading {
-  composes: heading from '../index.module.css';
+    composes: heading from '../index.module.css';
 }

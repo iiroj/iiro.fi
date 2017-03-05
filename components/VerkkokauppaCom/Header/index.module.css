@@ -1,69 +1,69 @@
 .header {
-  align-items: center;
-  background-color: #E30613;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex: 0 0 320px;
-  justify-content: center;
-  margin-bottom: 10rem;
-  position: relative;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    background-color: #E30613;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 320px;
+    justify-content: center;
+    margin-bottom: 10rem;
+    position: relative;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .header::before,
 .header::after {
-  background-color: #E30613;
-  content: '';
-  display: block;
-  height: 50%;
-  left: 0;
-  position: absolute;
-  right: 0;
-  z-index: -1;
+    background-color: #E30613;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
 }
 
 .header::before {
-  top: 0;
-  transform-origin: 0%;
-  transform: skewY(-2deg);
+    top: 0;
+    transform-origin: 0%;
+    transform: skewY(-2deg);
 }
 
 .header::after {
-  bottom: 0;
-  transform-origin: 100%;
-  transform: skewY(-2deg);
+    bottom: 0;
+    transform-origin: 100%;
+    transform: skewY(-2deg);
 }
 
 .headerText {
-  margin: 1rem;
-  max-width: 480px;
+    margin: 1rem;
+    max-width: 480px;
 }
 
 .heading {
-  composes: heading from '../index.module.css';
+    composes: heading from '../index.module.css';
 }
 
 .buttonLink {
-  composes: buttonLink from '../index.module.css';
+    composes: buttonLink from '../index.module.css';
 }
 
 .frontPageContainer {
-  height: 480px;
-  width: 303px;
-  position: relative;
+    height: 480px;
+    width: 303px;
+    position: relative;
 }
 
 .frontPagePhone {
-  width: 303px;
-  display: block;
+    width: 303px;
+    display: block;
 }
 
 .frontPageImage {
-  display: block;
-  width: 270px;
-  position: absolute;
-  top: 63px;
-  left: 15px;
+    display: block;
+    width: 270px;
+    position: absolute;
+    top: 63px;
+    left: 15px;
 }

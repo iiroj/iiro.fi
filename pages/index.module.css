@@ -1,37 +1,38 @@
 .container {
-  composes: wrapper from '_template.module.css';
+    composes: wrapper from '_template.module.css';
 }
 
 .about {
-  composes: container from '_template.module.css';
-  composes: underlineA from '_template.module.css';
-  margin: 1rem auto;
-  padding: 0 1rem;
+    composes: container from '_template.module.css';
+    composes: underlineA from '_template.module.css';
+
+    margin: 1rem auto;
+    padding: 0 1rem;
 }
 
 .header {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .header img {
-  margin: 0 1rem 0.5rem 0;
+    margin: 0 1rem 0.5rem 0;
 }
 
 .headerText {
-  composes: fancyFontFamily from '_template.module.css';
+    composes: fancyFontFamily from '_template.module.css';
 }
 
 .about h1, h2 {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .about strong {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 .about p {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }

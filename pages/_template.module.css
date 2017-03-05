@@ -1,66 +1,66 @@
 body {
-  background: rgb(242, 242, 242);
+    background: rgb(242, 242, 242);
 }
 
 .defaultFontStyle {
-  color: rgb(77, 77, 77);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5rem;
+    color: rgb(77, 77, 77);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5rem;
 }
 
 .defaultFontFamily {
-  font-family:
-    -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+    font-family:
+        -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
 }
 
 .fancyFontFamily {
-  font-family: Merriweather, georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 400;
+    font-family: Merriweather, georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 400;
 }
 
 .root {
-  composes: defaultFontFamily;
-  composes: defaultFontStyle;
+    composes: defaultFontFamily;
+    composes: defaultFontStyle;
 }
 
 .root *::selection {
-  background-color: rgb(206, 204, 255);
+    background-color: rgb(206, 204, 255);
 }
 
 .root a {
-  color: inherit;
-  text-decoration: inherit;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 .underlineA a {
-  box-shadow: inset 0 -4px 0 rgb(255, 222, 128);
-  color: inherit;
-  text-decoration: none;
-  word-wrap: break-word;
+    box-shadow: inset 0 -4px 0 rgb(255, 222, 128);
+    color: inherit;
+    text-decoration: none;
+    word-wrap: break-word;
 }
 
 .underlineA a:hover {
-  box-shadow: inset 0 -1rem 0 rgb(255, 222, 128);
+    box-shadow: inset 0 -1rem 0 rgb(255, 222, 128);
 }
 
 .underlineA a:active {
-  color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
 }
 
 .wrapper {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .container {
-  box-sizing: border-box;
-  max-width: 38rem;
-  width: 100%;
+    box-sizing: border-box;
+    max-width: 38rem;
+    width: 100%;
 }

@@ -7,9 +7,9 @@ const VerkkokauppaComPickup = () => (
             className={styles.ipadImage}
             src="verkkokauppa.com/ipad.jpg"
             srcSet="verkkokauppa.com/ipad.jpg 1x,
-            verkkokauppa.com/ipad@2x.jpg 2x,
-            verkkokauppa.com/ipad@3x.jpg 3x"
-            />
+                verkkokauppa.com/ipad@2x.jpg 2x,
+                verkkokauppa.com/ipad@3x.jpg 3x"
+        />
         <div className={styles.ipadText}>
             <h2 className={styles.ipadTextHeading}>Self-Service order pickup</h2>
             <p>Customers need to check their order in for pick-up at the Verkkokauppa.com Helsinki store, because of the massive amount of daily customers.</p>
