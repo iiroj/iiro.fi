@@ -1,7 +1,12 @@
 {
+  "extends": [
+    "standard",
+    "react"
+  ],
   "plugins": [
     "standard",
-    "standard-react"
+    "promise",
+    "react"
   ],
   "parser": "babel-eslint"
 }
