@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
-import Image from 'Image'
-import Links from 'Links'
-import Posts from 'Posts'
 import { config } from 'config'
 import styles from 'index.module.css'
+
+import Profile from 'Profile'
+import Links from 'Links'
+import Posts from 'Posts'
 
 function Index (props) {
   const pages = props.route.pages
@@ -56,7 +57,7 @@ function Index (props) {
       />
       <main className={styles.about}>
         <header className={styles.header}>
-          <Image />
+          <Profile />
           <h1 className={styles.headerText}>iiro.fi</h1>
         </header>
         <p><strong>I’m Iiro Jäppinen</strong>. I design user interfaces, icons and logos. Lately I’ve been defining user stories and turning them into valuable experiences.</p>
