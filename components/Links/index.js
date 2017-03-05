@@ -18,7 +18,7 @@ function Links () {
                         <Link
                             to={'/resume/'}
                             className={styles.link}
-                            >
+                        >
                             <img src={resume} />
                             <h2>Résumé</h2>
                         </Link>
@@ -27,7 +27,7 @@ function Links () {
                         <Link
                             to={'/portfolio/'}
                             className={styles.link}
-                            >
+                        >
                             <img src={portfolio} />
                             <h2>Portfolio</h2>
                         </Link>
@@ -36,7 +36,7 @@ function Links () {
                         <a
                             href="mailto:iiro@jappinen.fi"
                             className={styles.link}
-                            >
+                        >
                             <img src={email} />
                             <h2>Email</h2>
                         </a>
@@ -47,7 +47,7 @@ function Links () {
                         <a
                             href="https://fi.linkedin.com/in/iiroj"
                             className={styles.link}
-                            >
+                        >
                             <img src={linkedin} />
                             <h2>LinkedIn</h2>
                         </a>
@@ -56,7 +56,7 @@ function Links () {
                         <a
                             href="https://dribbble.com/iiroj"
                             className={styles.link}
-                            >
+                        >
                             <img src={dribbble} />
                             <h2>Dribbble</h2>
                         </a>
@@ -65,7 +65,7 @@ function Links () {
                         <a
                             href="https://github.com/iiroj"
                             className={styles.link}
-                            >
+                        >
                             <img src={github} />
                             <h2>GitHub</h2>
                         </a>

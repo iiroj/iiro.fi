@@ -27,7 +27,7 @@ function Resume () {
                 script={[
                     { type: 'application/ld+json', innerHTML: breadcrumb }
                 ]}
-                />
+            />
             <Back />
             <div className={styles.wrapper}>
                 <article className={styles.resume}>

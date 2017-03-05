@@ -14,7 +14,7 @@ const VerkkokauppaComHeader = () => (
                 href="https://www.verkkokauppa.com/"
                 target="_blank"
                 className={styles.buttonLink}
-                >
+            >
                 Visit Verkkokauppa.com
             </a>
         </div>
@@ -23,16 +23,16 @@ const VerkkokauppaComHeader = () => (
                 className={styles.frontPagePhone}
                 src="verkkokauppa.com/pixel.png"
                 srcSet="verkkokauppa.com/pixel.png 1x,
-                verkkokauppa.com/pixel@2x.png 2x,
-                verkkokauppa.com/pixel@3x.png 3x"
-                />
+                        verkkokauppa.com/pixel@2x.png 2x,
+                        verkkokauppa.com/pixel@3x.png 3x"
+            />
             <img
                 className={styles.frontPageImage}
                 src="verkkokauppa.com/frontpage.jpg"
                 srcSet="verkkokauppa.com/frontpage.jpg 1x,
-                verkkokauppa.com/frontpage@2x.jpg 2x,
-                verkkokauppa.com/frontpage@3x.jpg 3x"
-                />
+                        verkkokauppa.com/frontpage@2x.jpg 2x,
+                        verkkokauppa.com/frontpage@3x.jpg 3x"
+            />
         </div>
     </header>
 )

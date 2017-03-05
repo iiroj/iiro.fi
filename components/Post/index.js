@@ -85,7 +85,7 @@ function Post (props) {
                     <div
                         className={styles.postBody}
                         dangerouslySetInnerHTML={{ __html: body }}
-                        />
+                    />
                 </main>
             </div>
             <About />

@@ -54,7 +54,7 @@ function Index (props) {
                     { type: 'application/ld+json', innerHTML: breadcrumb },
                     { type: 'application/ld+json', innerHTML: microdata }
                 ]}
-                />
+            />
             <main className={styles.about}>
                 <header className={styles.header}>
                     <Profile />

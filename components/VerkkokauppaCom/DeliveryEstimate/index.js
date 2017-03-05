@@ -17,15 +17,15 @@ const DeliveryEstimate = () => (
             <img
                 src="verkkokauppa.com/list.png"
                 srcSet="verkkokauppa.com/list.png 1x,
-                verkkokauppa.com/list@2x.png 2x,
-                verkkokauppa.com/list@3x.png 3x"
-                />
+                        verkkokauppa.com/list@2x.png 2x,
+                        verkkokauppa.com/list@3x.png 3x"
+            />
             <img
                 src="verkkokauppa.com/dialog.png"
                 srcSet="verkkokauppa.com/dialog.png 1x,
-                verkkokauppa.com/dialog@2x.png 2x,
-                verkkokauppa.com/dialog@3x.png 3x"
-                />
+                        verkkokauppa.com/dialog@2x.png 2x,
+                        verkkokauppa.com/dialog@3x.png 3x"
+            />
         </figure>
     </section>
 )

@@ -15,12 +15,14 @@ const Icons = () => (
                     srcSet="icons/growl.png 1x,
                     icons/growl@2x.png 2x,
                     icons/growl@3x.png 3x"
-                    />
+                />
                 <a
                     href="http://growl.info"
                     target="_blank"
                     className={styles.buttonLink}
-                    >Growl</a>
+                >
+                    Growl
+                </a>
             </div>
             <div className={styles.iconTuneInstructor}>
                 <img
@@ -28,12 +30,14 @@ const Icons = () => (
                     srcSet="icons/tuneinstructor.png 1x,
                     icons/tuneinstructor@2x.png 2x,
                     icons/tuneinstructor@3x.png 3x"
-                    />
+                />
                 <a
                     href="https://www.tune-instructor.de/en/"
                     target="_blank"
                     className={styles.buttonLink}
-                    >Tune•Instructor</a>
+                >
+                    Tune•Instructor
+                </a>
             </div>
         </div>
     </article>

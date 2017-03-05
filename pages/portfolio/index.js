@@ -29,7 +29,7 @@ function Portfolio () {
                 script={[
                     { type: 'application/ld+json', innerHTML: breadcrumb }
                 ]}
-                />
+            />
             <div className={styles.container}>
                 <nav>
                     <Link className={styles.back} to="/" title="Back to iiro.fi">Back to iiro.fi</Link>

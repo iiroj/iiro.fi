@@ -19,7 +19,7 @@ function HTML (props) {
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"
-                    />
+                />
                 <link rel="icon" sizes="600x600" href="/icon.png" />
                 <link rel="apple-touch-icon" href="/icon.png" />
                 <link
@@ -31,7 +31,7 @@ function HTML (props) {
                     rel="preload stylesheet"
                     href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700"
                     as="style"
-                    />
+                />
                 {head.title.toComponent()}
                 {head.meta.toComponent()}
                 {head.script.toComponent()}
@@ -41,11 +41,11 @@ function HTML (props) {
                 <div
                     id="react-mount"
                     dangerouslySetInnerHTML={{ __html: props.body }}
-                    />
+                />
                 <script
                     async
                     src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)}
-                    />
+                />
             </body>
         </html>
     )
