@@ -53,3 +53,7 @@
 .iconExamples a {
   margin: 0;
 }
+
+.buttonLink {
+  composes: buttonLink from 'VerkkokauppaCom/index.module.css';
+}
