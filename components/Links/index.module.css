@@ -22,29 +22,29 @@
   flex: 1;
 }
 
-.list .link {
+.link {
   align-items: center;
-  box-shadow: none;
   display: flex;
   flex-direction: column;
   margin: 0.5rem 1rem;
 }
 
-.list .link:hover {
-  box-shadow: none;
-}
-
 .link img {
   height: 1.5rem;
   margin: auto;
+  transition: transform 125ms ease-in;
   width: 1.5rem;
+}
+
+.link:hover img {
+  transform: scale(1.2);
+}
+
+.link:active img {
+  transform: scale(1.0);
 }
 
 .link h2 {
   font-weight: inherit;
   line-height: 1rem;
-}
-
-.link:hover h2 {
-  box-shadow: inset 0 -1rem 0 rgb(255, 222, 128);
 }
