@@ -7,14 +7,14 @@ import { default as Pickup } from './Pickup'
 import { default as Barometer } from './Barometer'
 
 function VerkkokauppaCom () {
-  return (
-    <article className={styles.verkkokauppaCom}>
-      <Header />
-      <DeliveryEstimate />
-      <Pickup />
-      <Barometer />
-    </article>
-  )
+    return (
+        <article className={styles.verkkokauppaCom}>
+            <Header />
+            <DeliveryEstimate />
+            <Pickup />
+            <Barometer />
+        </article>
+    )
 }
 
 export { VerkkokauppaCom as default }
