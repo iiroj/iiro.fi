@@ -1,11 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'react-router'
-import VerkkokauppaCom from 'VerkkokauppaCom'
 import { config } from 'config'
 import styles from './index.module.css'
 
-export default function Portfolio () {
+import VerkkokauppaCom from 'VerkkokauppaCom'
+import Icons from 'Icons'
+
+function Portfolio () {
   const breadcrumb = `{
     "@context": "http://schema.org",
     "@type": "BreadcrumbList",
@@ -36,6 +38,7 @@ export default function Portfolio () {
           <h1>Portfolio of Iiro Jäppinen</h1>
         </header>
         <VerkkokauppaCom />
+        <Icons />
         <aside>
           <p className={styles.more}>With more coming soon...</p>
         </aside>
@@ -43,3 +46,5 @@ export default function Portfolio () {
     </div>
   )
 }
+
+export { Portfolio as default }
