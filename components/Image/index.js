@@ -1,11 +1,8 @@
 import React from 'react'
 import styles from './index.module.css'
-import { default as image } from './image.jpg'
 
-function Image () {
-  return (
-    <img className={styles.image} src={image} />
-  )
-}
+const Image = () => (
+  <img className={styles.image} src='/profile.jpg' />
+)
 
-export default Image
+export { Image as default }
