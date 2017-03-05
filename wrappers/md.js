@@ -1,17 +1,17 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import Post from 'Post'
 
-export default class MD extends Component {
-  static propTypes = {
-    route: PropTypes.object.isRequired
-  }
+function MD (props) {
+  const postPattern = /^posts\//
+  const isPost = postPattern.test(props.route.page.file.dirname)
 
-  render () {
-    const postPattern = /^posts\//
-    const isPost = postPattern.test(this.props.route.page.file.dirname)
-
-    return (
-      isPost ? <Post post={this.props.route.page} /> : null
-    )
-  }
+  return (
+    isPost ? <Post post={props.route.page} /> : null
+  )
 }
+
+MD.propTypes = {
+  route: PropTypes.object.isRequired
+}
+
+export { MD as default }
