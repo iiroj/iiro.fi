@@ -55,4 +55,4 @@ HTML.propTypes = {
   body: PropTypes.string.isRequired
 }
 
-export default HTML
+export { HTML as default }

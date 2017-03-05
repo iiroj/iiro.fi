@@ -73,4 +73,4 @@ Index.propTypes = {
   route: PropTypes.object.isRequired
 }
 
-export default Index
+export { Index as default }

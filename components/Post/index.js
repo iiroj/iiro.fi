@@ -97,4 +97,4 @@ Post.propTypes = {
   post: PropTypes.object.isRequired
 }
 
-export default Post
+export { Post as default }

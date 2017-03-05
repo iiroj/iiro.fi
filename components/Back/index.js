@@ -10,4 +10,4 @@ function Back () {
   )
 }
 
-export default Back
+export { Back as default }

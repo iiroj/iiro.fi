@@ -15,4 +15,4 @@ function About () {
   )
 }
 
-export default About
+export { About as default }

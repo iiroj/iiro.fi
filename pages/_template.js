@@ -17,5 +17,4 @@ Template.propTypes = {
   location: PropTypes.object.isRequired
 }
 
-export default Template
-  
+export { Template as default }
