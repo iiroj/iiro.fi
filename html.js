@@ -23,11 +23,6 @@ function HTML (props) {
                 <link rel="icon" sizes="600x600" href="/icon.png" />
                 <link rel="apple-touch-icon" href="/icon.png" />
                 <link
-                    rel="preload"
-                    href={prefixLink(`/bundle.js?t=${BUILD_TIME}`)}
-                    as="script"
-                    />
-                <link
                     rel="preload stylesheet"
                     href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700"
                     as="style"
@@ -38,14 +33,8 @@ function HTML (props) {
                 {css}
             </head>
             <body>
-                <div
-                    id="react-mount"
-                    dangerouslySetInnerHTML={{ __html: props.body }}
-                />
-                <script
-                    async
-                    src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)}
-                />
+                <div id="react-mount" dangerouslySetInnerHTML={{ __html: props.body }} />
+                <script async src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
             </body>
         </html>
     )
