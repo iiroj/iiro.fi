@@ -1,12 +1,16 @@
 .priceBarometer {
     overflow-x: hidden;
+    padding-top: 192px;
     position: relative;
     width: 100%;
 }
 
 .priceBarometerImage {
     display: block;
-    margin: 0 auto -48px auto;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
     width: 368px;
 }
 
