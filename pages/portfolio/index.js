@@ -5,6 +5,7 @@ import { config } from 'config'
 import styles from './index.module.css'
 
 import VerkkokauppaCom from 'VerkkokauppaCom'
+import Humble from 'Humble'
 import Icons from 'Icons'
 
 function Portfolio () {
@@ -38,6 +39,7 @@ function Portfolio () {
                     <h1>Portfolio of Iiro Jäppinen</h1>
                 </header>
                 <VerkkokauppaCom />
+                <Humble />
                 <Icons />
                 <aside>
                     <p className={styles.more}>With more coming soon...</p>
