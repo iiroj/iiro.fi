@@ -24,7 +24,7 @@ function HTML (props) {
                 <link rel="apple-touch-icon" href="/icon.png" />
                 <link
                     rel="preload stylesheet"
-                    href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700"
+                    href="https://fonts.googleapis.com/css?family=Alegreya:400,400i"
                     as="style"
                 />
                 {head.title.toComponent()}
