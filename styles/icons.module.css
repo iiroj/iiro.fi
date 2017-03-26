@@ -1,0 +1,20 @@
+.icon {
+    display: inline-block;
+    fill-rule: evenodd;
+    fill: none;
+    height: 32px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    viewBox: 0 0 32 32;
+    vertical-align: middle;
+    width: 32px;
+}
+
+.icon .white {
+    stroke: #FFF;
+}
+
+.icon .color {
+    stroke: #7ACBCB;
+}
