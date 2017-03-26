@@ -50,8 +50,8 @@ function Post (props) {
                 "width": 600
             }
         },
-        "datePublished": "2016-11-22",
-        "dateModified": "2016-11-22",
+        "datePublished": "${postRawDate}",
+        "dateModified": "${postRawDate}",
         "headline": "Readme",
         "image": {
             "@type": "ImageObject",
