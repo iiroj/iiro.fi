@@ -22,11 +22,6 @@ function HTML (props) {
                 />
                 <link rel="icon" sizes="600x600" href="/icon.png" />
                 <link rel="apple-touch-icon" href="/icon.png" />
-                <link
-                    rel="preload stylesheet"
-                    href="https://fonts.googleapis.com/css?family=Alegreya:400,400i"
-                    as="style"
-                />
                 {head.title.toComponent()}
                 {head.meta.toComponent()}
                 {head.script.toComponent()}
