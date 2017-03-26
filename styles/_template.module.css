@@ -18,6 +18,10 @@
     font-family: Alegreya, georgia, serif;
 }
 
+.fontAmpersand {
+    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+}
+
 .root {
     composes: fontSans;
 }
