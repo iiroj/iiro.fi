@@ -41,8 +41,7 @@ function Index (props) {
         "sameAs": [
             "https://fi.linkedin.com/in/iiroj",
             "https://dribbble.com/iiroj",
-            "https://github.com/iiroj",
-            "https://gitlab.com/u/iiroj"
+            "https://github.com/iiroj"
         ]
     }`
 
