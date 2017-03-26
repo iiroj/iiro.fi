@@ -1,20 +1,18 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import 'reset.css/reset.css'
-import styles from '_template.module.css'
 
-function Template (props) {
-    return (
-        <div>
-            <div className={styles.root}>
-                {props.children}
+import s from '_template.module.css'
+
+export default class Template extends Component {
+    static propTypes = {
+        children: PropTypes.object.isRequired
+    }
+
+    render () {
+        return (
+            <div id="root" className={s.root}>
+                {this.props.children}
             </div>
-        </div>
-    )
+        )
+    }
 }
-
-Template.propTypes = {
-    children: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired
-}
-
-export { Template as default }

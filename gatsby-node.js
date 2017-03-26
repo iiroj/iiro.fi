@@ -4,11 +4,10 @@ export function modifyWebpackConfig (config, env) {
             root: [
                 `${__dirname}/components`,
                 `${__dirname}/pages`,
-                `${__dirname}/utils`
+                `${__dirname}/styles`
             ],
             extensions: [
                 '',
-                '.js',
                 '.js',
                 '.css',
                 '.module.css',
@@ -20,7 +19,7 @@ export function modifyWebpackConfig (config, env) {
 }
 
 export function rewritePath (parsedPath) {
-    const postPattern = /^posts\//
+    const postPattern = /^blog\//
     const isPost = postPattern.test(parsedPath.dir)
     const newPath = parsedPath.dir.split('---').slice(1)[0]
 

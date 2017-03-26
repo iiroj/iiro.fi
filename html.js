@@ -1,41 +1,41 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
-const BUILD_TIME = new Date().getTime()
-
-function HTML (props) {
-    const head = Helmet.rewind()
-    let css
-    if (process.env.NODE_ENV === 'production') {
-        css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />
+export default class HTML extends Component {
+    static propTypes = {
+        body: PropTypes.string.isRequired
     }
 
-    return (
-        <html lang="en">
-            <head>
-                <meta charSet="utf-8" />
-                <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1.0"
-                />
-                <link rel="icon" sizes="600x600" href="/icon.png" />
-                <link rel="apple-touch-icon" href="/icon.png" />
-                {head.title.toComponent()}
-                {head.meta.toComponent()}
-                {head.script.toComponent()}
-                {css}
-            </head>
-            <body>
-                <div id="react-mount" dangerouslySetInnerHTML={{ __html: props.body }} />
-                <script async src={`/bundle.js?t=${BUILD_TIME}`} />
-            </body>
-        </html>
-    )
-}
+    render () {
+        const head = Helmet.rewind()
 
-HTML.propTypes = {
-    body: PropTypes.string.isRequired
-}
+        let css
+        let bundle = (<script src={`/bundle.js`} />)
+        if (process.env.NODE_ENV === 'production') {
+            css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />
+            bundle = null
+        }
 
-export { HTML as default }
+        return (
+            <html lang="en">
+                <head>
+                    <meta charSet="utf-8" />
+                    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                    <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1.0" />
+                    <link rel="icon" sizes="600x600" href="/icon.png" />
+                    <link rel="apple-touch-icon" href="/icon.png" />
+                    {head.title.toComponent()}
+                    {head.meta.toComponent()}
+                    {head.script.toComponent()}
+                    {css}
+                </head>
+                <body>
+                    <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
+                    {bundle}
+                </body>
+            </html>
+        )
+    }
+}

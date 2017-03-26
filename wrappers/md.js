@@ -1,17 +1,18 @@
-import React, { PropTypes } from 'react'
-import Post from 'Post'
+import React, { Component, PropTypes } from 'react'
+import BlogPost from 'BlogPost'
 
-function MD (props) {
-    const postPattern = /^posts\//
-    const isPost = postPattern.test(props.route.page.file.dirname)
+export default class BlogPostWrapper extends Component {
+    static propTypes = {
+        route: PropTypes.object.isRequired
+    }
 
-    return (
-        isPost ? <Post post={props.route.page} /> : null
-    )
+    render () {
+        const postPattern = /^blog\//
+        const isPost = postPattern.test(this.props.route.page.file.dirname)
+        this.state = { isPost: isPost }
+
+        return (
+            isPost ? <BlogPost post={this.props.route.page} /> : null
+        )
+    }
 }
-
-MD.propTypes = {
-    route: PropTypes.object.isRequired
-}
-
-export { MD as default }
