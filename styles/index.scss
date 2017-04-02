@@ -1,0 +1,106 @@
+@import '_template.scss';
+
+.index-header {
+    align-items: center;
+    background-color: $baseColor;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    justify-content: center;
+    min-height: 75vh;
+    transform: skewY(3deg);
+
+    &::after {
+        background-color: $baseColor;
+        content: "";
+        display: block;
+        height: 50%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        top: 0;
+        transform-origin: 0;
+        transform: skewY(-2deg);
+    }
+
+    .container {
+        position: relative;
+        text-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.2);
+        transform: skewY(-3deg);
+        flex-basis: 224px;
+    }
+
+    .picture {
+        animation-delay: 0.25s;
+        animation-duration: 0.25s;
+        animation-fill-mode: both;
+        animation-name: profilePictureAppear;
+        border-radius: 50%;
+        box-shadow: 0 0    0   1px hsla(0, 0%, 0%, 0.1),
+                    0 2px  2px 0   hsla(0, 0%, 0%, 0.1),
+                    0 2px 16px 0   hsla(0, 0%, 0%, 0.1);
+        display: block;
+        float: left;
+        height: 96px;
+        margin-right: -1rem;
+        position: relative;
+        width: 96px;
+        z-index: -1;
+    }
+
+    .name {
+        @extend .fontSerif;
+        animation-delay: 0.5s;
+        animation-duration: 0.25s;
+        animation-fill-mode: both;
+        animation-name: profileTextAppear;
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .title {
+        animation-delay: 0.5s;
+        animation-duration: 0.25s;
+        animation-fill-mode: both;
+        animation-name: profileTextAppear;
+        font-style: italic;
+    }
+}
+
+@keyframes profilePictureAppear {
+    0% { width: 0; transform: scale(0); }
+    100% { width: 96px; transform: scale(1);}
+}
+
+@keyframes profileTextAppear {
+    0% { opacity: 0; transform: translateX(-10vw) }
+    100% { opacity: 1; transform: translateX(0);}
+}
+
+.index-links {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding: 15vh 1rem 10vh;
+
+    .link {
+        display: block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+
+        svg {
+            margin-right: 1rem;
+
+            .highlight {
+                transition: stroke 0.1s ease-in;
+            }
+        }
+        &:hover {
+            svg .highlight {
+                stroke: $baseColor;
+            }
+        }
+    }
+}
