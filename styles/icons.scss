@@ -1,4 +1,4 @@
-.icon {
+svg.icon {
     display: inline-block;
     fill-rule: evenodd;
     fill: none;
@@ -7,14 +7,13 @@
     stroke-linejoin: round;
     stroke-width: 2px;
     viewBox: 0 0 32 32;
-    vertical-align: middle;
+    vertical-align: -45%;
     width: 32px;
-}
 
-.icon .white {
-    stroke: #FFF;
-}
-
-.icon .color {
-    stroke: #7ACBCB;
+    .base {
+        stroke: hsl(180, 25%, 32%);
+    }
+    .highlight {
+        stroke: hsl(315, 50%, 60%);
+    }
 }
