@@ -4,19 +4,19 @@ import Helmet from 'react-helmet'
 import { default as profile1x } from 'static/profilePicture.jpg'
 import { default as profile2x } from 'static/profilePicture@2x.jpg'
 import { default as profile3x } from 'static/profilePicture@3x.jpg'
-import Links from 'Links'
-import { FraktioLogo } from 'Fraktio'
+import { FraktioLogo } from 'components/Fraktio'
+import Links from 'components/Links'
+import IndexBlogPreview from 'components/IndexBlogPreview'
+import 'styles/index.scss'
 
-import 'index.scss'
-
-export default (props) => {
+export default function Index (props) {
     const siteTitle = props.data.site.siteMetadata.title
     const microdata = `{
         '@context': 'http://schema.org',
         '@type': 'Person',
-        'name': 'Iiro Jäppinem',
+        'name': 'Iiro Jäppinen',
         'jobTitle': 'UX & UI Designer',
-        'worksFor': 'Verkkokauppa.com',
+        'worksFor': 'Fraktio',
         'url': 'https://iiro.fi/',
         'email': 'iiro@jappinen.fi',
         'nationality': 'Finland',
