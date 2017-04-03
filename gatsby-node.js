@@ -6,23 +6,6 @@ const fs = require(`fs-extra`)
 exports.modifyWebpackConfig = ({ args }) => {
   const { config, stage } = args
 
-  config.merge({
-      resolve: {
-          root: [
-              `${__dirname}/components`,
-              `${__dirname}/pages`,
-              `${__dirname}/styles`
-          ],
-          extensions: [
-              '',
-              '.js',
-              '.css',
-              '.module.css',
-              '.scss'
-          ]
-      }
-  })
-
   switch (stage) {
   case "develop":
     config.loader("sass", {
@@ -64,6 +47,24 @@ exports.modifyWebpackConfig = ({ args }) => {
   return config
 }
 
+exports.modifyAST = ({ args }) => {
+    const { ast } = args
+    const files = select(ast, "File")
+    files.forEach(file => {
+        if (file.extension !== `md`) {
+            return
+        }
+        const parsedFilePath = path.parse(file.relativePath)
+        const slug = `/${parsedFilePath.dir}/`
+        file.slug = slug
+        const markdownNode = select(file, `MarkdownRemark`)[0]
+        if (markdownNode) {
+            markdownNode.slug = slug
+        }
+    })
+    return files
+}
+
 exports.createPages = ({ args }) => {
     const { graphql } = args
 
@@ -90,36 +91,20 @@ exports.createPages = ({ args }) => {
 
             Object.keys(result.data.allMarkdownRemark.edges).forEach(key => {
                 const edge = result.data.allMarkdownRemark.edges[key]
+                const blogPattern = /^blog\//
 
-                pages.push({
-                    path: edge.node.slug,
-                    component: blogPost,
-                    context: {
-                        slug: edge.node.slug,
-                    },
-                })
+                if ( blogPattern.test(edge.node.slug) ) {
+                    pages.push({
+                        path: edge.node.slug,
+                        component: blogPost,
+                        context: {
+                            slug: edge.node.slug,
+                        },
+                    })
+                }
             })
 
             resolve(pages)
         })
     })
-}
-
-// Add custom url pathname for blog posts.
-exports.modifyAST = ({ args }) => {
-    const { ast } = args
-    const files = select(ast, "File")
-    files.forEach(file => {
-        if (file.extension !== `md`) {
-            return
-        }
-        const parsedFilePath = path.parse(file.relativePath)
-        const slug = `/${parsedFilePath.dir}/`
-        file.slug = slug
-        const markdownNode = select(file, `MarkdownRemark`)[0]
-        if (markdownNode) {
-            markdownNode.slug = slug
-        }
-    })
-    return files
 }
