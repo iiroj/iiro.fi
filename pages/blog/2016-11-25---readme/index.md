@@ -1,6 +1,7 @@
 ---
 title: Readme
 date: "2016-11-25"
+path: "/readme/"
 ---
 
 >I want to start blogging. Now, what tech stack should I use?

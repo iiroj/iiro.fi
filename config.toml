@@ -1,1 +1,3 @@
-siteUrl="https://iiro.fi"
+blogTitle = "iiro.fi"
+authorName = "Iiro Jäppinen"
+linkPrefix = "/"

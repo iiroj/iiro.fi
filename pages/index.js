@@ -1,11 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
-import { IconEmail, IconLinkedin, IconDribbble, IconGitHub } from 'Icons'
-import IndexBlogPreview from 'IndexBlogPreview'
+import { default as profile1x } from 'static/profilePicture.jpg'
+import { default as profile2x } from 'static/profilePicture@2x.jpg'
+import { default as profile3x } from 'static/profilePicture@3x.jpg'
+import Links from 'Links'
+import { FraktioLogo } from 'Fraktio'
+
 import 'index.scss'
 
-const Index = (props) => {
+export default (props) => {
+    const siteTitle = props.data.site.siteMetadata.title
     const microdata = `{
         '@context': 'http://schema.org',
         '@type': 'Person',
@@ -31,64 +36,39 @@ const Index = (props) => {
         <main>
             <article>
                 <Helmet
-                    title={"Iiro Jäppinen"}
+                    title={siteTitle}
                     script={[{type: 'application/ld+json', innerHTML: microdata }]} />
                 <header className="index-header">
                     <div className="container">
                         <img
                             className="picture"
-                            src="/profilePicture.jpg"
-                            srcSet="/profilePicture.jpg 1x,
-                            /profilePicture@2x.jpg 2x,
-                            /profilePicture@3x.jpg 3x" />
+                            src={profile1x}
+                            srcSet={`${profile1x} 1x,
+                            ${profile2x} 2x,
+                            ${profile3x} 3x`} />
                         <h1 className="name">Iiro Jäppinen</h1>
-                        <h2 className="title">UX <span className="amp">&</span> UI Designer</h2>
+                        <h2 className="title">
+                            UX <span className="amp">&</span> UI Designer at
+                            <a href="https://fraktio.fi" target="_blank">
+                                <FraktioLogo />
+                            </a>
+                        </h2>
                     </div>
                 </header>
-                <section className="index-links">
-                    <ul className="container">
-                        <li>
-                            <a
-                                className="link"
-                                href="mailto:iiro@jappinen.fi"
-                                >
-                                <IconEmail />
-                                <span>iiro@jappinen.fi</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="link"
-                                href="https://fi.linkedin.com/in/iiroj"
-                                >
-                                <IconLinkedin />
-                                <span>LinkedIn</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="link"
-                                href="https://github.com/iiroj"
-                                >
-                                <IconGitHub />
-                                <span>GitHub</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="link"
-                                href="https://dribbble.com/iiroj"
-                                >
-                                <IconDribbble />
-                                <span>Dribbble</span>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-                <IndexBlogPreview posts={props.route.pages} />
+                <div className="index-links_blog">
+                    <Links />
+                </div>
             </article>
         </main>
     )
 }
 
-export { Index as default }
+export const pageQuery = `
+{
+  site {
+    siteMetadata {
+      title
+    }
+  }
+}
+`

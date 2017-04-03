@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
+import { default as profile } from 'static/profilePicture@2x.jpg'
+
 export default class BlogPost extends Component {
     static propTypes = {
         post: PropTypes.object.isRequired
@@ -25,19 +27,19 @@ export default class BlogPost extends Component {
                 "name": "iiro.fi",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://iiro.fi/icon.png",
-                    "height": 600,
-                    "width": 600
+                    "url": "https://iiro.fi/${profile}",
+                    "height": 384,
+                    "width": 384
                 }
             },
             "datePublished": "${postRawDate}",
-            "dateModified": "${postRawDate}",
-            "headline": "Readme",
+            "dateModified": postRawDate,
+            "headline": "${postTitle}",
             "image": {
                 "@type": "ImageObject",
-                "url": "https://iiro.fi/profile.jpg",
-                "height": 512,
-                "width": 512
+                "url": "https://iiro.fi/${profile}",
+                "height": 384,
+                "width": 384
             },
             "mainEntityOfPage": "https://iiro.fi${post.path}"
         }`
