@@ -7,8 +7,8 @@ export default function Template (props) {
     const { children } = props
 
     return (
-      <div className={s.root}>
-        {children}
-      </div>
+        <div className={s.root}>
+            {children}
+        </div>
     )
 }
