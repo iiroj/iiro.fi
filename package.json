@@ -14,15 +14,6 @@
         "publish": "npm run build && npm run deploy"
     },
     "dependencies": {
-        "gatsby": "1.0.0-alpha12-alpha.dbf1a599",
-        "gatsby-link": "1.0.0-alpha12-alpha.dbf1a599",
-        "gatsby-parser-remark": "1.0.0-alpha12-alpha.dbf1a599",
-        "gatsby-plugin-manifest": "1.0.0-alpha12-alpha.dbf1a599",
-        "gatsby-source-filesystem": "1.0.0-alpha12-alpha.dbf1a599",
-        "gatsby-typegen-filesystem": "1.0.0-alpha12-alpha.dbf1a599",
-        "gatsby-typegen-remark": "1.0.0-alpha12-alpha.dbf1a599",
-        "gatsby-typegen-remark-copy-linked-files": "1.0.0-alpha12-alpha.dbf1a599",
-        "node-sass": "^4.5.2",
         "babel-eslint": "*",
         "babel-plugin-add-module-exports": "*",
         "babel-plugin-transform-class-properties": "*",
@@ -35,7 +26,14 @@
         "eslint-plugin-promise": "*",
         "eslint-plugin-react": "*",
         "eslint-plugin-standard": "*",
-        "sass-loader": "^6.0.3",
+        "gatsby": "1.0.0-alpha12-alpha.dbf1a599",
+        "gatsby-link": "1.0.0-alpha12-alpha.dbf1a599",
+        "gatsby-parser-remark": "1.0.0-alpha12-alpha.dbf1a599",
+        "gatsby-plugin-manifest": "1.0.0-alpha12-alpha.dbf1a599",
+        "gatsby-source-filesystem": "1.0.0-alpha12-alpha.dbf1a599",
+        "gatsby-typegen-filesystem": "1.0.0-alpha12-alpha.dbf1a599",
+        "gatsby-typegen-remark": "1.0.0-alpha12-alpha.dbf1a599",
+        "gatsby-typegen-remark-copy-linked-files": "1.0.0-alpha12-alpha.dbf1a599",
         "react-helmet": "^4.0.0",
         "reset.css": "^2.0.2"
     }

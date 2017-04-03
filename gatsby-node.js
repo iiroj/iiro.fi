@@ -3,50 +3,6 @@ const path = require("path")
 const select = require(`unist-util-select`)
 const fs = require(`fs-extra`)
 
-exports.modifyWebpackConfig = ({ args }) => {
-  const { config, stage } = args
-
-  switch (stage) {
-  case "develop":
-    config.loader("sass", {
-      test: /\.(sass|scss)$/,
-      exclude: /\.module\.(sass|scss)$/,
-      loaders: ["style", "css", "postcss", "sass"],
-    })
-
-    break
-
-  case "build-css":
-    config.loader("sass", {
-      test: /\.(sass|scss)$/,
-      exclude: /\.module\.(sass|scss)$/,
-      loader: ExtractTextPlugin.extract(["css?minimize", "postcss", "sass"]),
-    })
-
-    break
-
-  case "build-html":
-    config.loader("sass", {
-      test: /\.(sass|scss)$/,
-      exclude: /\.module\.(sass|scss)$/,
-      loader: "null",
-    })
-
-    break
-
-  case "build-javascript":
-    config.loader("sass", {
-      test: /\.(sass|scss)$/,
-      exclude: /\.module\.(sass|scss)$/,
-      loader: "null",
-    })
-
-    break
-}
-
-  return config
-}
-
 exports.modifyAST = ({ args }) => {
     const { ast } = args
     const files = select(ast, "File")
