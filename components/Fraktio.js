@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const FraktioLogo = () => (
+export const FraktioLogo = (props) => (
     <svg
-        className="fraktiologo"
+        className={props.className}
         xmlns="http://www.w3.org/2000/svg"
     >
         <path
