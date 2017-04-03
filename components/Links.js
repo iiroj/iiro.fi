@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
-import { IconEmail, IconLinkedin, IconDribbble, IconGitHub } from 'Icons'
-import 'links.scss'
+import { IconEmail, IconLinkedin, IconDribbble, IconGitHub } from 'components/Icons'
+import 'styles/links.scss'
 
 export default function Links (props) {
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import 'icons.scss'
+import 'styles/icons.scss'
 
 export const IconEmail = () => (
     <svg
