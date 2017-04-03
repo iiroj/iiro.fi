@@ -1,4 +1,6 @@
-@import '_variables.scss';
+/*$baseColor: hsl(180, 25%, 32%);*/
+/*$complementaryColor: hsl(315, 50%, 60%);*/
+
 
 .font {
     font-size: 14px;
@@ -7,7 +9,7 @@
 }
 
 .fontSans {
-    @extend .font;
+    composes: font;
     font-family:
         -apple-system, BlinkMacSystemFont,
         "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
@@ -15,7 +17,7 @@
 }
 
 .fontSerif {
-    @extend .font;
+    composes: font;
     font-family: Alegreya, georgia, serif;
 }
 
@@ -23,16 +25,16 @@
     font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
 }
 
-#root {
-    @extend .fontSans;
-    color: $baseColor;
+.root {
+    composes: fontSans;
+    color: hsl(180, 25%, 32%);
 }
 
-#root a {
-    color: $complementaryColor;
+.root a {
+    color: hsl(315, 50%, 60%);
     transition: color 0.1s ease-in;
 }
 
 #root a:hover {
-    color: $baseColor;
+    color: hsl(180, 25%, 32%);
 }
