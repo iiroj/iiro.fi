@@ -1,8 +1,16 @@
 module.exports = {
     siteMetadata: {
-        title: 'iiro.fi',
-        author: 'Iiro Jäppinen',
-        url: 'https://iiro.fi'
+        city: 'Helsinki',
+        country: 'Finland',
+        dribbble: 'https://dribbble.com/iiroj',
+        email: 'iiro@jappinen.fi',
+        github: 'https://github.com/iiroj',
+        jobTitle: 'UX & UI Designer',
+        linkedin: 'https://fi.linkedin.com/in/iiroj',
+        name: 'Iiro Jäppinen',
+        siteTitle: 'iiro.fi',
+        siteUrl: 'https://iiro.fi/',
+        worksFor: 'Fraktio'
     },
     plugins: [
         {
