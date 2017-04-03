@@ -2,6 +2,7 @@ module.exports = {
     siteMetadata: {
         title: 'iiro.fi',
         author: 'Iiro Jäppinen',
+        url: 'https://iiro.fi'
     },
     plugins: [
         {
