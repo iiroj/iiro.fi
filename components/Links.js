@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
 import { IconEmail, IconLinkedin, IconDribbble, IconGitHub } from 'components/Icons'
-import 'styles/links.scss'
+import s from 'styles/links.module.css'
 
 export default function Links (props) {
     return (
@@ -10,37 +10,37 @@ export default function Links (props) {
             <ul className="container">
                 <li>
                     <a
-                        className="link"
+                        className={s.link}
                         href="mailto:iiro@jappinen.fi"
                         >
-                        <IconEmail />
+                        <IconEmail className={s.icon} />
                         <span>iiro@jappinen.fi</span>
                     </a>
                 </li>
                 <li>
                     <a
-                        className="link"
+                        className={s.link}
                         href="https://fi.linkedin.com/in/iiroj"
                         >
-                        <IconLinkedin />
+                        <IconLinkedin className={s.icon} />
                         <span>LinkedIn</span>
                     </a>
                 </li>
                 <li>
                     <a
-                        className="link"
+                        className={s.link}
                         href="https://github.com/iiroj"
                         >
-                        <IconGitHub />
+                        <IconGitHub className={s.icon} />
                         <span>GitHub</span>
                     </a>
                 </li>
                 <li>
                     <a
-                        className="link"
+                        className={s.link}
                         href="https://dribbble.com/iiroj"
                         >
-                        <IconDribbble />
+                        <IconDribbble className={s.icon} />
                         <span>Dribbble</span>
                     </a>
                 </li>

@@ -1,0 +1,32 @@
+.link {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.icon {
+    display: inline-block;
+    fill-rule: evenodd;
+    fill: none;
+    height: 32px;
+    margin-right: 1rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    vertical-align: -45%;
+    viewBox: 0 0 32 32;
+    width: 32px;
+}
+
+.icon *[data-styling=base] {
+    stroke: hsl(180, 25%, 32%);
+}
+
+.icon *[data-styling=highlight] {
+    stroke: hsl(315, 50%, 60%);
+    transition: stroke 0.1s ease-in;
+}
+
+.link:hover .icon *[data-styling=highlight]{
+    stroke: hsl(180, 25%, 32%);
+}
