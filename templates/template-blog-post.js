@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 
 export default function BlogPost (props) {
     const post = props.data.markdownRemark
-    const siteTitle = props.data.site.siteMetadata.title
+    const siteTitle = props.data.site.siteMetadata.siteTitle
 
     return (
         <div>
@@ -19,8 +19,8 @@ export const pageQuery = `
 query BlogPostByPath($slug: String!) {
     site {
         siteMetadata {
-            title
-            author
+            name
+            siteTitle
         }
     }
     markdownRemark(slug: { eq: $slug }) {
