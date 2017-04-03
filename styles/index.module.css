@@ -1,0 +1,123 @@
+.header {
+    align-items: center;
+    background-color: hsl(180, 25%, 32%);
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    justify-content: center;
+    min-height: 75vh;
+    transform: skewY(3deg);
+}
+
+.header::after {
+    background-color: hsl(180, 25%, 32%);
+    content: "";
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    top: 0;
+    transform-origin: 0;
+    transform: skewY(-2deg);
+}
+
+.headerContainer {
+    position: relative;
+    text-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.2);
+    transform: skewY(-3deg);
+    flex-basis: 280px;
+}
+
+.picture {
+    animation-delay: 0.25s;
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: profilePictureAppear;
+    border-radius: 50%;
+    box-shadow: 0 0    0   1px hsla(0, 0%, 0%, 0.1),
+                0 2px  2px 0   hsla(0, 0%, 0%, 0.1),
+                0 2px 16px 0   hsla(0, 0%, 0%, 0.1);
+    display: block;
+    float: left;
+    height: 96px;
+    margin-right: -1rem;
+    position: relative;
+    width: 96px;
+    z-index: -1;
+}
+
+.name {
+    composes: fontSerif from 'styles/_template.module.css';
+    animation-delay: 0.5s;
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: profileTextAppear;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.title {
+    animation-delay: 0.5s;
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: profileTextAppear;
+    font-style: italic;
+}
+
+.amp {
+    composes: amp from 'styles/_template.module.css';
+}
+
+.fraktio {
+    composes: fontSerif from 'styles/_template.module.css';
+    color: white !important;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.fraktioLogo {
+    display: inline-block;
+    height: 18px;
+    margin-right: 2px;
+    position: relative;
+    viewBox: 0 0 19 18;
+    vertical-align: -15%;
+    width: 19px;
+}
+
+.fraktioLogo path {
+    fill: white;
+    transition: fill 0.1s ease-in;
+}
+
+.title a:hover {
+    color: hsl(315, 50%, 60%) !important;
+}
+
+.title a:hover .fraktioLogo path {
+    fill: hsl(315, 50%, 60%);
+}
+
+@keyframes profilePictureAppear {
+    0% { width: 0; transform: scale(0); }
+    100% { width: 96px; transform: scale(1);}
+}
+
+@keyframes profileTextAppear {
+    0% { opacity: 0; transform: translateX(-10vw) }
+    100% { opacity: 1; transform: translateX(0);}
+}
+
+.container {
+    align-items: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 320px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15vh 1rem 10vh;
+}
