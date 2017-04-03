@@ -48,9 +48,9 @@ export default (props) => {
                             ${profile3x} 3x`} />
                         <h1 className="name">Iiro Jäppinen</h1>
                         <h2 className="title">
-                            UX <span className="amp">&</span> UI Designer at
-                            <a href="https://fraktio.fi" target="_blank">
+                            UX <span className="amp">&</span> UI Designer at <a href="https://fraktio.fi" target="_blank">
                                 <FraktioLogo />
+                                <span>fraktio</span>
                             </a>
                         </h2>
                     </div>
