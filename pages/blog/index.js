@@ -37,18 +37,19 @@ export default class BlogIndex extends Component {
 }
 
 export const pageQuery = `
-{
+query BlogIndex {
     site {
         siteMetadata {
-            siteTitle
+            name
         }
     }
-    allMarkdownRemark {
+    allMarkdownRemark(sortBy: { fields: frontmatter___date, order: DESC }) {
         edges {
             node {
                 slug
                 frontmatter {
                     title
+                    date
                 }
             }
         }
