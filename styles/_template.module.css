@@ -35,6 +35,28 @@
     transition: color 0.1s ease-in;
 }
 
-#root a:hover {
+.root a:hover {
     color: hsl(180, 25%, 32%);
+}
+
+.header {
+    align-items: center;
+    background-color: hsl(180, 25%, 32%);
+    box-sizing: border-box;
+    color: white;
+    position: relative;
+}
+
+.header::after {
+    background-color: hsl(180, 25%, 32%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform-origin: 0;
+    transform: skewY(2deg);
+    z-index: -1;
 }

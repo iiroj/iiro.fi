@@ -1,0 +1,40 @@
+.back {
+    background: hsl(180, 25%, 32%);
+    box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.1);
+}
+
+.back a {
+    color: white;
+    display: block;
+    line-height: 1rem;
+    padding: 1rem;
+    text-decoration: inherit;
+    transition: background 0.125s ease-in;
+}
+
+.back a:hover {
+    background: hsla(315, 50%, 60%, 1);
+    box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.1);
+    color: white;
+}
+
+.header {
+    display: flex;
+    margin-bottom: 6rem;
+    min-height: 6rem;
+    padding: 1rem;
+}
+
+.header::after {
+    transform: skewY(-2deg);
+    transform-origin: 100%;
+}
+
+.headerContainer {
+
+}
+
+.h1 {
+    composes: fontSerif from 'styles/_template.module.css';
+    font-size: 1.5rem;
+}

@@ -1,32 +1,13 @@
 .header {
-    align-items: center;
-    background-color: hsl(180, 25%, 32%);
-    box-sizing: border-box;
-    color: white;
+    composes: header from 'styles/_template.module.css';
     display: flex;
     justify-content: center;
     min-height: 75vh;
-    transform: skewY(3deg);
-}
-
-.header::after {
-    background-color: hsl(180, 25%, 32%);
-    content: "";
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    top: 0;
-    transform-origin: 0;
-    transform: skewY(-2deg);
 }
 
 .headerContainer {
     position: relative;
     text-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.2);
-    transform: skewY(-3deg);
     flex-basis: 280px;
 }
 
@@ -45,7 +26,6 @@
     margin-right: -1rem;
     position: relative;
     width: 96px;
-    z-index: -1;
 }
 
 .name {
@@ -118,6 +98,12 @@
     display: flex;
     flex: 0 0 320px;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 15vh 1rem 10vh;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 38rem;
+    padding: 15vh 1rem 5rem;
+}
+
+.container > * {
+    margin-bottom: 5rem;
 }

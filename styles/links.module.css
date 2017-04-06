@@ -4,6 +4,10 @@
     text-decoration: none;
 }
 
+.link:hover {
+    color: hsl(180, 25%, 32%);
+}
+
 .icon {
     display: inline-block;
     fill-rule: evenodd;
