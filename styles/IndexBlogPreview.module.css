@@ -1,0 +1,25 @@
+.container {
+    flex-basis: 19rem;
+}
+
+.container .articleLink {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.articleLink:hover {
+
+}
+
+.header {
+    color: hsl(0, 0%, 60%);
+    margin: 0.75rem 0 1rem 0;
+}
+
+.article {
+    background: hsl(0, 0%, 0%, 0.05);
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1);
+    margin-bottom: 1rem;
+    padding: 1rem;
+}

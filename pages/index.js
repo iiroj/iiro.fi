@@ -6,6 +6,7 @@ import { default as profile2x } from 'static/profilePicture@2x.jpg'
 import { default as profile3x } from 'static/profilePicture@3x.jpg'
 import { FraktioLogo } from 'components/Fraktio'
 import Links from 'components/Links'
+import IndexBlogPreview from 'components/IndexBlogPreview'
 
 import s from 'styles/index.module.css'
 
@@ -58,6 +59,7 @@ export default function Index (props) {
             </header>
             <div className={s.container}>
                 <Links />
+                <IndexBlogPreview post={props.data.allMarkdownRemark.edges[0].node} />
             </div>
         </article>
     </main>
