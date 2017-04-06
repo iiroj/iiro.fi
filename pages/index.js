@@ -67,7 +67,7 @@ export default function Index (props) {
 }
 
 export const pageQuery = `
-{
+query Index {
     site {
         siteMetadata {
             city
@@ -78,9 +78,19 @@ export const pageQuery = `
             jobTitle
             linkedin
             name
-            siteTitle
             siteUrl
             worksFor
+        }
+    }
+    allMarkdownRemark(sortBy: { fields: frontmatter___date, order: DESC }, limit: 1) {
+        edges {
+            node {
+                slug
+                frontmatter {
+                    title
+                    date
+                }
+            }
         }
     }
 }
