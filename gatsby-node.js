@@ -10,8 +10,8 @@ exports.modifyAST = ({ args }) => {
         if (file.extension !== `md`) {
             return
         }
-        const parsedFilePath = path.parse(file.relativePath)
-        const slug = `/${parsedFilePath.dir}/`
+        const parsedFilePath = path.parse(file.absolutePath)
+        const slug = `/${parsedFilePath.dir}/`;
         file.slug = slug
         const markdownNode = select(file, `MarkdownRemark`)[0]
         if (markdownNode) {
