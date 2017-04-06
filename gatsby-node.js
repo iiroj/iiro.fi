@@ -52,17 +52,13 @@ exports.createPages = ({ args }) => {
 
             Object.keys(result.data.allMarkdownRemark.edges).forEach(key => {
                 const edge = result.data.allMarkdownRemark.edges[key]
-                const blogPattern = /^blog\//
-
-                if ( blogPattern.test(edge.node.slug) ) {
-                    pages.push({
-                        path: edge.node.slug,
-                        component: blogPost,
-                        context: {
-                            slug: edge.node.slug,
-                        },
-                    })
-                }
+                pages.push({
+                    path: edge.node.slug,
+                    component: blogPost,
+                    context: {
+                        slug: edge.node.slug,
+                    }
+                })
             })
 
             resolve(pages)
