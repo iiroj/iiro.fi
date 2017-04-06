@@ -16,6 +16,11 @@ exports.modifyAST = ({ args }) => {
         const markdownNode = select(file, `MarkdownRemark`)[0]
         if (markdownNode) {
             markdownNode.slug = slug
+            if (markdownNode.frontmatter.path) {
+                const path = markdownNode.frontmatter.path
+                file.slug = `/blog${path}`
+                markdownNode.slug = `/blog${path}`
+            }
         }
     })
     return files
