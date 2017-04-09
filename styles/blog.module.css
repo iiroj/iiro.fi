@@ -1,40 +1,43 @@
 .back {
-    background: hsl(180, 25%, 32%);
-    box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.1);
-}
-
-.back a {
-    color: white;
-    display: block;
-    line-height: 1rem;
-    padding: 1rem;
-    text-decoration: inherit;
-    transition: background 0.125s ease-in;
+    composes: boxLink from 'styles/_template.module.css';
 }
 
 .back a:hover {
-    background: hsla(315, 50%, 60%, 1);
-    box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.1);
+    background: hsla(18, 75%, 60%, 1);
     color: white;
 }
 
 .header {
-    display: flex;
-    margin-bottom: 6rem;
-    min-height: 6rem;
-    padding: 1rem;
-}
-
-.header::after {
-    transform: skewY(-2deg);
-    transform-origin: 100%;
-}
-
-.headerContainer {
-
-}
-
-.h1 {
     composes: fontSerif from 'styles/_template.module.css';
     font-size: 1.5rem;
+    margin: 2rem 1rem 1rem;
+}
+
+.posts {
+    margin: 1rem 0;
+}
+
+.post {
+    box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.05);
+    color: inherit;
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.post:hover {
+    color: hsla(195, 80%, 50%, 1);
+}
+
+.post:active {
+    color: hsla(195, 100%, 30%, 1);
+}
+
+.title {
+    composes: fontSerif from 'styles/_template.module.css';
+    font-size: 1.25rem;
+}
+
+.posts li:last-child .post {
+    box-shadow: none;
 }

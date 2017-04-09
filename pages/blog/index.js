@@ -8,14 +8,19 @@ export default class BlogIndex extends Component {
     render () {
         const pageLinks = []
         const name = this.props.data.site.siteMetadata.name
-        const posts = this.props.data.allMarkdownRemark.edges
+        const edges = this.props.data.allMarkdownRemark.edges
 
-        posts.forEach((post) => {
-            const title = post.node.frontmatter.title
+        edges.forEach((edge) => {
+            const post = edge.node
+            const slug = post.slug
+            const title = post.frontmatter.title
+
             pageLinks.push(
-                <li key={post.node.slug} >
-                    <Link to={post.node.slug} >
-                        {post.node.frontmatter.title}
+                <li key={slug}>
+                    <Link to={slug} className={s.post}>
+                        <article>
+                            <h2 className={s.title}>{title}</h2>
+                        </article>
                     </Link>
                 </li>
             )
@@ -24,14 +29,12 @@ export default class BlogIndex extends Component {
         return (
             <div>
                 <Helmet title={`Blog of ${name}`} />
-                <nav className={s.back}>
-                    <Link to="/">Back to iiro.fi</Link>
+                <nav>
+                    <Link to="/" className={s.back}>Back to iiro.fi</Link>
                 </nav>
                 <main>
-                    <header className={s.header}>
-                        <h1 className={s.h1}>Blog</h1>
-                    </header>
-                    <ul className="blog-list">
+                    <h1 className={s.header}>Blog</h1>
+                    <ul className={s.posts}>
                         {pageLinks}
                     </ul>
                 </main>
@@ -53,7 +56,6 @@ query BlogIndex {
                 slug
                 frontmatter {
                     title
-                    date
                 }
             }
         }
