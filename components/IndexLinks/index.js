@@ -5,7 +5,7 @@ import { IconAbout, IconPortoflio, IconEmail, IconLinkedin, IconDribbble, IconGi
 import s from './styles.module.css'
 
 export const IndexLinks = () => (
-    <section className={s.container}>
+    <section className={s.section}>
         <ul className={s.list}>
             <div>
                 <li>
@@ -22,6 +22,7 @@ export const IndexLinks = () => (
                         to={'/portfolio/'}
                         className={s.link}
                         >
+                        <IconPortoflio className={s.icon} />
                         <h2>Portfolio</h2>
                     </Link>
                 </li>

@@ -7,8 +7,8 @@ import { FraktioLogo } from 'components/Fraktio'
 import s from './styles.module.css'
 
 export const IndexHeader = () => (
-    <header>
-        <div className={s.headerContainer}>
+    <header className={s.section}>
+        <div className={s.container}>
             <ProfilePicture className={s.picture} />
             <h1 className={s.name}>I am Iiro Jäppinen</h1>
             <h2 className={s.title}>

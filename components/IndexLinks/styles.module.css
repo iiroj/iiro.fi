@@ -1,13 +1,15 @@
-.container {
-    line-height: 32px;
-    margin: 0 auto;
-    max-width: 30rem;
+.section {
+    background-color: hsla(0, 0%, 100%, 1);
+    padding: 5vh 1rem;
 }
 
 .list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    line-height: 32px;
+    margin: 0 auto;
+    max-width: 30rem;
 }
 
 .list > div {
@@ -23,40 +25,34 @@
 
 .link {
     align-items: center;
+    box-shadow: none;
+    color: inherit;
     display: flex;
     flex-direction: column;
     margin: 0.5rem 1rem;
     text-decoration: none;
 }
 
-.link:not(:hover) {
-    color: hsla(0, 0%, 90%, 1);
+.link:hover {
+    box-shadow: none;
 }
 
 .icon {
     display: inline-block;
     fill-rule: evenodd;
     fill: none;
-    height: 32px;
+    height: 24px;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 2px;
     transition: transform 125ms ease-in;
     vertical-align: -30%;
     viewBox: 0 0 32 32;
-    width: 32px;
+    width: 24px;
 }
 
 .icon * {
-    transition: stroke 125ms ease-in;
-}
-
-.icon *[data-styling=base] {
-    stroke: hsla(195, 0%, 100%, 1);
-}
-
-.icon *[data-styling=highlight] {
-    stroke: hsla(195, 80%, 50%, 1);
+    stroke: hsla(0, 0%, 30%, 1);
 }
 
 .link:hover .icon {
@@ -65,12 +61,4 @@
 
 .link:active .icon {
     transform: scale(1.0);
-}
-
-.link:hover .icon * {
-    stroke: hsla(195, 80%, 50%, 1);
-}
-
-.link:active .icon * {
-    stroke: hsla(195, 80%, 30%, 1);
 }

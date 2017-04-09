@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'react-router'
 
+import { Back } from 'components/Back'
 import PortfolioVerkkokauppaCom from 'components/Portfolio/PortfolioVerkkokauppaCom'
 import { PortfolioHumble } from 'components/Portfolio/PortfolioHumble'
 import { PortfolioIcons } from 'components/Portfolio/PortfolioIcons'
@@ -16,9 +17,7 @@ export default class PortfolioIndex extends Component {
                     title="Portfolio of Iiro Jäppinen"
                 />
                 <div className={s.container}>
-                    <nav>
-                        <Link className={s.back} to="/" title="Back to iiro.fi">Back to iiro.fi</Link>
-                    </nav>
+                    <Back />
                     <header className={s.header}>
                         <h1>Portfolio of Iiro Jäppinen</h1>
                     </header>
