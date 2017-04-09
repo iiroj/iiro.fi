@@ -13,9 +13,9 @@ export default function IndexBlogPreview (props) {
     return (
         <section className={s.container}>
             <h3 className={s.header}>From the blog:</h3>
-            <Link to={slug} className={s.articleLink}>
-                <article className={s.article}>
-                    <h1>{title}</h1>
+            <Link to={slug} className={s.article}>
+                <article>
+                    <h1 className={s.title}>{title}</h1>
                     <time dateTime={rawDate}>{date}</time>
                 </article>
             </Link>
