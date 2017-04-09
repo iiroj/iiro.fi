@@ -31,7 +31,7 @@ exports.createPages = ({ args }) => {
 
     return new Promise((resolve, reject) => {
         const pages = []
-        const blogPost = path.resolve("templates/template-blog-post.js")
+        const blogPost = path.resolve("components/BlogPost/index.js")
         graphql(
             `
             {

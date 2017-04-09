@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 
-import { default as profile } from 'static/profilePicture@3x.jpg'
+import { default as profile } from 'components/ProfilePicture/profilePicture@3x.jpg'
 
-import s from 'styles/post.module.css'
+import s from './styles.module.css'
 
 export default class BlogPost extends Component {
     render () {
