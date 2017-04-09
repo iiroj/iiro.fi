@@ -1,11 +1,8 @@
 .link {
+    color: inherit;
     display: block;
     padding: 0.5rem 1rem;
     text-decoration: none;
-}
-
-.link:hover {
-    color: hsl(180, 25%, 32%);
 }
 
 .icon {
@@ -22,15 +19,22 @@
     width: 32px;
 }
 
+.icon * {
+    transition: stroke 125ms ease-in;
+}
+
 .icon *[data-styling=base] {
-    stroke: hsl(180, 25%, 32%);
+    stroke: hsl(0, 0%, 30%);
 }
 
 .icon *[data-styling=highlight] {
-    stroke: hsl(315, 50%, 60%);
-    transition: stroke 0.1s ease-in;
+    stroke: hsla(195, 80%, 50%, 1);
 }
 
-.link:hover .icon *[data-styling=highlight]{
-    stroke: hsl(180, 25%, 32%);
+.link:hover .icon * {
+    stroke: hsla(195, 80%, 50%, 1);
+}
+
+.link:active .icon * {
+    stroke: hsla(195, 80%, 30%, 1);
 }
