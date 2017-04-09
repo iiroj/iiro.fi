@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 
 import { default as profile } from 'components/ProfilePicture/profilePicture@3x.jpg'
+import { Back } from 'components/Back'
 
 import s from './styles.module.css'
 
@@ -51,9 +52,7 @@ export default class BlogPost extends Component {
                     script={[{ type: 'application/ld+json', innerHTML: microdata }]} />
                 <div>
                     <main>
-                        <nav>
-                            <Link to="/blog/" className={s.back}>Back to Blog</Link>
-                        </nav>
+                        <Back />
                         <article className={s.post}>
                             <hgroup className={s.hgroup}>
                                 <h1 className={s.title}>{postTitle}</h1>
