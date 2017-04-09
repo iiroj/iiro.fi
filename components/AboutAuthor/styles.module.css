@@ -1,0 +1,51 @@
+.about {
+    align-items: center;
+    display: flex;
+    margin: 1rem;
+}
+
+.picture {
+    border-radius: 50%;
+    height: 96px;
+    margin-right: 1rem;
+    width: 96px;
+}
+
+.name {
+    composes: fontSerif from 'layouts/default.module.css';
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.title a:not(:hover) {
+    color: inherit;
+}
+
+.title a:hover .fraktioLogo path {
+    fill: hsla(195, 80%, 50%, 1);
+}
+
+.amp {
+    composes: amp from 'layouts/default.module.css';
+}
+
+.fraktio {
+    composes: fontSerif from 'layouts/default.module.css';
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.fraktioLogo {
+    display: inline-block;
+    height: 18px;
+    margin-right: 2px;
+    position: relative;
+    viewBox: 0 0 19 18;
+    vertical-align: -15%;
+    width: 19px;
+}
+
+.fraktioLogo path {
+    transition: fill 0.1s ease-in;
+}

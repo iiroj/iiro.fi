@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 
 import s from 'styles/blog.module.css'
+import { AboutAuthor } from 'components/AboutAuthor'
 
 export default class BlogIndex extends Component {
     render () {
@@ -33,6 +34,7 @@ export default class BlogIndex extends Component {
                     <Link to="/" className={s.back}>Back to iiro.fi</Link>
                 </nav>
                 <main>
+                    <AboutAuthor />
                     <h1 className={s.header}>Blog</h1>
                     <ul className={s.posts}>
                         {pageLinks}
