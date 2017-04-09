@@ -11,7 +11,7 @@ export const IndexBlogPreview = (props) => {
     return (
         <section>
             <div className={s.container}>
-                <p className={s.header}>Sometimes I like to blog about things that interest me. Here’s what I wrote most recently:</p>
+                <h3 className={s.header}>From The Blog:</h3>
                 <Link to={slug} className={s.article}>
                     <article>
                         <h1 className={s.title}>{title}</h1>
