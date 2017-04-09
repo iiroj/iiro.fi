@@ -1,9 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
-import { default as profile1x } from 'static/profilePicture.jpg'
-import { default as profile2x } from 'static/profilePicture@2x.jpg'
-import { default as profile3x } from 'static/profilePicture@3x.jpg'
+import { ProfilePicture } from 'components/ProfilePicture'
 import { FraktioLogo } from 'components/Fraktio'
 import Links from 'components/Links'
 import IndexBlogPreview from 'components/IndexBlogPreview'
@@ -44,12 +42,7 @@ export default class Index extends Component {
                     />
                     <header className={s.header}>
                         <div className={s.headerContainer}>
-                            <img
-                                className={s.picture}
-                                src={profile1x}
-                                srcSet={`${profile1x} 1x,
-                                ${profile2x} 2x,
-                                ${profile3x} 3x`} />
+                            <ProfilePicture className={s.picture} />
                             <h1 className={s.name}>{this.props.data.site.siteMetadata.name}</h1>
                             <h2 className={s.title}>
                                 UX <span className={s.amp}>&</span> UI Designer at <a className={s.fraktio} href="https://fraktio.fi" target="_blank">
