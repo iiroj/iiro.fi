@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
 import 'reset.css/reset.css'
-import s from 'styles/_template.module.css'
+import s from './default.module.css'
 
 export default class DefaultLayout extends Component {
     render() {
