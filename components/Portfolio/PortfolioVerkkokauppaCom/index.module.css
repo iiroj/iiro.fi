@@ -1,0 +1,38 @@
+.verkkokauppaCom {
+    background-color: white;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
+    position: relative;
+    z-index: 1;
+}
+
+.heading {
+    margin: 0 0 1rem 0;
+}
+
+.verkkokauppaCom h3 {
+    color: #2171CC;
+    margin: 0.5rem 0 0 0;
+}
+
+.buttonLink {
+    background-color: white;
+    border-radius: 2px;
+    color: #333333 !important;
+    text-shadow: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 1rem 0;
+    display: inline-block;
+    line-height: 16px;
+    padding: 12px 16px;
+    transition: color 125ms ease-in, box-shadow 125ms ease-in;
+}
+
+.buttonLink:hover {
+    color: #2171CC !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.buttonLink:active {
+    color: #333333 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2);
+}

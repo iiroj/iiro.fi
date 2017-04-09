@@ -1,0 +1,33 @@
+.deliveryEstimate {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.heading {
+}
+
+.deliveryEstimateText {
+    margin: 0 1rem 2rem 1rem;
+    max-width: 480px;
+}
+
+.deliveryEstimateText h3 {
+    color: #2171CC;
+    margin: 0.5rem 0 0 0;
+}
+
+.deliveryEstimateImage {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.deliveryEstimateImage img {
+    display: block;
+}

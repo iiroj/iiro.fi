@@ -1,0 +1,36 @@
+.priceBarometer {
+    overflow-x: hidden;
+    padding-top: 192px;
+    position: relative;
+    width: 100%;
+}
+
+.priceBarometerImage {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 368px;
+}
+
+.priceBarometerGraph {
+    height: 120px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    width: 1920px;
+}
+
+.priceBarometerText {
+    margin: 0 auto 2rem auto;
+    max-width: 480px;
+    padding: 0 1rem;
+}
+
+.heading {
+}
+
+.priceBarometerText p {
+    margin-bottom: 0.5rem;
+}
