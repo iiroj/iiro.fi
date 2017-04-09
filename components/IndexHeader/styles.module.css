@@ -1,0 +1,83 @@
+.picture {
+    animation-delay: 0.5s;
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: profilePictureAppear;
+    display: block;
+    height: 48px;
+    left: 1rem;
+    top: 1rem;
+    width: 48px;
+}
+
+.headerContainer {
+    position: relative;
+    flex-basis: 280px;
+}
+
+.name {
+    composes: fontSerif from 'layouts/default.module.css';
+    animation-delay: 0.5s;
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: profileTextAppear;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+.title {
+    animation-delay: 0.5s;
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: profileTextAppear;
+    margin: 0;
+}
+
+.amp {
+    composes: amp from 'layouts/default.module.css';
+}
+
+.fraktio {
+    composes: fontSerif from 'layouts/default.module.css';
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.fraktio:not(:hover) {
+    color: white;
+}
+
+.fraktioLogo {
+    display: inline-block;
+    height: 18px;
+    margin-right: 2px;
+    position: relative;
+    viewBox: 0 0 19 18;
+    vertical-align: -15%;
+    width: 19px;
+}
+
+.fraktio path {
+    fill: white;
+    transition: fill 0.1s ease-in;
+}
+
+.fraktio:hover path {
+    fill: hsla(195, 80%, 50%, 1);
+}
+
+.fraktio:active path {
+    fill: hsla(195, 80%, 30%, 1);
+}
+
+@keyframes profilePictureAppear {
+    0% { width: 0; transform: scale(0); }
+    100% { width: 48px; transform: scale(1);}
+}
+
+@keyframes profileTextAppear {
+    0% { opacity: 0; transform: translateX(-10vw) }
+    100% { opacity: 1; transform: translateX(0);}
+}

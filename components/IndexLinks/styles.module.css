@@ -1,12 +1,15 @@
-.header {
-    color: hsl(0, 0%, 60%);
+.container {
+    line-height: 32px;
+    margin: 0 auto;
+    max-width: 30rem;
+}
+
+.container p {
     margin-bottom: 1rem;
 }
 
 .link {
-    color: inherit;
-    display: block;
-    margin-top: 1rem;
+    display: inline-block;
     text-decoration: none;
 }
 
@@ -15,11 +18,10 @@
     fill-rule: evenodd;
     fill: none;
     height: 32px;
-    margin-right: 1rem;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 2px;
-    vertical-align: -45%;
+    vertical-align: -30%;
     viewBox: 0 0 32 32;
     width: 32px;
 }
@@ -29,11 +31,11 @@
 }
 
 .icon *[data-styling=base] {
-    stroke: hsl(0, 0%, 30%);
+    stroke: hsla(195, 70%, 80%, 1);
 }
 
 .icon *[data-styling=highlight] {
-    stroke: hsla(195, 80%, 50%, 1);
+    stroke: hsla(0, 0%, 100%, 1);
 }
 
 .link:hover .icon * {

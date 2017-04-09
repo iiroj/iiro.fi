@@ -1,34 +1,17 @@
-.font {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5rem;
-}
-
-.fontSans {
-    composes: font;
+:root {
+    background-color: hsla(220, 1%, 20%, 1);
+    color: hsla(0, 0%, 90%, 1);
     font-family:
         -apple-system, BlinkMacSystemFont,
         "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
         "Helvetica Neue", sans-serif;
-}
-
-.fontSerif {
-    composes: font;
-    font-family: Alegreya, georgia, serif;
-}
-
-.amp {
-    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
-    font-style: italic;
-}
-
-.root {
-    composes: fontSans;
-    color: hsla(0, 0%, 30%, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 :global(a) {
-    color: hsla(195, 80%, 30%, 1);
+    color: hsla(195, 70%, 80%, 1);
     transition: color 0.1s ease-in;
 }
 
@@ -40,45 +23,27 @@
     color: hsla(195, 80%, 30%, 1);
 }
 
+.fontSerif {
+    font-family: Alegreya, georgia, serif;
+}
+
+.amp {
+    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+    font-style: italic;
+}
+
 .header {
-    align-items: center;
-    background-color: hsla(18, 75%, 60%, 1);
-    box-sizing: border-box;
-    color: white;
-    position: relative;
 }
 
 .header::after {
-    background-color: hsla(18, 75%, 60%, 1);
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform-origin: 0;
-    transform: skewY(2deg);
-    z-index: -1;
 }
 
 .boxLink {
-    background-color: hsl(0, 0%, 0%, 0.05);
-    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.1);
-    color: hsla(0, 0%, 30%, 1);
-    display: block;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    text-decoration: inherit;
-    transition: background-color 125ms ease-in, color 125ms ease-in;
+
 }
 
 .boxLink:hover {
-    background-color: hsla(195, 80%, 50%, 1);
-    color: hsla(0, 0%, 100%, 1);
 }
 
 .boxLink:active {
-    background-color: hsla(195, 100%, 30%, 1);
-    color: hsla(0, 0%, 100%, 1);
 }
