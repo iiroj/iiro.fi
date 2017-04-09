@@ -1,10 +1,9 @@
 .back {
-    composes: back from 'styles/blog.module.css'
+    composes: boxLink from 'styles/_template.module.css';
 }
 
 .post {
     box-sizing: border-box;
-    color: hsl(0, 0%, 30%);
     margin: 0 auto;
     max-width: 38rem;
     padding: 2rem 1rem;

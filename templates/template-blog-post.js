@@ -51,8 +51,8 @@ export default class BlogPost extends Component {
                     script={[{ type: 'application/ld+json', innerHTML: microdata }]} />
                 <div>
                     <main>
-                        <nav className={s.back}>
-                            <Link to="/blog/">Back to Blog</Link>
+                        <nav>
+                            <Link to="/blog/" className={s.back}>Back to Blog</Link>
                         </nav>
                         <article className={s.post}>
                             <hgroup className={s.hgroup}>
