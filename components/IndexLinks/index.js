@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
-import { IconEmail, IconLinkedin, IconDribbble, IconGitHub } from 'components/Icons'
+import { IconAbout, IconPortoflio, IconEmail, IconLinkedin, IconDribbble, IconGitHub } from 'components/Icons'
 import s from './styles.module.css'
 
 export const IndexLinks = () => (
@@ -10,10 +10,11 @@ export const IndexLinks = () => (
             <div>
                 <li>
                     <Link
-                        to={'/resume/'}
+                        to={'/about/'}
                         className={s.link}
                         >
-                        <h2>Résumé</h2>
+                        <IconAbout className={s.icon} />
+                        <h2>About</h2>
                     </Link>
                 </li>
                 <li>

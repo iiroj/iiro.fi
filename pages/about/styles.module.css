@@ -1,0 +1,91 @@
+.wrapper {
+}
+
+.resume {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    max-width: 210mm;
+    padding-bottom: 0;
+    position: relative;
+}
+
+@media (min-width: 640px) {
+    .resume {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+}
+
+.resume strong {
+    font-weight: 500;
+}
+
+.resume em {
+    font-style: oblique;
+}
+
+.leftColumn {
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .leftColumn {
+        width: 320px;
+    }
+}
+
+.header {
+    padding: 1rem;
+}
+
+.headerPicture {
+    height: 4rem;
+    width: 4rem;
+}
+
+.header div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header div h2 {
+    display: inline;
+    font-size: inherit;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.header div time {
+    color: rgb(174, 174, 174);
+}
+
+.name {
+    composes: fontSerif from 'layouts/default.module.css';
+}
+
+.rightColumn {
+    width: 100%;
+}
+
+.section {
+    padding: 1rem;
+}
+
+.section h2 {
+    margin: 0 0 0.5rem 0;
+}
+
+.section p {
+    margin-bottom: 0.5rem;
+}
+
+@media print {
+    .resume {
+        box-shadow: none;
+        margin: 0;
+        min-height: auto;
+    }
+}
