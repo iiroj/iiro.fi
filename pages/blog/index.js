@@ -2,8 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 
-import s from 'styles/blog.module.css'
 import { AboutAuthor } from 'components/AboutAuthor'
+
+import s from './styles.module.css'
 
 export default class BlogIndex extends Component {
     render () {

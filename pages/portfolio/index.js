@@ -6,7 +6,7 @@ import PortfolioVerkkokauppaCom from 'components/Portfolio/PortfolioVerkkokauppa
 import { PortfolioHumble } from 'components/Portfolio/PortfolioHumble'
 import { PortfolioIcons } from 'components/Portfolio/PortfolioIcons'
 
-import s from 'styles/PortfolioIndex.module.css'
+import s from './styles.module.css'
 
 export default class PortfolioIndex extends Component {
     render () {

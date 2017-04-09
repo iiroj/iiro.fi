@@ -1,5 +1,5 @@
 .back {
-    composes: boxLink from 'styles/_template.module.css';
+    composes: boxLink from 'layouts/default.module.css';
 }
 
 .back a:hover {
@@ -8,9 +8,10 @@
 }
 
 .header {
-    composes: fontSerif from 'styles/_template.module.css';
-    font-size: 1.5rem;
-    margin: 2rem 1rem 1rem;
+    composes: fontSerif from 'layouts/default.module.css';
+    color: hsla(0, 0%, 60%, 1);
+    font-size: 1.25rem;
+    margin: 1rem;
 }
 
 .posts {
@@ -18,7 +19,7 @@
 }
 
 .post {
-    box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.05);
+    box-shadow: 0 -1px 0 hsla(0, 0%, 0%, 0.05);
     color: inherit;
     display: block;
     padding: 1rem;
@@ -34,10 +35,6 @@
 }
 
 .title {
-    composes: fontSerif from 'styles/_template.module.css';
+    composes: fontSerif from 'layouts/default.module.css';
     font-size: 1.25rem;
-}
-
-.posts li:last-child .post {
-    box-shadow: none;
 }

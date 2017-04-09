@@ -6,7 +6,7 @@ import { FraktioLogo } from 'components/Fraktio'
 import Links from 'components/Links'
 import IndexBlogPreview from 'components/IndexBlogPreview'
 
-import s from 'styles/index.module.css'
+import s from './styles.module.css'
 
 export default class Index extends Component {
     render () {

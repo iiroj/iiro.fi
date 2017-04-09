@@ -1,5 +1,5 @@
 .header {
-    composes: header from 'styles/_template.module.css';
+    composes: header from 'layouts/default.module.css';
     display: flex;
     justify-content: center;
     min-height: 40vh;
@@ -26,12 +26,13 @@
 }
 
 .name {
-    composes: fontSerif from 'styles/_template.module.css';
+    composes: fontSerif from 'layouts/default.module.css';
     animation-delay: 0.5s;
     animation-duration: 0.25s;
     animation-fill-mode: both;
     animation-name: profileTextAppear;
     font-size: 1.5rem;
+    font-style: italic;
     margin-top: 0.5rem;
 }
 
@@ -40,16 +41,15 @@
     animation-duration: 0.25s;
     animation-fill-mode: both;
     animation-name: profileTextAppear;
-    font-style: italic;
     margin: 0;
 }
 
 .amp {
-    composes: amp from 'styles/_template.module.css';
+    composes: amp from 'layouts/default.module.css';
 }
 
 .fraktio {
-    composes: fontSerif from 'styles/_template.module.css';
+    composes: fontSerif from 'layouts/default.module.css';
     color: white !important;
     font-style: normal;
     font-weight: 500;
@@ -111,4 +111,20 @@
 
 .about p + p {
     margin-top: 1rem;
+}
+
+.about strong {
+    font-weight: 600;
+}
+
+.about a:not(:hover) {
+    color: inherit;
+}
+
+.about .darkGrey {
+    color: hsla(0, 0%, 45%, 1);
+}
+
+.about .mediumGrey {
+    color: hsla(0, 0%, 60%, 1);
 }
