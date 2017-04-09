@@ -97,4 +97,18 @@
     margin-bottom: 5rem;
     flex-basis: 19rem;
 }
+
+.hr {
+    border: none;
+    border-bottom: thin solid hsla(0, 0%, 0%, 0.1);
+}
+
+.about {
+    margin: 0 auto;
+    max-width: 38rem;
+    padding: 10vh 1rem;
+}
+
+.about p + p {
+    margin-top: 1rem;
 }
