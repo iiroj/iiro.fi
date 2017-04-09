@@ -42,7 +42,7 @@
 
 .header {
     align-items: center;
-    background: linear-gradient(180deg, hsla(18, 100%, 70%, 1) 0%, hsla(18, 75%, 60%, 1) 100%);
+    background-color: hsla(18, 75%, 60%, 1);
     box-sizing: border-box;
     color: white;
     position: relative;
