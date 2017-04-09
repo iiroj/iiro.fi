@@ -2,11 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
 import { IconEmail, IconLinkedin, IconDribbble, IconGitHub } from 'components/Icons'
-import s from 'styles/links.module.css'
+import s from './styles.module.css'
 
-export default function Links (props) {
+export default function IndexLinks (props) {
     return (
         <section className="index-links">
+            <h3 className={s.header}>Me around the web:</h3>
             <ul className="container">
                 <li>
                     <a

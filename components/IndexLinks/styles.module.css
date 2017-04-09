@@ -1,7 +1,12 @@
+.header {
+    color: hsl(0, 0%, 60%);
+    margin-bottom: 1rem;
+}
+
 .link {
     color: inherit;
     display: block;
-    padding: 0.5rem 1rem;
+    margin-top: 1rem;
     text-decoration: none;
 }
 

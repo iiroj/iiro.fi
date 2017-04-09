@@ -9,18 +9,17 @@
 
 .header {
     color: hsl(0, 0%, 60%);
-    margin: 0.75rem 0 1rem 0;
+    margin-bottom: 1rem;
 }
 
 .article {
-    composes: boxLink from 'styles/_template.module.css';
+    composes: boxLink from 'layouts/default.module.css';
     border-radius: 4px;
 }
 
 .title {
-    composes: fontSerif from 'styles/_template.module.css';
+    composes: fontSerif from 'layouts/default.module.css';
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
 }
 
 .article time {
