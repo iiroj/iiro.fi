@@ -41,14 +41,14 @@
 
 .header {
     align-items: center;
-    background-color: hsl(180, 25%, 32%);
+    background: linear-gradient(180deg, hsla(18, 100%, 70%, 1) 0%, hsla(18, 75%, 60%, 1) 100%);
     box-sizing: border-box;
     color: white;
     position: relative;
 }
 
 .header::after {
-    background-color: hsl(180, 25%, 32%);
+    background-color: hsla(18, 75%, 60%, 1);
     content: "";
     display: block;
     height: 100%;
