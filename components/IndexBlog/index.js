@@ -16,7 +16,7 @@ export default function IndexBlog (props) {
             <li key={slug}>
                 <Link to={slug} className={s.post}>
                     <article>
-                        <h2 className={s.title}>{title}</h2>
+                        <h4 className={s.title}>{title}</h4>
                     </article>
                 </Link>
             </li>
@@ -25,6 +25,7 @@ export default function IndexBlog (props) {
 
     return (
         <div className={s.container}>
+            <h3 className={s.header}>Blog:</h3>
             <ul className={s.posts}>
                 {pageLinks}
             </ul>

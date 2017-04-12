@@ -2,6 +2,14 @@
     box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.1);
 }
 
+.header {
+    composes: fontSerif from 'layouts/default.module.css';
+    font-size: 1.5rem;
+    margin: 0 auto;
+    max-width: 30rem;
+    padding: 5vh 1rem 0 1rem;
+}
+
 .posts {
     line-height: 1.5rem;
     margin: 0 auto;
