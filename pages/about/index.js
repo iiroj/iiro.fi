@@ -10,19 +10,17 @@ export default function About () {
     return (
         <div>
             <Helmet
-                title="Résumé of Iiro Jäppinen"
+                title="About Iiro Jäppinen"
             />
             <Back />
+            <h1 className={s.heading}>About Iiro Jäppinen</h1>
             <div className={s.wrapper}>
                 <article className={s.resume}>
                     <div className={s.leftColumn}>
                         <header className={s.header}>
                             <ProfilePicture />
                             <h1 className={s.name}>Iiro Jäppinen</h1>
-                            <div>
-                                <h2>Résumé</h2>
-                                <time dateTime="2016-11-25">Fri Now 25 2016</time>
-                            </div>
+                            <time dateTime="2017-04-15">Sat Apr 15 2017</time>
                         </header>
                         <section className={s.section}>
                             <p>I am an UX/UI designer with a passion for precise pixels and intelligent solutions. I love agile methods and became a Scrum Certified <a href="https://www.scrumalliance.org/community/profile/ijappinen">Product Owner</a> and <a href="https://www.scrumalliance.org/community/profile/ijappinen">Scrum Master</a>. I prefer workshops and demo sessions to boring meetings without purpose.</p>
