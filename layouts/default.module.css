@@ -7,7 +7,6 @@
         "Helvetica Neue", sans-serif;
     font-size: 14px;
     font-weight: 400;
-    line-height: 18px;
 }
 
 :global(a) {
@@ -25,8 +24,12 @@
     color: hsla(0, 0%, 0%, 1);
 }
 
+.root {
+    line-height: 1.5rem;
+}
+
 .fontSerif {
-    font-family: Alegreya, georgia, serif;
+    font-family: Georgia, serif;
 }
 
 .amp {
