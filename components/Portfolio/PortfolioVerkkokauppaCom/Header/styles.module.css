@@ -42,9 +42,14 @@
 }
 
 .heading {
+    composes: fontSerif from 'layouts/default.module.css';
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 .buttonLink {
+    composes: buttonLink from '../index.module.css';
 }
 
 .frontPageContainer {

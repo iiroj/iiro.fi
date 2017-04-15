@@ -24,10 +24,10 @@ export default class PortfolioIndex extends Component {
                     <PortfolioVerkkokauppaCom />
                     <PortfolioHumble />
                     <PortfolioIcons />
-                    <aside>
-                        <p className={s.more}>With more coming soon...</p>
-                    </aside>
                 </div>
+                <aside>
+                    <p className={s.more}>With more coming soon...</p>
+                </aside>
             </div>
         )
     }
