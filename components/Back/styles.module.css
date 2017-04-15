@@ -50,3 +50,9 @@
 .back:active::after {
     transform: rotate(-45deg) scale(1);
 }
+
+@media print {
+    .back {
+        display: none;
+    }
+}
