@@ -1,3 +1,5 @@
+const path = require("path")
+
 exports.modifyWebpackConfig = ({config}) => {
   config.merge({
     resolve: {
@@ -9,18 +11,21 @@ exports.modifyWebpackConfig = ({config}) => {
 }
 
 exports.onNodeCreate = ({ node, boundActionCreators, getNode }) => {
-  const { updateNode } = boundActionCreators
+    const { updateNode } = boundActionCreators
 
-  if ( node.type === `MarkdownRemark`) {
-    const fileNode = getNode(node.parent)
-    node.slug = fileNode.slug
-    if (node.frontmatter.path) {
-        const path = node.frontmatter.path
-        fileNode.slug = `/blog${path}`
-        node.slug = `/blog${path}`
+    if (node.type === `File` && typeof node.slug === "undefined") {
+        const parsedFilePath = path.parse(node.absolutePath)
+        const slug = `/blog/${parsedFilePath.dir.split("---")[1]}/`
+        node.slug = slug
+        updateNode(node)
+    } else if ( node.type === `MarkdownRemark` && typeof node.frontmatter.slug !== "undefined" ) {
+        node.slug = `/blog/${node.frontmatter.slug}/`
+        updateNode(node)
+    } else if ( node.type === `MarkdownRemark` && typeof node.slug === "undefined" ) {
+        const fileNode = getNode(node.parent)
+        node.slug = fileNode.slug
+        updateNode(node)
     }
-    updateNode(node)
-  }
 }
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
