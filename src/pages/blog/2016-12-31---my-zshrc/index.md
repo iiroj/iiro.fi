@@ -28,7 +28,7 @@ Finally, I bind the ↑/↓ to _history-substring-search_ for easier navigation,
 
 ## .zshrc
 
-````
+````bash
 # Correctly display UTF-8 with combining characters.
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
 	setopt combiningchars

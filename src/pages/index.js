@@ -50,7 +50,7 @@ export default class Index extends Component {
 
 export const pageQuery = `
 query Index {
-    allMarkdownRemark(sortBy: { fields: frontmatter___date, order: DESC }) {
+    allMarkdownRemark(sortBy: { fields: frontmatter___date, order: DESC }, frontmatter: { draft: { ne: true }}) {
         edges {
             node {
                 slug
