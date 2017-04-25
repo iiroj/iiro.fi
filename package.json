@@ -7,7 +7,7 @@
     "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
     "repository": "github:iiroj/iiro.fi",
     "scripts": {
-        "start": "gatsby develop",
+        "start": "NODE_ENV=development gatsby develop",
         "lint": "./node_modules/.bin/eslint --ext .js --ignore-pattern public .",
         "build": "gatsby build",
         "deploy": "s3cmd sync ./public/ s3://iiro.fi --delete-removed --guess-mime-type --no-mime-magic --no-preserve --server-side-encryption --cf-invalidate",
