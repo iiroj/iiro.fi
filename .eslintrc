@@ -1,7 +1,13 @@
 {
-  "plugins": [
-    "standard",
-    "react"
-  ],
-  "parser": "babel-eslint"
+    plugins: [
+        "standard",
+        "react"
+    ],
+    parserOptions: {
+        ecmaVersion: 6,
+          sourceType: "module",
+          ecmaFeatures: {
+              jsx: true
+          }
+    }
 }
