@@ -98,9 +98,10 @@
 }
 
 .footer {
-    max-width: 38rem;
+    box-sizing: border-box;
     margin: 4rem auto 3rem;
-    padding: 0 1rem;
+    max-width: 38rem;
+    padding: 1rem;
 }
 
 .footer .date {
