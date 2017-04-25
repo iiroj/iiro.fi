@@ -1,12 +1,7 @@
-const Promise = require("bluebird")
-const path = require("path")
-const select = require(`unist-util-select`)
-const fs = require(`fs-extra`)
-
 exports.modifyWebpackConfig = ({config}) => {
   config.merge({
     resolve: {
-      root: path.resolve(__dirname, './src'),
+      root: `${__dirname}/src`,
       extensions: ['', '.js', '.jsx', '.json', '.css', '.module.css'],
     }
   })
@@ -33,7 +28,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
     return new Promise((resolve, reject) => {
         const pages = []
-        const blogPost = path.resolve("src/components/BlogPost/index.js")
+        const blogPost = `${__dirname}/src/components/BlogPost/index.js`
         graphql(
             `
             {
