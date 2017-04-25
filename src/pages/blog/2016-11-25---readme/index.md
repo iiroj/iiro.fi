@@ -50,15 +50,15 @@ After deciding to turn off my server and move on to S3 I started finding out how
 
 To solve all my issues at once I found [Cloudfront](https://aws.amazon.com/cloudfront/) from the same AWS control panel. Cloudfront is a CDN that I point to my S3 bucket. It then synchronizes some 20 edge locations (I chose the cheapest pricing) in the EU, US and Canada to my bucket's contents. It supports TLS and HTTP/2 out-of-the-box. I could also add a CNAME to it so I could use my domain name. This was relatively easy and now I had a working Cloudfront CDN service with pings of ~11 ms (based in Stockholm, Sweden).
 
-![Output of ping$ for iiro.fi](ping.jpg)
+![Output of ping$ for iiro.fi](./ping.jpg)
 
 To actually work with my own domain name I had to change some DNS settings to point it to Cloudflare. This wasn't easy, as I cannot use a CNAME record for the naked, apex domain _iiro.fi_. I had to move my DNS hosting over to Amazon as well. The [Route 53](https://aws.amazon.com/route53/) service allows this via a custom _alias record_. Besides, Route 53 gives me 4 DNS endpoints and is really fast. I can also control it from the same control panel! I had now put all my eggs in Amazon's basket, apart from the domain name registrations. I guess it doesn't matter, Amazon should be too big to fail.
 
-![Output of host$ for iiro.fi](host.jpg)
+![Output of host$ for iiro.fi](./host.jpg)
 
 One last thing was to get a TLS certificate for my domain name. I had used [Let's Encrypt](https://letsencrypt.org) with my own server. I searched around and could create an [AWS Lambda](https://aws.amazon.com/lambda/) function to continue using Let's Encrypt and send the files to [Amazon Certificate Manager](https://aws.amazon.com/certificate-manager/). But wait a minute… from Certificate Manager I found I get just as nice domain-validated certificates directly! They're signed by Amazon itself. So I went with that to keep things simple. Now my domain name was working and secured.
 
-![iiro.fi certificate signed by Amazon](cert.jpg)
+![iiro.fi certificate signed by Amazon](./cert.jpg)
 
 ### Cost
 
