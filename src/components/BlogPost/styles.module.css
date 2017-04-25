@@ -2,64 +2,60 @@
     composes: boxLink from 'layouts/default.module.css';
 }
 
+.title {
+    composes: fontSerif from 'layouts/default.module.css';
+    background-color: white;
+    font-size: 1.5rem;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.wrapper {
+    background-color: white;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+}
+
 .post {
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 38rem;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 4rem 1rem;
 }
 
-.hgroup {
-    padding-bottom: 2rem;
-}
-
-.title {
-    composes: fontSerif from 'layouts/default.module.css';
-    font-size: 2rem;
-    line-height: 2rem;
-}
-
-.subtitle, .meta {
-    color: hsl(0, 0%, 60%);
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-}
-
-.postBody h1, h2, h3, h4, h5, h6 {
+.post h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: 500;
     margin: 1rem 0;
 }
 
-.postBody p {
+.post p {
     margin-bottom: 0.5rem;
 }
 
-.postBody em {
+.post em {
     font-style: oblique;
 }
 
-.postBody strong {
+.post strong {
     font-weight: 500;
 }
 
-.postBody s {
+.post s {
     color: hsl(0, 0%, 60%);
     text-decoration: line-through;
 }
 
-.postBody ul, .postBody ol {
+.post ul, .post ol {
     list-style-type: square;
     margin: 0 -0.5rem 0.5rem -0.5rem;;
     padding: 0 1rem;
 }
 
-.postBody ol {
+.post ol {
     list-style-type: decimal;
 }
 
-.postBody hr {
+.post hr {
     border: none;
     box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.1);
     height: 1px;
@@ -67,35 +63,42 @@
     width: 50%;
 }
 
-.postBody img {
+.post img {
     display: block;
     margin: 3rem auto;
     max-height: 75vh;
     max-width: 100%;
 }
 
-.postBody blockquote {
+.post blockquote {
     box-shadow: inset 2px 0 0 rgba(0, 0, 0, 0.1);
     margin: 0 -0.5rem;
     padding: 0 1rem;
 }
 
-.postBody blockquote cite {
+.post blockquote cite {
     color: rgb(142, 142, 142);
     display: block;
 }
 
-.postBody pre {
-    background-color: rgb(242, 242, 242);
-    border-radius: 2px;
-    overflow-x: scroll;
+.post pre {
+    background-color: hsla(0, 0%, 98%, 1);
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.08);
+    margin: 0 -1rem;
+}
+
+.post pre code {
+    font-size: 0.8rem;
     padding: 1rem;
 }
 
-.postBody code {
-    background-color: rgb(242, 242, 242);
-    border-radius: 2px;
-    font-family: 'Menlo', monospace;
-    font-size: 0.8rem;
-    padding: 2px 4px;
+.footer {
+    max-width: 38rem;
+    margin: 4rem auto 3rem;
+    padding: 0 1rem;
+}
+
+.footer .date {
+    font-weight: inherit;
+    margin-bottom: 1rem;
 }

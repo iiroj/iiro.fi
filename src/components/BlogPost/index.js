@@ -4,8 +4,10 @@ import Helmet from 'react-helmet'
 
 import { default as profile } from 'components/ProfilePicture/profilePicture@3x.jpg'
 import { Back } from 'components/Back'
+import { AboutAuthor } from 'components/AboutAuthor'
 
 import s from './styles.module.css'
+import './syntax.css'
 
 export default class BlogPost extends Component {
     render () {
@@ -50,22 +52,19 @@ export default class BlogPost extends Component {
                 <Helmet
                     title={`${postTitle} — by ${name}`}
                     script={[{ type: 'application/ld+json', innerHTML: microdata }]} />
-                <div>
-                    <main>
-                        <Back />
-                        <article className={s.post}>
-                            <hgroup className={s.hgroup}>
-                                <h1 className={s.title}>{postTitle}</h1>
-                                <h6 className={s.meta}>
-                                    <span>On </span>
-                                    <time dateTime={postRawDate}>{postDate}</time>
-                                    <span>, by {name}</span>
-                                </h6>
-                            </hgroup>
-                            <div className={s.postBody} dangerouslySetInnerHTML={{ __html: body }} />
-                        </article>
-                    </main>
-                </div>
+                <Back />
+                <h1 className={s.title}>{postTitle}</h1>
+                <main className={s.wrapper}>
+                    <article className={s.post} dangerouslySetInnerHTML={{ __html: body }} />
+                </main>
+                <footer className={s.footer}>
+                    <p className={s.date}>
+                        <span>Posted first on </span>
+                        <time dateTime={postRawDate}>{postDate}</time>
+                        <span>, by:</span>
+                    </p>
+                    <AboutAuthor />
+                </footer>
             </div>
         )
     }
