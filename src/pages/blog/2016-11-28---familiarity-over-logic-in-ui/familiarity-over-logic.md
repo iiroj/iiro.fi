@@ -1,7 +1,7 @@
 ---
 title: "Familiarity over logic in UI"
 date: "2016-11-28"
-path: "/familiarity-over-logic/"
+slug: "familiarity-over-logic"
 ---
 
 At Verkkokauppa.com we design and build almost all of our tools from the customer-facing website all the way to how we handle shippings to and from our warehouses.

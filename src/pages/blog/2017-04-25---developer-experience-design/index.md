@@ -1,6 +1,7 @@
 ---
-title: Designing For a Good Developer Experience
+title: "Designing For a Good Developer Experience"
 date: "2017-04-25"
+slug: "developer-experience"
 draft: true
 ---
 

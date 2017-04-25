@@ -1,7 +1,7 @@
 ---
 title: "My .zshrc (🍾 Happy New Year)"
 date: "2016-12-31"
-path: "/my-zshrc/"
+slug: "my-zshrc"
 ---
 
 It is New Year’s Eve and I’m in bed fighting a cold, at the point where tweaking my _Terminal_ sounds productive. I wanted to share my minimal ZSH startup file in this _Gist_:
