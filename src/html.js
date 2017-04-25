@@ -1,8 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
+import { default as Icon } from 'pages/icon.png'
+
+const isProduction = process.env.NODE_ENV === 'production'
+
 let stylesStr
-if (process.env.NODE_ENV === `production`) {
+if (isProduction) {
     try {
         stylesStr = require(`!raw-loader!../public/styles.css`)
     } catch (e) {
@@ -13,10 +17,7 @@ if (process.env.NODE_ENV === `production`) {
 export default class HTML extends Component {
     render () {
         const head = Helmet.rewind()
-        let css
-        if (process.env.NODE_ENV === `production`) {
-            css = <style id="gatsby-inlined-css" dangerouslySetInnerHTML={{ __html: stylesStr }} />
-        }
+        const css = isProduction ? <style id="gatsby-inlined-css" dangerouslySetInnerHTML={{ __html: stylesStr }} /> : null
 
         return (
             <html lang="en">
