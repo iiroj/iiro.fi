@@ -5,10 +5,9 @@
 }
 
 .picture {
-    border-radius: 50%;
-    height: 96px;
+    height: 48px;
     margin: 0 1rem 1rem 0;
-    width: 96px;
+    width: 48px;
 }
 
 .text {
