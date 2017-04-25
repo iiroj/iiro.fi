@@ -20,6 +20,8 @@
         "gatsby": "1.0.0-alpha13",
         "gatsby-link": "1.0-alpha13",
         "gatsby-plugin-manifest": "1.0.0-alpha13",
+        "gatsby-plugin-offline": "1.0.0-alpha13",
+        "gatsby-plugin-preact": "1.0.0-alpha13",
         "gatsby-source-filesystem": "1.0.0-alpha13",
         "gatsby-transformer-remark": "1.0.0-alpha13",
         "gatsby-typegen-filesystem": "1.0.0-alpha13",
