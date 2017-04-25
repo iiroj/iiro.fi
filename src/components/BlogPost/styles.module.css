@@ -82,14 +82,14 @@
 }
 
 .post pre {
-    background-color: hsla(0, 0%, 98%, 1);
+    background-color: #f5f5f8;
     box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.08);
     margin: 0 -1rem;
 }
 
 .post pre code {
-    font-size: 0.8rem;
     padding: 1rem;
+    font-size: 0.9rem;
 }
 
 .footer {
