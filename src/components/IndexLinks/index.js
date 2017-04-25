@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
+import Link from 'gatsby-link'
 
 import { IconAbout, IconPortoflio, IconEmail, IconLinkedin, IconDribbble, IconGitHub } from 'components/Icons'
 import s from './styles.module.css'

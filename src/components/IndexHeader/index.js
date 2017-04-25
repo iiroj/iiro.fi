@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import Link from 'gatsby-link'
 
 import { ProfilePicture } from 'components/ProfilePicture'
 import { FraktioLogo } from 'components/Fraktio'

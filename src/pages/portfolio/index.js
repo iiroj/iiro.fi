@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import { Link } from 'react-router'
+import Link from 'gatsby-link'
 
 import { Back } from 'components/Back'
 import PortfolioVerkkokauppaCom from 'components/Portfolio/PortfolioVerkkokauppaCom'

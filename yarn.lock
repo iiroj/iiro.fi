@@ -2833,7 +2833,7 @@ function-bind@^1.0.2, function-bind@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.0.tgz#16176714c801798e4e8f2cf7f7529467bb4a5771"
 
-gatsby-link@1.0.0-alpha13:
+gatsby-link@1.0-alpha13:
   version "1.0.0-alpha13"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.0.0-alpha13.tgz#eb00184d1267045aaec20e1ec1b56660f5becdcb"
   dependencies:
@@ -6108,9 +6108,9 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-"recursive-readdir@git+https://github.com/KyleAMathews/recursive-readdir.git":
+"recursive-readdir@https://github.com/KyleAMathews/recursive-readdir.git":
   version "2.1.0"
-  resolved "git+https://github.com/KyleAMathews/recursive-readdir.git#fbfe835d2e75a977db2d1e794214aa26ecdb0671"
+  resolved "https://github.com/KyleAMathews/recursive-readdir.git#fbfe835d2e75a977db2d1e794214aa26ecdb0671"
   dependencies:
     minimatch "3.0.2"
 

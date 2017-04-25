@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
+import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
 import { default as profile } from 'components/ProfilePicture/profilePicture@3x.jpg'
