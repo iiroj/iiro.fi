@@ -13,10 +13,12 @@ module.exports = {
             },
         },
         'gatsby-transformer-remark',
+        'gatsby-transformer-sharp',
         {
             resolve: 'gatsby-typegen-remark',
             options: {
                 plugins: [
+                    'gatsby-typegen-remark-responsive-image',
                     'gatsby-typegen-remark-prismjs',
                     'gatsby-typegen-remark-copy-linked-files',
                     'gatsby-typegen-remark-smartypants',
@@ -24,6 +26,8 @@ module.exports = {
             },
         },
         'gatsby-typegen-filesystem',
+        'gatsby-typegen-sharp',
+        'gatsby-plugin-sharp',
         'gatsby-plugin-offline',
         'gatsby-plugin-preact'
     ]
