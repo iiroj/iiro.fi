@@ -20,6 +20,26 @@
     margin: 0 auto;
     max-width: 38rem;
     padding: 2rem 1rem 4rem 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.post a[class="gatsby-resp-image-link"] {
+    box-shadow: none;
+    overflow: hidden;
+    transition: background-color 0.125s ease-in;
+}
+
+.post a[class="gatsby-resp-image-link"]:hover {
+    background-color: hsla(44, 100%, 75%, 0.4);
+}
+
+.post a[class="gatsby-resp-image-link"] > div {
+    transition: transform 0.125s ease-in;
+}
+
+.post a[class="gatsby-resp-image-link"]:hover > div {
+    transform: scale(0.9);
 }
 
 .post h1,
@@ -66,13 +86,6 @@
     height: 1px;
     margin: 4rem auto;
     width: 50%;
-}
-
-.post img {
-    display: block;
-    margin: 3rem auto;
-    max-height: 75vh;
-    max-width: 100%;
 }
 
 .post blockquote {
