@@ -1,8 +1,7 @@
 ---
 title: "Designing For a Good Developer Experience"
-date: "2017-04-25"
+date: "2017-04-29"
 slug: "developer-experience"
-draft: true
 ---
 
 We recently updated the [Investors](https://www.verkkokauppa.com/en/investors/) website of [Verkkokauppa.com](https://www.verkkokauppa.com). Although a pretty standard investor site, it was a fun project that allowed me and my team to learn and apply new web technologies. I even got out of my comfort zone and contributed code — just not the kind you would think.
