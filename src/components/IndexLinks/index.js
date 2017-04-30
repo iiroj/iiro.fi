@@ -1,31 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import Link from 'gatsby-link'
 
-import { IconAbout, IconPortoflio, IconEmail, IconLinkedin, IconDribbble, IconGitHub } from 'components/Icons'
+import { IconEmail, IconLinkedin, IconDribbble, IconGitLab, IconGitHub } from 'components/Icons'
 import s from './styles.module.css'
 
 export const IndexLinks = () => (
     <section className={s.section}>
         <ul className={s.list}>
-            <div>
-                <li>
-                    <Link
-                        to={'/about/'}
-                        className={s.link}
-                        >
-                        <IconAbout className={s.icon} />
-                        <h2>About</h2>
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to={'/portfolio/'}
-                        className={s.link}
-                        >
-                        <IconPortoflio className={s.icon} />
-                        <h2>Portfolio</h2>
-                    </Link>
-                </li>
                 <li>
                     <a
                         href="mailto:iiro@jappinen.fi"
@@ -35,8 +16,6 @@ export const IndexLinks = () => (
                         <h2>Email</h2>
                     </a>
                 </li>
-            </div>
-            <div>
                 <li>
                     <a
                         href="https://fi.linkedin.com/in/iiroj"
@@ -57,6 +36,15 @@ export const IndexLinks = () => (
                 </li>
                 <li>
                     <a
+                        href="https://gitlab.com/iiroj"
+                        className={s.link}
+                        >
+                        <IconGitLab className={s.icon} />
+                        <h2>GitLab</h2>
+                    </a>
+                </li>
+                <li>
+                    <a
                         href="https://github.com/iiroj"
                         className={s.link}
                         >
@@ -64,7 +52,6 @@ export const IndexLinks = () => (
                         <h2>GitHub</h2>
                     </a>
                 </li>
-            </div>
         </ul>
     </section>
 )

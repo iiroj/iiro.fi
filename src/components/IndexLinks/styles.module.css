@@ -12,17 +12,6 @@
     max-width: 30rem;
 }
 
-.list > div {
-    display: flex;
-    flex: auto;
-    justify-content: space-around;
-    margin-bottom: 1rem;
-}
-
-.list > div li {
-    flex: 1;
-}
-
 .link {
     align-items: center;
     background: none !important;
