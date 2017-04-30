@@ -25,13 +25,13 @@
 }
 
 .post a[class="gatsby-resp-image-link"] {
-    box-shadow: none;
+    background: none;
     overflow: hidden;
     transition: background-color 0.125s ease-in;
 }
 
 .post a[class="gatsby-resp-image-link"]:hover {
-    background-color: hsla(44, 100%, 75%, 0.4);
+    background: hsla(44, 100%, 75%, 0.4);
 }
 
 .post a[class="gatsby-resp-image-link"] > div {
@@ -39,7 +39,7 @@
 }
 
 .post a[class="gatsby-resp-image-link"]:hover > div {
-    transform: scale(0.9);
+    transform: scale(1.1);
 }
 
 .post h1,
