@@ -12,9 +12,9 @@ export const VerkkokauppaComHeader = () => (
     <header className={s.header}>
         <div className={s.headerText}>
             <h1 className={s.heading}>Verkkokauppa.com</h1>
-            <p>UX/UI designer since November 2014.
+            <p>UX/UI designer from November 2014 until April 2017.
                 As the resident web designer,
-                I oversee the visual direction of Verkkokauppa.com’s
+                I oversaw the visual direction of Verkkokauppa.com’s
                 website.</p>
             <a
                 href="https://www.verkkokauppa.com/"
