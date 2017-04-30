@@ -28,6 +28,24 @@ module.exports = {
         'gatsby-typegen-filesystem',
         'gatsby-typegen-sharp',
         'gatsby-plugin-sharp',
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                name: `Iiro Jäppinen`,
+                short_name: 'iiro.fi',
+                icons: [
+                    {
+                        src: '/icon.png',
+                        sizes: '1024x1024',
+                        type: 'image/png',
+                    },
+                ],
+                start_url: '/',
+                background_color: 'white',
+                theme_color: 'white',
+                display: 'minimal-ui',
+            },
+        },
         'gatsby-plugin-offline',
         'gatsby-plugin-preact'
     ]
