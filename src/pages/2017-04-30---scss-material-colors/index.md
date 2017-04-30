@@ -6,7 +6,7 @@ slug: "scss-material-colors"
 
 After painstakingly creating [Material Design -inspired color palettes](https://material.io/guidelines/style/color.html#color-color-tool) for [Verkkokauppa.com](https://www.verkkokauppa.com/)'s colors _by hand_ and still not getting them _just right_, I figured there had to be a better way to generate nice palettes.
 
-I decided to write a simple NPM package containing an importable SCSS file for using colors. In this post I'll detail the two functions necessary for creating a palette from a single base color.
+I decided to write a simple npm package containing an importable SCSS file for using colors. In this post I'll detail the two functions necessary for creating a palette from a single base color.
 
 ## SCSS Functions To The Rescue!
 
@@ -38,9 +38,9 @@ Verkkokauppa.com's shade of blue used is <span style="background-color:#2171CC;c
 }
 ````
 
-What happens here is that the function `Blue()` takes an argument `$lightness` (defaulting to _500_), looks up from the `$map` if a matching color is available, and then returns the color converted by `adjustedColor()`. I'll get to that later.
+What happens here is that the function `Blue()` takes an argument `$lightness` (defaulting to _500_), looks up from the `$map` if a matching color is available, and then returns the converted color.
 
-The map contains lightness values as defined in the Material Design palettes. I decided that instead of specifying them by hand, I'll use SCSS's built-in color functions for mixing the base color with either _black_ or _white_. The highlight colors are additionally saturated a bit more.
+The map contains lightness values as defined in the Material Design palettes. I decided that instead of specifying them by hand, I'll use SCSS's built-in color functions for mixing the base color with either _black_ or _white_. The highlight colors are also a bit more saturated.
 
 ----
 
@@ -61,7 +61,7 @@ If a color shade is not defined, it additionally emits a warning.
 
 ## Usage in production
 
-That's pretty much it. As I said, I made this into an NPM package containing all the colors in a `colors.scss` file. There's an additional `colors.css` for hipsters who wish to use _next-gen_ [CSS variables](http://cssnext.io/). Also included is a `preview.html` file created in React which simply showcases the available palettes.
+That's pretty much it. As I said, I made this into an npm package containing all the colors in a `colors.scss` file. There's an additional `colors.css` for hipsters who wish to use _next-gen_ [CSS variables](http://cssnext.io/). Also included is a `preview.html` file created in React which simply showcases the available palettes.
 
 To use in a project, you just install the package `yarn add colors --dev` and then in SCSS import it with `@import "colors/colors.scss"` _(assuming something like Webpack resolves node module paths)_.
 
