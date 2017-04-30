@@ -1,0 +1,42 @@
+.about {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.picture {
+    height: 48px;
+    margin: 0 1rem 1rem 0;
+    width: 48px;
+}
+
+.text {
+    margin-bottom: 1rem;
+}
+
+.name {
+    composes: fontSerif from 'layouts/default.module.css';
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.amp {
+    composes: amp from 'layouts/default.module.css';
+}
+
+.fraktio {
+    composes: fontSerif from 'layouts/default.module.css';
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.fraktioLogo {
+    display: inline-block;
+    height: 18px;
+    margin-right: 2px;
+    position: relative;
+    viewBox: 0 0 19 18;
+    vertical-align: -15%;
+    width: 19px;
+}

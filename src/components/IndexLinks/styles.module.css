@@ -1,0 +1,49 @@
+.section {
+    background-color: hsla(0, 0%, 100%, 1);
+    padding: 5vh 1rem;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 32px;
+    margin: 0 auto;
+    max-width: 30rem;
+}
+
+.link {
+    align-items: center;
+    background: none !important;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.icon {
+    display: inline-block;
+    fill-rule: evenodd;
+    fill: none;
+    height: 24px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    transition: transform 125ms ease-in;
+    vertical-align: -30%;
+    viewBox: 0 0 32 32;
+    width: 24px;
+}
+
+.icon * {
+    stroke: hsla(0, 0%, 30%, 1);
+}
+
+.link:hover .icon {
+    transform: scale(1.2);
+}
+
+.link:active .icon {
+    transform: scale(1.0);
+}

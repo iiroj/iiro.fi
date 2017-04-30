@@ -1,0 +1,58 @@
+.icons {
+    align-items: center;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 4rem 1rem 3rem 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.iconsGrid {
+    display: block;
+    left: 50%;
+    min-height : 100%;
+    min-width: 100%;
+    opacity: 0.25;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.heading {
+    composes: fontSerif from 'layouts/default.module.css';
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 300;
+    margin: 0 0 1rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.iconExamples {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.iconExamples img {
+    display: block;
+    height: 256px;
+    margin: 0 1rem;
+    width: 256px;
+}
+
+.iconExamples a {
+    margin: 0;
+}
+
+.buttonLink {
+    composes: buttonLink from '../PortfolioVerkkokauppaCom/index.module.css';
+}

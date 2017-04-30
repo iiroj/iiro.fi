@@ -1,0 +1,96 @@
+.heading {
+    composes: fontSerif from 'layouts/default.module.css';
+    background-color: white;
+    font-size: 1.5rem;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.wrapper {
+    background-color: white;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+    padding: 2rem 0;
+}
+
+.resume {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 210mm;
+    position: relative;
+}
+
+@media (min-width: 640px) {
+    .resume {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+}
+
+.resume strong {
+    font-weight: 500;
+}
+
+.resume em {
+    font-style: oblique;
+}
+
+.leftColumn {
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .leftColumn {
+        width: 320px;
+    }
+}
+
+.header {
+    padding: 1rem;
+}
+
+.header > img {
+    height: 96px;
+    width: 96px;
+}
+
+.name {
+    composes: fontSerif from 'layouts/default.module.css';
+    font-size: 1.5rem;
+}
+
+.header time {
+    color: hsla(0, 0%, 60%, 1);
+}
+
+.rightColumn {
+    width: 100%;
+}
+
+.section {
+    padding: 1rem;
+}
+
+.section h2 {
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+}
+
+.section p {
+    margin-bottom: 0.5rem;
+}
+
+@media print {
+    .heading {
+        display: none;
+    }
+
+    .wrapper {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .resume a {
+        box-shadow: none;
+    }
+}

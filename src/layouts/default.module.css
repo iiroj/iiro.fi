@@ -1,0 +1,42 @@
+:root {
+    background-color: hsla(0, 0%, 95%, 1);
+    color: hsla(0, 0%, 30%, 1);
+    font-family:
+        -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+:global(a) {
+    background: linear-gradient(180deg, hsla(44,100%,75%,0)  0em, hsla(44,100%,75%,0)  0.8em, hsla(44,100%,75%,1) 0.8em, hsla(44,100%,75%,1) 1em);
+    background-repeat: repeat-y;
+    background-size: 100% 1.5rem;
+    color: inherit;
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+:global(a:hover) {
+    background: linear-gradient(180deg, hsla(44,100%,75%,0)  0em, hsla(44,100%,75%,0) 0.6em, hsla(44,100%,75%,1) 0.6em, hsla(44,100%,75%,1) 1em);
+    background-repeat: repeat-y;
+    background-size: 100% 1.5rem;
+}
+
+:global(a:active) {
+    color: hsla(0, 0%, 0%, 1);
+}
+
+.root {
+    line-height: 1.5rem;
+}
+
+.fontSerif {
+    font-family: Georgia, serif;
+}
+
+.amp {
+    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+    font-style: italic;
+}
