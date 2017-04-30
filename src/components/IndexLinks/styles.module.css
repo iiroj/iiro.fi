@@ -25,16 +25,12 @@
 
 .link {
     align-items: center;
-    box-shadow: none;
+    background: none !important;
     color: inherit;
     display: flex;
     flex-direction: column;
     margin: 0.5rem 1rem;
     text-decoration: none;
-}
-
-.link:hover {
-    box-shadow: none;
 }
 
 .icon {

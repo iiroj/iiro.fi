@@ -10,14 +10,18 @@
 }
 
 :global(a) {
-    box-shadow: inset 0 -4px 0 hsla(44, 100%, 75%, 1);
+    background: linear-gradient(180deg, hsla(44,100%,75%,0)  0em, hsla(44,100%,75%,0)  0.8em, hsla(44,100%,75%,1) 0.8em, hsla(44,100%,75%,1) 1em);
+    background-repeat: repeat-y;
+    background-size: 100% 1.5rem;
     color: inherit;
     text-decoration: none;
     word-wrap: break-word;
 }
 
 :global(a:hover) {
-    box-shadow: inset 0 -1rem 0 hsla(44, 100%, 75%, 1);
+    background: linear-gradient(180deg, hsla(44,100%,75%,0)  0em, hsla(44,100%,75%,0) 0.6em, hsla(44,100%,75%,1) 0.6em, hsla(44,100%,75%,1) 1em);
+    background-repeat: repeat-y;
+    background-size: 100% 1.5rem;
 }
 
 :global(a:active) {
