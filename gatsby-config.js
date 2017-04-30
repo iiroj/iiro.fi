@@ -18,7 +18,12 @@ module.exports = {
             resolve: 'gatsby-typegen-remark',
             options: {
                 plugins: [
-                    'gatsby-typegen-remark-responsive-image',
+                    {
+                        resolve: 'gatsby-typegen-remark-responsive-image',
+                        options: {
+                            maxWidth: 1280,
+                        },
+                    },
                     'gatsby-typegen-remark-prismjs',
                     'gatsby-typegen-remark-copy-linked-files',
                     'gatsby-typegen-remark-smartypants',
