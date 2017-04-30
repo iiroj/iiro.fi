@@ -1,8 +1,8 @@
 module.exports = {
     siteMetadata: {
-        name: 'Iiro Jäppinen',
+        name: `Iiro Jäppinen`,
         siteTitle: 'iiro.fi',
-        siteUrl: 'https://iiro.fi/'
+        siteUrl: `https://iiro.fi/`
     },
     plugins: [
         {
