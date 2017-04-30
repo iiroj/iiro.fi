@@ -7,6 +7,7 @@
     "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
     "repository": "github:iiroj/iiro.fi",
     "scripts": {
+        "prestart": "rm -fr ./.cache",
         "start": "NODE_ENV=development gatsby develop",
         "lint": "./node_modules/.bin/eslint --ext .js --ignore-pattern public .",
         "prebuild": "rm -fr ./.cache ./public",
