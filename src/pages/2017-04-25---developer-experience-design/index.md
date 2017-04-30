@@ -8,15 +8,15 @@ We recently updated the [Investors](https://www.verkkokauppa.com/en/investors/) 
 
 ## The project
 
-Our CEO wanted a bilingual investor site. He's great at what he does, but dropping a project like that with a four-week deadline was certainly challening. We took it as one, and formed a cross-functional team of three people: a designer _(that's me)_, a back-end developer and a full-stack developer. We would develop an isolated microsite using the latest technologies in many ways different from our usual stack.
+Our CEO wanted a bilingual investor site. He's great at what he does, but dropping a project like that with a four-week deadline was certainly challenging. We took it as one, and formed a cross-functional team of three people: a designer _(that's me)_, a back-end developer and a full-stack developer. We would develop an isolated microsite using the latest technologies in many ways different from our usual stack.
 
 Our DevOps team was just beta-testing [GitLab](https://about.gitlab.com/) at the time. Supposedly our current CI [Jenkins](https://jenkins.io/) was getting replaced by GitLab CE at some point. GitLab happens to work nicely with [Docker](https://www.docker.com/) containers. Because this project would be run in isolation, we figured we'd just jump the shark and develop everything in a Docker environment with the code hosted in our GitLab instance. Testing and deployment to production would also be done with Docker containers, run in the GitLab CI.
 
-Given the close deadline this was deemed a risk, but in the end we delivered even faster than normal thanks to the optimized setup of developing and deployment. My favorite contribution to this project was actually something else than website's layout and visuals (although that was a positively refreshing as well). **What I really learned the most from was designing an efficient development environment**.
+Given the close deadline this was deemed a risk, but in the end we delivered even faster than normal thanks to the optimised setup of developing and deployment. My favourite contribution to this project was actually something else than website's layout and visuals (although that was a positively refreshing as well). **What I really learned the most from was designing an efficient development environment**.
 
 ## How to Define a Good Developer Experience
 
-To design for a good Developer Experience is to fine-tune your Development Enviroment, DE, up to eleven. A good DE is something that can make any project easily accessible and maintainable. In my opinion, you can tell a good DE by it being:
+To design for a good Developer Experience is to fine-tune your Development Environment, DE, up to eleven. A good DE is something that can make any project easily accessible and maintainable. In my opinion, you can tell a good DE by it being:
 
 1. __Simple to set up__
     * There should be minimum _magic_ involved — a simple list of required software to install is best.
@@ -26,7 +26,7 @@ To design for a good Developer Experience is to fine-tune your Development Envir
     * Your DE requirements should be universal. This is really where Docker shines, since you can mostly just require `docker` and `docker-compose`.
 3. __Immutable__
     * A good developer is lazy in that he tries to automate as much of his work as possible. This might mean a simple `./start.sh` in the repo's root.
-    * No matter how the project evolves, the commands to use the DE should stay immutable. A developer shouldn't need to relearn his muscle-memorized commands every week.
+    * No matter how the project evolves, the commands to use the DE should stay immutable. A developer shouldn't need to relearn his muscle-memorised commands every week.
     * With docker and docker-compose, the best way to keep the DE immutable is to always support the same method of starting: `docker-compose up --build`
 4. __Automagical__
     * For local development, the DE should _just work_. After starting, you'll get a local web server with hot-reloading and auto-compilation of code.
@@ -45,7 +45,7 @@ Our project turned out to be very approachable for new developers. You only need
 
 There is an additional `docker-compose.prod.yml` file for running the project in production mode. In this mode our project is compiled into an NPM module, which is then installed into a Docker container. Another Docker container is started with a snapshot of the [MongoDB](https://www.mongodb.com/) database that includes the site's content.
 
-One neat thing with Docker is that it comes supported with virtual filesystem _volumes_. Our DE works by mounting the local repo inside the Docker container. Normally this would mean that installing `node_modules` would place back on the local filesystem. This would then bring about compatibility issues (like node-sass binaries) with varying host systems. To keep the DE portable, we define a Docker volume that gets mounted on top of the `node_modules` directy inside the already-mounted repo. It's kind of a _Mount Inception_, but works really well by abstracting away to modules from the host system. Another benefit of this is that it's possible to run the project in both the development and production mode at the same time using the same repo, in seperate Docker containers, but with different mounted `node_modules`. We use NPM in production instead of Yarn for compatibility with out main servers.
+One neat thing with Docker is that it comes supported with virtual filesystem _volumes_. Our DE works by mounting the local repo inside the Docker container. Normally this would mean that installing `node_modules` would place back on the local filesystem. This would then bring about compatibility issues (like node-sass binaries) with varying host systems. To keep the DE portable, we define a Docker volume that gets mounted on top of the `node_modules` directly inside the already-mounted repo. It's kind of a _Mount Inception_, but works really well by abstracting away to modules from the host system. Another benefit of this is that it's possible to run the project in both the development and production mode at the same time using the same repo, in separate Docker containers, but with different mounted `node_modules`. We use NPM in production instead of Yarn for compatibility with out main servers.
 
 With GitLab it's possible to [define a project's CI system in the repo](https://docs.gitlab.com/ee/ci/pipelines.html), using a file called `.gitlab-ci.yml`. GitLab's CI can run Docker containers, so we only had to kind-of recreate the _docker-compose_ file. Every time someone pushes code, GitLab triggers whatever we defined in the CI file in our testing [Kubernetes cluster](https://kubernetes.io/). What this actually means is that a Docker container based on the same image used in local development is launched in a new Pod, the repo is downloaded inside it, and finally some npm scripts are run. This takes care of testing, linting and additional stuff like running [Snyk](https://snyk.io/).
 
@@ -55,4 +55,4 @@ You can of course build the NPM package locally. I even wrote a little `Makefile
 
 ## Wrapping up
 
-Designing the _Developer Environment_ is an important part of designing a succesful product. Using Docker and GitLab you can make sure every developer is empowered to _just get things done_. I'd like to call this __DX Design__ for _Developer Experience Design.
+Designing the _Developer Environment_ is an important part of designing a successful product. Using Docker and GitLab you can make sure every developer is empowered to _just get things done_. I'd like to call this __DX Design__ for _Developer Experience Design.
