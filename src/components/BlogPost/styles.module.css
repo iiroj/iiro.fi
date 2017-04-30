@@ -100,17 +100,6 @@
     display: block;
 }
 
-.post pre {
-    background-color: #f5f5f8;
-    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.08);
-    margin: 0 -1rem;
-}
-
-.post pre code {
-    padding: 1rem;
-    font-size: 0.9rem;
-}
-
 .footer {
     box-sizing: border-box;
     margin: 4rem auto 3rem;
