@@ -9,18 +9,18 @@
     "scripts": {
         "prestart": "rm -fr ./.cache",
         "start": "NODE_ENV=development gatsby develop",
-        "lint": "./node_modules/.bin/eslint --ext .js --ignore-pattern public .",
+        "lint": "eslint --ext .js --ignore-pattern public .",
         "prebuild": "rm -fr ./.cache",
         "build": "gatsby build",
         "deploy": "s3cmd sync ./public/ s3://iiro.fi --delete-removed --guess-mime-type --no-mime-magic --no-preserve --server-side-encryption --cf-invalidate",
         "publish": "npm run build && npm run deploy"
     },
     "dependencies": {
-        "eslint": "^3.19.0",
-        "eslint-plugin-react": "^6.10.3",
-        "eslint-plugin-standard": "^3.0.1",
+        "eslint": "3.19.0",
+        "eslint-plugin-react": "6.10.3",
+        "eslint-plugin-standard": "3.0.1",
         "gatsby": "1.0.0-alpha13",
-        "gatsby-link": "1.0-alpha13",
+        "gatsby-link": "1.0.0-alpha13",
         "gatsby-plugin-manifest": "1.0.0-alpha13",
         "gatsby-plugin-offline": "1.0.0-alpha13",
         "gatsby-plugin-preact": "1.0.0-alpha13",
@@ -35,7 +35,7 @@
         "gatsby-typegen-remark-responsive-image": "1.0.0-alpha13",
         "gatsby-typegen-remark-smartypants": "1.0.0-alpha13",
         "gatsby-typegen-sharp": "1.0.0-alpha13",
-        "react-helmet": "^5.0.3",
-        "reset.css": "^2.0.2"
+        "react-helmet": "5.0.3",
+        "reset.css": "2.0.2"
     }
 }
