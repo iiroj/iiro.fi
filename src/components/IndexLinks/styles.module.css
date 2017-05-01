@@ -6,10 +6,21 @@
 .list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     line-height: 32px;
+    justify-content: center;
     margin: 0 auto;
     max-width: 30rem;
+    width: 100%;
+}
+
+.list > div {
+    display: flex;
+    flex: auto;
+    justify-content: space-around;
+}
+
+.list > div li {
+    flex: 1;
 }
 
 .link {
