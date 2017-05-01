@@ -30,9 +30,9 @@ export default class BlogPost extends Component {
         "name": "iiro.fi",
         "logo": {
             "@type": "ImageObject",
-            "url": "${profile}",
-            "height": 384,
-            "width": 384
+            "url": "https://iiro.fi${profile}",
+            "height": "384",
+            "width": "384"
         }
     },
     "datePublished": "${postRawDate}",
@@ -40,9 +40,9 @@ export default class BlogPost extends Component {
     "headline": "${postTitle}",
     "image": {
         "@type": "ImageObject",
-        "url": "${profile}",
-        "height": 384,
-        "width": 384
+        "url": "https://iiro.fi${profile}",
+        "height": "384",
+        "width": "384"
     },
     "mainEntityOfPage": "https://iiro.fi${post.slug}"
 }`
