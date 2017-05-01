@@ -26,7 +26,7 @@
 
 .post a[class="gatsby-resp-image-link"] {
     background: none;
-    margin: 1rem -1rem;
+    margin: 2rem -1rem;
     overflow: hidden;
     transition: background-color 0.125s ease-in;
 }
