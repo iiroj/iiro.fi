@@ -36,7 +36,7 @@ export default class BlogPost extends Component {
         }
     },
     "datePublished": "${postRawDate}",
-    "dateModified": ${postRawDate},
+    "dateModified": "${postRawDate}",
     "headline": "${postTitle}",
     "image": {
         "@type": "ImageObject",

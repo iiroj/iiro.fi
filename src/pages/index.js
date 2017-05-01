@@ -12,7 +12,11 @@ export default class Index extends Component {
     "@type": "Person",
     "name": "Iiro Jäppinen",
     "jobTitle": "UX & UI Designer",
-    "worksFor": "Fraktio",
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Fraktio",
+        "url": "https://fraktio.fi"
+    },
     "url": "https://iiro.fi/",
     "email": "iiro@jappinen.fi",
     "nationality": "Finland",
@@ -22,9 +26,11 @@ export default class Index extends Component {
         "addressLocality": "Helsinki"
     },
     "sameAs": [
-        "https://fi.linkedin.com/in/iiroj",
         "https://dribbble.com/iiroj",
-        "https://github.com/iiroj"
+        "https://fb.me/iiro.jappinen",
+        "https://fi.linkedin.com/in/iiroj",
+        "https://github.com/iiroj",
+        "https://t.me/iiroj"
     ]
 }`
 
