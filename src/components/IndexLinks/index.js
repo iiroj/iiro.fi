@@ -35,7 +35,7 @@ export const IndexLinks = () => (
                 </li>
                 <li>
                     <a
-                        href="https://fb.me/iiro.jappinen"
+                        href="https://m.me/iiro.jappinen"
                         className={s.link}
                     >
                         <IconFacebook className={s.icon} />
