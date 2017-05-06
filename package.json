@@ -2,10 +2,10 @@
   "name": "iiro.fi",
   "version": "2.2.0",
   "description": "Static blog made with Gatsby",
-  "bugs": "https://github.com/iiroj/iiro.fi/issues",
+  "bugs": "https://gitlab.com/iiroj/iiro.fi/issues",
   "licence": "UNLICENCED",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
-  "repository": "github:iiroj/iiro.fi",
+  "repository": "gitlab:iiroj/iiro.fi",
   "scripts": {
     "prestart": "rm -fr ./.cache",
     "start": "NODE_ENV=development gatsby develop",
