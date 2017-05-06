@@ -10,9 +10,9 @@ export const IndexHeader = () => (
     <header className={s.section}>
         <div className={s.container}>
             <ProfilePicture className={s.picture} />
-            <h1 className={s.name}>I am Iiro Jäppinen</h1>
+            <h1 className={s.name}>Iiro Jäppinen</h1>
             <h2 className={s.title}>
-                An UX <span className={s.amp}>&</span> UI Designer at <a className={s.fraktio} href="https://fraktio.fi" target="_blank">
+                UX <span className={s.amp}>&</span> UI Designer at <a className={s.fraktio} href="https://fraktio.fi" target="_blank">
                 <FraktioLogo className={s.fraktioLogo} />
                 <span>fraktio</span>
                 </a>
