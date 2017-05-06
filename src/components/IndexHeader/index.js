@@ -9,7 +9,9 @@ import s from './styles.module.css'
 export const IndexHeader = () => (
     <header className={s.section}>
         <div className={s.container}>
-            <ProfilePicture className={s.picture} />
+            <div className={s.pictureContainer}>
+                <ProfilePicture className={s.picture} />
+            </div>
             <h1 className={s.name}>Iiro Jäppinen</h1>
             <h2 className={s.title}>
                 UX <span className={s.amp}>&</span> UI Designer at <a className={s.fraktio} href="https://fraktio.fi" target="_blank">
