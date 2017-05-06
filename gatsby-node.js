@@ -36,17 +36,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const pages = []
         const blogPost = `${__dirname}/src/components/BlogPost/index.js`
         graphql(
-            `
-            {
-                allMarkdownRemark(limit: 1000) {
-                    edges {
-                        node {
-                            slug
-                        }
-                    }
-                }
+`{
+    allMarkdownRemark(limit: 1000) {
+        edges {
+            node {
+                slug
             }
-            `
+        }
+    }
+}`
         ).then(result => {
             if (result.errors) {
                 console.log(result.errors)

@@ -70,7 +70,7 @@ export default class BlogPost extends Component {
     }
 }
 
-export const pageQuery = `
+export const pageQuery = graphql`
 query BlogPostBySlug($slug: String!) {
     site {
         siteMetadata {

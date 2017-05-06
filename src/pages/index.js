@@ -52,9 +52,14 @@ export default class Index extends Component {
     }
 }
 
-export const pageQuery = `
+export const pageQuery = graphql`
 query Index {
-    allMarkdownRemark(sortBy: { fields: frontmatter___date, order: DESC }) {
+    allMarkdownRemark(
+        sortBy: {
+            fields: [frontmatter___date],
+            order: DESC
+        }
+    ) {
         edges {
             node {
                 slug
