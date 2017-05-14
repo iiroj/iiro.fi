@@ -1,7 +1,5 @@
 .cache
 .DS_store
-.gatsby-context.js
-.intermediate-representation
 node_modules
 public
 sketch
