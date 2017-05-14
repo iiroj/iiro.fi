@@ -8,14 +8,14 @@ import { VerkkokauppaComBarometer } from './Barometer'
 import s from './index.module.css'
 
 export default class PortfolioVerkkokauppaCom extends Component {
-    render () {
-        return (
-            <article className={s.verkkokauppaCom}>
-                <VerkkokauppaComHeader />
-                <VerkkokauppaComDeliveryEstimate />
-                <VerkkokauppaComPickup />
-                <VerkkokauppaComBarometer />
-            </article>
-        )
-    }
+  render () {
+    return (
+      <article className={s.verkkokauppaCom}>
+        <VerkkokauppaComHeader />
+        <VerkkokauppaComDeliveryEstimate />
+        <VerkkokauppaComPickup />
+        <VerkkokauppaComBarometer />
+      </article>
+    )
+  }
 }
