@@ -3,13 +3,9 @@ date := $(shell date +%Y-%m-%d_%H-%M-%S)
 image := $(shell cat docker-compose.yml | grep 'image:' | awk '{print $$2}')
 modules := iirofi_node_modules_make
 
-clean:
-	@ echo "Cleaning Docker Volumes…"
-	@ docker volume ls | grep ${modules} || exit 0 && docker volume rm ${modules}
-	@ echo "Cleaning Gatsby cache…"
-	@ rm -fr ${current_dir}/.cache
-	@ echo "Cleaning previous build…"
-	@ rm -fr ${current_dir}/public
+.DEFAULT_GOAL := default
+.PHONY: default
+default: build
 
 build:
 	@ echo "Creating Docker Volumes if necessary…"
@@ -26,4 +22,10 @@ deploy:
 	@ echo "Running deploy.sh…"
 	@ ${current_dir}/deploy.sh
 
-.PHONY: build
+clean:
+	@ echo "Cleaning Docker Volumes…"
+	@ docker volume ls | grep ${modules} || exit 0 && docker volume rm ${modules}
+	@ echo "Cleaning Gatsby cache…"
+	@ rm -fr ${current_dir}/.cache
+	@ echo "Cleaning previous build…"
+	@ rm -fr ${current_dir}/public
