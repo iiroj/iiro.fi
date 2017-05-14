@@ -7,32 +7,32 @@ import IndexBlog from 'components/IndexBlog'
 
 export default class Index extends Component {
   render () {
-    const IndexMicroData = `{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "name": "Iiro Jäppinen",
-  "jobTitle": "UX & UI Designer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Fraktio",
-    "url": "https://fraktio.fi"
-  },
-  "url": "https://iiro.fi/",
-  "email": "iiro@jappinen.fi",
-  "nationality": "Finland",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "Finland",
-    "addressLocality": "Helsinki"
-  },
-  "sameAs": [
-    "https://dribbble.com/iiroj",
-    "https://fb.me/iiro.jappinen",
-    "https://fi.linkedin.com/in/iiroj",
-    "https://github.com/iiroj",
-    "https://t.me/iiroj"
-  ]
-}`
+    const microdata = {
+      '@context': 'http://schema.org',
+      '@type': 'Person',
+      'name': 'Iiro Jäppinen',
+      'jobTitle': 'UX & UI Designer',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Fraktio',
+        'url': 'https://fraktio.fi'
+      },
+      'url': 'https://iiro.fi/',
+      'email': 'iiro@jappinen.fi',
+      'nationality': 'Finland',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressCountry': 'Finland',
+        'addressLocality': 'Helsinki'
+      },
+      'sameAs': [
+        'https://dribbble.com/iiroj',
+        'https://fb.me/iiro.jappinen',
+        'https://fi.linkedin.com/in/iiroj',
+        'https://github.com/iiroj',
+        'https://t.me/iiroj'
+      ]
+    }
 
     return (
       <div>
@@ -40,7 +40,7 @@ export default class Index extends Component {
           <article>
             <Helmet
               title='Iiro Jäppinen'
-              script={[{ type: 'application/ld+json', innerHTML: IndexMicroData }]}
+              script={[{ type: 'application/ld+json', innerHTML: `${JSON.stringify(microdata)}` }]}
               />
             <IndexHeader />
             <IndexLinks />
