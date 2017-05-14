@@ -1,6 +1,6 @@
 #!/bin/sh
 
-command -v foo >/dev/null 2>&1 || { echo "s3cmd not found. Aborting." >&2; exit 1; }
+command -v s3cmd >/dev/null 2>&1 || { echo "s3cmd not found. Aborting." >&2; exit 1; }
 
 SOURCE=./public
 TARGET=s3://iiro.fi

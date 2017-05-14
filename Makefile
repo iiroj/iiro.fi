@@ -24,6 +24,6 @@ build:
 
 deploy:
 	@ echo "Running deploy.sh…"
-	@ $current_dir/deploy.sh
+	@ ${current_dir}/deploy.sh
 
 .PHONY: build
