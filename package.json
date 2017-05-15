@@ -14,7 +14,6 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "gatsby": "1.0.0-alpha14",
     "gatsby-link": "1.0.0-alpha14",
     "gatsby-plugin-manifest": "1.0.0-alpha14",
     "gatsby-plugin-offline": "1.0.0-alpha14",
@@ -27,18 +26,20 @@
     "gatsby-source-filesystem": "1.0.0-alpha14",
     "gatsby-transformer-remark": "1.0.0-alpha14",
     "gatsby-transformer-sharp": "1.0.0-alpha14",
-    "react-helmet": "5.0.3",
-    "reset.css": "2.0.2"
+    "gatsby": "1.0.0-alpha14",
+    "preact": "8.1.0",
+    "react-helmet": "^5.0.3",
+    "reset.css": "^2.0.2"
   },
   "devDependencies": {
-    "eslint": "3.19.0",
-    "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
+    "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.0.1",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint": "^3.19.0"
   },
   "private": true
 }
