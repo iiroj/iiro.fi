@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 
 import { default as profile } from 'components/ProfilePicture/profilePicture@3x.jpg'
 import { Back } from 'components/Back'
-import { AboutAuthor } from 'components/AboutAuthor'
+import { Author } from 'components/Author'
 
 import s from './styles.module.css'
 import './syntax.css'
@@ -61,7 +61,7 @@ export default class BlogPost extends Component {
             <time dateTime={postRawDate}>{postDate}</time>
             <span>, by:</span>
           </p>
-          <AboutAuthor />
+          <Author />
         </footer>
       </div>
     )

@@ -10,7 +10,7 @@ import {
 } from 'components/Icons'
 import s from './styles.module.css'
 
-export const IndexLinks = () => (
+export const Links = () => (
   <section className={s.section}>
     <ul className={s.list}>
       <div>

@@ -5,7 +5,7 @@ import { FraktioLogo } from 'components/Fraktio'
 
 import s from './styles.module.css'
 
-export const AboutAuthor = () => (
+export const Author = () => (
   <aside className={s.about}>
     <ProfilePicture className={s.picture} />
     <div className={s.text}>

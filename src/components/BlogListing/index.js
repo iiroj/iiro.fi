@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 import s from './styles.module.css'
 
-export default function IndexBlog (props) {
+export default function BlogListing (props) {
   const pageLinks = []
   const edges = props.edges
 

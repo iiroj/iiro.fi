@@ -5,7 +5,7 @@ import { FraktioLogo } from 'components/Fraktio'
 
 import s from './styles.module.css'
 
-export const IndexHeader = () => (
+export const Header = () => (
   <header className={s.section}>
     <div className={s.container}>
       <div className={s.pictureContainer}>

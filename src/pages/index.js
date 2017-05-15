@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 
-import { IndexHeader } from 'components/IndexHeader'
-import { IndexLinks } from 'components/IndexLinks'
-import IndexBlog from 'components/IndexBlog'
+import { Header } from 'components/Header'
+import { Links } from 'components/Links'
+import BlogListing from 'components/BlogListing'
 
 export default class Index extends Component {
   render () {
@@ -42,11 +42,11 @@ export default class Index extends Component {
               title='Iiro Jäppinen'
               script={[{ type: 'application/ld+json', innerHTML: `${JSON.stringify(microdata)}` }]}
               />
-            <IndexHeader />
-            <IndexLinks />
+            <Header />
+            <Links />
           </article>
         </main>
-        <IndexBlog edges={this.props.data.allMarkdownRemark.edges} />
+        <BlogListing edges={this.props.data.allMarkdownRemark.edges} />
       </div>
     )
   }
