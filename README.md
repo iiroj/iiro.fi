@@ -2,7 +2,7 @@
 
 A static blog made with [Gatsby](https://github.com/gatsbyjs/gatsby).
 
-You can also read this more extensive [Readme](pages/posts/2016-11-25---readme/index.md), the first post on my blog.
+You can also read this more extensive [Readme](https://iiro.fi/readme/), the first post on my blog.
 
 ----
 
