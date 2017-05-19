@@ -1,11 +1,11 @@
 import React from 'react'
 
 import {
+  IconDribbble,
   IconEmail,
   IconFacebook,
   IconLinkedin,
   IconGitHub,
-  IconGitLab,
   IconTelegram
 } from 'components/Icons'
 import s from './styles.module.css'
@@ -54,20 +54,20 @@ export const Links = () => (
         </li>
         <li>
           <a
+            href='https://dribbble.com/iiroj'
+            className={s.link}
+            >
+            <IconDribbble className={s.icon} />
+            <h2>Dribbble</h2>
+          </a>
+        </li>
+        <li>
+          <a
             href='https://github.com/iiroj'
             className={s.link}
             >
             <IconGitHub className={s.icon} />
             <h2>GitHub</h2>
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://gitlab.com/iiroj'
-            className={s.link}
-            >
-            <IconGitLab className={s.icon} />
-            <h2>GitLab</h2>
           </a>
         </li>
       </div>
