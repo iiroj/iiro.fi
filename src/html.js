@@ -13,7 +13,7 @@ if (isProduction) {
   }
 }
 
-export default function HTML () {
+export default function HTML (props) {
   const head = Helmet.rewind()
 
   let css;
@@ -26,7 +26,7 @@ export default function HTML () {
     <html lang='en'>
       <head>
         <meta charSet='utf-8' />
-        {this.props.headComponents}
+        {props.headComponents}
         {head.title.toComponent()}
         {head.meta.toComponent()}
         {head.link.toComponent()}
@@ -40,8 +40,8 @@ export default function HTML () {
         {css}
       </head>
       <body>
-        <div id='react-mount' dangerouslySetInnerHTML={{ __html: this.props.body }} />
-        {this.props.postBodyComponents}
+        <div id='react-mount' dangerouslySetInnerHTML={{ __html: props.body }} />
+        { props.postBodyComponents}
       </body>
     </html>
   )
