@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import 'reset.css/reset.css'
 import styled, { injectGlobal } from 'styled-components';
+import reset from 'css-wipe/js'
 
 injectGlobal`
+  ${reset}
+
   body {
     background-color: hsla(0, 0%, 95%, 1);
     color: hsla(0, 0%, 30%, 1);

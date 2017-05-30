@@ -2032,6 +2032,10 @@ css-what@2.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
 
+css-wipe@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/css-wipe/-/css-wipe-4.3.0.tgz#d9485735a9bf5cb3adcb9fa1809a15686cf5b057"
+
 cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
@@ -7201,10 +7205,6 @@ require-uncached@^1.0.2:
 requires-port@1.0.x, requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
-
-reset.css@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/reset.css/-/reset.css-2.0.2.tgz#9c01309c820b72e8f219ebcc8e1411949604f7d7"
 
 resolve-dir@^0.1.0:
   version "0.1.1"
