@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'reset.css/reset.css'
-import { injectGlobal } from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 
 injectGlobal`
   body {
@@ -46,9 +46,11 @@ injectGlobal`
   }
 `
 
-import { Root } from './styled'
-
 export default function DefaultLayout (props) {
+  const Root = styled.div`
+    line-height: 1.5rem;
+  `
+
   const { children } = props
 
   return (
