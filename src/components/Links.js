@@ -51,29 +51,6 @@ export const Links = () => {
         transform: scale(1.0);
     }
   `
-  const Icon = styled.svg`
-    display: inline-block;
-    fill-rule: evenodd;
-    fill: none;
-    height: 24px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 2px;
-    transition: transform 125ms ease-in;
-    vertical-align: -30%;
-    viewBox: 0 0 32 32;
-    width: 24px;
-
-    * {
-        stroke: hsla(0, 0%, 30%, 1);
-    }
-  `
-  const StyledIconDribbble = Icon.withComponent(IconDribbble)
-  const StyledIconEmail = Icon.withComponent(IconEmail)
-  const StyledIconFacebook = Icon.withComponent(IconFacebook)
-  const StyledIconLinkedin = Icon.withComponent(IconLinkedin)
-  const StyledIconGitHub = Icon.withComponent(IconGitHub)
-  const StyledIconTelegram = Icon.withComponent(IconTelegram)
 
   return (
     <Section>
@@ -81,19 +58,19 @@ export const Links = () => {
         <div>
           <li>
             <Link href='mailto:iiro@jappinen.fi'>
-              <StyledIconEmail />
+              <IconEmail />
               <h2>Email</h2>
             </Link>
           </li>
           <li>
             <Link href='https://t.me/iiroj'>
-              <StyledIconTelegram />
+              <IconTelegram />
               <h2>Telegram</h2>
             </Link>
           </li>
           <li>
             <Link href='https://m.me/iiro.jappinen' >
-              <StyledIconFacebook />
+              <IconFacebook />
               <h2>Facebook</h2>
             </Link>
           </li>
@@ -101,19 +78,19 @@ export const Links = () => {
         <div>
           <li>
             <Link href='https://fi.linkedin.com/in/iiroj' >
-              <StyledIconLinkedin />
+              <IconLinkedin />
               <h2>LinkedIn</h2>
             </Link>
           </li>
           <li>
             <Link href='https://dribbble.com/iiroj' >
-              <StyledIconDribbble />
+              <IconDribbble />
               <h2>Dribbble</h2>
             </Link>
           </li>
           <li>
             <Link href='https://github.com/iiroj' >
-              <StyledIconGitHub />
+              <IconGitHub />
               <h2>GitHub</h2>
             </Link>
           </li>
