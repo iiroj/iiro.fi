@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 
 import { ProfilePicture } from 'components/ProfilePicture'
-import { FraktioLogo } from 'components/FraktioLogo'
+import { Amp } from 'components/Amp'
+import { FraktioLink } from 'components/FraktioLink'
 
 export const Header = () => {
   const Section = styled.section`
@@ -17,6 +18,11 @@ export const Header = () => {
     max-width: 30rem;
     padding: 5vh 1rem 0 1rem;
   `
+  const PictureContainer = styled.div`
+    height: 96px;
+    margin-bottom: 1rem;
+    width: 96px;
+  `
   const Name = styled.h1`
     font-family: Georgia, serif;
     font-size: 1.5rem;
@@ -30,21 +36,15 @@ export const Header = () => {
     font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
     font-style: italic;
   `
-  const FraktioLink = styled.a`
-    font-family: Georgia, serif;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: none;
-  `
 
   return (
     <Section>
       <Container>
-        <ProfilePicture />
+        <PictureContainer>
+          <ProfilePicture />
+        </PictureContainer>
         <Name>Iiro Jäppinen</Name>
-        <Title>
-          UX <Amp>&</Amp> UI Designer at <FraktioLink href='https://fraktio.fi' target='_blank'><FraktioLogo /><span>fraktio</span></FraktioLink>
-        </Title>
+        <Title>UX <Amp /> UI Designer at <FraktioLink /></Title>
       </Container>
     </Section>
   )
