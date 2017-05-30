@@ -8,10 +8,10 @@
   "repository": "github:iiroj/iiro.fi",
   "scripts": {
     "prestart": "rm -fr ./.cache",
-    "start": "gatsby develop",
+    "start": "NODE_ENV=development gatsby develop",
     "lint": "eslint --ext .js --ignore-pattern public .",
     "prebuild": "rm -fr ./.cache ./public",
-    "build": "gatsby build"
+    "build": "NODE_ENV=production gatsby build"
   },
   "dependencies": {
     "gatsby": "1.0.0-alpha14",
