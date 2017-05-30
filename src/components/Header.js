@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 import { ProfilePicture } from 'components/ProfilePicture'
-import { FraktioLogo } from 'components/Fraktio'
+import { FraktioLogo } from 'components/FraktioLogo'
 
 export const Header = () => {
   const Section = styled.section`
@@ -33,24 +33,8 @@ export const Header = () => {
   const FraktioLink = styled.a`
     font-family: Georgia, serif;
     font-style: normal;
-    font-weight: 500;
-    text-decoration: none;
-  `
-  const StyledFraktioLogo = styled(FraktioLogo)`
-    display: inline-block;
-    height: 18px;
-    margin-right: 2px;
-    position: relative;
-    viewBox: 0 0 19 18;
-    vertical-align: -20%;
-    width: 19px;
-
-    path {
-        fill: hsla(0, 0%, 30%, 1);
-    }
-  `
-  const FraktioText = styled.span`
     font-weight: 700;
+    text-decoration: none;
   `
 
   return (
@@ -59,7 +43,7 @@ export const Header = () => {
         <ProfilePicture />
         <Name>Iiro Jäppinen</Name>
         <Title>
-          UX <Amp>&</Amp> UI Designer at <FraktioLink href='https://fraktio.fi' target='_blank'><StyledFraktioLogo /><FraktioText>fraktio</FraktioText></FraktioLink>
+          UX <Amp>&</Amp> UI Designer at <FraktioLink href='https://fraktio.fi' target='_blank'><FraktioLogo /><span>fraktio</span></FraktioLink>
         </Title>
       </Container>
     </Section>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ProfilePicture } from 'components/ProfilePicture'
-import { FraktioLogo } from 'components/Fraktio'
+import { FraktioLogo } from 'components/FraktioLogo'
 
 import s from './styles.module.css'
 
