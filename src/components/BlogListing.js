@@ -29,7 +29,7 @@ export default function BlogListing (props) {
 
   edges.forEach((edge) => {
     const post = edge.node
-    const slug = post.slug
+    const slug = post.fields.slug
     const title = post.frontmatter.title
 
     pageLinks.push(

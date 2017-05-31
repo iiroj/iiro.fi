@@ -42,7 +42,7 @@ export default class BlogPost extends Component {
         'height': '384',
         'width': '384'
       },
-      'mainEntityOfPage': `https://iiro.fi${post.slug}`
+      'mainEntityOfPage': `https://iiro.fi${post.fields.slug}`
     }
 
     return (
@@ -76,10 +76,12 @@ query BlogPostBySlug($slug: String!) {
       siteTitle
     }
   }
-  markdownRemark(slug: { eq: $slug }) {
+  markdownRemark(fields: { slug: { eq: $slug }}) {
     id
     html
-    slug
+    fields {
+      slug
+    }
     frontmatter {
       title
       date(formatString: "MMMM DD, YYYY")

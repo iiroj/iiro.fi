@@ -62,7 +62,9 @@ query Index {
   ) {
     edges {
       node {
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           title
         }

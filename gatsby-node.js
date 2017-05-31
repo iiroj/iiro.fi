@@ -11,20 +11,29 @@ exports.modifyWebpackConfig = ({config}) => {
 }
 
 exports.onNodeCreate = ({ node, boundActionCreators, getNode }) => {
-  const { updateNode } = boundActionCreators
+  const { addFieldToNode } = boundActionCreators
 
-  if (node.type === 'File' && typeof node.slug === 'undefined') {
+  if (node.internal.type === 'File' && typeof node.fields === 'undefined') {
     const parsedFilePath = path.parse(node.absolutePath)
     const slug = `/${parsedFilePath.dir.split('---')[1]}/`
-    node.slug = slug
-    updateNode(node)
-  } else if (node.type === 'MarkdownRemark' && typeof node.frontmatter.slug !== 'undefined') {
-    node.slug = `/${node.frontmatter.slug}/`
-    updateNode(node)
-  } else if (node.type === 'MarkdownRemark' && typeof node.slug === 'undefined') {
+    addFieldToNode({
+     node,
+     fieldName: 'slug',
+     fieldValue: slug,
+   })
+  } else if (node.internal.type === 'MarkdownRemark' && typeof node.frontmatter.slug !== 'undefined') {
+    addFieldToNode({
+     node,
+     fieldName: 'slug',
+     fieldValue: `/${node.frontmatter.slug}/`,
+   })
+  } else if (node.internal.type === 'MarkdownRemark' && typeof node.fields === 'undefined') {
     const fileNode = getNode(node.parent)
-    node.slug = fileNode.slug
-    updateNode(node)
+    addFieldToNode({
+     node,
+     fieldName: 'slug',
+     fieldValue: fileNode.fields.slug,
+   })
   }
 }
 
@@ -38,7 +47,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         allMarkdownRemark(limit: 1000) {
           edges {
             node {
-              slug
+              fields {
+                slug
+              }
             }
           }
         }
@@ -52,10 +63,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       Object.keys(result.data.allMarkdownRemark.edges).forEach(key => {
         const edge = result.data.allMarkdownRemark.edges[key]
         upsertPage({
-          path: edge.node.slug,
+          path: edge.node.fields.slug,
           component: blogPost,
           context: {
-            slug: edge.node.slug
+            slug: edge.node.fields.slug
           }
         })
       })

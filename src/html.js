@@ -7,7 +7,7 @@ export default function HTML (props) {
 
   const sheet = new ServerStyleSheet()
   const main = sheet.collectStyles(
-    <div id='react-mount' dangerouslySetInnerHTML={{ __html: props.body }} />
+    <div id='___gatsby' dangerouslySetInnerHTML={{ __html: props.body }} />
   )
   const css = sheet.getStyleElement()
 

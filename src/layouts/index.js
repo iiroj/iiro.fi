@@ -57,7 +57,7 @@ export default function DefaultLayout (props) {
 
   return (
     <Root>
-      {children}
+      {children()}
     </Root>
   )
 }
