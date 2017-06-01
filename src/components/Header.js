@@ -32,10 +32,6 @@ export const Header = () => {
   const Title = styled.h2`
     margin: 0;
   `
-  const Amp = styled.span`
-    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
-    font-style: italic;
-  `
 
   return (
     <Section>
