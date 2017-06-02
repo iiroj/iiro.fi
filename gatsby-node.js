@@ -16,23 +16,23 @@ exports.onNodeCreate = ({ node, boundActionCreators, getNode }) => {
     const parsedFilePath = path.parse(node.absolutePath)
     const slug = `/${parsedFilePath.dir.split('---')[1]}/`
     addFieldToNode({
-     node,
-     fieldName: 'slug',
-     fieldValue: slug,
-   })
+      node,
+      fieldName: 'slug',
+      fieldValue: slug
+    })
   } else if (node.internal.type === 'MarkdownRemark' && typeof node.frontmatter.slug !== 'undefined') {
     addFieldToNode({
-     node,
-     fieldName: 'slug',
-     fieldValue: `/${node.frontmatter.slug}/`,
-   })
+      node,
+      fieldName: 'slug',
+      fieldValue: `/${node.frontmatter.slug}/`
+    })
   } else if (node.internal.type === 'MarkdownRemark' && typeof node.fields === 'undefined') {
     const fileNode = getNode(node.parent)
     addFieldToNode({
-     node,
-     fieldName: 'slug',
-     fieldValue: fileNode.fields.slug,
-   })
+      node,
+      fieldName: 'slug',
+      fieldValue: fileNode.fields.slug
+    })
   }
 }
 

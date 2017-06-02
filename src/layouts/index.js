@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import styled, { injectGlobal } from 'styled-components';
+import React from 'react'
+import styled, { injectGlobal } from 'styled-components'
 import reset from 'css-wipe/js'
 
 injectGlobal`

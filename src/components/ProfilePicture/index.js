@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 import { default as profilePicture1x } from './profilePicture.jpg'
 import { default as profilePicture2x } from './profilePicture@2x.jpg'

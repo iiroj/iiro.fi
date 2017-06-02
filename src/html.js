@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
-import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+import { ServerStyleSheet } from 'styled-components'
 
 export default function HTML (props) {
   const head = Helmet.rewind()

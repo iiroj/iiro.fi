@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 import { ProfilePicture } from 'components/ProfilePicture'
 import { Amp } from 'components/Amp'

@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { default as syntax } from './syntax.css'
 
 import { default as profile } from 'components/ProfilePicture/profilePicture@3x.jpg'
