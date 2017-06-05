@@ -4,31 +4,31 @@ exports.modifyWebpackConfig = ({config}) => {
   config.merge({
     resolve: {
       root: `${__dirname}/src`,
-      extensions: ['', '.js', '.jsx', '.json', '.css', '.module.css']
+      extensions: ['', '.js', '.jsx']
     }
   })
 }
 
-exports.onNodeCreate = ({ node, boundActionCreators, getNode }) => {
-  const { addFieldToNode } = boundActionCreators
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  const { createNodeField } = boundActionCreators
 
   if (node.internal.type === 'File' && typeof node.fields === 'undefined') {
     const parsedFilePath = path.parse(node.absolutePath)
     const slug = `/${parsedFilePath.dir.split('---')[1]}/`
-    addFieldToNode({
+    createNodeField({
       node,
       fieldName: 'slug',
       fieldValue: slug
     })
   } else if (node.internal.type === 'MarkdownRemark' && typeof node.frontmatter.slug !== 'undefined') {
-    addFieldToNode({
+    createNodeField({
       node,
       fieldName: 'slug',
       fieldValue: `/${node.frontmatter.slug}/`
     })
   } else if (node.internal.type === 'MarkdownRemark' && typeof node.fields === 'undefined') {
     const fileNode = getNode(node.parent)
-    addFieldToNode({
+    createNodeField({
       node,
       fieldName: 'slug',
       fieldValue: fileNode.fields.slug
@@ -37,7 +37,7 @@ exports.onNodeCreate = ({ node, boundActionCreators, getNode }) => {
 }
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { upsertPage } = boundActionCreators
+  const { createPage } = boundActionCreators
 
   return new Promise((resolve, reject) => {
     const blogPost = `${__dirname}/src/components/BlogPost/index.js`
@@ -61,7 +61,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
       Object.keys(result.data.allMarkdownRemark.edges).forEach(key => {
         const edge = result.data.allMarkdownRemark.edges[key]
-        upsertPage({
+        createPage({
           path: edge.node.fields.slug,
           component: blogPost,
           context: {
