@@ -48,11 +48,11 @@ export const DeliveryEstimates = () => {
         <img
           src={dialog1x}
           srcSet={`${dialog1x} 1x, ${dialog2x} 2x, ${dialog3x} 3x`}
-          />
+        />
         <img
           src={list1x}
           srcSet={`${list1x} 1x, ${list2x} 2x, ${list3x} 3x`}
-          />
+        />
       </Image>
     </Section>
   )

@@ -40,7 +40,7 @@ export default function Index (props) {
           <Helmet
             title='Iiro Jäppinen'
             script={[{ type: 'application/ld+json', innerHTML: `${JSON.stringify(microdata)}` }]}
-            />
+          />
           <Header />
           <Links />
         </article>

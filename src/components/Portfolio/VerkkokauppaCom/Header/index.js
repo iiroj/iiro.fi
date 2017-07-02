@@ -10,7 +10,7 @@ import { default as frontpage2x } from './frontpage@2x.jpg'
 import { default as frontpage3x } from './frontpage@3x.jpg'
 
 export const Header = () => {
-  const Header = styled.header `
+  const Header = styled.header`
     align-items: center;
     background-color: #E30613;
     color: white;

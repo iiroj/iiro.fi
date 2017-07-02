@@ -71,7 +71,7 @@ export const Icons = () => {
           <img
             src={growl1x}
             srcSet={`${growl1x} 1x, ${growl2x} 2x, ${growl3x} 3x`}
-            />
+          />
           <ButtonLink
             href='http://growl.info'
             target='_blank'
@@ -83,7 +83,7 @@ export const Icons = () => {
           <img
             src={tune1x}
             srcSet={`${tune1x} 1x, ${tune2x} 2x, ${tune3x} 3x`}
-            />
+          />
           <ButtonLink
             href='https://www.tune-instructor.de/en/'
             target='_blank'
