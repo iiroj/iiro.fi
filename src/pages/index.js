@@ -53,7 +53,7 @@ export default function Index (props) {
 export const pageQuery = graphql`
 query Index {
   allMarkdownRemark(
-    sortBy: {
+    sort: {
       fields: [frontmatter___date],
       order: DESC
     }
