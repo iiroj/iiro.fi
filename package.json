@@ -11,7 +11,8 @@
     "start": "NODE_ENV=development gatsby develop",
     "lint": "eslint --ext .js --ignore-pattern public .",
     "prebuild": "rm -fr ./.cache ./public",
-    "build": "NODE_ENV=production gatsby build"
+    "build": "NODE_ENV=production gatsby build",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "css-wipe": "^4.3.0",
