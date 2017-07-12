@@ -1,47 +1,47 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import styled from 'styled-components'
-import { default as syntax } from './syntax.css'
+import React from "react";
+import Helmet from "react-helmet";
+import styled from "styled-components";
+import { default as syntax } from "./syntax.css";
 
-import { default as profile } from 'components/ProfilePicture/profilePicture@3x.jpg'
-import { Back } from 'components/Back'
-import { Author } from 'components/Author'
+import { default as profile } from "components/ProfilePicture/profilePicture@3x.jpg";
+import { Back } from "components/Back";
+import { Author } from "components/Author";
 
-export default function BlogPost (props) {
-  const name = props.data.site.siteMetadata.name
-  const post = props.data.markdownRemark
-  const body = post.html
-  const postTitle = post.frontmatter.title
-  const postRawDate = post.frontmatter.date
-  const postDate = new Date(postRawDate).toDateString()
+export default function BlogPost(props) {
+  const name = props.data.site.siteMetadata.name;
+  const post = props.data.markdownRemark;
+  const body = post.html;
+  const postTitle = post.frontmatter.title;
+  const postRawDate = post.frontmatter.date;
+  const postDate = new Date(postRawDate).toDateString();
   const microdata = {
-    '@context': 'http://schema.org',
-    '@type': 'BlogPosting',
-    'author': {
-      '@type': 'Person',
-      'name': 'Iiro Jäppinen'
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    author: {
+      "@type": "Person",
+      name: "Iiro Jäppinen"
     },
-    'publisher': {
-      '@type': 'Organization',
-      'name': 'iiro.fi',
-      'logo': {
-        '@type': 'ImageObject',
-        'url': `https://iiro.fi${profile}`,
-        'height': '384',
-        'width': '384'
+    publisher: {
+      "@type": "Organization",
+      name: "iiro.fi",
+      logo: {
+        "@type": "ImageObject",
+        url: `https://iiro.fi${profile}`,
+        height: "384",
+        width: "384"
       }
     },
-    'datePublished': `${postRawDate}`,
-    'dateModified': `${postRawDate}`,
-    'headline': `${postTitle}`,
-    'image': {
-      '@type': 'ImageObject',
-      'url': `https://iiro.fi${profile}`,
-      'height': '384',
-      'width': '384'
+    datePublished: `${postRawDate}`,
+    dateModified: `${postRawDate}`,
+    headline: `${postTitle}`,
+    image: {
+      "@type": "ImageObject",
+      url: `https://iiro.fi${profile}`,
+      height: "384",
+      width: "384"
     },
-    'mainEntityOfPage': `https://iiro.fi${post.fields.slug}`
-  }
+    mainEntityOfPage: `https://iiro.fi${post.fields.slug}`
+  };
 
   const Title = styled.h1`
     background-color: white;
@@ -49,11 +49,11 @@ export default function BlogPost (props) {
     font-size: 1.5rem;
     padding: 2rem 4rem;
     text-align: center;
-  `
+  `;
   const Wrapper = styled.main`
     background-color: white;
     box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
-  `
+  `;
   const Post = styled.article`
     box-sizing: border-box;
     margin: 0 auto;
@@ -75,12 +75,17 @@ export default function BlogPost (props) {
         background: hsla(44, 100%, 75%, 0.4);
 
         > div {
-            transform: scale(1.1);
+          transform: scale(1.1);
         }
       }
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-size: inherit;
       font-weight: 500;
       margin: 1rem 0;
@@ -100,7 +105,7 @@ export default function BlogPost (props) {
     }
     ul ol {
       list-style-type: square;
-      margin: 0 -0.5rem 0.5rem -0.5rem;;
+      margin: 0 -0.5rem 0.5rem -0.5rem;
       padding: 0 1rem;
     }
     ol {
@@ -127,7 +132,8 @@ export default function BlogPost (props) {
     code {
       background-color: hsla(0, 64%, 95%, 1);
       color: hsla(0, 64%, 48%, 1);
-      font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+        monospace;
       font-size: 0.9rem !important;
       padding: 0 0.25rem;
     }
@@ -144,59 +150,69 @@ export default function BlogPost (props) {
       }
     }
 
-    ${syntax}
-  `
+    ${syntax};
+  `;
   const Footer = styled.footer`
     box-sizing: border-box;
     margin: 4rem auto 3rem;
     max-width: 38rem;
     padding: 1rem;
-  `
+  `;
   const Posted = styled.p`
     font-weight: inherit;
     margin-bottom: 1rem;
-  `
+  `;
 
   return (
     <div>
       <Helmet
         title={`${postTitle} — by ${name}`}
-        script={[{ type: 'application/ld+json', innerHTML: `${JSON.stringify(microdata)}` }]} />
+        script={[
+          {
+            type: "application/ld+json",
+            innerHTML: `${JSON.stringify(microdata)}`
+          }
+        ]}
+      />
       <Back />
-      <Title>{postTitle}</Title>
+      <Title>
+        {postTitle}
+      </Title>
       <Wrapper>
         <Post dangerouslySetInnerHTML={{ __html: body }} />
       </Wrapper>
       <Footer>
         <Posted>
           <span>Posted first on </span>
-          <time dateTime={postRawDate}>{postDate}</time>
+          <time dateTime={postRawDate}>
+            {postDate}
+          </time>
           <span>, by:</span>
         </Posted>
         <Author />
       </Footer>
     </div>
-  )
+  );
 }
 
 export const pageQuery = graphql`
-query BlogPostBySlug($slug: String!) {
-  site {
-    siteMetadata {
-      name
-      siteTitle
+  query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        name
+        siteTitle
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+      }
     }
   }
-  markdownRemark(fields: { slug: { eq: $slug }}) {
-    id
-    html
-    fields {
-      slug
-    }
-    frontmatter {
-      title
-      date(formatString: "MMMM DD, YYYY")
-    }
-  }
-}
-`
+`;

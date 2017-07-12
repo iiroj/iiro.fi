@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import Link from 'gatsby-link'
+import React from "react";
+import styled from "styled-components";
+import Link from "gatsby-link";
 
 export const Back = () => {
   const X = styled(Link)`
@@ -57,11 +57,13 @@ export const Back = () => {
     @media print {
       display: none;
     }
-  `
+  `;
 
   return (
     <nav>
-      <X to='/' title='Back to iiro.fi'>Back to iiro.fi</X>
+      <X to="/" title="Back to iiro.fi">
+        Back to iiro.fi
+      </X>
     </nav>
-  )
-}
+  );
+};

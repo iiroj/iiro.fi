@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import { default as profilePicture1x } from './profilePicture.jpg'
-import { default as profilePicture2x } from './profilePicture@2x.jpg'
-import { default as profilePicture3x } from './profilePicture@3x.jpg'
+import { default as profilePicture1x } from "./profilePicture.jpg";
+import { default as profilePicture2x } from "./profilePicture@2x.jpg";
+import { default as profilePicture3x } from "./profilePicture@3x.jpg";
 
 export const ProfilePicture = () => {
   const Container = styled.div`
@@ -23,12 +23,12 @@ export const ProfilePicture = () => {
       top: 0;
       width: 100%;
     }
-  `
+  `;
   const Picture = styled.img`
     display: block;
     height: 100%;
     width: 100%;
-  `
+  `;
 
   return (
     <Container>
@@ -37,5 +37,5 @@ export const ProfilePicture = () => {
         srcSet={`${profilePicture1x} 1x, ${profilePicture2x} 2x, ${profilePicture3x} 3x`}
       />
     </Container>
-  )
-}
+  );
+};

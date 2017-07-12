@@ -1,18 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
-import { ButtonLink } from 'pages/portfolio'
+import React from "react";
+import styled from "styled-components";
+import { ButtonLink } from "pages/portfolio";
 
-import { default as pixel1x } from './pixel.png'
-import { default as pixel2x } from './pixel@2x.png'
-import { default as pixel3x } from './pixel@3x.png'
-import { default as frontpage1x } from './frontpage.jpg'
-import { default as frontpage2x } from './frontpage@2x.jpg'
-import { default as frontpage3x } from './frontpage@3x.jpg'
+import { default as pixel1x } from "./pixel.png";
+import { default as pixel2x } from "./pixel@2x.png";
+import { default as pixel3x } from "./pixel@3x.png";
+import { default as frontpage1x } from "./frontpage.jpg";
+import { default as frontpage2x } from "./frontpage@2x.jpg";
+import { default as frontpage3x } from "./frontpage@3x.jpg";
 
 export const Header = () => {
   const Header = styled.header`
     align-items: center;
-    background-color: #E30613;
+    background-color: #e30613;
     color: white;
     display: flex;
     flex-direction: row;
@@ -23,8 +23,9 @@ export const Header = () => {
     position: relative;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 
-    &::before, &::after {
-      background-color: #E30613;
+    &::before,
+    &::after {
+      background-color: #e30613;
       content: '';
       display: block;
       height: 50%;
@@ -43,40 +44,38 @@ export const Header = () => {
       transform-origin: 100%;
       transform: skewY(-2deg);
     }
-  `
+  `;
   const Text = styled.div`
-  margin: 1rem;
-  max-width: 480px;
-  `
+    margin: 1rem;
+    max-width: 480px;
+  `;
   const PhoneContainer = styled.div`
-      height: 480px;
-      width: 303px;
-      position: relative;
-  `
+    height: 480px;
+    width: 303px;
+    position: relative;
+  `;
   const Phone = styled.img`
     width: 303px;
     display: block;
-  `
+  `;
   const Screen = styled.img`
     display: block;
     width: 270px;
     position: absolute;
     top: 63px;
     left: 15px;
-  `
+  `;
 
   return (
     <Header>
       <Text>
         <h1>Verkkokauppa.com</h1>
-        <p>UX/UI designer from November 2014 until April 2017.
-          As the resident web designer,
-          I oversaw the visual direction of Verkkokauppa.com’s
-          website.</p>
-        <ButtonLink
-          href='https://www.verkkokauppa.com/'
-          target='_blank'
-        >
+        <p>
+          UX/UI designer from November 2014 until April 2017. As the resident
+          web designer, I oversaw the visual direction of Verkkokauppa.com’s
+          website.
+        </p>
+        <ButtonLink href="https://www.verkkokauppa.com/" target="_blank">
           Visit Verkkokauppa.com
         </ButtonLink>
       </Text>
@@ -91,5 +90,5 @@ export const Header = () => {
         />
       </PhoneContainer>
     </Header>
-  )
-}
+  );
+};

@@ -1,23 +1,21 @@
-import React from 'react'
-import styled from 'styled-components'
-import Helmet from 'react-helmet'
+import React from "react";
+import styled from "styled-components";
+import Helmet from "react-helmet";
 
-import { Back } from 'components/Back'
-import { VerkkokauppaCom } from 'components/Portfolio/VerkkokauppaCom'
-import { HumbleBundle } from 'components/Portfolio/HumbleBundle'
-import { Icons } from 'components/Portfolio/Icons'
+import { Back } from "components/Back";
+import { VerkkokauppaCom } from "components/Portfolio/VerkkokauppaCom";
+import { HumbleBundle } from "components/Portfolio/HumbleBundle";
+import { Icons } from "components/Portfolio/Icons";
 
-export default function PortfolioIndex () {
-  const Container = styled.div`
-    box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
-  `
+export default function PortfolioIndex() {
+  const Container = styled.div`box-shadow: 0 1px 0 rgba(0, 0, 0, .05);`;
   const Header = styled.header`
     background-color: white;
     font-family: Georgia, serif;
     font-size: 1.5rem;
     padding: 2rem 3rem 4rem;
     text-align: center;
-  `
+  `;
   const More = styled.p`
     color: hsla(0, 0%, 60%, 1);
     font-family: Georgia, serif;
@@ -25,11 +23,11 @@ export default function PortfolioIndex () {
     font-style: italic;
     margin: 4rem auto;
     text-align: center;
-  `
+  `;
 
   return (
     <div>
-      <Helmet title='Portfolio of Iiro Jäppinen' />
+      <Helmet title="Portfolio of Iiro Jäppinen" />
       <Container>
         <Back />
         <Header>
@@ -43,7 +41,7 @@ export default function PortfolioIndex () {
         <More>With more coming soon...</More>
       </aside>
     </div>
-  )
+  );
 }
 
 export const ButtonLink = styled.a`
@@ -59,12 +57,13 @@ export const ButtonLink = styled.a`
   transition: color 125ms ease-in, box-shadow 125ms ease-in;
 
   &:hover {
-      color: #2171CC !important;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #2171cc !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
   &:active {
-      color: #333333 !important;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #333333 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2),
+      0 8px 16px rgba(0, 0, 0, 0.2);
   }
-`
+`;

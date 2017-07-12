@@ -1,6 +1,6 @@
-import React from 'react'
-import styled, { injectGlobal } from 'styled-components'
-import reset from 'css-wipe/js'
+import React from "react";
+import styled, { injectGlobal } from "styled-components";
+import reset from "css-wipe/js";
 
 injectGlobal`
   ${reset}
@@ -46,18 +46,16 @@ injectGlobal`
   a:active {
     color: hsla(0, 0%, 0%, 1);
   }
-`
+`;
 
-export default function DefaultLayout (props) {
-  const Root = styled.div`
-    line-height: 1.5rem;
-  `
+export default function DefaultLayout(props) {
+  const Root = styled.div`line-height: 1.5rem;`;
 
-  const { children } = props
+  const { children } = props;
 
   return (
     <Root>
       {children()}
     </Root>
-  )
+  );
 }
