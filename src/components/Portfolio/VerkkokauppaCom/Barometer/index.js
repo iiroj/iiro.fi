@@ -76,7 +76,11 @@ export const Barometer = () => {
       <Text>
         <h2>Making Informed Customers</h2>
         <p>
-          <a href="https://www.verkkokauppa.com/en/investors/" target="_blank">
+          <a
+            href="https://www.verkkokauppa.com/en/investors/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Verkkokauppa.com
           </a>{" "}
           is the most transparent low cost online retailer in Finland… while

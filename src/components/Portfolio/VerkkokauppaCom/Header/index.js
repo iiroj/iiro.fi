@@ -75,7 +75,11 @@ export const Header = () => {
           web designer, I oversaw the visual direction of Verkkokauppa.com’s
           website.
         </p>
-        <ButtonLink href="https://www.verkkokauppa.com/" target="_blank">
+        <ButtonLink
+          href="https://www.verkkokauppa.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Visit Verkkokauppa.com
         </ButtonLink>
       </Text>

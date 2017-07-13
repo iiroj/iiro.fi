@@ -32,7 +32,7 @@ export const FraktioLink = () => {
   `;
 
   return (
-    <Link href="https://fraktio.fi" target="_blank">
+    <Link href="https://fraktio.fi" target="_blank" rel="noopener noreferrer">
       <FraktioLogo />
       <span>fraktio</span>
     </Link>

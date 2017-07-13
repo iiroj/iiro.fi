@@ -38,7 +38,11 @@ export const HumbleBundle = () => {
       />
       <Text>
         I designed the first{" "}
-        <a href="https://www.humblebundle.com" target="_blank">
+        <a
+          href="https://www.humblebundle.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Humble Bundle
         </a>{" "}
         website and many after that. I worked with Humble from its inception in

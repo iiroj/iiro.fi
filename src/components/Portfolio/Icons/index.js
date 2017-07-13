@@ -72,7 +72,11 @@ export const Icons = () => {
             src={growl1x}
             srcSet={`${growl1x} 1x, ${growl2x} 2x, ${growl3x} 3x`}
           />
-          <ButtonLink href="http://growl.info" target="_blank">
+          <ButtonLink
+            href="http://growl.info"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Growl
           </ButtonLink>
         </div>
@@ -81,7 +85,11 @@ export const Icons = () => {
             src={tune1x}
             srcSet={`${tune1x} 1x, ${tune2x} 2x, ${tune3x} 3x`}
           />
-          <ButtonLink href="https://www.tune-instructor.de/en/" target="_blank">
+          <ButtonLink
+            href="https://www.tune-instructor.de/en/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Tune•Instructor
           </ButtonLink>
         </div>
