@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { ServerStyleSheet } from "styled-components";
 
@@ -10,7 +11,6 @@ export default function HTML(props) {
     <div id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
   );
   const css = sheet.getStyleElement();
-
   return (
     <html lang="en">
       <head>
@@ -37,3 +37,9 @@ export default function HTML(props) {
     </html>
   );
 }
+
+HTML.propTypes = {
+  body: PropTypes.object.isRequired,
+  headComponents: PropTypes.object.isRequired,
+  postBodyComponents: PropTypes.object.isRequired
+};

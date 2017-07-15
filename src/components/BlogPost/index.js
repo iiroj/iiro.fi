@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import { default as syntax } from "./syntax.css";
@@ -194,6 +195,28 @@ export default function BlogPost(props) {
     </div>
   );
 }
+
+BlogPost.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: {
+      fields: {
+        title: PropTypes.string.isRequired
+      }.isRequired,
+      frontmatter: {
+        date: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired
+      },
+      html: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired
+    }.isRequired,
+    site: {
+      siteMetadata: {
+        name: PropTypes.string.isRequired,
+        siteTitle: PropTypes.string.isRequired
+      }.isRequired
+    }.isRequired
+  }).isRequired
+};
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Icon = styled.svg`
@@ -92,3 +93,13 @@ export const IconTelegram = props =>
     <circle cx="16" cy="16" r="15" />
     <path d="M17 23l4-12-12 4 6 2" />
   </Icon>;
+
+const props = {
+  className: PropTypes.string
+};
+IconDribbble.propTypes = props;
+IconEmail.propTypes = props;
+IconFacebook.propTypes = props;
+IconLinkedin.propTypes = props;
+IconGitHub.propTypes = props;
+IconTelegram.propTypes = props;

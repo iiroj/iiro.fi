@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled, { injectGlobal } from "styled-components";
 import reset from "css-wipe/js";
 
@@ -59,3 +60,7 @@ export default function DefaultLayout(props) {
     </Root>
   );
 }
+
+DefaultLayout.propTypes = {
+  children: PropTypes.func.isRequired
+};

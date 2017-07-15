@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 
 import { Header } from "components/Header";
@@ -71,3 +72,22 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+Index.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: {
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: {
+            fields: {
+              slug: PropTypes.string.isRequired
+            }.isRequired,
+            frontmatter: {
+              title: PropTypes.string.isRequired
+            }.isRequired
+          }.isRequired
+        })
+      ).isRequired
+    }.isRequired
+  }).isRequired
+};
