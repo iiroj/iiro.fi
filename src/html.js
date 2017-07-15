@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { ServerStyleSheet } from "styled-components";
 
-export default function HTML(props) {
+const HTML = props => {
   const head = Helmet.rewind();
 
   const sheet = new ServerStyleSheet();
@@ -36,10 +36,12 @@ export default function HTML(props) {
       </body>
     </html>
   );
-}
+};
 
 HTML.propTypes = {
   body: PropTypes.object.isRequired,
   headComponents: PropTypes.object.isRequired,
   postBodyComponents: PropTypes.object.isRequired
 };
+
+export default HTML;

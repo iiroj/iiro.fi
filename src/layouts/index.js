@@ -49,18 +49,15 @@ injectGlobal`
   }
 `;
 
-export default function DefaultLayout(props) {
-  const Root = styled.div`line-height: 1.5rem;`;
+const Root = styled.div`line-height: 1.5rem;`;
 
-  const { children } = props;
-
-  return (
-    <Root>
-      {children()}
-    </Root>
-  );
-}
+const DefaultLayout = ({ children }) =>
+  <Root>
+    {children()}
+  </Root>;
 
 DefaultLayout.propTypes = {
   children: PropTypes.func.isRequired
 };
+
+export default DefaultLayout;
