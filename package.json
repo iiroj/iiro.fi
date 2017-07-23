@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "4.5.0",
+  "version": "4.6.0",
   "description": "Static blog made with Gatsby",
   "bugs": "https://gitlab.com/iiroj/iiro.fi/issues",
   "licence": "UNLICENCED",
@@ -26,7 +26,6 @@
     "gatsby-plugin-catch-links": "1.0.1",
     "gatsby-plugin-manifest": "1.0.1",
     "gatsby-plugin-offline": "1.0.1",
-    "gatsby-plugin-preact": "1.0.1",
     "gatsby-plugin-sharp": "1.3.0",
     "gatsby-remark-copy-linked-files": "1.3.0",
     "gatsby-remark-images": "1.3.2",
