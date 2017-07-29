@@ -97,6 +97,7 @@ export const IconTelegram = props =>
 const props = {
   className: PropTypes.string
 };
+
 IconDribbble.propTypes = props;
 IconEmail.propTypes = props;
 IconFacebook.propTypes = props;

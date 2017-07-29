@@ -7,10 +7,12 @@ const HTML = props => {
   const head = Helmet.rewind();
 
   const sheet = new ServerStyleSheet();
+
   const main = sheet.collectStyles(
     <div id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
   );
   const css = sheet.getStyleElement();
+
   return (
     <html lang="en">
       <head>
