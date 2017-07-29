@@ -25,9 +25,7 @@ const List = styled.ul`
   width: 100%;
 
   > li {
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
+    flex-basis: calc(100%/3);
   }
 `;
 
