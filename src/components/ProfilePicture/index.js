@@ -33,6 +33,7 @@ export const ProfilePicture = () => {
   return (
     <Container>
       <Picture
+        alt="Picture of Iiro Jäppinen"
         src={profilePicture1x}
         srcSet={`${profilePicture1x} 1x, ${profilePicture2x} 2x, ${profilePicture3x} 3x`}
       />
