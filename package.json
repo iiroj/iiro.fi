@@ -12,9 +12,7 @@
     "lint": "eslint --ext .js --ignore-pattern public .",
     "lint:fix": "eslint --fix --ext .js --ignore-pattern public .",
     "prebuild": "rimraf .cache public",
-    "build": "NODE_ENV=production gatsby build",
-    "predeploy": "yarn run lint",
-    "deploy": "yarn run build"
+    "build": "NODE_ENV=production gatsby build"
   },
   "dependencies": {
     "css-wipe": "^4.3.0",
