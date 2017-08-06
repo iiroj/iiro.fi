@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import { default as syntax } from "./syntax.css";
 
-import { default as profile } from "components/ProfilePicture/profilePicture@3x.jpg";
 import { Back } from "components/Back";
 import { Author } from "components/Author";
 
@@ -163,7 +162,7 @@ const BlogPost = props => {
       name: "iiro.fi",
       logo: {
         "@type": "ImageObject",
-        url: `https://iiro.fi${profile}`,
+        url: "https://iiro.fi/profilePicture@3x.jpg",
         height: "384",
         width: "384"
       }
@@ -173,7 +172,7 @@ const BlogPost = props => {
     headline: `${postTitle}`,
     image: {
       "@type": "ImageObject",
-      url: `https://iiro.fi${profile}`,
+      url: "https://iiro.fi/profilePicture@3x.jpg",
       height: "384",
       width: "384"
     },

@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { default as profilePicture1x } from "./profilePicture.jpg";
-import { default as profilePicture2x } from "./profilePicture@2x.jpg";
-import { default as profilePicture3x } from "./profilePicture@3x.jpg";
-
 export const ProfilePicture = () => {
   const Container = styled.div`
     border-radius: 3px;
@@ -34,8 +30,8 @@ export const ProfilePicture = () => {
     <Container>
       <Picture
         alt="Picture of Iiro Jäppinen"
-        src={profilePicture1x}
-        srcSet={`${profilePicture1x} 1x, ${profilePicture2x} 2x, ${profilePicture3x} 3x`}
+        src="/profilePicture.jpg"
+        srcSet="/profilePicture.jpg 1x, /profilePicture@2x.jpg 2x, /profilePicture@3x.jpg 3x"
       />
     </Container>
   );
