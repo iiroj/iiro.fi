@@ -83,7 +83,9 @@ export default styled(Links)`
     text-decoration: none;
 
     > img {
+      height: 24px;
       transition: transform 125ms ease-in;
+      width: 24px;
     }
 
     &:hover > img {
