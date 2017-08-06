@@ -4,8 +4,6 @@
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
-
-/*
   Link: </favicon.ico>; rel=preload; as=image
   Link: </icon.png>; rel=preload; as=image
   Link: </profilePicture.jpg>; rel=preload; as=image
