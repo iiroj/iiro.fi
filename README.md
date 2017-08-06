@@ -14,33 +14,33 @@ All `.js` files are formatted with [Prettier](https://prettier.io) for coherence
 
 ## Development
 
-Development is done locally with a standard [Node.js](https://nodejs.org/en/) install. Packages should be installed with [Yarn](https://yarnpkg.com).
+Development is done locally with a standard [Node.js](https://nodejs.org/en/) install.
 
 ### Install dependencies
 ```
-$ yarn
+$ npm install
 ```
 
 ### Start the dev server
 ```
-$ yarn start
+$ npm start
 ```
- 
+
 ### Lint
 ```
-$ yarn run lint
+$ npm run lint
 ```
 
 ### Building locally
 ```
-$ yarn run build
+$ npm run build
 ```
 
 ## Deployment
 
 The live site, [iiro.fi](https://iiro.fi), is hosted at [Netlify](https://www.netlify.com).
 
-Every push to the `master` branch of the [canonical repository](https://gitlab.com/iiroj/iiro.fi) sends a webhook to Netlify instructing it to pull the latest HEAD and then deploy the site across its network. Netlify will automatically build the site with `yarn run build`.
+Every push to the `master` branch of the [canonical repository](https://gitlab.com/iiroj/iiro.fi) sends a webhook to Netlify instructing it to pull the latest HEAD and then deploy the site across its network. Netlify will automatically build the site with `npm run lint && npm run build`.
 
 You can read more about Netlify's continuous deployment process [here](https://www.netlify.com/docs/continuous-deployment/).
 
