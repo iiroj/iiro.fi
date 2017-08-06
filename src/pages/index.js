@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 
 import { Header } from "components/Header";
-import { Links } from "components/Links";
+import Links from "components/Links";
 import BlogListing from "components/BlogListing";
 
 const microdata = {

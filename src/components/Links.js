@@ -1,90 +1,97 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import {
-  IconDribbble,
-  IconEmail,
-  IconFacebook,
-  IconLinkedin,
-  IconGitHub,
-  IconTelegram
-} from "components/Icons";
+const links = [
+  {
+    href: "mailto:iiro@jappinen.fi",
+    icon: "e.svg",
+    title: "Email"
+  },
+  {
+    href: "https://t.me/iiroj",
+    icon: "t.svg",
+    title: "Telegram"
+  },
+  {
+    href: "https://dribbble.com/iiroj",
+    icon: "d.svg",
+    title: "Dribbble"
+  },
+  {
+    href: "https://m.me/iiro.jappinen",
+    icon: "m.svg",
+    title: "Messenger"
+  },
+  {
+    href: "https://fi.linkedin.com/in/iiroj",
+    icon: "l.svg",
+    title: "Linkedin"
+  },
+  {
+    href: "https://github.com/iiroj",
+    icon: "g.svg",
+    title: "GitHub"
+  }
+];
 
-const Section = styled.section`
+const Links = ({ className }) =>
+  <section className={className}>
+    <ul>
+      {links.map(link =>
+        <li key={link.title}>
+          <a href={link.href}>
+            <img src={link.icon} alt={`${link.title} icon`} />
+            <h2>
+              {link.title}
+            </h2>
+          </a>
+        </li>
+      )}
+    </ul>
+  </section>;
+
+Links.propTypes = {
+  className: PropTypes.string.isRequired
+};
+
+export default styled(Links)`
   background-color: hsla(0, 0%, 100%, 1);
   padding: 5vh 1rem;
-`;
 
-const List = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  line-height: 32px;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 20rem;
-  width: 100%;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 32px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 20rem;
+    width: 100%;
 
-  > li {
-    flex-basis: calc(100%/3);
-  }
-`;
-
-const Link = styled.a`
-  align-items: center;
-  background: none !important;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  margin: 0.5rem 1rem;
-  text-decoration: none;
-
-  &:hover > svg {
-    transform: scale(1.2);
+    > li {
+      flex-basis: calc(100%/3);
+    }
   }
 
-  &:active > svg {
-    transform: scale(1.0);
+  a {
+    align-items: center;
+    background: none !important;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 1rem;
+    text-decoration: none;
+
+    > img {
+      transition: transform 125ms ease-in;
+    }
+
+    &:hover > img {
+      transform: scale(1.2);
+    }
+
+    &:active > img {
+      transform: scale(1.0);
+    }
   }
 `;
-
-export const Links = () =>
-  <Section>
-    <List>
-      <li>
-        <Link href="mailto:iiro@jappinen.fi">
-          <IconEmail />
-          <h2>Email</h2>
-        </Link>
-      </li>
-      <li>
-        <Link href="https://t.me/iiroj">
-          <IconTelegram />
-          <h2>Telegram</h2>
-        </Link>
-      </li>
-      <li>
-        <Link href="https://m.me/iiro.jappinen">
-          <IconFacebook />
-          <h2>Facebook</h2>
-        </Link>
-      </li>
-      <li>
-        <Link href="https://fi.linkedin.com/in/iiroj">
-          <IconLinkedin />
-          <h2>LinkedIn</h2>
-        </Link>
-      </li>
-      <li>
-        <Link href="https://dribbble.com/iiroj">
-          <IconDribbble />
-          <h2>Dribbble</h2>
-        </Link>
-      </li>
-      <li>
-        <Link href="https://github.com/iiroj">
-          <IconGitHub />
-          <h2>GitHub</h2>
-        </Link>
-      </li>
-    </List>
-  </Section>;
