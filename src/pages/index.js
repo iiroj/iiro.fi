@@ -33,7 +33,7 @@ const microdata = {
   ]
 };
 
-const Index = props =>
+const Index = ({ data }) =>
   <div>
     <main>
       <article>
@@ -47,10 +47,10 @@ const Index = props =>
           ]}
         />
         <Header />
-        <Links />
+        <Links links={data.links} />
       </article>
     </main>
-    <BlogListing edges={props.data.allMarkdownRemark.edges} />
+    <BlogListing edges={data.allMarkdownRemark.edges} />
   </div>;
 
 Index.propTypes = {
