@@ -1,7 +1,7 @@
 ---
-title: Writing Styled Components
-date: “2017-08-06”
-slug: “writing-styled-components”
+title: "Writing Styled Components"
+date: "2017-08-06"
+slug: "writing-styled-components"
 ---
 
 Lately I have been working on projects that use [styled-components](https://github.com/styled-components/styled-components). It is a really nice library for manipulating and processing styles alongside the rest of your application.
