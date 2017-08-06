@@ -34,7 +34,7 @@ This is why I think it’s better to separate the actual _component_ and its sty
 const RedText = ({ className }) =>
   <p className={className}>
     This text should be red!
-  </p>
+  </p>;
 
 export default styled(RedText)`
   color: red;
@@ -48,12 +48,13 @@ We can also do some nice “scoping” of styles inside the component:
 ```javascript
 const MyComponent = ({ className }) =>
   <div className={className}>
-  <p className="red-text">
-    This text should be red!
-  </p>
-  <p> className="blue-text">
-    This text should be blue!
-  </p>
+    <p className="red-text">
+      This text should be red!
+    </p>
+    <p> className="blue-text">
+      This text should be blue!
+    </p>
+  </div>;
 
 export default styled(RedText)`
   padding: 10px
