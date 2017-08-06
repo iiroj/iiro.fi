@@ -125,6 +125,7 @@ const Post = styled.article`
     code {
       background-color: #f5f5f8;
       color: #50525e;
+      padding: 0;
     }
   }
 
