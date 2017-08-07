@@ -9,16 +9,6 @@ const links = [
     title: "Email"
   },
   {
-    href: "https://t.me/iiroj",
-    icon: "t.svg",
-    title: "Telegram"
-  },
-  {
-    href: "https://dribbble.com/iiroj",
-    icon: "d.svg",
-    title: "Dribbble"
-  },
-  {
     href: "https://m.me/iiro.jappinen",
     icon: "m.svg",
     title: "Messenger"
@@ -29,9 +19,19 @@ const links = [
     title: "Linkedin"
   },
   {
+    href: "https://dribbble.com/iiroj",
+    icon: "d.svg",
+    title: "Dribbble"
+  },
+  {
     href: "https://github.com/iiroj",
-    icon: "g.svg",
+    icon: "gh.svg",
     title: "GitHub"
+  },
+  {
+    href: "https://gitlab.com/iiroj",
+    icon: "gl.svg",
+    title: "GitLab"
   }
 ];
 
