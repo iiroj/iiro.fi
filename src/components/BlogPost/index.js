@@ -28,23 +28,10 @@ const Post = styled.article`
   position: relative;
   z-index: 1;
 
-  a[class="gatsby-resp-image-link"] {
+  span.gatsby-resp-image-wrapper {
     background: none;
     margin: 2rem -1rem;
     overflow: hidden;
-    transition: background-color 0.125s ease-in;
-
-    > div {
-      transition: transform 0.125s ease-in;
-    }
-
-    &:hover {
-      background: hsla(44, 100%, 75%, 0.4);
-
-      > div {
-        transform: scale(1.1);
-      }
-    }
   }
 
   h1,
