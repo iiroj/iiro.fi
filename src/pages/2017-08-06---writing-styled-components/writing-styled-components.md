@@ -56,7 +56,7 @@ const MyComponent = ({ className }) =>
     </p>
   </div>;
 
-export default styled(RedText)`
+export default styled(MyComponent)`
   padding: 10px
 
   .red-text {
