@@ -9,9 +9,9 @@ const links = [
     title: "Email"
   },
   {
-    href: "https://m.me/iiro.jappinen",
-    icon: "m.svg",
-    title: "Messenger"
+    href: "https://twitter.com/iirojappinen",
+    icon: "t.svg",
+    title: "Twitter"
   },
   {
     href: "https://fi.linkedin.com/in/iiroj",
