@@ -26,10 +26,11 @@ const microdata = {
   },
   sameAs: [
     "https://dribbble.com/iiroj",
-    "https://fb.me/iiro.jappinen",
+    "https://twitter.com/iirojappinen",
     "https://fi.linkedin.com/in/iiroj",
+    "https://dribbble.com/iiroj",
     "https://github.com/iiroj",
-    "https://t.me/iiroj"
+    "https://gitlab.com/iiroj"
   ]
 };
 
