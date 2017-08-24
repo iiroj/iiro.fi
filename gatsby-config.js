@@ -2,7 +2,17 @@ module.exports = {
   siteMetadata: {
     name: "Iiro Jäppinen",
     siteTitle: "iiro.fi",
-    siteUrl: "https://iiro.fi/"
+    siteUrl: "https://iiro.fi/",
+    nps: {
+      api: {
+        url:
+          "https://r5xu918qf0.execute-api.eu-central-1.amazonaws.com/prod/saveNpsToS3"
+      },
+      questions: [
+        "How likely would you be to recommend Iiro as a designer?",
+        "How likely would you be to recommend Iiro as a colleague?"
+      ]
+    }
   },
   plugins: [
     "gatsby-plugin-catch-links",
