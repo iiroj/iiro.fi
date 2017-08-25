@@ -6,7 +6,7 @@ module.exports = {
     nps: {
       api: {
         url:
-          "https://r5xu918qf0.execute-api.eu-central-1.amazonaws.com/prod/saveNpsToS3"
+          "https://r5xu918qf0.execute-api.eu-central-1.amazonaws.com/prod/submit"
       },
       questions: [
         "How likely would you be to recommend Iiro as a designer?",
