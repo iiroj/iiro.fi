@@ -70,7 +70,7 @@ class NPS extends PureComponent {
 
   render() {
     const { className } = this.props;
-    const { question, submitted, submitting } = this.state;
+    const { question, score, submitted, submitting } = this.state;
 
     const selection = Array.from(Array(10).keys()).map(n =>
       <li key={n + 1}>
@@ -82,10 +82,10 @@ class NPS extends PureComponent {
           selected={this.state.score === n + 1}
           type="radio"
         />
-        <label htmlFor={n + 1} />
-        <p>
+        <label htmlFor={n + 1} className="radio" />
+        <label htmlFor={n + 1} className="text">
           {n + 1}
-        </p>
+        </label>
       </li>
     );
 
@@ -95,15 +95,22 @@ class NPS extends PureComponent {
         <Back />
         <main className={className}>
           <form onSubmit={this.submitNps}>
-            <h1>
-              {question}
-            </h1>
-            <ol>
+            <ol className="score">
               {selection}
             </ol>
-            <textarea onChange={this.setComment} />
-            <button disabled={submitting || submitted}>Submit</button>
-            {submitted && <p>Thank you!</p>}
+            <div className="side">
+              <aside>
+                On a scale from 1 to 10...
+              </aside>
+              <h1>
+                {question}
+              </h1>
+              <textarea
+                onChange={this.setComment}
+                placeholder="Send your regards"
+              />
+              <button disabled={score === null}>Submit</button>
+            </div>
           </form>
         </main>
       </div>
@@ -147,58 +154,161 @@ export default styled(NPS)`
   background-color: white;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding: 5rem 1rem;
+  padding: 5rem 0.8em;
 
   form {
+    align-items: center;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 
-  h1 {
-    text-align: center;
-  }
+    .score {
+      margin-right: 2rem;
+    }
 
-  ol {
-    display: flex;
-    margin: 0 auto;
-  }
-
-  li {
-    position: relative;
-
-    & + li {
-      margin-left: 1rem;
+    .side {
+      max-width: 24rem;
     }
   }
 
-  input {
+  .score li {
+    align-items: center;
+    display: flex;
+
+    &:hover,
+    &:hover * {
+      cursor: pointer;
+    }
+
+    & + li {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .score li input[type="radio"] {
     appearance: none;
     left: 0;
-    height: 3rem;
+    height: 2rem;
     margin: 0;
     opacity: 0;
     position: absolute;
     top: 0;
-    width: 3rem;
+    width: 2rem;
+  }
 
-    &:checked + label {
-      background: green;
+  .score li .radio {
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px hsla(0, 0%, 0%, 0.2);
+    display: block;
+    height: 2rem;
+    position: relative;
+    transition: box-shadow 125ms ease-out;
+    width: 2rem;
+
+    &::after {
+      background: hsla(0, 0%, 100%, 1);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px hsla(0, 0%, 0%, 0.2),
+                  inset 0 0 0 0 hsla(44,100%,75%,1);
+      content: "";
+      display: block;
+      height: 1rem;
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: opacity 125ms ease-out, transform 125ms ease-out;
+      width: 1rem;
     }
   }
 
-  label {
-    position: relative;
-    background: red;
-    display: block;
-    height: 3rem;
-    width: 3rem;
+  .score li:hover .radio {
+    box-shadow: inset 0 0 0 2px hsla(0, 0%, 0%, 0.2),
+                inset 0 0 0 2rem hsla(44,100%,75%,1);
   }
 
-  button {
+  .score li input[type="radio"]:checked + .radio {
+    box-shadow: inset 0 0 0 2px hsla(0, 0%, 0%, 0.2),
+                inset 0 0 0 2rem hsla(44,100%,75%,1);
+
+    &::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .score li .text {
+    flex-grow: 1;
+    font-weight: bold;
+    line-height: 2rem;
+    opacity: 0.4;
+    padding-left: 1rem;
+    text-align: center;
+    transition: opacity 125ms ease-out;
+  }
+
+  .score li:hover .text {
+    opacity: 1;
+  }
+
+  .score li input[type="radio"]:checked ~ .text {
+    opacity: 1;
+  }
+
+  .side aside {
+    opacity: 0.4;
+  }
+
+  .side h1 {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .side textarea {
+    border-radius: 4px;
+    border: none;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+    color: inherit;
     display: block;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .side button {
+    background-color: hsla(44,100%,75%,1);
+    border-radius: 1.5rem;
+    border: none;
+    display: block;
+    font-size: 1rem;
+    height: 3rem;
     margin: 0 auto;
+    outline: none;
+    transition: background-color 125ms ease-out,
+                box-shadow 125ms ease-out,
+                transform 125ms ease-out;
+    width: 100%;
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: hsla(44,100%,75%,0.4);
+    }
+
+    &:hover:not(:disabled) {
+      cursor: pointer;
+      box-shadow: 0 0.5rem 2rem hsla(0, 0%, 0%, 0.1);
+    }
+
+    &:active:not(:disabled) {
+      box-shadow: none;
+      transform: scale(0.95);
+    }
   }
 `;
