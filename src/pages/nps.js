@@ -107,7 +107,9 @@ class NPS extends PureComponent {
                 onChange={this.setComment}
                 placeholder="Send your regards"
               />
-              <button disabled={score === null}>Submit</button>
+              <button disabled={score === null || submitting || submitted}>
+                Submit
+              </button>
             </div>
           </form>
         </main>
@@ -289,10 +291,10 @@ export default styled(NPS)`
     height: 3rem;
     margin: 0 auto;
     outline: none;
+    padding: 0 4rem;
     transition: background-color 125ms ease-out,
                 box-shadow 125ms ease-out,
                 transform 125ms ease-out;
-    width: 100%;
 
     &:disabled {
       cursor: not-allowed;
@@ -305,7 +307,7 @@ export default styled(NPS)`
     }
 
     &:active:not(:disabled) {
-      box-shadow: none;
+      box-shadow: inset 0 0 0 3rem hsla(0, 0%, 0%, 0.1);
       transform: scale(0.95);
     }
   }
