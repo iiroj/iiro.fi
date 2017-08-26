@@ -99,9 +99,7 @@ class NPS extends PureComponent {
               {selection}
             </ol>
             <div className="side">
-              <aside>
-                On a scale from 1 to 10...
-              </aside>
+              <aside>On a scale from 1 to 10...</aside>
               <h1>
                 {question}
               </h1>
