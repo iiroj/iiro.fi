@@ -70,7 +70,32 @@ class NPS extends PureComponent {
 
   render() {
     const { className } = this.props;
-    const { question, score, submitted, submitting } = this.state;
+    const { error, question, score, submitted, submitting } = this.state;
+
+    if (submitted === true) {
+      return (
+        <div>
+          <Helmet title="Thank you!" />
+          <Back />
+          <main className={className}>
+            <h1>Thank you!</h1>
+          </main>
+        </div>
+      );
+    }
+
+    if (error === true) {
+      return (
+        <div>
+          <Helmet title="Something went wrong!" />
+          <Back />
+          <main className={className}>
+            <h1>Something went wrong!</h1>
+            <p>Please try again later...</p>
+          </main>
+        </div>
+      );
+    }
 
     const selection = Array.from(Array(10).keys()).map(n =>
       <li key={n + 1}>
@@ -157,11 +182,19 @@ export default styled(NPS)`
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding: 5rem 0.8em;
+
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+  }
 
   form {
     align-items: center;
     display: flex;
+    margin: 5rem 1rem 1rem;
 
     .score {
       margin-right: 2rem;
@@ -259,14 +292,6 @@ export default styled(NPS)`
 
   .side aside {
     opacity: 0.4;
-  }
-
-  .side h1 {
-    font-family: Georgia, serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    line-height: 2rem;
-    margin-bottom: 2rem;
   }
 
   .side textarea {
