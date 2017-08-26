@@ -271,15 +271,19 @@ export default styled(NPS)`
 
   .side textarea {
     border-radius: 4px;
-    border: none;
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+    border: 2px solid hsla(0, 0%, 0%, 0.2);
     color: inherit;
     display: block;
     font-size: 1rem;
     line-height: 1.25rem;
     margin-bottom: 1rem;
+    outline: none;
     padding: 0.5rem;
     width: 100%;
+
+    &:focus {
+      border: 2px solid hsla(44,100%,75%,1);
+    }
   }
 
   .side button {
