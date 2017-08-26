@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 
+import { postJSON } from "services/postJSON";
 import { Back } from "components/Back";
 
 class NPS extends PureComponent {
@@ -10,15 +11,14 @@ class NPS extends PureComponent {
     super();
     this.state = {
       comment: "",
-      disabledSubmit: true,
+      error: false,
       question: null,
       score: null,
       submitted: false,
-      error: false
+      submitting: true
     };
     this.setScore = this.setScore.bind(this);
     this.setComment = this.setComment.bind(this);
-    this.post = this.post.bind(this);
     this.submitNps = this.submitNps.bind(this);
   }
 
@@ -35,19 +35,9 @@ class NPS extends PureComponent {
     this.setState({ comment: event.target.value });
   }
 
-  post(url, data) {
-    return new Promise(function(resolve, reject) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", url);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onload = resolve;
-      xhr.onerror = reject;
-      xhr.send(JSON.stringify(data));
-    });
-  }
-
   submitNps(event) {
     event.preventDefault();
+    this.setState({ submitting: true });
     const url = this.props.data.site.siteMetadata.nps.api.url;
     const data = {
       question: this.state.question,
@@ -55,12 +45,18 @@ class NPS extends PureComponent {
       comment: this.state.comment
     };
 
-    this.post(url, data)
-      .then(function(res) {
-        console.log(res);
+    postJSON(url, data)
+      .then(response => {
+        this.setState({
+          submitted: true,
+          submitting: false
+        });
       })
-      .catch(function(err) {
-        console.log(err);
+      .catch(error => {
+        this.setState({
+          submitting: false,
+          error: true
+        });
       });
   }
 
@@ -69,12 +65,12 @@ class NPS extends PureComponent {
   }
 
   componentDidMount() {
-    this.setState({ disabledSubmit: false });
+    this.setState({ submitting: false });
   }
 
   render() {
     const { className } = this.props;
-    const { disabledSubmit, question, submitted } = this.state;
+    const { question, submitted, submitting } = this.state;
 
     const selection = Array.from(Array(10).keys()).map(n =>
       <li key={n + 1}>
@@ -106,7 +102,7 @@ class NPS extends PureComponent {
               {selection}
             </ol>
             <textarea onChange={this.setComment} />
-            <button disabled={disabledSubmit}>Submit</button>
+            <button disabled={submitting || submitted}>Submit</button>
             {submitted && <p>Thank you!</p>}
           </form>
         </main>
