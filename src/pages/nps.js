@@ -1,10 +1,12 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import styled from "styled-components";
+import styled, { injectGlobal } from "styled-components";
 
 import { postJSON } from "services/postJSON";
 import { Back } from "components/Back";
+import Footer from "components/Footer";
+import { Author } from "components/Author";
 
 class NPS extends PureComponent {
   constructor() {
@@ -119,25 +121,28 @@ class NPS extends PureComponent {
         <Helmet title={question} />
         <Back />
         <main className={className}>
+          <header>
+            <h1>
+              {question}
+            </h1>
+            <aside>On a scale from 1 to 10</aside>
+          </header>
           <form onSubmit={this.submitNps}>
             <ol className="score">
               {selection}
             </ol>
-            <div className="side">
-              <aside>On a scale from 1 to 10...</aside>
-              <h1>
-                {question}
-              </h1>
-              <textarea
-                onChange={this.setComment}
-                placeholder="Send your regards"
-              />
-              <button disabled={score === null || submitting || submitted}>
-                Submit
-              </button>
-            </div>
+            <textarea
+              onChange={this.setComment}
+              placeholder="Send your regards"
+            />
+            <button disabled={score === null || submitting || submitted}>
+              Submit
+            </button>
           </form>
         </main>
+        <Footer>
+          <Author />
+        </Footer>
       </div>
     );
   }
@@ -175,96 +180,104 @@ export const pageQuery = graphql`
 `;
 
 export default styled(NPS)`
-  align-items: center;
   background-color: white;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  width: 100%;
 
-  h1 {
-    font-family: Georgia, serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    line-height: 2rem;
-    margin-bottom: 2rem;
+  header {
+    margin: 0 auto;
+    max-width: 43rem;
+    padding: 2rem 1rem 2rem 4rem;
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 2rem;
+    }
+
+    aside {
+      opacity: 0.4;
+      text-align: left;
+      width: 100%;
+    }
   }
 
   form {
-    align-items: center;
+    margin: 0 auto 2rem;
+    max-width: 38rem;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .score {
     display: flex;
-    margin: 5rem 1rem 1rem;
-
-    .score {
-      margin-right: 2rem;
-    }
-
-    .side {
-      max-width: 24rem;
-    }
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    width: 100%;
   }
 
   .score li {
-    align-items: center;
-    display: flex;
+    flex-grow: 1;
+    position: relative;
 
     &:hover,
     &:hover * {
       cursor: pointer;
-    }
-
-    & + li {
-      margin-top: 0.5rem;
     }
   }
 
   .score li input[type="radio"] {
     appearance: none;
     left: 0;
-    height: 2rem;
+    height: 1rem;
     margin: 0;
     opacity: 0;
     position: absolute;
     top: 0;
-    width: 2rem;
+    width: 1rem;
   }
 
   .score li .radio {
     border-radius: 50%;
-    box-shadow: inset 0 0 0 2px hsla(0, 0%, 0%, 0.2);
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2);
     display: block;
-    height: 2rem;
+    height: 1rem;
+    margin: 0 auto;
     position: relative;
-    transition: box-shadow 125ms ease-out;
-    width: 2rem;
+    transition: box-shadow 125ms ease-out, transform 125ms ease-out;
+    width: 1rem;
 
     &::after {
       background: hsla(0, 0%, 100%, 1);
       border-radius: 50%;
-      box-shadow: 0 0 0 2px hsla(0, 0%, 0%, 0.2),
+      box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.2),
                   inset 0 0 0 0 hsla(44,100%,75%,1);
       content: "";
       display: block;
-      height: 1rem;
+      height: 0.5rem;
       left: 50%;
       opacity: 0;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%) scale(0);
       transition: opacity 125ms ease-out, transform 125ms ease-out;
-      width: 1rem;
+      width: 0.5rem;
     }
   }
 
   .score li:hover .radio {
-    box-shadow: inset 0 0 0 2px hsla(0, 0%, 0%, 0.2),
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
                 inset 0 0 0 2rem hsla(44,100%,75%,1);
   }
 
   .score li input[type="radio"]:checked + .radio {
-    box-shadow: inset 0 0 0 2px hsla(0, 0%, 0%, 0.2),
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
                 inset 0 0 0 2rem hsla(44,100%,75%,1);
+    transform: scale(1.25);
 
     &::after {
       opacity: 1;
@@ -275,9 +288,11 @@ export default styled(NPS)`
   .score li .text {
     flex-grow: 1;
     font-weight: bold;
+    display: block;
     line-height: 2rem;
+    margin-top: -1.5rem;
     opacity: 0.4;
-    padding-left: 1rem;
+    padding-top: 1.5rem;
     text-align: center;
     transition: opacity 125ms ease-out;
   }
@@ -290,11 +305,8 @@ export default styled(NPS)`
     opacity: 1;
   }
 
-  .side aside {
-    opacity: 0.4;
-  }
-
-  .side textarea {
+  textarea {
+    appearance: none;
     border-radius: 4px;
     border: 2px solid hsla(0, 0%, 0%, 0.2);
     color: inherit;
@@ -311,7 +323,7 @@ export default styled(NPS)`
     }
   }
 
-  .side button {
+  button {
     background-color: hsla(44,100%,75%,1);
     border-radius: 1.5rem;
     border: none;

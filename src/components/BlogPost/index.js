@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { default as syntax } from "./syntax.css";
 
 import { Back } from "components/Back";
+import Footer from "components/Footer";
 import { Author } from "components/Author";
 
 const Title = styled.h1`
@@ -116,13 +117,6 @@ const Post = styled.article`
   }
 
   ${syntax};
-`;
-
-const Footer = styled.footer`
-  box-sizing: border-box;
-  margin: 4rem auto 3rem;
-  max-width: 38rem;
-  padding: 1rem;
 `;
 
 const Posted = styled.p`
