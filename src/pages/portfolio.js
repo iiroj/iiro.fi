@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 
-import { Back } from "components/Back";
+import Back from "components/Back";
 import { VerkkokauppaCom } from "components/Portfolio/VerkkokauppaCom";
 import { HumbleBundle } from "components/Portfolio/HumbleBundle";
 import { Icons } from "components/Portfolio/Icons";

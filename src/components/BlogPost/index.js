@@ -4,9 +4,9 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import { default as syntax } from "./syntax.css";
 
-import { Back } from "components/Back";
+import Back from "components/Back";
 import Footer from "components/Footer";
-import { Author } from "components/Author";
+import Author from "components/Author";
 
 const Title = styled.h1`
   background-color: white;

@@ -27,8 +27,10 @@ const Link = styled.a`
   text-decoration: none;
 `;
 
-export const FraktioLink = () =>
+const FraktioLink = () =>
   <Link href="https://fraktio.fi" target="_blank" rel="noopener noreferrer">
     <FraktioLogo />
     <span>fraktio</span>
   </Link>;
+
+export default FraktioLink;

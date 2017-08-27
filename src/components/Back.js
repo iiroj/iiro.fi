@@ -58,9 +58,11 @@ const X = styled(Link)`
   }
 `;
 
-export const Back = () =>
+const Back = () =>
   <nav>
     <X to="/" title="Back to iiro.fi">
       Back to iiro.fi
     </X>
   </nav>;
+
+export default Back;

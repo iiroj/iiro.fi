@@ -4,9 +4,9 @@ import Helmet from "react-helmet";
 import styled, { injectGlobal } from "styled-components";
 
 import { postJSON } from "services/postJSON";
-import { Back } from "components/Back";
+import Back from "components/Back";
 import Footer from "components/Footer";
-import { Author } from "components/Author";
+import Author from "components/Author";
 
 class NPS extends PureComponent {
   constructor() {

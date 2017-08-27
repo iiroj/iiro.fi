@@ -7,4 +7,6 @@ const Ampersand = styled.span`
   font-style: italic;
 `;
 
-export const Amp = () => <Ampersand>&</Ampersand>;
+const Amp = () => <Ampersand>&</Ampersand>;
+
+export default Amp;
