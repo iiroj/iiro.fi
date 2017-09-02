@@ -3,7 +3,7 @@ module.exports = {
     name: 'Iiro Jäppinen',
     siteTitle: 'iiro.fi',
     siteUrl: 'https://iiro.fi/',
-    nps: {
+    feedback: {
       api: {
         url: 'https://r5xu918qf0.execute-api.eu-central-1.amazonaws.com/prod/submit',
       },

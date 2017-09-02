@@ -8,7 +8,7 @@ import Back from 'components/Back';
 import Footer from 'components/Footer';
 import Author from 'components/Author';
 
-class NPS extends PureComponent {
+class Feedback extends PureComponent {
   constructor() {
     super();
     this.state = {
@@ -21,7 +21,7 @@ class NPS extends PureComponent {
     };
     this.setScore = this.setScore.bind(this);
     this.setComment = this.setComment.bind(this);
-    this.submitNps = this.submitNps.bind(this);
+    this.submitFeedback = this.submitFeedback.bind(this);
   }
 
   selectRandomQuestion(questions) {
@@ -37,10 +37,10 @@ class NPS extends PureComponent {
     this.setState({ comment: event.target.value });
   }
 
-  submitNps(event) {
+  submitFeedback(event) {
     event.preventDefault();
     this.setState({ submitting: true });
-    const url = this.props.data.site.siteMetadata.nps.api.url;
+    const url = this.props.data.site.siteMetadata.feedback.api.url;
     const data = {
       question: this.state.question,
       score: this.state.score,
@@ -63,7 +63,7 @@ class NPS extends PureComponent {
   }
 
   componentWillMount() {
-    this.selectRandomQuestion(this.props.data.site.siteMetadata.nps.questions);
+    this.selectRandomQuestion(this.props.data.site.siteMetadata.feedback.questions);
   }
 
   componentDidMount() {
@@ -103,7 +103,7 @@ class NPS extends PureComponent {
       <li key={n + 1}>
         <input
           id={n + 1}
-          name="nps"
+          name="feedback"
           onChange={() => this.setScore(n + 1)}
           required
           selected={this.state.score === n + 1}
@@ -125,7 +125,7 @@ class NPS extends PureComponent {
             <h1>{question}</h1>
             <aside>On a scale from 1 to 10</aside>
           </header>
-          <form onSubmit={this.submitNps}>
+          <form onSubmit={this.submitFeedback}>
             <ol className="score">{selection}</ol>
             <textarea onChange={this.setComment} placeholder="Send your regards" />
             <button disabled={score === null || submitting || submitted}>Submit</button>
@@ -139,12 +139,12 @@ class NPS extends PureComponent {
   }
 }
 
-NPS.propTypes = {
+Feedback.propTypes = {
   className: PropTypes.string,
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
-        nps: PropTypes.shape({
+        feedback: PropTypes.shape({
           api: PropTypes.shape({
             url: PropTypes.string.isRequired,
           }),
@@ -156,10 +156,10 @@ NPS.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query NPS {
+  query Feedback {
     site {
       siteMetadata {
-        nps {
+        feedback {
           api {
             url
           }
@@ -170,7 +170,7 @@ export const pageQuery = graphql`
   }
 `;
 
-export default styled(NPS)`
+export default styled(Feedback)`
   background-color: white;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   display: flex;
