@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import { ButtonLink } from "pages/portfolio";
+import React from 'react';
+import styled from 'styled-components';
+import { ButtonLink } from 'pages/portfolio';
 
-import iconsBg from "./icons.jpg";
-import growl1x from "./growl.png";
-import growl3x from "./growl@3x.png";
-import growl2x from "./growl@2x.png";
-import tune1x from "./tuneinstructor.png";
-import tune2x from "./tuneinstructor@2x.png";
-import tune3x from "./tuneinstructor@3x.png";
+import iconsBg from './icons.jpg';
+import growl1x from './growl.png';
+import growl3x from './growl@3x.png';
+import growl2x from './growl@2x.png';
+import tune1x from './tuneinstructor.png';
+import tune2x from './tuneinstructor@2x.png';
+import tune3x from './tuneinstructor@3x.png';
 
 const Article = styled.article`
   align-items: center;
@@ -65,33 +65,23 @@ const Container = styled.div`
   }
 `;
 
-export const Icons = () =>
+export const Icons = () => (
   <Article>
     <Bg src={iconsBg} />
     <Title>Icon Aficionado</Title>
     <Container>
       <div>
-        <img
-          src={growl1x}
-          srcSet={`${growl1x} 1x, ${growl2x} 2x, ${growl3x} 3x`}
-        />
-        <ButtonLink
-          href="http://growl.info"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <img src={growl1x} srcSet={`${growl1x} 1x, ${growl2x} 2x, ${growl3x} 3x`} />
+        <ButtonLink href="http://growl.info" target="_blank" rel="noopener noreferrer">
           Growl
         </ButtonLink>
       </div>
       <div>
         <img src={tune1x} srcSet={`${tune1x} 1x, ${tune2x} 2x, ${tune3x} 3x`} />
-        <ButtonLink
-          href="https://www.tune-instructor.de/en/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <ButtonLink href="https://www.tune-instructor.de/en/" target="_blank" rel="noopener noreferrer">
           Tune•Instructor
         </ButtonLink>
       </div>
     </Container>
-  </Article>;
+  </Article>
+);

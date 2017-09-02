@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import styled from "styled-components";
-import { default as syntax } from "./syntax.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
+import { default as syntax } from './syntax.css';
 
-import Back from "components/Back";
-import Footer from "components/Footer";
-import Author from "components/Author";
+import Back from 'components/Back';
+import Footer from 'components/Footer';
+import Author from 'components/Author';
 
 const Title = styled.h1`
   background-color: white;
@@ -18,7 +18,7 @@ const Title = styled.h1`
 
 const Wrapper = styled.main`
   background-color: white;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
 `;
 
 const Post = styled.article`
@@ -96,8 +96,7 @@ const Post = styled.article`
   code {
     background-color: hsla(0, 64%, 95%, 1);
     color: hsla(0, 64%, 48%, 1);
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-      monospace;
+    font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     font-size: 0.9rem !important;
     padding: 0 0.25rem;
   }
@@ -132,32 +131,32 @@ const BlogPost = props => {
   const postRawDate = post.frontmatter.date;
   const postDate = new Date(postRawDate).toDateString();
   const microdata = {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
+    '@context': 'http://schema.org',
+    '@type': 'BlogPosting',
     author: {
-      "@type": "Person",
-      name: "Iiro Jäppinen"
+      '@type': 'Person',
+      name: 'Iiro Jäppinen',
     },
     publisher: {
-      "@type": "Organization",
-      name: "iiro.fi",
+      '@type': 'Organization',
+      name: 'iiro.fi',
       logo: {
-        "@type": "ImageObject",
-        url: "https://iiro.fi/profilePicture@3x.jpg",
-        height: "384",
-        width: "384"
-      }
+        '@type': 'ImageObject',
+        url: 'https://iiro.fi/profilePicture@3x.jpg',
+        height: '384',
+        width: '384',
+      },
     },
     datePublished: `${postRawDate}`,
     dateModified: `${postRawDate}`,
     headline: `${postTitle}`,
     image: {
-      "@type": "ImageObject",
-      url: "https://iiro.fi/profilePicture@3x.jpg",
-      height: "384",
-      width: "384"
+      '@type': 'ImageObject',
+      url: 'https://iiro.fi/profilePicture@3x.jpg',
+      height: '384',
+      width: '384',
     },
-    mainEntityOfPage: `https://iiro.fi${post.fields.slug}`
+    mainEntityOfPage: `https://iiro.fi${post.fields.slug}`,
   };
 
   return (
@@ -166,24 +165,20 @@ const BlogPost = props => {
         title={`${postTitle} — by ${name}`}
         script={[
           {
-            type: "application/ld+json",
-            innerHTML: `${JSON.stringify(microdata)}`
-          }
+            type: 'application/ld+json',
+            innerHTML: `${JSON.stringify(microdata)}`,
+          },
         ]}
       />
       <Back />
-      <Title>
-        {postTitle}
-      </Title>
+      <Title>{postTitle}</Title>
       <Wrapper>
         <Post dangerouslySetInnerHTML={{ __html: body }} />
       </Wrapper>
       <Footer>
         <Posted>
           <span>Posted first on </span>
-          <time dateTime={postRawDate}>
-            {postDate}
-          </time>
+          <time dateTime={postRawDate}>{postDate}</time>
           <span>, by:</span>
         </Posted>
         <Author />
@@ -196,22 +191,22 @@ BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: {
       fields: {
-        title: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired,
       }.isRequired,
       frontmatter: {
         date: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired,
       },
       html: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired
+      id: PropTypes.string.isRequired,
     }.isRequired,
     site: {
       siteMetadata: {
         name: PropTypes.string.isRequired,
-        siteTitle: PropTypes.string.isRequired
-      }.isRequired
-    }.isRequired
-  }).isRequired
+        siteTitle: PropTypes.string.isRequired,
+      }.isRequired,
+    }.isRequired,
+  }).isRequired,
 };
 
 export const pageQuery = graphql`

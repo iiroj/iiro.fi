@@ -1,16 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { ServerStyleSheet } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { ServerStyleSheet } from 'styled-components';
 
 const HTML = props => {
   const head = Helmet.rewind();
 
   const sheet = new ServerStyleSheet();
 
-  const main = sheet.collectStyles(
-    <div id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
-  );
+  const main = sheet.collectStyles(<div id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />);
   const css = sheet.getStyleElement();
 
   return (
@@ -24,13 +22,8 @@ const HTML = props => {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link
-          rel="apple-touch-icon"
-          sizes="600x600"
-          href="/icon.png"
-          type="image/x-icon"
-        />
-        {process.env.NODE_ENV === "production" && css}
+        <link rel="apple-touch-icon" sizes="600x600" href="/icon.png" type="image/x-icon" />
+        {process.env.NODE_ENV === 'production' && css}
       </head>
       <body>
         {main}
@@ -43,7 +36,7 @@ const HTML = props => {
 HTML.propTypes = {
   body: PropTypes.object.isRequired,
   headComponents: PropTypes.object.isRequired,
-  postBodyComponents: PropTypes.object.isRequired
+  postBodyComponents: PropTypes.object.isRequired,
 };
 
 export default HTML;

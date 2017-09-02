@@ -1,58 +1,57 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const links = [
   {
-    href: "mailto:iiro@jappinen.fi",
-    icon: "e.svg",
-    title: "Email"
+    href: 'mailto:iiro@jappinen.fi',
+    icon: 'e.svg',
+    title: 'Email',
   },
   {
-    href: "https://twitter.com/iirojappinen",
-    icon: "t.svg",
-    title: "Twitter"
+    href: 'https://twitter.com/iirojappinen',
+    icon: 't.svg',
+    title: 'Twitter',
   },
   {
-    href: "https://fi.linkedin.com/in/iiroj",
-    icon: "l.svg",
-    title: "Linkedin"
+    href: 'https://fi.linkedin.com/in/iiroj',
+    icon: 'l.svg',
+    title: 'Linkedin',
   },
   {
-    href: "https://dribbble.com/iiroj",
-    icon: "d.svg",
-    title: "Dribbble"
+    href: 'https://dribbble.com/iiroj',
+    icon: 'd.svg',
+    title: 'Dribbble',
   },
   {
-    href: "https://github.com/iiroj",
-    icon: "gh.svg",
-    title: "GitHub"
+    href: 'https://github.com/iiroj',
+    icon: 'gh.svg',
+    title: 'GitHub',
   },
   {
-    href: "https://gitlab.com/iiroj",
-    icon: "gl.svg",
-    title: "GitLab"
-  }
+    href: 'https://gitlab.com/iiroj',
+    icon: 'gl.svg',
+    title: 'GitLab',
+  },
 ];
 
-const Links = ({ className }) =>
+const Links = ({ className }) => (
   <section className={className}>
     <ul>
-      {links.map(link =>
+      {links.map(link => (
         <li key={link.title}>
           <a href={link.href}>
             <img src={link.icon} alt={`${link.title} icon`} />
-            <h2>
-              {link.title}
-            </h2>
+            <h2>{link.title}</h2>
           </a>
         </li>
-      )}
+      ))}
     </ul>
-  </section>;
+  </section>
+);
 
 Links.propTypes = {
-  className: PropTypes.string.isRequired
+  className: PropTypes.string.isRequired,
 };
 
 export default styled(Links)`
@@ -93,7 +92,7 @@ export default styled(Links)`
     }
 
     &:active > img {
-      transform: scale(1.0);
+      transform: scale(1);
     }
   }
 `;

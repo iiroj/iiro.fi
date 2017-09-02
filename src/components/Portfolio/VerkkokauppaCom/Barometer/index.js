@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import barometer1x from "./price-barometer.png";
-import barometer2x from "./price-barometer@2x.png";
-import barometer3x from "./price-barometer@3x.png";
+import barometer1x from './price-barometer.png';
+import barometer2x from './price-barometer@2x.png';
+import barometer3x from './price-barometer@3x.png';
 
 const Svg = styled.svg`
   height: 120px;
@@ -13,13 +13,8 @@ const Svg = styled.svg`
   width: 1920px;
 `;
 
-const Graph = () =>
-  <Svg
-    width="1920"
-    height="120"
-    viewBox="0 0 1920 120"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+const Graph = () => (
+  <Svg width="1920" height="120" viewBox="0 0 1920 120" xmlns="http://www.w3.org/2000/svg">
     <g strokeWidth="2" fill="none" fillRule="evenodd">
       <path
         d="M964.282 43.872s238.338 32.795 485.567 39.043c247.229 6.248 470.483 36.101 470.483 36.101"
@@ -40,7 +35,8 @@ const Graph = () =>
         stroke="#E30613"
       />
     </g>
-  </Svg>;
+  </Svg>
+);
 
 const Section = styled.section`
   overflow-x: hidden;
@@ -64,32 +60,23 @@ const Text = styled.div`
   padding: 0 1rem;
 `;
 
-export const Barometer = () =>
+export const Barometer = () => (
   <Section>
-    <Image
-      src={barometer1x}
-      srcSet={`${barometer1x} 1x, ${barometer2x} 2x, ${barometer3x} 3x`}
-    />
+    <Image src={barometer1x} srcSet={`${barometer1x} 1x, ${barometer2x} 2x, ${barometer3x} 3x`} />
     <Graph />
     <Text>
       <h2>Making Informed Customers</h2>
       <p>
-        <a
-          href="https://www.verkkokauppa.com/en/investors/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.verkkokauppa.com/en/investors/" target="_blank" rel="noopener noreferrer">
           Verkkokauppa.com
-        </a>{" "}
-        is the most transparent low cost online retailer in Finland… while being
-        probably always cheaper.
+        </a>{' '}
+        is the most transparent low cost online retailer in Finland… while being probably always cheaper.
       </p>
       <p>
-        To empower customers in their self-service shopping we created a way to
-        estimate the price fluctuations of products. Customers are able to judge
-        themselves how much cheaper Verkkokauppa.com is. We also tell customers
-        the value of their product as used-goods, so they can be confident
-        reselling and fighting e-waste.
+        To empower customers in their self-service shopping we created a way to estimate the price fluctuations of
+        products. Customers are able to judge themselves how much cheaper Verkkokauppa.com is. We also tell customers
+        the value of their product as used-goods, so they can be confident reselling and fighting e-waste.
       </p>
     </Text>
-  </Section>;
+  </Section>
+);

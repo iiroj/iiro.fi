@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import humble1x from "./humble-logo.png";
-import humble2x from "./humble-logo@2x.png";
-import humble3x from "./humble-logo@3x.png";
+import humble1x from './humble-logo.png';
+import humble2x from './humble-logo@2x.png';
+import humble3x from './humble-logo@3x.png';
 
 const Article = styled.article`
   align-items: center;
@@ -31,26 +31,19 @@ const Text = styled.p`
   }
 `;
 
-export const HumbleBundle = () =>
+export const HumbleBundle = () => (
   <Article>
-    <Logo
-      src={humble1x}
-      srcSet={`${humble1x} 1x, ${humble2x} 2x, ${humble3x} 3x`}
-    />
+    <Logo src={humble1x} srcSet={`${humble1x} 1x, ${humble2x} 2x, ${humble3x} 3x`} />
     <Text>
-      I designed the first{" "}
-      <a
-        href="https://www.humblebundle.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      I designed the first{' '}
+      <a href="https://www.humblebundle.com" target="_blank" rel="noopener noreferrer">
         Humble Bundle
-      </a>{" "}
-      website and many after that. I worked with Humble from its inception in
-      2011 until summer 2014.
+      </a>{' '}
+      website and many after that. I worked with Humble from its inception in 2011 until summer 2014.
     </Text>
     <Text>
-      People often follow up with whether or not I also created the beautiful
-      icons representing bundled games. I did not.
+      People often follow up with whether or not I also created the beautiful icons representing bundled games. I did
+      not.
     </Text>
-  </Article>;
+  </Article>
+);

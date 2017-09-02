@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Link from "gatsby-link";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import styled from 'styled-components';
 
 const Container = styled.div`box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.1);`;
 
@@ -38,9 +38,7 @@ export default function BlogListing(props) {
       <li key={slug}>
         <Post to={slug}>
           <article>
-            <h4>
-              {title}
-            </h4>
+            <h4>{title}</h4>
           </article>
         </Post>
       </li>
@@ -50,9 +48,7 @@ export default function BlogListing(props) {
   return (
     <Container>
       <Header>Blog:</Header>
-      <Posts>
-        {pageLinks}
-      </Posts>
+      <Posts>{pageLinks}</Posts>
     </Container>
   );
 }
@@ -62,12 +58,12 @@ BlogListing.propTypes = {
     PropTypes.shape({
       node: {
         fields: {
-          slug: PropTypes.string.isRequired
+          slug: PropTypes.string.isRequired,
         }.isRequired,
         frontmatter: {
-          title: PropTypes.string.isRequired
-        }.isRequired
-      }.isRequired
+          title: PropTypes.string.isRequired,
+        }.isRequired,
+      }.isRequired,
     })
-  ).isRequired
+  ).isRequired,
 };

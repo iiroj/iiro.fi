@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import ProfilePicture from "components/ProfilePicture";
-import Amp from "components/Amp";
-import FraktioLink from "components/FraktioLink";
+import ProfilePicture from 'components/ProfilePicture';
+import Amp from 'components/Amp';
+import FraktioLink from 'components/FraktioLink';
 
 const About = styled.aside`
   align-items: center;
@@ -25,7 +25,7 @@ const Name = styled.p`
   font-style: italic;
 `;
 
-const Author = () =>
+const Author = () => (
   <About>
     <PictureContainer>
       <ProfilePicture />
@@ -36,6 +36,7 @@ const Author = () =>
         UX <Amp /> UI Designer at <FraktioLink />
       </p>
     </Text>
-  </About>;
+  </About>
+);
 
 export default Author;

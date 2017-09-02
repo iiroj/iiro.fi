@@ -1,23 +1,23 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import styled, { injectGlobal } from "styled-components";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import styled, { injectGlobal } from 'styled-components';
 
-import { postJSON } from "services/postJSON";
-import Back from "components/Back";
-import Footer from "components/Footer";
-import Author from "components/Author";
+import { postJSON } from 'services/postJSON';
+import Back from 'components/Back';
+import Footer from 'components/Footer';
+import Author from 'components/Author';
 
 class NPS extends PureComponent {
   constructor() {
     super();
     this.state = {
-      comment: "",
+      comment: '',
       error: false,
       question: null,
       score: null,
       submitted: false,
-      submitting: true
+      submitting: true,
     };
     this.setScore = this.setScore.bind(this);
     this.setComment = this.setComment.bind(this);
@@ -44,20 +44,20 @@ class NPS extends PureComponent {
     const data = {
       question: this.state.question,
       score: this.state.score,
-      comment: this.state.comment
+      comment: this.state.comment,
     };
 
     postJSON(url, data)
       .then(response => {
         this.setState({
           submitted: true,
-          submitting: false
+          submitting: false,
         });
       })
       .catch(error => {
         this.setState({
           submitting: false,
-          error: true
+          error: true,
         });
       });
   }
@@ -99,7 +99,7 @@ class NPS extends PureComponent {
       );
     }
 
-    const selection = Array.from(Array(10).keys()).map(n =>
+    const selection = Array.from(Array(10).keys()).map(n => (
       <li key={n + 1}>
         <input
           id={n + 1}
@@ -114,7 +114,7 @@ class NPS extends PureComponent {
           {n + 1}
         </label>
       </li>
-    );
+    ));
 
     return (
       <div>
@@ -122,22 +122,13 @@ class NPS extends PureComponent {
         <Back />
         <main className={className}>
           <header>
-            <h1>
-              {question}
-            </h1>
+            <h1>{question}</h1>
             <aside>On a scale from 1 to 10</aside>
           </header>
           <form onSubmit={this.submitNps}>
-            <ol className="score">
-              {selection}
-            </ol>
-            <textarea
-              onChange={this.setComment}
-              placeholder="Send your regards"
-            />
-            <button disabled={score === null || submitting || submitted}>
-              Submit
-            </button>
+            <ol className="score">{selection}</ol>
+            <textarea onChange={this.setComment} placeholder="Send your regards" />
+            <button disabled={score === null || submitting || submitted}>Submit</button>
           </form>
         </main>
         <Footer>
@@ -155,13 +146,13 @@ NPS.propTypes = {
       siteMetadata: PropTypes.shape({
         nps: PropTypes.shape({
           api: PropTypes.shape({
-            url: PropTypes.string.isRequired
+            url: PropTypes.string.isRequired,
           }),
-          questions: PropTypes.array.isRequired
-        }).isRequired
-      }).isRequired
-    }).isRequired
-  }).isRequired
+          questions: PropTypes.array.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export const pageQuery = graphql`
@@ -230,7 +221,7 @@ export default styled(NPS)`
     }
   }
 
-  .score li input[type="radio"] {
+  .score li input[type='radio'] {
     appearance: none;
     left: 0;
     height: 1rem;
@@ -254,9 +245,8 @@ export default styled(NPS)`
     &::after {
       background: hsla(0, 0%, 100%, 1);
       border-radius: 50%;
-      box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.2),
-                  inset 0 0 0 0 hsla(44,100%,75%,1);
-      content: "";
+      box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 0 hsla(44, 100%, 75%, 1);
+      content: '';
       display: block;
       height: 0.5rem;
       left: 50%;
@@ -270,13 +260,11 @@ export default styled(NPS)`
   }
 
   .score li:hover .radio {
-    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
-                inset 0 0 0 2rem hsla(44,100%,75%,1);
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 2rem hsla(44, 100%, 75%, 1);
   }
 
-  .score li input[type="radio"]:checked + .radio {
-    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
-                inset 0 0 0 2rem hsla(44,100%,75%,1);
+  .score li input[type='radio']:checked + .radio {
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 2rem hsla(44, 100%, 75%, 1);
     transform: scale(1.25);
 
     &::after {
@@ -301,7 +289,7 @@ export default styled(NPS)`
     opacity: 1;
   }
 
-  .score li input[type="radio"]:checked ~ .text {
+  .score li input[type='radio']:checked ~ .text {
     opacity: 1;
   }
 
@@ -319,12 +307,12 @@ export default styled(NPS)`
     width: 100%;
 
     &:focus {
-      border: 2px solid hsla(44,100%,75%,1);
+      border: 2px solid hsla(44, 100%, 75%, 1);
     }
   }
 
   button {
-    background-color: hsla(44,100%,75%,1);
+    background-color: hsla(44, 100%, 75%, 1);
     border-radius: 1.5rem;
     border: none;
     display: block;
@@ -333,13 +321,11 @@ export default styled(NPS)`
     margin: 0 auto;
     outline: none;
     padding: 0 4rem;
-    transition: background-color 125ms ease-out,
-                box-shadow 125ms ease-out,
-                transform 125ms ease-out;
+    transition: background-color 125ms ease-out, box-shadow 125ms ease-out, transform 125ms ease-out;
 
     &:disabled {
       cursor: not-allowed;
-      background-color: hsla(44,100%,75%,0.4);
+      background-color: hsla(44, 100%, 75%, 0.4);
     }
 
     &:hover:not(:disabled) {

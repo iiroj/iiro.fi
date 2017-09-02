@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { Header } from "./Header";
-import { DeliveryEstimates } from "./DeliveryEstimates";
-import { SelfPickup } from "./SelfPickup";
-import { Barometer } from "./Barometer";
+import { Header } from './Header';
+import { DeliveryEstimates } from './DeliveryEstimates';
+import { SelfPickup } from './SelfPickup';
+import { Barometer } from './Barometer';
 
 const Container = styled.article`
   background-color: white;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 1;
 
@@ -32,10 +32,11 @@ const Container = styled.article`
   }
 `;
 
-export const VerkkokauppaCom = () =>
+export const VerkkokauppaCom = () => (
   <Container>
     <Header />
     <DeliveryEstimates />
     <SelfPickup />
     <Barometer />
-  </Container>;
+  </Container>
+);

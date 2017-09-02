@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { ButtonLink } from "pages/portfolio";
+import React from 'react';
+import styled from 'styled-components';
+import { ButtonLink } from 'pages/portfolio';
 
-import pixel1x from "./pixel.png";
-import pixel2x from "./pixel@2x.png";
-import pixel3x from "./pixel@3x.png";
-import frontpage1x from "./frontpage.jpg";
-import frontpage2x from "./frontpage@2x.jpg";
-import frontpage3x from "./frontpage@3x.jpg";
+import pixel1x from './pixel.png';
+import pixel2x from './pixel@2x.png';
+import pixel3x from './pixel@3x.png';
+import frontpage1x from './frontpage.jpg';
+import frontpage2x from './frontpage@2x.jpg';
+import frontpage3x from './frontpage@3x.jpg';
 
 const Container = styled.header`
   align-items: center;
@@ -71,30 +71,21 @@ const Screen = styled.img`
   left: 15px;
 `;
 
-export const Header = () =>
+export const Header = () => (
   <Container>
     <Text>
       <h1>Verkkokauppa.com</h1>
       <p>
-        UX/UI designer from November 2014 until April 2017. As the resident web
-        designer, I oversaw the visual direction of Verkkokauppa.com’s website.
+        UX/UI designer from November 2014 until April 2017. As the resident web designer, I oversaw the visual direction
+        of Verkkokauppa.com’s website.
       </p>
-      <ButtonLink
-        href="https://www.verkkokauppa.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <ButtonLink href="https://www.verkkokauppa.com/" target="_blank" rel="noopener noreferrer">
         Visit Verkkokauppa.com
       </ButtonLink>
     </Text>
     <PhoneContainer>
-      <Phone
-        src={pixel1x}
-        srcSet={`${pixel1x} 1x, ${pixel2x} 2x, ${pixel3x} 3x`}
-      />
-      <Screen
-        src={frontpage1x}
-        srcSet={`${frontpage1x} 1x, ${frontpage2x} 2x, ${frontpage3x} 3x`}
-      />
+      <Phone src={pixel1x} srcSet={`${pixel1x} 1x, ${pixel2x} 2x, ${pixel3x} 3x`} />
+      <Screen src={frontpage1x} srcSet={`${frontpage1x} 1x, ${frontpage2x} 2x, ${frontpage3x} 3x`} />
     </PhoneContainer>
-  </Container>;
+  </Container>
+);

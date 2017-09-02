@@ -1,40 +1,40 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
-import Header from "components/Header";
-import Links from "components/Links";
-import BlogListing from "components/BlogListing";
+import Header from 'components/Header';
+import Links from 'components/Links';
+import BlogListing from 'components/BlogListing';
 
 const microdata = {
-  "@context": "http://schema.org",
-  "@type": "Person",
-  name: "Iiro Jäppinen",
-  jobTitle: "UX & UI Designer",
+  '@context': 'http://schema.org',
+  '@type': 'Person',
+  name: 'Iiro Jäppinen',
+  jobTitle: 'UX & UI Designer',
   worksFor: {
-    "@type": "Organization",
-    name: "Fraktio",
-    url: "https://fraktio.fi"
+    '@type': 'Organization',
+    name: 'Fraktio',
+    url: 'https://fraktio.fi',
   },
-  url: "https://iiro.fi/",
-  email: "iiro@jappinen.fi",
-  nationality: "Finland",
+  url: 'https://iiro.fi/',
+  email: 'iiro@jappinen.fi',
+  nationality: 'Finland',
   address: {
-    "@type": "PostalAddress",
-    addressCountry: "Finland",
-    addressLocality: "Helsinki"
+    '@type': 'PostalAddress',
+    addressCountry: 'Finland',
+    addressLocality: 'Helsinki',
   },
   sameAs: [
-    "https://dribbble.com/iiroj",
-    "https://twitter.com/iirojappinen",
-    "https://fi.linkedin.com/in/iiroj",
-    "https://dribbble.com/iiroj",
-    "https://github.com/iiroj",
-    "https://gitlab.com/iiroj"
-  ]
+    'https://dribbble.com/iiroj',
+    'https://twitter.com/iirojappinen',
+    'https://fi.linkedin.com/in/iiroj',
+    'https://dribbble.com/iiroj',
+    'https://github.com/iiroj',
+    'https://gitlab.com/iiroj',
+  ],
 };
 
-const Index = ({ data }) =>
+const Index = ({ data }) => (
   <div>
     <main>
       <article>
@@ -42,9 +42,9 @@ const Index = ({ data }) =>
           title="Iiro Jäppinen"
           script={[
             {
-              type: "application/ld+json",
-              innerHTML: `${JSON.stringify(microdata)}`
-            }
+              type: 'application/ld+json',
+              innerHTML: `${JSON.stringify(microdata)}`,
+            },
           ]}
         />
         <Header />
@@ -52,7 +52,8 @@ const Index = ({ data }) =>
       </article>
     </main>
     <BlogListing edges={data.allMarkdownRemark.edges} />
-  </div>;
+  </div>
+);
 
 Index.propTypes = {
   data: PropTypes.shape({
@@ -61,16 +62,16 @@ Index.propTypes = {
         PropTypes.shape({
           node: {
             fields: {
-              slug: PropTypes.string.isRequired
+              slug: PropTypes.string.isRequired,
             }.isRequired,
             frontmatter: {
-              title: PropTypes.string.isRequired
-            }.isRequired
-          }.isRequired
+              title: PropTypes.string.isRequired,
+            }.isRequired,
+          }.isRequired,
         })
-      ).isRequired
-    }.isRequired
-  }).isRequired
+      ).isRequired,
+    }.isRequired,
+  }).isRequired,
 };
 
 export const pageQuery = graphql`

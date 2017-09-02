@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { injectGlobal } from "styled-components";
-import reset from "css-wipe/js";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { injectGlobal } from 'styled-components';
+import reset from 'css-wipe/js';
 
 injectGlobal`
   ${reset}
@@ -51,13 +51,10 @@ injectGlobal`
 
 const Root = styled.div`line-height: 1.5rem;`;
 
-const DefaultLayout = ({ children }) =>
-  <Root>
-    {children()}
-  </Root>;
+const DefaultLayout = ({ children }) => <Root>{children()}</Root>;
 
 DefaultLayout.propTypes = {
-  children: PropTypes.func.isRequired
+  children: PropTypes.func.isRequired,
 };
 
 export default DefaultLayout;

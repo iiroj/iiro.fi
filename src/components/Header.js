@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import ProfilePicture from "components/ProfilePicture";
-import Amp from "components/Amp";
-import FraktioLink from "components/FraktioLink";
+import ProfilePicture from 'components/ProfilePicture';
+import Amp from 'components/Amp';
+import FraktioLink from 'components/FraktioLink';
 
 const Section = styled.section`background-color: hsla(0, 0%, 100%, 1);`;
 
@@ -32,7 +32,7 @@ const Name = styled.h1`
 
 const Title = styled.h2`margin: 0;`;
 
-const Header = () =>
+const Header = () => (
   <Section>
     <Container>
       <PictureContainer>
@@ -43,6 +43,7 @@ const Header = () =>
         UX <Amp /> UI Designer at <FraktioLink />
       </Title>
     </Container>
-  </Section>;
+  </Section>
+);
 
 export default Header;

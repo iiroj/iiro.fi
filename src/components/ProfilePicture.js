@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   border-radius: 3px;
@@ -26,13 +26,14 @@ const Picture = styled.img`
   width: 100%;
 `;
 
-const ProfilePicture = () =>
+const ProfilePicture = () => (
   <Container>
     <Picture
       alt="Picture of Iiro Jäppinen"
       src="/profilePicture.jpg"
       srcSet="/profilePicture.jpg 1x, /profilePicture@2x.jpg 2x, /profilePicture@3x.jpg 3x"
     />
-  </Container>;
+  </Container>
+);
 
 export default ProfilePicture;

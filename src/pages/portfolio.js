@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import Helmet from "react-helmet";
+import React from 'react';
+import styled from 'styled-components';
+import Helmet from 'react-helmet';
 
-import Back from "components/Back";
-import { VerkkokauppaCom } from "components/Portfolio/VerkkokauppaCom";
-import { HumbleBundle } from "components/Portfolio/HumbleBundle";
-import { Icons } from "components/Portfolio/Icons";
+import Back from 'components/Back';
+import { VerkkokauppaCom } from 'components/Portfolio/VerkkokauppaCom';
+import { HumbleBundle } from 'components/Portfolio/HumbleBundle';
+import { Icons } from 'components/Portfolio/Icons';
 
 export const ButtonLink = styled.a`
   background: white !important;
@@ -26,12 +26,11 @@ export const ButtonLink = styled.a`
 
   &:active {
     color: #333333 !important;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2),
-      0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 `;
 
-const Container = styled.div`box-shadow: 0 1px 0 rgba(0, 0, 0, .05);`;
+const Container = styled.div`box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);`;
 
 const Header = styled.header`
   background-color: white;
@@ -50,7 +49,7 @@ const More = styled.p`
   text-align: center;
 `;
 
-const PortfolioIndex = () =>
+const PortfolioIndex = () => (
   <div>
     <Helmet title="Portfolio of Iiro Jäppinen" />
     <Container>
@@ -65,6 +64,7 @@ const PortfolioIndex = () =>
     <aside>
       <More>With more coming soon...</More>
     </aside>
-  </div>;
+  </div>
+);
 
 export default PortfolioIndex;

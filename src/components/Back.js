@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import Link from "gatsby-link";
+import React from 'react';
+import styled from 'styled-components';
+import Link from 'gatsby-link';
 
 const X = styled(Link)`
   background: none !important;
@@ -15,7 +15,8 @@ const X = styled(Link)`
   width: 1.5rem;
   z-index: 1;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     background-color: rgb(77, 77, 77);
     border-radius: 1px;
     content: '';
@@ -58,11 +59,12 @@ const X = styled(Link)`
   }
 `;
 
-const Back = () =>
+const Back = () => (
   <nav>
     <X to="/" title="Back to iiro.fi">
       Back to iiro.fi
     </X>
-  </nav>;
+  </nav>
+);
 
 export default Back;
