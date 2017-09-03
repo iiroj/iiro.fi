@@ -72,7 +72,7 @@ class Feedback extends PureComponent {
     const { className } = this.props;
     const { error, question, score, submitted, submitting } = this.state;
 
-    if (true === true) {
+    if (submitted === true) {
       return (
         <div className={className}>
           <Helmet title="Thank you!" />
