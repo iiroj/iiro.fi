@@ -19,6 +19,7 @@ class Feedback extends PureComponent {
       submitted: false,
       submitting: true,
     };
+
     this.setScore = this.setScore.bind(this);
     this.setComment = this.setComment.bind(this);
     this.submitFeedback = this.submitFeedback.bind(this);
@@ -62,11 +63,8 @@ class Feedback extends PureComponent {
       });
   }
 
-  componentWillMount() {
-    this.selectRandomQuestion(this.props.data.site.siteMetadata.feedback.questions);
-  }
-
   componentDidMount() {
+    this.selectRandomQuestion(this.props.data.site.siteMetadata.feedback.questions);
     this.setState({ submitting: false });
   }
 
@@ -74,12 +72,12 @@ class Feedback extends PureComponent {
     const { className } = this.props;
     const { error, question, score, submitted, submitting } = this.state;
 
-    if (submitted === true) {
+    if (true === true) {
       return (
-        <div>
+        <div className={className}>
           <Helmet title="Thank you!" />
           <Back />
-          <main className={className}>
+          <main className="box">
             <h1>Thank you!</h1>
           </main>
         </div>
@@ -88,10 +86,10 @@ class Feedback extends PureComponent {
 
     if (error === true) {
       return (
-        <div>
+        <div className={className}>
           <Helmet title="Something went wrong!" />
           <Back />
-          <main className={className}>
+          <main className="box">
             <h1>Something went wrong!</h1>
             <p>Please try again later...</p>
           </main>
@@ -125,7 +123,7 @@ class Feedback extends PureComponent {
             <h1>{question}</h1>
             <aside>On a scale from 1 to 10</aside>
           </header>
-          <form onSubmit={this.submitFeedback}>
+          <form onSubmit={this.submitFeedback} className="box">
             <ol className="score">{selection}</ol>
             <textarea onChange={this.setComment} placeholder="Send your regards" />
             <button disabled={score === null || submitting || submitted}>Submit</button>
@@ -183,13 +181,6 @@ export default styled(Feedback)`
     max-width: 43rem;
     padding: 2rem 1rem 2rem 4rem;
 
-    h1 {
-      font-family: Georgia, serif;
-      font-size: 1.5rem;
-      font-style: italic;
-      line-height: 2rem;
-    }
-
     aside {
       opacity: 0.4;
       text-align: left;
@@ -197,11 +188,29 @@ export default styled(Feedback)`
     }
   }
 
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+
   form {
     margin: 0 auto 2rem;
     max-width: 38rem;
     padding: 0 1rem;
     width: 100%;
+  }
+
+  .box {
+    margin: 0 auto 2rem;
+    max-width: 38rem;
+    padding: 0 1rem;
+    text-align: center;
+    width: 100%;
+
+    h1 {
+      margin: 2rem 0 0;
+    }
   }
 
   .score {
