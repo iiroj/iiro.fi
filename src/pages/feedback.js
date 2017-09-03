@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled, { injectGlobal } from 'styled-components';
+import styled from 'styled-components';
 
 import { postJSON } from 'services/postJSON';
 import Back from 'components/Back';
