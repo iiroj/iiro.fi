@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { injectGlobal } from 'styled-components';
 import reset from 'css-wipe/js';
+import { pure } from 'recompose';
 
 injectGlobal`
   ${reset}
@@ -57,4 +58,4 @@ DefaultLayout.propTypes = {
   children: PropTypes.func.isRequired,
 };
 
-export default DefaultLayout;
+export default pure(DefaultLayout);

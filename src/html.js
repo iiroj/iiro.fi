@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
+import { pure } from 'recompose';
 
 const HTML = props => {
   const head = Helmet.rewind();
@@ -39,4 +40,4 @@ HTML.propTypes = {
   postBodyComponents: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
 };
 
-export default HTML;
+export default pure(HTML);

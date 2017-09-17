@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { pure } from 'recompose';
 
 import Header from 'components/Header';
 import Links from 'components/Links';
@@ -91,4 +92,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Index;
+export default pure(Index);

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import { pure } from 'recompose';
 
 const Container = styled.div`box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.1);`;
 
@@ -25,7 +26,7 @@ const Post = styled(Link)`
   margin-bottom: 2rem;
 `;
 
-export default function BlogListing(props) {
+const BlogListing = props => {
   const pageLinks = [];
   const edges = props.edges;
 
@@ -51,7 +52,7 @@ export default function BlogListing(props) {
       <Posts>{pageLinks}</Posts>
     </Container>
   );
-}
+};
 
 BlogListing.propTypes = {
   edges: PropTypes.arrayOf(
@@ -67,3 +68,5 @@ BlogListing.propTypes = {
     })
   ).isRequired,
 };
+
+export default pure(BlogListing);
