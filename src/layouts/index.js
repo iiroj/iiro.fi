@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { injectGlobal } from 'styled-components';
+import { injectGlobal } from 'styled-components';
 import reset from 'css-wipe/js';
+import WebfontLoader from '@dr-kobros/react-webfont-loader';
 import { pure } from 'recompose';
 
 injectGlobal`
@@ -16,6 +17,7 @@ injectGlobal`
         "Helvetica Neue", sans-serif;
     font-size: 14px;
     font-weight: 400;
+    line-height: 1.5rem;
   }
 
   a {
@@ -50,9 +52,24 @@ injectGlobal`
   }
 `;
 
-const Root = styled.div`line-height: 1.5rem;`;
+const fontConfig = {
+  google: {
+    families: ['Arimo:400,400i,700,700i'],
+  },
+};
 
-const DefaultLayout = ({ children }) => <Root>{children()}</Root>;
+const loadFonts = status =>
+  status === 'active' &&
+  injectGlobal`
+  body { font-family: 'Arimo'; }
+`;
+
+const DefaultLayout = ({ children }) => (
+  <div id="root">
+    <WebfontLoader config={fontConfig} onStatus={loadFonts} />
+    {children()}
+  </div>
+);
 
 DefaultLayout.propTypes = {
   children: PropTypes.func.isRequired,
