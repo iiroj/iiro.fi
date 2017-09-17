@@ -42,17 +42,19 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     const blogPost = `${__dirname}/src/components/BlogPost/index.js`;
     graphql(
-      `{
-        allMarkdownRemark(limit: 1000) {
-          edges {
-            node {
-              fields {
-                slug
+      `
+        {
+          allMarkdownRemark(limit: 1000) {
+            edges {
+              node {
+                fields {
+                  slug
+                }
               }
             }
           }
         }
-      }`
+      `
     ).then(result => {
       if (result.errors) {
         console.log(result.errors);

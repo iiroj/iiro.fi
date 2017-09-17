@@ -6,7 +6,7 @@ const Logo = styled.svg`
   height: 18px;
   margin-right: 2px;
   position: relative;
-  viewBox: 0 0 19 18;
+  viewbox: 0 0 19 18;
   vertical-align: -20%;
   width: 19px;
 
