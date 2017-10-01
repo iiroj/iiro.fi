@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { pure } from 'recompose';
 
+import HeaderArea from 'components/HeaderArea';
+import MainArea from 'components/MainArea';
 import Header from 'components/Header';
-import Links from 'components/Links';
-import BlogListing from 'components/BlogListing';
+import PostList from 'components/PostList';
 
 const microdata = {
   '@context': 'http://schema.org',
@@ -34,24 +35,26 @@ const microdata = {
   ],
 };
 
-const Index = ({ data }) => (
-  <div>
-    <Helmet
-      title="Iiro Jäppinen"
-      script={[
-        {
-          type: 'application/ld+json',
-          innerHTML: `${JSON.stringify(microdata)}`,
-        },
-      ]}
-    />
-    <main>
-      <Header />
-      <Links links={data.links} />
-    </main>
-    <BlogListing edges={data.allMarkdownRemark.edges} />
-  </div>
-);
+const Index = ({ data }) => [
+  <Helmet
+    key="helmet"
+    title="Iiro Jäppinen"
+    script={[
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(microdata),
+      },
+    ]}
+  />,
+  <HeaderArea key="header">
+    <Header />
+  </HeaderArea>,
+  <MainArea key="main">
+    <ul>
+      <PostList edges={data.allMarkdownRemark.edges} />
+    </ul>
+  </MainArea>,
+];
 
 Index.propTypes = {
   data: PropTypes.shape({

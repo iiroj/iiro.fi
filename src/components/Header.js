@@ -1,50 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { pure } from 'recompose';
+import { hiDPI } from 'polished';
 
-import ProfilePicture from 'components/ProfilePicture';
-import Amp from 'components/Amp';
-import FraktioLink from 'components/FraktioLink';
+const Header = ({ className }) => <header className={className}>test</header>;
 
-const Section = styled.section`background-color: hsla(0, 0%, 100%, 1);`;
+Header.propTypes = {
+  className: PropTypes.string,
+};
 
-const Container = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.5rem;
-  margin: 0 auto;
-  max-width: 30rem;
-  padding: 5vh 1rem 0 1rem;
+export default styled(Header)`
+  background-image: url('/profilePicture.jpg');
+  background-position: 55% 50%;
+  background-size: cover;
+  flex-grow: 1;
+
+  ${hiDPI(1.5)} {
+    background-image: url('/profilePicture@2x.jpg');
+  }
+
+  ${hiDPI(2)} {
+    background-image: url('/profilePicture@3x.jpg');
+  }
 `;
-
-const PictureContainer = styled.div`
-  height: 96px;
-  margin-bottom: 1rem;
-  width: 96px;
-`;
-
-const Name = styled.h1`
-  font-family: Georgia, serif;
-  font-size: 1.5rem;
-  font-style: italic;
-  margin: 0.5rem 0;
-`;
-
-const Title = styled.h2`margin: 0;`;
-
-const Header = () => (
-  <Section>
-    <Container>
-      <PictureContainer>
-        <ProfilePicture />
-      </PictureContainer>
-      <Name>Iiro Jäppinen</Name>
-      <Title>
-        UX <Amp /> UI Designer at <FraktioLink />
-      </Title>
-    </Container>
-  </Section>
-);
-
-export default pure(Header);

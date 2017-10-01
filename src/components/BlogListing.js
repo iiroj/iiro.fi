@@ -30,12 +30,12 @@ const BlogListing = props => {
   const pageLinks = [];
   const edges = props.edges;
 
-  edges.forEach(edge => {
+  const posts = edges.map(edge => {
     const post = edge.node;
     const slug = post.fields.slug;
     const title = post.frontmatter.title;
 
-    pageLinks.push(
+    return (
       <li key={slug}>
         <Post to={slug}>
           <article>
@@ -46,12 +46,7 @@ const BlogListing = props => {
     );
   });
 
-  return (
-    <Container>
-      <Header>Blog:</Header>
-      <Posts>{pageLinks}</Posts>
-    </Container>
-  );
+  return <Posts>{posts}</Posts>;
 };
 
 BlogListing.propTypes = {
