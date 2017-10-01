@@ -26,7 +26,6 @@ const microdata = {
     addressLocality: 'Helsinki',
   },
   sameAs: [
-    'https://dribbble.com/iiroj',
     'https://twitter.com/iirojappinen',
     'https://fi.linkedin.com/in/iiroj',
     'https://dribbble.com/iiroj',
@@ -37,20 +36,18 @@ const microdata = {
 
 const Index = ({ data }) => (
   <div>
+    <Helmet
+      title="Iiro Jäppinen"
+      script={[
+        {
+          type: 'application/ld+json',
+          innerHTML: `${JSON.stringify(microdata)}`,
+        },
+      ]}
+    />
     <main>
-      <article>
-        <Helmet
-          title="Iiro Jäppinen"
-          script={[
-            {
-              type: 'application/ld+json',
-              innerHTML: `${JSON.stringify(microdata)}`,
-            },
-          ]}
-        />
-        <Header />
-        <Links links={data.links} />
-      </article>
+      <Header />
+      <Links links={data.links} />
     </main>
     <BlogListing edges={data.allMarkdownRemark.edges} />
   </div>

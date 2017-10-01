@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { injectGlobal } from 'styled-components';
 import reset from 'css-wipe/js';
-import WebfontLoader from '@dr-kobros/react-webfont-loader';
 import { pure } from 'recompose';
 
 injectGlobal`
@@ -52,24 +51,7 @@ injectGlobal`
   }
 `;
 
-const fontConfig = {
-  google: {
-    families: ['Arimo:400,400i,700,700i'],
-  },
-};
-
-const loadFonts = status =>
-  status === 'active' &&
-  injectGlobal`
-  body { font-family: 'Arimo'; }
-`;
-
-const DefaultLayout = ({ children }) => (
-  <div id="root">
-    <WebfontLoader config={fontConfig} onStatus={loadFonts} />
-    {children()}
-  </div>
-);
+const DefaultLayout = ({ children }) => children();
 
 DefaultLayout.propTypes = {
   children: PropTypes.func.isRequired,
