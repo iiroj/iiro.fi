@@ -7,6 +7,8 @@ import { pure } from 'recompose';
 import HeaderArea from 'components/HeaderArea';
 import MainArea from 'components/MainArea';
 
+const YELLOW = `hsla(44,100%,75%,1)`;
+
 injectGlobal`
   ${reset}
 
@@ -31,28 +33,20 @@ injectGlobal`
   }
 
   a {
-    background: linear-gradient(
-      180deg,
-      hsla(44,100%,75%,0)  0em,
-      hsla(44,100%,75%,0) 0.9em,
-      hsla(44,100%,75%,1) 0.9em,
-      hsla(44,100%,75%,1) 1em
-    );
-    background-repeat: repeat-y;
-    background-size: 100% 1.5rem;
+    background-image: linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%);
+    background-position: 0 1em;
+    background-repeat: no-repeat;
+    background-size: 100%;
     color: inherit;
+    overflow: hidden;
     text-decoration: none;
-    word-wrap: break-word;
+    transition: background-position 125ms ease-out 250ms;
 
     &:hover {
-      background: linear-gradient(
-        180deg,
-        hsla(44,100%,75%,0) 0em,
-        hsla(44,100%,75%,1) 0em,
-        hsla(44,100%,75%,1) 1em
-      );
-      background-repeat: repeat-y;
-      background-size: 100% 1.5rem;
+      background-image: linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%);
+      background-position: 0 0em;
+      cursor: pointer;
+      transition: background-position 100ms ease-out 0s;
     }
 
     &:active {
@@ -75,11 +69,12 @@ export default pure(styled(DefaultLayout)`
   width: 100%;
 
   ${HeaderArea} {
-    flex: 1 1 25%;
+    flex: 1 0 25%;
+    min-height: 20rem;
   }
 
   ${MainArea} {
-    flex: 1 1 75%;
+    flex: 1 0 75%;
   }
 
   @media (min-width: 64rem) {

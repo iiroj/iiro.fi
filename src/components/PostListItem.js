@@ -8,7 +8,7 @@ const PostListItem = props => (
   <li className={props.className}>
     <Link to={props.slug}>
       <article>
-        <h4>{props.title}</h4>
+        <h3>{props.title}</h3>
       </article>
     </Link>
   </li>
@@ -23,10 +23,14 @@ PostListItem.propTypes = {
 export default pure(styled(PostListItem)`
   article {
     font-family: Georgia, serif;
-    display: inline-block;
+    display: inline;
     font-size: 1.5em;
     line-height: 1.5em;
     font-style: italic;
+  }
+
+  h3 {
+    display: inline;
   }
 
   & + li {
