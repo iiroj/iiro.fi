@@ -16,7 +16,7 @@ export default styled(MainArea)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
   position: relative;
   z-index: 1;
 

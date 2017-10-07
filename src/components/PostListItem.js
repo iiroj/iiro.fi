@@ -24,8 +24,12 @@ export default pure(styled(PostListItem)`
   article {
     font-family: Georgia, serif;
     display: inline-block;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    line-height: 1.5em;
     font-style: italic;
-    margin-bottom: 2rem;
+  }
+
+  & + li {
+    margin-top: 2em;
   }
 `);

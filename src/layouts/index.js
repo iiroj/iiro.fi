@@ -34,7 +34,8 @@ injectGlobal`
     background: linear-gradient(
       180deg,
       hsla(44,100%,75%,0)  0em,
-      hsla(44,100%,75%,0) 1em,
+      hsla(44,100%,75%,0) 0.9em,
+      hsla(44,100%,75%,1) 0.9em,
       hsla(44,100%,75%,1) 1em
     );
     background-repeat: repeat-y;
