@@ -31,7 +31,9 @@ export const ButtonLink = styled.a`
   }
 `;
 
-const Container = styled.div`box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);`;
+const Container = styled.div`
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+`;
 
 const Header = styled.header`
   background-color: white;

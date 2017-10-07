@@ -17,7 +17,9 @@ const PictureContainer = styled.div`
   width: 48px;
 `;
 
-const Text = styled.div`margin-bottom: 1rem;`;
+const Text = styled.div`
+  margin-bottom: 1rem;
+`;
 
 const Name = styled.p`
   font-family: Georgia, serif;
