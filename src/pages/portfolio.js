@@ -31,14 +31,14 @@ export const ButtonLink = styled.a`
 `;
 
 const Container = styled.div`
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  width: 100%;
 `;
 
 const Header = styled.header`
   background-color: white;
   font-family: Georgia, serif;
   font-size: 1.5rem;
-  padding: 2rem 3rem 4rem;
+  padding: 2rem 3rem 6rem;
   text-align: center;
 `;
 
@@ -47,26 +47,24 @@ const More = styled.p`
   font-family: Georgia, serif;
   font-size: 1.5em;
   font-style: italic;
-  margin: 4rem auto;
+  padding: 4rem 0;
   text-align: center;
 `;
 
-const PortfolioIndex = () => (
-  <div>
-    <Helmet title="Portfolio of Iiro Jäppinen" />
-    <Container>
-      <Back />
-      <Header>
-        <h1>Portfolio of Iiro Jäppinen</h1>
-      </Header>
-      <VerkkokauppaCom />
-      <HumbleBundle />
-      <Icons />
-    </Container>
-    <aside>
+const PortfolioIndex = () => [
+  <Helmet key="helmet" title="Portfolio of Iiro Jäppinen" />,
+  <Container key="container">
+    <Back />
+    <Header>
+      <h1>Portfolio of Iiro Jäppinen</h1>
+    </Header>
+    <VerkkokauppaCom />
+    <HumbleBundle />
+    <Icons />
+    <aside key="aside">
       <More>With more coming soon...</More>
     </aside>
-  </div>
-);
+  </Container>,
+];
 
 export default PortfolioIndex;
