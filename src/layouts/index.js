@@ -37,7 +37,6 @@ injectGlobal`
     background-repeat: no-repeat;
     background-size: 100%;
     color: inherit;
-    overflow: hidden;
     text-decoration: none;
     transition: background-position 125ms ease-out 250ms;
 

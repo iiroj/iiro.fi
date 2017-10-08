@@ -46,7 +46,6 @@ const Link = styled.a`
   background: none !important;
   display: inline-block;
   margin-top: 1rem;
-  overflow: visible;
 
   > img {
     height: 24px;
