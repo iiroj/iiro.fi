@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
-import { pure } from 'recompose';
 
 import Back from 'components/Back';
 import { VerkkokauppaCom } from 'components/Portfolio/VerkkokauppaCom';
@@ -70,4 +69,4 @@ const PortfolioIndex = () => (
   </div>
 );
 
-export default pure(PortfolioIndex);
+export default PortfolioIndex;

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import { pure } from 'recompose';
 
 import PostListItem from './PostListItem';
 
@@ -25,4 +24,4 @@ PostList.propTypes = {
   ).isRequired,
 };
 
-export default pure(PostList);
+export default PostList;

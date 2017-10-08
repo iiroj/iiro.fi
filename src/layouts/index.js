@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { injectGlobal } from 'styled-components';
 import reset from 'css-wipe/js';
-import { pure } from 'recompose';
 
 import HeaderArea from 'components/HeaderArea';
 import MainArea from 'components/MainArea';
@@ -62,7 +61,7 @@ DefaultLayout.propTypes = {
   className: PropTypes.string,
 };
 
-export default pure(styled(DefaultLayout)`
+export default styled(DefaultLayout)`
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -83,4 +82,4 @@ export default pure(styled(DefaultLayout)`
       margin-left: 50%;
     }
   }
-`);
+`;
