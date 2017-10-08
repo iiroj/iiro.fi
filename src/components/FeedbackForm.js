@@ -69,8 +69,6 @@ FeedbackForm.propTypes = {
 };
 
 export default styled(FeedbackForm)`
-  background-color: white;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
