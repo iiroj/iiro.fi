@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Logo = styled.svg`
+export const Logo = styled.svg`
   display: inline-block;
   height: 18px;
   margin-right: 2px;
@@ -11,7 +11,7 @@ const Logo = styled.svg`
   width: 19px;
 
   path {
-    fill: hsla(0, 0%, 30%, 1);
+    fill: hsla(0, 0%, 100%, 1);
   }
 `;
 

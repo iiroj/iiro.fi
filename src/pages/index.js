@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
+import HeaderArea from 'components/HeaderArea';
+import MainArea from 'components/MainArea';
 import Header from 'components/Header';
+import PostList from 'components/PostList';
 import Links from 'components/Links';
-import BlogListing from 'components/BlogListing';
+import RateMe from 'components/RateMe';
 
 const microdata = {
   '@context': 'http://schema.org',
   '@type': 'Person',
   name: 'Iiro Jäppinen',
-  jobTitle: 'UX & UI Designer',
+  jobTitle: 'Designer',
   worksFor: {
     '@type': 'Organization',
     name: 'Fraktio',
@@ -25,7 +29,6 @@ const microdata = {
     addressLocality: 'Helsinki',
   },
   sameAs: [
-    'https://dribbble.com/iiroj',
     'https://twitter.com/iirojappinen',
     'https://fi.linkedin.com/in/iiroj',
     'https://dribbble.com/iiroj',
@@ -34,28 +37,35 @@ const microdata = {
   ],
 };
 
-const Index = ({ data }) => (
-  <div>
-    <main>
-      <article>
-        <Helmet
-          title="Iiro Jäppinen"
-          script={[
-            {
-              type: 'application/ld+json',
-              innerHTML: `${JSON.stringify(microdata)}`,
-            },
-          ]}
-        />
-        <Header />
-        <Links links={data.links} />
-      </article>
-    </main>
-    <BlogListing edges={data.allMarkdownRemark.edges} />
-  </div>
-);
+const Index = ({ className, data }) => [
+  <Helmet
+    key="helmet"
+    title="Iiro Jäppinen"
+    script={[
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(microdata),
+      },
+    ]}
+  />,
+  <HeaderArea key="header">
+    <Header />
+  </HeaderArea>,
+  <MainArea className={className} key="main">
+    <h3>Blog</h3>
+    <ul>
+      <PostList edges={data.allMarkdownRemark.edges} />
+    </ul>
+    <h3>Elsewhere</h3>
+    <ul>
+      <Links />
+    </ul>
+    <RateMe />
+  </MainArea>,
+];
 
 Index.propTypes = {
+  className: PropTypes.string,
   data: PropTypes.shape({
     allMarkdownRemark: {
       edges: PropTypes.arrayOf(
@@ -91,4 +101,12 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Index;
+export default styled(Index)`
+  h3 {
+    opacity: 0.6;
+  }
+
+  > * {
+    margin: 1rem 0;
+  }
+`;

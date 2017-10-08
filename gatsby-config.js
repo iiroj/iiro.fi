@@ -14,6 +14,7 @@ module.exports = {
     },
   },
   plugins: [
+    'gatsby-plugin-react-next',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
     'gatsby-plugin-sharp',
@@ -58,6 +59,31 @@ module.exports = {
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        allPageHeaders: [
+          `Content-Security-Policy: default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://s7ozycgh27.execute-api.eu-central-1.amazonaws.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; worker-src 'self';`,
+          `Referrer-Policy': origin-when-cross-origin`,
+          `X-Content-Type-Options: nosniff`,
+          `X-Frame-Options: DENY`,
+          `X-XSS-Protection: 1; mode=block`,
+        ],
+        headers: {
+          '/': [
+            `Link: </d.svg>; rel=preload; as=image`,
+            `Link: </e.svg>; rel=preload; as=image`,
+            `Link: </gh.svg>; rel=preload; as=image`,
+            `Link: </gl.svg>; rel=preload; as=image`,
+            `Link: </l.svg>; rel=preload; as=image`,
+            `Link: </t.svg>; rel=preload; as=image`,
+          ],
+        },
+        mergeSecurityHeaders: false,
+        mergeLinkHeaders: true,
+        mergeCachingHeaders: true,
       },
     },
   ],
