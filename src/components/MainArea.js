@@ -6,7 +6,7 @@ import { pure } from 'recompose';
 const MainArea = ({ children, className }) => <div className={className}>{children}</div>;
 
 MainArea.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]).isRequired,
   className: PropTypes.string,
 };
 
@@ -14,7 +14,6 @@ export default styled(MainArea)`
   background-color: hsla(0, 0%, 100%, 1);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding: 2rem;
   position: relative;

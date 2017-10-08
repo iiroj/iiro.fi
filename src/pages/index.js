@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { pure } from 'recompose';
+import styled from 'styled-components';
 
 import HeaderArea from 'components/HeaderArea';
 import MainArea from 'components/MainArea';
 import Header from 'components/Header';
 import PostList from 'components/PostList';
+import Links from 'components/Links';
 
 const microdata = {
   '@context': 'http://schema.org',
@@ -35,7 +36,7 @@ const microdata = {
   ],
 };
 
-const Index = ({ data }) => [
+const Index = ({ className, data }) => [
   <Helmet
     key="helmet"
     title="Iiro Jäppinen"
@@ -49,14 +50,20 @@ const Index = ({ data }) => [
   <HeaderArea key="header">
     <Header />
   </HeaderArea>,
-  <MainArea key="main">
+  <MainArea className={className} key="main">
+    <h3>Blog</h3>
     <ul>
       <PostList edges={data.allMarkdownRemark.edges} />
+    </ul>
+    <h3>Elsewhere</h3>
+    <ul>
+      <Links />
     </ul>
   </MainArea>,
 ];
 
 Index.propTypes = {
+  className: PropTypes.string,
   data: PropTypes.shape({
     allMarkdownRemark: {
       edges: PropTypes.arrayOf(
@@ -92,4 +99,9 @@ export const pageQuery = graphql`
   }
 `;
 
-export default pure(Index);
+export default styled(Index)`
+  h3 {
+    margin: 2rem 0;
+    opacity: 0.6;
+  }
+`;

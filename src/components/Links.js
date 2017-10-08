@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const links = [
@@ -35,64 +34,46 @@ const links = [
   },
 ];
 
-const Links = ({ className }) => (
-  <section className={className}>
-    <ul>
-      {links.map(link => (
-        <li key={link.title}>
-          <a href={link.href}>
-            <img src={link.icon} alt={`${link.title} icon`} />
-            <h2>{link.title}</h2>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
-);
+const ListItem = styled.li`
+  margin-top: 1rem;
 
-Links.propTypes = {
-  className: PropTypes.string.isRequired,
-};
-
-export default styled(Links)`
-  background-color: hsla(0, 0%, 100%, 1);
-  padding: 5vh 1rem;
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    line-height: 32px;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 20rem;
-    width: 100%;
-
-    > li {
-      flex-basis: calc(100%/3);
-    }
-  }
-
-  a {
-    align-items: center;
-    background: none !important;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem 1rem;
-    text-decoration: none;
-
-    > img {
-      height: 24px;
-      transition: transform 125ms ease-in;
-      width: 24px;
-    }
-
-    &:hover > img {
-      transform: scale(1.2);
-    }
-
-    &:active > img {
-      transform: scale(1);
-    }
+  &:first-child {
+    margin-top: 0;
   }
 `;
+
+const Link = styled.a`
+  background: none !important;
+  display: inline-block;
+  margin-top: 1rem;
+  overflow: visible;
+
+  > img {
+    height: 24px;
+    margin-right: 1rem;
+    transition: transform 125ms ease-out 250ms;
+    vertical-align: -20%;
+    width: 24px;
+  }
+
+  &:hover > img {
+    transform: scale(1.2);
+    transition: transform 100ms ease-out 0s;
+  }
+
+  &:active > img {
+    transform: scale(1);
+  }
+`;
+
+const Links = () =>
+  links.map(link => (
+    <ListItem key={link.title}>
+      <Link href={link.href}>
+        <img src={link.icon} alt={`${link.title} icon`} />
+        <span>{link.title}</span>
+      </Link>
+    </ListItem>
+  ));
+
+export default Links;

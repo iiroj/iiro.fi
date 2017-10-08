@@ -8,7 +8,7 @@ const PostListItem = props => (
   <li className={props.className}>
     <Link to={props.slug}>
       <article>
-        <h3>{props.title}</h3>
+        <h1>{props.title}</h1>
       </article>
     </Link>
   </li>
@@ -29,7 +29,7 @@ export default pure(styled(PostListItem)`
     font-style: italic;
   }
 
-  h3 {
+  h1 {
     display: inline;
   }
 
