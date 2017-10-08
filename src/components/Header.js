@@ -55,13 +55,7 @@ export default styled(Header)`
       background: none;
     }
 
-    ${Logo} path {
-      fill: hsla(0, 0%, 100%, 1);
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .container {
+    @media (min-width: 64rem) {
       padding: 10rem 5rem 3rem 3rem;
     }
   }

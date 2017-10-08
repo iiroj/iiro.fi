@@ -4,11 +4,13 @@ import styled from 'styled-components';
 
 import Title from './Title';
 import Body from './Body';
+import Footer from './Footer';
 
 const Article = ({ body, className, title }) => (
   <article className={className}>
     <Title>{title}</Title>
     <Body dangerouslySetInnerHTML={{ __html: body }} />
+    <Footer />
   </article>
 );
 
