@@ -11,7 +11,7 @@ const Header = ({ className }) => (
     <div className="container">
       <h1>Iiro Jäppinen</h1>
       <h2>
-        UX <Amp /> UI Designer at <FraktioLink />
+        Service <Amp /> UX designer, UI devsigner, all-around handyman at <FraktioLink />. React enthusiast.
       </h2>
     </div>
   </header>
@@ -29,7 +29,7 @@ export default styled(Header)`
   flex-direction: column;
   flex-grow: 1;
   justify-content: flex-end;
-  padding: 0 0 2rem 0;
+  position: relative;
 
   ${hiDPI(1.5)} {
     background-image: url('/profilePicture@2x.jpg');
@@ -40,9 +40,16 @@ export default styled(Header)`
   }
 
   .container {
+    background: linear-gradient(180deg, hsla(190, 10%, 40%, 0) 0%, hsla(190, 10%, 40%, 0.9) 100%);
     color: hsla(0, 0%, 100%, 1);
-    margin: 1rem;
-    text-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.6);
+    padding: 10rem 2rem 5rem 2rem;
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 1.5em;
+      line-height: 1.5em;
+      font-style: italic;
+    }
 
     a {
       background: none;
@@ -54,10 +61,8 @@ export default styled(Header)`
   }
 
   @media (min-width: 64rem) {
-    padding: 0 4rem 0 0;
-
     .container {
-      margin: 2rem;
+      padding: 10rem 5rem 3rem 3rem;
     }
   }
 `;

@@ -12,7 +12,7 @@ const microdata = {
   '@context': 'http://schema.org',
   '@type': 'Person',
   name: 'Iiro Jäppinen',
-  jobTitle: 'UX & UI Designer',
+  jobTitle: 'Designer',
   worksFor: {
     '@type': 'Organization',
     name: 'Fraktio',
