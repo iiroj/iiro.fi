@@ -6,6 +6,7 @@ import { hiDPI, mix } from 'polished';
 
 import Amp from 'components/Amp';
 import FraktioLink, { Logo } from 'components/FraktioLink';
+import { background } from 'components/Header';
 
 const Footer = ({ className }) => (
   <footer className={className}>
@@ -25,22 +26,9 @@ Footer.propTypes = {
 };
 
 export default styled(Footer)`
-  background-image: url('/profilePicture.jpg');
+  ${background};
+
   background-position: 50% 25%;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: flex-end;
-  position: relative;
-
-  ${hiDPI(1.5)} {
-    background-image: url('/profilePicture@2x.jpg');
-  }
-
-  ${hiDPI(2)} {
-    background-image: url('/profilePicture@3x.jpg');
-  }
 
   .gradient {
     background: none !important;

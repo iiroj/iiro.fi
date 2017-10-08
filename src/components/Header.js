@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { hiDPI } from 'polished';
 
 import Amp from './Amp';
@@ -21,7 +21,7 @@ Header.propTypes = {
   className: PropTypes.string,
 };
 
-export default styled(Header)`
+export const background = css`
   background-image: url('/profilePicture.jpg');
   background-position: 55% 50%;
   background-size: cover;
@@ -38,6 +38,10 @@ export default styled(Header)`
   ${hiDPI(2)} {
     background-image: url('/profilePicture@3x.jpg');
   }
+`;
+
+export default styled(Header)`
+  ${background};
 
   .container {
     background: linear-gradient(180deg, hsla(190, 10%, 40%, 0) 0%, hsla(190, 10%, 40%, 0.9) 100%);
