@@ -4,11 +4,11 @@ import { default as syntax } from './syntax.css';
 
 const Body = styled.article`
   box-sizing: border-box;
+  line-height: 1.5em;
   margin: 0 auto;
   max-width: 64rem;
   padding: 2rem 1rem 4rem 1rem;
   position: relative;
-  z-index: 1;
 
   span.gatsby-resp-image-wrapper {
     background: none;
@@ -78,7 +78,6 @@ const Body = styled.article`
     background-color: hsla(0, 64%, 95%, 1);
     color: hsla(0, 64%, 48%, 1);
     font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-    font-size: 0.9rem !important;
     padding: 0 0.25rem;
   }
 
