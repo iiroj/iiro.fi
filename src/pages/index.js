@@ -8,6 +8,7 @@ import MainArea from 'components/MainArea';
 import Header from 'components/Header';
 import PostList from 'components/PostList';
 import Links from 'components/Links';
+import RateMe from 'components/RateMe';
 
 const microdata = {
   '@context': 'http://schema.org',
@@ -59,6 +60,7 @@ const Index = ({ className, data }) => [
     <ul>
       <Links />
     </ul>
+    <RateMe />
   </MainArea>,
 ];
 
@@ -101,7 +103,10 @@ export const pageQuery = graphql`
 
 export default styled(Index)`
   h3 {
-    margin: 2rem 0;
     opacity: 0.6;
+  }
+
+  > * {
+    margin: 1rem 0;
   }
 `;

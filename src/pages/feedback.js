@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import { postJSON } from 'services/postJSON';
 import Back from 'components/Back';
-import Form from 'components/Feedback';
+import FeedbackForm from 'components/FeedbackForm';
 
 class Feedback extends PureComponent {
   constructor() {
@@ -72,7 +72,7 @@ class Feedback extends PureComponent {
     return [
       <Helmet key="helmet" title={question} />,
       <Back key="back" />,
-      <Form
+      <FeedbackForm
         key="form"
         submitted={submitted}
         submitting={submitting}

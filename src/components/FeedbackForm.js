@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Feedback = props => {
+const FeedbackForm = props => {
   const { className, error, handleScore, handleSelection, onSubmit, question, score, submitted, submitting } = props;
 
   if (submitted)
@@ -56,7 +56,7 @@ const Feedback = props => {
   );
 };
 
-Feedback.propTypes = {
+FeedbackForm.propTypes = {
   className: PropTypes.string,
   error: PropTypes.bool.isRequired,
   handleScore: PropTypes.func.isRequired,
@@ -68,7 +68,7 @@ Feedback.propTypes = {
   submitting: PropTypes.bool.isRequired,
 };
 
-export default styled(Feedback)`
+export default styled(FeedbackForm)`
   background-color: white;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   display: flex;
