@@ -68,20 +68,19 @@ export default pure(styled(DefaultLayout)`
   min-height: 100%;
   width: 100%;
 
-  ${HeaderArea} {
-    flex: 1 0 25%;
-    min-height: 20rem;
-  }
-
-  ${MainArea} {
-    flex: 1 0 75%;
-  }
-
   @media (min-width: 64rem) {
     flex-direction: row;
 
-    ${HeaderArea}, ${MainArea} {
-      flex: 1 1 50%;
+    ${HeaderArea} {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 50%;
+    }
+
+    ${HeaderArea} + ${MainArea} {
+      margin-left: 50%;
     }
   }
 `);
