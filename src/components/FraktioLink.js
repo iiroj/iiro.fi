@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Logo = styled.svg`
+export const Logo = styled.svg`
   display: inline-block;
   height: 18px;
   margin-right: 2px;

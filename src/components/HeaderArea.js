@@ -13,4 +13,5 @@ export default styled(HeaderArea)`
   background: hsla(0, 0%, 95%, 1);
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
