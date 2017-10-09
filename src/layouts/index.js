@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styled, { injectGlobal } from 'styled-components';
 import reset from 'css-wipe/js';
@@ -75,7 +75,11 @@ const Layout = styled.div`
   }
 `;
 
-const DefaultLayout = ({ children }) => <Layout>{children()}</Layout>;
+class DefaultLayout extends PureComponent {
+  render() {
+    return <Layout>{this.props.children()}</Layout>;
+  }
+}
 
 DefaultLayout.propTypes = {
   children: PropTypes.func.isRequired,
