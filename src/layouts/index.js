@@ -1,10 +1,7 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { injectGlobal } from 'styled-components';
 import reset from 'css-wipe/js';
-
-import HeaderArea from 'components/HeaderArea';
-import MainArea from 'components/MainArea';
 
 const YELLOW = `hsla(44,100%,75%,1)`;
 
@@ -59,27 +56,9 @@ const Layout = styled.div`
   justify-content: center;
   min-height: 100%;
   width: 100%;
-
-  @media (min-width: 64rem) {
-    ${HeaderArea} {
-      bottom: 0;
-      left: 0;
-      position: fixed;
-      top: 0;
-      width: 50%;
-    }
-
-    ${HeaderArea} + ${MainArea} {
-      margin-left: 50%;
-    }
-  }
 `;
 
-class DefaultLayout extends PureComponent {
-  render() {
-    return <Layout>{this.props.children()}</Layout>;
-  }
-}
+const DefaultLayout = ({ children }) => <Layout>{children()}</Layout>;
 
 DefaultLayout.propTypes = {
   children: PropTypes.func.isRequired,

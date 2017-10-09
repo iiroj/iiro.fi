@@ -1,12 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import styled from 'styled-components';
 
-import PostListItem from './PostListItem';
+const PostListItem = styled.li`
+  article {
+    font-family: Georgia, serif;
+    display: inline;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-style: italic;
+  }
+
+  h1 {
+    display: inline;
+  }
+
+  & + li {
+    margin-top: 2em;
+  }
+`;
 
 const PostList = ({ edges }) =>
   edges.map(edge => (
-    <PostListItem key={edge.node.fields.slug} slug={edge.node.fields.slug} title={edge.node.frontmatter.title} />
+    <PostListItem key={edge.node.fields.slug}>
+      <Link to={edge.node.fields.slug}>
+        <article>
+          <h1>{edge.node.frontmatter.title}</h1>
+        </article>
+      </Link>
+    </PostListItem>
   ));
 
 PostList.propTypes = {

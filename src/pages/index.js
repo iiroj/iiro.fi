@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 
-import HeaderArea from 'components/HeaderArea';
-import MainArea from 'components/MainArea';
 import Header from 'components/Header';
 import PostList from 'components/PostList';
 import Links from 'components/Links';
@@ -37,7 +35,66 @@ const microdata = {
   ],
 };
 
-const Index = ({ className, data }) => [
+const HeaderArea = styled.div`
+  background: hsla(0, 0%, 95%, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &::after {
+    background-color: hsla(0, 0%, 100%, 1);
+    content: '';
+    display: block;
+    height: 5rem;
+    position: absolute;
+    bottom: -5rem;
+    transform-origin: top left;
+    transform: skewY(-3deg);
+    width: 100%;
+  }
+
+  @media (min-width: 64rem) {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 50%;
+
+    &::after {
+      height: 100%;
+      right: -5rem;
+      top: 0;
+      transform-origin: top right;
+      transform: skewX(-3deg);
+      width: 5rem;
+    }
+  }
+`;
+
+const MainArea = styled.div`
+  background-color: hsla(0, 0%, 100%, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+
+  h3 {
+    opacity: 0.6;
+  }
+
+  > * {
+    margin: 1rem 0;
+  }
+
+  @media (min-width: 64rem) {
+    margin-left: 50%;
+    padding: 4rem;
+  }
+`;
+
+const Index = ({ data }) => [
   <Helmet
     key="helmet"
     title="Iiro Jäppinen"
@@ -51,7 +108,7 @@ const Index = ({ className, data }) => [
   <HeaderArea key="header">
     <Header />
   </HeaderArea>,
-  <MainArea className={className} key="main">
+  <MainArea key="main">
     <h3>Blog</h3>
     <ul>
       <PostList edges={data.allMarkdownRemark.edges} />
@@ -65,7 +122,6 @@ const Index = ({ className, data }) => [
 ];
 
 Index.propTypes = {
-  className: PropTypes.string,
   data: PropTypes.shape({
     allMarkdownRemark: {
       edges: PropTypes.arrayOf(
@@ -101,12 +157,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default styled(Index)`
-  h3 {
-    opacity: 0.6;
-  }
-
-  > * {
-    margin: 1rem 0;
-  }
-`;
+export default Index;

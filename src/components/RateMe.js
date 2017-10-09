@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
@@ -58,14 +57,10 @@ const RateMeLink = styled(Link)`
   }
 `;
 
-const RateMe = ({ className }) => (
-  <div className={className}>
+const RateMe = () => (
+  <div>
     <RateMeLink to="/feedback">Rate Me!</RateMeLink>
   </div>
 );
-
-RateMe.propTypes = {
-  className: PropTypes.string,
-};
 
 export default RateMe;

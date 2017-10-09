@@ -6,21 +6,6 @@ import { hiDPI } from 'polished';
 import Amp from './Amp';
 import FraktioLink, { Logo } from './FraktioLink';
 
-const Header = ({ className }) => (
-  <header className={className}>
-    <div className="container">
-      <h1>Iiro Jäppinen</h1>
-      <h2>
-        Service <Amp /> UX designer, UI devsigner, all-around handyman at <FraktioLink />. React enthusiast.
-      </h2>
-    </div>
-  </header>
-);
-
-Header.propTypes = {
-  className: PropTypes.string,
-};
-
 export const background = css`
   background-image: url('/profilePicture.jpg');
   background-position: 55% 50%;
@@ -40,7 +25,7 @@ export const background = css`
   }
 `;
 
-export default styled(Header)`
+const Header = styled.header`
   ${background};
 
   .container {
@@ -64,3 +49,16 @@ export default styled(Header)`
     }
   }
 `;
+
+const HeaderComponent = () => (
+  <Header>
+    <div className="container">
+      <h1>Iiro Jäppinen</h1>
+      <h2>
+        Service <Amp /> UX designer, UI devsigner, all-around handyman at <FraktioLink />. React enthusiast.
+      </h2>
+    </div>
+  </Header>
+);
+
+export default HeaderComponent;
