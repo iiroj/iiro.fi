@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { hiDPI, mix } from 'polished';
 
 import Amp from 'components/Amp';
-import FraktioLink, { Logo } from 'components/FraktioLink';
+import { FraktioLogo } from 'components/FraktioLink';
 import { background } from 'components/Header';
 
 const Footer = ({ className }) => (
@@ -14,7 +14,8 @@ const Footer = ({ className }) => (
       <div className="container">
         <p>Iiro Jäppinen</p>
         <span>
-          Service <Amp /> UX designer, UI devsigner, all-around handyman at <FraktioLink />. React enthusiast.
+          Service <Amp /> UX designer, UI devsigner, all-around handyman at <FraktioLogo />
+          <span className="fraktioText">fraktio</span>. React enthusiast.
         </span>
       </div>
     </Link>
@@ -68,12 +69,10 @@ export default styled(Footer)`
       font-style: italic;
     }
 
-    a {
-      background: none;
-
-      &:active {
-        color: inherit;
-      }
+    .fraktioText {
+      font-family: Georgia, serif;
+      font-style: normal;
+      font-weight: 700;
     }
   }
 `;
