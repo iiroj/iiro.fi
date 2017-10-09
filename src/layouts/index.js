@@ -53,14 +53,7 @@ injectGlobal`
   }
 `;
 
-const DefaultLayout = ({ children, className }) => <div className={className}>{children()}</div>;
-
-DefaultLayout.propTypes = {
-  children: PropTypes.func.isRequired,
-  className: PropTypes.string,
-};
-
-export default styled(DefaultLayout)`
+const Layout = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,3 +74,11 @@ export default styled(DefaultLayout)`
     }
   }
 `;
+
+const DefaultLayout = ({ children }) => <Layout>{children()}</Layout>;
+
+DefaultLayout.propTypes = {
+  children: PropTypes.func.isRequired,
+};
+
+export default DefaultLayout;
