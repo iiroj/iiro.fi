@@ -63,12 +63,11 @@ DefaultLayout.propTypes = {
 export default styled(DefaultLayout)`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100%;
   width: 100%;
 
   @media (min-width: 64rem) {
-    flex-direction: row;
-
     ${HeaderArea} {
       bottom: 0;
       left: 0;

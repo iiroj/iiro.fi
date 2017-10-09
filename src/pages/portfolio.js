@@ -30,9 +30,7 @@ export const ButtonLink = styled.a`
   }
 `;
 
-const Container = styled.div`
-  width: 100%;
-`;
+const Container = styled.div``;
 
 const Header = styled.header`
   background-color: white;
@@ -42,7 +40,7 @@ const Header = styled.header`
   text-align: center;
 `;
 
-const More = styled.p`
+const More = styled.aside`
   color: hsla(0, 0%, 60%, 1);
   font-family: Georgia, serif;
   font-size: 1.5em;
@@ -53,18 +51,14 @@ const More = styled.p`
 
 const PortfolioIndex = () => [
   <Helmet key="helmet" title="Portfolio of Iiro Jäppinen" />,
-  <Container key="container">
-    <Back />
-    <Header>
-      <h1>Portfolio of Iiro Jäppinen</h1>
-    </Header>
-    <VerkkokauppaCom />
-    <HumbleBundle />
-    <Icons />
-    <aside key="aside">
-      <More>With more coming soon...</More>
-    </aside>
-  </Container>,
+  <Back key="back" />,
+  <Header key="header">
+    <h1>Portfolio of Iiro Jäppinen</h1>
+  </Header>,
+  <VerkkokauppaCom key="verkkis" />,
+  <HumbleBundle key="humble" />,
+  <Icons key="icons" />,
+  <More key="more">With more coming soon...</More>,
 ];
 
 export default PortfolioIndex;
