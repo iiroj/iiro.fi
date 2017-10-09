@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { injectGlobal } from 'styled-components';
 import reset from 'css-wipe/js';
+import { onlyUpdateForKeys } from 'recompose';
 
 const YELLOW = `hsla(44,100%,75%,1)`;
 
@@ -62,6 +63,8 @@ const DefaultLayout = ({ children }) => <Layout>{children()}</Layout>;
 
 DefaultLayout.propTypes = {
   children: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
-export default DefaultLayout;
+const enhance = onlyUpdateForKeys(['location']);
+export default enhance(DefaultLayout);

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { onlyUpdateForKeys } from 'recompose';
 
 const Form = styled.form`
   display: flex;
@@ -236,4 +237,5 @@ FeedbackForm.propTypes = {
   submitting: PropTypes.bool.isRequired,
 };
 
+const enhance = onlyUpdateForKeys(['submitted', 'submitting', 'error']);
 export default FeedbackForm;

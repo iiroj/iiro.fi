@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "description": "Static blog made with Gatsby",
   "bugs": "https://gitlab.com/iiroj/iiro.fi/issues",
   "licence": "UNLICENCED",
@@ -40,6 +40,7 @@
     "prettier": "^1.7.4",
     "prop-types": "^15.6.0",
     "react-helmet": "^5.2.0",
+    "recompose": "^0.26.0",
     "rimraf": "^2.6.2",
     "styled-components": "^2.2.1"
   },
