@@ -28,16 +28,16 @@ export const background = css`
 const Header = styled.header`
   ${background};
 
+  color: hsla(0, 0%, 100%, 1);
+  font-weight: 500;
+
   .container {
     background: linear-gradient(180deg, hsla(190, 10%, 40%, 0) 0%, hsla(190, 10%, 40%, 0.9) 100%);
-    color: hsla(0, 0%, 100%, 1);
     padding: 10rem 2rem 5rem 2rem;
 
     h1 {
-      font-family: Georgia, serif;
-      font-size: 1.5em;
-      line-height: 1.5em;
-      font-style: italic;
+      font-size: 2em;
+      margin-bottom: 0.5em;
     }
 
     a {

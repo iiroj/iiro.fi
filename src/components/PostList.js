@@ -5,14 +5,7 @@ import styled from 'styled-components';
 import { onlyUpdateForKeys } from 'recompose';
 
 const PostListItem = styled.li`
-  article {
-    font-family: Georgia, serif;
-    display: inline;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    font-style: italic;
-  }
-
+  article,
   h1 {
     display: inline;
   }

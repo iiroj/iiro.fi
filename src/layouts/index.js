@@ -4,10 +4,13 @@ import styled, { injectGlobal } from 'styled-components';
 import reset from 'css-wipe/js';
 import { onlyUpdateForKeys } from 'recompose';
 
+import InterUI from 'styles/InterUI';
+
 const YELLOW = `hsla(44,100%,75%,1)`;
 
 injectGlobal`
-  ${reset}
+  ${reset};
+  ${InterUI};
 
   html, body, #___gatsby {
     height: 100%;
@@ -20,10 +23,7 @@ injectGlobal`
   body {
     background-color: hsla(0, 0%, 100%, 1);
     color: hsla(0, 0%, 30%, 1);
-    font-family:
-        -apple-system, BlinkMacSystemFont,
-        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
+    font-family: 'Inter UI', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5rem;
@@ -48,6 +48,14 @@ injectGlobal`
     &:active {
       color: hsla(0, 0%, 0%, 1);
     }
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
   }
 `;
 

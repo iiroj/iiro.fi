@@ -21,7 +21,7 @@ export const FraktioLogo = () => (
   </Logo>
 );
 
-const Link = styled.a`
+export const FraktioText = styled.span`
   font-family: Georgia, serif;
   font-style: normal;
   font-weight: 700;
@@ -29,10 +29,10 @@ const Link = styled.a`
 `;
 
 const FraktioLink = () => (
-  <Link href="https://fraktio.fi" target="_blank" rel="noopener noreferrer">
+  <a href="https://fraktio.fi" target="_blank" rel="noopener noreferrer">
     <FraktioLogo />
-    <span>fraktio</span>
-  </Link>
+    <FraktioText>fraktio</FraktioText>
+  </a>
 );
 
 export default FraktioLink;

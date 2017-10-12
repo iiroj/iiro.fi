@@ -6,6 +6,7 @@ import { onlyUpdateForKeys } from 'recompose';
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: center;
   width: 100%;
 
@@ -14,17 +15,19 @@ const Form = styled.form`
     max-width: 43rem;
     padding: 2rem 1rem 2rem 4rem;
 
+    h1 {
+      font-size: 2rem;
+      line-height: 1.25em;
+    }
+
     aside {
-      opacity: 0.4;
+      color: hsla(0, 0%, 80%, 1);
+      font-size: 0.85em;
+      font-weight: 700;
       text-align: left;
+      text-transform: uppercase;
       width: 100%;
     }
-  }
-
-  h1 {
-    font-family: Georgia, serif;
-    font-size: 1.5rem;
-    font-style: italic;
   }
 `;
 
@@ -41,11 +44,11 @@ const Fieldset = styled.fieldset`
     border: 2px solid hsla(0, 0%, 0%, 0.2);
     color: inherit;
     display: block;
-    font-size: 1rem;
-    line-height: 1.25rem;
+    font-size: 16px;
+    line-height: 1.25em;
     margin-bottom: 1rem;
     outline: none;
-    padding: 0.5rem;
+    padding: 1em;
     width: 100%;
 
     &:focus {

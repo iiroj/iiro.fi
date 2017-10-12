@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { default as syntax } from './syntax.css';
+import { default as syntax } from 'styles/syntax.css';
+import Iosevka from '../../styles/Iosevka';
 
 const Body = styled.article`
   box-sizing: border-box;
@@ -22,21 +23,17 @@ const Body = styled.article`
   h4,
   h5,
   h6 {
-    font-size: inherit;
     font-weight: 500;
     margin: 1rem 0;
   }
 
+  h2 {
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
   p {
     margin-bottom: 0.5rem;
-  }
-
-  em {
-    font-style: oblique;
-  }
-
-  strong {
-    font-weight: 500;
   }
 
   s {
@@ -74,10 +71,13 @@ const Body = styled.article`
     }
   }
 
+  ${Iosevka};
+
   code {
     background-color: hsla(0, 64%, 95%, 1);
     color: hsla(0, 64%, 48%, 1);
-    font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-family: Iosevka, monospace;
+    font-weight: 400;
     padding: 0 0.25rem;
   }
 
