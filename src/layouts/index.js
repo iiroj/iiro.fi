@@ -4,13 +4,13 @@ import styled, { injectGlobal } from 'styled-components';
 import reset from 'css-wipe/js';
 import { onlyUpdateForKeys } from 'recompose';
 
-import InterUI from 'styles/InterUI';
+import Roboto from 'styles/Roboto';
 
 const YELLOW = `hsla(44,100%,75%,1)`;
 
 injectGlobal`
   ${reset};
-  ${InterUI};
+  ${Roboto};
 
   html, body, #___gatsby {
     height: 100%;
@@ -23,7 +23,7 @@ injectGlobal`
   body {
     background-color: hsla(0, 0%, 100%, 1);
     color: hsla(0, 0%, 30%, 1);
-    font-family: 'Inter UI', sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5rem;
