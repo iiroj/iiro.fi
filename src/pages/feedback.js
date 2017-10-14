@@ -1,10 +1,94 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { withReducer, withHandlers, withProps, compose } from 'recompose';
 
 import { postJSON } from 'services/postJSON';
 import Back from 'components/Back';
 import FeedbackForm from 'components/FeedbackForm';
+
+const reducer = withReducer(
+  'state',
+  'dispatch',
+  (state, action) => {
+    switch (action.type) {
+      case 'SET_COMMENT':
+        return Object.assign(state, { comment: action.payload });
+      case 'SET_ERROR':
+        return Object.assign(state, { error: true });
+      case 'SET_SCORE':
+        return Object.assign(state, { score: action.payload });
+      case 'SET_SUBMITTED':
+        return Object.assign(state, { submitted: action.payload });
+      case 'SET_SUBMITTING':
+        return Object.assign(state, { submitting: action.payload });
+      default:
+        return state;
+    }
+  },
+  {
+    comment: '',
+    error: false,
+    score: null,
+    submitted: false,
+    submitting: false,
+  }
+);
+
+const handlers = withHandlers({
+  setComment: ({ dispatch }) => payload => dispatch({ type: 'SET_COMMENT', payload }),
+  setScore: ({ dispatch }) => payload => dispatch({ type: 'SET_SCORE', payload }),
+  submit: ({ dispatch }) => event => {
+    event.preventDefault();
+    console.log(event);
+    // dispatch({ type: 'SET_SUBMITTING', payload: false });
+    // const data = {
+    //   question: question,
+    //   score: score,
+    //   comment: comment,
+    // };
+    //
+    // postJSON(url, data)
+    //   .then(response => {
+    //     dispatch({ type: 'SET_SUBMITTING', payload: false });
+    //     dispatch({ type: 'SET_SUBMITTED', payload: true });
+    //   })
+    //   .catch(error => {
+    //     dispatch({ type: 'SET_SUBMITTING', payload: false });
+    //     dispatch({ type: 'SET_ERROR' });
+    //   });
+  },
+});
+
+const enhance = compose(reducer, handlers);
+
+const FeedbackPure = enhance(props => {
+  const {
+    question,
+    setComment,
+    setError,
+    setScore,
+    state: { comment, error, score, submitted, submitting },
+    submit,
+    url,
+  } = props;
+
+  return [
+    <Helmet key="helmet" title={question} />,
+    <Back key="back" />,
+    <FeedbackForm
+      key="form"
+      submitted={submitted}
+      submitting={submitting}
+      score={score}
+      error={error}
+      handleScore={setScore}
+      handleComment={setComment}
+      onSubmit={submit}
+      question={question}
+    />,
+  ];
+});
 
 class Feedback extends PureComponent {
   constructor() {
@@ -23,11 +107,6 @@ class Feedback extends PureComponent {
     this.submitFeedback = this.submitFeedback.bind(this);
   }
 
-  selectRandomQuestion(questions) {
-    const random = questions[Math.floor(Math.random() * questions.length)];
-    this.setState({ question: random });
-  }
-
   setScore(event) {
     this.setState({ score: event });
   }
@@ -39,7 +118,7 @@ class Feedback extends PureComponent {
   submitFeedback(event) {
     event.preventDefault();
     this.setState({ submitting: true });
-    const url = this.props.data.site.siteMetadata.feedback.api.url;
+    const url = this.props.url;
     const data = {
       question: this.state.question,
       score: this.state.score,
@@ -62,12 +141,12 @@ class Feedback extends PureComponent {
   }
 
   componentDidMount() {
-    this.selectRandomQuestion(this.props.data.site.siteMetadata.feedback.questions);
     this.setState({ submitting: false });
   }
 
   render() {
-    const { error, question, score, submitted, submitting } = this.state;
+    const { question } = this.props;
+    const { error, score, submitted, submitting } = this.state;
 
     return [
       <Helmet key="helmet" title={question} />,
@@ -88,23 +167,12 @@ class Feedback extends PureComponent {
 }
 
 Feedback.propTypes = {
-  className: PropTypes.string,
-  data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        feedback: PropTypes.shape({
-          api: PropTypes.shape({
-            url: PropTypes.string.isRequired,
-          }),
-          questions: PropTypes.array.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
+  question: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export const pageQuery = graphql`
-  query Feedback {
+  query FeedbackForm {
     site {
       siteMetadata {
         feedback {
@@ -118,4 +186,13 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Feedback;
+const resolveFeedbackFormProps = () =>
+  withProps(props => {
+    const questions = props.data.site.siteMetadata.feedback.questions;
+    return {
+      url: props.data.site.siteMetadata.feedback.api.url,
+      question: questions[Math.floor(Math.random() * questions.length)],
+    };
+  });
+
+export default resolveFeedbackFormProps()(FeedbackPure);

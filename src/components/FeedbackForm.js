@@ -175,27 +175,28 @@ const Score = pure(styled.ol`
   }
 `);
 
+const FeedbackSubmitted = () => (
+  <Form>
+    <header>
+      <h1>Thank you!</h1>
+    </header>
+  </Form>
+);
+
+const FeedbackError = () => (
+  <Form>
+    <header>
+      <h1>Something went wrong!</h1>
+      <p>Please try again later...</p>
+    </header>
+  </Form>
+);
+
 const FeedbackForm = props => {
-  const { className, error, handleScore, handleSelection, onSubmit, question, score, submitted, submitting } = props;
+  const { className, error, handleScore, handleComment, onSubmit, question, score, submitted, submitting } = props;
 
-  if (submitted)
-    return (
-      <Form>
-        <header>
-          <h1>Thank you!</h1>
-        </header>
-      </Form>
-    );
-
-  if (error)
-    return (
-      <Form>
-        <header>
-          <h1>Something went wrong!</h1>
-          <p>Please try again later...</p>
-        </header>
-      </Form>
-    );
+  if (submitted) return <FeedbackSubmitted />;
+  if (error) return <FeedbackError />;
 
   const selection = Array.from(Array(10).keys()).map(n => (
     <li key={n + 1}>
@@ -222,7 +223,7 @@ const FeedbackForm = props => {
       </header>
       <Fieldset>
         <Score>{selection}</Score>
-        <textarea onChange={handleSelection} placeholder="Send your regards" />
+        <textarea onChange={handleComment} placeholder="Send your regards" />
         <button disabled={score === null || submitting || submitted}>Submit</button>
       </Fieldset>
     </Form>
@@ -233,10 +234,10 @@ FeedbackForm.propTypes = {
   className: PropTypes.string,
   error: PropTypes.bool.isRequired,
   handleScore: PropTypes.func.isRequired,
-  handleSelection: PropTypes.func.isRequired,
+  handleComment: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
-  question: PropTypes.string.isRequired,
-  score: PropTypes.number.isRequired,
+  question: PropTypes.string,
+  score: PropTypes.number,
   submitted: PropTypes.bool.isRequired,
   submitting: PropTypes.bool.isRequired,
 };
