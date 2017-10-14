@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { onlyUpdateForKeys } from 'recompose';
+import { pure, onlyUpdateForKeys } from 'recompose';
 
 const Form = styled.form`
   display: flex;
@@ -31,7 +31,7 @@ const Form = styled.form`
   }
 `;
 
-const Fieldset = styled.fieldset`
+const Fieldset = pure(styled.fieldset`
   margin: 0 auto 2rem;
   max-width: 38rem;
   padding: 0 1rem;
@@ -44,6 +44,7 @@ const Fieldset = styled.fieldset`
     border: 2px solid hsla(0, 0%, 0%, 0.2);
     color: inherit;
     display: block;
+    font-family: inherit;
     font-size: 16px;
     line-height: 1.25em;
     margin-bottom: 1rem;
@@ -83,9 +84,9 @@ const Fieldset = styled.fieldset`
       transform: scale(0.95);
     }
   }
-`;
+`);
 
-const Score = styled.ol`
+const Score = pure(styled.ol`
   display: flex;
   justify-content: space-around;
   margin-bottom: 2rem;
@@ -172,7 +173,7 @@ const Score = styled.ol`
   li input[type='radio']:checked ~ .text {
     opacity: 1;
   }
-`;
+`);
 
 const FeedbackForm = props => {
   const { className, error, handleScore, handleSelection, onSubmit, question, score, submitted, submitting } = props;
@@ -240,5 +241,5 @@ FeedbackForm.propTypes = {
   submitting: PropTypes.bool.isRequired,
 };
 
-const enhance = onlyUpdateForKeys(['submitted', 'submitting', 'error']);
-export default FeedbackForm;
+const enhance = onlyUpdateForKeys(['score', 'submitted', 'submitting', 'error']);
+export default enhance(FeedbackForm);

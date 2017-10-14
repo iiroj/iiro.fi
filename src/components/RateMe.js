@@ -43,17 +43,17 @@ const RateMeLink = styled(Link)`
   &:hover {
     background: hsla(44, 100%, 75%, 1);
     box-shadow: inset 0 0 0 1px hsla(44, 80%, 70%, 1);
-    transition: all 125ms ease-out 0;
+    transition: all 125ms ease-out;
+  }
 
-    &::after {
-      border-left: 1rem solid hsla(44, 100%, 75%, 1);
-      transition: all 125ms ease-out 0;
-    }
+  &:hover::after {
+    border-left: 1rem solid hsla(44, 100%, 75%, 1);
+    transition: all 125ms ease-out;
+  }
 
-    &::before {
-      border-left: 1rem solid hsla(44, 80%, 70%, 1);
-      transition: all 125ms ease-out 0;
-    }
+  &:hover::before {
+    border-left: 1rem solid hsla(44, 80%, 70%, 1);
+    transition: all 125ms ease-out;
   }
 `;
 

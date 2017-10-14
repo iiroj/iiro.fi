@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
+import { pure } from 'recompose';
 
 const X = styled(Link)`
   background: none !important;
@@ -67,4 +68,4 @@ const Back = () => (
   </nav>
 );
 
-export default Back;
+export default pure(Back);

@@ -17,7 +17,6 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -36,6 +35,7 @@ module.exports = {
         display: 'minimal-ui',
       },
     },
+    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
