@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { branch, renderComponent } from 'recompose';
+import { pure, branch, renderComponent } from 'recompose';
 
 const Form = styled.form`
   display: flex;
@@ -192,7 +192,7 @@ const FeedbackError = () => (
   </Form>
 );
 
-const FeedbackForm = ({ handleScore, handleComment, onSubmit, question, score, submitting }) => {
+const FeedbackForm = pure(({ handleScore, handleComment, onSubmit, question, score, submitting }) => {
   const selection = Array.from(Array(10).keys()).map(n => (
     <li key={n + 1}>
       <input
@@ -223,7 +223,7 @@ const FeedbackForm = ({ handleScore, handleComment, onSubmit, question, score, s
       </Fieldset>
     </Form>
   );
-};
+});
 
 FeedbackForm.propTypes = {
   handleScore: PropTypes.func.isRequired,
