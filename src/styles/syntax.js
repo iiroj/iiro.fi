@@ -1,6 +1,32 @@
 import { css } from 'styled-components';
 
 const syntax = css`
+  code {
+    background-color: rgba(228, 86, 73, 0.1);
+    color: rgb(228, 86, 73);
+    font-family: Iosevka, monospace;
+    font-weight: 400;
+    padding: 0 0.25rem;
+  }
+
+  pre {
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.08);
+    margin: 2rem -1rem;
+    overflow-x: scroll;
+    padding: 1rem 1.5rem;
+
+    code {
+      background-color: inherit;
+      color: rgb(56, 58, 66);
+      padding: 0;
+    }
+
+    @media (min-width: 64rem) {
+      border-radius: 2px;
+    }
+  }
+
   .gatsby-highlight .token {
     &.block-comment,
     &.cdata,
@@ -8,7 +34,7 @@ const syntax = css`
     &.doctype,
     &.prolog,
     &.punctuation {
-      color: #7d8b99;
+      color: rgb(56, 58, 66);
     }
 
     &.boolean,
@@ -19,7 +45,7 @@ const syntax = css`
     &.property,
     &.symbol,
     &.tag {
-      color: #c92c2c;
+      color: rgb(152, 104, 1);
     }
 
     &.attr-name,
@@ -28,11 +54,11 @@ const syntax = css`
     &.inserted,
     &.selector,
     &.string {
-      color: #2f9c0a;
+      color: rgb(152, 104, 1);
     }
 
     &.operator {
-      color: #7d8b99;
+      color: rgb(1, 132, 188);
     }
 
     &.entity,
@@ -45,17 +71,20 @@ const syntax = css`
     }
 
     &.keyword {
-      color: #1990b8;
+      color: rgb(166, 38, 164);
     }
 
-    &.function,
+    &.function {
+      color: rgb(64, 120, 242);
+    }
+
     &.variable {
-      color: #c92c2c;
+      color: rgb(228, 86, 73);
     }
 
     &.atrule,
     &.attr-value {
-      color: #1990b8;
+      color: rgb(166, 38, 164);
     }
 
     &.class-name {
@@ -65,14 +94,6 @@ const syntax = css`
     &.important,
     &.regex {
       color: #e09000;
-    }
-
-    &.language-css .string {
-      color: #a67f59;
-    }
-
-    &.language-css .function {
-      color: #9b59b6;
     }
 
     &.cr:before,

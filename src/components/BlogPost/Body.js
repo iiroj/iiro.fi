@@ -73,28 +73,6 @@ const Body = styled.article`
 
   ${Iosevka};
 
-  code {
-    background-color: hsla(0, 64%, 95%, 1);
-    color: hsla(0, 64%, 48%, 1);
-    font-family: Iosevka, monospace;
-    font-weight: 400;
-    padding: 0 0.25rem;
-  }
-
-  pre {
-    background-color: #f5f5f8;
-    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.08);
-    margin: 2rem -1rem;
-    overflow-x: scroll;
-    padding: 1rem 1.5rem;
-
-    code {
-      background-color: #f5f5f8;
-      color: #50525e;
-      padding: 0;
-    }
-  }
-
   ${syntax};
 `;
 
