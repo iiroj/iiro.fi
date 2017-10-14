@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { pure, onlyUpdateForKeys } from 'recompose';
+import { branch, renderComponent } from 'recompose';
 
 const Form = styled.form`
   display: flex;
@@ -31,15 +31,15 @@ const Form = styled.form`
   }
 `;
 
-const Fieldset = pure(styled.fieldset`
+const Fieldset = styled.fieldset`
   margin: 0 auto 2rem;
   max-width: 38rem;
   padding: 0 1rem;
   text-align: center;
   width: 100%;
-`);
+`;
 
-const Textarea = pure(styled.textarea`
+const Textarea = styled.textarea`
   appearance: none;
   border-radius: 4px;
   border: 2px solid hsla(0, 0%, 0%, 0.2);
@@ -56,9 +56,9 @@ const Textarea = pure(styled.textarea`
   &:focus {
     border: 2px solid hsla(44, 100%, 75%, 1);
   }
-`);
+`;
 
-const Button = pure(styled.button`
+const Button = styled.button`
   background-color: hsla(44, 100%, 75%, 1);
   border-radius: 1.5rem;
   border: none;
@@ -84,9 +84,9 @@ const Button = pure(styled.button`
     box-shadow: inset 0 0 0 3rem hsla(0, 0%, 0%, 0.1);
     transform: scale(0.95);
   }
-`);
+`;
 
-const Score = pure(styled.ol`
+const Score = styled.ol`
   display: flex;
   justify-content: space-around;
   margin-bottom: 2rem;
@@ -173,7 +173,7 @@ const Score = pure(styled.ol`
   li input[type='radio']:checked ~ .text {
     opacity: 1;
   }
-`);
+`;
 
 const FeedbackSubmitted = () => (
   <Form>
@@ -192,12 +192,7 @@ const FeedbackError = () => (
   </Form>
 );
 
-const FeedbackForm = props => {
-  const { className, error, handleScore, handleComment, onSubmit, question, score, submitted, submitting } = props;
-
-  if (submitted) return <FeedbackSubmitted />;
-  if (error) return <FeedbackError />;
-
+const FeedbackForm = ({ handleScore, handleComment, onSubmit, question, score, submitting }) => {
   const selection = Array.from(Array(10).keys()).map(n => (
     <li key={n + 1}>
       <input
@@ -224,23 +219,28 @@ const FeedbackForm = props => {
       <Fieldset>
         <Score>{selection}</Score>
         <Textarea onChange={handleComment} placeholder="Send your regards" />
-        <Button disabled={score === null || submitting || submitted}>Submit</Button>
+        <Button disabled={score === null || submitting}>Submit</Button>
       </Fieldset>
     </Form>
   );
 };
 
 FeedbackForm.propTypes = {
-  className: PropTypes.string,
-  error: PropTypes.bool.isRequired,
   handleScore: PropTypes.func.isRequired,
   handleComment: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   question: PropTypes.string,
   score: PropTypes.number,
-  submitted: PropTypes.bool.isRequired,
   submitting: PropTypes.bool.isRequired,
 };
 
-const enhance = onlyUpdateForKeys(['score', 'submitted', 'submitting', 'error']);
+const isNotSubmitted = ({ error, submitted }) => !error && !submitted;
+const isSubmitted = ({ submitted }) => submitted;
+
+const enhance = branch(
+  isNotSubmitted,
+  renderComponent(FeedbackForm),
+  branch(isSubmitted, renderComponent(FeedbackSubmitted), renderComponent(FeedbackError))
+);
+
 export default enhance(FeedbackForm);
