@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { default as syntax } from 'styles/syntax.css';
-import Iosevka from '../../styles/Iosevka';
+import Iosevka from 'styles/Iosevka';
 
 const Body = styled.article`
   box-sizing: border-box;

@@ -9,8 +9,8 @@ import Roboto from 'styles/Roboto';
 const YELLOW = `hsla(44,100%,75%,1)`;
 
 injectGlobal`
-  ${reset};
-  ${Roboto};
+  ${reset}
+  ${Roboto}
 
   html, body, #___gatsby {
     height: 100%;

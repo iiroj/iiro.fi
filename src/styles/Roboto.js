@@ -55,3 +55,5 @@ const fonts = css`
     unicode-range: U+0000-00ff, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215;
   }
 `;
+
+export default fonts;
