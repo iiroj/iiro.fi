@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { default as syntax } from 'styles/syntax.css';
+import syntax from 'styles/syntax';
 import Iosevka from 'styles/Iosevka';
 
 const Body = styled.article`
