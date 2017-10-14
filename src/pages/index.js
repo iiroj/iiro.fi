@@ -94,6 +94,23 @@ const MainArea = styled.div`
   }
 `;
 
+export const pageQuery = graphql`
+  query Index {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  }
+`;
+
 const Index = ({ data }) => [
   <Helmet
     key="helmet"
@@ -139,22 +156,5 @@ Index.propTypes = {
     }.isRequired,
   }).isRequired,
 };
-
-export const pageQuery = graphql`
-  query Index {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default Index;
