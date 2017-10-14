@@ -1,15 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import { pure } from 'recompose';
 
 import Back from 'components/Back';
 import Article from './Article';
 
-const BlogPost = props => {
-  const { className } = props;
-  const name = props.data.site.siteMetadata.name;
-  const post = props.data.markdownRemark;
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        name
+        siteTitle
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+      }
+    }
+  }
+`;
+
+const BlogPost = ({ data }) => {
+  const name = data.site.siteMetadata.name;
+  const post = data.markdownRemark;
   const body = post.html;
   const postTitle = post.frontmatter.title;
   const postRawDate = post.frontmatter.date;
@@ -60,7 +81,6 @@ const BlogPost = props => {
 };
 
 BlogPost.propTypes = {
-  className: PropTypes.string,
   data: PropTypes.shape({
     markdownRemark: {
       fields: {
@@ -82,28 +102,4 @@ BlogPost.propTypes = {
   }).isRequired,
 };
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        name
-        siteTitle
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      html
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-      }
-    }
-  }
-`;
-
-export default styled(BlogPost)`
-  width: 100%;
-`;
+export default pure(BlogPost);
