@@ -37,52 +37,52 @@ const Fieldset = pure(styled.fieldset`
   padding: 0 1rem;
   text-align: center;
   width: 100%;
+`);
 
-  textarea {
-    appearance: none;
-    border-radius: 4px;
-    border: 2px solid hsla(0, 0%, 0%, 0.2);
-    color: inherit;
-    display: block;
-    font-family: inherit;
-    font-size: 16px;
-    line-height: 1.25em;
-    margin-bottom: 1rem;
-    outline: none;
-    padding: 1em;
-    width: 100%;
+const Textarea = pure(styled.textarea`
+  appearance: none;
+  border-radius: 4px;
+  border: 2px solid hsla(0, 0%, 0%, 0.2);
+  color: inherit;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.25em;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: 1em;
+  width: 100%;
 
-    &:focus {
-      border: 2px solid hsla(44, 100%, 75%, 1);
-    }
+  &:focus {
+    border: 2px solid hsla(44, 100%, 75%, 1);
+  }
+`);
+
+const Button = pure(styled.button`
+  background-color: hsla(44, 100%, 75%, 1);
+  border-radius: 1.5rem;
+  border: none;
+  display: block;
+  font-size: 1rem;
+  height: 3rem;
+  margin: 0 auto;
+  outline: none;
+  padding: 0 4rem;
+  transition: background-color 125ms ease-out, box-shadow 125ms ease-out, transform 125ms ease-out;
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: hsla(44, 100%, 75%, 0.4);
   }
 
-  button {
-    background-color: hsla(44, 100%, 75%, 1);
-    border-radius: 1.5rem;
-    border: none;
-    display: block;
-    font-size: 1rem;
-    height: 3rem;
-    margin: 0 auto;
-    outline: none;
-    padding: 0 4rem;
-    transition: background-color 125ms ease-out, box-shadow 125ms ease-out, transform 125ms ease-out;
+  &:hover:not(:disabled) {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 2rem hsla(0, 0%, 0%, 0.1);
+  }
 
-    &:disabled {
-      cursor: not-allowed;
-      background-color: hsla(44, 100%, 75%, 0.4);
-    }
-
-    &:hover:not(:disabled) {
-      cursor: pointer;
-      box-shadow: 0 0.5rem 2rem hsla(0, 0%, 0%, 0.1);
-    }
-
-    &:active:not(:disabled) {
-      box-shadow: inset 0 0 0 3rem hsla(0, 0%, 0%, 0.1);
-      transform: scale(0.95);
-    }
+  &:active:not(:disabled) {
+    box-shadow: inset 0 0 0 3rem hsla(0, 0%, 0%, 0.1);
+    transform: scale(0.95);
   }
 `);
 
@@ -223,8 +223,8 @@ const FeedbackForm = props => {
       </header>
       <Fieldset>
         <Score>{selection}</Score>
-        <textarea onChange={handleComment} placeholder="Send your regards" />
-        <button disabled={score === null || submitting || submitted}>Submit</button>
+        <Textarea onChange={handleComment} placeholder="Send your regards" />
+        <Button disabled={score === null || submitting || submitted}>Submit</Button>
       </Fieldset>
     </Form>
   );
