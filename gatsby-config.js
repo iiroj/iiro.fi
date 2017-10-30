@@ -66,7 +66,7 @@ module.exports = {
       options: {
         allPageHeaders: [
           `Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://s7ozycgh27.execute-api.eu-central-1.amazonaws.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:;`,
-          `Referrer-Policy': origin-when-cross-origin`,
+          `Referrer-Policy: origin-when-cross-origin`,
           `X-Content-Type-Options: nosniff`,
           `X-Frame-Options: DENY`,
           `X-XSS-Protection: 1; mode=block`,
