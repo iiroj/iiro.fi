@@ -67,9 +67,6 @@ module.exports = {
         allPageHeaders: [
           `Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://s7ozycgh27.execute-api.eu-central-1.amazonaws.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:;`,
           `Referrer-Policy: origin-when-cross-origin`,
-          `X-Content-Type-Options: nosniff`,
-          `X-Frame-Options: DENY`,
-          `X-XSS-Protection: 1; mode=block`,
           `Link: </fonts/iosevka-regular.woff>; rel=preload; as=font`,
           `Link: </fonts/iosevka-regular.woff2>; rel=preload; as=font`,
           `Link: </fonts/roboto-bold.woff>; rel=preload; as=font`,
@@ -85,17 +82,7 @@ module.exports = {
           `Link: </fonts/roboto-regular.woff>; rel=preload; as=font`,
           `Link: </fonts/roboto-regular.woff2>; rel=preload; as=font`,
         ],
-        headers: {
-          '/': [
-            `Link: </d.svg>; rel=preload; as=image`,
-            `Link: </e.svg>; rel=preload; as=image`,
-            `Link: </gh.svg>; rel=preload; as=image`,
-            `Link: </gl.svg>; rel=preload; as=image`,
-            `Link: </l.svg>; rel=preload; as=image`,
-            `Link: </t.svg>; rel=preload; as=image`,
-          ],
-        },
-        mergeSecurityHeaders: false,
+        mergeSecurityHeaders: true,
         mergeLinkHeaders: true,
         mergeCachingHeaders: true,
       },
