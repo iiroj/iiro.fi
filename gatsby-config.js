@@ -82,6 +82,16 @@ module.exports = {
           `Link: </fonts/roboto-regular.woff>; rel=preload; as=font`,
           `Link: </fonts/roboto-regular.woff2>; rel=preload; as=font`,
         ],
+        headers: {
+          '/': [
+            `Link: </d.svg>; rel=preload; as=image`,
+            `Link: </e.svg>; rel=preload; as=image`,
+            `Link: </gh.svg>; rel=preload; as=image`,
+            `Link: </gl.svg>; rel=preload; as=image`,
+            `Link: </l.svg>; rel=preload; as=image`,
+            `Link: </t.svg>; rel=preload; as=image`,
+          ],
+        },
         mergeSecurityHeaders: true,
         mergeLinkHeaders: true,
         mergeCachingHeaders: true,
