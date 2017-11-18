@@ -38,12 +38,12 @@ build:
             - public/
 
 deploy:
-    image: schickling/s3cmd
+    image: $DEPLOY_IMAGE_URL
     stage: deploy
     environment:
         name: production
         url: https://iiro.fi
     script:
-        - sync --access_key --secret_key public/ $S3_BUCKET_URL --delete-removed --guess-mime-type --no-mime-magic --no-preserve --server-side-encryption --cf-invalidate
+        - s3cmd sync --access_key --secret_key public/ $S3_BUCKET_URL --delete-removed --guess-mime-type --no-mime-magic --no-preserve --server-side-encryption --cf-invalidate
     only:
         - master
