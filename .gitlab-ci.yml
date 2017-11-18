@@ -46,4 +46,4 @@ deploy:
     script:
         - s3cmd sync public/ $S3_BUCKET_URL --delete-removed --guess-mime-type --no-mime-magic --no-preserve --server-side-encryption --cf-invalidate
     only:
-        - tags
+        - master
