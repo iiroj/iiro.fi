@@ -64,7 +64,7 @@ const handlers = withHandlers({
   setScore: ({ dispatch }) => event => dispatch({ type: 'SET_SCORE', payload: event }),
   submit: ({ dispatch, state: { score, comment }, question, url }) => event => {
     event.preventDefault();
-    dispatch({ type: 'SET_SUBMITTING', payload: false });
+    dispatch({ type: 'SET_SUBMITTING', payload: true });
     const data = {
       question: question,
       score: score,
