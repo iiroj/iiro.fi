@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
@@ -88,6 +88,10 @@ const MainArea = styled.div`
     margin: 1rem 0;
   }
 
+  ${RateMe} {
+    margin-right: auto;
+  }
+
   @media (min-width: 64rem) {
     margin-left: 50%;
     padding: 4rem;
@@ -111,32 +115,33 @@ export const pageQuery = graphql`
   }
 `;
 
-const Index = ({ data }) => [
-  <Helmet
-    key="helmet"
-    title="Iiro Jäppinen"
-    script={[
-      {
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(microdata),
-      },
-    ]}
-  />,
-  <HeaderArea key="header">
-    <Header />
-  </HeaderArea>,
-  <MainArea key="main">
-    <h3>Blog</h3>
-    <ul>
-      <PostList edges={data.allMarkdownRemark.edges} />
-    </ul>
-    <h3>Elsewhere</h3>
-    <ul>
-      <Links />
-    </ul>
-    <RateMe />
-  </MainArea>,
-];
+const Index = ({ data }) => (
+  <Fragment>
+    <Helmet
+      title="Iiro Jäppinen"
+      script={[
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify(microdata),
+        },
+      ]}
+    />
+    <HeaderArea>
+      <Header />
+    </HeaderArea>
+    <MainArea>
+      <h3>Blog</h3>
+      <ul>
+        <PostList edges={data.allMarkdownRemark.edges} />
+      </ul>
+      <h3>Elsewhere</h3>
+      <ul>
+        <Links />
+      </ul>
+      <RateMe />
+    </MainArea>
+  </Fragment>
+);
 
 Index.propTypes = {
   data: PropTypes.shape({

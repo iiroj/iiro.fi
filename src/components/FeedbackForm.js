@@ -8,12 +8,13 @@ const Form = styled.form`
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 44rem;
+  padding: 2rem 4rem;
   width: 100%;
 
   header {
-    margin: 0 auto;
-    max-width: 43rem;
-    padding: 2rem 1rem 2rem 4rem;
+    margin: 0 auto 2rem;
 
     h1 {
       font-size: 2rem;
@@ -31,10 +32,8 @@ const Form = styled.form`
   }
 `;
 
-const Fieldset = styled.fieldset`
+const Section = styled.section`
   margin: 0 auto 2rem;
-  max-width: 38rem;
-  padding: 0 1rem;
   text-align: center;
   width: 100%;
 `;
@@ -193,7 +192,7 @@ const FeedbackError = () => (
 );
 
 const FeedbackForm = pure(({ handleScore, handleComment, onSubmit, question, score, submitting }) => {
-  const selection = Array.from(Array(10).keys()).map(n => (
+  const selection = Array.from(Array(7).keys()).map(n => (
     <li key={n + 1}>
       <input
         id={n + 1}
@@ -214,13 +213,13 @@ const FeedbackForm = pure(({ handleScore, handleComment, onSubmit, question, sco
     <Form onSubmit={onSubmit}>
       <header>
         <h1>{question}</h1>
-        <aside>On a scale from 1 to 10</aside>
+        <aside>On a scale from 1 to 7</aside>
       </header>
-      <Fieldset>
+      <Section>
         <Score>{selection}</Score>
         <Textarea onChange={handleComment} placeholder="Send your regards" />
         <Button disabled={score === null || submitting}>Submit</Button>
-      </Fieldset>
+      </Section>
     </Form>
   );
 });

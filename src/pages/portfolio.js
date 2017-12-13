@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 
@@ -49,16 +49,18 @@ const More = styled.aside`
   text-align: center;
 `;
 
-const PortfolioIndex = () => [
-  <Helmet key="helmet" title="Portfolio of Iiro Jäppinen" />,
-  <Back key="back" />,
-  <Header key="header">
-    <h1>Portfolio of Iiro Jäppinen</h1>
-  </Header>,
-  <VerkkokauppaCom key="verkkis" />,
-  <HumbleBundle key="humble" />,
-  <Icons key="icons" />,
-  <More key="more">With more coming soon...</More>,
-];
+const PortfolioIndex = () => (
+  <Fragment>
+    <Helmet title="Portfolio of Iiro Jäppinen" />
+    <Back />
+    <Header>
+      <h1>Portfolio of Iiro Jäppinen</h1>
+    </Header>
+    <VerkkokauppaCom />
+    <HumbleBundle />
+    <Icons />
+    <More>With more coming soon...</More>
+  </Fragment>
+);
 
 export default PortfolioIndex;

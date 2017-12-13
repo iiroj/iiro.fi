@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { hiDPI } from 'polished';
 
@@ -55,7 +54,7 @@ const HeaderComponent = () => (
     <div className="container">
       <h1>Iiro Jäppinen</h1>
       <h2>
-        Service <Amp /> UX designer, UI devsigner, all-around handyman at <FraktioLink />. React enthusiast.
+        UI Designer <Amp /> Developer, all-around handyman at <FraktioLink />. React enthusiast.
       </h2>
     </div>
   </Header>

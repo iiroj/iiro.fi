@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { withReducer, withHandlers, withProps, compose } from 'recompose';
@@ -62,7 +62,7 @@ const reducer = withReducer(
 const handlers = withHandlers({
   setComment: ({ dispatch }) => event => dispatch({ type: 'SET_COMMENT', payload: event.target.value }),
   setScore: ({ dispatch }) => event => dispatch({ type: 'SET_SCORE', payload: event }),
-  submit: ({ dispatch, state: { score, comment }, question, url }) => event => {
+  submit: ({ dispatch, state: { score, comment }, question, url }) => async(event) => {
     event.preventDefault();
     dispatch({ type: 'SET_SUBMITTING', payload: true });
     const data = {
@@ -71,36 +71,37 @@ const handlers = withHandlers({
       comment: comment,
     };
 
-    postJSON(url, data)
-      .then(response => {
-        dispatch({ type: 'SET_SUBMITTING', payload: false });
-        dispatch({ type: 'SET_SUBMITTED', payload: true });
-      })
-      .catch(error => {
-        dispatch({ type: 'SET_SUBMITTING', payload: false });
-        dispatch({ type: 'SET_ERROR' });
-      });
+    try {
+      const response = await postJSON(url, data);
+
+      dispatch({ type: 'SET_SUBMITTING', payload: false });
+      dispatch({ type: 'SET_SUBMITTED', payload: true });
+    } catch (error) {
+      dispatch({ type: 'SET_SUBMITTING', payload: false });
+      dispatch({ type: 'SET_ERROR' });
+    }
   },
 });
 
 const enhance = compose(reducer, handlers);
 
 const Feedback = enhance(
-  ({ question, setComment, setScore, state: { comment, error, score, submitted, submitting }, submit, url }) => [
-    <Helmet key="helmet" title={question} />,
-    <Back key="back" />,
-    <FeedbackForm
-      key="form"
-      submitted={submitted}
-      submitting={submitting}
-      score={score}
-      error={error}
-      handleScore={setScore}
-      handleComment={setComment}
-      onSubmit={submit}
-      question={question}
-    />,
-  ]
+  ({ question, setComment, setScore, state: { comment, error, score, submitted, submitting }, submit, url }) => (
+    <Fragment>
+      <Helmet title={question} />
+      <Back />
+      <FeedbackForm
+        submitted={submitted}
+        submitting={submitting}
+        score={score}
+        error={error}
+        handleScore={setScore}
+        handleComment={setComment}
+        onSubmit={submit}
+        question={question}
+      />
+    </Fragment>
+  )
 );
 
 Feedback.propTypes = {
