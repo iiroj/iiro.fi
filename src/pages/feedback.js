@@ -62,7 +62,7 @@ const reducer = withReducer(
 const handlers = withHandlers({
   setComment: ({ dispatch }) => event => dispatch({ type: 'SET_COMMENT', payload: event.target.value }),
   setScore: ({ dispatch }) => event => dispatch({ type: 'SET_SCORE', payload: event }),
-  submit: ({ dispatch, state: { score, comment }, question, url }) => async(event) => {
+  submit: ({ dispatch, state: { score, comment }, question, url }) => async event => {
     event.preventDefault();
     dispatch({ type: 'SET_SUBMITTING', payload: true });
     const data = {
