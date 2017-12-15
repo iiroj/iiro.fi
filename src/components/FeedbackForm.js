@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { pure, branch, renderComponent } from 'recompose';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { pure, branch, renderComponent } from "recompose";
 
 const Form = styled.form`
   display: flex;
@@ -101,7 +101,7 @@ const Score = styled.ol`
     }
   }
 
-  li input[type='radio'] {
+  li input[type="radio"] {
     appearance: none;
     left: 0;
     height: 1rem;
@@ -126,7 +126,7 @@ const Score = styled.ol`
       background: hsla(0, 0%, 100%, 1);
       border-radius: 50%;
       box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 0 hsla(44, 100%, 75%, 1);
-      content: '';
+      content: "";
       display: block;
       height: 0.5rem;
       left: 50%;
@@ -143,7 +143,7 @@ const Score = styled.ol`
     box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 2rem hsla(44, 100%, 75%, 1);
   }
 
-  li input[type='radio']:checked + .radio {
+  li input[type="radio"]:checked + .radio {
     box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 2rem hsla(44, 100%, 75%, 1);
     transform: scale(1.25);
 
@@ -169,7 +169,7 @@ const Score = styled.ol`
     opacity: 1;
   }
 
-  li input[type='radio']:checked ~ .text {
+  li input[type="radio"]:checked ~ .text {
     opacity: 1;
   }
 `;

@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Header } from './Header';
-import { DeliveryEstimates } from './DeliveryEstimates';
-import { SelfPickup } from './SelfPickup';
-import { Barometer } from './Barometer';
+import { Header } from "./Header";
+import { DeliveryEstimates } from "./DeliveryEstimates";
+import { SelfPickup } from "./SelfPickup";
+import { Barometer } from "./Barometer";
 
 const Container = styled.article`
   background-color: white;

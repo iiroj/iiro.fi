@@ -1,0 +1,26 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "ie >= 11"],
+          "node": "current"
+        },
+        "modules": "commonjs"
+      }
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-import-glob",
+    "babel-plugin-transform-class-properties",
+    "babel-plugin-transform-object-rest-spread",
+    "babel-plugin-transform-react-jsx",
+    "babel-plugin-inline-react-svg"
+  ],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  }
+}

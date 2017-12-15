@@ -1,12 +1,16 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { hiDPI } from 'polished';
+import React from "react";
+import styled, { css } from "styled-components";
+import { hiDPI } from "polished";
 
-import Amp from './Amp';
-import FraktioLink, { Logo } from './FraktioLink';
+import Amp from "../Amp";
+import FraktioLink, { Logo } from "../FraktioLink";
+
+import profilePicture from "./profilePicture.jpg";
+import profilePicture2x from "./profilePicture@2x.jpg";
+import profilePicture3x from "./profilePicture@3x.jpg";
 
 export const background = css`
-  background-image: url('/profilePicture.jpg');
+  background-image: url(${profilePicture});
   background-position: 55% 50%;
   background-size: cover;
   display: flex;
@@ -16,11 +20,11 @@ export const background = css`
   position: relative;
 
   ${hiDPI(1.5)} {
-    background-image: url('/profilePicture@2x.jpg');
+    background-image: url(${profilePicture2x});
   }
 
   ${hiDPI(2)} {
-    background-image: url('/profilePicture@3x.jpg');
+    background-image: url(${profilePicture3x});
   }
 `;
 

@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-import Title from './Title';
-import Body from './Body';
-import Footer from './Footer';
+import Title from "./Title";
+import Body from "./Body";
+import Footer from "./Footer";
 
 const Article = ({ body, className, title }) => (
   <article className={className}>

@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { pure } from 'recompose';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { pure } from "recompose";
 
-import Back from 'components/Back';
-import Article from './Article';
+import Back from "components/Back";
+import Article from "./Article";
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -36,30 +36,30 @@ const BlogPost = ({ data }) => {
   const postRawDate = post.frontmatter.date;
   const postDate = new Date(postRawDate).toDateString();
   const microdata = {
-    '@context': 'http://schema.org',
-    '@type': 'BlogPosting',
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
     author: {
-      '@type': 'Person',
-      name: 'Iiro Jäppinen',
+      "@type": "Person",
+      name: "Iiro Jäppinen",
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'iiro.fi',
+      "@type": "Organization",
+      name: "iiro.fi",
       logo: {
-        '@type': 'ImageObject',
-        url: 'https://iiro.fi/profilePicture@3x.jpg',
-        height: '384',
-        width: '384',
+        "@type": "ImageObject",
+        url: "https://iiro.fi/profilePicture@3x.jpg",
+        height: "384",
+        width: "384",
       },
     },
     datePublished: `${postRawDate}`,
     dateModified: `${postRawDate}`,
     headline: `${postTitle}`,
     image: {
-      '@type': 'ImageObject',
-      url: 'https://iiro.fi/profilePicture@3x.jpg',
-      height: '384',
-      width: '384',
+      "@type": "ImageObject",
+      url: "https://iiro.fi/profilePicture@3x.jpg",
+      height: "384",
+      width: "384",
     },
     mainEntityOfPage: `https://iiro.fi${post.fields.slug}`,
   };
@@ -70,7 +70,7 @@ const BlogPost = ({ data }) => {
       title={`${postTitle} — by ${name}`}
       script={[
         {
-          type: 'application/ld+json',
+          type: "application/ld+json",
           innerHTML: `${JSON.stringify(microdata)}`,
         },
       ]}

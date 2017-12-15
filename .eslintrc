@@ -1,19 +1,13 @@
 {
   "extends": ["plugin:react/recommended", "prettier", "prettier/react"],
   "plugins": ["react", "prettier"],
-  "parserOptions": {
-    "ecmaVersion": 8,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
+  "parser": "babel-eslint",
   "rules": {
     "react/prop-types": 1,
     "prettier/prettier": [
       "error",
       {
-        "singleQuote": true,
+        "singleQuote": false,
         "printWidth": 120,
         "trailingComma": "es5"
       }

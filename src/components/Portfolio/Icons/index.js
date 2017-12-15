@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ButtonLink } from 'pages/portfolio';
+import React from "react";
+import styled from "styled-components";
+import { ButtonLink } from "../../../pages/portfolio";
 
-import iconsBg from './icons.jpg';
-import growl1x from './growl.png';
-import growl3x from './growl@3x.png';
-import growl2x from './growl@2x.png';
-import tune1x from './tuneinstructor.png';
-import tune2x from './tuneinstructor@2x.png';
-import tune3x from './tuneinstructor@3x.png';
+import iconsBg from "./icons.jpg";
+import growl1x from "./growl.png";
+import growl3x from "./growl@3x.png";
+import growl2x from "./growl@2x.png";
+import tune1x from "./tuneinstructor.png";
+import tune2x from "./tuneinstructor@2x.png";
+import tune3x from "./tuneinstructor@3x.png";
 
 const Article = styled.article`
   align-items: center;

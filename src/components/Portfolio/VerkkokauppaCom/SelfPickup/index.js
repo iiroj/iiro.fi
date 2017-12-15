@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import ipad1x from './ipad.jpg';
-import ipad2x from './ipad@2x.jpg';
-import ipad3x from './ipad@3x.jpg';
+import ipad1x from "./ipad.jpg";
+import ipad2x from "./ipad@2x.jpg";
+import ipad3x from "./ipad@3x.jpg";
 
 const Section = styled.section`
   background-color: #a4abb3;

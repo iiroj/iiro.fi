@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import barometer1x from './price-barometer.png';
-import barometer2x from './price-barometer@2x.png';
-import barometer3x from './price-barometer@3x.png';
+import barometer1x from "./price-barometer.png";
+import barometer2x from "./price-barometer@2x.png";
+import barometer3x from "./price-barometer@3x.png";
 
 const Svg = styled.svg`
   height: 120px;
@@ -69,7 +69,7 @@ export const Barometer = () => (
       <p>
         <a href="https://www.verkkokauppa.com/en/investors/" target="_blank" rel="noopener noreferrer">
           Verkkokauppa.com
-        </a>{' '}
+        </a>{" "}
         is the most transparent low cost online retailer in Finland… while being probably always cheaper.
       </p>
       <p>

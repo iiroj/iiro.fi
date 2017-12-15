@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import Link from 'gatsby-link';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default styled(({ className }) => (
   <Link className={className} to="/feedback/">
@@ -21,7 +21,7 @@ export default styled(({ className }) => (
     border-bottom: 1rem solid transparent;
     border-top: 1rem solid transparent;
     bottom: 0;
-    content: '';
+    content: "";
     display: block;
     height: 0;
     left: 0;

@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled, { injectGlobal } from 'styled-components';
-import reset from 'css-wipe/js';
-import { onlyUpdateForKeys } from 'recompose';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import styled, { injectGlobal } from "styled-components";
+import reset from "css-wipe/js";
 
-import Roboto from 'styles/Roboto';
+import Roboto from "../styles/Roboto";
+import ScrollToTop from "../components/ScrollToTop";
 
 const YELLOW = `hsla(44,100%,75%,1)`;
 
@@ -59,20 +59,15 @@ injectGlobal`
   }
 `;
 
-const Layout = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
-  width: 100%;
-`;
+const App = ({ children }) => (
+  <Fragment>
+    <ScrollToTop />
+    {children}
+  </Fragment>
+);
 
-const DefaultLayout = ({ children }) => <Layout>{children()}</Layout>;
-
-DefaultLayout.propTypes = {
-  children: PropTypes.func.isRequired,
-  location: PropTypes.object.isRequired,
+App.propTypes = {
+  children: PropTypes.object.isRequired,
 };
 
-const enhance = onlyUpdateForKeys(['location']);
-export default enhance(DefaultLayout);
+export default App;
