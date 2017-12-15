@@ -1,8 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { onlyUpdateForKeys } from "recompose";
+
+import { blogLink } from "../../utils/client-paths";
+import * as blog from "../../blog/**/*.md";
+
+const list = Object.entries(blog).map(post => blogLink(post[0], post[1]));
+
+console.log(list);
 
 const PostListItem = styled.li`
   article,
@@ -15,31 +22,18 @@ const PostListItem = styled.li`
   }
 `;
 
-const PostList = ({ edges }) =>
-  edges.map(edge => (
-    <PostListItem key={edge.node.fields.slug}>
-      <Link to={edge.node.fields.slug}>
-        <article>
-          <h1>{edge.node.frontmatter.title}</h1>
-        </article>
-      </Link>
-    </PostListItem>
-  ));
+const PostList = () => (
+  <ul>
+    {list.map((post, key) => (
+      <PostListItem key={key}>
+        <Link to={post.url}>
+          <article>
+            <h1>{post.title}</h1>
+          </article>
+        </Link>
+      </PostListItem>
+    ))}
+  </ul>
+);
 
-PostList.propTypes = {
-  edges: PropTypes.arrayOf(
-    PropTypes.shape({
-      node: {
-        fields: {
-          slug: PropTypes.string.isRequired,
-        }.isRequired,
-        frontmatter: {
-          title: PropTypes.string.isRequired,
-        }.isRequired,
-      }.isRequired,
-    })
-  ).isRequired,
-};
-
-const enhance = onlyUpdateForKeys(["edges"]);
-export default enhance(PostList);
+export default withRouter(PostList);

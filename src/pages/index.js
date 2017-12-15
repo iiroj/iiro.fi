@@ -98,7 +98,7 @@ const MainArea = styled.div`
   }
 `;
 
-const Index = ({ data }) => (
+const Index = () => (
   <Fragment>
     <Helmet
       title="Iiro Jäppinen"
@@ -114,7 +114,7 @@ const Index = ({ data }) => (
     </HeaderArea>
     <MainArea>
       <h3>Blog</h3>
-      <ul>{/* <PostList edges={data.allMarkdownRemark.edges} /> */}</ul>
+      <PostList />
       <h3>Elsewhere</h3>
       <ul>
         <Links />
@@ -123,24 +123,5 @@ const Index = ({ data }) => (
     </MainArea>
   </Fragment>
 );
-
-Index.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: {
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: {
-            fields: {
-              slug: PropTypes.string.isRequired,
-            }.isRequired,
-            frontmatter: {
-              title: PropTypes.string.isRequired,
-            }.isRequired,
-          }.isRequired,
-        })
-      ).isRequired,
-    }.isRequired,
-  }).isRequired,
-};
 
 export default Index;

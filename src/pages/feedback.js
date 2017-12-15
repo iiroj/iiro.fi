@@ -17,8 +17,8 @@ const resolveFeedbackProps = () =>
   withProps(props => {
     const questions = props.data.site.siteMetadata.feedback.questions;
     return {
-      url: props.data.site.siteMetadata.feedback.api.url,
-      question: questions[Math.floor(Math.random() * questions.length)],
+      url: API_URL,
+      question: QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)],
     };
   });
 

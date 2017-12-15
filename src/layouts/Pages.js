@@ -1,20 +1,20 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
 
+import { pageUrl, blogLink } from "../../utils/client-paths";
 import BlogPost from "./BlogPost";
-import convertToPath from "../../utils/convertToPath";
 import * as pages from "../pages/*.js";
 import * as blog from "../../blog/**/*.md";
 
 const Page = page => {
-  const path = convertToPath(page[0]);
+  const path = pageUrl(page[0]);
   const Component = page[1];
 
   return <Route key={path} exact path={path} component={Component} />;
 };
 
 const Post = post => {
-  const path = post[0];
+  const path = blogLink(post[0], post[1]).url;
   const md = post[1];
 
   return <Route key={path} exact path={`/${path}`} render={() => <BlogPost md={md} />} />;
@@ -26,7 +26,5 @@ const Pages = () => (
     {Object.entries(blog).map(post => Post(post))}
   </Switch>
 );
-
-console.log(Object.entries(blog).map(post => Post(post)));
 
 export default Pages;

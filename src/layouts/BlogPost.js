@@ -4,8 +4,6 @@ import remark from "remark";
 import remarkReact from "remark-react";
 
 const BlogPost = ({ md }) => {
-  console.log(md);
-
   return (
     <article>
       {
