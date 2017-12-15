@@ -7,7 +7,7 @@ const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const IgnoreEmitPlugin = require("ignore-emit-webpack-plugin");
 
-const getPaths = require("./utils/getPaths");
+const getPaths = require("./utils/fs-paths");
 
 const isProduction = process.env.NODE_ENV === "production";
 const PORT = 8080;
