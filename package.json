@@ -10,7 +10,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.babel.js -d --progress --hot",
     "prebuild": "rimraf ./dist",
-    "build": "webpack --config webpack.config.babel.js -p --progress --hot",
+    "build": "NODE_ENV=production webpack --config webpack.config.babel.js -p --progress --hot",
     "lint": "eslint --ext .js --ignore-pattern dist .",
     "lint:fix": "eslint --fix --ext .js --ignore-pattern dist ."
   },
