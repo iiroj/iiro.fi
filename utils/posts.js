@@ -1,4 +1,11 @@
 import frontmatter from "frontmatter";
+import remark from "remark";
+import remarkReact from "remark-react";
+import RemarkLowlight from "remark-react-lowlight";
+import bash from "highlight.js/lib/languages/bash";
+import js from "highlight.js/lib/languages/javascript";
+import scss from "highlight.js/lib/languages/scss";
+
 import * as glob from "../blog/**/*.md";
 
 const kebabCase = string => string.replace(/([A-Z])/g, match => "-" + match.toLowerCase());
@@ -24,9 +31,20 @@ const post = md => {
   const globTitle = md[0];
   const parsed = frontmatter(md[1]);
 
+  const body = remark()
+    .use(remarkReact, {
+      remarkReactComponents: {
+        code: RemarkLowlight({
+          bash,
+          js,
+          scss,
+        }),
+      },
+    })
+    .processSync(parsed.content).contents;
+
   return {
-    ...parsed.data,
-    content: parsed.content,
+    body: body,
     date: new Date(parsed.data.date),
     title: title(globTitle, parsed.data),
     url: url(globTitle, parsed.data),
