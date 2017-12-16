@@ -1,6 +1,5 @@
 const fs = require("fs");
-const recursive = require("recursive-readdir");
-const path = require("path");
+const glob = require("glob");
 const frontmatter = require("frontmatter");
 
 const pagesDir = process.cwd() + "/src/pages";
@@ -32,10 +31,10 @@ const resolveBlogPostPath = string => {
   return "/blog/" + slug;
 };
 
-const getPaths = async () => {
-  const pageFiles = await recursive(pagesDir, ["!*.js"]);
+const getPaths = () => {
+  const pageFiles = glob.sync(`${pagesDir}/**/*.js`);
   const pagePaths = pageFiles.map(string => resolvePagePath(string));
-  const blogFiles = await recursive(blogDir, ["!*.md"]);
+  const blogFiles = glob.sync(`${blogDir}/**/*.md`);
   const blogPaths = blogFiles.map(string => resolveBlogPostPath(string));
 
   return pagePaths.concat(blogPaths);

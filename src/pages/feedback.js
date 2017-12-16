@@ -15,7 +15,6 @@ const QUESTIONS = [
 
 const resolveFeedbackProps = () =>
   withProps(props => {
-    const questions = props.data.site.siteMetadata.feedback.questions;
     return {
       url: API_URL,
       question: QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)],

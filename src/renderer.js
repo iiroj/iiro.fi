@@ -4,9 +4,9 @@ import { StaticRouter } from "react-router-dom";
 import { ServerStyleSheet, StyleSheetManager } from "styled-components";
 import Helmet from "react-helmet";
 
-import App from "../src/layouts/App";
-import Pages from "../src/components/Pages";
-import Html from "../src/layouts/Html";
+import App from "./layouts/App";
+import Pages from "./layouts/Pages";
+import Html from "./layouts/Html";
 
 export default ({ path, assets }) => {
   const sheet = new ServerStyleSheet();

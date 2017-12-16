@@ -12,7 +12,7 @@ injectGlobal`
   ${reset}
   ${Roboto}
 
-  html, body, #___gatsby {
+  html, body {
     height: 100%;
   }
 
@@ -27,6 +27,12 @@ injectGlobal`
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5rem;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
   }
 
   a {

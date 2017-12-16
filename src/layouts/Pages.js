@@ -17,7 +17,7 @@ const Post = post => {
   const path = blogLink(post[0], post[1]).url;
   const md = post[1];
 
-  return <Route key={path} exact path={`/${path}`} render={() => <BlogPost md={md} />} />;
+  return <Route key={path} exact path={path} render={() => <BlogPost md={md} />} />;
 };
 
 const Pages = () => (

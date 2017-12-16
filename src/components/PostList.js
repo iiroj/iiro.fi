@@ -9,8 +9,6 @@ import * as blog from "../../blog/**/*.md";
 
 const list = Object.entries(blog).map(post => blogLink(post[0], post[1]));
 
-console.log(list);
-
 const PostListItem = styled.li`
   article,
   h1 {
