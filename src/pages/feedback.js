@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
 
-import { postJSON } from "../../utils/postJSON";
+import { postJson } from "../../utils/postJson";
 import Back from "../components/Back";
 import FeedbackForm from "../components/FeedbackForm";
 
@@ -62,7 +62,7 @@ const handlers = withHandlers({
     };
 
     try {
-      const response = await postJSON(url, data);
+      const response = await postJson(url, data);
 
       dispatch({ type: "SET_SUBMITTING", payload: false });
       dispatch({ type: "SET_SUBMITTED", payload: true });
