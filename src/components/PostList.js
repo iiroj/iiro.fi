@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import { onlyUpdateForKeys } from 'recompose';
+import { pure } from 'recompose';
 
 const PostListItem = styled.li`
   article,
@@ -41,5 +41,4 @@ PostList.propTypes = {
   ).isRequired,
 };
 
-const enhance = onlyUpdateForKeys(['edges']);
-export default enhance(PostList);
+export default pure(PostList);

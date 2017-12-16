@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { pure } from 'recompose';
 
 import Back from 'components/Back';
 import Article from './Article';
+import picture from '../Header/profilePicture@3x.jpg';
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -47,7 +47,7 @@ const BlogPost = ({ data }) => {
       name: 'iiro.fi',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://iiro.fi/profilePicture@3x.jpg',
+        url: `https://iiro.fi${picture}`,
         height: '384',
         width: '384',
       },
@@ -57,27 +57,28 @@ const BlogPost = ({ data }) => {
     headline: `${postTitle}`,
     image: {
       '@type': 'ImageObject',
-      url: 'https://iiro.fi/profilePicture@3x.jpg',
+      url: `https://iiro.fi${picture}`,
       height: '384',
       width: '384',
     },
     mainEntityOfPage: `https://iiro.fi${post.fields.slug}`,
   };
 
-  return [
-    <Helmet
-      key="helmet"
-      title={`${postTitle} — by ${name}`}
-      script={[
-        {
-          type: 'application/ld+json',
-          innerHTML: `${JSON.stringify(microdata)}`,
-        },
-      ]}
-    />,
-    <Back key="back" />,
-    <Article key="article" title={postTitle} body={body} />,
-  ];
+  return (
+    <Fragment>
+      <Helmet
+        title={`${postTitle} — by ${name}`}
+        script={[
+          {
+            type: 'application/ld+json',
+            innerHTML: `${JSON.stringify(microdata)}`,
+          },
+        ]}
+      />
+      <Back />
+      <Article title={postTitle} body={body} />
+    </Fragment>
+  );
 };
 
 BlogPost.propTypes = {
@@ -102,4 +103,4 @@ BlogPost.propTypes = {
   }).isRequired,
 };
 
-export default pure(BlogPost);
+export default BlogPost;

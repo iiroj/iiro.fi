@@ -4,6 +4,9 @@ import Helmet from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
 import { onlyUpdateForKeys } from 'recompose';
 
+import favicon from './favicon.ico';
+import icon from './icon.png';
+
 const HTML = props => {
   const head = Helmet.rewind();
 
@@ -22,8 +25,8 @@ const HTML = props => {
         {head.link.toComponent()}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" sizes="600x600" href="/icon.png" type="image/x-icon" />
+        <link rel="icon" href={favicon} type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="600x600" href={icon} type="image/x-icon" />
         {process.env.NODE_ENV === 'production' && css}
       </head>
       <body>
