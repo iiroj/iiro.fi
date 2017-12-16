@@ -7,8 +7,8 @@ import posts from "../../utils/posts";
 
 const Pages = () => (
   <Switch>
-    {pages.map((page, key) => <Route key={key} exact path={page.url} component={page.component} />)}
-    {posts.map((post, key) => <Route key={key} exact path={post.url} render={() => <Post {...post} />} />)}
+    {pages.map(page => <Route key={page.url} exact path={page.url} component={page.component} />)}
+    {posts.map(post => <Route key={post.url} exact path={post.url} render={() => <Post {...post} />} />)}
   </Switch>
 );
 

@@ -17,10 +17,5 @@
     "babel-plugin-transform-object-rest-spread",
     "babel-plugin-transform-react-jsx",
     "babel-plugin-inline-react-svg"
-  ],
-  "env": {
-    "production": {
-      "presets": ["minify"]
-    }
-  }
+  ]
 }
