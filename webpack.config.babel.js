@@ -1,13 +1,11 @@
-"use strict";
+import webpack from "webpack";
+import StaticSiteGeneratorPlugin from "static-site-generator-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import SWPrecacheWebpackPlugin from "sw-precache-webpack-plugin";
+import WebpackAssetsManifest from "webpack-assets-manifest";
+import IgnoreEmitPlugin from "ignore-emit-webpack-plugin";
 
-const webpack = require("webpack");
-const StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
-const WebpackAssetsManifest = require("webpack-assets-manifest");
-const IgnoreEmitPlugin = require("ignore-emit-webpack-plugin");
-
-const getPaths = require("./utils/render-paths");
+import getPaths from "./utils/render-paths";
 
 const isProduction = process.env.NODE_ENV === "production";
 const PORT = 8080;
@@ -53,7 +51,7 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+      "process.env": { NODE_ENV: JSON.stringify(isProduction ? "production" : "development") },
     }),
   ],
 };
@@ -100,4 +98,4 @@ if (isProduction) {
   );
 }
 
-module.exports = config;
+export default config;

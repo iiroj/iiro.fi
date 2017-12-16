@@ -8,9 +8,9 @@
   "repository": "gitlab:iiroj/iiro.fi",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server -d --progress --hot",
+    "start": "webpack-dev-server --config webpack.config.babel.js -d --progress --hot",
     "prebuild": "rimraf ./dist",
-    "build": "NODE_ENV=production BABEL_ENV=production webpack -p --progress --hot",
+    "build": "webpack --config webpack.config.babel.js -p --progress --hot",
     "lint": "eslint --ext .js --ignore-pattern dist .",
     "lint:fix": "eslint --fix --ext .js --ignore-pattern dist ."
   },
