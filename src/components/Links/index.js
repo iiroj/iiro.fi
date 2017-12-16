@@ -54,7 +54,7 @@ const Link = styled.a`
   display: inline-block;
   margin-top: 1rem;
 
-  > svg {
+  > img {
     height: 24px;
     margin-right: 1rem;
     transition: transform 125ms ease-out 250ms;
@@ -62,12 +62,12 @@ const Link = styled.a`
     width: 24px;
   }
 
-  &:hover > svg {
+  &:hover > img {
     transform: scale(1.2);
     transition: transform 100ms ease-out 0s;
   }
 
-  &:active > svg {
+  &:active > img {
     transform: scale(1);
   }
 `;
