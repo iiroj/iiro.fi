@@ -26,7 +26,7 @@ const HTML = props => {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href={favicon} type="image/x-icon" />
-        <link rel="apple-touch-icon" sizes="600x600" href={icon} type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="600x600" href={icon} />
         {process.env.NODE_ENV === 'production' && css}
       </head>
       <body>
