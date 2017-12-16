@@ -63,7 +63,6 @@ if (isProduction) {
     bundle: "./src/index.js",
     renderer: "./src/renderer.js",
   };
-  config.devtool = "cheap-module-source-map";
   config.plugins.push(
     new StaticSiteGeneratorPlugin({
       entry: "renderer",
@@ -74,18 +73,19 @@ if (isProduction) {
       },
     }),
     new IgnoreEmitPlugin(/^renderer\.js.*/),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new SWPrecacheWebpackPlugin({
-      cacheId: "jouni.jappinen.fi",
+      cacheId: "iiro.fi",
       dontCacheBustUrlsMatching: /\.\w{8}\./,
       filename: "service-worker.js",
       minify: true,
-      navigateFallback: isProduction ? "https://jouni.jappinen.fi/" : `http://localhost:${PORT}/` + "index.html",
+      navigateFallback: isProduction ? "https://iiro.fi/" : `http://localhost:${PORT}/` + "index.html",
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
     }),
     new WebpackAssetsManifest({
       output: "asset-manifest.json",
-    }),
-    new webpack.optimize.OccurrenceOrderPlugin()
+    })
   );
 } else {
   config.entry = {
