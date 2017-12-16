@@ -21,7 +21,7 @@ const config = {
         use: ["react-hot-loader/webpack", "babel-loader", "eslint-loader"],
       },
       {
-        test: /\.md$/,
+        test: /\.(md|css)$/,
         use: ["raw-loader"],
       },
       {
