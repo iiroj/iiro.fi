@@ -1,13 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { blogLink } from "../../utils/client-paths";
-import * as blog from "../../blog/**/*.md";
+import posts from "../../utils/posts";
 
-const list = Object.entries(blog).map(post => blogLink(post[0], post[1]));
+const sortedPosts = posts.sort((a, b) => a.date < b.date);
 
 const PostListItem = styled.li`
   article,
@@ -20,18 +17,15 @@ const PostListItem = styled.li`
   }
 `;
 
-const PostList = () => (
-  <ul>
-    {list.map((post, key) => (
-      <PostListItem key={key}>
-        <Link to={post.url}>
-          <article>
-            <h1>{post.title}</h1>
-          </article>
-        </Link>
-      </PostListItem>
-    ))}
-  </ul>
-);
+const PostList = () =>
+  sortedPosts.map((post, key) => (
+    <PostListItem key={key}>
+      <Link to={post.url}>
+        <article>
+          <h1>{post.title}</h1>
+        </article>
+      </Link>
+    </PostListItem>
+  ));
 
-export default withRouter(PostList);
+export default PostList;

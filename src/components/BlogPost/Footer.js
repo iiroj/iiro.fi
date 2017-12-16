@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { hiDPI, mix } from "polished";
 
-import Amp from "components/Amp";
-import { FraktioLogo, FraktioText } from "components/FraktioLink";
-import { background } from "components/Header";
+import Amp from "../Amp";
+import { FraktioLogo, FraktioText } from "../FraktioLink";
+import { background } from "../Header";
 
 const Footer = styled.footer`
   ${background};
 
   background-position: 50% 25%;
+  flex-grow: 0;
 `;
 
 const Gradient = styled(Link)`

@@ -1,40 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import { pure } from "recompose";
 
-import Back from "components/Back";
+import logo from "../Header/profilePicture@3x.jpg";
+import Back from "../Back";
 import Article from "./Article";
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        name
-        siteTitle
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      html
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-      }
-    }
-  }
-`;
+const BlogPost = ({ body, date, title, url }) => {
+  const postRawDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  const postDate = date.toDateString();
 
-const BlogPost = ({ data }) => {
-  const name = data.site.siteMetadata.name;
-  const post = data.markdownRemark;
-  const body = post.html;
-  const postTitle = post.frontmatter.title;
-  const postRawDate = post.frontmatter.date;
-  const postDate = new Date(postRawDate).toDateString();
   const microdata = {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -47,59 +22,45 @@ const BlogPost = ({ data }) => {
       name: "iiro.fi",
       logo: {
         "@type": "ImageObject",
-        url: "https://iiro.fi/profilePicture@3x.jpg",
+        url: `https://iiro.fi${logo}`,
         height: "384",
         width: "384",
       },
     },
     datePublished: `${postRawDate}`,
     dateModified: `${postRawDate}`,
-    headline: `${postTitle}`,
+    headline: `${title}`,
     image: {
       "@type": "ImageObject",
-      url: "https://iiro.fi/profilePicture@3x.jpg",
+      url: `https://iiro.fi${logo}`,
       height: "384",
       width: "384",
     },
-    mainEntityOfPage: `https://iiro.fi${post.fields.slug}`,
+    mainEntityOfPage: `https://iiro.fi${url}`,
   };
 
-  return [
-    <Helmet
-      key="helmet"
-      title={`${postTitle} — by ${name}`}
-      script={[
-        {
-          type: "application/ld+json",
-          innerHTML: `${JSON.stringify(microdata)}`,
-        },
-      ]}
-    />,
-    <Back key="back" />,
-    <Article key="article" title={postTitle} body={body} />,
-  ];
+  return (
+    <Fragment>
+      <Helmet
+        title={`${title} — by Iiro Jäppinen`}
+        script={[
+          {
+            type: "application/ld+json",
+            innerHTML: `${JSON.stringify(microdata)}`,
+          },
+        ]}
+      />
+      <Back />
+      <Article body={body} title={title} />
+    </Fragment>
+  );
 };
 
 BlogPost.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: {
-      fields: {
-        title: PropTypes.string.isRequired,
-      }.isRequired,
-      frontmatter: {
-        date: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-      },
-      html: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
-    }.isRequired,
-    site: {
-      siteMetadata: {
-        name: PropTypes.string.isRequired,
-        siteTitle: PropTypes.string.isRequired,
-      }.isRequired,
-    }.isRequired,
-  }).isRequired,
+  body: PropTypes.object.isRequired,
+  date: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
 
-export default pure(BlogPost);
+export default BlogPost;

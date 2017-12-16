@@ -18,7 +18,6 @@
     "css-wipe": "^4.3.0",
     "highlight.js": "^9.12.0",
     "polished": "^1.9.0",
-    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
@@ -26,7 +25,6 @@
     "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0",
     "remark": "^8.0.0",
-    "remark-frontmatter": "^1.2.0",
     "remark-react": "^4.0.1",
     "remark-react-lowlight": "^0.7.0",
     "styled-components": "^2.2.4"
@@ -54,6 +52,7 @@
     "html-webpack-plugin": "^2.30.1",
     "ignore-emit-webpack-plugin": "^0.2.1",
     "prettier": "^1.9.2",
+    "prop-types": "^15.6.0",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.1.3",
     "rimraf": "^2.6.2",

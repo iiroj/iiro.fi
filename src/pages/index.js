@@ -114,7 +114,9 @@ const Index = () => (
     </HeaderArea>
     <MainArea>
       <h3>Blog</h3>
-      <PostList />
+      <ul>
+        <PostList />
+      </ul>
       <h3>Elsewhere</h3>
       <ul>
         <Links />
