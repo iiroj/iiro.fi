@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "7.9.3",
+  "version": "7.9.4",
   "description": "Static blog made with Gatsby",
   "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
@@ -10,8 +10,8 @@
   "scripts": {
     "prestart": "rimraf .cache",
     "start": "NODE_ENV=development gatsby develop",
-    "lint": "eslint --ignore-pattern public node_modules .",
-    "lint:fix": "eslint --fix --ignore-pattern public node_modules .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "prebuild": "rimraf .cache public",
     "build": "NODE_ENV=production gatsby build"
   },
@@ -45,5 +45,17 @@
     "eslint-plugin-react": "^7.5.1",
     "prop-types": "^15.6.0",
     "rimraf": "^2.6.2"
-  }
+  },
+  "keywords": [
+    "aws",
+    "cloudfront",
+    "gatsby",
+    "lambda",
+    "react",
+    "recompose",
+    "s3",
+    "serverless",
+    "static-site",
+    "styled-components"
+  ]
 }
