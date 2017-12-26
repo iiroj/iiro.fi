@@ -1,10 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled, { injectGlobal } from 'styled-components';
-import reset from 'css-wipe/js';
-import { onlyUpdateForKeys } from 'recompose';
+import PropTypes from "prop-types";
+import { injectGlobal } from "styled-components";
+import reset from "css-wipe/js";
 
-import Roboto from 'styles/Roboto';
+import Roboto from "styles/Roboto";
 
 const YELLOW = `hsla(44,100%,75%,1)`;
 
@@ -12,7 +10,7 @@ injectGlobal`
   ${reset}
   ${Roboto}
 
-  html, body, #___gatsby {
+  html, body {
     height: 100%;
   }
 
@@ -27,6 +25,13 @@ injectGlobal`
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5rem;
+  }
+
+  #___gatsby {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
   }
 
   a {
@@ -59,20 +64,10 @@ injectGlobal`
   }
 `;
 
-const Layout = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
-  width: 100%;
-`;
-
-const DefaultLayout = ({ children }) => <Layout>{children()}</Layout>;
+const DefaultLayout = ({ children }) => children();
 
 DefaultLayout.propTypes = {
   children: PropTypes.func.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
-const enhance = onlyUpdateForKeys(['location']);
-export default enhance(DefaultLayout);
+export default DefaultLayout;

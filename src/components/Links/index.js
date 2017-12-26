@@ -1,43 +1,43 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import email from './email.svg';
-import twitter from './twitter.svg';
-import linkedin from './linkedin.svg';
-import dribbble from './dribbble.svg';
-import github from './github.svg';
-import gitlab from './gitlab.svg';
+import email from "./email.svg";
+import twitter from "./twitter.svg";
+import linkedin from "./linkedin.svg";
+import dribbble from "./dribbble.svg";
+import github from "./github.svg";
+import gitlab from "./gitlab.svg";
 
 const links = [
   {
-    href: 'mailto:iiro@jappinen.fi',
+    href: "mailto:iiro@jappinen.fi",
     icon: email,
-    title: 'Email',
+    title: "Email",
   },
   {
-    href: 'https://twitter.com/iirojappinen',
+    href: "https://twitter.com/iirojappinen",
     icon: twitter,
-    title: 'Twitter',
+    title: "Twitter",
   },
   {
-    href: 'https://fi.linkedin.com/in/iiroj',
+    href: "https://fi.linkedin.com/in/iiroj",
     icon: linkedin,
-    title: 'Linkedin',
+    title: "Linkedin",
   },
   {
-    href: 'https://dribbble.com/iiroj',
+    href: "https://dribbble.com/iiroj",
     icon: dribbble,
-    title: 'Dribbble',
+    title: "Dribbble",
   },
   {
-    href: 'https://github.com/iiroj',
+    href: "https://github.com/iiroj",
     icon: github,
-    title: 'GitHub',
+    title: "GitHub",
   },
   {
-    href: 'https://gitlab.com/iiroj',
+    href: "https://gitlab.com/iiroj",
     icon: gitlab,
-    title: 'GitLab',
+    title: "GitLab",
   },
 ];
 

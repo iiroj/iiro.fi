@@ -1,25 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { ServerStyleSheet } from 'styled-components';
-import { onlyUpdateForKeys } from 'recompose';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { ServerStyleSheet } from "styled-components";
 
-import favicon from './favicon.ico';
-import icon from './icon.png';
+import favicon from "./favicon.ico";
+import icon from "./icon.png";
 
-const HTML = props => {
+const Html = ({ body, headComponents, postBodyComponents, preBodyComponents }) => {
   const head = Helmet.rewind();
-
   const sheet = new ServerStyleSheet();
-
-  const main = sheet.collectStyles(<div id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />);
-  const css = sheet.getStyleElement();
+  const appHtml = sheet.collectStyles(<div id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />);
+  const appCss = sheet.getStyleElement();
 
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        {props.headComponents}
+        {headComponents}
         {head.title.toComponent()}
         {head.meta.toComponent()}
         {head.link.toComponent()}
@@ -27,21 +24,22 @@ const HTML = props => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href={favicon} type="image/x-icon" />
         <link rel="apple-touch-icon" sizes="600x600" href={icon} />
-        {process.env.NODE_ENV === 'production' && css}
+        {process.env.NODE_ENV === "production" && appCss}
       </head>
       <body>
-        {main}
-        {props.postBodyComponents}
+        {preBodyComponents}
+        {appHtml}
+        {postBodyComponents}
       </body>
     </html>
   );
 };
 
-HTML.propTypes = {
+Html.propTypes = {
   body: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   headComponents: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
   postBodyComponents: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+  preBodyComponents: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
 };
 
-const enhance = onlyUpdateForKeys(['body', 'headComponents', 'postBodyComponents']);
-export default enhance(HTML);
+export default Html;

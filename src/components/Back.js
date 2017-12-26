@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import Link from 'gatsby-link';
-import { pure } from 'recompose';
+import React from "react";
+import styled from "styled-components";
+import Link from "gatsby-link";
+import { pure } from "recompose";
 
 const X = styled(Link)`
   background: none !important;
@@ -20,7 +20,7 @@ const X = styled(Link)`
   &::after {
     background-color: rgb(77, 77, 77);
     border-radius: 1px;
-    content: '';
+    content: "";
     display: block;
     height: 2px;
     margin-top: -1px;

@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import dialog1x from './dialog.png';
-import dialog2x from './dialog@2x.png';
-import dialog3x from './dialog@3x.png';
-import list1x from './list.png';
-import list2x from './list@2x.png';
-import list3x from './list@3x.png';
+import dialog1x from "./dialog.png";
+import dialog2x from "./dialog@2x.png";
+import dialog3x from "./dialog@3x.png";
+import list1x from "./list.png";
+import list2x from "./list@2x.png";
+import list3x from "./list@3x.png";
 
 const Section = styled.section`
   align-items: center;

@@ -1,37 +1,37 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Helmet from 'react-helmet';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import Helmet from "react-helmet";
 
-import Header from 'components/Header';
-import PostList from 'components/PostList';
-import Links from 'components/Links';
-import RateMe from 'components/RateMe';
+import Header from "components/Header";
+import PostList from "components/PostList";
+import Links from "components/Links";
+import RateMe from "components/RateMe";
 
 const microdata = {
-  '@context': 'http://schema.org',
-  '@type': 'Person',
-  name: 'Iiro Jäppinen',
-  jobTitle: 'Designer',
+  "@context": "http://schema.org",
+  "@type": "Person",
+  name: "Iiro Jäppinen",
+  jobTitle: "Designer",
   worksFor: {
-    '@type': 'Organization',
-    name: 'Fraktio',
-    url: 'https://fraktio.fi',
+    "@type": "Organization",
+    name: "Fraktio",
+    url: "https://fraktio.fi",
   },
-  url: 'https://iiro.fi/',
-  email: 'iiro@jappinen.fi',
-  nationality: 'Finland',
+  url: "https://iiro.fi/",
+  email: "iiro@jappinen.fi",
+  nationality: "Finland",
   address: {
-    '@type': 'PostalAddress',
-    addressCountry: 'Finland',
-    addressLocality: 'Helsinki',
+    "@type": "PostalAddress",
+    addressCountry: "Finland",
+    addressLocality: "Helsinki",
   },
   sameAs: [
-    'https://twitter.com/iirojappinen',
-    'https://fi.linkedin.com/in/iiroj',
-    'https://dribbble.com/iiroj',
-    'https://github.com/iiroj',
-    'https://gitlab.com/iiroj',
+    "https://twitter.com/iirojappinen",
+    "https://fi.linkedin.com/in/iiroj",
+    "https://dribbble.com/iiroj",
+    "https://github.com/iiroj",
+    "https://gitlab.com/iiroj",
   ],
 };
 
@@ -43,7 +43,7 @@ const HeaderArea = styled.div`
 
   &::after {
     background-color: hsla(0, 0%, 100%, 1);
-    content: '';
+    content: "";
     display: block;
     height: 5rem;
     position: absolute;
@@ -121,7 +121,7 @@ const Index = ({ data }) => (
       title="Iiro Jäppinen"
       script={[
         {
-          type: 'application/ld+json',
+          type: "application/ld+json",
           innerHTML: JSON.stringify(microdata),
         },
       ]}

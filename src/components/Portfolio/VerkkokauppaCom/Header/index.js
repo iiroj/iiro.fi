@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ButtonLink } from 'pages/portfolio';
+import React from "react";
+import styled from "styled-components";
+import { ButtonLink } from "pages/portfolio";
 
-import pixel1x from './pixel.png';
-import pixel2x from './pixel@2x.png';
-import pixel3x from './pixel@3x.png';
-import frontpage1x from './frontpage.jpg';
-import frontpage2x from './frontpage@2x.jpg';
-import frontpage3x from './frontpage@3x.jpg';
+import pixel1x from "./pixel.png";
+import pixel2x from "./pixel@2x.png";
+import pixel3x from "./pixel@3x.png";
+import frontpage1x from "./frontpage.jpg";
+import frontpage2x from "./frontpage@2x.jpg";
+import frontpage3x from "./frontpage@3x.jpg";
 
 const Container = styled.header`
   align-items: center;
@@ -25,7 +25,7 @@ const Container = styled.header`
   &::before,
   &::after {
     background-color: #e30613;
-    content: '';
+    content: "";
     display: block;
     height: 50%;
     left: 0;

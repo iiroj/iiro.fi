@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import styled from 'styled-components';
-import { hiDPI, mix } from 'polished';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "gatsby-link";
+import styled from "styled-components";
+import { hiDPI, mix } from "polished";
 
-import Amp from 'components/Amp';
-import { FraktioLogo, FraktioText } from 'components/FraktioLink';
-import { background } from 'components/Header';
+import Amp from "components/Amp";
+import { FraktioLogo, FraktioText } from "components/FraktioLink";
+import { background } from "components/Header";
 
 const Footer = styled.footer`
   ${background};
@@ -22,7 +22,7 @@ const Gradient = styled(Link)`
   &::after {
     background-color: hsla(190, 10%, 40%, 0.6);
     bottom: 0;
-    content: '';
+    content: "";
     display: block;
     left: 0;
     position: absolute;
@@ -34,7 +34,7 @@ const Gradient = styled(Link)`
 
   &:hover {
     &::after {
-      background-color: ${mix(0.5, 'hsla(190, 10%, 40%, 0.6)', 'hsla(44, 100%, 75%, 0.4)')};
+      background-color: ${mix(0.5, "hsla(190, 10%, 40%, 0.6)", "hsla(44, 100%, 75%, 0.4)")};
       transition: background-color 125ms ease-out 0;
     }
   }

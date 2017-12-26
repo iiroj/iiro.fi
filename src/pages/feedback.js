@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { withReducer, withHandlers, withProps, compose } from 'recompose';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { withReducer, withHandlers, withProps, compose } from "recompose";
 
-import { postJSON } from 'services/postJSON';
-import Back from 'components/Back';
-import FeedbackForm from 'components/FeedbackForm';
+import { postJSON } from "services/postJSON";
+import Back from "components/Back";
+import FeedbackForm from "components/FeedbackForm";
 
 export const pageQuery = graphql`
   query Feedback {
@@ -32,26 +32,26 @@ const resolveFeedbackProps = () =>
   });
 
 const reducer = withReducer(
-  'state',
-  'dispatch',
+  "state",
+  "dispatch",
   (state, action) => {
     switch (action.type) {
-      case 'SET_COMMENT':
+      case "SET_COMMENT":
         return Object.assign(state, { comment: action.payload });
-      case 'SET_ERROR':
+      case "SET_ERROR":
         return Object.assign(state, { error: true });
-      case 'SET_SCORE':
+      case "SET_SCORE":
         return Object.assign(state, { score: action.payload });
-      case 'SET_SUBMITTED':
+      case "SET_SUBMITTED":
         return Object.assign(state, { submitted: action.payload });
-      case 'SET_SUBMITTING':
+      case "SET_SUBMITTING":
         return Object.assign(state, { submitting: action.payload });
       default:
         return state;
     }
   },
   {
-    comment: '',
+    comment: "",
     error: false,
     score: null,
     submitted: false,
@@ -60,11 +60,11 @@ const reducer = withReducer(
 );
 
 const handlers = withHandlers({
-  setComment: ({ dispatch }) => event => dispatch({ type: 'SET_COMMENT', payload: event.target.value }),
-  setScore: ({ dispatch }) => event => dispatch({ type: 'SET_SCORE', payload: event }),
+  setComment: ({ dispatch }) => event => dispatch({ type: "SET_COMMENT", payload: event.target.value }),
+  setScore: ({ dispatch }) => event => dispatch({ type: "SET_SCORE", payload: event }),
   submit: ({ dispatch, state: { score, comment }, question, url }) => async event => {
     event.preventDefault();
-    dispatch({ type: 'SET_SUBMITTING', payload: true });
+    dispatch({ type: "SET_SUBMITTING", payload: true });
     const data = {
       question: question,
       score: score,
@@ -74,11 +74,11 @@ const handlers = withHandlers({
     try {
       const response = await postJSON(url, data);
 
-      dispatch({ type: 'SET_SUBMITTING', payload: false });
-      dispatch({ type: 'SET_SUBMITTED', payload: true });
+      dispatch({ type: "SET_SUBMITTING", payload: false });
+      dispatch({ type: "SET_SUBMITTED", payload: true });
     } catch (error) {
-      dispatch({ type: 'SET_SUBMITTING', payload: false });
-      dispatch({ type: 'SET_ERROR' });
+      dispatch({ type: "SET_SUBMITTING", payload: false });
+      dispatch({ type: "SET_ERROR" });
     }
   },
 });

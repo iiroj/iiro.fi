@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
-import Title from './Title';
-import Body from './Body';
-import Footer from './Footer';
+import Title from "./Title";
+import Body from "./Body";
+import Footer from "./Footer";
 
 const Article = ({ body, title }) => (
   <Fragment>

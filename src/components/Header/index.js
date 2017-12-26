@@ -1,13 +1,13 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { hiDPI } from 'polished';
+import React from "react";
+import styled, { css } from "styled-components";
+import { hiDPI } from "polished";
 
-import Amp from '../Amp';
-import FraktioLink, { Logo } from '../FraktioLink';
+import Amp from "../Amp";
+import FraktioLink, { Logo } from "../FraktioLink";
 
-import profilePicture from './profilePicture.jpg';
-import profilePicture2x from './profilePicture@2x.jpg';
-import profilePicture3x from './profilePicture@3x.jpg';
+import profilePicture from "./profilePicture.jpg";
+import profilePicture2x from "./profilePicture@2x.jpg";
+import profilePicture3x from "./profilePicture@3x.jpg";
 
 export const background = css`
   background-image: url(${profilePicture});

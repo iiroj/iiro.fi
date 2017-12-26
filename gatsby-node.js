@@ -1,10 +1,10 @@
-const path = require('path');
+const path = require("path");
 
 exports.modifyWebpackConfig = ({ config }) => {
   config.merge({
     resolve: {
       root: `${__dirname}/src`,
-      extensions: ['', '.js', '.jsx'],
+      extensions: ["", ".js", ".jsx"],
     },
   });
 };
@@ -12,25 +12,25 @@ exports.modifyWebpackConfig = ({ config }) => {
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
 
-  if (node.internal.type === 'File' && typeof node.fields === 'undefined') {
+  if (node.internal.type === "File" && typeof node.fields === "undefined") {
     const parsedFilePath = path.parse(node.absolutePath);
-    const slug = `/${parsedFilePath.dir.split('---')[1]}/`;
+    const slug = `/${parsedFilePath.dir.split("---")[1]}/`;
     createNodeField({
       node,
-      name: 'slug',
+      name: "slug",
       value: slug,
     });
-  } else if (node.internal.type === 'MarkdownRemark' && typeof node.frontmatter.slug !== 'undefined') {
+  } else if (node.internal.type === "MarkdownRemark" && typeof node.frontmatter.slug !== "undefined") {
     createNodeField({
       node,
-      name: 'slug',
+      name: "slug",
       value: `/${node.frontmatter.slug}/`,
     });
-  } else if (node.internal.type === 'MarkdownRemark' && typeof node.fields === 'undefined') {
+  } else if (node.internal.type === "MarkdownRemark" && typeof node.fields === "undefined") {
     const fileNode = getNode(node.parent);
     createNodeField({
       node,
-      name: 'slug',
+      name: "slug",
       value: fileNode.fields.slug,
     });
   }
