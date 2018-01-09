@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Helmet from "react-helmet";
 
 import Header from "../components/Header";
-import PostList from "../components/PostList";
 import Links from "../components/Links";
 import RateMe from "../components/RateMe";
 
@@ -113,11 +112,6 @@ const Index = () => (
       <Header />
     </HeaderArea>
     <MainArea>
-      <h3>Blog</h3>
-      <ul>
-        <PostList />
-      </ul>
-      <h3>Elsewhere</h3>
       <ul>
         <Links />
       </ul>

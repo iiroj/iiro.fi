@@ -3,14 +3,12 @@ import PropTypes from "prop-types";
 import styled, { injectGlobal } from "styled-components";
 import reset from "css-wipe/js";
 
-import Roboto from "../styles/Roboto";
 import ScrollToTop from "../components/ScrollToTop";
 
 const YELLOW = `hsla(44,100%,75%,1)`;
 
 injectGlobal`
   ${reset}
-  ${Roboto}
 
   html, body {
     height: 100%;
@@ -23,7 +21,10 @@ injectGlobal`
   body {
     background-color: hsla(0, 0%, 100%, 1);
     color: hsla(0, 0%, 30%, 1);
-    font-family: Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont,
+      "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5rem;

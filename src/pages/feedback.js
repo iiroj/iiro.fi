@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
 
-import { postJson } from "../../utils/postJson";
+import { postJson } from "../utils/postJson";
 import Back from "../components/Back";
 import FeedbackForm from "../components/FeedbackForm";
 

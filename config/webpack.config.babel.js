@@ -5,7 +5,7 @@ import SWPrecacheWebpackPlugin from "sw-precache-webpack-plugin";
 import WebpackAssetsManifest from "webpack-assets-manifest";
 import IgnoreEmitPlugin from "ignore-emit-webpack-plugin";
 
-import getPaths from "./utils/render-paths";
+import getPaths from "../utils/paths";
 
 const isProduction = process.env.NODE_ENV === "production";
 const PORT = 8080;
@@ -17,10 +17,6 @@ const config = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ["react-hot-loader/webpack", "babel-loader", "eslint-loader"],
-      },
-      {
-        test: /\.(md|css)$/,
-        use: ["raw-loader"],
       },
       {
         test: /\.(ico|jpg|pdf|png|woff|woff2)$/,
@@ -44,11 +40,6 @@ const config = {
     path: __dirname + "/dist",
     publicPath: "/",
   },
-  devServer: {
-    port: PORT,
-    overlay: true,
-    historyApiFallback: true,
-  },
   plugins: [
     new webpack.DefinePlugin({
       "process.env": { NODE_ENV: JSON.stringify(isProduction ? "production" : "development") },
@@ -59,7 +50,7 @@ const config = {
 if (isProduction) {
   config.entry = {
     bundle: "./src/index.js",
-    renderer: "./src/renderer.js",
+    renderer: "./utils/renderer.js",
   };
   config.plugins.push(
     new StaticSiteGeneratorPlugin({
@@ -91,6 +82,11 @@ if (isProduction) {
     bundle: "./src/index.js",
   };
   config.devtool = "cheap-module-eval-source-map";
+  config.devServer = {
+    port: PORT,
+    overlay: true,
+    historyApiFallback: true,
+  };
   config.plugins.push(
     new HtmlWebpackPlugin({
       template: "./template.html",

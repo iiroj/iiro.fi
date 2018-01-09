@@ -1,4 +1,4 @@
-import * as glob from "../src/pages/*.js";
+import * as glob from "../pages/*.js";
 
 const url = string => {
   const url =
