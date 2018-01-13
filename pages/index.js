@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 
-import Header from "../src/components/Header";
-import Links from "../src/components/Links";
-import RateMe from "../src/components/RateMe";
+import { media } from "../src/styles/helpers";
+import BaseGrid from "../src/components/Grid";
+import Picture from "../src/components/Picture";
+import Baskerville from "../src/components/Baskerville";
+import FraktioLink from "../src/components/FraktioLink";
 
 const microdata = {
   "@context": "http://schema.org",
@@ -34,66 +36,30 @@ const microdata = {
   ],
 };
 
-const HeaderArea = styled.div`
-  background: hsla(0, 0%, 95%, 1);
-  display: flex;
-  flex-direction: column;
-  position: relative;
+const Text = styled.article``;
 
-  &::after {
-    background-color: hsla(0, 0%, 100%, 1);
-    content: "";
-    display: block;
-    height: 5rem;
-    position: absolute;
-    bottom: -5rem;
-    transform-origin: top left;
-    transform: skewY(-3deg);
-    width: 100%;
-  }
-
-  @media (min-width: 64rem) {
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 50%;
-
-    &::after {
-      height: 100%;
-      right: -5rem;
-      top: 0;
-      transform-origin: top right;
-      transform: skewX(-3deg);
-      width: 5rem;
-    }
-  }
-`;
-
-const MainArea = styled.div`
-  background-color: hsla(0, 0%, 100%, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const Grid = BaseGrid.extend`
+  align-items: center;
+  min-height: 100%;
   padding: 2rem;
-  position: relative;
-  z-index: 1;
 
-  h3 {
-    opacity: 0.6;
+  ${Picture} {
+    grid-column: col 2 / span 6;
+    height: 40vh;
+    min-height: 32rem;
+
+    ${media.tablet`
+      grid-column: col 3 / span 3;
+    `};
   }
 
-  > * {
-    margin: 1rem 0;
-  }
+  ${Text} {
+    grid-column: col 4 / span 6;
 
-  ${RateMe} {
-    margin-right: auto;
-  }
-
-  @media (min-width: 64rem) {
-    margin-left: 50%;
-    padding: 4rem;
+    ${media.tablet`
+      grid-column: col 7 / span 4;
+      margin-top: 20vh;
+    `};
   }
 `;
 
@@ -108,15 +74,16 @@ const Index = () => (
         },
       ]}
     />
-    <HeaderArea>
-      <Header />
-    </HeaderArea>
-    <MainArea>
-      <ul>
-        <Links />
-      </ul>
-      <RateMe />
-    </MainArea>
+    <Grid>
+      <Picture />
+      <Text>
+        <h1>I am Iiro Jäppinen</h1>
+        <p>
+          a UI Designer <Baskerville>&</Baskerville> Developer, all-around handyman at <FraktioLink />. React
+          enthusiast.
+        </p>
+      </Text>
+    </Grid>
   </Fragment>
 );
 

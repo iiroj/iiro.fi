@@ -15,7 +15,7 @@ export const FraktioLogo = styled(({ className }) => (
   width: 19px;
 
   path {
-    fill: hsla(0, 0%, 100%, 1);
+    fill: hsla(0, 0%, 30%, 1);
   }
 `;
 
