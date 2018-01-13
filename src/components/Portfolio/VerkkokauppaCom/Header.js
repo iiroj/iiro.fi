@@ -2,13 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { ButtonLink } from "../../../../pages/portfolio";
 
-import pixel1x from "./pixel.png";
-import pixel2x from "./pixel@2x.png";
-import pixel3x from "./pixel@3x.png";
-import frontpage1x from "./frontpage.jpg";
-import frontpage2x from "./frontpage@2x.jpg";
-import frontpage3x from "./frontpage@3x.jpg";
-
 const Container = styled.header`
   align-items: center;
   background-color: #e30613;
@@ -84,8 +77,14 @@ export const Header = () => (
       </ButtonLink>
     </Text>
     <PhoneContainer>
-      <Phone src={pixel1x} srcSet={`${pixel1x} 1x, ${pixel2x} 2x, ${pixel3x} 3x`} />
-      <Screen src={frontpage1x} srcSet={`${frontpage1x} 1x, ${frontpage2x} 2x, ${frontpage3x} 3x`} />
+      <Phone
+        src="/static/portfolio/verkkokauppacom/pixel.png"
+        srcSet="/static/portfolio/verkkokauppacom/pixel.png 1x, /static/portfolio/verkkokauppacom/pixel@2x.png 2x, /static/portfolio/verkkokauppacom/pixel@3x.png 3x"
+      />
+      <Screen
+        src="/static/portfolio/verkkokauppacom/frontpage.jpg"
+        srcSet="/static/portfolio/verkkokauppacom/frontpage.jpg 1x, /static/portfolio/verkkokauppacom/frontpage@2x.jpg 2x, /static/portfolio/verkkokauppacom/frontpage@3x.jpg 3x"
+      />
     </PhoneContainer>
   </Container>
 );

@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import barometer1x from "./price-barometer.png";
-import barometer2x from "./price-barometer@2x.png";
-import barometer3x from "./price-barometer@3x.png";
-
 const Svg = styled.svg`
   height: 120px;
   left: 50%;
@@ -62,7 +58,10 @@ const Text = styled.div`
 
 export const Barometer = () => (
   <Section>
-    <Image src={barometer1x} srcSet={`${barometer1x} 1x, ${barometer2x} 2x, ${barometer3x} 3x`} />
+    <Image
+      src="/static/portfolio/verkkokauppacom/price-barometer.png"
+      srcSet="/static/portfolio/verkkokauppacom/price-barometer.png 1x, /static/portfolio/verkkokauppacom/price-barometer@2x.png 2x, /static/portfolio/verkkokauppacom/price-barometer@3x.png 3x"
+    />
     <Graph />
     <Text>
       <h2>Making Informed Customers</h2>

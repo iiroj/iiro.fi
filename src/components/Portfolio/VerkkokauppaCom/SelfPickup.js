@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import ipad1x from "./ipad.jpg";
-import ipad2x from "./ipad@2x.jpg";
-import ipad3x from "./ipad@3x.jpg";
-
 const Section = styled.section`
   background-color: #a4abb3;
   box-sizing: border-box;
@@ -40,7 +36,10 @@ const Text = styled.div`
 
 export const SelfPickup = () => (
   <Section>
-    <Image src={ipad1x} srcSet={`${ipad1x} 1x, ${ipad2x} 2x, ${ipad3x} 3x`} />
+    <Image
+      src="/static/portfolio/verkkokauppacom/ipad.jpg"
+      srcSet="/static/portfolio/verkkokauppacom/ipad.jpg 1x, /static/portfolio/verkkokauppacom/ipad@2x.jpg 2x, /static/portfolio/verkkokauppacom/ipad@3x.jpg 3x"
+    />
     <Text>
       <h2>Self-Service order pickup</h2>
       <p>

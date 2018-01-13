@@ -1,11 +1,12 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
+import styled from "styled-components";
 
-import { postJson } from "../utils/postJson";
-import Back from "../components/Back";
-import FeedbackForm from "../components/FeedbackForm";
+import { postJson } from "../src/utils/postJson";
+import Back from "../src/components/Back";
+import FeedbackForm from "../src/components/FeedbackForm";
 
 const API_URL = "https://s7ozycgh27.execute-api.eu-central-1.amazonaws.com/prod/submit";
 const QUESTIONS = [
@@ -46,7 +47,7 @@ const reducer = withReducer(
     score: null,
     submitted: false,
     submitting: false,
-  }
+  },
 );
 
 const handlers = withHandlers({
@@ -75,9 +76,15 @@ const handlers = withHandlers({
 
 const enhance = compose(reducer, handlers);
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+`;
+
 const Feedback = enhance(
   ({ question, setComment, setScore, state: { comment, error, score, submitted, submitting }, submit, url }) => (
-    <Fragment>
+    <Container>
       <Helmet title={question} />
       <Back />
       <FeedbackForm
@@ -90,8 +97,8 @@ const Feedback = enhance(
         onSubmit={submit}
         question={question}
       />
-    </Fragment>
-  )
+    </Container>
+  ),
 );
 
 Feedback.propTypes = {

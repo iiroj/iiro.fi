@@ -8,52 +8,40 @@
   "repository": "gitlab:iiroj/iiro.fi",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.config.babel.js -d --progress --hot",
-    "prebuild": "rimraf ./dist",
-    "build": "NODE_ENV=production webpack --config config/webpack.config.babel.js -p --progress --hot",
-    "lint": "eslint --ext .js --ignore-pattern dist .",
-    "lint:fix": "eslint --fix --ext .js --ignore-pattern dist ."
+    "start": "NODE_ENV=development next",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "build": "NODE_ENV=production next build && next export"
   },
   "dependencies": {
+    "babel-plugin-inline-react-svg": "^0.5.2",
     "css-wipe": "^4.3.0",
+    "next": "^4.2.1",
     "polished": "^1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0",
-    "remark-react": "^4.0.1",
-    "styled-components": "^2.2.4"
+    "styled-components": "^2.4.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.0.3",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-import-glob": "^2.0.0",
-    "babel-plugin-inline-react-svg": "^0.5.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
-    "eslint": "^4.13.1",
+    "babel-plugin-styled-components": "^1.4.0",
+    "eslint": "^4.14.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.5.1",
-    "file-loader": "^1.1.5",
-    "glob": "^7.1.2",
-    "html-webpack-plugin": "^2.30.1",
-    "ignore-emit-webpack-plugin": "^0.2.1",
     "prettier": "^1.9.2",
-    "prop-types": "^15.6.0",
-    "react-hot-loader": "^3.1.3",
-    "rimraf": "^2.6.2",
-    "static-site-generator-webpack-plugin": "^3.4.1",
-    "sw-precache-webpack-plugin": "^0.11.4",
-    "webpack": "^3.10.0",
-    "webpack-assets-manifest": "^1.0.0",
-    "webpack-dev-server": "^2.9.7"
-  }
+    "webpack": "^3.10.0"
+  },
+  "keywords": [
+    "aws",
+    "cloudfront",
+    "nextjs",
+    "react",
+    "s3",
+    "serverless",
+    "static-site",
+    "styled-components"
+  ]
 }

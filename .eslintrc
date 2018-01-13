@@ -1,15 +1,28 @@
 {
-  "extends": ["plugin:react/recommended", "prettier", "prettier/react"],
-  "plugins": ["react", "prettier"],
-  "parser": "babel-eslint",
+  "extends": [
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "react",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+  },
   "rules": {
     "react/prop-types": 1,
     "prettier/prettier": [
       "error",
       {
-        "singleQuote": false,
         "printWidth": 120,
-        "trailingComma": "es5"
+        "trailingComma": "all"
       }
     ]
   }

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default styled(({ className }) => (
-  <Link className={className} to="/feedback/">
-    Rate Me!
+  <Link href="/feedback/">
+    <a className={className}>Rate Me!</a>
   </Link>
 ))`
   background: hsla(0, 0%, 98%, 1);

@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import humble1x from "./humble-logo.png";
-import humble2x from "./humble-logo@2x.png";
-import humble3x from "./humble-logo@3x.png";
-
 const Article = styled.article`
   align-items: center;
   background-color: #3b3e48;
@@ -33,7 +29,10 @@ const Text = styled.p`
 
 export const HumbleBundle = () => (
   <Article>
-    <Logo src={humble1x} srcSet={`${humble1x} 1x, ${humble2x} 2x, ${humble3x} 3x`} />
+    <Logo
+      src="/static/portfolio/humble/humble-logo.png"
+      srcSet="/static/portfolio/humble/humble-logo.png 1x, /static/portfolio/humble/humble-logo@2x.png 2x, /static/portfolio/humble/humble-logo@3x.png 3x"
+    />
     <Text>
       I designed the first{" "}
       <a href="https://www.humblebundle.com" target="_blank" rel="noopener noreferrer">

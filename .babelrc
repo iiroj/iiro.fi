@@ -1,21 +1,16 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": ["last 2 versions", "ie >= 11"],
-          "node": "current"
-        },
-        "modules": "commonjs"
-      }
-    ]
+    "next/babel"
   ],
   "plugins": [
-    "babel-plugin-import-glob",
-    "babel-plugin-transform-class-properties",
-    "babel-plugin-transform-object-rest-spread",
-    "babel-plugin-transform-react-jsx",
-    "babel-plugin-inline-react-svg"
+    "babel-plugin-inline-react-svg",
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ]
   ]
 }

@@ -1,13 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import dialog1x from "./dialog.png";
-import dialog2x from "./dialog@2x.png";
-import dialog3x from "./dialog@3x.png";
-import list1x from "./list.png";
-import list2x from "./list@2x.png";
-import list3x from "./list@3x.png";
-
 const Section = styled.section`
   align-items: center;
   display: flex;
@@ -54,8 +47,14 @@ export const DeliveryEstimates = () => (
       </p>
     </Text>
     <Image>
-      <img src={dialog1x} srcSet={`${dialog1x} 1x, ${dialog2x} 2x, ${dialog3x} 3x`} />
-      <img src={list1x} srcSet={`${list1x} 1x, ${list2x} 2x, ${list3x} 3x`} />
+      <img
+        src="/static/portfolio/verkkokauppacom/dialog.png"
+        srcSet="/static/portfolio/verkkokauppacom/dialog.png 1x, /static/portfolio/verkkokauppacom/dialog@2x.png 2x, /static/portfolio/verkkokauppacom/dialog@3x.png 3x"
+      />
+      <img
+        src="/static/portfolio/verkkokauppacom/list.png"
+        srcSet="/static/portfolio/verkkokauppacom/list.png 1x, /static/portfolio/verkkokauppacom/list@2x.png 2x, /static/portfolio/verkkokauppacom/list@3x.png 3x"
+      />
     </Image>
   </Section>
 );

@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 
-import Header from "../components/Header";
-import Links from "../components/Links";
-import RateMe from "../components/RateMe";
+import Header from "../src/components/Header";
+import Links from "../src/components/Links";
+import RateMe from "../src/components/RateMe";
 
 const microdata = {
   "@context": "http://schema.org",

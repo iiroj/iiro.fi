@@ -1,6 +1,5 @@
 const fs = require("fs");
 const glob = require("glob");
-const frontmatter = require("frontmatter");
 
 const pagesDir = process.cwd() + "/src/pages";
 

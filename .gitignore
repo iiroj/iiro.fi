@@ -1,4 +1,6 @@
 .DS_store
-dist
+.next
 node_modules
+out
+public
 sketch
