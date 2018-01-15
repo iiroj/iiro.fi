@@ -36,7 +36,18 @@ const microdata = {
   ],
 };
 
-const Text = styled.article``;
+const Title = styled.h1`
+  font-size: 150%;
+  font-weight: 500;
+`;
+
+const Text = styled.article`
+  line-height: 1.5;
+
+  ${Title} {
+    margin-bottom: 1rem;
+  }
+`;
 
 const Grid = BaseGrid.extend`
   align-items: center;
@@ -77,7 +88,7 @@ const Index = () => (
     <Grid>
       <Picture />
       <Text>
-        <h1>I am Iiro Jäppinen</h1>
+        <Title>I am Iiro Jäppinen</Title>
         <p>
           a UI Designer <Baskerville>&</Baskerville> Developer, all-around handyman at <FraktioLink />. React
           enthusiast.

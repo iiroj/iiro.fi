@@ -18,6 +18,7 @@
   },
   "rules": {
     "react/prop-types": 1,
+    "react/display-name": 0,
     "prettier/prettier": [
       "error",
       {
