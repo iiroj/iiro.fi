@@ -65,7 +65,6 @@ const Grid = BaseGrid.extend`
 
   ${Picture} {
     grid-column: col 2 / span 8;
-    height: 40vh;
     min-height: 32rem;
 
     ${media.tablet`

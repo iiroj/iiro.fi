@@ -5,10 +5,6 @@ const Picture = styled.div`
   background-image: url("/static/picture.jpg");
   background-position: 55% 50%;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: flex-end;
   position: relative;
 
   ${hiDPI(1.5)} {
