@@ -7,7 +7,7 @@ const X = styled.a`
   color: transparent;
   font-size: 0;
   height: 1.5rem;
-  margin: 2rem 0 0 1rem;
+  margin: 2.4rem 0 0 1rem;
   overflow: hidden;
   position: absolute;
   top: 0;

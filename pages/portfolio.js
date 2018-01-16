@@ -17,6 +17,7 @@ export const ButtonLink = styled.a`
   display: inline-block;
   line-height: 16px;
   padding: 12px 16px;
+  text-decoration: none;
   transition: color 125ms ease-in, box-shadow 125ms ease-in;
 
   &:hover {

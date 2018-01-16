@@ -7,6 +7,8 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   justify-content: center;
   margin: 0 auto;
   max-width: 44rem;
@@ -19,6 +21,7 @@ const Form = styled.form`
     h1 {
       font-size: 2rem;
       line-height: 1.25em;
+      margin-bottom: 1rem;
     }
 
     aside {
@@ -239,7 +242,7 @@ const isSubmitted = ({ submitted }) => submitted;
 const enhance = branch(
   isNotSubmitted,
   renderComponent(FeedbackForm),
-  branch(isSubmitted, renderComponent(FeedbackSubmitted), renderComponent(FeedbackError))
+  branch(isSubmitted, renderComponent(FeedbackSubmitted), renderComponent(FeedbackError)),
 );
 
 export default enhance(FeedbackForm);

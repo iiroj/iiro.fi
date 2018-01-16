@@ -54,6 +54,10 @@ const Text = styled.div`
   margin: 0 auto 2rem auto;
   max-width: 480px;
   padding: 0 1rem;
+
+  a {
+    color: inherit;
+  }
 `;
 
 export const Barometer = () => (

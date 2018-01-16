@@ -23,6 +23,7 @@ const Text = styled.p`
 
   a {
     background: none;
+    color: inherit;
     text-decoration: underline;
   }
 `;

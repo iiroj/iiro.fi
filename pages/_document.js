@@ -3,8 +3,6 @@ import Document, { Head, Main, NextScript } from "next/document";
 import { injectGlobal, ServerStyleSheet } from "styled-components";
 import reset from "css-wipe/js";
 
-const YELLOW = `hsla(44,100%,75%,1)`;
-
 injectGlobal`
 ${reset}
 
@@ -23,38 +21,17 @@ html {
 body {
   background-color: hsla(0, 0%, 100%, 1);
   color: hsla(0, 0%, 30%, 1);
-  font-family: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-family: "Alegreya", "Georgia", serif;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.5rem;
 }
 
-a {
-  background-image: linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%);
-  background-position: 0 1em;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  color: inherit;
-  text-decoration: none;
-  transition: background-position 125ms ease-out 250ms;
-
-  &:hover {
-    background-image: linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%);
-    background-position: 0 0em;
-    cursor: pointer;
-    transition: background-position 100ms ease-out 0s;
-  }
-
-  &:active {
-    color: hsla(0, 0%, 0%, 1);
-  }
+* {
+  line-height: 1.5;
 }
 
 strong {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 em {
@@ -79,7 +56,11 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
           <link rel="apple-touch-icon" sizes="600x600" href="/static/icon.png" />
-          <link rel="preload stylesheet" href="https://fonts.googleapis.com/css?family=Spectral:400,600" as="style" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Alegreya:400,500"
+            rel="subresource stylesheet"
+            as="style"
+          />
           {this.props.styleTags}
         </Head>
         <body>
