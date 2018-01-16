@@ -2,13 +2,13 @@
 
 [![pipeline status](https://gitlab.com/iiroj/iiro.fi/badges/master/pipeline.svg)](https://gitlab.com/iiroj/iiro.fi/commits/master)
 
-A blog built with [Gatsby](https://github.com/gatsbyjs/gatsby), available at [iiro.fi](https://iiro.fi).
+A static site built with [Next.js](https://github.com/zeit/next.js/), available at [iiro.fi](https://iiro.fi).
 
 The canonical repository for this project is at [gitlab:iiroj/iiro.fi](https://gitlab.com/iiroj/iiro.fi). It is mirrored at [github:iiroj/iiro.fi](https://github.com/iiroj/iiro.fi) for convenience.
 
 ## Technology used
 
-This static site is built with [Gatsby](https://github.com/gatsbyjs/gatsby), a static-site generator for [React](https://facebook.github.io/react/). It is composed of basic React pure functional components and some static images.
+This static site is built with [Next.js](https://github.com/zeit/next.js/), a framework for server-rendered or statically-exported [React](https://facebook.github.io/react/) apps. It is composed of basic React pure functional components and some static images.
 
 [Styled-components](https://styled-components.com) are used for styling, so no external CSS files are needed. [Css-wipe](https://github.com/stackcss/css-wipe) is used for resetting browser default styles.
 
@@ -40,11 +40,11 @@ $ npm run build
 
 ## Deployment
 
-The live site, [iiro.fi](https://iiro.fi), is hosted in Amazon S3 with Cloudfront.
+The live site, [iiro.fi](https://iiro.fi), is hosted at [Netlify](https://www.netlify.com).
 
-Every push to the `master` branch of the [canonical repository](https://gitlab.com/iiroj/iiro.fi) is linted and built, and finally deployed to S3, using GitLab CI. Deploying is handled with `s3cmd` running in Docker. s3cmd also creates invalidations for CloudFront.
+Every push to the `master` branch of the [canonical repository](https://gitlab.com/iiroj/iiro.fi) sends a webhook to Netlify instructing it to pull the latest HEAD and then deploy the site across its network. Netlify will automatically build the site with `npm run build`.
 
-Please see the file `.gitlab-ci.yml` for build details.
+You can read more about Netlify's continuous deployment process [here](https://www.netlify.com/docs/continuous-deployment/).
 
 ## License
 
