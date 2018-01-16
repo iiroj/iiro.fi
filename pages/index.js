@@ -9,6 +9,7 @@ import Picture from "../src/components/Picture";
 import Baskerville from "../src/components/Baskerville";
 import Fraktio from "../src/components/Fraktio";
 import Link from "../src/components/Link";
+import Links from "../src/components/Links";
 import RateMe from "../src/components/RateMe";
 
 const microdata = {
@@ -118,6 +119,7 @@ const Index = () => (
           In my free time I like to go to the gym and train strength. Recently I’ve been following the 5x5 progam
           because of its efficiency and relatively short time requirements.
         </p>
+        <Links />
         <RateMe />
       </Text>
     </Grid>
