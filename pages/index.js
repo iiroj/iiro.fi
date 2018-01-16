@@ -115,10 +115,7 @@ const Index = () => (
           <Link href="https://github.com/zeit/next.js/">Next.js</Link> and{" "}
           <Link href="https://github.com/acdlite/recompose">Recompose</Link>.
         </p>
-        <p>
-          In my free time I like to go to the gym and train strength. Recently I’ve been following the 5x5 progam
-          because of its efficiency and relatively short time requirements.
-        </p>
+        <p>In my free time I like to go to the gym and train strength. Recently I’ve been following the 5x5 progam.</p>
         <Links />
         <RateMe />
       </Text>
