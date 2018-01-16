@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "gatsby-link";
-import { pure } from "recompose";
+import Link from "next/link";
 
-const X = styled(Link)`
+const X = styled.a`
   background: none !important;
   color: transparent;
   font-size: 0;
   height: 1.5rem;
-  margin: 2rem 0 0 1rem;
+  margin: 2.4rem 0 0 1rem;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -62,10 +61,10 @@ const X = styled(Link)`
 
 const Back = () => (
   <nav>
-    <X to="/" title="Back to iiro.fi">
-      Back to iiro.fi
-    </X>
+    <Link href="/">
+      <X title="Back to iiro.fi">Back to iiro.fi</X>
+    </Link>
   </nav>
 );
 
-export default pure(Back);
+export default Back;

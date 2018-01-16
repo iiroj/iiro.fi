@@ -1,19 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "gatsby-link";
+import Link from "next/link";
 
 export default styled(({ className }) => (
-  <Link className={className} to="/feedback/">
-    Rate Me!
+  <Link href="/feedback/">
+    <a className={className}>Rate Me!</a>
   </Link>
 ))`
   background: hsla(0, 0%, 98%, 1);
   border-radius: 2px;
   border-bottom-left-radius: 0;
   box-shadow: inset 0 0 0 1px hsla(0, 0%, 90%, 1);
+  color: inherit;
   display: inline-block;
+  font-size: 75%;
+  font-weight: 500;
   padding: 0.5rem 1rem;
   position: relative;
+  text-decoration: none;
   transition: all 125ms ease-out 250ms;
 
   &::before,

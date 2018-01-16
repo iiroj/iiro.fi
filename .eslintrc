@@ -1,21 +1,29 @@
 {
-  "extends": ["plugin:react/recommended", "prettier", "prettier/react"],
-  "plugins": ["react", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "react",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "jsx": true
-    }
+    },
   },
   "rules": {
     "react/prop-types": 1,
+    "react/display-name": 0,
     "prettier/prettier": [
       "error",
       {
         "printWidth": 120,
-        "trailingComma": "es5"
+        "trailingComma": "all"
       }
     ]
   }

@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import Link from "../Link";
+
 import email from "./email.svg";
 import twitter from "./twitter.svg";
 import linkedin from "./linkedin.svg";
@@ -41,45 +43,40 @@ const links = [
   },
 ];
 
+const List = styled.ul`
+  margin: 0.5rem -0.5rem;
+`;
+
 const ListItem = styled.li`
-  margin-top: 1rem;
+  display: inline-block;
+  margin: 0.5rem;
 
   &:first-child {
     margin-top: 0;
   }
 `;
 
-const Link = styled.a`
-  background: none !important;
-  display: inline-block;
-  margin-top: 1rem;
-
-  > img {
-    height: 24px;
-    margin-right: 1rem;
+const IconLink = Link.extend`
+  > svg {
+    height: 1.5rem;
+    margin-right: 0.25rem;
     transition: transform 125ms ease-out 250ms;
-    vertical-align: -33%;
-    width: 24px;
-  }
-
-  &:hover > img {
-    transform: scale(1.2);
-    transition: transform 100ms ease-out 0s;
-  }
-
-  &:active > img {
-    transform: scale(1);
+    vertical-align: -16%;
+    width: 1.5rem;
   }
 `;
 
-const Links = () =>
-  links.map(link => (
-    <ListItem key={link.title}>
-      <Link href={link.href}>
-        <img src={link.icon} alt={`${link.title} icon`} />
-        <span>{link.title}</span>
-      </Link>
-    </ListItem>
-  ));
+const Links = () => (
+  <List>
+    {links.map(link => (
+      <ListItem key={link.title}>
+        <IconLink href={link.href}>
+          <link.icon />
+          <span>{link.title}</span>
+        </IconLink>
+      </ListItem>
+    ))}
+  </List>
+);
 
 export default Links;
