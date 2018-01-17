@@ -4,7 +4,6 @@
   "description": "Static blog made with Gatsby",
   "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
-  "private": true,
   "repository": "gitlab:iiroj/iiro.fi",
   "private": true,
   "scripts": {
@@ -13,7 +12,8 @@
     "lint:fix": "eslint --fix .",
     "prebuild": "npm run lint",
     "build": "NODE_ENV=production next build && next export",
-    "postbuild": "cp _headers out/"
+    "postbuild": "cp _headers out/",
+    "purge-cloudflare-cache": "./scripts/purge-cloudflare-cache.sh"
   },
   "dependencies": {
     "babel-plugin-inline-react-svg": "^0.5.2",
