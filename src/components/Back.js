@@ -5,6 +5,7 @@ import Link from "next/link";
 const X = styled.a`
   background: none !important;
   color: transparent;
+  cursor: pointer;
   font-size: 0;
   height: 1.5rem;
   margin: 2.4rem 0 0 1rem;
