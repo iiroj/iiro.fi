@@ -12,6 +12,11 @@ const QUESTIONS = [
   "How likely would you be to recommend Iiro as a colleague?",
 ];
 
+const encode = data =>
+  Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
+
 const resolveFeedbackProps = () =>
   withProps(props => ({
     question: QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)],
@@ -22,12 +27,10 @@ const reducer = withReducer(
   "dispatch",
   (state, action) => {
     switch (action.type) {
-      case "SET_COMMENT":
-        return { ...state, comment: action.payload };
+      case "SET_STATE":
+        return { ...state, [action.payload.name]: action.payload.value };
       case "SET_ERROR":
         return { ...state, error: true };
-      case "SET_SCORE":
-        return { ...state, score: action.payload };
       case "SET_SUBMITTED":
         return { ...state, submitted: action.payload };
       case "SET_SUBMITTING":
@@ -45,16 +48,11 @@ const reducer = withReducer(
   },
 );
 
-const encode = data => {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
-};
-
 const handlers = withHandlers({
-  setComment: ({ dispatch }) => event => dispatch({ type: "SET_COMMENT", payload: event.target.value }),
-  setScore: ({ dispatch }) => event => dispatch({ type: "SET_SCORE", payload: event }),
-  submit: ({ dispatch, state: { score, comment }, question }) => async event => {
+  onChange: ({ dispatch }) => event =>
+    dispatch({ type: "SET_STATE", payload: { name: event.target.name, value: event.target.value } }),
+
+  onSubmit: ({ dispatch, state: { score, comment }, question }) => async event => {
     event.preventDefault();
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
@@ -91,38 +89,35 @@ const Container = styled.div`
   min-height: 100%;
 `;
 
-const Feedback = enhance(
-  ({ question, setComment, setScore, state: { comment, error, score, submitted, submitting }, submit }) => (
-    <Container>
-      <Head>
-        <title>{question}</title>
-      </Head>
-      <Back />
-      <FeedbackForm
-        submitted={submitted}
-        submitting={submitting}
-        score={score}
-        error={error}
-        handleScore={setScore}
-        handleComment={setComment}
-        onSubmit={submit}
-        question={question}
-      />
-    </Container>
-  ),
-);
+const Feedback = enhance(({ onChange, onSubmit, question, state: { error, score, submitted, submitting } }) => (
+  <Container>
+    <Head>
+      <title>{question}</title>
+    </Head>
+    <Back />
+    <FeedbackForm
+      submitted={submitted}
+      submitting={submitting}
+      score={score}
+      error={error}
+      onChange={onChange}
+      onSubmit={onSubmit}
+      question={question}
+    />
+  </Container>
+));
 
 Feedback.propTypes = {
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
   question: PropTypes.string.isRequired,
-  setComment: PropTypes.func,
   state: PropTypes.shape({
     comment: PropTypes.string,
     error: PropTypes.bool.isRequired,
-    score: PropTypes.number,
+    score: PropTypes.string,
     submitted: PropTypes.bool.isRequired,
     submitting: PropTypes.bool.isRequired,
   }),
-  submit: PropTypes.func,
 };
 
 export default resolveFeedbackProps()(Feedback);
