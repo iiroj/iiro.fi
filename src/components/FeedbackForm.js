@@ -213,7 +213,7 @@ const FeedbackForm = pure(({ handleScore, handleComment, onSubmit, question, sco
   ));
 
   return (
-    <Form onSubmit={onSubmit} data-netlify>
+    <Form onSubmit={onSubmit} name="Feedback" data-netlify>
       <header>
         <h1>{question}</h1>
         <aside>On a scale from 1 to 7</aside>
