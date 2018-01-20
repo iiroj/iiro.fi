@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
-import Helmet from "react-helmet";
+import Head from "next/head";
 
 import { media } from "../src/styles/helpers";
 import BaseGrid from "../src/components/Grid";
@@ -11,7 +11,7 @@ import Link from "../src/components/Link";
 import Links from "../src/components/Links";
 import RateMe from "../src/components/RateMe";
 
-const microdata = {
+const microdata = JSON.stringify({
   "@context": "http://schema.org",
   "@type": "Person",
   name: "Iiro Jäppinen",
@@ -36,7 +36,7 @@ const microdata = {
     "https://github.com/iiroj",
     "https://gitlab.com/iiroj",
   ],
-};
+});
 
 const Title = styled.h1`
   font-size: 120%;
@@ -92,15 +92,10 @@ const Grid = BaseGrid.extend`
 
 const Index = () => (
   <Fragment>
-    <Helmet
-      title="Iiro Jäppinen"
-      script={[
-        {
-          type: "application/ld+json",
-          innerHTML: JSON.stringify(microdata),
-        },
-      ]}
-    />
+    <Head>
+      <title>Iiro Jäppinen</title>
+      <script type="application/ld+json">{microdata}</script>
+    </Head>
     <Grid>
       <Picture />
       <Text>

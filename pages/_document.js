@@ -4,39 +4,39 @@ import { injectGlobal, ServerStyleSheet } from "styled-components";
 import reset from "css-wipe/js";
 
 injectGlobal`
-${reset}
+  ${reset}
 
-html,
-body,
-body > div:first-child,
-#__next,
-#__next > div[data-reactroot] {
-  height: 100%;
-}
+  html,
+  body,
+  body > div:first-child,
+  #__next,
+  #__next > div[data-reactroot] {
+    height: 100%;
+  }
 
-html {
-  font-size: 12px;
-}
+  html {
+    font-size: 12px;
+  }
 
-body {
-  background-color: hsla(0, 0%, 100%, 1);
-  color: hsla(0, 0%, 30%, 1);
-  font-family: "Alegreya", "Georgia", serif;
-  font-size: 16px;
-  font-weight: 400;
-}
+  body {
+    background-color: hsla(0, 0%, 100%, 1);
+    color: hsla(0, 0%, 30%, 1);
+    font-family: "Alegreya", "Georgia", serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
 
-* {
-  line-height: 1.5;
-}
+  * {
+    line-height: 1.5;
+  }
 
-strong {
-  font-weight: 500;
-}
+  strong {
+    font-weight: 500;
+  }
 
-em {
-  font-style: italic;
-}
+  em {
+    font-style: italic;
+  }
 `;
 
 export default class MyDocument extends Document {
@@ -48,8 +48,10 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    const { styleTags } = this.props;
+
     return (
-      <html lang="fi">
+      <html lang="en">
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -61,7 +63,7 @@ export default class MyDocument extends Document {
             rel="subresource stylesheet"
             as="style"
           />
-          {this.props.styleTags}
+          {styleTags}
         </Head>
         <body>
           <Main />

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+import Head from "next/head";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
 import styled from "styled-components";
 
@@ -94,7 +94,9 @@ const Container = styled.div`
 const Feedback = enhance(
   ({ question, setComment, setScore, state: { comment, error, score, submitted, submitting }, submit }) => (
     <Container>
-      <Helmet title={question} />
+      <Head>
+        <title>{question}</title>
+      </Head>
       <Back />
       <FeedbackForm
         submitted={submitted}

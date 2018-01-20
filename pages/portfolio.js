@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
-import Helmet from "react-helmet";
+import Head from "next/head";
 
 import Back from "../src/components/Back";
 import { VerkkokauppaCom } from "../src/components/Portfolio/VerkkokauppaCom";
@@ -50,7 +50,9 @@ const More = styled.aside`
 
 const PortfolioIndex = () => (
   <Fragment>
-    <Helmet title="Portfolio of Iiro Jäppinen" />
+    <Head>
+      <title>Portfolio of Iiro Jäppinen</title>
+    </Head>
     <Back />
     <Header>
       <h1>Portfolio of Iiro Jäppinen</h1>

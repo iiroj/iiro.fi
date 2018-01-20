@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export default styled(({ className }) => (
-  <Link href="/feedback/">
+  <Link prefetch href="/feedback/">
     <a className={className}>Rate Me!</a>
   </Link>
 ))`

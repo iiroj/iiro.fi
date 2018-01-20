@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "8.1.5",
+  "version": "8.2.0",
   "description": "Static blog made with Gatsby",
   "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
@@ -21,14 +21,13 @@
     "polished": "^1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-helmet": "^5.2.0",
     "recompose": "^0.26.0",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^0.5.2",
     "babel-plugin-styled-components": "^1.4.0",
-    "eslint": "^4.14.0",
+    "eslint": "^4.16.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-prettier": "^2.5.0",
