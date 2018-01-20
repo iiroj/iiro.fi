@@ -46,26 +46,29 @@ const reducer = withReducer(
   },
 );
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
+};
+
 const handlers = withHandlers({
   setComment: ({ dispatch }) => event => dispatch({ type: "SET_COMMENT", payload: event.target.value }),
   setScore: ({ dispatch }) => event => dispatch({ type: "SET_SCORE", payload: event }),
   submit: ({ dispatch, state: { score, comment }, question }) => async event => {
     event.preventDefault();
-
     dispatch({ type: "SET_SUBMITTING", payload: true });
-
-    const data = qs.stringify({
-      "form-name": "feedback",
-      question: question,
-      score: score,
-      comment: comment,
-    });
 
     try {
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: data,
+        body: encode({
+          "form-name": "Feedback",
+          question,
+          score,
+          comment,
+        }),
       }).then(response => {
         if (response.status >= 400) {
           throw new Error(respose.status);
