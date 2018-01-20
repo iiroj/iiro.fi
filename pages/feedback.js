@@ -2,25 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
+import qs from "qs";
 import styled from "styled-components";
 
-import { postJson } from "../src/utils/postJson";
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
 
-const API_URL = "https://s7ozycgh27.execute-api.eu-central-1.amazonaws.com/prod/submit";
 const QUESTIONS = [
   "How likely would you be to recommend Iiro as a designer?",
   "How likely would you be to recommend Iiro as a colleague?",
 ];
 
 const resolveFeedbackProps = () =>
-  withProps(props => {
-    return {
-      url: API_URL,
-      question: QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)],
-    };
-  });
+  withProps(props => ({
+    question: QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)],
+  }));
 
 const reducer = withReducer(
   "state",
@@ -28,15 +24,15 @@ const reducer = withReducer(
   (state, action) => {
     switch (action.type) {
       case "SET_COMMENT":
-        return Object.assign(state, { comment: action.payload });
+        return { ...state, comment: action.payload };
       case "SET_ERROR":
-        return Object.assign(state, { error: true });
+        return { ...state, error: true };
       case "SET_SCORE":
-        return Object.assign(state, { score: action.payload });
+        return { ...state, score: action.payload };
       case "SET_SUBMITTED":
-        return Object.assign(state, { submitted: action.payload });
+        return { ...state, submitted: action.payload };
       case "SET_SUBMITTING":
-        return Object.assign(state, { submitting: action.payload });
+        return { ...state, submitting: action.payload };
       default:
         return state;
     }
@@ -53,17 +49,28 @@ const reducer = withReducer(
 const handlers = withHandlers({
   setComment: ({ dispatch }) => event => dispatch({ type: "SET_COMMENT", payload: event.target.value }),
   setScore: ({ dispatch }) => event => dispatch({ type: "SET_SCORE", payload: event }),
-  submit: ({ dispatch, state: { score, comment }, question, url }) => async event => {
+  submit: ({ dispatch, state: { score, comment }, question }) => async event => {
     event.preventDefault();
+
     dispatch({ type: "SET_SUBMITTING", payload: true });
-    const data = {
+
+    const data = qs.stringify({
+      "form-name": "feedback",
       question: question,
       score: score,
       comment: comment,
-    };
+    });
 
     try {
-      const response = await postJson(url, data);
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data,
+      }).then(response => {
+        if (response.status >= 400) {
+          throw new Error(respose.status);
+        }
+      });
 
       dispatch({ type: "SET_SUBMITTING", payload: false });
       dispatch({ type: "SET_SUBMITTED", payload: true });
@@ -83,7 +90,7 @@ const Container = styled.div`
 `;
 
 const Feedback = enhance(
-  ({ question, setComment, setScore, state: { comment, error, score, submitted, submitting }, submit, url }) => (
+  ({ question, setComment, setScore, state: { comment, error, score, submitted, submitting }, submit }) => (
     <Container>
       <Helmet title={question} />
       <Back />
@@ -103,7 +110,6 @@ const Feedback = enhance(
 
 Feedback.propTypes = {
   question: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
   setComment: PropTypes.func,
   state: PropTypes.shape({
     comment: PropTypes.string,
@@ -113,7 +119,6 @@ Feedback.propTypes = {
     submitting: PropTypes.bool.isRequired,
   }),
   submit: PropTypes.func,
-  url: PropTypes.string.isRequired,
 };
 
 export default resolveFeedbackProps()(Feedback);
