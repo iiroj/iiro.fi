@@ -59,7 +59,7 @@ const handlers = withHandlers({
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
     try {
-      await fetch("/", {
+      await fetch("/feedback/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
