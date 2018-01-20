@@ -31,8 +31,6 @@ export const ButtonLink = styled.a`
   }
 `;
 
-const Container = styled.div``;
-
 const Header = styled.header`
   background-color: white;
   font-family: Georgia, serif;

@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
-import qs from "qs";
 import styled from "styled-components";
 
 import Back from "../src/components/Back";
@@ -71,7 +70,7 @@ const handlers = withHandlers({
         }),
       }).then(response => {
         if (response.status >= 400) {
-          throw new Error(respose.status);
+          throw new Error(response.status);
         }
       });
 
