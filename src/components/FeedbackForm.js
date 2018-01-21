@@ -5,6 +5,7 @@ import { branch, renderComponent } from "recompose";
 
 const Form = styled.form.attrs({
   "data-netlify": true,
+  name: "Feedback",
 })`
   display: flex;
   flex-direction: column;
