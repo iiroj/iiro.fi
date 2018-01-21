@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { branch, renderComponent } from "recompose";
 
-const Form = styled.form`
+const Form = styled.form.attrs({
+  "data-netlify": true,
+})`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -39,55 +41,9 @@ const Section = styled.section`
   width: 100%;
 `;
 
-const Textarea = styled.textarea`
-  appearance: none;
-  border-radius: 4px;
-  border: 2px solid hsla(0, 0%, 0%, 0.2);
-  color: inherit;
-  display: block;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 1.25em;
-  margin-bottom: 1rem;
-  outline: none;
-  padding: 1em;
-  resize: vertical;
-  width: 100%;
-
-  &:focus {
-    border: 2px solid hsla(44, 100%, 75%, 1);
-  }
-`;
-
-const Button = styled.button`
-  background-color: hsla(44, 100%, 75%, 1);
-  border-radius: 1.5rem;
-  border: none;
-  display: block;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  height: 3rem;
-  margin: 0 auto;
-  outline: none;
-  padding: 0 4rem;
-  transition: background-color 125ms ease-out, box-shadow 125ms ease-out, transform 125ms ease-out;
-
-  &:disabled {
-    cursor: not-allowed;
-    background-color: hsla(44, 100%, 75%, 0.4);
-  }
-
-  &:hover:not(:disabled) {
-    cursor: pointer;
-    box-shadow: 0 0.5rem 2rem hsla(0, 0%, 0%, 0.1);
-  }
-
-  &:active:not(:disabled) {
-    box-shadow: inset 0 0 0 3rem hsla(0, 0%, 0%, 0.1);
-    transform: scale(0.95);
-  }
-`;
+const HiddenField = styled.input.attrs({
+  type: "hidden",
+})``;
 
 const Input = styled.input.attrs({
   name: "score",
@@ -186,6 +142,59 @@ const Score = styled.ol`
   width: 100%;
 `;
 
+const Textarea = styled.textarea.attrs({
+  name: "comment",
+  placeholder: "You can also give more detailed feedback here.",
+})`
+  appearance: none;
+  border-radius: 4px;
+  border: 2px solid hsla(0, 0%, 0%, 0.2);
+  color: inherit;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.25em;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: 1em;
+  resize: vertical;
+  width: 100%;
+
+  &:focus {
+    border: 2px solid hsla(44, 100%, 75%, 1);
+  }
+`;
+
+const Button = styled.button`
+  background-color: hsla(44, 100%, 75%, 1);
+  border-radius: 1.5rem;
+  border: none;
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 3rem;
+  margin: 0 auto;
+  outline: none;
+  padding: 0 4rem;
+  transition: background-color 125ms ease-out, box-shadow 125ms ease-out, transform 125ms ease-out;
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: hsla(44, 100%, 75%, 0.4);
+  }
+
+  &:hover:not(:disabled) {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 2rem hsla(0, 0%, 0%, 0.1);
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: inset 0 0 0 3rem hsla(0, 0%, 0%, 0.1);
+    transform: scale(0.95);
+  }
+`;
+
 const FeedbackSubmitted = () => (
   <Form>
     <header>
@@ -204,12 +213,14 @@ const FeedbackError = () => (
 );
 
 const FeedbackForm = ({ onChange, onSubmit, question, score, submitting }) => (
-  <Form onSubmit={onSubmit} name="Feedback" data-netlify>
+  <Form onSubmit={onSubmit}>
     <header>
       <h1>{question}</h1>
       <aside>On a scale from 1 to 7</aside>
     </header>
     <Section>
+      <HiddenField name="form-name" value="Feedback" />
+      <HiddenField name="question" value={question} />
       <Score>
         {Array.from(Array(7).keys()).map(n => {
           const value = n + 1;
@@ -226,7 +237,7 @@ const FeedbackForm = ({ onChange, onSubmit, question, score, submitting }) => (
           );
         })}
       </Score>
-      <Textarea name="comment" onChange={onChange} placeholder="Send your regards" />
+      <Textarea onChange={onChange} />
       <Button disabled={score === null || submitting}>Submit</Button>
     </Section>
   </Form>
