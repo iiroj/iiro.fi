@@ -56,6 +56,15 @@ const handlers = withHandlers({
     event.preventDefault();
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
+    console.log(
+      encode({
+        "form-name": "Feedback",
+        question,
+        score,
+        comment,
+      }),
+    );
+
     try {
       await fetch("/", {
         method: "POST",
