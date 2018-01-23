@@ -214,7 +214,7 @@ const FeedbackError = () => (
   </Form>
 );
 
-const FeedbackForm = ({ onChange, onSubmit, question, score, submitting }) => (
+const FeedbackForm = ({ comment, honeypot, onChange, onSubmit, question, score, submitting }) => (
   <Form onSubmit={onSubmit}>
     <header>
       <h1>{question}</h1>
@@ -222,7 +222,7 @@ const FeedbackForm = ({ onChange, onSubmit, question, score, submitting }) => (
     </header>
     <Section>
       <HiddenField name="question" value={question} />
-      <HiddenField name="honeypot" />
+      <HiddenField name="honeypot" value={honeypot} />
       <Score>
         {Array.from(Array(7).keys()).map(n => {
           const value = n + 1;
@@ -239,13 +239,15 @@ const FeedbackForm = ({ onChange, onSubmit, question, score, submitting }) => (
           );
         })}
       </Score>
-      <Textarea onChange={onChange} />
+      <Textarea onChange={onChange} value={comment} />
       <Button disabled={score === null || submitting}>Submit</Button>
     </Section>
   </Form>
 );
 
 FeedbackForm.propTypes = {
+  comment: PropTypes.string,
+  honeypot: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   question: PropTypes.string,

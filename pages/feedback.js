@@ -43,7 +43,7 @@ const reducer = withReducer(
     comment: "",
     error: false,
     honeypot: "",
-    score: null,
+    score: "",
     submitted: false,
     submitting: false,
   },
@@ -53,7 +53,7 @@ const handlers = withHandlers({
   onChange: ({ dispatch }) => event =>
     dispatch({ type: "SET_STATE", payload: { name: event.target.name, value: event.target.value } }),
 
-  onSubmit: ({ dispatch, state: { score, comment }, question }) => async event => {
+  onSubmit: ({ dispatch, state: { score, comment, honeypot }, question }) => async event => {
     event.preventDefault();
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
@@ -91,23 +91,27 @@ const Container = styled.div`
   min-height: 100%;
 `;
 
-const Feedback = enhance(({ onChange, onSubmit, question, state: { error, score, submitted, submitting } }) => (
-  <Container>
-    <Head>
-      <title>{question}</title>
-    </Head>
-    <Back />
-    <FeedbackForm
-      submitted={submitted}
-      submitting={submitting}
-      score={score}
-      error={error}
-      onChange={onChange}
-      onSubmit={onSubmit}
-      question={question}
-    />
-  </Container>
-));
+const Feedback = enhance(
+  ({ onChange, onSubmit, question, state: { comment, error, honeypot, score, submitted, submitting } }) => (
+    <Container>
+      <Head>
+        <title>{question}</title>
+      </Head>
+      <Back />
+      <FeedbackForm
+        comment={comment}
+        error={error}
+        honeypot={honeypot}
+        onChange={onChange}
+        onSubmit={onSubmit}
+        question={question}
+        score={score}
+        submitted={submitted}
+        submitting={submitting}
+      />
+    </Container>
+  ),
+);
 
 Feedback.propTypes = {
   onChange: PropTypes.func,
