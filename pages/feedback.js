@@ -42,6 +42,7 @@ const reducer = withReducer(
   {
     comment: "",
     error: false,
+    honeypot: "",
     score: null,
     submitted: false,
     submitting: false,
@@ -56,15 +57,6 @@ const handlers = withHandlers({
     event.preventDefault();
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
-    console.log(
-      encode({
-        "form-name": "Feedback",
-        question,
-        score,
-        comment,
-      }),
-    );
-
     try {
       await fetch("/", {
         method: "POST",
@@ -74,6 +66,7 @@ const handlers = withHandlers({
           question,
           score,
           comment,
+          honeypot,
         }),
       }).then(response => {
         if (response.status >= 400) {
@@ -123,6 +116,7 @@ Feedback.propTypes = {
   state: PropTypes.shape({
     comment: PropTypes.string,
     error: PropTypes.bool.isRequired,
+    honeypot: PropTypes.string,
     score: PropTypes.string,
     submitted: PropTypes.bool.isRequired,
     submitting: PropTypes.bool.isRequired,

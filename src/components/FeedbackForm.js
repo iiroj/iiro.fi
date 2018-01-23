@@ -5,8 +5,8 @@ import { branch, renderComponent } from "recompose";
 
 const Form = styled.form.attrs({
   "data-netlify": true,
-  method: "post",
   name: "Feedback",
+  "netlify-honeypot": "honeypot",
 })`
   display: flex;
   flex-direction: column;
@@ -222,6 +222,7 @@ const FeedbackForm = ({ onChange, onSubmit, question, score, submitting }) => (
     </header>
     <Section>
       <HiddenField name="question" value={question} />
+      <HiddenField name="honeypot" />
       <Score>
         {Array.from(Array(7).keys()).map(n => {
           const value = n + 1;
