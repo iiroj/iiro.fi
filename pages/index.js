@@ -78,6 +78,7 @@ const Grid = BaseGrid.extend`
 
   ${Text} {
     grid-column: col 4 / span 8;
+    margin-bottom: 4rem;
 
     ${media.tablet`
       grid-column: col 7 / span 4;
