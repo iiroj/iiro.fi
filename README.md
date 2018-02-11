@@ -1,7 +1,5 @@
 # iiro.fi
 
-[![pipeline status](https://gitlab.com/iiroj/iiro.fi/badges/master/pipeline.svg)](https://gitlab.com/iiroj/iiro.fi/commits/master)
-
 A static site built with [Next.js](https://github.com/zeit/next.js/), available at [iiro.fi](https://iiro.fi).
 
 The canonical repository for this project is at [gitlab:iiroj/iiro.fi](https://gitlab.com/iiroj/iiro.fi). It is mirrored at [github:iiroj/iiro.fi](https://github.com/iiroj/iiro.fi) for convenience.
