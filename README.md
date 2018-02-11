@@ -2,8 +2,6 @@
 
 A static site built with [Next.js](https://github.com/zeit/next.js/), available at [iiro.fi](https://iiro.fi).
 
-The canonical repository for this project is at [gitlab:iiroj/iiro.fi](https://gitlab.com/iiroj/iiro.fi). It is mirrored at [github:iiroj/iiro.fi](https://github.com/iiroj/iiro.fi) for convenience.
-
 ## Technology used
 
 This static site is built with [Next.js](https://github.com/zeit/next.js/), a framework for server-rendered or statically-exported [React](https://facebook.github.io/react/) apps. It is composed of basic React pure functional components and some static images.
@@ -40,7 +38,7 @@ $ npm run build
 
 The live site, [iiro.fi](https://iiro.fi), is hosted at [Netlify](https://www.netlify.com).
 
-Every push to the `master` branch of the [canonical repository](https://gitlab.com/iiroj/iiro.fi) sends a webhook to Netlify instructing it to pull the latest HEAD and then deploy the site across its network. Netlify will automatically build the site with `npm run build`.
+Every push to the `master` branch sends a webhook to Netlify instructing it to pull the latest HEAD and then deploy the site across its network. Netlify will automatically build the site with `npm run build`.
 
 You can read more about Netlify's continuous deployment process [here](https://www.netlify.com/docs/continuous-deployment/).
 
