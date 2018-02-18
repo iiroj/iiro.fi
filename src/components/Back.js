@@ -8,6 +8,7 @@ const X = styled.a`
   cursor: pointer;
   font-size: 0;
   height: 1.5rem;
+  left: 0;
   margin: 2.4rem 0 0 1rem;
   overflow: hidden;
   position: absolute;

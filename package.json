@@ -1,7 +1,7 @@
 {
   "name": "iiro.fi",
-  "version": "8.8.2",
-  "description": "Static blog made with Gatsby",
+  "version": "8.8.3",
+  "description": "A static site built with next.js",
   "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": "gitlab:iiroj/iiro.fi",
@@ -39,7 +39,6 @@
     "netlify",
     "nextjs",
     "react",
-    "s3",
     "serverless",
     "static-site",
     "styled-components"
