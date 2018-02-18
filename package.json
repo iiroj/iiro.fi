@@ -1,19 +1,25 @@
 {
   "name": "iiro.fi",
-  "version": "8.8.3",
+  "version": "8.9.0",
   "description": "A static site built with next.js",
   "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": "gitlab:iiroj/iiro.fi",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development next",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prebuild": "rimraf out",
-    "build": "NODE_ENV=production next build && next export",
-    "postbuild": "cp _headers out/",
-    "purge-cloudflare-cache": "./scripts/purge-cloudflare-cache.sh"
+    "clean:next": "rimraf .next",
+    "clean:out": "rimraf out",
+    "clean:cloudflare": "./scripts/purge-cloudflare-cache.sh",
+    "prestart": "npm run clean:next && npm run clean:out",
+    "start": "next",
+    "prebuild": "npm run clean:next",
+    "build": "next build",
+    "preexport": "npm run clean:out",
+    "export": "next export",
+    "postexport": "cp _headers out/",
+    "production": "next start -p $PORT"
   },
   "dependencies": {
     "css-wipe": "^4.3.0",
