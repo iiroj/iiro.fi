@@ -7,11 +7,6 @@ import styled from "styled-components";
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
 
-const QUESTIONS = [
-  "How likely would you be to recommend Iiro as a designer?",
-  "How likely would you be to recommend Iiro as a colleague?",
-];
-
 const encode = data =>
   Object.keys(data)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
@@ -19,7 +14,7 @@ const encode = data =>
 
 const resolveFeedbackProps = () =>
   withProps(props => ({
-    question: QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)],
+    question: "How likely would you be to recommend Iiro as a designer?",
   }));
 
 const reducer = withReducer(

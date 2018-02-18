@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "8.9.0",
+  "version": "8.9.1",
   "description": "A static site built with next.js",
   "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
@@ -12,7 +12,7 @@
     "clean:next": "rimraf .next",
     "clean:out": "rimraf out",
     "clean:cloudflare": "./scripts/purge-cloudflare-cache.sh",
-    "prestart": "npm run clean:next && npm run clean:out",
+    "prestart": "npm run clean:next",
     "start": "next",
     "prebuild": "npm run clean:next",
     "build": "next build",
