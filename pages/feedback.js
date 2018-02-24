@@ -1,16 +1,15 @@
+import { stringify } from "qs";
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
 import styled from "styled-components";
 
+import config from "../config";
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
 
-const encode = data =>
-  Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
+const { endpoint } = config.lambda.telegram;
 
 const resolveFeedbackProps = () =>
   withProps(props => ({
@@ -37,7 +36,6 @@ const reducer = withReducer(
   {
     comment: "",
     error: false,
-    honeypot: "",
     score: "",
     submitted: false,
     submitting: false,
@@ -48,33 +46,31 @@ const handlers = withHandlers({
   onChange: ({ dispatch }) => event =>
     dispatch({ type: "SET_STATE", payload: { name: event.target.name, value: event.target.value } }),
 
-  onSubmit: ({ dispatch, state: { score, comment, honeypot }, question }) => async event => {
+  onSubmit: ({ dispatch, state: { score, comment }, question }) => event => {
     event.preventDefault();
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "Feedback",
-          question,
-          score,
-          comment,
-          honeypot,
-        }),
-      }).then(response => {
+    return fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: stringify({
+        question,
+        score,
+        comment,
+      }),
+    })
+      .then(response => {
         if (response.status >= 400) {
           throw new Error(response.status);
         }
-      });
 
-      dispatch({ type: "SET_SUBMITTING", payload: false });
-      dispatch({ type: "SET_SUBMITTED", payload: true });
-    } catch (error) {
-      dispatch({ type: "SET_SUBMITTING", payload: false });
-      dispatch({ type: "SET_ERROR" });
-    }
+        dispatch({ type: "SET_SUBMITTING", payload: false });
+        dispatch({ type: "SET_SUBMITTED", payload: true });
+      })
+      .catch(error => {
+        dispatch({ type: "SET_SUBMITTING", payload: false });
+        dispatch({ type: "SET_ERROR", payload: error });
+      });
   },
 });
 
@@ -87,7 +83,7 @@ const Container = styled.div`
 `;
 
 const Feedback = enhance(
-  ({ onChange, onSubmit, question, state: { comment, error, honeypot, score, submitted, submitting } }) => (
+  ({ onChange, onSubmit, question, state: { comment, error, score, submitted, submitting } }) => (
     <Container>
       <Head>
         <title>{question}</title>
@@ -96,7 +92,6 @@ const Feedback = enhance(
       <FeedbackForm
         comment={comment}
         error={error}
-        honeypot={honeypot}
         onChange={onChange}
         onSubmit={onSubmit}
         question={question}
@@ -115,7 +110,6 @@ Feedback.propTypes = {
   state: PropTypes.shape({
     comment: PropTypes.string,
     error: PropTypes.bool.isRequired,
-    honeypot: PropTypes.string,
     score: PropTypes.string,
     submitted: PropTypes.bool.isRequired,
     submitting: PropTypes.bool.isRequired,

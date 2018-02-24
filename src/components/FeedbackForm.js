@@ -3,11 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { branch, renderComponent } from "recompose";
 
-const Form = styled.form.attrs({
-  "data-netlify": true,
-  name: "Feedback",
-  "netlify-honeypot": "honeypot",
-})`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -42,10 +38,6 @@ const Section = styled.section`
   text-align: center;
   width: 100%;
 `;
-
-const HiddenField = styled.input.attrs({
-  type: "hidden",
-})``;
 
 const Input = styled.input.attrs({
   name: "score",
@@ -214,15 +206,13 @@ const FeedbackError = () => (
   </Form>
 );
 
-const FeedbackForm = ({ comment, honeypot, onChange, onSubmit, question, score, submitting }) => (
+const FeedbackForm = ({ comment, onChange, onSubmit, question, score, submitting }) => (
   <Form onSubmit={onSubmit}>
     <header>
       <h1>{question}</h1>
       <aside>On a scale from 1 to 7</aside>
     </header>
     <Section>
-      <HiddenField name="question" value={question} />
-      <HiddenField name="honeypot" value={honeypot} />
       <Score>
         {Array.from(Array(7).keys()).map(n => {
           const value = n + 1;
@@ -247,7 +237,6 @@ const FeedbackForm = ({ comment, honeypot, onChange, onSubmit, question, score, 
 
 FeedbackForm.propTypes = {
   comment: PropTypes.string,
-  honeypot: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   question: PropTypes.string,

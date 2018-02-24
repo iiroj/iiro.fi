@@ -1,0 +1,4 @@
+[build]
+  Command = "npm run build && npm run export && npm run build:lambda && npm run clean:cloudflare"
+  Functions = "lambda"
+  Publish = "out"
