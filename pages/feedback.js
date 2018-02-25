@@ -1,4 +1,3 @@
-import { createHash } from "crypto";
 import { stringify } from "qs";
 import React from "react";
 import PropTypes from "prop-types";
@@ -9,11 +8,6 @@ import styled from "styled-components";
 import config from "../config";
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
-
-const { base_url, auth } = config.lambda;
-const token = createHash("sha256")
-  .update(auth)
-  .digest("hex");
 
 const resolveFeedbackProps = () =>
   withProps(props => ({
@@ -54,13 +48,12 @@ const handlers = withHandlers({
     event.preventDefault();
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
-    return fetch(base_url + "/telegram", {
+    return fetch(config.lambda.base_url + "/telegram", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: stringify({
-        token,
         question,
         score,
         comment,
