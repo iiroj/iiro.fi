@@ -1,4 +1,4 @@
-import "isomorphic-fetch";
+import fetch from "node-fetch";
 import { parse } from "qs";
 
 import config from "../../config";
