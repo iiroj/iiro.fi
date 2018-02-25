@@ -4,6 +4,7 @@
   ],
   "plugins": [
     "babel-plugin-inline-dotenv",
+    "babel-plugin-transform-inline-environment-variables",
     "babel-plugin-inline-react-svg",
     [
       "styled-components",
