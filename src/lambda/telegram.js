@@ -1,10 +1,9 @@
-import fetch from "node-fetch";
-import { parse } from "qs";
-
 import config from "../../config";
+import postJson from "../utils/post-json";
 
 const { host, lambda } = config;
 const { url, chat_id } = lambda.functions.telegram;
+
 const headers = {
   "Access-Control-Allow-Origin": host,
 };
@@ -29,24 +28,14 @@ ${hearts(score)} (${score} / 7)${
     : ""
 }`;
 
-const sendMessageToTelegram = (question, score, comment) =>
-  fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id,
-      text: formatMessage(question, score, comment),
-      parse_mode: "Markdown",
-    }),
-  }).catch(error => {
-    throw error;
-  });
-
 export function handler(event, context, callback) {
-  const { body } = event;
-  const { question, score, comment } = parse(body);
+  const { question, score, comment } = event.queryStringParameters;
 
-  return sendMessageToTelegram(question, score, comment)
-    .then(() => callback(null, { statusCode: 200, headers }))
-    .catch(error => callback(error, { statusCode: 400, headers }));
+  postJson(url, {
+    chat_id,
+    text: formatMessage(question, score, comment),
+    parse_mode: "Markdown",
+  })
+    .then(({ statusCode, statusMessage }) => callback(null, { statusCode, statusMessage, headers }))
+    .catch(({ statusCode, statusMessage }) => callback(null, { statusCode, statusMessage, headers }));
 }

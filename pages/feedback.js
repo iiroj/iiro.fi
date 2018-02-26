@@ -1,18 +1,19 @@
-import { stringify } from "qs";
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
 import styled from "styled-components";
 
+import stringify from "../src/utils/stringify";
 import config from "../config";
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
 
-const resolveFeedbackProps = () =>
-  withProps(props => ({
-    question: "How likely would you be to recommend Iiro as a designer?",
-  }));
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+`;
 
 const reducer = withReducer(
   "state",
@@ -48,17 +49,9 @@ const handlers = withHandlers({
     event.preventDefault();
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
-    return fetch(config.lambda.base_url + "/telegram", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: stringify({
-        question,
-        score,
-        comment,
-      }),
-    })
+    const url = `${config.lambda.base_url}/telegram?${stringify({ question, score, comment })}`;
+
+    return fetch(url, { method: "POST" })
       .then(response => {
         if (response.status >= 400) {
           throw new Error(response.status);
@@ -75,12 +68,6 @@ const handlers = withHandlers({
 });
 
 const enhance = compose(reducer, handlers);
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-`;
 
 const Feedback = enhance(
   ({ onChange, onSubmit, question, state: { comment, error, score, submitted, submitting } }) => (
@@ -115,5 +102,10 @@ Feedback.propTypes = {
     submitting: PropTypes.bool.isRequired,
   }),
 };
+
+const resolveFeedbackProps = () =>
+  withProps(props => ({
+    question: "How likely would you be to recommend Iiro as a designer?",
+  }));
 
 export default resolveFeedbackProps()(Feedback);
