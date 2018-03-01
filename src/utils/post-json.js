@@ -21,14 +21,25 @@ export default (url, data) =>
 
     const req = request(params, res => {
       if (res.statusCode < 200 || res.statusCode >= 300) {
-        reject(res);
+        return reject("telegram");
       }
-
-      resolve(res);
+      var body = [];
+      res.on("data", chunk => body.push(chunk));
+      res.on("end", () => {
+        try {
+          body = JSON.parse(Buffer.concat(body).toString());
+        } catch (error) {
+          return reject(error);
+        }
+        return resolve(body);
+      });
     });
 
-    req.on("error", err => reject({ statusCode: 500, statusMessage: err }));
+    req.on("error", error => reject(error));
+
+    setTimeout(() => reject("timeout"), 5000);
 
     req.write(body);
+
     req.end();
   });

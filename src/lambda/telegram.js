@@ -1,4 +1,5 @@
 import config from "../../config";
+import logger from "../utils/logger";
 import postJson from "../utils/post-json";
 
 const { host, lambda } = config;
@@ -29,13 +30,34 @@ ${hearts(score)} (${score} / 7)${
 }`;
 
 export function handler(event, context, callback) {
+  if (event.httpMethod !== "POST") {
+    return callback(null, {
+      statusCode: 405,
+      body: "",
+    });
+  }
+
   const { question, score, comment } = event.queryStringParameters;
 
-  postJson(url, {
-    chat_id,
-    text: formatMessage(question, score, comment),
-    parse_mode: "Markdown",
-  })
-    .then(({ statusCode, statusMessage }) => callback(null, { statusCode, statusMessage, headers }))
-    .catch(({ statusCode, statusMessage }) => callback(null, { statusCode, statusMessage, headers }));
+  logger("Send Feedback", () =>
+    postJson(url, {
+      chat_id,
+      text: formatMessage(question, score, comment),
+      parse_mode: "Markdown",
+    }),
+  )
+    .then(response => {
+      return callback(null, {
+        statusCode: response.ok ? 200 : 400,
+        body: "",
+        headers,
+      });
+    })
+    .catch(error => {
+      return callback(null, {
+        statusCode: error === "timeout" ? 408 : 500,
+        body: "",
+        headers,
+      });
+    });
 }
