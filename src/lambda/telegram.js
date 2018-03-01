@@ -1,5 +1,4 @@
 import config from "../../config";
-import logger from "../utils/logger";
 import postJson from "../utils/post-json";
 
 const { host, lambda } = config;
@@ -39,13 +38,11 @@ export function handler(event, context, callback) {
 
   const { question, score, comment } = event.queryStringParameters;
 
-  logger("Send Feedback", () =>
-    postJson(url, {
-      chat_id,
-      text: formatMessage(question, score, comment),
-      parse_mode: "Markdown",
-    }),
-  )
+  postJson(url, {
+    chat_id,
+    text: formatMessage(question, score, comment),
+    parse_mode: "Markdown",
+  })
     .then(response => {
       return callback(null, {
         statusCode: response.ok ? 200 : 400,
