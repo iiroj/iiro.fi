@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 const YELLOW = `hsla(44,100%,75%,1)`;
 
-export default styled.a`
+export default styled.a.attrs({
+  rel: "noopener noreferrer",
+})`
   background-image: linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%);
   background-position: 0 1em;
   background-repeat: no-repeat;

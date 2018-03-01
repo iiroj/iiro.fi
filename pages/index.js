@@ -105,12 +105,11 @@ const Index = () => (
           a UI Designer <Baskerville>&</Baskerville> Developer, and all-around handyman at <Fraktio />. I help people
           realise their ideas, design useful experiences and create beautiful interfaces and interactions. I like to
           write Javascript and React. In my toolbox I keep <Link href="https://www.sketchapp.com/">Sketch</Link>,{" "}
-          <Link href="https://code.visualstudio.com/">VS Code</Link>,{" "}
-          <Link href="https://www.gatsbyjs.org/">Gatsby</Link>,{" "}
-          <Link href="https://github.com/zeit/next.js/">Next.js</Link> and{" "}
-          <Link href="https://github.com/acdlite/recompose">Recompose</Link>.
+          <Link href="https://www.styled-components.com">styled-components</Link>,{" "}
+          <Link href="https://github.com/zeit/next.js/">next.js</Link> and{" "}
+          <Link href="https://github.com/acdlite/recompose">recompose</Link>.
         </p>
-        <p>In my free time I like to go to the gym and train strength. Recently I’ve been following the 5x5 progam.</p>
+        <p>In my free time I like to go to the gym and train strength. For recovery I drink beer.</p>
         <Links />
         <RateMe />
       </Text>
