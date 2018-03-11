@@ -6,8 +6,7 @@ import reset from "css-wipe/js";
 injectGlobal`
   ${reset}
 
-  html,
-  body {
+  html {
     height: 100%;
   }
 
@@ -28,6 +27,9 @@ injectGlobal`
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     font-weight: 400;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   * {

@@ -6,7 +6,8 @@
     "babel-plugin-inline-react-svg",
     [ "babel-plugin-styled-components", {
       "ssr": true,
-      "transpileTemplateLiterals": false
+      "transpileTemplateLiterals": false,
+      "displayName": false
     }]
   ]
 }

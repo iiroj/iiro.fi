@@ -61,6 +61,7 @@ const Text = styled.article`
 `;
 
 const Container = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
