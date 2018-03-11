@@ -19,6 +19,7 @@ const Transformer = styled.div`
   box-shadow: var(--shadow, 0px 12px) 4rem rgba(0, 0, 0, 0.16);
   height: 100%;
   position: absolute;
+  touch-action: none;
   transition: box-shadow 125ms linear 125ms, transform 125ms linear 125ms;
   transform: var(--tilt, rotateX(0deg) rotateY(0deg));
   width: 100%;
@@ -98,6 +99,7 @@ class Picture extends PureComponent {
   trackTouch = event => {
     const { changedTouches, target, touches } = event;
     if (target === this.ref) {
+      event.preventDefault();
       const { pageX, pageY } = touches[0] || changedTouches[0];
       const { left, top } = this.ref.getBoundingClientRect();
       this.updateTilt(pageX - left, pageY - top);
