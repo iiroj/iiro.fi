@@ -33,7 +33,6 @@ export const ButtonLink = styled.a`
 
 const Header = styled.header`
   background-color: white;
-  font-family: Georgia, serif;
   font-size: 1.5rem;
   padding: 2rem 3rem 6rem;
   text-align: center;
@@ -41,9 +40,7 @@ const Header = styled.header`
 
 const More = styled.aside`
   color: hsla(0, 0%, 60%, 1);
-  font-family: Georgia, serif;
   font-size: 1.5em;
-  font-style: italic;
   padding: 4rem 0;
   text-align: center;
 `;

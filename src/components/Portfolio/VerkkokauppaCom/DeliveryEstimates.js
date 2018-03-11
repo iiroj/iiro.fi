@@ -7,11 +7,11 @@ const Section = styled.section`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 4rem 0;
 `;
 
 const Text = styled.div`
-  margin: 0 1rem 2rem 1rem;
+  margin: 4rem;
   max-width: 480px;
 `;
 
@@ -19,6 +19,7 @@ const Image = styled.figure`
   align-items: center;
   display: flex;
   flex-direction: column;
+  max-width: 368px;
   overflow: hidden;
   position: relative;
 

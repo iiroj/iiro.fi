@@ -36,7 +36,6 @@
     "babel-eslint": "^8.2.2",
     "babel-plugin-inline-dotenv": "^1.1.2",
     "babel-plugin-inline-react-svg": "^0.5.2",
-    "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-inline-environment-variables": "^0.3.0",
     "eslint": "^4.18.2",
     "eslint-config-prettier": "^2.9.0",

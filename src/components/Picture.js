@@ -5,6 +5,8 @@ const Picture = styled.div`
   background-image: url("/static/picture.jpg");
   background-position: 55% 50%;
   background-size: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.16);
   position: relative;
 
   ${hiDPI(1.5)} {

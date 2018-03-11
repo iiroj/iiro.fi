@@ -28,12 +28,10 @@ const Bg = styled.img`
 `;
 
 const Title = styled.h1`
-  font-family: Georgia, serif;
-  font-size: 2rem;
-  font-style: italic;
-  font-weight: 300;
-  margin: 0 0 1rem 0;
-  position: relative;
+  font-size: 3em;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 4rem;
   z-index: 2;
 `;
 

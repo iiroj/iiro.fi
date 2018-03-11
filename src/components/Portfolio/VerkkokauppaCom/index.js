@@ -13,15 +13,15 @@ const Container = styled.article`
   z-index: 1;
 
   h1 {
-    font-family: Georgia, serif;
-    font-size: 2rem;
-    line-height: 3rem;
-    margin-bottom: 0.5rem;
+    font-size: 3em;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 2rem;
   }
 
   h2 {
-    font-family: Georgia, serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 500;
     margin-bottom: 1rem;
   }
 

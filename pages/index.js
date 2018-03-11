@@ -39,12 +39,19 @@ const microdata = JSON.stringify({
 });
 
 const Title = styled.h1`
-  font-size: 120%;
+  font-size: 3rem;
   font-weight: 500;
+  line-height: 1;
+  margin-bottom: 2rem;
+
+  ${media.tablet`
+    font-size: 4rem;
+  `};
 `;
 
 const Text = styled.article`
   p {
+    hyphens: auto;
     margin-top: 1rem;
   }
 
@@ -64,7 +71,7 @@ const Grid = BaseGrid.extend`
   padding: 2rem;
 
   ${Picture} {
-    grid-column: col 2 / span 8;
+    grid-column: col 1 / span 9;
     min-height: 32rem;
 
     ${media.tablet`
@@ -77,7 +84,7 @@ const Grid = BaseGrid.extend`
   }
 
   ${Text} {
-    grid-column: col 4 / span 8;
+    grid-column: col 2 / span 9;
     margin-bottom: 4rem;
 
     ${media.tablet`

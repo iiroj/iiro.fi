@@ -41,12 +41,13 @@ const Container = styled.header`
 `;
 
 const Text = styled.div`
-  margin: 1rem;
+  margin: 4rem;
   max-width: 480px;
 `;
 
 const PhoneContainer = styled.div`
   height: 480px;
+  margin: 0 4rem;
   width: 303px;
   position: relative;
 `;
@@ -67,7 +68,7 @@ const Screen = styled.img`
 export const Header = () => (
   <Container>
     <Text>
-      <h1>Verkkokauppa.com</h1>
+      <h1>Verkko&shy;kauppa.com</h1>
       <p>
         UX/UI designer from November 2014 until April 2017. As the resident web designer, I oversaw the visual direction
         of Verkkokauppa.com’s website.
