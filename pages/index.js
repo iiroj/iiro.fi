@@ -1,9 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 import Head from "next/head";
 
 import { media } from "../src/styles/helpers";
-import BaseGrid from "../src/components/Grid";
 import Picture from "../src/components/Picture";
 import Baskerville from "../src/components/Baskerville";
 import Fraktio from "../src/components/Fraktio";
@@ -61,67 +60,59 @@ const Text = styled.article`
   }
 
   ${RateMe} {
-    margin-top: 1rem;
+    margin: 2rem 0 4rem;
   }
 `;
 
-const Grid = BaseGrid.extend`
-  align-items: center;
-  min-height: 100%;
+const Container = styled.div`
+  margin: auto;
+  max-width: 64rem;
   padding: 2rem;
+  width: 100%;
 
   ${Picture} {
-    grid-column: col 1 / span 9;
-    min-height: 32rem;
-
-    ${media.tablet`
-      grid-column: col 2 / span 4;
-    `};
-
-    ${media.desktop`
-    grid-column: col 4 / span 2;
-    `};
+    flex: 1 1 32rem;
+    height: 32rem;
+    max-width: 80%;
+    width: 24rem;
   }
 
   ${Text} {
-    grid-column: col 2 / span 9;
-    margin-bottom: 4rem;
-
-    ${media.tablet`
-      grid-column: col 7 / span 4;
-      margin-top: 20vh;
-    `};
-
-    ${media.desktop`
-      grid-column: col 7 / span 3;
-    `};
+    flex: 1 1 50rem;
+    padding: 4rem 0 0 2rem;
   }
+
+  ${media.tablet`
+    display: flex;
+
+    ${Text} {
+      padding: 10rem 0 0 4rem;
+    }
+  `};
 `;
 
 const Index = () => (
-  <Fragment>
+  <Container>
     <Head>
       <title>Iiro Jäppinen</title>
       <script type="application/ld+json">{microdata}</script>
     </Head>
-    <Grid>
-      <Picture />
-      <Text>
-        <Title>I am Iiro Jäppinen</Title>
-        <p>
-          a UI Designer <Baskerville>&</Baskerville> Developer, and all-around handyman at <Fraktio />. I help people
-          realise their ideas, design useful experiences and create beautiful interfaces and interactions. I like to
-          write Javascript and React. In my toolbox I keep <Link href="https://www.sketchapp.com/">Sketch</Link>,{" "}
-          <Link href="https://www.styled-components.com">styled-components</Link>,{" "}
-          <Link href="https://github.com/zeit/next.js/">next.js</Link> and{" "}
-          <Link href="https://github.com/acdlite/recompose">recompose</Link>.
-        </p>
-        <p>In my free time I like to go to the gym and train strength. For recovery I drink beer.</p>
-        <Links />
-        <RateMe />
-      </Text>
-    </Grid>
-  </Fragment>
+    <Picture />
+    <Text>
+      <Title>I am Iiro Jäppinen</Title>
+      <p>
+        a UI Designer <Baskerville>&</Baskerville> Developer, and all-around handyman at <Fraktio />. I help people
+        realise their ideas, design useful experiences and create beautiful interfaces and interactions. I like to write
+        Javascript and React. In my toolbox I keep <Link href="https://www.sketchapp.com/">Sketch</Link>,{" "}
+        <Link href="https://www.styled-components.com">styled-components</Link>,{" "}
+        <Link href="https://github.com/zeit/next.js/">next.js</Link> and{" "}
+        <Link href="https://github.com/acdlite/recompose">recompose</Link>.
+      </p>
+      <p>In my free time I like to go to the gym and train strength. For recovery I drink beer.</p>
+      <Links />
+      <RateMe />
+    </Text>
+  </Container>
 );
 
 export default Index;

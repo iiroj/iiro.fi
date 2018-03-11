@@ -2,16 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Article = styled.article`
-  align-items: center;
   background-color: #3b3e48;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 4rem 1rem;
 `;
 
 const Logo = styled.img`
-  margin-bottom: 2rem;
+  display: block;
+  margin: 0 auto 4rem;
   max-height: 64px;
   max-width: 100%;
 `;

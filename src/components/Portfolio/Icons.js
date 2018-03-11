@@ -3,28 +3,13 @@ import styled from "styled-components";
 import { ButtonLink } from "../../../pages/portfolio";
 
 const Article = styled.article`
-  align-items: center;
-  background-color: #f5f5f5;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
+  background: url("/static/portfolio/icons/icons.jpg");
+  background-size: cover;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
   padding: 4rem 1rem 3rem 1rem;
   position: relative;
+  text-align: center;
   width: 100%;
-`;
-
-const Bg = styled.img`
-  display: block;
-  left: 50%;
-  min-height: 100%;
-  min-width: 100%;
-  opacity: 0.25;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
 `;
 
 const Title = styled.h1`
@@ -32,7 +17,6 @@ const Title = styled.h1`
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 4rem;
-  z-index: 2;
 `;
 
 const Container = styled.div`
@@ -40,8 +24,6 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  text-align: center;
-  z-index: 2;
 
   img {
     display: block;
@@ -57,7 +39,6 @@ const Container = styled.div`
 
 export const Icons = () => (
   <Article>
-    <Bg src="/static/portfolio/icons/icons.jpg" />
     <Title>Icon Aficionado</Title>
     <Container>
       <div>

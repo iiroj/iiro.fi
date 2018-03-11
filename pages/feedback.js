@@ -1,19 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
-import styled from "styled-components";
 
 import stringify from "../src/utils/stringify";
 import config from "../config";
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-`;
 
 const reducer = withReducer(
   "state",
@@ -71,7 +64,7 @@ const enhance = compose(reducer, handlers);
 
 const Feedback = enhance(
   ({ onChange, onSubmit, question, state: { comment, error, score, submitted, submitting } }) => (
-    <Container>
+    <Fragment>
       <Head>
         <title>{question}</title>
       </Head>
@@ -86,7 +79,7 @@ const Feedback = enhance(
         submitted={submitted}
         submitting={submitting}
       />
-    </Container>
+    </Fragment>
   ),
 );
 

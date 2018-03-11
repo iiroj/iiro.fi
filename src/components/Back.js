@@ -11,7 +11,7 @@ const X = styled.a`
   left: 0;
   margin: 2.4rem 0 0 1rem;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   user-select: none;
   width: 1.5rem;
@@ -62,11 +62,11 @@ const X = styled.a`
 `;
 
 const Back = () => (
-  <nav>
-    <Link href="/">
-      <X title="Back to iiro.fi">Back to iiro.fi</X>
-    </Link>
-  </nav>
+  <Link href="/">
+    <X title="Back to iiro.fi" role="navigation">
+      Back to iiro.fi
+    </X>
+  </Link>
 );
 
 export default Back;
