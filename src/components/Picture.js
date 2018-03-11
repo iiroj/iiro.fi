@@ -75,28 +75,18 @@ class Picture extends PureComponent {
     const rotateX = (height / 2 - y) * (45 / height);
     const rotateY = (width / 2 - x) * (45 / width) * -1;
 
-    this.ref.style.setProperty("--tilt", `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
-    this.ref.style.setProperty("--shadow", `${rotateY * -1}px ${rotateX}px`);
-    this.ref.style.setProperty("--glare", `${50 - 100 * x / width}%, ${50 - 100 * y / height}%`);
+    this.ref.setAttribute(
+      "style",
+      `--tilt: rotateX(${rotateX}deg) rotateY(${rotateY}deg); --shadow: ${rotateY * -1}px ${rotateX}px; --glare: ${50 -
+        100 * x / width}%, ${50 - 100 * y / height}%;`,
+    );
   };
 
-  resetTilt() {
-    this.ref.style.removeProperty("--tilt");
-    this.ref.style.removeProperty("--shadow");
-    this.ref.style.removeProperty("--glare");
-  }
+  resetTilt = () => this.ref.removeAttribute("style");
 
-  trackMouse = event => {
-    const { layerX, layerY, target } = event;
+  handleMouseMove = ({ layerX, layerY }) => this.updateTilt(layerX, layerY);
 
-    if (target === this.ref) {
-      this.updateTilt(layerX, layerY);
-    } else {
-      this.resetTilt();
-    }
-  };
-
-  trackTouch = event => {
+  handleTouchMove = event => {
     const { changedTouches, target, touches } = event;
     if (target === this.ref) {
       event.preventDefault();
@@ -110,13 +100,19 @@ class Picture extends PureComponent {
 
   componentDidMount() {
     this.setState({ js: true });
-    document.addEventListener("mousemove", this.trackMouse);
-    document.addEventListener("touchmove", this.trackTouch);
+    this.ref.addEventListener("mousemove", this.handleMouseMove);
+    this.ref.addEventListener("mouseleave", this.resetTilt);
+    if ("ontouchmove" in document.documentElement) {
+      document.addEventListener("touchmove", this.handleTouchMove);
+    }
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousemove", this.trackMouse);
-    document.removeEventListener("touchmove", this.trackTouch);
+    this.ref.removeEventListener("mousemove", this.handleMouseMove);
+    this.ref.removeEventListener("mouseleave", this.resetTilt);
+    if ("ontouchmove" in document.documentElement) {
+      document.removeEventListener("touchmove", this.handleTouchMove);
+    }
   }
 
   render = () => (
