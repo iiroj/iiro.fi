@@ -11,11 +11,11 @@ const X = styled.a`
   left: 0;
   margin: 2.4rem 0 0 1rem;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   top: 0;
   user-select: none;
   width: 1.5rem;
-  z-index: 1;
+  z-index: 9001;
 
   &::before,
   &::after {
