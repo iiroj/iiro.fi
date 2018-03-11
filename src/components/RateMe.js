@@ -1,12 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import Link from "next/link";
 
-export default styled(({ className }) => (
+const RateMe = ({ className }) => (
   <Link prefetch href="/feedback/">
     <a className={className}>Rate Me!</a>
   </Link>
-))`
+);
+
+RateMe.propTypes = {
+  className: PropTypes.string,
+};
+
+export default styled(RateMe)`
   background: hsla(0, 0%, 98%, 1);
   border-radius: 2px;
   border-bottom-left-radius: 0;
