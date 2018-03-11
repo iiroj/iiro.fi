@@ -42,10 +42,6 @@ const Title = styled.h1`
   font-weight: 500;
   line-height: 1;
   margin-bottom: 2rem;
-
-  ${media.tablet`
-    font-size: 4rem;
-  `};
 `;
 
 const Text = styled.article`
@@ -65,30 +61,27 @@ const Text = styled.article`
 `;
 
 const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   margin: auto;
   max-width: 64rem;
   padding: 2rem;
   width: 100%;
 
   ${Picture} {
-    flex: 1 1 32rem;
+    flex: 0 1 20rem;
     height: 32rem;
-    max-width: 80%;
-    width: 24rem;
   }
 
   ${Text} {
-    flex: 1 1 50rem;
+    flex: 1 1 24rem;
     padding: 4rem 0 0 2rem;
-  }
+    transition: padding 125ms ease;
 
-  ${media.tablet`
-    display: flex;
-
-    ${Text} {
+    ${media.tablet`
       padding: 10rem 0 0 4rem;
-    }
-  `};
+    `};
+  }
 `;
 
 const Index = () => (
