@@ -1,4 +1,4 @@
-import { performance } from "perf_hooks";
+const { performance } = require("perf_hooks");
 
 const logResult = (status, task, t0) => {
   const t1 = performance.now();
@@ -6,7 +6,7 @@ const logResult = (status, task, t0) => {
   console.log(`${status} task "${task}" in ${duration} ms`);
 };
 
-export default (task, promisefulFunction) => {
+module.exports = (task, promisefulFunction) => {
   console.log(`Started task "${task}"`);
   const t0 = performance.now();
   return promisefulFunction()

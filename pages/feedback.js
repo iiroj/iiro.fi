@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
 
-import stringify from "../src/utils/stringify";
-import config from "../config";
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
 
@@ -42,9 +40,18 @@ const handlers = withHandlers({
     event.preventDefault();
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
-    const url = `${config.lambda.base_url}/telegram?${stringify({ question, score, comment })}`;
-
-    return fetch(url, { method: "POST" })
+    return fetch("/api/telegram", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        question,
+        score,
+        comment,
+      }),
+    })
       .then(response => {
         if (response.status >= 400) {
           throw new Error(response.status);
