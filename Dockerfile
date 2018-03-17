@@ -17,10 +17,15 @@ ENV PORT=3000
 
 WORKDIR /app
 
-COPY . .
-COPY --from=BUILD /app/.next .next
+COPY package.json .
+COPY package-lock.json .
 
 RUN npm install --production
+
+COPY --from=BUILD /app/.next .next
+COPY next.config.js .
+COPY src src
+COPY static static
 
 EXPOSE $PORT
 

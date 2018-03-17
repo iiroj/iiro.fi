@@ -38,11 +38,7 @@ $ npm run build
 
 ## Deployment
 
-The live site, [iiro.fi](https://iiro.fi), is hosted at [Netlify](https://www.netlify.com).
-
-Every push to the `master` branch sends a webhook to Netlify instructing it to pull the latest HEAD and then deploy the site across its network. Netlify will automatically build the site according to the `netlify.toml` file.
-
-You can read more about Netlify's continuous deployment process [here](https://www.netlify.com/docs/continuous-deployment/).
+The live site, [iiro.fi](https://iiro.fi), is running on [Heroku](https://www.heroku.com) with [Cloudflare](https://www.cloudflare.com) in front set to cache everything for 30 days. A simple shell script pushes the Docker image to Heorku using `heroku container:push`and then invalidates Cloudflare edge caches.
 
 ## License
 
