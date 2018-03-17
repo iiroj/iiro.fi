@@ -1,7 +1,7 @@
-import { request } from "https";
-import { parse } from "url";
+const { request } = require("https");
+const { parse } = require("url");
 
-export default (url, data) =>
+module.exports = (url, data) =>
   new Promise((resolve, reject) => {
     const { host, pathname } = parse(url);
 
