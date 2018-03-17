@@ -20,6 +20,7 @@ WORKDIR /app
 COPY package.json .
 COPY package-lock.json .
 COPY static static
+COPY --from=BUILD /app/src src
 COPY --from=BUILD /app/.next .next
 
 RUN npm install --production
