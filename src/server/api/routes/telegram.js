@@ -1,4 +1,4 @@
-const config = require("../../../../config");
+const config = require("../../../config");
 const logger = require("../../../utils/logger");
 const postJson = require("../../../utils/post-json");
 

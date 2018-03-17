@@ -5,7 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 
-const config = require("../../config");
+const config = require("../config");
 const { isProduction, port } = config;
 
 const nextJs = next({ dev: !isProduction });
