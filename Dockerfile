@@ -17,10 +17,7 @@ ENV PORT=3000
 
 WORKDIR /app
 
-COPY package.json .
-COPY package-lock.json .
-COPY static static
-COPY --from=BUILD /app/src src
+COPY . .
 COPY --from=BUILD /app/.next .next
 
 RUN npm install --production
