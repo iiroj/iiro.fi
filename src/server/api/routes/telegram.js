@@ -1,6 +1,6 @@
 const config = require("../../../config");
 const logger = require("../../../utils/logger");
-const postJson = require("../../../utils/post-json");
+const request = require("../../../utils/request");
 
 const { host = "localhost", telegram } = config;
 const { url, chat_id } = telegram;
@@ -34,10 +34,13 @@ module.exports = async (req, res, next) => {
 
   try {
     const { ok } = await logger("Send feedback to Telegram", () =>
-      postJson(url, {
-        chat_id,
-        text: formatMessage(question, score, comment),
-        parse_mode: "Markdown",
+      request({
+        url,
+        body: {
+          chat_id,
+          text: formatMessage(question, score, comment),
+          parse_mode: "Markdown",
+        },
       }),
     );
     res.set(headers);

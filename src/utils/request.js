@@ -1,7 +1,7 @@
 const { request } = require("https");
 const { parse } = require("url");
 
-module.exports = (url, data) =>
+module.exports = ({ method, url, body: data, headers }) =>
   new Promise((resolve, reject) => {
     const { host, pathname } = parse(url);
 
@@ -11,17 +11,18 @@ module.exports = (url, data) =>
       host,
       path: pathname,
       port: 443,
-      method: "POST",
+      method,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
         "Content-Length": Buffer.byteLength(body),
+        ...headers,
       },
     };
 
     const req = request(params, res => {
       if (res.statusCode < 200 || res.statusCode >= 300) {
-        return reject("telegram");
+        return reject(res.statusCode);
       }
       var body = [];
       res.on("data", chunk => body.push(chunk));
