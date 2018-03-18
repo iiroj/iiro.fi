@@ -38,7 +38,7 @@ $ npm run build
 
 ## Deployment
 
-The live site, [iiro.fi](https://iiro.fi), is running on [Heroku](https://www.heroku.com) with [Cloudflare](https://www.cloudflare.com) in front set to cache everything for 30 days. A simple shell script pushes the Docker image to Heorku using `heroku container:push`and then invalidates Cloudflare edge caches.
+The live site, [iiro.fi](https://iiro.fi), is running on [Heroku](https://www.heroku.com) with [Cloudflare](https://www.cloudflare.com) in front set to cache everything for 30 days.
 
 ## License
 
