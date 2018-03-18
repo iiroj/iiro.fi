@@ -23,6 +23,12 @@ nextJs
     app.use(helmet());
 
     app.use(
+      helmet.referrerPolicy({
+        policy: "no-referrer-when-downgrade",
+      }),
+    );
+
+    app.use(
       helmet.contentSecurityPolicy({
         directives: {
           defaultSrc: ["'self'"],
