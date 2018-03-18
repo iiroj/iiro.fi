@@ -11,7 +11,8 @@
     "lint:fix": "eslint --fix .",
     "dev": "nodemon --watch src/server src/server/index.js",
     "build": "next build",
-    "start": "NODE_ENV=production node src/server/index.js"
+    "start": "NODE_ENV=production node src/server/index.js",
+    "postinstall": "npm run lint && npm run build"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
