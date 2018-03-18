@@ -8,7 +8,7 @@ const morgan = require("morgan");
 const purgeCloudflareCache = require("../utils/purge-cloudflare-cache");
 
 const config = require("../config");
-const { host, isProduction, port } = config;
+const { isProduction, port } = config;
 
 const nextJs = next({ dev: !isProduction });
 const handle = nextJs.getRequestHandler();
@@ -27,7 +27,7 @@ nextJs
         directives: {
           defaultSrc: ["'self'"],
           fontSrc: ["https://fonts.googleapis.com", "https://fonts.gstatic.com"],
-          scriptSrc: [host, "'unsafe-inline'", "'unsafe-eval'"],
+          scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
           styleSrc: ["https://fonts.googleapis.com", "'unsafe-inline'"],
         },
       }),
