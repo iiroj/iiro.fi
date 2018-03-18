@@ -38,7 +38,7 @@ module.exports = ({ method, url, body: data, headers }) =>
 
     req.on("error", error => reject(error));
 
-    setTimeout(() => reject("timeout"), 5000);
+    setTimeout(() => reject("timeout"), 10000);
 
     req.write(body);
 
