@@ -6,6 +6,10 @@
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": "gitlab:iiroj/iiro.fi",
   "private": true,
+  "engines": {
+    "node": "latest",
+    "npm": "latest"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
