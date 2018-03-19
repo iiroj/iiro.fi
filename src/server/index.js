@@ -9,6 +9,7 @@ const config = require("../config");
 const { isProduction, port } = config;
 
 const addSecurityHeaders = require("../utils/security-headers");
+const stripWWW = require("../utils/strip-www");
 const purgeCloudflareCache = require("../utils/purge-cloudflare-cache");
 
 const app = next({ dev: !isProduction });
@@ -20,6 +21,8 @@ app
   .prepare()
   .then(() => {
     const server = express();
+
+    server.use(stripWWW);
 
     addSecurityHeaders(server);
 
