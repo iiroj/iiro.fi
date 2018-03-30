@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const next = require("next");
 const express = require("express");
 const bodyParser = require("body-parser");

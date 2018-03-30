@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
   isProduction: process.env.NODE_ENV === "production",
   host: process.env.HOST,
