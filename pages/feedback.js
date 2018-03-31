@@ -46,9 +46,14 @@ const handlers = withHandlers({
 
     const url = getFeedbackUrl(question, score, comment);
 
-    return fetch(url, { method: "POST" })
+    return new Promise((resolve, reject) => {
+      setTimeout(reject, 10000);
+      fetch(url, { method: "POST" })
+        .then(resolve)
+        .catch(reject);
+    })
       .then(response => {
-        if (response.status >= 400) {
+        if (response.status !== 200) {
           throw new Error(response.status);
         }
 
