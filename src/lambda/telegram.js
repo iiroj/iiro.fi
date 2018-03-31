@@ -1,4 +1,4 @@
-import request from "../utils/request";
+import { post } from "axios";
 
 const chat_id = process.env.TELEGRAM_CHAT_ID;
 const url = `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`;
@@ -26,8 +26,10 @@ ${hearts(score)} (${score} / 7)${
     : ""
 }`;
 
-export function handler(event, context, callback) {
+exports.handler = function(event, context, callback) {
   if (event.httpMethod !== "POST") {
+    console.log(`Incorrect HTTP method ${event.httpMethod}`);
+
     return callback(null, {
       statusCode: 405,
       body: "",
@@ -36,27 +38,31 @@ export function handler(event, context, callback) {
 
   const { question, score, comment } = event.queryStringParameters;
 
-  request({
-    method: "POST",
-    url,
-    body: {
-      chat_id,
-      text: formatMessage(question, score, comment),
-      parse_mode: "Markdown",
-    },
+  console.log(`Posting to Telegram: ${score}/7`);
+
+  post(url, {
+    chat_id,
+    text: formatMessage(question, score, comment),
+    parse_mode: "Markdown",
   })
-    .then(response => {
+    .then(() => {
+      console.log(`Succesfully posted to Telegram`);
+
       return callback(null, {
-        statusCode: response.ok ? 200 : 400,
+        statusCode: 200,
         body: "",
         headers,
       });
     })
-    .catch(error => {
+    .catch(({ response }) => {
+      const { description, error_code } = response.data;
+
+      console.log(`Telegram: ${error_code} — ${description}`);
+
       return callback(null, {
-        statusCode: error === "timeout" ? 408 : 500,
+        statusCode: 500,
         body: "",
         headers,
       });
     });
-}
+};
