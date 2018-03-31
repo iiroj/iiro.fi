@@ -37,6 +37,7 @@ export function handler(event, context, callback) {
   const { question, score, comment } = event.queryStringParameters;
 
   request({
+    method: "POST",
     url,
     body: {
       chat_id,
