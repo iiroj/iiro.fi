@@ -25,7 +25,7 @@
     "build:lambda": "netlify-lambda build src/lambda",
     "preexport": "npm run clean:out",
     "export": "next export",
-    "postexport": "cp _headers out/"
+    "postexport": "cp static_netlify/* out/"
   },
   "dependencies": {
     "css-wipe": "^4.3.0",

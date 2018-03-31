@@ -1,0 +1,3 @@
+# Redirect domain aliases to primary domain
+https://iiro.jappinen.fi/* https://iiro.fi/:splat 301!
+https://iiro.xn--jppinen-5wa.fi/* https://iiro.fi/:splat 301!
