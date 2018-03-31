@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
 
+import stringify from "../src/utils/stringify";
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
 
@@ -32,6 +33,9 @@ const reducer = withReducer(
   },
 );
 
+const getFeedbackUrl = (question, score, comment) =>
+  `${process.env.LAMBDA_URL}/telegram?${stringify({ question, score, comment })}`;
+
 const handlers = withHandlers({
   onChange: ({ dispatch }) => event =>
     dispatch({ type: "SET_STATE", payload: { name: event.target.name, value: event.target.value } }),
@@ -40,18 +44,9 @@ const handlers = withHandlers({
     event.preventDefault();
     dispatch({ type: "SET_SUBMITTING", payload: true });
 
-    return fetch("/api/telegram", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        question,
-        score,
-        comment,
-      }),
-    })
+    const url = getFeedbackUrl(question, score, comment);
+
+    return fetch(url, { method: "POST" })
       .then(response => {
         if (response.status >= 400) {
           throw new Error(response.status);

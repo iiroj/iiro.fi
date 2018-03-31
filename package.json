@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "9.3.2",
+  "version": "10.0.0",
   "description": "A static site built with next.js",
   "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
@@ -11,21 +11,25 @@
     "npm": "latest"
   },
   "scripts": {
+    "clean:next": "rimraf .next",
+    "clean:lambda": "rimraf lambda",
+    "clean:out": "rimraf out",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "dev": "nodemon --watch src/server src/server/index.js",
+    "prestart": "npm run clean:next",
+    "start": "next",
+    "prestart:lambda": "npm run clean:lambda",
+    "start:lambda": "NODE_ENV=development netlify-lambda serve src/lambda",
+    "prebuild": "npm run clean:next",
     "build": "next build",
-    "start": "NODE_ENV=production node src/server/index.js",
-    "postinstall": "npm run lint && npm run build"
+    "build:lambda": "netlify-lambda build src/lambda",
+    "preexport": "npm run clean:out",
+    "export": "next export",
+    "postexport": "cp _headers out/"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
     "css-wipe": "^4.3.0",
     "dotenv": "^5.0.1",
-    "express": "^4.16.3",
-    "helmet": "^3.12.0",
-    "morgan": "^1.9.0",
-    "next": "^5.1.0",
     "polished": "^1.9.2",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
@@ -34,8 +38,10 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "babel-plugin-inline-dotenv": "^1.1.2",
     "babel-plugin-inline-react-svg": "^0.5.2",
     "babel-plugin-styled-components": "^1.5.1",
+    "babel-plugin-transform-inline-environment-variables": "^0.3.0",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-babel": "^4.1.2",
@@ -44,7 +50,8 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-react": "^7.7.0",
-    "nodemon": "^1.17.2",
+    "netlify-lambda": "^1.0.0-babel-7-beta",
+    "next": "^5.1.0",
     "prettier": "^1.11.1",
     "rimraf": "^2.6.2",
     "webpack": "^4.4.1"

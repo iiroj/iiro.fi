@@ -1,6 +1,7 @@
 .DS_Store
-.env
-.next
-node_modules
-sketch
-deploy.sh
+/.env
+/.next
+/lambda
+/node_modules
+/out
+/sketch
