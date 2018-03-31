@@ -3,6 +3,7 @@ import { post } from "axios";
 const chat_id = process.env.TELEGRAM_CHAT_ID;
 const url = `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`;
 const headers = {
+  "Access-Control-Allow-Headers": "Content-Type",
   "Access-Control-Allow-Origin": process.env.HOST,
 };
 
@@ -27,6 +28,17 @@ ${hearts(score)} (${score} / 7)${
 }`;
 
 exports.handler = function(event, context, callback) {
+  if (event.httpMethod === "OPTIONS") {
+    return callback(null, {
+      statusCode: 200,
+      body: "",
+      headers: {
+        ...headers,
+        Allow: "OPTIONS, POST",
+      },
+    });
+  }
+
   if (event.httpMethod !== "POST") {
     console.log(`Incorrect HTTP method ${event.httpMethod}`);
 
@@ -36,7 +48,7 @@ exports.handler = function(event, context, callback) {
     });
   }
 
-  const { question, score, comment } = event.queryStringParameters;
+  const { question, score, comment } = JSON.parse(event.body);
 
   console.log(`Posting to Telegram: ${score}/7`);
 

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
 
-import stringify from "../src/utils/stringify";
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
 
@@ -33,8 +32,7 @@ const reducer = withReducer(
   },
 );
 
-const getFeedbackUrl = (question, score, comment) =>
-  `${process.env.LAMBDA_URL}/telegram?${stringify({ question, score, comment })}`;
+const getFeedbackUrl = (question, score, comment) => `${process.env.LAMBDA_URL}/telegram`;
 
 const handlers = withHandlers({
   onChange: ({ dispatch }) => event =>
@@ -48,7 +46,14 @@ const handlers = withHandlers({
 
     return new Promise((resolve, reject) => {
       setTimeout(reject, 10000);
-      fetch(url, { method: "POST" })
+      fetch(url, {
+        method: "POST",
+        body: JSON.stringify({ question, score, comment }),
+        headers: new Headers({
+          "Content-Type": "application/json",
+        }),
+        mode: "cors",
+      })
         .then(resolve)
         .catch(reject);
     })
