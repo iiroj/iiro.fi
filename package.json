@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "10.1.1",
+  "version": "10.2.0",
   "description": "A static site built with next.js",
   "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
@@ -25,7 +25,6 @@
     "build:lambda": "netlify-lambda build src/lambda",
     "preexport": "npm run clean:out",
     "export": "next export",
-    "postexport": "cp static_netlify/* out/"
   },
   "dependencies": {
     "css-wipe": "^4.3.0",
