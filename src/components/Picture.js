@@ -6,7 +6,7 @@ import { hiDPI } from "polished";
 const Perspective = styled.div.attrs({
   role: "image",
 })`
-  perspective: 9001px;
+  perspective: 50cm;
   perspective-origin: center center;
   position: relative;
 `;
