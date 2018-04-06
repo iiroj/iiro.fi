@@ -9,6 +9,7 @@ import Fraktio from "../src/components/Fraktio";
 import Link from "../src/components/Link";
 import Links from "../src/components/Links";
 import RateMe from "../src/components/RateMe";
+import withGlobalStyles from "../src/styles/global-styles";
 
 const microdata = JSON.stringify({
   "@context": "http://schema.org",
@@ -109,4 +110,4 @@ const Index = () => (
   </Container>
 );
 
-export default Index;
+export default withGlobalStyles(Index);

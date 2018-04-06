@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "10.2.1",
+  "version": "10.3.0",
   "description": "A static site built with next.js",
   "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
@@ -28,10 +28,10 @@
   },
   "dependencies": {
     "css-wipe": "^4.3.0",
-    "dotenv": "^5.0.1",
+    "fontfaceobserver": "^2.0.13",
     "polished": "^1.9.2",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
     "recompose": "^0.26.0",
     "styled-components": "^3.2.5"
   },
@@ -42,9 +42,10 @@
     "babel-plugin-inline-react-svg": "^0.5.2",
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-inline-environment-variables": "^0.3.0",
+    "dotenv": "^5.0.1",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-babel": "^5.0.0",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
@@ -54,7 +55,7 @@
     "next": "^5.1.0",
     "prettier": "^1.11.1",
     "rimraf": "^2.6.2",
-    "webpack": "^4.4.1"
+    "webpack": "^4.5.0"
   },
   "keywords": [
     "lambda",

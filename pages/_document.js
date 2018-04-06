@@ -1,49 +1,6 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
-import { injectGlobal, ServerStyleSheet } from "styled-components";
-import reset from "css-wipe/js";
-
-injectGlobal`
-  ${reset}
-
-  html {
-    height: 100%;
-  }
-
-  #__next {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100%;
-  }
-
-  html {
-    font-size: 12px;
-  }
-
-  body {
-    background-color: hsla(0, 0%, 100%, 1);
-    color: hsla(0, 0%, 30%, 1);
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  * {
-    line-height: 1.5;
-  }
-
-  strong {
-    font-weight: 500;
-  }
-
-  em {
-    font-style: italic;
-  }
-`;
+import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
   static getInitialProps = ({ renderPage }) => {
