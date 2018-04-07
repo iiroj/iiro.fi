@@ -3,6 +3,8 @@ import FontFaceObserver from "fontfaceobserver";
 import { injectGlobal } from "styled-components";
 import reset from "css-wipe/js";
 
+import font from "./fonts";
+
 const montserrat = new FontFaceObserver("Montserrat");
 
 const withGlobalStyles = Page =>
@@ -18,6 +20,8 @@ const withGlobalStyles = Page =>
   };
 
 injectGlobal`
+  ${font}
+
   ${reset}
 
   html {

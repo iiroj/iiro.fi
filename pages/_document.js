@@ -18,11 +18,6 @@ export default class MyDocument extends Document {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" sizes="600x600" href="/static/icon.png" />
-        <link
-          href="https://fonts.googleapis.com/css?family=Montserrat:400,500"
-          rel="subresource stylesheet"
-          as="style"
-        />
         {this.props.styleTags}
       </Head>
       <body>
