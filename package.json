@@ -2,9 +2,10 @@
   "name": "iiro.fi",
   "version": "10.4.0",
   "description": "A static site built with next.js",
-  "licence": "BSD-3-Clause",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
-  "repository": "gitlab:iiroj/iiro.fi",
+  "licence": "MIT",
+  "repository": "github:iiroj/iiro.fi",
+  "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "engines": {
     "node": "latest",
