@@ -4,7 +4,7 @@ import FontFaceObserver from "fontfaceobserver";
 import { injectGlobal } from "styled-components";
 import reset from "css-wipe/js";
 
-import font from "../src/styles/fonts";
+import font from "../styles/fonts";
 
 const montserrat = new FontFaceObserver("Montserrat");
 

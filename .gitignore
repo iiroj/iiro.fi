@@ -1,7 +1,7 @@
 .DS_Store
 /.env
 /.next
-/lambda
+/build_app
+/build_lambda
 /node_modules
-/out
 /sketch

@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "10.4.0",
+  "version": "10.5.0",
   "description": "A static site built with next.js",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "licence": "MIT",
@@ -20,12 +20,12 @@
     "prestart": "npm run clean:next",
     "start": "next",
     "prestart:lambda": "npm run clean:lambda",
-    "start:lambda": "NODE_ENV=development netlify-lambda serve src/lambda",
+    "start:lambda": "NODE_ENV=development netlify-lambda serve lambda",
     "prebuild": "npm run clean:next",
     "build": "next build",
-    "build:lambda": "netlify-lambda build src/lambda",
+    "build:lambda": "netlify-lambda build lambda",
     "preexport": "npm run clean:out",
-    "export": "next export"
+    "export": "next export -o build_app"
   },
   "dependencies": {
     "css-wipe": "^4.3.0",

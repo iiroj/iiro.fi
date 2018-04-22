@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Head from "next/head";
 
-import { media } from "../src/styles/helpers";
-import Picture from "../src/components/Picture";
-import Baskerville from "../src/components/Baskerville";
-import Fraktio from "../src/components/Fraktio";
-import Link from "../src/components/Link";
-import Links from "../src/components/Links";
-import RateMe from "../src/components/RateMe";
+import { media } from "../styles/helpers";
+import Picture from "../components/Picture";
+import Baskerville from "../components/Baskerville";
+import Fraktio from "../components/Fraktio";
+import Link from "../components/Link";
+import Links from "../components/Links";
+import RateMe from "../components/RateMe";
 
 const microdata = JSON.stringify({
   "@context": "http://schema.org",

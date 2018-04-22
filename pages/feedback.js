@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import { withReducer, withHandlers, withProps, compose } from "recompose";
 
-import Back from "../src/components/Back";
-import FeedbackForm from "../src/components/FeedbackForm";
+import Back from "../components/Back";
+import FeedbackForm from "../components/FeedbackForm";
 
 const reducer = withReducer(
   "state",

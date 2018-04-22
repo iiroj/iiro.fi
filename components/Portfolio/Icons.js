@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ButtonLink } from "../../../pages/portfolio";
+import { ButtonLink } from "../../pages/portfolio";
 
 const Article = styled.article`
   background: url("/static/portfolio/icons/icons.jpg");
