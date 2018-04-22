@@ -6,7 +6,7 @@ import reset from "css-wipe/js";
 
 import font from "../styles/fonts";
 
-const montserrat = new FontFaceObserver("Montserrat");
+const observe = new FontFaceObserver("Montserrat");
 
 export default class App extends DefaultApp {
   static async getInitialProps({ Component, router, ctx }) {
@@ -18,9 +18,9 @@ export default class App extends DefaultApp {
   }
 
   componentDidMount() {
-    montserrat.load().then(injectGlobal`
+    observe.load().then(injectGlobal`
         body {
-          font-family: "Montserrat", sans-serif;
+          font-family: "Montserrat", sans-serif !important;
         }
     `);
   }
@@ -59,7 +59,7 @@ injectGlobal`
   body {
     background-color: hsla(0, 0%, 100%, 1);
     color: hsla(0, 0%, 30%, 1);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: sans-serif;
     font-size: 16px;
     font-weight: 400;
     height: 100%;

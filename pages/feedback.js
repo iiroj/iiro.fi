@@ -1,52 +1,32 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
+import React, { Fragment, PureComponent } from "react";
 import Head from "next/head";
-import { withReducer, withHandlers, withProps, compose } from "recompose";
 
 import Back from "../components/Back";
 import FeedbackForm from "../components/FeedbackForm";
 
-const reducer = withReducer(
-  "state",
-  "dispatch",
-  (state, action) => {
-    switch (action.type) {
-      case "SET_STATE":
-        return { ...state, [action.payload.name]: action.payload.value };
-      case "SET_ERROR":
-        return { ...state, error: true };
-      case "SET_SUBMITTED":
-        return { ...state, submitted: action.payload };
-      case "SET_SUBMITTING":
-        return { ...state, submitting: action.payload };
-      default:
-        return state;
-    }
-  },
-  {
+const feedbackUrl = `${process.env.LAMBDA_URL}/telegram`;
+const question = "How likely would you be to recommend Iiro as a designer?";
+
+export default class Feedback extends PureComponent {
+  state = {
     comment: "",
     error: false,
     score: "",
     submitted: false,
     submitting: false,
-  },
-);
+  };
 
-const getFeedbackUrl = (question, score, comment) => `${process.env.LAMBDA_URL}/telegram`;
+  onChange = ({ target: { name, value } }) => this.setState({ [name]: value });
 
-const handlers = withHandlers({
-  onChange: ({ dispatch }) => event =>
-    dispatch({ type: "SET_STATE", payload: { name: event.target.name, value: event.target.value } }),
-
-  onSubmit: ({ dispatch, state: { score, comment }, question }) => event => {
+  onSubmit = event => {
     event.preventDefault();
-    dispatch({ type: "SET_SUBMITTING", payload: true });
+    this.setState({ submitting: true });
 
-    const url = getFeedbackUrl(question, score, comment);
+    const { score, comment } = this.state;
 
     return new Promise((resolve, reject) => {
       setTimeout(reject, 10000);
-      fetch(url, {
+      fetch(feedbackUrl, {
         method: "POST",
         body: JSON.stringify({ question, score, comment }),
         headers: new Headers({
@@ -62,55 +42,34 @@ const handlers = withHandlers({
           throw new Error(response.status);
         }
 
-        dispatch({ type: "SET_SUBMITTING", payload: false });
-        dispatch({ type: "SET_SUBMITTED", payload: true });
+        this.setState({ submitting: false, submitted: true });
       })
       .catch(error => {
-        dispatch({ type: "SET_SUBMITTING", payload: false });
-        dispatch({ type: "SET_ERROR", payload: error });
+        console.log("error", error);
+        this.setState({ submitting: false, error });
       });
-  },
-});
+  };
 
-const enhance = compose(reducer, handlers);
+  render() {
+    const { comment, error, score, submitted, submitting } = this.state;
 
-const Feedback = enhance(
-  ({ onChange, onSubmit, question, state: { comment, error, score, submitted, submitting } }) => (
-    <Fragment>
-      <Head>
-        <title>{question}</title>
-      </Head>
-      <Back />
-      <FeedbackForm
-        comment={comment}
-        error={error}
-        onChange={onChange}
-        onSubmit={onSubmit}
-        question={question}
-        score={score}
-        submitted={submitted}
-        submitting={submitting}
-      />
-    </Fragment>
-  ),
-);
-
-Feedback.propTypes = {
-  onChange: PropTypes.func,
-  onSubmit: PropTypes.func,
-  question: PropTypes.string.isRequired,
-  state: PropTypes.shape({
-    comment: PropTypes.string,
-    error: PropTypes.bool.isRequired,
-    score: PropTypes.string,
-    submitted: PropTypes.bool.isRequired,
-    submitting: PropTypes.bool.isRequired,
-  }),
-};
-
-const resolveFeedbackProps = () =>
-  withProps(props => ({
-    question: "How likely would you be to recommend Iiro as a designer?",
-  }));
-
-export default resolveFeedbackProps()(Feedback);
+    return (
+      <Fragment>
+        <Head>
+          <title>{question}</title>
+        </Head>
+        <Back />
+        <FeedbackForm
+          comment={comment}
+          error={error}
+          onChange={this.onChange}
+          onSubmit={this.onSubmit}
+          question={question}
+          score={score}
+          submitted={submitted}
+          submitting={submitting}
+        />
+      </Fragment>
+    );
+  }
+}

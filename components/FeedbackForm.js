@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { branch, renderComponent } from "recompose";
 
-const Form = styled.form`
+const Container = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -188,25 +187,25 @@ const Button = styled.button`
   }
 `;
 
-const FeedbackSubmitted = () => (
-  <Form>
+const Submitted = () => (
+  <Container>
     <header>
       <h1>Thank you!</h1>
     </header>
-  </Form>
+  </Container>
 );
 
-const FeedbackError = () => (
-  <Form>
+const Error = () => (
+  <Container>
     <header>
       <h1>Something went wrong!</h1>
       <p>Please try again later...</p>
     </header>
-  </Form>
+  </Container>
 );
 
-const FeedbackForm = ({ comment, onChange, onSubmit, question, score, submitting }) => (
-  <Form onSubmit={onSubmit}>
+const Form = ({ comment, onChange, onSubmit, question, score, submitting }) => (
+  <Container onSubmit={onSubmit}>
     <header>
       <h1>{question}</h1>
       <aside>On a scale from 1 to 7</aside>
@@ -231,25 +230,28 @@ const FeedbackForm = ({ comment, onChange, onSubmit, question, score, submitting
       <Textarea onChange={onChange} value={comment} />
       <Button disabled={score === null || submitting}>Submit</Button>
     </Section>
-  </Form>
+  </Container>
 );
 
-FeedbackForm.propTypes = {
-  comment: PropTypes.string,
+Form.propTypes = {
+  comment: PropTypes.string.isRequired,
+  error: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
-  question: PropTypes.string,
-  score: PropTypes.string,
+  question: PropTypes.string.isRequired,
+  score: PropTypes.string.isRequired,
+  submitted: PropTypes.bool.isRequired,
   submitting: PropTypes.bool.isRequired,
 };
 
-const isNotSubmitted = ({ error, submitted }) => !error && !submitted;
-const isSubmitted = ({ submitted }) => submitted;
+const FeedbackForm = props => {
+  if (props.error) return <Error />;
 
-const enhance = branch(
-  isNotSubmitted,
-  renderComponent(FeedbackForm),
-  branch(isSubmitted, renderComponent(FeedbackSubmitted), renderComponent(FeedbackError)),
-);
+  if (props.submitted) return <Submitted />;
 
-export default enhance(FeedbackForm);
+  return <Form {...props} />;
+};
+
+FeedbackForm.propTypes = Form.propTypes;
+
+export default FeedbackForm;
