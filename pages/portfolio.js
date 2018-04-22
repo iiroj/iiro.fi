@@ -6,7 +6,6 @@ import Back from "../src/components/Back";
 import { VerkkokauppaCom } from "../src/components/Portfolio/VerkkokauppaCom";
 import { HumbleBundle } from "../src/components/Portfolio/HumbleBundle";
 import { Icons } from "../src/components/Portfolio/Icons";
-import withGlobalStyles from "../src/styles/global-styles";
 
 export const ButtonLink = styled.a`
   background: white !important;
@@ -62,4 +61,4 @@ const PortfolioIndex = () => (
   </Fragment>
 );
 
-export default withGlobalStyles(PortfolioIndex);
+export default PortfolioIndex;

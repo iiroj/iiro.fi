@@ -1,23 +1,40 @@
-import React, { PureComponent } from "react";
+import React from "react";
+import DefaultApp, { Container } from "next/app";
 import FontFaceObserver from "fontfaceobserver";
 import { injectGlobal } from "styled-components";
 import reset from "css-wipe/js";
 
-import font from "./fonts";
+import font from "../src/styles/fonts";
 
 const montserrat = new FontFaceObserver("Montserrat");
 
-const withGlobalStyles = Page =>
-  class GlobalStyles extends PureComponent {
-    componentDidMount = () =>
-      montserrat.load().then(injectGlobal`
+export default class App extends DefaultApp {
+  static async getInitialProps({ Component, router, ctx }) {
+    if (Component.getInitialProps) {
+      return { pageProps: await Component.getInitialProps(ctx) };
+    } else {
+      return { pageProps: {} };
+    }
+  }
+
+  componentDidMount() {
+    montserrat.load().then(injectGlobal`
         body {
           font-family: "Montserrat", sans-serif;
         }
-      `);
+    `);
+  }
 
-    render = () => <Page {...this.props} />;
-  };
+  render() {
+    const { Component, pageProps } = this.props;
+
+    return (
+      <Container>
+        <Component {...pageProps} />
+      </Container>
+    );
+  }
+}
 
 injectGlobal`
   ${font}
@@ -62,5 +79,3 @@ injectGlobal`
     font-style: italic;
   }
 `;
-
-export default withGlobalStyles;

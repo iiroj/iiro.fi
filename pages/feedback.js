@@ -5,7 +5,6 @@ import { withReducer, withHandlers, withProps, compose } from "recompose";
 
 import Back from "../src/components/Back";
 import FeedbackForm from "../src/components/FeedbackForm";
-import withGlobalStyles from "../src/styles/global-styles";
 
 const reducer = withReducer(
   "state",
@@ -114,4 +113,4 @@ const resolveFeedbackProps = () =>
     question: "How likely would you be to recommend Iiro as a designer?",
   }));
 
-export default withGlobalStyles(resolveFeedbackProps()(Feedback));
+export default resolveFeedbackProps()(Feedback);
