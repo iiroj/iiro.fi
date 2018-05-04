@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { hiDPI } from "polished";
 
 const Perspective = styled.div.attrs({
   role: "image",
@@ -13,7 +12,7 @@ const Perspective = styled.div.attrs({
 
 const Transformer = styled.div`
   background-image: url("/static/picture.jpg");
-  background-position: 55% 50%;
+  background-position: 50%;
   background-size: cover;
   border-radius: 0.5rem;
   box-shadow: var(--shadow, 0px 12px) 4rem rgba(0, 0, 0, 0.16);
@@ -23,14 +22,6 @@ const Transformer = styled.div`
   transition: box-shadow 125ms linear 125ms, transform 125ms linear 125ms;
   transform: var(--tilt, rotateX(0deg) rotateY(0deg));
   width: 100%;
-
-  ${hiDPI(1.5)} {
-    background-image: url("/static/picture@2x.jpg");
-  }
-
-  ${hiDPI(2)} {
-    background-image: url("/static/picture@3x.jpg");
-  }
 
   &::before {
     background: radial-gradient(closest-side, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
