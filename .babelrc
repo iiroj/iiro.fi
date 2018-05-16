@@ -7,11 +7,11 @@
     "babel-plugin-transform-inline-environment-variables",
     "babel-plugin-inline-react-svg",
     [
-      "babel-plugin-styled-components",
+      "babel-plugin-emotion",
       {
-        "ssr": true,
-        "transpileTemplateLiterals": false,
-        "displayName": false
+        "hoist": true,
+        "autoLabel": true,
+        "labelFormat": "[local]"
       }
     ]
   ]

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import styled from "styled-components";
+import styled from "react-emotion";
 import Head from "next/head";
 
 import Back from "../components/Back";

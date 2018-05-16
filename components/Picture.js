@@ -1,10 +1,8 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled from "react-emotion";
 
-const Perspective = styled.div.attrs({
-  role: "image",
-})`
+const Perspective = styled.div`
   perspective: 50cm;
   perspective-origin: center center;
   position: relative;
@@ -107,7 +105,7 @@ class Picture extends PureComponent {
   }
 
   render = () => (
-    <Perspective className={this.props.className}>
+    <Perspective role="image" className={this.props.className}>
       <Transformer innerRef={r => (this.ref = r)} js={this.state.js} />
     </Perspective>
   );

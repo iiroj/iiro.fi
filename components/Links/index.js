@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "react-emotion";
 
 import Link from "../Link";
 
@@ -56,7 +56,7 @@ const ListItem = styled.li`
   }
 `;
 
-const IconLink = Link.extend`
+const IconLink = styled(Link)`
   > svg {
     height: 1.5rem;
     margin-right: 0.25rem;

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled from "react-emotion";
 
 const Container = styled.form`
   display: flex;
@@ -37,11 +37,7 @@ const Section = styled.section`
   width: 100%;
 `;
 
-const Input = styled.input.attrs({
-  name: "score",
-  required: true,
-  type: "radio",
-})`
+const Input = styled.input`
   appearance: none;
   left: 0;
   height: 1rem;
@@ -134,10 +130,7 @@ const Score = styled.ol`
   width: 100%;
 `;
 
-const Textarea = styled.textarea.attrs({
-  name: "comment",
-  placeholder: "You can also give more detailed feedback here.",
-})`
+const Textarea = styled.textarea`
   appearance: none;
   border-radius: 4px;
   border: 2px solid hsla(0, 0%, 0%, 0.2);
@@ -218,7 +211,15 @@ const Form = ({ comment, onChange, onSubmit, question, score, submitting }) => (
 
           return (
             <Number key={value}>
-              <Input id={value} onChange={onChange} selected={selected} value={value} />
+              <Input
+                id={value}
+                name="score"
+                onChange={onChange}
+                required
+                selected={selected}
+                type="radio"
+                value={value}
+              />
               <Radio htmlFor={value} selected={selected} />
               <Text htmlFor={value} selected={selected}>
                 {value}
@@ -227,7 +228,12 @@ const Form = ({ comment, onChange, onSubmit, question, score, submitting }) => (
           );
         })}
       </Score>
-      <Textarea onChange={onChange} value={comment} />
+      <Textarea
+        name="comment"
+        onChange={onChange}
+        placeholder="You can also give more detailed feedback here."
+        value={comment}
+      />
       <Button disabled={score === null || submitting}>Submit</Button>
     </Section>
   </Container>

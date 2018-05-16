@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "react-emotion";
 
 import Svg from "./fraktio.svg";
 import Link from "../Link";
@@ -16,7 +16,7 @@ const Fraktio = styled(Svg)`
 `;
 
 export default () => (
-  <Link href="https://fraktio.fi">
+  <Link href="https://fraktio.fi" rel="noopener noreferrer">
     <Fraktio />
   </Link>
 );

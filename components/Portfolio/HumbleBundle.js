@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "react-emotion";
 
 const Article = styled.article`
   background-color: #3b3e48;
