@@ -1,14 +1,10 @@
 import React from "react";
 import DefaultApp, { Container } from "next/app";
 import FontFaceObserver from "fontfaceobserver";
-import { hydrate, injectGlobal } from "emotion";
+import { hydrate, injectGlobal } from "react-emotion";
 import reset from "css-wipe/js";
 
 import font from "../styles/fonts";
-
-if (typeof window !== "undefined") {
-  hydrate(window.__NEXT_DATA__.ids);
-}
 
 injectGlobal`
   ${font}
@@ -53,6 +49,10 @@ injectGlobal`
     font-style: italic;
   }
 `;
+
+if (typeof window !== "undefined") {
+  hydrate(window.__NEXT_DATA__.ids);
+}
 
 const observe = new FontFaceObserver("Montserrat");
 

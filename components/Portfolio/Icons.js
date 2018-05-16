@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "react-emotion";
+import { css } from "react-emotion";
 import { ButtonLink } from "../../pages/portfolio";
 
-const Article = styled.article`
+const articleStyles = css`
   background: url("/static/portfolio/icons/icons.jpg");
   background-size: cover;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
@@ -12,14 +12,14 @@ const Article = styled.article`
   width: 100%;
 `;
 
-const Title = styled.h1`
+const titleStyles = css`
   font-size: 3em;
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 4rem;
 `;
 
-const Container = styled.div`
+const containerStyles = css`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -38,9 +38,9 @@ const Container = styled.div`
 `;
 
 export const Icons = () => (
-  <Article>
-    <Title>Icon Aficionado</Title>
-    <Container>
+  <article className={articleStyles}>
+    <h1 className={titleStyles}>Icon Aficionado</h1>
+    <div className={containerStyles}>
       <div>
         <img
           src="/static/portfolio/icons/growl.png"
@@ -59,6 +59,6 @@ export const Icons = () => (
           Tune•Instructor
         </ButtonLink>
       </div>
-    </Container>
-  </Article>
+    </div>
+  </article>
 );

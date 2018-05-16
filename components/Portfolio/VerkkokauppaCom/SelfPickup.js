@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "react-emotion";
+import { css } from "react-emotion";
 
-const Section = styled.section`
+const sectionStyles = css`
   background-color: #a4abb3;
   box-sizing: border-box;
   display: flex;
@@ -14,7 +14,7 @@ const Section = styled.section`
   width: 100%;
 `;
 
-const Image = styled.img`
+const imageStyles = css`
   display: block;
   left: 50%;
   min-width: 100%;
@@ -25,7 +25,7 @@ const Image = styled.img`
   z-index: 1;
 `;
 
-const Text = styled.div`
+const textStyles = css`
   color: white;
   margin: 1rem auto;
   max-width: 480px;
@@ -35,12 +35,13 @@ const Text = styled.div`
 `;
 
 export const SelfPickup = () => (
-  <Section>
-    <Image
+  <section className={sectionStyles}>
+    <img
+      className={imageStyles}
       src="/static/portfolio/verkkokauppacom/ipad.jpg"
       srcSet="/static/portfolio/verkkokauppacom/ipad.jpg 1x, /static/portfolio/verkkokauppacom/ipad@2x.jpg 2x, /static/portfolio/verkkokauppacom/ipad@3x.jpg 3x"
     />
-    <Text>
+    <div className={textStyles}>
       <h2>Self-Service order pickup</h2>
       <p>
         Customers need to check their order in for pick-up at the Verkkokauppa.com Helsinki store, because of the
@@ -51,6 +52,6 @@ export const SelfPickup = () => (
         make obvious that you are picking up the right order, without exposing any personally identifiable information.
       </p>
       <p>The self-service kiosk is used for more than 50 % of daily pick-ups.</p>
-    </Text>
-  </Section>
+    </div>
+  </section>
 );

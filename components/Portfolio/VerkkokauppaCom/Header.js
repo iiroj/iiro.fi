@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "react-emotion";
+import { css } from "react-emotion";
 import { ButtonLink } from "../../../pages/portfolio";
 
-const Container = styled.header`
+const headerStyles = css`
   align-items: center;
   background-color: #e30613;
   color: white;
@@ -40,24 +40,24 @@ const Container = styled.header`
   }
 `;
 
-const Text = styled.div`
+const textStyles = css`
   margin: 4rem;
   max-width: 480px;
 `;
 
-const PhoneContainer = styled.div`
+const phoneContainerStyles = css`
   height: 480px;
   margin: 0 4rem;
   width: 303px;
   position: relative;
 `;
 
-const Phone = styled.img`
+const phoneStyles = css`
   width: 303px;
   display: block;
 `;
 
-const Screen = styled.img`
+const screenStyles = css`
   display: block;
   width: 270px;
   position: absolute;
@@ -66,8 +66,8 @@ const Screen = styled.img`
 `;
 
 export const Header = () => (
-  <Container>
-    <Text>
+  <header className={headerStyles}>
+    <div className={textStyles}>
       <h1>Verkko&shy;kauppa.com</h1>
       <p>
         UX/UI designer from November 2014 until April 2017. As the resident web designer, I oversaw the visual direction
@@ -76,16 +76,18 @@ export const Header = () => (
       <ButtonLink href="https://www.verkkokauppa.com/" target="_blank" rel="noopener noreferrer">
         Visit Verkkokauppa.com
       </ButtonLink>
-    </Text>
-    <PhoneContainer>
-      <Phone
+    </div>
+    <div className={phoneContainerStyles}>
+      <img
+        className={phoneStyles}
         src="/static/portfolio/verkkokauppacom/pixel.png"
         srcSet="/static/portfolio/verkkokauppacom/pixel.png 1x, /static/portfolio/verkkokauppacom/pixel@2x.png 2x, /static/portfolio/verkkokauppacom/pixel@3x.png 3x"
       />
-      <Screen
+      <img
+        className={screenStyles}
         src="/static/portfolio/verkkokauppacom/frontpage.jpg"
         srcSet="/static/portfolio/verkkokauppacom/frontpage.jpg 1x, /static/portfolio/verkkokauppacom/frontpage@2x.jpg 2x, /static/portfolio/verkkokauppacom/frontpage@3x.jpg 3x"
       />
-    </PhoneContainer>
-  </Container>
+    </div>
+  </header>
 );

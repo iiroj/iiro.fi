@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "react-emotion";
+import { css } from "react-emotion";
 
-const Section = styled.section`
+const sectionStyles = css`
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -10,12 +10,12 @@ const Section = styled.section`
   padding: 4rem 0;
 `;
 
-const Text = styled.div`
+const textStyles = css`
   margin: 4rem;
   max-width: 480px;
 `;
 
-const Image = styled.figure`
+const imageStyles = css`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -29,8 +29,8 @@ const Image = styled.figure`
 `;
 
 export const DeliveryEstimates = () => (
-  <Section>
-    <Text>
+  <section className={sectionStyles}>
+    <div className={textStyles}>
       <h2>Delivery estimates</h2>
       <h3>The Problem</h3>
       <p>Customers were confused by raw product stock numbers and unsure what it meant for availability.</p>
@@ -46,8 +46,8 @@ export const DeliveryEstimates = () => (
         availability interface was designed for store locations. For online ordering, the availability logic was
         completely revamped to give an estimate on when the product would arrive at the customer.
       </p>
-    </Text>
-    <Image>
+    </div>
+    <figure className={imageStyles}>
       <img
         src="/static/portfolio/verkkokauppacom/dialog.png"
         srcSet="/static/portfolio/verkkokauppacom/dialog.png 1x, /static/portfolio/verkkokauppacom/dialog@2x.png 2x, /static/portfolio/verkkokauppacom/dialog@3x.png 3x"
@@ -56,6 +56,6 @@ export const DeliveryEstimates = () => (
         src="/static/portfolio/verkkokauppacom/list.png"
         srcSet="/static/portfolio/verkkokauppacom/list.png 1x, /static/portfolio/verkkokauppacom/list@2x.png 2x, /static/portfolio/verkkokauppacom/list@3x.png 3x"
       />
-    </Image>
-  </Section>
+    </figure>
+  </section>
 );

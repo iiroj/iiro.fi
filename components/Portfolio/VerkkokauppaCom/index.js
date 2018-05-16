@@ -1,12 +1,12 @@
 import React from "react";
-import styled from "react-emotion";
+import { css } from "react-emotion";
 
 import { Header } from "./Header";
 import { DeliveryEstimates } from "./DeliveryEstimates";
 import { SelfPickup } from "./SelfPickup";
 import { Barometer } from "./Barometer";
 
-const Container = styled.article`
+const articleStyles = css`
   background-color: white;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   position: relative;
@@ -33,10 +33,10 @@ const Container = styled.article`
 `;
 
 export const VerkkokauppaCom = () => (
-  <Container>
+  <article className={articleStyles}>
     <Header />
     <DeliveryEstimates />
     <SelfPickup />
     <Barometer />
-  </Container>
+  </article>
 );
