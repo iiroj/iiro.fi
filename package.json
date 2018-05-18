@@ -59,12 +59,12 @@
     "rimraf": "^2.6.2"
   },
   "keywords": [
+    "emotion",
     "lambda",
     "netlify",
     "nextjs",
     "react",
     "serverless",
-    "static-site",
-    "styled-components"
+    "static-site"
   ]
 }
