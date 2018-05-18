@@ -6,6 +6,7 @@
   ],
   "plugins": [
     "react",
+    "emotion",
     "prettier"
   ],
   "parser": "babel-eslint",

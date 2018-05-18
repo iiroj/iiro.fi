@@ -1,10 +1,8 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, createRef } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { css, cx } from "react-emotion";
 
-const Perspective = styled.div.attrs({
-  role: "image",
-})`
+const perspectiveStyles = css`
   perspective: 50cm;
   perspective-origin: center center;
   position: relative;
@@ -59,30 +57,32 @@ class Picture extends PureComponent {
     this.state = {
       js: false,
     };
+
+    this.ref = createRef();
   }
 
   updateTilt = (x, y) => {
-    const { height, width } = this.ref.getBoundingClientRect();
+    const { height, width } = this.ref.current.getBoundingClientRect();
     const rotateX = (height / 2 - y) * (45 / height);
     const rotateY = (width / 2 - x) * (45 / width) * -1;
 
-    this.ref.setAttribute(
+    this.ref.current.setAttribute(
       "style",
       `--tilt: rotateX(${rotateX}deg) rotateY(${rotateY}deg); --shadow: ${rotateY * -1}px ${rotateX}px; --glare: ${50 -
         100 * x / width}%, ${50 - 100 * y / height}%;`,
     );
   };
 
-  resetTilt = () => this.ref.removeAttribute("style");
+  resetTilt = () => this.ref.current.removeAttribute("style");
 
   handleMouseMove = ({ layerX, layerY }) => this.updateTilt(layerX, layerY);
 
   handleTouchMove = event => {
     const { changedTouches, target, touches } = event;
-    if (target === this.ref) {
+    if (target === this.ref.current) {
       event.preventDefault();
       const { pageX, pageY } = touches[0] || changedTouches[0];
-      const { left, top } = this.ref.getBoundingClientRect();
+      const { left, top } = this.ref.current.getBoundingClientRect();
       this.updateTilt(pageX - left, pageY - top);
     } else {
       this.resetTilt();
@@ -91,26 +91,31 @@ class Picture extends PureComponent {
 
   componentDidMount() {
     this.setState({ js: true });
-    this.ref.addEventListener("mousemove", this.handleMouseMove);
-    this.ref.addEventListener("mouseleave", this.resetTilt);
+    this.ref.current.addEventListener("mousemove", this.handleMouseMove);
+    this.ref.current.addEventListener("mouseleave", this.resetTilt);
     if ("ontouchmove" in document.documentElement) {
       document.addEventListener("touchmove", this.handleTouchMove);
     }
   }
 
   componentWillUnmount() {
-    this.ref.removeEventListener("mousemove", this.handleMouseMove);
-    this.ref.removeEventListener("mouseleave", this.resetTilt);
+    this.ref.current.removeEventListener("mousemove", this.handleMouseMove);
+    this.ref.current.removeEventListener("mouseleave", this.resetTilt);
     if ("ontouchmove" in document.documentElement) {
       document.removeEventListener("touchmove", this.handleTouchMove);
     }
   }
 
   render = () => (
-    <Perspective className={this.props.className}>
-      <Transformer innerRef={r => (this.ref = r)} js={this.state.js} />
-    </Perspective>
+    <div role="image" className={cx(perspectiveStyles, this.props.className)}>
+      <Transformer innerRef={this.ref} js={this.state.js} />
+    </div>
   );
 }
 
-export default styled(Picture)``;
+const pictureStyles = css`
+  flex: 0 1 20rem;
+  height: 32rem;
+`;
+
+export default styled(Picture)(pictureStyles);

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { css } from "react-emotion";
 import Link from "next/link";
 
 const RateMe = ({ className }) => (
@@ -13,7 +13,7 @@ RateMe.propTypes = {
   className: PropTypes.string,
 };
 
-export default styled(RateMe)`
+const linkStyles = css`
   background: hsla(0, 0%, 98%, 1);
   border-radius: 2px;
   border-bottom-left-radius: 0;
@@ -70,3 +70,5 @@ export default styled(RateMe)`
     transition: all 125ms ease-out;
   }
 `;
+
+export default styled(RateMe)(linkStyles);

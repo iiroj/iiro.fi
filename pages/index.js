@@ -1,12 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import { css } from "react-emotion";
 import Head from "next/head";
 
 import { media } from "../styles/helpers";
 import Picture from "../components/Picture";
 import Baskerville from "../components/Baskerville";
 import Fraktio from "../components/Fraktio";
-import Link from "../components/Link";
 import Links from "../components/Links";
 import RateMe from "../components/RateMe";
 
@@ -28,26 +27,24 @@ const microdata = JSON.stringify({
     addressCountry: "Finland",
     addressLocality: "Helsinki",
   },
-  sameAs: [
-    "https://twitter.com/iirojappinen",
-    "https://fi.linkedin.com/in/iiroj",
-    "https://dribbble.com/iiroj",
-    "https://github.com/iiroj",
-    "https://gitlab.com/iiroj",
-  ],
+  sameAs: ["https://twitter.com/iirojappinen", "https://fi.linkedin.com/in/iiroj", "https://github.com/iiroj"],
 });
 
-const Title = styled.h1`
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 1;
-  margin-bottom: 2rem;
-`;
+const articleStyle = css`
+  flex: 1 1 24rem;
+  padding: 4rem 0 0 2rem;
+  transition: padding 125ms ease;
 
-const Text = styled.article`
+  h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+
   p {
-    hyphens: auto;
     margin-top: 1rem;
+    line-height: 1.75;
   }
 
   ${Baskerville} {
@@ -56,11 +53,15 @@ const Text = styled.article`
   }
 
   ${RateMe} {
-    margin: 2rem 0 4rem;
+    margin: 4rem 0;
   }
+
+  ${media.tablet`
+      padding: 10rem 0 0 4rem;
+    `};
 `;
 
-const Container = styled.div`
+const containerStyle = css`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -68,45 +69,26 @@ const Container = styled.div`
   max-width: 64rem;
   padding: 2rem;
   width: 100%;
-
-  ${Picture} {
-    flex: 0 1 20rem;
-    height: 32rem;
-  }
-
-  ${Text} {
-    flex: 1 1 24rem;
-    padding: 4rem 0 0 2rem;
-    transition: padding 125ms ease;
-
-    ${media.tablet`
-      padding: 10rem 0 0 4rem;
-    `};
-  }
 `;
 
 const Index = () => (
-  <Container>
+  <div className={containerStyle}>
     <Head>
       <title>Iiro Jäppinen</title>
       <script type="application/ld+json">{microdata}</script>
     </Head>
     <Picture />
-    <Text>
-      <Title>I am Iiro Jäppinen</Title>
+    <article className={articleStyle}>
+      <h1>I am Iiro Jäppinen</h1>
       <p>
         a UI Designer <Baskerville>&</Baskerville> Developer, and all-around handyman at <Fraktio />. I help people
-        realise their ideas, design useful experiences and create beautiful interfaces and interactions. I like to write
-        Javascript and React. In my toolbox I keep <Link href="https://www.sketchapp.com/">Sketch</Link>,{" "}
-        <Link href="https://www.styled-components.com">styled-components</Link>,{" "}
-        <Link href="https://github.com/zeit/next.js/">next.js</Link> and{" "}
-        <Link href="https://github.com/acdlite/recompose">recompose</Link>.
+        realise their ideas, design useful experiences and create beautiful interfaces and interactions. I mainly create
+        ECMAScript/React applications.
       </p>
-      <p>In my free time I like to go to the gym and train strength. For recovery I drink beer.</p>
       <Links />
       <RateMe />
-    </Text>
-  </Container>
+    </article>
+  </div>
 );
 
 export default Index;

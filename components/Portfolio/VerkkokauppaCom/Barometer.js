@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "react-emotion";
 
 const Svg = styled.svg`
   height: 120px;
@@ -34,14 +34,14 @@ const Graph = () => (
   </Svg>
 );
 
-const Section = styled.section`
+const sectionStyles = css`
   overflow-x: hidden;
   padding-top: 192px;
   position: relative;
   width: 100%;
 `;
 
-const Image = styled.img`
+const imageStyles = css`
   display: block;
   left: 50%;
   position: absolute;
@@ -50,7 +50,7 @@ const Image = styled.img`
   width: 368px;
 `;
 
-const Text = styled.div`
+const textStyles = css`
   margin: 0 auto 2rem auto;
   max-width: 480px;
   padding: 0 1rem;
@@ -61,13 +61,14 @@ const Text = styled.div`
 `;
 
 export const Barometer = () => (
-  <Section>
-    <Image
+  <section className={sectionStyles}>
+    <img
+      className={imageStyles}
       src="/static/portfolio/verkkokauppacom/price-barometer.png"
       srcSet="/static/portfolio/verkkokauppacom/price-barometer.png 1x, /static/portfolio/verkkokauppacom/price-barometer@2x.png 2x, /static/portfolio/verkkokauppacom/price-barometer@3x.png 3x"
     />
     <Graph />
-    <Text>
+    <div className={textStyles}>
       <h2>Making Informed Customers</h2>
       <p>
         <a href="https://www.verkkokauppa.com/en/investors/" target="_blank" rel="noopener noreferrer">
@@ -80,6 +81,6 @@ export const Barometer = () => (
         products. Customers are able to judge themselves how much cheaper Verkkokauppa.com is. We also tell customers
         the value of their product as used-goods, so they can be confident reselling and fighting e-waste.
       </p>
-    </Text>
-  </Section>
+    </div>
+  </section>
 );

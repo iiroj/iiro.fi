@@ -1,8 +1,21 @@
 import React from "react";
-import styled from "styled-components";
+import PropTypes from "prop-types";
+import styled, { css } from "react-emotion";
 import Link from "next/link";
 
-const X = styled.a`
+const Back = ({ className }) => (
+  <Link href="/">
+    <a className={className} title="Back to iiro.fi" role="navigation">
+      Back to iiro.fi
+    </a>
+  </Link>
+);
+
+Back.propTypes = {
+  className: PropTypes.string,
+};
+
+const backStyles = css`
   background: none !important;
   color: transparent;
   cursor: pointer;
@@ -61,12 +74,4 @@ const X = styled.a`
   }
 `;
 
-const Back = () => (
-  <Link href="/">
-    <X title="Back to iiro.fi" role="navigation">
-      Back to iiro.fi
-    </X>
-  </Link>
-);
-
-export default Back;
+export default styled(Back)(backStyles);

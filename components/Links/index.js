@@ -1,14 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "react-emotion";
 
 import Link from "../Link";
 
 import email from "./email.svg";
 import twitter from "./twitter.svg";
 import linkedin from "./linkedin.svg";
-import dribbble from "./dribbble.svg";
 import github from "./github.svg";
-import gitlab from "./gitlab.svg";
 
 const links = [
   {
@@ -27,36 +25,25 @@ const links = [
     title: "Linkedin",
   },
   {
-    href: "https://dribbble.com/iiroj",
-    icon: dribbble,
-    title: "Dribbble",
-  },
-  {
     href: "https://github.com/iiroj",
     icon: github,
     title: "GitHub",
   },
-  {
-    href: "https://gitlab.com/iiroj",
-    icon: gitlab,
-    title: "GitLab",
-  },
 ];
 
 const List = styled.ul`
-  margin: 0.5rem -0.5rem;
+  margin-top: 2rem;
 `;
 
 const ListItem = styled.li`
   display: inline-block;
-  margin: 0.5rem;
 
-  &:first-child {
-    margin-top: 0;
+  & + & {
+    margin-left: 2rem;
   }
 `;
 
-const IconLink = Link.extend`
+const IconLink = styled(Link)`
   > svg {
     height: 1.5rem;
     margin-right: 0.25rem;

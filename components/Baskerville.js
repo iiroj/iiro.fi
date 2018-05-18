@@ -1,9 +1,6 @@
-import styled from "styled-components";
+import styled from "react-emotion";
 
-const Baskerville = styled.span`
-  font-family: "Baskerville", "Goudy Old Style", "Palatino", "Book Antiqua", serif;
+export default styled.span`
   font-family: "Baskerville", "Goudy Old Style", "Palatino", "Book Antiqua", serif;
   font-style: italic;
 `;
-
-export default Baskerville;
