@@ -2,107 +2,108 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "react-emotion";
 
-const formStyles = css({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  margin: "auto",
-  maxWidth: "44rem",
-  padding: "2rem 4rem",
-  width: "100%",
+const formStyles = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 44rem;
+  padding: 2rem 4rem;
+  width: 100%;
 
-  header: {
-    margin: "0 auto 2rem",
+  header {
+    margin: 0 auto 2rem;
 
-    h1: {
-      fontSize: "2rem",
-      lineHeight: "1.25em",
-      marginBottom: "1rem",
-    },
+    h1 {
+      font-size: 2rem;
+      line-height: 1.25em;
+      margin-bottom: 1rem;
+    }
 
-    aside: {
-      color: "hsla(0, 0%, 80%, 1)",
-      fontSize: "0.85em",
-      fontWeight: "500",
-      textAlign: "left",
-      textTransform: "uppercase",
-      width: "100%",
-    },
-  },
-});
+    aside {
+      color: hsla(0, 0%, 80%, 1);
+      font-size: 0.85em;
+      font-weight: 500;
+      text-align: left;
+      text-transform: uppercase;
+      width: 100%;
+    }
+  }
+`;
 
-const sectionStyles = css({
-  margin: "0 auto 2rem",
-  textAlign: "center",
-  width: "100%",
-});
+const sectionStyles = css`
+  margin: 0 auto 2rem;
+  text-align: center;
+  width: 100%;
+`;
 
-const inputStyles = css({
-  appearance: "none",
-  left: "0",
-  height: "1rem",
-  margin: "0",
-  opacity: "0",
-  position: "absolute",
-  top: "0",
-  width: "1rem",
-});
+const inputStyles = css`
+  -webkit-appearance: none;
+  left: 0;
+  height: 1rem;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 1rem;
+`;
 
-const Radio = styled.label(
-  {
-    borderRadius: "50%",
-    boxShadow: "inset 0 0 0 1px hsla(0, 0%, 0%, 0.2)",
-    display: "block",
-    height: "1rem",
-    margin: "0 auto",
-    position: "relative",
-    transition: "box-shadow 125ms ease-out, transform 125ms ease-out",
-    width: "1rem",
+const Radio = styled.label`
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2);
+  display: block;
+  height: 1rem;
+  margin: 0 auto;
+  position: relative;
+  transition: box-shadow 125ms ease-out, transform 125ms ease-out;
+  width: 1rem;
 
-    "&::after": {
-      background: "hsla(0, 0%, 100%, 1)",
-      borderRadius: "50%",
-      boxShadow: "0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 0 hsla(44, 100%, 75%, 1)",
-      content: "''",
-      display: "block",
-      height: "0.5rem",
-      left: "50%",
-      opacity: "0",
-      position: "absolute",
-      top: "50%",
-      transform: "translate(-50%, -50%) scale(0)",
-      transition: "opacity 125ms ease-out, transform 125ms ease-out",
-      width: "0.5rem",
-    },
-  },
-  props =>
-    props.selected === true
-      ? {
-          boxShadow: "inset 0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 2rem hsla(44, 100%, 75%, 1)",
-          transform: "scale(1.25)",
+  &::after {
+    background: hsla(0, 0%, 100%, 1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 0 hsla(44, 100%, 75%, 1);
+    content: "";
+    display: block;
+    height: 0.5rem;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: opacity 125ms ease-out, transform 125ms ease-out;
+    width: 0.5rem;
+  }
 
-          "&::after": {
-            opacity: "1",
-            transform: "translate(-50%, -50%) scale(1)",
-          },
-        }
-      : undefined,
-);
+  ${props =>
+    props.selected === true &&
+    css`
+      box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2), inset 0 0 0 2rem hsla(44, 100%, 75%, 1);
+      transform: scale(1.25);
 
-const textStyles = css({
-  flexGrow: "1",
-  fontWeight: "bold",
-  display: "block",
-  lineHeight: "2rem",
-  marginTop: "-1.5rem",
-  paddingTop: "1.5rem",
-  textAlign: "center",
-  transition: "opacity 125ms ease-out",
-});
+      &::after {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    `};
+`;
 
-const Text = styled.label(textStyles, props => ({
-  opacity: props.selected ? "1" : "0.4",
-}));
+const Text = styled.label`
+  flex-grow: 1;
+  font-weight: bold;
+  display: block;
+  line-height: 2rem;
+  margin-top: -1.5rem;
+  opacity: 0.4;
+  padding-top: 1.5rem;
+  text-align: center;
+  transition: opacity 125ms ease-out;
+
+  ${props =>
+    props.selected === true &&
+    css`
+      opacity: 1;
+    `};
+`;
 
 const numberStyles = css`
   flex-grow: 1;
@@ -122,62 +123,62 @@ const numberStyles = css`
   }
 `;
 
-const scoreStyles = css({
-  display: "flex",
-  justifyContent: "space-around",
-  marginBottom: "2rem",
-  width: "100%",
-});
+const scoreStyles = css`
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  width: 100%;
+`;
 
-const textareaStyles = css({
-  appearance: "none",
-  borderRadius: "4px",
-  border: "2px solid hsla(0, 0%, 0%, 0.2)",
-  color: "inherit",
-  display: "block",
-  fontFamily: "inherit",
-  fontSize: "16px",
-  lineHeight: "1.25em",
-  marginBottom: "1rem",
-  outline: "none",
-  padding: "1em",
-  resize: "vertical",
-  width: "100%",
+const textareaStyles = css`
+  -webkit-appearance: none;
+  border-radius: 4px;
+  border: 2px solid hsla(0, 0%, 0%, 0.2);
+  color: inherit;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.25em;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: 1em;
+  resize: vertical;
+  width: 100%;
 
-  "&:focus": {
-    border: "2px solid hsla(44, 100%, 75%, 1)",
-  },
-});
+  &:focus {
+    border: 2px solid hsla(44, 100%, 75%, 1);
+  }
+`;
 
-const buttonStyles = css({
-  backgroundColor: "hsla(44, 100%, 75%, 1)",
-  borderRadius: "1.5rem",
-  border: "none",
-  display: "block",
-  fontFamily: "inherit",
-  fontSize: "1rem",
-  fontWeight: "500",
-  height: "3rem",
-  margin: "0 auto",
-  outline: "none",
-  padding: "0 4rem",
-  transition: "background-color 125ms ease-out, box-shadow 125ms ease-out, transform 125ms ease-out",
+const buttonStyles = css`
+  background-color: hsla(44, 100%, 75%, 1);
+  border-radius: 1.5rem;
+  border: none;
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 3rem;
+  margin: 0 auto;
+  outline: none;
+  padding: 0 4rem;
+  transition: background-color 125ms ease-out, box-shadow 125ms ease-out, transform 125ms ease-out;
 
-  "&:disabled": {
-    cursor: "not-allowed",
-    backgroundColor: "hsla(44, 100%, 75%, 0.4)",
-  },
+  &:disabled {
+    cursor: not-allowed;
+    background-color: hsla(44, 100%, 75%, 0.4);
+  }
 
-  "&:hover:not(:disabled)": {
-    cursor: "pointer",
-    boxShadow: "0 0.5rem 2rem hsla(0, 0%, 0%, 0.1)",
-  },
+  &:hover:not(:disabled) {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 2rem hsla(0, 0%, 0%, 0.1);
+  }
 
-  "&:active:not(:disabled)": {
-    boxShadow: "inset 0 0 0 3rem hsla(0, 0%, 0%, 0.1)",
-    transform: "scale(0.95)",
-  },
-});
+  &:active:not(:disabled) {
+    box-shadow: inset 0 0 0 3rem hsla(0, 0%, 0%, 0.1);
+    transform: scale(0.95);
+  }
+`;
 
 const Submitted = () => (
   <section className={sectionStyles}>
