@@ -1,18 +1,9 @@
 {
-  "presets": [
-    "next/babel"
-  ],
+  "presets": ["next/babel"],
   "plugins": [
     "babel-plugin-inline-dotenv",
     "babel-plugin-transform-inline-environment-variables",
     "babel-plugin-inline-react-svg",
-    [
-      "babel-plugin-emotion",
-      {
-        "hoist": true,
-        "autoLabel": true,
-        "labelFormat": "[local]"
-      }
-    ]
+    ["babel-plugin-emotion", { "hoist": true }]
   ]
 }

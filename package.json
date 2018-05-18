@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "10.8.1",
+  "version": "11.0.0",
   "description": "A static site built with next.js",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "licence": "MIT",
@@ -48,13 +48,13 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-emotion": "^9.1.0",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-react": "^7.8.2",
     "netlify-lambda": "^1.0.0-babel-7-beta",
-    "next": "^6.0.2",
+    "next": "^6.0.3",
     "prettier": "^1.12.1",
     "rimraf": "^2.6.2"
   },
