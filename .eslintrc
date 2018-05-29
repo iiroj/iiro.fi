@@ -26,7 +26,6 @@
     }],
     "react/prop-types": 1,
     "react/display-name": 0,
-    "emotion/syntax-preference": [2, "string"],
     "prettier/prettier": [
       "error",
       {

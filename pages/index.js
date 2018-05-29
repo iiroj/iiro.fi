@@ -52,8 +52,12 @@ const articleStyle = css`
     line-height: 1.25;
   }
 
+  ${Links} {
+    margin-top: 1.5rem;
+  }
+
   ${RateMe} {
-    margin: 4rem 0;
+    margin: 2.5rem 0 4rem;
   }
 
   ${media.tablet`

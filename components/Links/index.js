@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "react-emotion";
+import PropTypes from "prop-types";
+import styled, { css } from "react-emotion";
 
 import Link from "../Link";
 
@@ -31,19 +32,11 @@ const links = [
   },
 ];
 
-const List = styled.ul`
-  margin-top: 2rem;
+const listItem = css`
+  margin: 0.5rem 1rem;
 `;
 
-const ListItem = styled.li`
-  display: inline-block;
-
-  & + & {
-    margin-left: 2rem;
-  }
-`;
-
-const IconLink = styled(Link)`
+const iconLink = css`
   > svg {
     height: 1.5rem;
     margin-right: 0.25rem;
@@ -53,17 +46,25 @@ const IconLink = styled(Link)`
   }
 `;
 
-const Links = () => (
-  <List>
+const Links = ({ className }) => (
+  <ul className={className}>
     {links.map(link => (
-      <ListItem key={link.title}>
-        <IconLink href={link.href}>
+      <li key={link.title} className={listItem}>
+        <Link className={iconLink} href={link.href}>
           <link.icon />
           <span>{link.title}</span>
-        </IconLink>
-      </ListItem>
+        </Link>
+      </li>
     ))}
-  </List>
+  </ul>
 );
 
-export default Links;
+Links.propTypes = {
+  className: PropTypes.string,
+};
+
+export default styled(Links)`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+`;
