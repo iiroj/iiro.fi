@@ -69,7 +69,7 @@ class Picture extends PureComponent {
     this.ref.current.setAttribute(
       "style",
       `--tilt: rotateX(${rotateX}deg) rotateY(${rotateY}deg); --shadow: ${rotateY * -1}px ${rotateX}px; --glare: ${50 -
-        100 * x / width}%, ${50 - 100 * y / height}%;`,
+        (100 * x) / width}%, ${50 - (100 * y) / height}%;`,
     );
   };
 
