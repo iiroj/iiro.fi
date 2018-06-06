@@ -4,8 +4,8 @@
   "description": "A static site built with next.js",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "licence": "MIT",
-  "repository": "github:iiroj/iiro.fi",
-  "bugs": "https://github.com/iiroj/iiro.fi/issues",
+  "repository": "gitlab:iiroj/iiro.fi",
+  "bugs": "https://gitlab.com/iiroj/iiro.fi/issues",
   "private": true,
   "engines": {
     "node": "latest",
