@@ -1,7 +1,4 @@
-.DS_Store
+/build
+/dist
 /.env
-/.next
-/build_app
-/build_lambda
-/node_modules
-/sketch
+node_modules

@@ -1,7 +1,7 @@
 [build]
-  command = "npm run build && npm run export && npm run build:lambda"
-  publish = "build_app"
-  functions = "build_lambda"
+  command = "npm run build"
+  publish = "build/site"
+  functions = "build/lambda"
 
 [[headers]]
   for = "/*"
