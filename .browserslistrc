@@ -1,0 +1,6 @@
+# Service Worker support
+Edge >= 17
+Firefox >= 59
+Chrome >= 49
+Safari >= 11.1
+iOS >= 11.3
