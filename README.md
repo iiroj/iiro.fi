@@ -1,14 +1,17 @@
 # iiro.fi
 
-A static site built with [Next.js](https://github.com/zeit/next.js/), available at [iiro.fi](https://iiro.fi).
+A static site, available at [iiro.fi](https://iiro.fi).
 
 ## Technology used
 
-This static site is built with [Next.js](https://github.com/zeit/next.js/), a framework for server-rendered or statically-exported [React](https://facebook.github.io/react/) apps. It is composed of basic React pure functional components and some static images.
+* [babel](https://babeljs.io/)
+* [react-universal-component](https://github.com/faceyspacey/react-universal-component)
+* [emotion](https://emotion.sh)
+* [redux-first-router](https://github.com/faceyspacey/redux-first-router)
+* [html-renderer-webpack-plugin](https://gitlab.com/iiroj/html-renderer-webpack-plugin)
+* [webpack](https://webpack.js.org/)
 
-[Emotion](https://emotion.sh) is used for styling, so no external CSS files are needed. [Css-wipe](https://github.com/stackcss/css-wipe) is used for resetting browser default styles.
-
-All `.js` files are formatted with [Prettier](https://prettier.io) for coherence. This is handled through [eslint](http://eslint.org).
+### Lambda
 
 The Feedback page uses a [Lambda function on Netlify](https://functions-beta--www.netlify.com/docs/lambda-functions/) as a backend for submitting feedback to me via the [Telegram Bot Platform](https://core.telegram.org/bots).
 
