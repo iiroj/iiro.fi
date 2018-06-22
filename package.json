@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "12.0.1",
+  "version": "12.0.2",
   "description": "A Static, offline-first React site",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "start:lambda": "NODE_ENV=development netlify-lambda serve src/lambda",
     "lint": "eslint .",
     "build:site": "NODE_ENV=production BABEL_ENV=webpack webpack --config webpack.config.babel.js",
-    "postbuild:site": "cp -r static/. build/static/",
+    "postbuild:site": "cp -r static/. build/site/",
     "build:lambda": "NODE_ENV=production netlify-lambda build src/lambda",
     "prebuild": "rimraf build",
     "build": "npm run build:site && npm run build:lambda"
