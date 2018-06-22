@@ -8,11 +8,29 @@ module.exports = api => {
     useBuiltIns: 'entry'
   };
 
+  const plugins = [
+    ['babel-plugin-inline-dotenv'],
+    ['babel-plugin-transform-inline-environment-variables'],
+    ['@babel/plugin-proposal-class-properties'],
+    ['babel-plugin-inline-react-svg'],
+    [
+      'babel-plugin-emotion',
+      {
+        autoLabel: !isProduction,
+        hoist: isProduction,
+        sourceMap: !isProduction
+      }
+    ]
+  ];
+
   if (api.env() === 'webpack') {
     presetEnv.modules = 'commonjs';
     presetEnv.targets = {
       node: 'current'
     };
+    plugins.push(['babel-plugin-universal-import', { babelServer: true }]);
+  } else {
+    plugins.push('babel-plugin-universal-import');
   }
 
   return {
@@ -21,20 +39,6 @@ module.exports = api => {
       ['@babel/preset-react'],
       ['@babel/preset-stage-2', { decoratorsLegacy: true }]
     ],
-    plugins: [
-      ['babel-plugin-inline-dotenv'],
-      ['babel-plugin-transform-inline-environment-variables'],
-      ['@babel/plugin-proposal-class-properties'],
-      ['babel-plugin-inline-react-svg'],
-      ['babel-plugin-universal-import'],
-      [
-        'babel-plugin-emotion',
-        {
-          autoLabel: !isProduction,
-          hoist: isProduction,
-          sourceMap: !isProduction
-        }
-      ]
-    ]
+    plugins
   };
 };

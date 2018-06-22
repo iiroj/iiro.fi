@@ -1,16 +1,12 @@
 {
   "name": "iiro.fi",
-  "version": "12.0.0",
+  "version": "12.0.1",
   "description": "A Static, offline-first React site",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
   "repository": "gitlab:iiroj/iiro.fi",
   "bugs": "https://gitlab.com/iiroj/iiro.fi/issues",
   "private": true,
-  "engines": {
-    "node": "latest",
-    "npm": "latest"
-  },
   "scripts": {
     "start": "BABEL_ENV=webpack webpack-serve",
     "start:lambda": "NODE_ENV=development netlify-lambda serve src/lambda",
