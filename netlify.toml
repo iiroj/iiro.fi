@@ -12,6 +12,12 @@
       X-Frame-Options = "DENY"
       X-XSS-Protection = "1; mode=block"
 
+  for = "/sw.js"
+    [headers.values]
+      Cache-Control = "no-cache, no-store, must-revalidate"
+      Pragma = "no-cache"
+      Expires = "0"
+
 [[redirects]]
   from = "https://iiro.jappinen.fi/*"
   to = "https://iiro.fi/:splat"

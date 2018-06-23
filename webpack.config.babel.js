@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
 
 import renderer from './src/renderer';
 import routes from './src/client/routes';
@@ -56,6 +57,9 @@ const config = {
     new HtmlRendererWebpackPlugin({
       paths,
       renderer
+    }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.resolve('./src/sw.js')
     })
   ],
 
