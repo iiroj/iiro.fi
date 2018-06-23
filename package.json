@@ -8,14 +8,15 @@
   "bugs": "https://gitlab.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
-    "start": "BABEL_ENV=webpack webpack-serve",
-    "start:lambda": "NODE_ENV=development netlify-lambda serve src/lambda",
+    "start-site": "BABEL_ENV=webpack webpack-serve",
+    "start-lambda": "NODE_ENV=development netlify-lambda serve src/lambda",
+    "start": "concurrently 'npm:start-*'",
     "lint": "eslint .",
-    "build:site": "NODE_ENV=production BABEL_ENV=webpack webpack --config webpack.config.babel.js",
-    "postbuild:site": "cp -r static/. build/site/",
-    "build:lambda": "NODE_ENV=production netlify-lambda build src/lambda",
+    "build-site": "NODE_ENV=production BABEL_ENV=webpack webpack --config webpack.config.babel.js",
+    "postbuild-site": "cp -r static/. build/site/",
+    "build-lambda": "NODE_ENV=production netlify-lambda build src/lambda",
     "prebuild": "rimraf build",
-    "build": "npm run build:site && npm run build:lambda"
+    "build": "concurrently 'npm:build-*'"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.51",
@@ -36,6 +37,7 @@
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "babel-plugin-universal-import": "^3.0.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
+    "concurrently": "^3.6.0",
     "connect-history-api-fallback": "^1.5.0",
     "css-wipe": "^4.3.0",
     "emotion": "^9.2.4",
