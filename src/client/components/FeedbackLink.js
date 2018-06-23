@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 import Link from 'redux-first-router-link';
 
-const RateMe = ({ className }) => (
-  <Link className={className} href="/feedback/">
-    Rate Me!
+const FeedbackLink = ({ className }) => (
+  <Link className={className} to="/feedback/">
+    Send Feedback
   </Link>
 );
 
-RateMe.propTypes = {
+FeedbackLink.propTypes = {
   className: PropTypes.string
 };
 
@@ -71,4 +71,4 @@ const linkStyles = css`
   }
 `;
 
-export default styled(RateMe)(linkStyles);
+export default styled(FeedbackLink)(linkStyles);

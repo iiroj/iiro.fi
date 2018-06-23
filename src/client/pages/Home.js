@@ -6,7 +6,7 @@ import Picture from '../components/Picture';
 import Baskerville from '../components/Baskerville';
 import Fraktio from '../components/Fraktio';
 import Links from '../components/Links';
-import RateMe from '../components/RateMe';
+import FeedbackLink from '../components/FeedbackLink';
 
 const microdata = JSON.stringify({
   '@context': 'http://schema.org',
@@ -55,7 +55,7 @@ const articleStyle = css`
     margin-top: 1.5rem;
   }
 
-  ${RateMe} {
+  ${FeedbackLink} {
     margin: 2.5rem 0 4rem;
   }
 
@@ -90,7 +90,7 @@ export default class Home extends PureComponent {
           create ECMAScript/React applications.
         </p>
         <Links />
-        <RateMe />
+        <FeedbackLink />
       </article>
     </div>
   );
