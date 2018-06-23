@@ -247,7 +247,15 @@ const Form = ({ comment, onChange, onSubmit, question, score, submitting }) => (
   </form>
 );
 
-Form.propTypes = {
+const FeedbackForm = props => {
+  if (props.error) return <Error />;
+
+  if (props.submitted) return <Submitted />;
+
+  return <Form {...props} />;
+};
+
+const props = {
   comment: PropTypes.string.isRequired,
   error: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
@@ -258,14 +266,7 @@ Form.propTypes = {
   submitting: PropTypes.bool.isRequired
 };
 
-const FeedbackForm = props => {
-  if (props.error) return <Error />;
-
-  if (props.submitted) return <Submitted />;
-
-  return <Form {...props} />;
-};
-
-FeedbackForm.propTypes = Form.propTypes;
+Form.propTypes = props;
+FeedbackForm.propTypes = props;
 
 export default FeedbackForm;

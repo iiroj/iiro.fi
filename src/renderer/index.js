@@ -13,13 +13,8 @@ import App from '../client/components/App';
 import getHtml from './html';
 import configureStore from './configure-store';
 
-const unique = array => {
-  const table = {};
-  return array.filter(string => (table.hasOwnProperty(string) ? false : (table[string] = true)));
-};
-
 const createScriptTags = scripts =>
-  scripts.map(src => `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`).join('');
+  scripts.map(src => `<script type="text/javascript" src="/${src}" defer></script>`).join('');
 
 export default async ({ assets, filename, path, publicPath, stats }) => {
   const store = await configureStore(path);
@@ -41,7 +36,7 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
     after: ['client'],
     chunkNames
   });
-  const js = createScriptTags(unique(scripts));
+  const js = createScriptTags(scripts);
 
   const state = htmlescape(store.getState());
 
