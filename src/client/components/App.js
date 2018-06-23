@@ -7,8 +7,6 @@ import { connect } from 'react-redux';
 import universal from 'react-universal-component';
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i');
-
   ${reset};
 
   html {
@@ -51,6 +49,7 @@ const UniversalComponent = universal(({ page }) => import(`../pages/${page.compo
 
 class App extends PureComponent {
   componentDidMount() {
+    injectGlobal(`@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i');`);
     plex.load().then(injectGlobal`
       body {
         font-family: 'IBM Plex Sans', sans-serif;
