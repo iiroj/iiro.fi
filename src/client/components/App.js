@@ -24,7 +24,16 @@ injectGlobal`
   body {
     background-color: hsla(0, 0%, 100%, 1);
     color: hsla(0, 0%, 30%, 1);
-    font-family: sans-serif;
+    font-family: -apple-system, 
+                 BlinkMacSystemFont, 
+                 "Segoe UI", 
+                 Roboto, 
+                 Helvetica,
+                 Arial,
+                 sans-serif,
+                 "Apple Color Emoji",  /* Emojis*/
+                 "Segoe UI Emoji", /* Emojis*/
+                 "Segoe UI Symbol"; /* Emojis*/
     font-size: 16px;
     font-weight: 400;
     height: 100%;
