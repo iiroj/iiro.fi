@@ -5,9 +5,8 @@ import Svg from './fraktio.svg';
 import Link from '../Link';
 
 const Fraktio = styled(Svg)`
-  vertical-align: -14%;
+  vertical-align: -20%;
   position: relative;
-  margin-right: 2px;
   display: inline-block;
 
   path {
@@ -16,7 +15,7 @@ const Fraktio = styled(Svg)`
 `;
 
 export default () => (
-  <Link href="https://fraktio.fi" rel="noopener noreferrer">
+  <Link href="https://fraktio.fi" target="_blank" rel="noopener noreferrer">
     <Fraktio />
   </Link>
 );
