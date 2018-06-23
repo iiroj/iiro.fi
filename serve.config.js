@@ -1,6 +1,5 @@
 'use strict';
 
-const history = require('connect-history-api-fallback');
 const proxy = require('http-proxy-middleware');
 const convert = require('koa-connect');
 
@@ -9,7 +8,7 @@ module.exports = {
   require: ['@babel/register'],
   port: 3000,
   content: './static',
-  add: (app, middleware, options) => {
+  add: app => {
     app.use(
       convert(
         proxy('/.netlify', {
@@ -18,6 +17,5 @@ module.exports = {
         })
       )
     );
-    app.use(convert(history()));
   }
 };
