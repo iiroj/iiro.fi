@@ -36,7 +36,6 @@ const articleStyle = css`
 
   h1 {
     font-size: 3rem;
-    font-weight: 500;
     line-height: 1;
     margin-bottom: 2rem;
   }

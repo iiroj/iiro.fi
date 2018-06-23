@@ -14,7 +14,6 @@ const articleStyles = css`
 
 const titleStyles = css`
   font-size: 3em;
-  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 4rem;
 `;

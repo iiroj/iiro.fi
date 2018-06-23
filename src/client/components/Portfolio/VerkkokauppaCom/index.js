@@ -14,20 +14,17 @@ const articleStyles = css`
 
   h1 {
     font-size: 3em;
-    font-weight: 500;
     line-height: 1.2;
     margin-bottom: 2rem;
   }
 
   h2 {
     font-size: 2rem;
-    font-weight: 500;
     margin-bottom: 1rem;
   }
 
   h3 {
     color: #2171cc;
-    font-weight: 500;
     margin: 0.5rem 0 0 0;
   }
 `;

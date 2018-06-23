@@ -23,7 +23,6 @@ const formStyles = css`
     aside {
       color: hsla(0, 0%, 80%, 1);
       font-size: 0.85em;
-      font-weight: 500;
       text-align: left;
       text-transform: uppercase;
       width: 100%;
@@ -157,7 +156,6 @@ const buttonStyles = css`
   display: block;
   font-family: inherit;
   font-size: 1rem;
-  font-weight: 500;
   height: 3rem;
   margin: 0 auto;
   outline: none;

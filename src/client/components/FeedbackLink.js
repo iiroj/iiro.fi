@@ -21,7 +21,6 @@ const linkStyles = css`
   color: inherit;
   display: inline-block;
   font-size: 75%;
-  font-weight: 500;
   padding: 0.5rem 1rem;
   position: relative;
   text-decoration: none;
