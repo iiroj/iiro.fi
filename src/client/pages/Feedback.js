@@ -56,7 +56,7 @@ export default class Feedback extends PureComponent {
     return (
       <Fragment>
         <Helmet>
-          <title>{question}</title>
+          <title>Feedback for Iiro Jäppinen</title>
         </Helmet>
         <Back />
         <FeedbackForm
