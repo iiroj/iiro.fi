@@ -23,9 +23,7 @@ ReactDOM.hydrate(
 );
 
 if (process.env.NODE_ENV === 'production') {
-  if ('serviceWorker' in navigator) {
-    require('offline-plugin/runtime').install();
-  }
+  navigator.serviceWorker.register('sw.js');
 } else {
   if (module.hot) {
     module.hot.accept();
