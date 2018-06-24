@@ -40,5 +40,5 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
 
   const state = htmlescape(store.getState());
 
-  return getHtml({ app, helmet, js, state });
+  return getHtml({ app, helmet, js, state, version: stats.hash });
 };

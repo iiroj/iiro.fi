@@ -8,6 +8,11 @@
     "ecmaVersion": 8,
     "sourceType": "module"
   },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
   "plugins": [
     "import",
     "jsx-a11y",
@@ -46,10 +51,5 @@
         "printWidth": 120
       }
     ]
-  },
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
   }
 }

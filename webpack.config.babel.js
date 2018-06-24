@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
-import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
+var OfflinePlugin = require('offline-plugin');
 
 import renderer from './src/renderer';
 import routes from './src/client/routes';
@@ -15,15 +15,15 @@ const isProduction = process.env.NODE_ENV === 'production';
 const config = {
   mode: isProduction ? 'production' : 'development',
 
-  devtool: isProduction ? 'source-map' : 'eval',
+  devtool: isProduction ? 'nosources-source-map' : 'eval',
 
   entry: {
     client: path.resolve('./src/client/index.js')
   },
 
   output: {
-    chunkFilename: isProduction ? '[name].[hash:8].js' : '[name].js',
-    filename: isProduction ? '[name].[hash:8].js' : '[name].js',
+    chunkFilename: isProduction ? '[chunkhash:8].js' : '[name].js',
+    filename: isProduction ? '[hash:8].js' : '[name].js',
     path: path.resolve('./build/site'),
     publicPath: '/'
   },
@@ -57,9 +57,6 @@ const config = {
     new HtmlRendererWebpackPlugin({
       paths,
       renderer
-    }),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.resolve('./src/sw.js')
     })
   ],
 
@@ -67,6 +64,13 @@ const config = {
 };
 
 if (isProduction) {
+  config.plugins.push(
+    new OfflinePlugin({
+      AppCache: false,
+      externals: ['https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i']
+    })
+  );
+
   config.optimization = {
     runtimeChunk: 'single',
     splitChunks: {
