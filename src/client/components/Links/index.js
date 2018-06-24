@@ -7,6 +7,7 @@ import Link from '../Link';
 import email from './email.svg';
 import twitter from './twitter.svg';
 import linkedin from './linkedin.svg';
+import gitlab from './gitlab.svg';
 import github from './github.svg';
 
 const links = [
@@ -24,6 +25,11 @@ const links = [
     href: 'https://fi.linkedin.com/in/iiroj',
     icon: linkedin,
     title: 'Linkedin'
+  },
+  {
+    href: 'https://gitlab.com/iiroj',
+    icon: gitlab,
+    title: 'GitLab'
   },
   {
     href: 'https://github.com/iiroj',
@@ -50,7 +56,7 @@ const Links = ({ className }) => (
   <ul className={className}>
     {links.map(link => (
       <li key={link.title} className={listItem}>
-        <Link className={iconLink} href={link.href}>
+        <Link className={iconLink} href={link.href} target="_blank" rel="noopener noreferrer">
           <link.icon />
           <span>{link.title}</span>
         </Link>
@@ -67,4 +73,5 @@ export default styled(Links)`
   display: flex;
   flex-wrap: wrap;
   margin: 0 -1rem;
+  max-width: 30rem;
 `;
