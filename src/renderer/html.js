@@ -12,7 +12,6 @@ export default ({ app, helmet, js, state, version }) =>
   '<link rel="apple-touch-icon" sizes="600x600" href="/icon.png" />' +
   helmet.link.toString() +
   '<link rel="preconnect" href="https://fonts.gstatic.com">' +
-  '<link rel="preconnect" href="https://fonts.googleapis.com">' +
   js +
   '</head>' +
   `<body ${helmet.bodyAttributes.toString()}>` +
