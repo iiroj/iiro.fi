@@ -23,7 +23,7 @@ const config = {
 
   output: {
     chunkFilename: isProduction ? '[chunkhash:8].js' : '[name].js',
-    filename: isProduction ? '[hash:8].js' : '[name].js',
+    filename: isProduction ? '[chunkhash:8].js' : '[name].js',
     path: path.resolve('./build/site'),
     publicPath: '/'
   },
@@ -94,7 +94,7 @@ if (isProduction) {
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true,
+        sourceMap: false,
         uglifyOptions: {
           mangle: true,
           output: {
