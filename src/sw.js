@@ -23,6 +23,10 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+  if (event.request.methd !== 'GET') {
+    return;
+  }
+
   if (event.request.url.startsWith(self.location.origin)) {
     event.respondWith(
       caches.match(event.request).then(cachedResponse => {
