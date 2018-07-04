@@ -16,5 +16,10 @@
   "start_url": "/",
   "background_color": "#FFFFFF",
   "theme_color": "#4D4D4D",
-  "display": "standalone"
+  "display": "standalone",
+  "serviceworker": {
+    "src": "/sw.js",
+    "scope": "/",
+    "update_via_cache": "none"
+  }
 }
