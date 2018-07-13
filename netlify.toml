@@ -30,3 +30,15 @@
   to = "https://iiro.fi/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://jappinen.fi/*"
+  to = "https://iiro.fi/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://xn--jppinen-5wa.fi/*"
+  to = "https://iiro.fi/:splat"
+  status = 301
+  force = true
