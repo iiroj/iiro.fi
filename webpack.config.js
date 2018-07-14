@@ -1,12 +1,12 @@
-import path from 'path';
-import webpack from 'webpack';
-import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
-import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+const path = require('path');
+const webpack = require('webpack');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+const HtmlRendererWebpackPlugin = require('html-renderer-webpack-plugin');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-import renderer from './src/renderer';
-import routes from './src/client/routes';
+const renderer = require('./src/renderer');
+const routes = require('./src/client/routes');
 
 const paths = Object.keys(routes).map(r => routes[r].path);
 
@@ -107,4 +107,4 @@ if (isProduction) {
   };
 }
 
-export default config;
+module.exports = config;

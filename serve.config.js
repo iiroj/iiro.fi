@@ -4,7 +4,6 @@ const proxy = require('http-proxy-middleware');
 const convert = require('koa-connect');
 
 module.exports = {
-  config: './webpack.config.babel.js',
   require: ['@babel/register'],
   port: 3000,
   content: './static',
