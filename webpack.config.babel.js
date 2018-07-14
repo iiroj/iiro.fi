@@ -1,18 +1,30 @@
-const path = require('path');
-const webpack = require('webpack');
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const HtmlRendererWebpackPlugin = require('html-renderer-webpack-plugin');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+import path from 'path';
+import webpack from 'webpack';
+import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
+import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
+import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
-const renderer = require('./src/renderer');
-const routes = require('./src/client/routes');
+import renderer from './src/renderer';
+import routes from './src/client/routes';
 
 const paths = Object.keys(routes).map(r => routes[r].path);
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 const config = {
+  devServer: {
+    contentBase: path.join(__dirname, 'static'),
+    hot: true,
+    port: 3000,
+    proxy: {
+      '/.netlify': {
+        target: 'http://localhost:9000',
+        pathRewrite: { '^/.netlify/functions': '' }
+      }
+    }
+  },
+
   mode: isProduction ? 'production' : 'development',
 
   devtool: isProduction ? 'nosources-source-map' : 'eval',
@@ -105,6 +117,8 @@ if (isProduction) {
       })
     ]
   };
+} else {
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
 module.exports = config;
