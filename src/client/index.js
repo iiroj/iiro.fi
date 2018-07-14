@@ -13,13 +13,11 @@ const initialState = JSON.parse(document.getElementById('initial-state').innerHT
 const history = createHistory();
 const store = configureStore(history, initialState).store;
 
-const root = document.getElementById('root');
-
 ReactDOM.hydrate(
   <Provider store={store}>
     <App />
   </Provider>,
-  root
+  document.body
 );
 
 if (process.env.NODE_ENV === 'production') {
