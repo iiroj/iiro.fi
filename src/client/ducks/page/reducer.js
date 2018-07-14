@@ -1,19 +1,19 @@
 import produce from 'immer';
 
-import routes from '../../routes';
-
 import * as types from './types';
 
-export default (state = routes.HOME, action = {}) =>
+import { routesByName, routesByPath } from '../../routes';
+
+export const initialState = routesByPath[routesByName.HOME];
+
+export default (state = initialState, action = {}) =>
   produce(state, draft => {
-    const { type } = action;
+    const { payload, type } = action;
 
-    if (type === types.NOT_FOUND)
-      return {
-        path: action.meta.location.current.pathname,
-        title: '404 — Not Found',
-        component: 'NotFound'
-      };
+    if (type === types.PAGE_CHANGED) {
+      const route = payload && routesByPath[payload.route];
+      draft.component = route ? route.component : 'NotFound';
+    }
 
-    return routes[type] || draft;
+    return draft;
   });

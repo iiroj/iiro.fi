@@ -7,7 +7,7 @@ A static site, available at [iiro.fi](https://iiro.fi).
 * [babel](https://babeljs.io/)
 * [react-universal-component](https://github.com/faceyspacey/react-universal-component)
 * [emotion](https://emotion.sh)
-* [redux-first-router](https://github.com/faceyspacey/redux-first-router)
+* [redux-little-router](https://github.com/FormidableLabs/redux-little-router)
 * [html-renderer-webpack-plugin](https://gitlab.com/iiroj/html-renderer-webpack-plugin)
 * [webpack](https://webpack.js.org/)
 

@@ -1,6 +1,6 @@
-import React, { Fragment, PureComponent } from 'react';
+import React from 'react';
 import styled from 'react-emotion';
-import Helmet from 'react-helmet';
+import { Title } from 'react-head';
 
 import Back from '../components/Back';
 import { VerkkokauppaCom } from '../components/Portfolio/VerkkokauppaCom';
@@ -45,20 +45,16 @@ const More = styled.aside`
   text-align: center;
 `;
 
-export default class Portfolio extends PureComponent {
-  render = () => (
-    <Fragment>
-      <Helmet>
-        <title>Portfolio of Iiro Jäppinen</title>
-      </Helmet>
-      <Back />
-      <Header>
-        <h1>Portfolio of Iiro Jäppinen</h1>
-      </Header>
-      <VerkkokauppaCom />
-      <HumbleBundle />
-      <Icons />
-      <More>With more coming soon...</More>
-    </Fragment>
-  );
-}
+export default () => (
+  <>
+    <Title>Portfolio of Iiro Jäppinen</Title>
+    <Back />
+    <Header>
+      <h1>Portfolio of Iiro Jäppinen</h1>
+    </Header>
+    <VerkkokauppaCom />
+    <HumbleBundle />
+    <Icons />
+    <More>With more coming soon...</More>
+  </>
+);

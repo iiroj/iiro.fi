@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { css } from 'react-emotion';
-import Helmet from 'react-helmet';
+import { Title } from 'react-head';
 
 import Picture from '../components/Picture';
 import Baskerville from '../components/Baskerville';
@@ -73,24 +73,20 @@ const containerStyle = css`
   width: 100%;
 `;
 
-export default class Home extends PureComponent {
-  render = () => (
-    <div className={containerStyle}>
-      <Helmet>
-        <title>Iiro Jäppinen</title>
-        <script type="application/ld+json">{microdata}</script>
-      </Helmet>
-      <Picture />
-      <article className={articleStyle}>
-        <h1>I am Iiro Jäppinen</h1>
-        <p>
-          a UI Designer <Baskerville>&</Baskerville> Developer, and all-around handyman at <Fraktio />. I help people
-          realise their ideas, design useful experiences and create beautiful interfaces and interactions. I mainly
-          create ECMAScript/React applications.
-        </p>
-        <Links />
-        <FeedbackLink />
-      </article>
-    </div>
-  );
-}
+export default () => (
+  <div className={containerStyle}>
+    <Title>Iiro Jäppinen</Title>
+    <script type="application/ld+json">{microdata}</script>
+    <Picture />
+    <article className={articleStyle}>
+      <h1>I am Iiro Jäppinen</h1>
+      <p>
+        a UI Designer <Baskerville>&</Baskerville> Developer, and all-around handyman at <Fraktio />. I help people
+        realise their ideas, design useful experiences and create beautiful interfaces and interactions. I mainly create
+        ECMAScript/React applications.
+      </p>
+      <Links />
+      <FeedbackLink />
+    </article>
+  </div>
+);

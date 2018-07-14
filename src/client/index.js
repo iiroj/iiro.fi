@@ -3,23 +3,28 @@ import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import createHistory from 'history/createBrowserHistory';
+import { initializeCurrentLocation, routerForBrowser } from 'redux-little-router';
 
-import configureStore from './configure-store';
+import { routesByPath } from './routes';
+import configureStore from './store';
 import App from './components/App';
 
 const initialState = JSON.parse(document.getElementById('initial-state').innerHTML);
 
-const history = createHistory();
-const store = configureStore(history, initialState).store;
+const router = routerForBrowser({ routes: routesByPath });
+const store =
+  module.hot && module.hot.data && module.hot.data.store ? module.hot.data.store : configureStore(router, initialState);
 
-const root = document.getElementById('root');
+const initialLocation = initialState.router;
+if (initialLocation) {
+  store.dispatch(initializeCurrentLocation(initialLocation));
+}
 
 ReactDOM.hydrate(
   <Provider store={store}>
     <App />
   </Provider>,
-  root
+  document.body
 );
 
 if (process.env.NODE_ENV === 'production') {
@@ -27,5 +32,8 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   if (module.hot) {
     module.hot.accept();
+    module.hot.dispose(data => {
+      data.store = store;
+    });
   }
 }

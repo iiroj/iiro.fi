@@ -6,13 +6,39 @@ import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 import renderer from './src/renderer';
-import routes from './src/client/routes';
+import { routesByPath } from './src/client/routes';
 
-const paths = Object.keys(routes).map(r => routes[r].path);
+const paths = Object.keys(routesByPath);
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 const config = {
+  devServer: {
+    contentBase: path.join(__dirname, 'static'),
+    historyApiFallback: {
+      verbose: true,
+      rewrites: [
+        {
+          from: /.*[^\/]$/,
+          to: ({ parsedUrl }) => parsedUrl.path + '.html'
+        },
+        {
+          from: /.*/,
+          to: '/404.html'
+        }
+      ]
+    },
+    hot: true,
+    overlay: true,
+    port: 3000,
+    proxy: {
+      '/.netlify': {
+        target: 'http://localhost:9000',
+        pathRewrite: { '^/.netlify/functions': '' }
+      }
+    }
+  },
+
   mode: isProduction ? 'production' : 'development',
 
   devtool: isProduction ? 'nosources-source-map' : 'eval',
@@ -105,6 +131,8 @@ if (isProduction) {
       })
     ]
   };
+} else {
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
-export default config;
+module.exports = config;
