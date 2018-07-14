@@ -36,13 +36,6 @@ injectGlobal`
     font-size: 12px;
   }
 
-  #root {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100%;
-  }
-
   body {
     background-color: hsla(0, 0%, 100%, 1);
     color: hsla(0, 0%, 30%, 1);
@@ -56,11 +49,14 @@ injectGlobal`
                  "Apple Color Emoji",  /* Emojis*/
                  "Segoe UI Emoji", /* Emojis*/
                  "Segoe UI Symbol"; /* Emojis*/
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
     font-weight: 400;
-    height: 100%;
+    min-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    width: 100%;
   }
 
   * {
@@ -79,22 +75,18 @@ const UniversalComponent = universal(({ page }) => import(`../pages/${page.compo
 });
 
 class App extends PureComponent {
-  componentDidMount() {
-    plex
-      .load()
-      .then(
-        injectGlobal`body {
-          font-family: 'IBM Plex Sans', sans-serif;
-        }`
-      )
-      .catch(error => {});
+  async componentDidMount() {
+    try {
+      await plex.load();
+      injectGlobal({
+        body: {
+          fontFamily: "'IBM Plex Sans', sans-serif"
+        }
+      });
+    } catch (error) {}
   }
 
-  render() {
-    const { page } = this.props;
-
-    return <UniversalComponent page={page} />;
-  }
+  render = () => <UniversalComponent page={this.props.page} />;
 }
 
 App.propTypes = {
