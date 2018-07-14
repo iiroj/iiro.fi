@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
-import Link from 'redux-first-router-link';
+import { Link } from 'redux-little-router';
 
 const FeedbackLink = ({ className }) => (
-  <Link className={className} to="/feedback/">
+  <Link className={className} href="/feedback">
     Send Feedback
   </Link>
 );

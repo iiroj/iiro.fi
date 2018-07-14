@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
-import Link from 'redux-first-router-link';
+import { Link } from 'redux-little-router';
 
 const Back = ({ className }) => (
-  <Link to="/" className={className} title="Back to iiro.fi" role="navigation">
+  <Link href="/" className={className} title="Back to iiro.fi" role="navigation">
     Back to iiro.fi
   </Link>
 );

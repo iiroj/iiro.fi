@@ -3,26 +3,27 @@ import '@babel/polyfill';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { renderStylesToString } from 'emotion-server';
-import createHistory from 'history/createMemoryHistory';
+import { initializeCurrentLocation, routerForExpress } from 'redux-little-router';
 import { Provider } from 'react-redux';
 import { HeadCollector } from 'react-head';
 import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
 import { html, safeHtml } from 'common-tags';
 
-import configureClientStore from './client/configure-store';
+import { routesByPath } from './client/routes';
+import configureClientStore from './client/store';
 import App from './client/components/App';
 
 const configureServerStore = async path => {
-  const history = createHistory({ initialEntries: [path] });
-  const { store, thunk } = configureClientStore(history);
-  await thunk(store);
+  const router = routerForExpress({ routes: routesByPath, request: { path } });
+  const store = configureClientStore(router);
+  const state = store.getState();
+  store.dispatch(initializeCurrentLocation(state.router));
   return store;
 };
 
 export default async ({ assets, filename, path, publicPath, stats }) => {
   const store = await configureServerStore(path);
-  if (!store) return;
 
   const headTags = [];
   const app = renderStylesToString(

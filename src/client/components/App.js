@@ -91,7 +91,6 @@ class App extends PureComponent {
 
 App.propTypes = {
   page: PropTypes.shape({
-    path: PropTypes.string.isRequired,
     component: PropTypes.string.isRequired
   }).isRequired
 };

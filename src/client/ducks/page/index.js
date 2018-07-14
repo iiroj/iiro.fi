@@ -1,2 +1,1 @@
-export { default as pageReducer } from './reducer';
-export * as pageTypes from './types';
+export { default as page } from './reducer';
