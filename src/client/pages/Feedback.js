@@ -1,5 +1,5 @@
-import React, { Fragment, PureComponent } from 'react';
-import Helmet from 'react-helmet';
+import React, { PureComponent } from 'react';
+import { Title } from 'react-head';
 
 import Back from '../components/Back';
 import FeedbackForm from '../components/FeedbackForm';
@@ -54,10 +54,8 @@ export default class Feedback extends PureComponent {
     const { comment, error, score, submitted, submitting } = this.state;
 
     return (
-      <Fragment>
-        <Helmet>
-          <title>Feedback for Iiro Jäppinen</title>
-        </Helmet>
+      <>
+        <Title>Feedback for Iiro Jäppinen</Title>
         <Back />
         <FeedbackForm
           comment={comment}
@@ -69,7 +67,7 @@ export default class Feedback extends PureComponent {
           submitted={submitted}
           submitting={submitting}
         />
-      </Fragment>
+      </>
     );
   }
 }

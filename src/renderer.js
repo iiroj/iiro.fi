@@ -1,21 +1,17 @@
 import '@babel/polyfill';
 
 import React from 'react';
-import ReactDOM from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import { renderStylesToString } from 'emotion-server';
 import createHistory from 'history/createMemoryHistory';
 import { Provider } from 'react-redux';
-import Helmet from 'react-helmet';
+import { HeadCollector } from 'react-head';
 import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
-import htmlescape from 'htmlescape';
-import { html } from 'common-tags';
+import { html, safeHtml } from 'common-tags';
 
 import configureClientStore from './client/configure-store';
 import App from './client/components/App';
-
-const createScriptTags = scripts =>
-  scripts.map(src => `<script type="text/javascript" src="/${src}" defer></script>`).join('');
 
 const configureServerStore = async path => {
   const history = createHistory({ initialEntries: [path] });
@@ -28,15 +24,16 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
   const store = await configureServerStore(path);
   if (!store) return;
 
+  const headTags = [];
   const app = renderStylesToString(
-    ReactDOM.renderToString(
-      <Provider store={store}>
-        <App />
-      </Provider>
+    renderToString(
+      <HeadCollector headTags={headTags}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </HeadCollector>
     )
   );
-
-  const helmet = Helmet.renderStatic();
 
   const { scripts } = flushChunks(stats, {
     before: ['runtime', 'vendor'],
@@ -44,19 +41,15 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
     chunkNames: flushChunkNames()
   });
 
-  const js = createScriptTags(scripts);
-
-  const state = htmlescape(store.getState());
-
-  const version = stats.hash;
+  const state = safeHtml(JSON.stringify(store.getState()));
 
   return html`
     <!DOCTYPE html>
-    <html lang="en" ${helmet.htmlAttributes.toString()}>
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        ${helmet.title.toString()}
-        <meta name="version" content="${version}" />
+        ${renderToString(headTags)}
+        <meta name="version" content="${stats.hash}" />
         <link rel="manifest" href="/manifest.json">
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png" />
@@ -65,11 +58,10 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#4D4D4D">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        ${js}
-        ${helmet.script.toString()}
+        ${scripts.map(src => `<script type="text/javascript" src="/${src}" defer></script>`).join('\n')}
         <script id="initial-state" type="application/json">${state}</script>
       </head>
-      <body ${helmet.bodyAttributes.toString()}>
+      <body>
         ${app}
       </body>
     </html>
