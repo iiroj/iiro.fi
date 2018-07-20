@@ -16,17 +16,9 @@ const config = {
   devServer: {
     contentBase: path.join(__dirname, 'static'),
     historyApiFallback: {
-      verbose: true,
-      rewrites: [
-        {
-          from: /.*[^\/]$/,
-          to: ({ parsedUrl }) => parsedUrl.path + '.html'
-        },
-        {
-          from: /.*/,
-          to: '/404.html'
-        }
-      ]
+      index: '/404.html',
+      disableDotRule: true,
+      verbose: true
     },
     hot: true,
     overlay: true,
