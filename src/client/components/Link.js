@@ -11,6 +11,7 @@ const handleRouteChange = event => {
   if (isExternalLink || isNewTab) return;
 
   event.preventDefault();
+  window.scrollTo(0, 0);
   history.push(href);
 };
 
