@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import history from '../utils/history';
 
 const handleRouteChange = event => {
-  const href = event.target.getAttribute('href');
+  const href = event.currentTarget.getAttribute('href');
   const isExternalLink = href.startsWith('http');
   const isNewTab = event.metaKey || event.ctrlKey;
 
