@@ -1,24 +1,29 @@
-import styled from 'react-emotion';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const YELLOW = `hsla(44,100%,75%,1)`;
+import history from '../history';
 
-export default styled.a`
-  background-image: linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%);
-  background-position: 0 1em;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  color: inherit;
-  text-decoration: none;
-  transition: background-position 125ms ease-out 250ms;
+const handleRouteChange = event => {
+  const href = event.target.getAttribute('href');
+  const isExternalLink = href.startsWith('http');
+  const isNewTab = event.metaKey || event.ctrlKey;
 
-  &:hover {
-    background-image: linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%);
-    background-position: 0 0em;
-    cursor: pointer;
-    transition: background-position 100ms ease-out 0s;
-  }
+  if (isExternalLink || isNewTab) return;
 
-  &:active {
-    color: hsla(0, 0%, 0%, 1);
-  }
-`;
+  event.preventDefault();
+  history.push(href);
+};
+
+const Link = ({ children, href, onClick, ...rest }) => (
+  <a href={href} onClick={handleRouteChange} {...rest}>
+    {children}
+  </a>
+);
+
+Link.propTypes = {
+  children: PropTypes.any.isRequired,
+  href: PropTypes.string.isRequired,
+  onClick: PropTypes.func
+};
+
+export default Link;

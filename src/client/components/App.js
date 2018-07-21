@@ -1,10 +1,11 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { injectGlobal } from 'react-emotion';
 import reset from 'css-wipe/js';
 import FontFaceObserver from 'fontfaceobserver';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import universal from 'react-universal-component';
+
+import history from '../history';
 
 injectGlobal`
   ${reset};
@@ -70,12 +71,31 @@ injectGlobal`
 
 const plex = new FontFaceObserver('IBM Plex Sans');
 
-const UniversalComponent = universal(({ page }) => import(`../pages/${page.component}`), {
+const UniversalComponent = universal(({ page }) => import(`../pages/${page}`), {
   loadingTransition: false
 });
 
-class App extends PureComponent {
+export default class Router extends React.Component {
+  static propTypes = {
+    pathname: PropTypes.string.isRequired
+  };
+
+  state = {
+    pathname: this.props.pathname || '/404'
+  };
+
+  static pages = {
+    '/': 'Home',
+    '/feedback': 'Feedback',
+    '/portfolio': 'Portfolio',
+    '/404': 'NotFound'
+  };
+
+  static getPage = pathname => Router.pages[pathname.replace(/\.html$/, '')] || 'NotFound';
+
   async componentDidMount() {
+    history.onChange(pathname => this.setState({ pathname }));
+
     try {
       await plex.load();
       injectGlobal({
@@ -86,13 +106,8 @@ class App extends PureComponent {
     } catch (error) {}
   }
 
-  render = () => <UniversalComponent page={this.props.page} />;
+  render() {
+    const page = Router.getPage(this.state.pathname);
+    return <UniversalComponent page={page} />;
+  }
 }
-
-App.propTypes = {
-  page: PropTypes.shape({
-    component: PropTypes.string.isRequired
-  }).isRequired
-};
-
-export default connect(({ page }) => ({ page }))(App);

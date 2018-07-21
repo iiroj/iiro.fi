@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 
 import Svg from './fraktio.svg';
-import Link from '../Link';
+import A from '../A';
 
 const Fraktio = styled(Svg)`
   vertical-align: -20%;
@@ -15,7 +15,7 @@ const Fraktio = styled(Svg)`
 `;
 
 export default () => (
-  <Link href="https://fraktio.fi" target="_blank" rel="noopener noreferrer">
+  <A href="https://fraktio.fi" target="_blank" rel="noopener noreferrer">
     <Fraktio />
-  </Link>
+  </A>
 );

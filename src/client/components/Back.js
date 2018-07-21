@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
-import { Link } from 'redux-little-router';
+
+import Link from './Link';
 
 const Back = ({ className }) => (
   <Link href="/" className={className} title="Back to iiro.fi" role="navigation">

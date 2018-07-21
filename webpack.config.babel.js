@@ -6,9 +6,9 @@ import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 import renderer from './src/renderer';
-import { routesByPath } from './src/client/routes';
+import App from './src/client/components/App';
 
-const paths = Object.keys(routesByPath);
+const paths = Object.keys(App.pages);
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -18,6 +18,12 @@ const config = {
     historyApiFallback: {
       index: '/404.html',
       disableDotRule: true,
+      rewrites: [
+        {
+          from: /.*[^\/]$/,
+          to: ({ parsedUrl: { pathname } }) => (pathname.endsWith('.html') ? pathname : pathname + '.html')
+        }
+      ],
       verbose: true
     },
     hot: true,

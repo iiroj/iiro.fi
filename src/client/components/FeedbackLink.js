@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
-import { Link } from 'redux-little-router';
+
+import Link from './Link';
 
 const FeedbackLink = ({ className }) => (
   <Link className={className} href="/feedback">

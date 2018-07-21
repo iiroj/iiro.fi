@@ -1,1 +1,0 @@
-export const PAGE_CHANGED = 'ROUTER_LOCATION_CHANGED';

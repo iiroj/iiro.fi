@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 
-import Link from '../Link';
+import A from '../A';
 
 import email from './email.svg';
 import twitter from './twitter.svg';
@@ -56,10 +56,10 @@ const Links = ({ className }) => (
   <ul className={className}>
     {links.map(link => (
       <li key={link.title} className={listItem}>
-        <Link className={iconLink} href={link.href} target="_blank" rel="noopener noreferrer">
+        <A className={iconLink} href={link.href} target="_blank" rel="noopener noreferrer">
           <link.icon />
           <span>{link.title}</span>
-        </Link>
+        </A>
       </li>
     ))}
   </ul>
