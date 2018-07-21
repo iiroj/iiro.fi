@@ -5,7 +5,7 @@ import FontFaceObserver from 'fontfaceobserver';
 import PropTypes from 'prop-types';
 import universal from 'react-universal-component';
 
-import history from '../history';
+import history from '../utils/history';
 
 injectGlobal`
   ${reset};
@@ -71,9 +71,16 @@ injectGlobal`
 
 const plex = new FontFaceObserver('IBM Plex Sans');
 
-const UniversalComponent = universal(({ page }) => import(`../pages/${page}`), {
+const UniversalComponent = universal(({ Page }) => import(`./${Page}`), {
   loadingTransition: false
 });
+
+export const routes = {
+  '/': 'Home',
+  '/feedback': 'Feedback',
+  '/portfolio': 'Portfolio',
+  '/404': 'NotFound'
+};
 
 export default class Router extends React.Component {
   static propTypes = {
@@ -84,14 +91,7 @@ export default class Router extends React.Component {
     pathname: this.props.pathname || '/404'
   };
 
-  static pages = {
-    '/': 'Home',
-    '/feedback': 'Feedback',
-    '/portfolio': 'Portfolio',
-    '/404': 'NotFound'
-  };
-
-  static getPage = pathname => Router.pages[pathname.replace(/\.html$/, '')] || 'NotFound';
+  getPage = pathname => routes[pathname.replace(/\.html$/, '')] || 'NotFound';
 
   async componentDidMount() {
     history.onChange(pathname => this.setState({ pathname }));
@@ -107,7 +107,7 @@ export default class Router extends React.Component {
   }
 
   render() {
-    const page = Router.getPage(this.state.pathname);
-    return <UniversalComponent page={page} />;
+    const page = this.getPage(this.state.pathname);
+    return <UniversalComponent Page={page} />;
   }
 }

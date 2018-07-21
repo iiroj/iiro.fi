@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'react-emotion';
 import { Title } from 'react-head';
 
-import Back from '../components/Back';
+import Back from '../../components/Back';
 
 const h1Styles = css`
   font-size: 2rem;

@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Title } from 'react-head';
 
-import Back from '../components/Back';
-import FeedbackForm from '../components/FeedbackForm';
+import Back from '../../components/Back';
+import FeedbackForm from '../../components/FeedbackForm';
 
 const feedbackUrl = `/.netlify/functions/telegram`;
 const question = 'How likely would you be to recommend Iiro as a designer?';

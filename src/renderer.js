@@ -8,7 +8,7 @@ import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
 import { html } from 'common-tags';
 
-import App from './client/components/App';
+import Router from './client/pages';
 
 export default async ({ assets, filename, path, publicPath, stats }) => {
   const headTags = [];
@@ -16,7 +16,7 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
   const app = renderStylesToString(
     renderToString(
       <HeadCollector headTags={headTags}>
-        <App pathname={path} />
+        <Router pathname={path} />
       </HeadCollector>
     )
   );

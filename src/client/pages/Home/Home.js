@@ -2,11 +2,11 @@ import React from 'react';
 import { css } from 'react-emotion';
 import { Title } from 'react-head';
 
-import Picture from '../components/Picture';
-import Baskerville from '../components/Baskerville';
-import Fraktio from '../components/Fraktio';
-import Links from '../components/Links';
-import FeedbackLink from '../components/FeedbackLink';
+import Picture from '../../components/Picture';
+import Baskerville from '../../components/Baskerville';
+import Fraktio from '../../components/Fraktio';
+import Links from '../../components/Links';
+import FeedbackLink from '../../components/FeedbackLink';
 
 const microdata = JSON.stringify({
   '@context': 'http://schema.org',

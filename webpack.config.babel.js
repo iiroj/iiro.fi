@@ -6,9 +6,9 @@ import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 import renderer from './src/renderer';
-import App from './src/client/components/App';
+import { routes } from './src/client/pages';
 
-const paths = Object.keys(App.pages);
+const paths = Object.keys(routes);
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -84,7 +84,28 @@ const config = {
     })
   ],
 
-  optimization: undefined
+  optimization: {
+    splitChunks: {
+      automaticNameDelimiter: '~',
+      chunks: 'async',
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      minChunks: 1,
+      minSize: 30000,
+      name: true,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
 };
 
 if (isProduction) {
@@ -95,40 +116,20 @@ if (isProduction) {
     })
   );
 
-  config.optimization = {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          chunks: 'initial',
-          maxInitialRequests: 5,
-          minSize: 0,
-          minChunks: 2
-        },
-        vendor: {
-          test: /node_modules/,
-          chunks: 'initial',
-          name: 'vendor',
-          priority: 10,
-          enforce: true
+  config.optimization.minimizer = [
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+      sourceMap: false,
+      uglifyOptions: {
+        mangle: true,
+        output: {
+          beautify: false,
+          comments: false
         }
       }
-    },
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: false,
-        uglifyOptions: {
-          mangle: true,
-          output: {
-            beautify: false,
-            comments: false
-          }
-        }
-      })
-    ]
-  };
+    })
+  ];
 } else {
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
 }

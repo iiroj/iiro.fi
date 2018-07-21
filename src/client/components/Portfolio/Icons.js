@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'react-emotion';
-import { ButtonLink } from '../../pages/Portfolio';
+
+import ButtonLink from '../ButtonLink';
 
 const articleStyles = css`
   background: url('/portfolio/icons/icons.jpg');
