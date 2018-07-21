@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 
-import Link from './Link';
+import Link from '../../../components/Link';
 
 const YELLOW = `hsla(44,100%,75%,1)`;
 

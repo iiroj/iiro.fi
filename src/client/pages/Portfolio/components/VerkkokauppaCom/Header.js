@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from 'react-emotion';
-import ButtonLink from '../../ButtonLink';
+import ButtonLink from '../ButtonLink';
 
 const headerStyles = css`
   align-items: center;

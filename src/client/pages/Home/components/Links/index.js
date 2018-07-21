@@ -7,33 +7,39 @@ import A from '../A';
 import email from './email.svg';
 import twitter from './twitter.svg';
 import linkedin from './linkedin.svg';
+import portfolio from './portfolio.svg';
 import gitlab from './gitlab.svg';
 import github from './github.svg';
 
 const links = [
   {
     href: 'mailto:iiro@jappinen.fi',
-    icon: email,
+    Icon: email,
     title: 'Email'
   },
   {
     href: 'https://twitter.com/iirojappinen',
-    icon: twitter,
+    Icon: twitter,
     title: 'Twitter'
   },
   {
     href: 'https://fi.linkedin.com/in/iiroj',
-    icon: linkedin,
+    Icon: linkedin,
     title: 'Linkedin'
   },
   {
+    href: '/portfolio',
+    Icon: portfolio,
+    title: 'Portfolio'
+  },
+  {
     href: 'https://gitlab.com/iiroj',
-    icon: gitlab,
+    Icon: gitlab,
     title: 'GitLab'
   },
   {
     href: 'https://github.com/iiroj',
-    icon: github,
+    Icon: github,
     title: 'GitHub'
   }
 ];
@@ -54,11 +60,16 @@ const iconLink = css`
 
 const Links = ({ className }) => (
   <ul className={className}>
-    {links.map(link => (
-      <li key={link.title} className={listItem}>
-        <A className={iconLink} href={link.href} target="_blank" rel="noopener noreferrer">
-          <link.icon />
-          <span>{link.title}</span>
+    {links.map(({ title, href, Icon }) => (
+      <li key={title} className={listItem}>
+        <A
+          className={iconLink}
+          href={href}
+          rel={title !== 'Portfolio' ? 'noopener noreferrer' : undefined}
+          target={title !== 'Portfolio' ? '_blank' : undefined}
+        >
+          <Icon />
+          <span>{title}</span>
         </A>
       </li>
     ))}

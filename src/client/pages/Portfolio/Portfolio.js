@@ -3,9 +3,10 @@ import styled from 'react-emotion';
 import { Title } from 'react-head';
 
 import Back from '../../components/Back';
-import { VerkkokauppaCom } from '../../components/Portfolio/VerkkokauppaCom';
-import { HumbleBundle } from '../../components/Portfolio/HumbleBundle';
-import { Icons } from '../../components/Portfolio/Icons';
+
+import { VerkkokauppaCom } from './components/VerkkokauppaCom';
+import { HumbleBundle } from './components/HumbleBundle';
+import { Icons } from './components/Icons';
 
 const Header = styled.header`
   background-color: white;

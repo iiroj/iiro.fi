@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Title } from 'react-head';
 
 import Back from '../../components/Back';
-import FeedbackForm from '../../components/FeedbackForm';
+import Form from './components/Form';
 
 const feedbackUrl = `/.netlify/functions/telegram`;
 const question = 'How likely would you be to recommend Iiro as a designer?';
@@ -57,7 +57,7 @@ export default class Feedback extends PureComponent {
       <>
         <Title>Feedback for Iiro Jäppinen</Title>
         <Back />
-        <FeedbackForm
+        <Form
           comment={comment}
           error={error}
           onChange={this.onChange}

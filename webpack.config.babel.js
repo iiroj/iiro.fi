@@ -21,7 +21,14 @@ const config = {
       rewrites: [
         {
           from: /.*[^\/]$/,
-          to: ({ parsedUrl: { pathname } }) => (pathname.endsWith('.html') ? pathname : pathname + '.html')
+          to: ({ parsedUrl: { pathname } }) => {
+            if (pathname.endsWith('/')) {
+              return pathname.replace(/\/$/, '.html');
+            }
+            if (!pathname.endsWith('.html')) {
+              return pathname + '.html';
+            }
+          }
         }
       ],
       verbose: true
@@ -59,7 +66,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(jsx?|svg)$/,
         include: path.resolve('./src/client'),
         use: {
           loader: require.resolve('babel-loader'),
@@ -85,23 +92,21 @@ const config = {
   ],
 
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
-      automaticNameDelimiter: '~',
-      chunks: 'async',
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      minChunks: 1,
-      minSize: 30000,
-      name: true,
       cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10
+        commons: {
+          chunks: 'initial',
+          maxInitialRequests: 5,
+          minSize: 0,
+          minChunks: 2
         },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true
+        vendor: {
+          test: /node_modules/,
+          chunks: 'initial',
+          name: 'vendor',
+          priority: 10,
+          enforce: true
         }
       }
     }
