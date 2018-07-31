@@ -11,6 +11,7 @@ module.exports = api => {
   const plugins = [
     ['babel-plugin-inline-dotenv'],
     ['babel-plugin-transform-inline-environment-variables'],
+    ['@babel/plugin-syntax-dynamic-import'],
     ['@babel/plugin-proposal-class-properties'],
     ['babel-plugin-inline-react-svg'],
     [
@@ -34,11 +35,7 @@ module.exports = api => {
   }
 
   return {
-    presets: [
-      ['@babel/preset-env', presetEnv],
-      ['@babel/preset-react'],
-      ['@babel/preset-stage-2', { decoratorsLegacy: true }]
-    ],
+    presets: [['@babel/preset-env', presetEnv], ['@babel/preset-react']],
     plugins
   };
 };
