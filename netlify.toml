@@ -6,6 +6,7 @@
 [[headers]]
   for = "/*"
     [headers.values]
+      Cache-Control = "public, max-age=2592000, no-cache"
       Content-Security-Policy = "default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; connect-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"
       Referrer-Policy = "origin-when-cross-origin"
       X-Content-Type-Options = "nosniff"
@@ -16,8 +17,8 @@
   for = "/sw.js"
     [headers.values]
       Cache-Control = "max-age=0, no-cache, no-store, must-revalidate"
-      Pragma = "no-cache"
       Expires = "0"
+      Pragma = "no-cache"
 
 [[redirects]]
   from = "https://iiro.jappinen.fi/*"
