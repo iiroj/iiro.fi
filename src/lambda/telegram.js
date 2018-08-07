@@ -1,4 +1,6 @@
-import { post } from 'axios';
+require('dotenv').config();
+
+const { post } = require('axios');
 
 const chat_id = process.env.TELEGRAM_CHAT_ID;
 const url = `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`;
@@ -27,7 +29,7 @@ ${hearts(score)} (${score} / 7)${
     : ''
 }`;
 
-exports.handler = function(event, context, callback) {
+exports.handler = (event, context, callback) => {
   if (event.httpMethod === 'OPTIONS') {
     return callback(null, {
       statusCode: 200,

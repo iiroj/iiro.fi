@@ -1,4 +1,6 @@
-/build
-/sketch
-/.env
+.cache
+.env
+lambda
 node_modules
+public
+sketch
