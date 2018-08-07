@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import Layout from '../components/Layout';
 import Form from '../components/feedback/Form';
 import Back from '../components/Back';
 
@@ -54,7 +55,7 @@ export default class Feedback extends React.PureComponent {
     const { comment, error, score, submitted, submitting } = this.state;
 
     return (
-      <>
+      <Layout>
         <Helmet>
           <title>Feedback for Iiro Jäppinen</title>
         </Helmet>
@@ -69,7 +70,7 @@ export default class Feedback extends React.PureComponent {
           submitted={submitted}
           submitting={submitting}
         />
-      </>
+      </Layout>
     );
   }
 }

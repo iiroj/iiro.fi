@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from 'react-emotion';
 import Helmet from 'react-helmet';
 
+import Layout from '../components/Layout';
 import Picture from '../components/home/Picture';
 import Baskerville from '../components/home/Baskerville';
 import Fraktio from '../components/home/Fraktio';
@@ -74,21 +75,23 @@ const containerStyle = css`
 `;
 
 export default () => (
-  <div className={containerStyle}>
-    <Helmet>
-      <title>Iiro Jäppinen</title>
-    </Helmet>
-    <script type="application/ld+json">{microdata}</script>
-    <Picture />
-    <article className={articleStyle}>
-      <h1>I am Iiro Jäppinen</h1>
-      <p>
-        a UI Designer <Baskerville>&</Baskerville> Developer, and all-around handyman at <Fraktio />. I help people
-        realise their ideas, design useful experiences and create beautiful interfaces and interactions. I mainly create
-        ECMAScript/React applications.
-      </p>
-      <Links />
-      <FeedbackLink />
-    </article>
-  </div>
+  <Layout>
+    <div className={containerStyle}>
+      <Helmet>
+        <title>Iiro Jäppinen</title>
+      </Helmet>
+      <script type="application/ld+json">{microdata}</script>
+      <Picture />
+      <article className={articleStyle}>
+        <h1>I am Iiro Jäppinen</h1>
+        <p>
+          a UI Designer <Baskerville>&</Baskerville> Developer, and all-around handyman at <Fraktio />. I help people
+          realise their ideas, design useful experiences and create beautiful interfaces and interactions. I mainly
+          create ECMAScript/React applications.
+        </p>
+        <Links />
+        <FeedbackLink />
+      </article>
+    </div>
+  </Layout>
 );

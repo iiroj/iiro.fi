@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'react-emotion';
 import Helmet from 'react-helmet';
 
+import Layout from '../components/Layout';
+import Back from '../components/Back';
+
 import { VerkkokauppaCom } from '../components/portfolio/VerkkokauppaCom';
 import { HumbleBundle } from '../components/portfolio/HumbleBundle';
 import { Icons } from '../components/portfolio/Icons';
-
-import Back from '../components/Back';
 
 const Header = styled.header`
   background-color: white;
@@ -23,7 +24,7 @@ const More = styled.aside`
 `;
 
 export default () => (
-  <>
+  <Layout>
     <Helmet>
       <title>Portfolio of Iiro Jäppinen</title>
     </Helmet>
@@ -35,5 +36,5 @@ export default () => (
     <HumbleBundle />
     <Icons />
     <More>With more coming soon...</More>
-  </>
+  </Layout>
 );
