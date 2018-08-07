@@ -19,34 +19,6 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        short_name: 'iiro.fi',
-        name: 'Iiro Jäppinen',
-        icons: [
-          {
-            src: '/icon-192.png',
-            sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: '/icon-512.png',
-            sizes: '512x512',
-            type: 'image/png'
-          }
-        ],
-        start_url: '/',
-        background_color: '#FFFFFF',
-        theme_color: '#4D4D4D',
-        display: 'standalone',
-        serviceworker: {
-          src: '/sw.js',
-          scope: '/',
-          update_via_cache: 'none'
-        }
-      }
-    },
-    {
       resolve: 'gatsby-plugin-netlify',
       options: {
         headers: {
