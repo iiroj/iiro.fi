@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "13.0.0",
+  "version": "13.1.0",
   "description": "A Static, offline-first React site",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
@@ -24,6 +24,8 @@
     "gatsby": "^2.0.0-beta.69",
     "gatsby-link": "^2.0.0-beta.6",
     "gatsby-plugin-emotion": "^2.0.0-beta.3",
+    "gatsby-plugin-manifest": "^1.0.27",
+    "gatsby-plugin-netlify": "^2.0.0-beta.5",
     "gatsby-plugin-react-helmet": "^3.0.0-beta.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -44,9 +46,6 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-react": "^7.10.0",
-    "gatsby-plugin-manifest": "^1.0.27",
-    "gatsby-plugin-netlify": "^2.0.0-beta.5",
-    "gatsby-plugin-offline": "^2.0.0-beta.6",
     "http-proxy-middleware": "^0.18.0",
     "netlify-lambda": "^1.0.0-babel-7-beta",
     "prettier": "^1.14.0"
