@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "13.3.0",
+  "version": "13.4.0",
   "description": "A Static, offline-first React site",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
@@ -9,11 +9,11 @@
   "private": true,
   "scripts": {
     "start:gatsby": "gatsby develop",
-    "start:lambda": "netlify-lambda serve src/lambda",
+    "start:lambda": "lambda-dev serve src/lambda --basePath /.netlify/functions",
     "start": "concurrently 'npm:start:*'",
     "lint": "eslint .",
     "build:site": "gatsby build",
-    "build:lambda": "netlify-lambda build src/lambda",
+    "build:lambda": "lambda-dev build src/lambda lambda",
     "build": "concurrently 'npm:build:*'"
   },
   "dependencies": {
@@ -44,8 +44,7 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-react": "^7.10.0",
-    "http-proxy-middleware": "^0.18.0",
-    "netlify-lambda": "^1.0.0-babel-7-beta",
+    "lambda-dev": "^0.1.2",
     "prettier": "^1.14.0"
   },
   "keywords": [
