@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "13.2.0",
+  "version": "13.3.0",
   "description": "A Static, offline-first React site",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
@@ -17,12 +17,11 @@
     "build": "concurrently 'npm:build:*'"
   },
   "dependencies": {
-    "css-wipe": "^4.3.0",
     "emotion": "^9.2.6",
     "emotion-server": "^9.2.6",
     "fontfaceobserver": "^2.0.13",
-    "gatsby": "^2.0.0-beta.69",
-    "gatsby-link": "^2.0.0-beta.6",
+    "gatsby": "^2.0.0-beta.83",
+    "gatsby-link": "^2.0.0-beta.17",
     "gatsby-plugin-emotion": "^2.0.0-beta.3",
     "gatsby-plugin-netlify": "^2.0.0-beta.5",
     "gatsby-plugin-react-helmet": "^3.0.0-beta.4",

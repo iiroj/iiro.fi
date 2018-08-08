@@ -1,12 +1,36 @@
 import React from 'react';
 import { injectGlobal } from 'react-emotion';
-import reset from 'css-wipe/js';
 import FontFaceObserver from 'fontfaceobserver';
 import PropTypes from 'prop-types';
 
-injectGlobal`
-  ${reset};
+const IBMPlexSans = new FontFaceObserver('IBM Plex Sans');
 
+async function unregisterServiceWorkers() {
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  if (!registrations) return;
+  for (let registration of registrations) {
+    await registration.unregister();
+  }
+}
+
+export default class Layout extends React.Component {
+  static propTypes = {
+    children: PropTypes.object.isRequired
+  };
+
+  componentDidMount() {
+    // TODO: Remove this after a while
+    if ('serviceWorker' in navigator) {
+      unregisterServiceWorkers();
+    }
+
+    IBMPlexSans.load();
+  }
+
+  render = () => this.props.children;
+}
+
+injectGlobal`
   @font-face {
     font-family: 'IBM Plex Sans';
     font-style: normal;
@@ -37,7 +61,8 @@ injectGlobal`
   body {
     background-color: hsla(0, 0%, 100%, 1);
     color: hsla(0, 0%, 30%, 1);
-    font-family: -apple-system, 
+    font-family: 'IBM Plex Sans',
+                 -apple-system, 
                  BlinkMacSystemFont, 
                  "Segoe UI", 
                  Roboto, 
@@ -50,6 +75,7 @@ injectGlobal`
     font-size: 16px;
     font-weight: 400;
     height: 100%;
+    line-height: 1.5;
   }
 
   #___gatsby {
@@ -66,42 +92,24 @@ injectGlobal`
   }
 
   * {
-    line-height: 1.5;
+    box-sizing: border-box;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+ a {
+    color: inherit;
+    text-decoration: inherit;
   }
 
   em {
     font-style: italic;
   }
+
+  ul, ol {
+    list-style: none;
+  }
 `;
-
-const IBMPlexSans = new FontFaceObserver('IBM Plex Sans');
-
-async function unregisterServiceWorkers() {
-  const registrations = await navigator.serviceWorker.getRegistrations();
-  if (!registrations) return;
-  for (let registration of registrations) {
-    await registration.unregister();
-  }
-}
-
-export default class Layout extends React.Component {
-  static propTypes = {
-    children: PropTypes.object.isRequired
-  };
-
-  async componentDidMount() {
-    // TODO: Remove this after a while
-    if ('serviceWorker' in navigator) {
-      unregisterServiceWorkers();
-    }
-
-    await IBMPlexSans.load();
-    injectGlobal({
-      body: {
-        fontFamily: "'IBM Plex Sans', sans-serif"
-      }
-    });
-  }
-
-  render = () => this.props.children;
-}
