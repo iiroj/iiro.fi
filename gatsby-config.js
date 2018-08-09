@@ -18,7 +18,14 @@ module.exports = {
             'Referrer-Policy: origin-when-cross-origin'
           ]
         },
-        mergeCachingHeaders: false
+        mergeCachingHeaders: false,
+        transformHeaders: (headers, path) =>
+          path.endsWith('/') || path.endsWith('.html')
+            ? headers.concat(
+                'Link: <https://fonts.gstatic.com/s/ibmplexsans/v2/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2>; rel=preload; as=font',
+                'Link: <https://fonts.gstatic.com/s/ibmplexsans/v2/zYX-KVElMYYaJe8bpLHnCwDKhdTuF6ZJW9XjDg.woff2>; rel=preload; as=font'
+              )
+            : headers
       }
     }
   ]

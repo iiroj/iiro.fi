@@ -1,7 +1,6 @@
 import React from 'react';
 import { injectGlobal } from 'react-emotion';
 import FontFaceObserver from 'fontfaceobserver';
-import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 const IBMPlexSans = new FontFaceObserver('IBM Plex Sans');
@@ -28,33 +27,7 @@ export default class Layout extends React.Component {
     IBMPlexSans.load();
   }
 
-  render = () => (
-    <>
-      <Helmet>
-        <link
-          as="font"
-          rel="prefetch"
-          href="https://fonts.gstatic.com/s/ibmplexsans/v2/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2"
-        />
-        <link
-          as="font"
-          rel="prefetch"
-          href="https://fonts.gstatic.com/s/ibmplexsans/v2/zYX-KVElMYYaJe8bpLHnCwDKhdTuF6ZJW9XjDg.woff2"
-        />
-        <link
-          as="font"
-          rel="prefetch"
-          href="https://fonts.gstatic.com/s/ibmplexsans/v2/zYX-KVElMYYaJe8bpLHnCwDKhdTuF6ZP.woff"
-        />
-        <link
-          as="font"
-          rel="prefetch"
-          href="https://fonts.gstatic.com/s/ibmplexsans/v2/zYXgKVElMYYaJe8bpLHnCwDKhdHeEw.woff"
-        />
-      </Helmet>
-      {this.props.children}
-    </>
-  );
+  render = () => this.props.children;
 }
 
 injectGlobal`
