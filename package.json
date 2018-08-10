@@ -29,7 +29,8 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-emotion": "^9.2.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-pose": "^2.2.0"
   },
   "devDependencies": {
     "axios": "^0.18.0",

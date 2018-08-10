@@ -1,12 +1,9 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 
-import Layout from '../components/Layout';
-import Form from '../components/feedback/Form';
-import Back from '../components/Back';
+import Form from './Form';
 
 const FEEDBACK_URL = `/.netlify/functions/telegram`;
-const QUESTION = 'How likely would you be to recommend Iiro as a designer?';
+const QUESTION = 'What do you think?';
 
 export default class Feedback extends React.PureComponent {
   state = {
@@ -17,7 +14,7 @@ export default class Feedback extends React.PureComponent {
     submitting: false
   };
 
-  onChange = ({ target: { name, value } }) => this.setState({ [name]: value });
+  handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
 
   onSubmit = event => {
     event.preventDefault();
@@ -55,22 +52,16 @@ export default class Feedback extends React.PureComponent {
     const { comment, error, score, submitted, submitting } = this.state;
 
     return (
-      <Layout>
-        <Helmet>
-          <title>Feedback for Iiro Jäppinen</title>
-        </Helmet>
-        <Back />
-        <Form
-          comment={comment}
-          error={error}
-          onChange={this.onChange}
-          onSubmit={this.onSubmit}
-          question={QUESTION}
-          score={score}
-          submitted={submitted}
-          submitting={submitting}
-        />
-      </Layout>
+      <Form
+        comment={comment}
+        error={error}
+        handleChange={this.handleChange}
+        onSubmit={this.onSubmit}
+        question={QUESTION}
+        score={score}
+        submitted={submitted}
+        submitting={submitting}
+      />
     );
   }
 }

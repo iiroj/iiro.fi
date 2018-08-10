@@ -25,6 +25,7 @@ export default styled(Link)`
   background-repeat: no-repeat;
   background-size: 100%;
   color: inherit;
+  display: inline-block;
   text-decoration: none;
   transition: background-position 125ms ease-out 250ms;
 

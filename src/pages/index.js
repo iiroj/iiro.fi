@@ -1,13 +1,14 @@
 import React from 'react';
-import { css } from 'react-emotion';
 import Helmet from 'react-helmet';
 
-import Layout from '../components/Layout';
-import Picture from '../components/home/Picture';
 import Baskerville from '../components/home/Baskerville';
 import Fraktio from '../components/home/Fraktio';
-import Links from '../components/home/Links';
-import FeedbackLink from '../components/home/FeedbackLink';
+import Layout from '../components/Layout';
+import Picture from '../components/home/Picture';
+import Chat from '../components/home/Chat';
+import A from '../components/home/A';
+
+import Feedback from '../components/feedback';
 
 const microdata = JSON.stringify({
   '@context': 'http://schema.org',
@@ -30,68 +31,83 @@ const microdata = JSON.stringify({
   sameAs: ['https://twitter.com/iirojappinen', 'https://fi.linkedin.com/in/iiroj', 'https://github.com/iiroj']
 });
 
-const articleStyle = css`
-  flex: 1 1 24rem;
-  padding: 4rem 0 0 2rem;
-  transition: padding 125ms ease;
+const messages = [
+  <p key="1">Hello there!</p>,
+  <p key="2">My name is Iiro Jäppinen</p>,
+  <p key="3">
+    I’m an UX <Baskerville>&</Baskerville> UI Designer
+  </p>,
+  <p key="4">But I also code ECMAscript and React!</p>,
+  <p key="5">
+    I work at <Fraktio />
+  </p>,
+  <p key="6">
+    There I help people realise their ideas, design useful experiences and create beautiful interfaces and interactions.
+  </p>,
+  <p key="7">
+    You should email me at <A to="mailto:hello@iiro.fi">hello@iiro.fi</A>, or send a tweet to{' '}
+    <A to="https://twitter.com/iirojappinen">@iirojappinen</A>
+  </p>,
+  <p key="8">
+    I also have a <A to="/portfolio">Portfolio</A> and a <A to="https://fi.linkedin.com/in/iiroj">LinkedIn</A> profile.
+  </p>,
+  <p key="9">
+    Check out my <A to="https://github.com/iiroj">GitHub</A> and <A to="https://www.npmjs.com/~iiroj">npm</A> for my
+    open source work.
+  </p>,
+  <Feedback key="10" />
+];
 
-  h1 {
-    font-size: 3rem;
-    line-height: 1;
-    margin-bottom: 2rem;
+const randomIntFromInterval = (min, max, seed) => Math.floor((seed || Math.random()) * (max - min + 1) + min);
+const timeout = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+async function* messageGenerator(i = 0) {
+  while (i < messages.length) {
+    const message = messages[i++];
+    await timeout(
+      randomIntFromInterval(1, 3, (message.props.children ? message.props.children.length : 10) / 50) * 1000
+    );
+    yield message;
+  }
+}
+
+const generateMessage = messageGenerator();
+
+export default class Home extends React.PureComponent {
+  state = {
+    messages: [],
+    skipped: false,
+    typing: true
+  };
+
+  handleSkip = () => this.setState({ messages, skipped: true, typing: false });
+
+  async addMessage() {
+    this.setState({ typing: true });
+    const { value } = await generateMessage.next();
+    if (!this.state.skipped) {
+      this.setState({ messages: this.state.messages.concat(value), typing: false });
+    }
   }
 
-  p {
-    margin-top: 1rem;
-    line-height: 1.75;
+  async componentDidMount() {
+    while (this.state.messages.length < messages.length) {
+      await this.addMessage();
+      await timeout(1000);
+    }
   }
 
-  ${Baskerville} {
-    font-size: 120%;
-    line-height: 1.25;
+  render() {
+    const { messages, typing } = this.state;
+
+    return (
+      <Layout>
+        <Helmet>
+          <title>Iiro Jäppinen</title>
+        </Helmet>
+        <script type="application/ld+json">{microdata}</script>
+        <Chat avatar={<Picture />} messages={messages} onClick={this.handleSkip} typing={typing} />
+      </Layout>
+    );
   }
-
-  ${Links} {
-    margin-top: 1.5rem;
-  }
-
-  ${FeedbackLink} {
-    margin: 2.5rem 0 4rem;
-  }
-
-  @media (min-width: 60rem) {
-    padding: 10rem 0 0 4rem;
-  }
-`;
-
-const containerStyle = css`
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  max-width: 64rem;
-  padding: 2rem;
-  width: 100%;
-`;
-
-export default () => (
-  <Layout>
-    <div className={containerStyle}>
-      <Helmet>
-        <title>Iiro Jäppinen</title>
-      </Helmet>
-      <script type="application/ld+json">{microdata}</script>
-      <Picture />
-      <article className={articleStyle}>
-        <h1>I am Iiro Jäppinen</h1>
-        <p>
-          a UI Designer <Baskerville>&</Baskerville> Developer, and all-around handyman at <Fraktio />. I help people
-          realise their ideas, design useful experiences and create beautiful interfaces and interactions. I mainly
-          create ECMAScript/React applications.
-        </p>
-        <Links />
-        <FeedbackLink />
-      </article>
-    </div>
-  </Layout>
-);
+}
