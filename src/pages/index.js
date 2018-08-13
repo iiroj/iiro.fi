@@ -88,6 +88,7 @@ export default class Home extends React.PureComponent {
     if (!this.state.skipped) {
       this.setState({ messages: this.state.messages.concat(value), typing: false });
     }
+    window.scrollTo(0, document.documentElement.scrollHeight);
   }
 
   async componentDidMount() {

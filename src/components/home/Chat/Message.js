@@ -1,18 +1,19 @@
-import styled from 'react-emotion';
-import posed from 'react-pose';
+import styled, { keyframes } from 'react-emotion';
 
-const Posed = posed.div({
-  enter: {
-    opacity: 1,
-    y: 0
-  },
-  exit: {
-    opacity: 0,
-    y: 25
+const animation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(25%);
   }
-});
 
-export default styled(Posed)`
+  to {
+    opacity: 1;
+    transform: none;
+  }
+`;
+
+export default styled.div`
+  animation: ${animation} 125ms ease-in-out forwards;
   background-color: rgb(242, 242, 242);
   border-radius: 0.5rem;
   padding: 1rem 2rem;

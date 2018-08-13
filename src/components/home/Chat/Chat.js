@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'react-emotion';
-import { PoseGroup } from 'react-pose';
 
 import Typing from './Typing';
 import Message from './Message';
@@ -33,11 +32,9 @@ const Chat = ({ avatar: Avatar, messages, onClick, typing }) => (
   <div className={container} onClick={onClick}>
     {Avatar}
     <div className={messageList}>
-      <PoseGroup animateOnMount>
-        {messages.map((content, key) => (
-          <Message key={key}>{content}</Message>
-        ))}
-      </PoseGroup>
+      {messages.map((content, key) => (
+        <Message key={key}>{content}</Message>
+      ))}
       {typing && <Typing />}
     </div>
   </div>

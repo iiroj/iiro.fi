@@ -3,14 +3,12 @@ import styled, { css, keyframes } from 'react-emotion';
 
 const fadeIn = keyframes`
   from {
-    height: 0;
     opacity: 0;
-    padding: 0;
+
   }
   to {
-    height: 5rem;
     opacity: 1;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
   }
 `;
 
