@@ -1,5 +1,5 @@
 .cache
-.env
+.env.development
 lambda
 node_modules
 public

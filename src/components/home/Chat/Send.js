@@ -17,9 +17,4 @@ export default styled(Icon)`
   stroke-width: 2px;
   stroke: hsl(0, 0%, 80%);
   width: 2rem;
-
-  circle,
-  path {
-    transition: all 125ms ease-in-out;
-  }
 `;

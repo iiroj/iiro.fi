@@ -31,25 +31,26 @@ const Button = styled.button`
   transition: all 125ms ease-in-out;
 
   ${props =>
-    props.disabled &&
-    css`
-      pointer-events: none;
-    `};
+    props.valid === 'true'
+      ? css`
+          ${Send} {
+            circle {
+              fill: hsl(44, 100%, 75%);
+              stroke: none;
+            }
 
-  input:focus + & {
-    background-color: hsla(44, 100%, 75%, 0.2);
-    padding: 1rem 3rem;
+            path {
+              fill: white;
+              stroke: none;
+            }
+          }
+        `
+      : css`
+          pointer-events: none;
+        `};
 
-    ${Send} {
-      circle {
-        fill: white;
-        stroke: white;
-      }
-
-      path {
-        stroke: hsla(44, 100%, 75%, 0.4);
-      }
-    }
+  &:hover ${Send} circle {
+    fill: hsl(44, 100%, 60%);
   }
 
   ${Typing} {
@@ -75,7 +76,7 @@ const Input = styled.input`
 
   &:focus {
     box-shadow: inset 0 0 0 2px hsl(44, 100%, 75%);
-    padding-right: 8rem;
+    padding-right: 4rem;
   }
 
   &:disabled {
@@ -90,37 +91,6 @@ const Input = styled.input`
       cursor: text;
       width: 100%;
       box-shadow: inset 0 0 0 1px hsl(0, 0%, 80%);
-
-      ${Button} {
-        pointer-events: none;
-      }
-    `};
-
-  ${props =>
-    props.valid === 'true' &&
-    css`
-      & + ${Button} {
-        background-color: hsla(0, 0%, 0%, 0.04) !important;
-
-        ${Send} {
-          circle {
-            fill: white !important;
-            stroke: white !important;
-          }
-
-          path {
-            stroke: hsl(0, 0%, 96%) !important;
-          }
-        }
-      }
-
-      &:focus + ${Button}, & + ${Button}:hover {
-        background-color: hsl(44, 100%, 75%) !important;
-
-        ${Send} path {
-          stroke: hsl(44, 100%, 75%) !important;
-        }
-      }
     `};
 `;
 
@@ -170,7 +140,9 @@ export default class Reply extends React.PureComponent {
   };
 
   render() {
-    const { dirty, sending, text, valid } = this.state;
+    const { dirty, sending, text } = this.state;
+
+    const valid = this.state.valid && !sending;
 
     return (
       <Form disabled={sending} onSubmit={this.handleSumbit} dirty={dirty}>
@@ -185,7 +157,9 @@ export default class Reply extends React.PureComponent {
           valid={valid.toString()}
           value={text}
         />
-        <Button disabled={!valid || sending}>{sending ? <Typing /> : <Send />}</Button>
+        <Button disabled={!valid} valid={valid.toString()}>
+          {sending ? <Typing /> : <Send />}
+        </Button>
       </Form>
     );
   }
