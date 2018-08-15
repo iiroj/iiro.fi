@@ -1,15 +1,8 @@
 import styled, { keyframes } from 'react-emotion';
 
 const animation = keyframes`
-  from {
-    max-height: 0;
-    opacity: 0;
-  }
-
-  to {
-    max-height: 100vh;
-    opacity: 1;
-  }
+  from { opacity: 0 }
+  to   { opacity: 1 }
 `;
 
 export default styled.div`

@@ -12,18 +12,27 @@ const MessageGroup = styled.div`
   display: flex;
   flex: 1 1;
   flex-basis: ${props => (props.fullWidth ? '100%' : undefined)};
+  position: relative;
+  will-change: height;
 `;
 
 const avatarContainer = css`
   bottom: 1rem;
   flex: 0 0 4rem;
-  margin: 1rem;
+  margin-right: 1rem;
   position: sticky;
 `;
 
-const messageListContainer = css`
+const MessageListContainer = styled.div`
   flex: 1 1;
-  padding-right: 1rem;
+  will-change: height;
+
+  ${props =>
+    props.typing &&
+    css`
+      margin-bottom: 4.5rem;
+      transition: all 125ms ease-in-out;
+    `};
 `;
 
 const messageList = css`
@@ -31,8 +40,6 @@ const messageList = css`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 100%;
-  padding: 1rem 0;
   transition: all 125ms;
 
   &:not(:first-child) {
@@ -57,13 +64,13 @@ class Chat extends React.PureComponent {
             <Picture />
           </div>
           {messages.length > 0 && (
-            <div className={messageListContainer}>
+            <MessageListContainer typing={typing}>
               <div className={messageList}>
                 {messages.map((content, key) => (
                   <Message key={key}>{content}</Message>
                 ))}
               </div>
-            </div>
+            </MessageListContainer>
           )}
           {typing && <Typing />}
         </MessageGroup>
@@ -79,13 +86,13 @@ export default styled(Chat)`
   display: flex;
   flex-wrap: wrap;
   max-width: 40rem;
+  padding: 1rem;
   position: relative;
   width: 100%;
 
   ${Typing} {
-    left: 6rem;
+    left: 7rem;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 2rem;
   }
 `;

@@ -2,8 +2,8 @@ import React from 'react';
 import styled, { keyframes } from 'react-emotion';
 
 const jump = keyframes`
-  0% { transform: translateY(-50%); }
-  100% { transform: translateY(50%); }
+  from { transform: translateY(-50%) }
+  to   { transform: translateY(50%) }
 `;
 
 const Ball = styled.div`
@@ -19,6 +19,11 @@ const Ball = styled.div`
   width: 0.5rem;
 `;
 
+const fadeIn = keyframes`
+  from { opacity: 0 }
+  to   { opacity: 1 }
+`;
+
 export default styled(({ className }) => (
   <i className={className} aria-live="polite">
     <Ball i={0} />
@@ -26,6 +31,7 @@ export default styled(({ className }) => (
     <Ball i={2} />
   </i>
 ))`
+  animation: ${fadeIn} 125ms ease-in-out;
   display: block;
   height: 0.5rem;
   position: relative;

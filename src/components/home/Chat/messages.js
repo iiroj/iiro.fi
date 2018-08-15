@@ -1,11 +1,28 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
+
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Baskerville from '../Baskerville';
 import Fraktio from '../Fraktio';
 import A from '../A';
 
+// This wrapper creates accessible emojis, but jsx-a11y doesn't detect it
+const Emoji = ({ children, label }) => (
+  <span role="img" aria-label={label}>
+    {children}
+  </span>
+);
+
+Emoji.propTypes = {
+  children: PropTypes.any.isRequired,
+  label: PropTypes.string.isRequired
+};
+
 export default [
-  <p key="1">Hello there!</p>,
+  <p key="1">
+    Hello there! <Emoji label="Smiling Face With Sunglasses">😎</Emoji>
+  </p>,
   <p key="2">My name is Iiro Jäppinen</p>,
   <p key="3">
     I’m an UX <Baskerville>&</Baskerville> UI Designer
@@ -27,5 +44,8 @@ export default [
   <p key="9">
     Check out my <A to="https://github.com/iiroj">GitHub</A> and <A to="https://www.npmjs.com/~iiroj">npm</A> for my
     open source work.
+  </p>,
+  <p key="10">
+    Finally, feel free to send me a <Emoji label="Speech Balloon">💬</Emoji> message from below. Have a nice day!
   </p>
 ];

@@ -6,10 +6,12 @@ import Typing from './Typing';
 
 const Form = styled.form`
   align-items: center;
-  flex-basis: ${props => (props.fullWidth ? '100%' : undefined)};
+  flex-basis: ${props => (props.dirty ? '100%' : undefined)};
   margin-left: auto;
+  margin-top: ${props => (props.dirty ? '1rem' : undefined)};
   display: flex;
   position: relative;
+  transition: all 125ms ease-in-out;
 `;
 
 const Button = styled.button`
@@ -49,8 +51,8 @@ const Button = styled.button`
   }
 
   ${Typing} {
+    left: -2.5rem;
     position: absolute;
-    right: 2rem;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -140,7 +142,7 @@ export default class Reply extends React.PureComponent {
     const { dirty, sending, text, valid } = this.state;
 
     return (
-      <Form disabled={sending} onSubmit={this.handleSumbit} fullWidth={dirty}>
+      <Form disabled={sending} onSubmit={this.handleSumbit} dirty={dirty}>
         <Input
           aria-expanded={dirty}
           disabled={sending}
