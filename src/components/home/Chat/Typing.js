@@ -1,16 +1,9 @@
 import React from 'react';
-import styled, { css, keyframes } from 'react-emotion';
+import styled, { keyframes } from 'react-emotion';
 
 const jump = keyframes`
   0% { transform: translateY(-50%); }
   100% { transform: translateY(50%); }
-`;
-
-const typing = css`
-  display: block;
-  margin-top: -0.5rem;
-  padding: 2.5rem 0;
-  position: relative;
 `;
 
 const Ball = styled.div`
@@ -26,10 +19,15 @@ const Ball = styled.div`
   width: 0.5rem;
 `;
 
-export default () => (
-  <i className={typing} aria-live="polite">
+export default styled(({ className }) => (
+  <i className={className} aria-live="polite">
     <Ball i={0} />
     <Ball i={1} />
     <Ball i={2} />
   </i>
-);
+))`
+  display: block;
+  height: 0.5rem;
+  position: relative;
+  width: 2.5rem;
+`;

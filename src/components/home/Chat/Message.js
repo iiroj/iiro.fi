@@ -14,7 +14,7 @@ const animation = keyframes`
 
 export default styled.div`
   animation: ${animation} 125ms ease-in-out forwards;
-  background-color: rgb(242, 242, 242);
+  background-color: hsl(0, 0%, 96%);
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   transition: all 125ms;

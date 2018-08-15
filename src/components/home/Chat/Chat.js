@@ -1,22 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'react-emotion';
+import styled, { css } from 'react-emotion';
 
 import Typing from './Typing';
 import Message from './Message';
+import Picture from '../Picture';
+import Reply from './Reply';
 
-const chat = css`
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  max-width: 40rem;
-  width: 100%;
-`;
-
-const messageGroup = css`
+const MessageGroup = styled.div`
   align-items: flex-end;
   display: flex;
   flex: 1 1;
+  flex-basis: ${props => (props.fullWidth ? '100%' : undefined)};
 `;
 
 const avatarContainer = css`
@@ -45,50 +40,52 @@ const messageList = css`
   }
 `;
 
-const feedbackButton = css`
-  margin-left: auto;
-`;
-
-const feedbackContainer = css`
-  align-items: center;
-  display: flex;
-  width: 100%;
-`;
-
 class Chat extends React.PureComponent {
   static propTypes = {
-    avatar: PropTypes.element,
+    className: PropTypes.string,
     messages: PropTypes.array.isRequired,
     typing: PropTypes.bool.isRequired
   };
 
   render() {
-    const { avatar: Avatar, messages, typing } = this.props;
+    const { className, messages, typing } = this.props;
 
     return (
-      <div className={chat}>
-        <div className={messageGroup}>
-          <div className={avatarContainer}>{Avatar}</div>
-          <div className={messageListContainer}>
-            <div className={messageList}>
-              {messages.map((content, key) => (
-                <Message key={key}>{content}</Message>
-              ))}
-              {typing && <Typing />}
-            </div>
+      <div className={className}>
+        <MessageGroup fullWidth={messages.length > 0}>
+          <div className={avatarContainer}>
+            <Picture />
           </div>
-        </div>
-        <div className={feedbackContainer}>
-          <div className={messageListContainer}>
-            <div className={messageList}>
-              <button className={feedbackButton}>Send Feedback</button>
+          {messages.length > 0 && (
+            <div className={messageListContainer}>
+              <div className={messageList}>
+                {messages.map((content, key) => (
+                  <Message key={key}>{content}</Message>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className={avatarContainer}>{Avatar}</div>
-        </div>
+          )}
+          {typing && <Typing />}
+        </MessageGroup>
+        <Reply />
       </div>
     );
   }
 }
 
-export default Chat;
+export default styled(Chat)`
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 40rem;
+  position: relative;
+  width: 100%;
+
+  ${Typing} {
+    left: 6rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+`;
