@@ -1,26 +1,15 @@
 import React from 'react';
 import styled, { css, keyframes } from 'react-emotion';
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-
-  }
-  to {
-    opacity: 1;
-    padding: 2.5rem 0;
-  }
-`;
-
 const jump = keyframes`
   0% { transform: translateY(-50%); }
   100% { transform: translateY(50%); }
 `;
 
 const typing = css`
-  animation: ${fadeIn} 125ms forwards;
   display: block;
   margin-top: -0.5rem;
+  padding: 2.5rem 0;
   position: relative;
 `;
 
