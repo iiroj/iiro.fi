@@ -23,8 +23,9 @@ const avatarContainer = css`
   position: sticky;
 `;
 
-const MessageListContainer = styled.div`
+const MessageListContainer = styled.ol`
   flex: 1 1;
+  list-style: none;
   will-change: height;
 
   ${props =>
@@ -64,7 +65,7 @@ class Chat extends React.PureComponent {
             <Picture />
           </div>
           {messages.length > 0 && (
-            <MessageListContainer typing={typing}>
+            <MessageListContainer aria-live="assertive" role="log" typing={typing}>
               <div className={messageList}>
                 {messages.map((content, key) => (
                   <Message key={key}>{content}</Message>

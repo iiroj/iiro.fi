@@ -35,15 +35,37 @@ export default [
     There I help people realise their ideas, design useful experiences and create beautiful interfaces and interactions.
   </p>,
   <p key="7">
-    You should email me at <A to="mailto:hello@iiro.fi">hello@iiro.fi</A>, or send a tweet to{' '}
-    <A to="https://twitter.com/iirojappinen">@iirojappinen</A>
+    You should email me at{' '}
+    <A to="mailto:hello@iiro.fi">
+      <Emoji label="Email">📧</Emoji>
+      hello@iiro.fi
+    </A>
+    , or send a tweet to{' '}
+    <A to="https://twitter.com/iirojappinen">
+      <Emoji label="Bird">🐦</Emoji> @iirojappinen
+    </A>
   </p>,
   <p key="8">
-    I also have a <A to="/portfolio">Portfolio</A> and a <A to="https://fi.linkedin.com/in/iiroj">LinkedIn</A> profile.
+    I also have a{' '}
+    <A to="/portfolio">
+      <Emoji label="Nailpolish">💅</Emoji> Portfolio
+    </A>{' '}
+    and a{' '}
+    <A to="https://fi.linkedin.com/in/iiroj">
+      <Emoji label="Briefcase">💼</Emoji> LinkedIn
+    </A>{' '}
+    profile.
   </p>,
   <p key="9">
-    Check out my <A to="https://github.com/iiroj">GitHub</A> and <A to="https://www.npmjs.com/~iiroj">npm</A> for my
-    open source work.
+    Check out my{' '}
+    <A to="https://github.com/iiroj">
+      <Emoji label="Globe Showing Europe And Africa">🌍</Emoji> GitHub
+    </A>{' '}
+    and{' '}
+    <A to="https://www.npmjs.com/~iiroj">
+      <Emoji label="Package">📦</Emoji> npm
+    </A>{' '}
+    for my open source work.
   </p>,
   <p key="10">
     Finally, feel free to send me a <Emoji label="Speech Balloon">💬</Emoji> message from below. Have a nice day!

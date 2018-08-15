@@ -5,7 +5,7 @@ const animation = keyframes`
   to   { opacity: 1 }
 `;
 
-export default styled.div`
+export default styled.li`
   animation: ${animation} 125ms ease-in-out forwards;
   background-color: hsl(0, 0%, 96%);
   border-radius: 0.5rem;

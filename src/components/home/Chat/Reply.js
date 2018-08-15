@@ -66,6 +66,7 @@ const Input = styled.input`
   font-family: inherit;
   line-height: 2rem;
   margin-left: auto;
+  outline: none;
   padding: 1rem 2rem;
   transition: all 125ms ease-in-out;
   width: 4rem;
@@ -97,7 +98,7 @@ const Input = styled.input`
     props.valid === 'true' &&
     css`
       & + ${Button} {
-        background-color: hsl(0, 0%, 96%) !important;
+        background-color: hsla(0, 0%, 0%, 0.04) !important;
 
         ${Send} {
           circle {
