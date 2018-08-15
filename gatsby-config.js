@@ -1,11 +1,6 @@
 require('dotenv').config();
 
 module.exports = {
-  proxy: {
-    prefix: '/.netlify/functions',
-    url: 'http://localhost:9000'
-  },
-
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',

@@ -4,6 +4,8 @@ import styled, { css } from 'react-emotion';
 import Send from './Send';
 import Typing from './Typing';
 
+const REPLY_URL = `${process.env.LAMBDA_BASE_URL}/telegram`;
+
 const Form = styled.form`
   align-items: center;
   flex-basis: ${props => (props.dirty ? '100%' : undefined)};
@@ -126,9 +128,12 @@ export default class Reply extends React.PureComponent {
   state = {
     dirty: false,
     sending: false,
+    submitted: false,
     text: '',
     valid: false
   };
+
+  inputRef = React.createRef();
 
   handleOpen = () => this.setState({ dirty: true });
 
@@ -137,6 +142,31 @@ export default class Reply extends React.PureComponent {
   handleSumbit = event => {
     event.preventDefault();
     this.setState({ sending: true });
+
+    return new Promise((resolve, reject) => {
+      setTimeout(reject, 10000);
+      fetch(REPLY_URL, {
+        method: 'POST',
+        body: JSON.stringify({ text: this.state.text }),
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      })
+        .then(resolve)
+        .catch(reject);
+    })
+      .then(response => {
+        if (response.status !== 204) throw new Error(response.status);
+        this.inputRef.current.blur();
+        this.setState({
+          dirty: false,
+          sending: false,
+          submitted: true,
+          text: '',
+          valid: false
+        });
+      })
+      .catch(error => this.setState({ error, sending: false }));
   };
 
   render() {
@@ -147,6 +177,7 @@ export default class Reply extends React.PureComponent {
         <Input
           aria-expanded={dirty}
           disabled={sending}
+          innerRef={this.inputRef}
           onClick={this.handleOpen}
           onChange={this.handleTextInput}
           placeholder="Send Feedback"

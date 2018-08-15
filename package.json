@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start:gatsby": "gatsby develop",
-    "start:lambda": "lambda-dev serve src/lambda --basePath /.netlify/functions",
+    "start:lambda": "lambda-dev serve src/lambda",
     "start": "concurrently 'npm:start:*'",
     "lint": "eslint .",
     "prebuild:site": "rimraf public",
