@@ -84,7 +84,7 @@ injectGlobal`
     > div {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      min-height: 100%;
       overflow-x: hidden;
       overflow-y: auto;
       width: 100%;

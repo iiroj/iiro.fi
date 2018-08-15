@@ -2,10 +2,12 @@ import styled, { keyframes } from 'react-emotion';
 
 const animation = keyframes`
   from {
+    max-height: 0;
     opacity: 0;
   }
 
   to {
+    max-height: 100vh;
     opacity: 1;
   }
 `;

@@ -75,16 +75,15 @@ export default class ChatGenerator extends React.PureComponent {
     const { value } = generateMessage.next();
 
     if (value === undefined) {
-      this.setState({ ready: true });
+      this.setState({ ready: true, typing: false });
     } else {
-      this.setState({ messages: this.state.messages.concat(value) });
+      this.setState({ messages: this.state.messages.concat(value), typing: false });
     }
-
-    this.setState({ typing: false });
   }
 
   async componentDidMount() {
     while (!this.state.ready) {
+      await timeout(randomIntFromInterval(1, 3) * 1000);
       await this.addMessage();
     }
   }

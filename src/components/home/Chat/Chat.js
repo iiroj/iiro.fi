@@ -6,10 +6,10 @@ import Typing from './Typing';
 import Message from './Message';
 
 const chat = css`
-  align-items: flex-end;
+  margin: auto;
   display: flex;
-  flex: 1 1;
   flex-direction: column;
+  max-width: 40rem;
   width: 100%;
 `;
 
@@ -17,7 +17,6 @@ const messageGroup = css`
   align-items: flex-end;
   display: flex;
   flex: 1 1;
-  width: 100%;
 `;
 
 const avatarContainer = css`
@@ -63,14 +62,6 @@ class Chat extends React.PureComponent {
     typing: PropTypes.bool.isRequired
   };
 
-  ref = React.createRef();
-
-  getSnapshotBeforeUpdate = () => this.ref.current;
-
-  componentDidUpdate(prevState, prevProps, { offsetHeight, scrollHeight, scrollTop }) {
-    this.ref.current.scrollTo(0, scrollHeight);
-  }
-
   render() {
     const { avatar: Avatar, messages, typing } = this.props;
 
@@ -78,7 +69,7 @@ class Chat extends React.PureComponent {
       <div className={chat}>
         <div className={messageGroup}>
           <div className={avatarContainer}>{Avatar}</div>
-          <div className={messageListContainer} ref={this.ref}>
+          <div className={messageListContainer}>
             <div className={messageList}>
               {messages.map((content, key) => (
                 <Message key={key}>{content}</Message>
@@ -88,7 +79,11 @@ class Chat extends React.PureComponent {
           </div>
         </div>
         <div className={feedbackContainer}>
-          <button className={feedbackButton}>Send Feedback</button>
+          <div className={messageListContainer}>
+            <div className={messageList}>
+              <button className={feedbackButton}>Send Feedback</button>
+            </div>
+          </div>
           <div className={avatarContainer}>{Avatar}</div>
         </div>
       </div>
