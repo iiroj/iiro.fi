@@ -22,6 +22,7 @@ const Button = styled.button`
   border-bottom-right-radius: 3rem;
   border-top-right-radius: 3rem;
   border: none;
+  bottom: 0;
   cursor: pointer;
   display: block;
   outline: none;
@@ -61,16 +62,18 @@ const Button = styled.button`
   }
 `;
 
-const Input = styled.input`
-  border-radius: 3rem;
+const Input = styled.textarea`
+  border-radius: 0.5rem;
   border: none;
   color: inherit;
   cursor: pointer;
   font-family: inherit;
+  height: 4rem;
   line-height: 2rem;
   margin-left: auto;
   outline: none;
   padding: 1rem 2rem;
+  resize: none;
   transition: all 125ms ease-in-out;
   width: 4rem;
 
@@ -88,6 +91,8 @@ const Input = styled.input`
   ${props =>
     props['aria-expanded'] &&
     css`
+      height: auto;
+      resize: vertical;
       cursor: text;
       width: 100%;
       box-shadow: inset 0 0 0 1px hsl(0, 0%, 80%);
@@ -153,7 +158,6 @@ export default class Reply extends React.PureComponent {
           onClick={this.handleOpen}
           onChange={this.handleTextInput}
           placeholder="Send Feedback"
-          type="text"
           valid={valid.toString()}
           value={text}
         />
