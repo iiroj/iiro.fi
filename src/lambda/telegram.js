@@ -2,7 +2,7 @@ require('dotenv').config({
   path: '.env.development'
 });
 
-const { post } = require('axios');
+const requestPromise = require('minimal-request-promise');
 
 const chat_id = process.env.TELEGRAM_CHAT_ID;
 const url = `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`;
@@ -34,16 +34,19 @@ exports.handler = (event, context, callback) => {
 
   console.log('Posting to Telegram');
 
-  post(url, {
-    chat_id,
-    text: JSON.parse(event.body).text,
-    parse_mode: 'Markdown'
-  })
+  requestPromise
+    .post(url, {
+      body: JSON.stringify({
+        chat_id,
+        text: JSON.parse(event.body).text,
+        parse_mode: 'Markdown'
+      })
+    })
     .then(() => {
       console.log(`Succesfully posted to Telegram`);
       return callback(null, { statusCode: 204, headers });
     })
-    .catch(({ response }) => {
+    .catch(response => {
       const { description, error_code } = response.data;
       console.log(`Telegram: ${error_code} — ${description}`);
       return callback(null, { statusCode: 500, headers });
