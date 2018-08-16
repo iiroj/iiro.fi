@@ -63,14 +63,15 @@ const Button = styled.button`
 `;
 
 const Input = styled.textarea`
+  appearance: none;
   border-radius: 0.5rem;
   border: none;
-  color: inherit;
   cursor: pointer;
   font-family: inherit;
   height: 4rem;
   line-height: 2rem;
   margin-left: auto;
+  opacity: 0;
   outline: none;
   padding: 1rem 2rem;
   resize: none;
@@ -78,24 +79,26 @@ const Input = styled.textarea`
   width: 4rem;
 
   &:focus {
-    box-shadow: inset 0 0 0 2px hsl(44, 100%, 75%);
+    border: 2px solid hsl(44, 100%, 75%);
     padding-right: 4rem;
   }
 
   &:disabled {
     background: hsl(0, 0%, 96%);
-    box-shadow: none;
+    border: none;
     pointer-events: none;
   }
 
   ${props =>
     props['aria-expanded'] &&
     css`
-      height: auto;
-      resize: vertical;
+      border: 1px solid hsl(0, 0%, 80%);
+      color: inherit;
       cursor: text;
+      height: auto;
+      opacity: 1;
+      resize: vertical;
       width: 100%;
-      box-shadow: inset 0 0 0 1px hsl(0, 0%, 80%);
     `};
 `;
 

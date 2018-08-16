@@ -8,7 +8,7 @@
   "bugs": "https://gitlab.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
-    "start:gatsby": "gatsby develop",
+    "start:gatsby": "gatsby develop -H 0.0.0.0",
     "start:lambda": "lambda-dev serve src/lambda",
     "start": "concurrently 'npm:start:*'",
     "lint": "eslint .",

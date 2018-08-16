@@ -21,12 +21,14 @@ export default class Generator extends React.PureComponent {
 
   generator = () =>
     new Promise(async (resolve, reject) => {
-      this.setState({ typing: true });
-      await waitFor(randomIntFromInterval(10, 20) * 100);
       if (!this.state.ready) {
-        this.setState({ messages: generateMessage.next().value, typing: false }, resolve);
-      } else {
-        resolve();
+        this.setState({ typing: true });
+        await waitFor(randomIntFromInterval(10, 20) * 100);
+        if (!this.state.ready) {
+          this.setState({ messages: generateMessage.next().value, typing: false }, resolve);
+        } else {
+          resolve();
+        }
       }
     }).then(async () => {
       if (!this.state.ready && this.state.messages.length !== messages.length) {
