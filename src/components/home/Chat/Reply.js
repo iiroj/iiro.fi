@@ -55,10 +55,9 @@ const Button = styled.button`
   }
 
   ${Typing} {
+    bottom: 1.5rem;
     left: -2.5rem;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
   }
 `;
 
@@ -105,6 +104,7 @@ const Input = styled.textarea`
 export default class Reply extends React.PureComponent {
   state = {
     dirty: false,
+    failed: false,
     sending: false,
     submitted: false,
     text: '',
@@ -144,18 +144,18 @@ export default class Reply extends React.PureComponent {
           valid: false
         });
       })
-      .catch(error => this.setState({ error, sending: false }));
+      .catch(error => this.setState({ failed: true, sending: false }));
   };
 
   render() {
-    const { dirty, sending, text } = this.state;
+    const { dirty, failed, sending, text } = this.state;
 
-    const valid = this.state.valid && !sending;
+    const valid = this.state.valid && !sending && !failed;
 
     return (
-      <Form disabled={sending} onSubmit={this.handleSumbit} dirty={dirty}>
+      <Form disabled={sending || failed} onSubmit={this.handleSumbit} dirty={dirty}>
         <Input
-          aria-expanded={dirty}
+          aria-expanded={dirty && !failed}
           disabled={sending}
           innerRef={this.inputRef}
           onClick={this.handleOpen}

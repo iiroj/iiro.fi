@@ -36,6 +36,9 @@ exports.handler = (event, context, callback) => {
 
   requestPromise
     .post(url, {
+      headers: {
+        'Content-type': 'application/json'
+      },
       body: JSON.stringify({
         chat_id,
         text: JSON.parse(event.body).text,
