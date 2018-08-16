@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from 'react-emotion';
+import Helmet from 'react-helmet';
 
 const sectionStyles = css`
   align-items: center;
@@ -30,6 +31,14 @@ const imageStyles = css`
 
 export const DeliveryEstimates = () => (
   <section className={sectionStyles}>
+    <Helmet>
+      <link rel="preload" href="/portfolio/verkkokauppacom/dialog.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/dialog@2x.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/dialog@3x.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/list.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/list@2x.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/list@3x.png" as="image" />
+    </Helmet>
     <div className={textStyles}>
       <h2>Delivery estimates</h2>
       <h3>The Problem</h3>

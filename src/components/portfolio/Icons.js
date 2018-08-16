@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from 'react-emotion';
+import Helmet from 'react-helmet';
 
 import ButtonLink from './ButtonLink';
 
@@ -37,8 +38,16 @@ const containerStyles = css`
   }
 `;
 
-export const Icons = () => (
+export default () => (
   <article className={articleStyles}>
+    <Helmet>
+      <link rel="preload" href="/portfolio/icons/growl.png" as="image" />
+      <link rel="preload" href="/portfolio/icons/growl@2x.png" as="image" />
+      <link rel="preload" href="/portfolio/icons/growl@3x.png" as="image" />
+      <link rel="preload" href="/portfolio/icons/tuneinstructor.png" as="image" />
+      <link rel="preload" href="/portfolio/icons/tuneinstructor@2x.png" as="image" />
+      <link rel="preload" href="/portfolio/icons/tuneinstructor@3x.png" as="image" />
+    </Helmet>
     <h1 className={titleStyles}>Icon Aficionado</h1>
     <div className={containerStyles}>
       <div>
