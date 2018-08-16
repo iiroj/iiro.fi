@@ -65,13 +65,14 @@ class Chat extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
     messages: PropTypes.array.isRequired,
+    onReplied: PropTypes.func.isRequired,
     onSkip: PropTypes.func.isRequired,
     ready: PropTypes.bool.isRequired,
     typing: PropTypes.bool.isRequired
   };
 
   render() {
-    const { className, messages, onSkip, ready, typing } = this.props;
+    const { className, messages, onReplied, onSkip, ready, typing } = this.props;
 
     return (
       <div className={className}>
@@ -95,7 +96,7 @@ class Chat extends React.PureComponent {
             Skip
           </button>
         )}
-        <Reply />
+        <Reply onReplied={onReplied} />
       </div>
     );
   }

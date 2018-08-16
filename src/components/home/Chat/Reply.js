@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 
 import Send from './Send';
@@ -102,6 +103,10 @@ const Input = styled.textarea`
 `;
 
 export default class Reply extends React.PureComponent {
+  static propTypes = {
+    onReplied: PropTypes.func.isRequired
+  };
+
   state = {
     dirty: false,
     failed: false,
@@ -143,6 +148,7 @@ export default class Reply extends React.PureComponent {
           text: '',
           valid: false
         });
+        this.props.onReplied();
       })
       .catch(error => this.setState({ failed: true, sending: false }));
   };

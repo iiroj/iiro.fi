@@ -1,13 +1,15 @@
 import React from 'react';
 
-import Chat from './Chat';
 import messages from './messages';
+
+import Chat from './Chat';
+import Emoji from './Emoji';
 
 const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 const waitFor = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-function* messageGenerator(i = 1) {
-  while (true) yield messages.slice(0, i++);
+function* messageGenerator(i = 0) {
+  while (true) yield messages[i++];
 }
 
 const generateMessage = messageGenerator();
@@ -16,6 +18,7 @@ export default class Generator extends React.PureComponent {
   state = {
     messages: [],
     ready: false,
+    replied: false,
     typing: true
   };
 
@@ -25,13 +28,14 @@ export default class Generator extends React.PureComponent {
         this.setState({ typing: true });
         await waitFor(randomIntFromInterval(10, 20) * 100);
         if (!this.state.ready) {
-          this.setState({ messages: generateMessage.next().value, typing: false }, resolve);
+          const message = generateMessage.next().value;
+          this.setState({ messages: this.state.messages.concat(message), typing: false }, resolve);
         } else {
           resolve();
         }
       }
     }).then(async () => {
-      if (!this.state.ready && this.state.messages.length !== messages.length) {
+      if (!this.state.ready && this.state.messages.length < messages.length) {
         await waitFor(1000);
         this.generator();
       } else {
@@ -41,9 +45,23 @@ export default class Generator extends React.PureComponent {
 
   handleSkip = () => this.setState({ messages, ready: true, typing: false });
 
-  componentDidMount = () => this.generator();
+  handleReplied = () =>
+    this.setState({
+      messages: this.state.messages.concat(
+        <p key="replied">
+          <Emoji label="Check Mark">✅</Emoji> Thanks for the feedback!
+        </p>
+      )
+    });
 
-  render = () => (
-    <Chat messages={this.state.messages} onSkip={this.handleSkip} ready={this.state.ready} typing={this.state.typing} />
-  );
+  componentDidMount() {
+    this.generator();
+  }
+
+  render() {
+    const { messages, ready, typing } = this.state;
+    return (
+      <Chat messages={messages} onReplied={this.handleReplied} onSkip={this.handleSkip} ready={ready} typing={typing} />
+    );
+  }
 }

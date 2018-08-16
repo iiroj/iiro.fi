@@ -1,23 +1,10 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
-
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Baskerville from '../Baskerville';
 import Fraktio from '../Fraktio';
 import A from '../A';
 
-// This wrapper creates accessible emojis, but jsx-a11y doesn't detect it
-const Emoji = ({ children, label }) => (
-  <span role="img" aria-label={label}>
-    {children}
-  </span>
-);
-
-Emoji.propTypes = {
-  children: PropTypes.any.isRequired,
-  label: PropTypes.string.isRequired
-};
+import Emoji from './Emoji';
 
 export default [
   <p key="1">
@@ -37,8 +24,7 @@ export default [
   <p key="7">
     You should email me at{' '}
     <A to="mailto:hello@iiro.fi">
-      <Emoji label="Email">📧</Emoji>
-      hello@iiro.fi
+      <Emoji label="Email">📧</Emoji> hello@iiro.fi
     </A>
     , or send a tweet to{' '}
     <A to="https://twitter.com/iirojappinen">
