@@ -48,15 +48,30 @@ const messageList = css`
   }
 `;
 
+const skip = css`
+  appearance: none;
+  background: none;
+  border: none;
+  color: hsl(0, 0%, 60%);
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 1rem 0;
+  outline: none;
+  text-align: center;
+  width: 4rem;
+`;
+
 class Chat extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
     messages: PropTypes.array.isRequired,
+    onSkip: PropTypes.func.isRequired,
+    ready: PropTypes.bool.isRequired,
     typing: PropTypes.bool.isRequired
   };
 
   render() {
-    const { className, messages, typing } = this.props;
+    const { className, messages, onSkip, ready, typing } = this.props;
 
     return (
       <div className={className}>
@@ -75,6 +90,11 @@ class Chat extends React.PureComponent {
           )}
           {typing && <Typing />}
         </MessageGroup>
+        {ready || (
+          <button className={skip} onClick={onSkip}>
+            Skip
+          </button>
+        )}
         <Reply />
       </div>
     );

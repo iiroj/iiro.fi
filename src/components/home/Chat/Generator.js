@@ -12,28 +12,36 @@ function* messageGenerator(i = 1) {
 
 const generateMessage = messageGenerator();
 
-export default class ChatGenerator extends React.PureComponent {
+export default class Generator extends React.PureComponent {
   state = {
     messages: [],
     ready: false,
     typing: true
   };
 
-  getMessage = () =>
+  generator = () =>
     new Promise(async (resolve, reject) => {
       this.setState({ typing: true });
       await waitFor(randomIntFromInterval(10, 20) * 100);
-      this.setState({ messages: generateMessage.next().value, typing: false }, resolve);
+      if (!this.state.ready) {
+        this.setState({ messages: generateMessage.next().value, typing: false }, resolve);
+      } else {
+        resolve();
+      }
     }).then(async () => {
-      if (this.state.messages.length !== messages.length) {
+      if (!this.state.ready && this.state.messages.length !== messages.length) {
         await waitFor(1000);
-        this.getMessage();
+        this.generator();
+      } else {
+        this.setState({ ready: true });
       }
     });
 
-  componentDidMount = () => {
-    this.getMessage();
-  };
+  handleSkip = () => this.setState({ messages, ready: true, typing: false });
 
-  render = () => <Chat messages={this.state.messages} typing={this.state.typing} />;
+  componentDidMount = () => this.generator();
+
+  render = () => (
+    <Chat messages={this.state.messages} onSkip={this.handleSkip} ready={this.state.ready} typing={this.state.typing} />
+  );
 }
