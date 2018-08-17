@@ -92,7 +92,7 @@ const Input = styled.textarea`
   ${props =>
     props['aria-expanded'] &&
     css`
-      border: 1px solid hsl(0, 0%, 80%);
+      border: 2px solid hsl(0, 0%, 80%);
       color: inherit;
       cursor: text;
       height: auto;
