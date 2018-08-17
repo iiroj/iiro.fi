@@ -59,8 +59,8 @@ injectGlobal`
   }
 
   body {
-    background-color: hsla(0, 0%, 100%, 1);
-    color: hsla(0, 0%, 30%, 1);
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 30%);
     font-family: 'IBM Plex Sans',
                  -apple-system, 
                  BlinkMacSystemFont, 

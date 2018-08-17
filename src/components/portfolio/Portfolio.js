@@ -13,7 +13,7 @@ const Header = styled.header`
 `;
 
 const More = styled.aside`
-  color: hsla(0, 0%, 60%, 1);
+  color: hsl(0, 0%, 60%);
   font-size: 1.5em;
   padding: 4rem 0;
   text-align: center;

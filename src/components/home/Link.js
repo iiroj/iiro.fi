@@ -3,7 +3,7 @@ import styled from 'react-emotion';
 import GatsbyLink from 'gatsby-link';
 import PropTypes from 'prop-types';
 
-const YELLOW = `hsla(44,100%,75%,1)`;
+const YELLOW = `hsl(44, 100%, 75%)`;
 
 const Link = ({ children, to, ...props }) => {
   const Component = to.startsWith('/') ? GatsbyLink : 'a';
@@ -37,6 +37,6 @@ export default styled(Link)`
   }
 
   &:active {
-    color: hsla(0, 0%, 0%, 1);
+    color: hsl(0, 0%, 0%);
   }
 `;

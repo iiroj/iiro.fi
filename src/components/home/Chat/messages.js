@@ -2,7 +2,8 @@ import React from 'react';
 
 import Baskerville from '../Baskerville';
 import Fraktio from '../Fraktio';
-import A from '../A';
+import Link from '../Link';
+import { Email, GitHub, Linkedin, Portfolio, Telegram, Twitter } from '../icons';
 
 import Emoji from './Emoji';
 
@@ -23,37 +24,56 @@ export default [
   </p>,
   <p key="7">
     You should email me at{' '}
-    <A to="mailto:hello@iiro.fi">
-      <Emoji label="Email">📧</Emoji> hello@iiro.fi
-    </A>
+    <Link to="mailto:hello@iiro.fi">
+      <Emoji label="Email">
+        <Email />
+      </Emoji>{' '}
+      hello@iiro.fi
+    </Link>
     , or send a tweet to{' '}
-    <A to="https://twitter.com/iirojappinen">
-      <Emoji label="Bird">🐦</Emoji> @iirojappinen
-    </A>
+    <Link to="https://twitter.com/iirojappinen">
+      <Emoji label="Twitter">
+        <Twitter />
+      </Emoji>{' '}
+      @iirojappinen
+    </Link>
   </p>,
   <p key="8">
     I also have a{' '}
-    <A to="/portfolio">
-      <Emoji label="Nailpolish">💅</Emoji> Portfolio
-    </A>{' '}
+    <Link to="/portfolio">
+      <Emoji label="Portfolio">
+        <Portfolio />
+      </Emoji>{' '}
+      Portfolio
+    </Link>{' '}
     and a{' '}
-    <A to="https://fi.linkedin.com/in/iiroj">
-      <Emoji label="Briefcase">💼</Emoji> LinkedIn
-    </A>{' '}
+    <Link to="https://fi.linkedin.com/in/iiroj">
+      <Emoji label="Linkedin">
+        <Linkedin />
+      </Emoji>{' '}
+      LinkedIn
+    </Link>{' '}
     profile.
   </p>,
   <p key="9">
     Check out my{' '}
-    <A to="https://github.com/iiroj">
-      <Emoji label="Globe Showing Europe And Africa">🌍</Emoji> GitHub
-    </A>{' '}
+    <Link to="https://github.com/iiroj">
+      <Emoji label="GitHub">
+        <GitHub />
+      </Emoji>{' '}
+      GitHub
+    </Link>{' '}
     and{' '}
-    <A to="https://www.npmjs.com/~iiroj">
+    <Link to="https://www.npmjs.com/~iiroj">
       <Emoji label="Package">📦</Emoji> npm
-    </A>{' '}
+    </Link>{' '}
     for my open source work.
   </p>,
   <p key="10">
-    Finally, feel free to send me a <Emoji label="Speech Balloon">💬</Emoji> message from below. Have a nice day!
+    Finally, feel free to send me a{' '}
+    <Emoji label="Telegram">
+      <Telegram />
+    </Emoji>{' '}
+    message from below. Have a nice day!
   </p>
 ];
