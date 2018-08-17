@@ -3,7 +3,7 @@ import React from 'react';
 import Baskerville from '../Baskerville';
 import Fraktio from '../Fraktio';
 import Link from '../Link';
-import { Email, GitHub, Linkedin, Portfolio, Telegram, Twitter } from '../icons';
+import { Email, GitHub, Npm, Linkedin, Portfolio, Telegram, Twitter } from '../icons';
 
 import Emoji from './Emoji';
 
@@ -65,7 +65,10 @@ export default [
     </Link>{' '}
     and{' '}
     <Link to="https://www.npmjs.com/~iiroj">
-      <Emoji label="Package">📦</Emoji> npm
+      <Emoji label="npmn">
+        <Npm />
+      </Emoji>{' '}
+      npm
     </Link>{' '}
     for my open source work.
   </p>,
@@ -86,7 +89,6 @@ export const sentFeedbackMessage = (
 
 export const noScriptMessage = (
   <p key="noscript">
-    <Emoji label="Warning">⚠️</Emoji> Uh-oh! It seems you don’t have Javascript enabled.{' '}
-    <Emoji label="Warning">⚠️</Emoji>
+    <Emoji label="Warning">⚠️</Emoji> Uh-oh! It seems you don’t have Javascript enabled.
   </p>
 );
