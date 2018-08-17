@@ -2,20 +2,20 @@ import React from 'react';
 import styled from 'react-emotion';
 
 import Logo from './Logo';
-import A from '../A';
+import Link from '../Link';
 
 const Fraktio = styled(Logo)`
-  vertical-align: -20%;
+  vertical-align: -19%;
   position: relative;
   display: inline-block;
 
   path {
-    fill: hsla(0, 0%, 30%, 1);
+    fill: hsl(0, 0%, 30%);
   }
 `;
 
 export default () => (
-  <A to="https://fraktio.fi" target="_blank" rel="noopener noreferrer">
+  <Link to="https://fraktio.fi" target="_blank" rel="noopener noreferrer">
     <Fraktio />
-  </A>
+  </Link>
 );

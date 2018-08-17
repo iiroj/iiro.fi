@@ -36,6 +36,7 @@
     }
   },
   "rules": {
+    "jsx-a11y/accessible-emoji": 0,
     "react/display-name": 0,
     "no-unused-vars": [2, {
       "args": "none",

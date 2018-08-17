@@ -1,5 +1,7 @@
 import React from 'react';
 import { css } from 'react-emotion';
+import Helmet from 'react-helmet';
+
 import ButtonLink from '../ButtonLink';
 
 const headerStyles = css`
@@ -67,6 +69,14 @@ const screenStyles = css`
 
 export const Header = () => (
   <header className={headerStyles}>
+    <Helmet>
+      <link rel="preload" href="/portfolio/verkkokauppacom/pixel.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/pixel@2x.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/pixel@3x.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/frontpage.jpg" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/frontpage@2x.jpg" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/frontpage@3x.jpg" as="image" />
+    </Helmet>
     <div className={textStyles}>
       <h1>Verkko&shy;kauppa.com</h1>
       <p>

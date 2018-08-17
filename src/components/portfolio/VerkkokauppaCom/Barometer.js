@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
+import Helmet from 'react-helmet';
 
 const Svg = styled.svg`
   height: 120px;
@@ -62,6 +63,11 @@ const textStyles = css`
 
 export const Barometer = () => (
   <section className={sectionStyles}>
+    <Helmet>
+      <link rel="preload" href="/portfolio/verkkokauppacom/price-barometer.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/price-barometer@2x.png" as="image" />
+      <link rel="preload" href="/portfolio/verkkokauppacom/price-barometer@3x.png" as="image" />
+    </Helmet>
     <img
       alt="Verkkokauppa.com Price Barometer"
       className={imageStyles}

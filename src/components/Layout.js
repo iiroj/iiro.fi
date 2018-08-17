@@ -15,7 +15,7 @@ async function unregisterServiceWorkers() {
 
 export default class Layout extends React.Component {
   static propTypes = {
-    children: PropTypes.object.isRequired
+    children: PropTypes.any.isRequired
   };
 
   componentDidMount() {
@@ -59,8 +59,8 @@ injectGlobal`
   }
 
   body {
-    background-color: hsla(0, 0%, 100%, 1);
-    color: hsla(0, 0%, 30%, 1);
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 30%);
     font-family: 'IBM Plex Sans',
                  -apple-system, 
                  BlinkMacSystemFont, 
@@ -85,8 +85,6 @@ injectGlobal`
       display: flex;
       flex-direction: column;
       min-height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
       width: 100%;
     }
   }
