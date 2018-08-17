@@ -24,7 +24,11 @@ const avatarContainer = css`
 `;
 
 const MessageListContainer = styled.ol`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
   flex: 1 1;
+  justify-content: flex-end;
   list-style: none;
   will-change: height;
 
@@ -34,18 +38,6 @@ const MessageListContainer = styled.ol`
       margin-bottom: 4.5rem;
       transition: all 125ms ease-in-out;
     `};
-`;
-
-const messageList = css`
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  transition: all 125ms;
-
-  &:not(:first-child) {
-    margin-left: 1rem;
-  }
 `;
 
 const skip = css`
@@ -118,11 +110,9 @@ class Chat extends React.PureComponent {
           </div>
           {messages.length > 0 && (
             <MessageListContainer aria-live="assertive" role="log" typing={typing}>
-              <div className={messageList}>
-                {messages.map((content, key) => (
-                  <Message key={key}>{content}</Message>
-                ))}
-              </div>
+              {messages.map((content, key) => (
+                <Message key={key}>{content}</Message>
+              ))}
             </MessageListContainer>
           )}
           {typing && <Typing />}
