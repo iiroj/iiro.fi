@@ -104,7 +104,7 @@ const Input = styled.textarea`
 
 export default class Reply extends React.PureComponent {
   static propTypes = {
-    onReplied: PropTypes.func.isRequired
+    onSentFeedback: PropTypes.func.isRequired
   };
 
   state = {
@@ -148,7 +148,7 @@ export default class Reply extends React.PureComponent {
           text: '',
           valid: false
         });
-        this.props.onReplied();
+        this.props.onSentFeedback();
       })
       .catch(error => this.setState({ failed: true, sending: false }));
   };

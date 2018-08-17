@@ -9,7 +9,7 @@ import Reply from './Reply';
 
 const MessageGroup = styled.div`
   align-items: flex-end;
-  display: flex;
+  display: ${props => (props.visible ? 'flex' : 'none')};
   flex: 1 1;
   flex-basis: ${props => (props.fullWidth ? '100%' : undefined)};
   position: relative;
@@ -65,13 +65,14 @@ class Chat extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
     messages: PropTypes.array.isRequired,
-    onReplied: PropTypes.func.isRequired,
+    onSentFeedback: PropTypes.func.isRequired,
     onSkip: PropTypes.func.isRequired,
     ready: PropTypes.bool.isRequired,
     typing: PropTypes.bool.isRequired
   };
 
   state = {
+    mounted: false,
     sticky: true
   };
 
@@ -83,6 +84,7 @@ class Chat extends React.PureComponent {
   };
 
   componentDidMount() {
+    this.setState({ mounted: true });
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -102,11 +104,15 @@ class Chat extends React.PureComponent {
   }
 
   render() {
-    const { className, messages, onReplied, onSkip, ready, typing } = this.props;
+    const { className, messages, onSentFeedback, onSkip, ready, typing } = this.props;
+    const { mounted } = this.state;
 
     return (
       <div className={className} ref={this.ref}>
-        <MessageGroup fullWidth={messages.length > 0}>
+        <noscript>
+          <style>{`${MessageGroup} { display: flex; }`}</style>
+        </noscript>
+        <MessageGroup visible={mounted} fullWidth={messages.length > 0}>
           <div className={avatarContainer}>
             <Picture />
           </div>
@@ -126,7 +132,7 @@ class Chat extends React.PureComponent {
             Skip
           </button>
         )}
-        <Reply onReplied={onReplied} />
+        {mounted && <Reply onSentFeedback={onSentFeedback} />}
       </div>
     );
   }

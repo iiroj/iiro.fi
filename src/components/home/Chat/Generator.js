@@ -1,9 +1,8 @@
 import React from 'react';
 
-import messages from './messages';
+import messages, { sentFeedbackMessage, noScriptMessage } from './messages';
 
 import Chat from './Chat';
-import Emoji from './Emoji';
 
 const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 const waitFor = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -16,10 +15,10 @@ const generateMessage = messageGenerator();
 
 export default class Generator extends React.PureComponent {
   state = {
-    messages: [],
-    ready: false,
+    messages: [...messages, noScriptMessage],
+    ready: true,
     replied: false,
-    typing: true
+    typing: false
   };
 
   generator = () =>
@@ -45,23 +44,26 @@ export default class Generator extends React.PureComponent {
 
   handleSkip = () => this.setState({ messages, ready: true, typing: false });
 
-  handleReplied = () =>
+  handleSentFeedback = () =>
     this.setState({
-      messages: this.state.messages.concat(
-        <p key="replied">
-          <Emoji label="Check Mark">✅</Emoji> Thanks for the feedback!
-        </p>
-      )
+      messages: this.state.messages.concat(sentFeedbackMessage)
     });
 
   componentDidMount() {
-    this.generator();
+    this.setState({ messages: [], ready: false }, this.generator);
   }
 
   render() {
     const { messages, ready, typing } = this.state;
+
     return (
-      <Chat messages={messages} onReplied={this.handleReplied} onSkip={this.handleSkip} ready={ready} typing={typing} />
+      <Chat
+        messages={messages}
+        onSentFeedback={this.handleSentFeedback}
+        onSkip={this.handleSkip}
+        ready={ready}
+        typing={typing}
+      />
     );
   }
 }

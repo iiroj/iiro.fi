@@ -77,3 +77,16 @@ export default [
     message from below. Have a nice day!
   </p>
 ];
+
+export const sentFeedbackMessage = (
+  <p key="replied">
+    <Emoji label="Check Mark">✅</Emoji> Thanks for the feedback!
+  </p>
+);
+
+export const noScriptMessage = (
+  <p key="noscript">
+    <Emoji label="Warning">⚠️</Emoji> Uh-oh! It seems you don’t have Javascript enabled.{' '}
+    <Emoji label="Warning">⚠️</Emoji>
+  </p>
+);
