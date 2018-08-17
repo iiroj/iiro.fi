@@ -71,11 +71,41 @@ class Chat extends React.PureComponent {
     typing: PropTypes.bool.isRequired
   };
 
+  state = {
+    sticky: true
+  };
+
+  ref = React.createRef();
+
+  handleScroll = () => {
+    const { height, top } = this.ref.current.getBoundingClientRect();
+    this.setState({ sticky: window.innerHeight - top >= height });
+  };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { messages, typing } = this.props;
+
+    if (!this.state.sticky) return;
+
+    if (typing || messages.length !== prevProps.messages.length) {
+      const scrollDistance = this.ref.current.scrollHeight - document.documentElement.scrollTop + window.innerHeight;
+      window.scrollTo(0, scrollDistance);
+    }
+  }
+
   render() {
     const { className, messages, onReplied, onSkip, ready, typing } = this.props;
 
     return (
-      <div className={className}>
+      <div className={className} ref={this.ref}>
         <MessageGroup fullWidth={messages.length > 0}>
           <div className={avatarContainer}>
             <Picture />
