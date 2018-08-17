@@ -13,7 +13,23 @@ const MessageGroup = styled.div`
   flex: 1 1;
   flex-basis: ${props => (props.fullWidth ? '100%' : undefined)};
   position: relative;
-  will-change: height;
+`;
+
+const backdrop = css`
+  backdrop-filter: blur(2px);
+  background: hsla(0, 0%, 80%, 0.8);
+  bottom: 0;
+  display: block;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 125ms ease-in-out;
+  visibility: hidden;
+  will-change: opacity;
+  z-index: 1;
 `;
 
 const avatarContainer = css`
@@ -21,6 +37,31 @@ const avatarContainer = css`
   flex: 0 0 4rem;
   margin-right: 1rem;
   position: sticky;
+  transition: all 125ms ease-in-out;
+  width: 4rem;
+  z-index: 2;
+
+  > ${Picture} {
+    bottom: 0;
+    position: absolute;
+    transition: all 125ms ease-in-out;
+    will-change: border-radius, height, width;
+  }
+
+  &:hover {
+    > ${Picture} {
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 1rem hsla(0, 0%, 0%, 0.1);
+      height: 16rem;
+      width: 16rem;
+    }
+
+    + * {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+  }
 `;
 
 const MessageListContainer = styled.ol`
@@ -30,7 +71,6 @@ const MessageListContainer = styled.ol`
   flex: 1 1;
   justify-content: flex-end;
   list-style: none;
-  will-change: height;
 
   ${props =>
     props.typing &&
@@ -108,6 +148,7 @@ class Chat extends React.PureComponent {
           <div className={avatarContainer}>
             <Picture />
           </div>
+          <div className={backdrop} />
           {messages.length > 0 && (
             <MessageListContainer aria-live="assertive" role="log" typing={typing}>
               {messages.map((content, key) => (

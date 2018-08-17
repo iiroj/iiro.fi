@@ -18,6 +18,5 @@ export default styled(Picture)`
   background-size: cover;
   border-radius: 50%;
   position: relative;
-  transform-origin: bottom left;
-  z-index: 2;
+  width: 4rem;
 `;

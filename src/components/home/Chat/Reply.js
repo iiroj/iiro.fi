@@ -20,8 +20,7 @@ const Form = styled.form`
 const Button = styled.button`
   appearance: none;
   background: none;
-  border-bottom-right-radius: 3rem;
-  border-top-right-radius: 3rem;
+  border-radius: 0.5rem;
   border: none;
   bottom: 0;
   cursor: pointer;
