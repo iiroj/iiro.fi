@@ -4,8 +4,9 @@ stages:
   - install
   - test
   - build
+  - deploy
 
-install:
+"Install":
   stage: install
   script:
     - npm ci
@@ -17,7 +18,7 @@ install:
     paths:
       - node_modules
 
-lint:
+"Lint":
   stage: test
   script:
     - npm run lint
@@ -26,8 +27,23 @@ lint:
   stage: build
   script:
     - npm run build:site
+  artifacts:
+    paths:
+      - public
 
 "Build Lambda":
   stage: build
   script:
     - npm run build:lambda
+  artifacts:
+    paths:
+      - lambda
+
+"Deploy To Netlify"
+  stage: deploy
+  before_script:
+    - curl -sL https://cli.netlify.com/download/latest/linux | tar xz
+  script:
+    - ./netlifyctl -A $NETLIFY_ACCESS_TOKEN deploy
+  only:
+    - tags

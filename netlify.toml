@@ -1,0 +1,6 @@
+[Settings]
+  ID = "5cb65b7b-5cea-4e1b-bc37-6517a64825f0"
+
+[Build]
+  Publish = "public"
+  Functions = "lambda"
