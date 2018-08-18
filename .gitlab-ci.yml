@@ -39,7 +39,7 @@ stages:
     paths:
       - lambda
 
-"Deploy To Netlify"
+"Deploy To Netlify":
   stage: deploy
   before_script:
     - curl -sL https://cli.netlify.com/download/latest/linux | tar xz
