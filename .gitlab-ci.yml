@@ -39,8 +39,11 @@ stages:
     paths:
       - lambda
 
-"Deploy To Netlify":
+"Netlify":
   stage: deploy
+  environment:
+    name: production
+    url: https://iiro.fi
   before_script:
     - apk add --no-cache curl tar
     - curl -sL https://cli.netlify.com/download/latest/linux | tar xz
