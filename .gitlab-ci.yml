@@ -42,6 +42,7 @@ stages:
 "Deploy To Netlify":
   stage: deploy
   before_script:
+    - apk add --no-cache curl tar
     - curl -sL https://cli.netlify.com/download/latest/linux | tar xz
   script:
     - ./netlifyctl -A $NETLIFY_ACCESS_TOKEN deploy
