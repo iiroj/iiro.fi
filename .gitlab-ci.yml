@@ -45,6 +45,6 @@ stages:
     - apk add --no-cache curl tar
     - curl -sL https://cli.netlify.com/download/latest/linux | tar xz
   script:
-    - ./netlifyctl deploy -A $NETLIFY_ACCESS_TOKEN -m $CI_COMMIT_TAG
+    - ./netlifyctl deploy -A $NETLIFY_ACCESS_TOKEN -s $NETLIFY_SITE_ID -P public -f lambda -m $CI_COMMIT_TAG
   only:
     - tags
