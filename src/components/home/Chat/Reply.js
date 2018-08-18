@@ -5,7 +5,7 @@ import styled, { css } from 'react-emotion';
 import Send from './Send';
 import Typing from './Typing';
 
-const REPLY_URL = `${process.env.LAMBDA_BASE_URL || '/.netlify/functions'}/telegram`;
+const REPLY_URL = `${process.env.LAMBDA_BASE_URL}/telegram`;
 
 const Form = styled.form`
   align-items: center;
