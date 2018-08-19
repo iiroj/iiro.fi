@@ -1,7 +1,0 @@
-[[redirects]]
-  from = "https://iiro.jappinen.fi/*"
-  to   = "https://iiro.fi/:splat"
-
-[[redirects]]
-  from = "https://iiro.xn--jppinen-5wa.fi/*"
-  to   = "https://iiro.fi/:splat"
