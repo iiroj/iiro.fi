@@ -1,6 +1,4 @@
-require('dotenv').config({
-  path: '.env.development'
-});
+require('dotenv/config');
 
 const requestPromise = require('minimal-request-promise');
 
