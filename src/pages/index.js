@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Layout from '../components/Layout';
 import Chat from '../components/home/Chat';
 
 const microdata = JSON.stringify({
@@ -26,13 +25,13 @@ const microdata = JSON.stringify({
 });
 
 const Home = () => (
-  <Layout>
+  <>
     <Helmet>
       <title>Iiro Jäppinen</title>
     </Helmet>
     <script type="application/ld+json">{microdata}</script>
     <Chat />
-  </Layout>
+  </>
 );
 
 export default Home;
