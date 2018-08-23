@@ -1,22 +1,32 @@
-import styled, { keyframes } from 'react-emotion';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { css, keyframes } from 'emotion';
 
-const animation = keyframes`
-  from { opacity: 0 }
-  to   { opacity: 1 }
-`;
+const animation = keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 }
+});
 
-export default styled.li`
-  animation: ${animation} 125ms ease-in-out forwards;
-  background-color: hsl(0, 0%, 96%);
-  border-radius: 0.5rem;
-  padding: 1rem 2rem;
-  transition: all 125ms;
+const message = css({
+  animation: `${animation} 125ms ease-in-out forwards`,
+  backgroundColor: 'hsl(0, 0%, 96%)',
+  borderRadius: '0.5rem',
+  padding: '1rem 2rem',
+  transition: 'all 125ms',
 
-  & + & {
-    margin-top: 0.5rem;
+  '& + &': {
+    marginTop: '0.5rem'
+  },
+
+  '&:last-of-type': {
+    borderBottomLeftRadius: 0
   }
+});
 
-  &:last-of-type {
-    border-bottom-left-radius: 0;
-  }
-`;
+const Message = ({ children }) => <li className={message}>{children}</li>;
+
+Message.propTypes = {
+  children: PropTypes.any.isRequired
+};
+
+export default Message;

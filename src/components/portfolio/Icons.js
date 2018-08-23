@@ -1,42 +1,42 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import Helmet from 'react-helmet';
 
-import ButtonLink from './ButtonLink';
+import link from './link';
 
-const articleStyles = css`
-  background: url('/portfolio/icons/icons.jpg');
-  background-size: cover;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-  padding: 4rem 1rem 3rem 1rem;
-  position: relative;
-  text-align: center;
-  width: 100%;
-`;
+const articleStyles = css({
+  background: 'url(/portfolio/icons/icons.jpg)',
+  backgroundSize: 'cover',
+  boxShadow: '0 1px 0 rgba(0, 0, 0, 0.08)',
+  padding: '4rem 1rem 3rem 1rem',
+  position: 'relative',
+  textAlign: 'center',
+  width: '100%'
+});
 
-const titleStyles = css`
-  font-size: 3em;
-  line-height: 1.2;
-  margin-bottom: 4rem;
-`;
+const titleStyles = css({
+  fontSize: '3em',
+  lineHeight: 1.2,
+  marginBottom: '4rem'
+});
 
-const containerStyles = css`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
+const containerStyles = css({
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  position: 'relative',
 
-  img {
-    display: block;
-    height: 256px;
-    margin: 0 1rem;
-    width: 256px;
+  img: {
+    display: 'block',
+    height: 256,
+    margin: '0 1rem',
+    width: 256
+  },
+
+  a: {
+    margin: 0
   }
-
-  a {
-    margin: 0;
-  }
-`;
+});
 
 export default () => (
   <article className={articleStyles}>
@@ -56,9 +56,9 @@ export default () => (
           src="/portfolio/icons/growl.png"
           srcSet="/portfolio/icons/growl.png 1x, /portfolio/icons/growl@2x.png 2x, /portfolio/icons/growl@3x.png 3x"
         />
-        <ButtonLink href="http://growl.info" target="_blank" rel="noopener noreferrer">
+        <a className={link} href="http://growl.info" target="_blank" rel="noopener noreferrer">
           Growl
-        </ButtonLink>
+        </a>
       </div>
       <div>
         <img
@@ -66,9 +66,9 @@ export default () => (
           src="/portfolio/icons/tuneinstructor.png"
           srcSet="/portfolio/icons/tuneinstructor.png 1x, /portfolio/icons/tuneinstructor@2x.png 2x, /portfolio/icons/tuneinstructor@3x.png 3x"
         />
-        <ButtonLink href="https://www.tune-instructor.de/en/" target="_blank" rel="noopener noreferrer">
+        <a className={link} href="https://www.tune-instructor.de/en/" target="_blank" rel="noopener noreferrer">
           Tune•Instructor
-        </ButtonLink>
+        </a>
       </div>
     </div>
   </article>

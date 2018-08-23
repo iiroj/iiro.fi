@@ -1,14 +1,14 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import Helmet from 'react-helmet';
 
 import Back from '../components/Back';
 
-const h1Styles = css`
-  font-size: 2rem;
-  text-align: center;
-  margin: auto;
-`;
+const h1Styles = css({
+  fontSize: '2rem',
+  textAlign: 'center',
+  margin: 'auto'
+});
 
 export default () => (
   <>

@@ -1,33 +1,33 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import Helmet from 'react-helmet';
 
-const sectionStyles = css`
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 4rem 0;
-`;
+const sectionStyles = css({
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  padding: '4rem 0'
+});
 
-const textStyles = css`
-  margin: 4rem;
-  max-width: 480px;
-`;
+const textStyles = css({
+  margin: '4rem',
+  maxWidth: 480
+});
 
-const imageStyles = css`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  max-width: 368px;
-  overflow: hidden;
-  position: relative;
+const imageStyles = css({
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  maxWidth: 368,
+  overflow: 'hidden',
+  position: 'relative',
 
-  img {
-    display: block;
+  img: {
+    display: 'block'
   }
-`;
+});
 
 export const DeliveryEstimates = () => (
   <section className={sectionStyles}>

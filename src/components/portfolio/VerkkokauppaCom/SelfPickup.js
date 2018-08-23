@@ -1,39 +1,39 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import Helmet from 'react-helmet';
 
-const sectionStyles = css`
-  background-color: #a4abb3;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  height: 480px;
-  margin-bottom: 2rem;
-  overflow: hidden;
-  padding: 0 1rem;
-  position: relative;
-  width: 100%;
-`;
+const sectionStyles = css({
+  backgroundColor: '#a4abb3',
+  boxSizing: 'border-box',
+  display: 'flex',
+  alignItems: 'center',
+  height: 480,
+  marginBottom: '2rem',
+  overflow: 'hidden',
+  padding: '0 1rem',
+  position: 'relative',
+  width: '100%'
+});
 
-const imageStyles = css`
-  display: block;
-  left: 50%;
-  min-width: 100%;
-  opacity: 0.2;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-`;
+const imageStyles = css({
+  display: 'block',
+  left: '50%',
+  minWidth: '100%',
+  opacity: 0.2,
+  position: 'absolute',
+  top: '50%',
+  transform: 'translate(-50%, -50%)',
+  zIndex: 1
+});
 
-const textStyles = css`
-  color: white;
-  margin: 1rem auto;
-  max-width: 480px;
-  position: relative;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-`;
+const textStyles = css({
+  color: 'white',
+  margin: '1rem auto',
+  maxWidth: 480,
+  position: 'relative',
+  textShadow: '0 1px 4px rgba(0, 0, 0, 0.2)',
+  zIndex: 2
+});
 
 export const SelfPickup = () => (
   <section className={sectionStyles}>

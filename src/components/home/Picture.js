@@ -1,22 +1,24 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'react-emotion';
+import { css } from 'emotion';
 
-const Picture = props => (
+const picture = css({
+  backgroundImage: 'url(/picture.jpg)',
+  backgroundSize: 'cover',
+  borderRadius: '50%',
+  flex: '0 0 4rem',
+  height: '4rem',
+  position: 'relative',
+  width: '4rem'
+});
+
+const Picture = () => (
   <>
-    <div role="img" alt="Iiro Jäppinen" {...props} />
+    <div className={picture} role="img" alt="Iiro Jäppinen" />
     <Helmet>
       <link rel="preload" href="/picture.jpg" as="image" />
     </Helmet>
   </>
 );
 
-export default styled(Picture)`
-  flex: 0 0 4rem;
-  height: 4rem;
-  background-image: url('/picture.jpg');
-  background-size: cover;
-  border-radius: 50%;
-  position: relative;
-  width: 4rem;
-`;
+export default Picture;

@@ -1,32 +1,32 @@
 import React from 'react';
-import styled from 'react-emotion';
+import { css } from 'emotion';
 
 import VerkkokauppaCom from './VerkkokauppaCom';
 import HumbleBundle from './HumbleBundle';
 import Icons from './Icons';
 
-const Header = styled.header`
-  background-color: white;
-  font-size: 1.5rem;
-  padding: 2rem 3rem 6rem;
-  text-align: center;
-`;
+const header = css({
+  backgroundColor: 'white',
+  fontSize: '1.5rem',
+  padding: '2rem 3rem 6rem',
+  textAlign: 'center'
+});
 
-const More = styled.aside`
-  color: hsl(0, 0%, 60%);
-  font-size: 1.5em;
-  padding: 4rem 0;
-  text-align: center;
-`;
+const aside = css({
+  color: 'hsl(0, 0%, 60%)',
+  fontSize: '1.5em',
+  padding: '4rem 0',
+  textAlign: 'center'
+});
 
 export default () => (
   <>
-    <Header>
+    <header className={header}>
       <h1>Portfolio of Iiro Jäppinen</h1>
-    </Header>
+    </header>
     <VerkkokauppaCom />
     <HumbleBundle />
     <Icons />
-    <More>With more coming soon...</More>
+    <aside className={aside}>With more coming soon...</aside>
   </>
 );

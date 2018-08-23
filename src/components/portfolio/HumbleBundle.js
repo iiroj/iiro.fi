@@ -1,30 +1,30 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import Helmet from 'react-helmet';
 
-const articleStyles = css`
-  background-color: #3b3e48;
-  padding: 4rem 1rem;
-`;
+const articleStyles = css({
+  backgroundColor: '#3b3e48',
+  padding: '4rem 1rem'
+});
 
-const logoStyles = css`
-  display: block;
-  margin: 0 auto 4rem;
-  max-height: 64px;
-  max-width: 100%;
-`;
+const logoStyles = css({
+  display: 'block',
+  margin: '0 auto 4rem',
+  maxHeight: 64,
+  maxWidth: '100%'
+});
 
-const textStyles = css`
-  color: white;
-  margin: 0 auto 0.5rem;
-  max-width: 480px;
+const textStyles = css({
+  color: 'white',
+  margin: '0 auto 0.5rem',
+  maxWidth: 480,
 
-  a {
-    background: none;
-    color: inherit;
-    text-decoration: underline;
+  a: {
+    background: 'none',
+    color: 'inherit',
+    textDecoration: 'underline'
   }
-`;
+});
 
 export default () => (
   <article className={articleStyles}>
