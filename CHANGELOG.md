@@ -132,7 +132,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 <a name="2.0.0"></a>
-## [2.0.0](https://gitlab.com/iiroj/iiro.fi/compare/v1.0.0...v2.0.0) (2017-04-30)
+## [2.0.0](https://gitlab.com/iiroj/iiro.fi/compare/99c57c8...v2.0.0) (2017-04-30)
 
 ### Features
 
