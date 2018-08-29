@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.2.5"></a>
+## [14.2.5](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.4...v14.2.5) (2018-08-29)
+
+
+### Bug Fixes
+
+* Native dom element uses ref, not innerRef ([510a01b](https://gitlab.com/iiroj/iiro.fi/commit/510a01b))
+
+
+
 <a name="14.2.4"></a>
 ## [14.2.4](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.3...v14.2.4) (2018-08-29)
 
