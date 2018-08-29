@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "14.2.1",
+  "version": "14.2.2",
   "description": "A static site built with GatsbyJS",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
@@ -15,7 +15,8 @@
     "prebuild:site": "rimraf public",
     "build:site": "gatsby build",
     "build:lambda": "lambda-dev build src/lambda lambda -w webpack.config.lambda.js",
-    "build": "concurrently 'npm:build:*'"
+    "build": "concurrently 'npm:build:*'",
+    "version": "standard-version"
   },
   "dependencies": {
     "emotion": "^9.2.8",
@@ -30,7 +31,6 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
     "babel-plugin-emotion": "^9.2.8",
     "concurrently": "^4.0.1",
     "dotenv": "^6.0.0",
@@ -48,7 +48,8 @@
     "minimal-request-promise": "^1.5.0",
     "prettier": "^1.14.2",
     "prop-types": "^15.6.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "standard-version": "^4.4.0"
   },
   "keywords": [
     "emotion",
