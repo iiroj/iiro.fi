@@ -161,10 +161,10 @@ export default class Reply extends React.PureComponent {
         <textarea
           className={cx(input, dirty && !failed && inputExpanded)}
           disabled={sending}
-          innerRef={this.inputRef}
           onClick={this.handleOpen}
           onChange={this.handleTextInput}
           placeholder="Send Feedback"
+          ref={this.inputRef}
           valid={valid.toString()}
           value={text}
         />
