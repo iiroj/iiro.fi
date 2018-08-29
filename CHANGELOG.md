@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.2.4"></a>
+## [14.2.4](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.3...v14.2.4) (2018-08-29)
+
+
+
 <a name="14.2.3"></a>
 ## [14.2.3](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.2...v14.2.3) (2018-08-29)
 
@@ -122,6 +127,3 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * Merge branch 'simplify' into 'master' ([9fe8e76](https://gitlab.com/iiroj/iiro.fi/commit/9fe8e76))
-
-
-
