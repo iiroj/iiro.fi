@@ -18,8 +18,8 @@
     "build": "concurrently 'npm:build:*'"
   },
   "dependencies": {
-    "emotion": "^9.2.6",
-    "emotion-server": "^9.2.6",
+    "emotion": "^9.2.8",
+    "emotion-server": "^9.2.8",
     "fontfaceobserver": "^2.0.13",
     "gatsby": "^2.0.0-rc.0",
     "gatsby-link": "^2.0.0-rc.0",
@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "axios": "^0.18.0",
-    "babel-plugin-emotion": "^9.2.6",
-    "concurrently": "^3.6.1",
+    "babel-plugin-emotion": "^9.2.8",
+    "concurrently": "^4.0.1",
     "dotenv": "^6.0.0",
     "eslint": "^5.4.0",
     "eslint-config-prettier": "^3.0.1",
@@ -44,7 +44,7 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "lambda-dev": "^1.4.1",
+    "lambda-dev": "^1.4.3",
     "minimal-request-promise": "^1.5.0",
     "prettier": "^1.14.2",
     "prop-types": "^15.6.2",
