@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.2.7"></a>
+## [14.2.7](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.6...v14.2.7) (2018-09-01)
+
+
+### Bug Fixes
+
+* Fix noscript styles ([557c8dd](https://gitlab.com/iiroj/iiro.fi/commit/557c8dd))
+
+
+
 <a name="14.2.6"></a>
 ## [14.2.6](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.5...v14.2.6) (2018-08-29)
 
