@@ -163,9 +163,15 @@ export default class Chat extends React.PureComponent {
     return (
       <div className={chat} ref={this.ref}>
         <noscript>
-          <style>{`${messageGroup} { display: flex; }`}</style>
+          <style>{`.noscript { display: flex !important; }`}</style>
         </noscript>
-        <div className={cx(messageGroup, mounted && messageGroupVisible, messages.length > 0 && messageGroupFullWidth)}>
+        <div
+          className={cx(
+            messageGroup,
+            mounted ? messageGroupVisible : 'noscript',
+            messages.length > 0 && messageGroupFullWidth
+          )}
+        >
           <div className={avatarContainer}>
             <Picture />
           </div>
