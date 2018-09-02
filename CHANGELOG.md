@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.2.8"></a>
+## [14.2.8](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.7...v14.2.8) (2018-09-02)
+
+
+
 <a name="14.2.7"></a>
 ## [14.2.7](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.6...v14.2.7) (2018-09-01)
 
