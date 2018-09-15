@@ -18,8 +18,8 @@ build:
     - node_modules/
   artifacts:
     paths:
-      - public
-      - lambda
+      - public/
+      - lambda/
 
 deploy:
   stage: deploy
