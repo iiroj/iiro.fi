@@ -1,45 +1,26 @@
 image: node:alpine
 
 stages:
-  - install
-  - test
   - build
   - deploy
 
-"Install":
-  stage: install
-  script:
-    - npm ci
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - node_modules
-  cache:
-    paths:
-      - node_modules
-
-"Lint":
-  stage: test
-  script:
-    - npm run lint
-
-"Build Site":
+build:
   stage: build
   script:
-    - npm run build:site
+    - npm ci
+    - npm run lint
+    - npm run build
+  only:
+    - tags
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+    - node_modules/
   artifacts:
     paths:
       - public
 
-"Build Lambda":
-  stage: build
-  script:
-    - npm run build:lambda
-  artifacts:
-    paths:
-      - lambda
-
-"Netlify":
+deploy:
   stage: deploy
   environment:
     name: production
@@ -47,6 +28,6 @@ stages:
   before_script:
     - npm i -g netlify-cli@next
   script:
-    - netlify deploy -d public -f lambda --prod
+    - netlify deploy -d public --prod
   only:
     - tags
