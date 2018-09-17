@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { css } from 'emotion';
 
 const picture = css({
@@ -12,13 +11,6 @@ const picture = css({
   width: '4rem'
 });
 
-const Picture = () => (
-  <>
-    <div className={picture} role="img" alt="Iiro Jäppinen" />
-    <Helmet>
-      <link rel="preload" href="/picture.jpg" as="image" />
-    </Helmet>
-  </>
-);
+const Picture = () => <div className={picture} role="img" alt="Iiro Jäppinen" />;
 
 export default Picture;
