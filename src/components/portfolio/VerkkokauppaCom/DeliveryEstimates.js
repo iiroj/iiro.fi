@@ -1,5 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
+import Img from 'gatsby-image';
+import { StaticQuery, graphql } from 'gatsby';
 
 const sectionStyles = css({
   alignItems: 'center',
@@ -22,11 +24,47 @@ const imageStyles = css({
   maxWidth: 368,
   overflow: 'hidden',
   position: 'relative',
+  width: '100%',
 
-  img: {
-    display: 'block'
+  '.gatsby-image-outer-wrapper:first-child': {
+    width: '100%'
+  },
+
+  '.gatsby-image-outer-wrapper:last-child': {
+    width: '80%'
   }
 });
+
+const EstimateImg = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        dialog: file(name: { in: "dialog" }) {
+          childImageSharp {
+            fluid(maxWidth: 303) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+
+        list: file(name: { in: "list" }) {
+          childImageSharp {
+            fluid(maxWidth: 303) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+  >
+    {data => (
+      <figure className={imageStyles}>
+        <Img alt="Verkkokauppa.com Product Availability Estimates" fluid={data.dialog.childImageSharp.fluid} />
+        <Img alt="" fluid={data.list.childImageSharp.fluid} />
+      </figure>
+    )}
+  </StaticQuery>
+);
 
 export const DeliveryEstimates = () => (
   <section className={sectionStyles}>
@@ -47,17 +85,6 @@ export const DeliveryEstimates = () => (
         completely revamped to give an estimate on when the product would arrive at the customer.
       </p>
     </div>
-    <figure className={imageStyles}>
-      <img
-        alt="Verkkokauppa.com Product Availability Estimates"
-        src="/portfolio/verkkokauppacom/dialog.png"
-        srcSet="/portfolio/verkkokauppacom/dialog.png 1x, /portfolio/verkkokauppacom/dialog@2x.png 2x, /portfolio/verkkokauppacom/dialog@3x.png 3x"
-      />
-      <img
-        alt=""
-        src="/portfolio/verkkokauppacom/list.png"
-        srcSet="/portfolio/verkkokauppacom/list.png 1x, /portfolio/verkkokauppacom/list@2x.png 2x, /portfolio/verkkokauppacom/list@3x.png 3x"
-      />
-    </figure>
+    <EstimateImg />
   </section>
 );
