@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { renderToString } from 'react-dom/server';
 import { renderStylesToString } from 'emotion-server';
 
@@ -11,7 +10,3 @@ export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadC
 };
 
 export const wrapPageElement = ({ element }) => <Layout>{element}</Layout>;
-
-wrapPageElement.propTypes = {
-  element: PropTypes.any.isrequired
-};

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css, keyframes } from 'emotion';
 
 const animation = keyframes({
@@ -24,9 +23,5 @@ const message = css({
 });
 
 const Message = ({ children }) => <li className={message}>{children}</li>;
-
-Message.propTypes = {
-  children: PropTypes.any.isRequired
-};
 
 export default Message;

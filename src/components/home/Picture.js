@@ -1,7 +1,6 @@
 import { css } from 'emotion';
 import React from 'react';
 import Img from 'gatsby-image';
-import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 const outerWrapperClassname = css({
@@ -26,10 +25,6 @@ const Picture = ({ data }) => (
     outerWrapperClassName={outerWrapperClassname}
   />
 );
-
-Picture.propTypes = {
-  data: PropTypes.object.isRequired
-};
 
 export default props => (
   <StaticQuery

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css, cx } from 'emotion';
 
 import Typing from './Typing';
@@ -116,14 +115,6 @@ const chat = css({
 });
 
 export default class Chat extends React.PureComponent {
-  static propTypes = {
-    messages: PropTypes.array.isRequired,
-    onSentFeedback: PropTypes.func.isRequired,
-    onSkip: PropTypes.func.isRequired,
-    ready: PropTypes.bool.isRequired,
-    typing: PropTypes.bool.isRequired
-  };
-
   state = {
     mounted: false,
     sticky: true

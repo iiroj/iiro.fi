@@ -1,7 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
 import GatsbyLink from 'gatsby-link';
-import PropTypes from 'prop-types';
 
 const YELLOW = `hsl(44, 100%, 75%)`;
 
@@ -33,11 +32,6 @@ const Link = ({ children, to, ...props }) => {
       {children}
     </Component>
   );
-};
-
-Link.propTypes = {
-  children: PropTypes.any.isRequired,
-  to: PropTypes.string.isRequired
 };
 
 export default Link;
