@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.5.0"></a>
+# [14.5.0](https://gitlab.com/iiroj/iiro.fi/compare/v14.4.1...v14.5.0) (2018-09-17)
+
+
+### Bug Fixes
+
+* Remove unused static images ([93797fa](https://gitlab.com/iiroj/iiro.fi/commit/93797fa))
+
+
+### Features
+
+* Portfolio Humble Bundle uses gatsby-image ([aa5aaff](https://gitlab.com/iiroj/iiro.fi/commit/aa5aaff))
+* Portfolio Icons use gatsby-image ([5fb4e3c](https://gitlab.com/iiroj/iiro.fi/commit/5fb4e3c))
+* Portfolio Verkkokauppa.com Delivery Estimates use gatsby-image ([f51f33b](https://gitlab.com/iiroj/iiro.fi/commit/f51f33b))
+* Portfolio Verkkokauppa.com Header uses gatsby-image ([8a52d7b](https://gitlab.com/iiroj/iiro.fi/commit/8a52d7b))
+* Portfolio Verkkokauppa.com Price Barometer uses gatsby-image ([af2816d](https://gitlab.com/iiroj/iiro.fi/commit/af2816d))
+* Portfolio Verkkokauppa.com Self Pickup uses gatsby-image ([e204bc8](https://gitlab.com/iiroj/iiro.fi/commit/e204bc8))
+* Remove prop-types ([b05d1e4](https://gitlab.com/iiroj/iiro.fi/commit/b05d1e4))
+* Use gatsby-image for Avatar ([e567d24](https://gitlab.com/iiroj/iiro.fi/commit/e567d24))
+
+
+
 <a name="14.4.1"></a>
 ## [14.4.1](https://gitlab.com/iiroj/iiro.fi/compare/v14.4.0...v14.4.1) (2018-09-17)
 
