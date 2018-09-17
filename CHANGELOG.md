@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.4.1"></a>
+## [14.4.1](https://gitlab.com/iiroj/iiro.fi/compare/v14.4.0...v14.4.1) (2018-09-17)
+
+
+### Bug Fixes
+
+* Fix Feature-Policy default 'none' ([c61731e](https://gitlab.com/iiroj/iiro.fi/commit/c61731e))
+
+
+
 <a name="14.4.0"></a>
 # [14.4.0](https://gitlab.com/iiroj/iiro.fi/compare/v14.3.0...v14.4.0) (2018-09-17)
 
