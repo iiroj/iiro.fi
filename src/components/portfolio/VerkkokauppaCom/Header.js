@@ -1,5 +1,7 @@
-import React from 'react';
 import { css } from 'emotion';
+import React from 'react';
+import Img from 'gatsby-image';
+import { StaticQuery, graphql } from 'gatsby';
 
 import link from '../link';
 
@@ -53,17 +55,50 @@ const phoneContainerStyles = css({
 });
 
 const phoneStyles = css({
-  width: 303,
-  display: 'block'
+  width: 303
 });
 
 const screenStyles = css({
-  display: 'block',
-  width: 270,
-  position: 'absolute',
+  left: 15,
+  position: 'absolute !important',
   top: 63,
-  left: 15
+  width: 270
 });
+
+const PhoneImg = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        pixel: file(name: { in: "pixel" }) {
+          childImageSharp {
+            fluid(maxWidth: 303) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+
+        screen: file(name: { in: "frontpage" }) {
+          childImageSharp {
+            fluid(maxWidth: 303) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+  >
+    {data => (
+      <div className={phoneContainerStyles}>
+        <Img alt="" fluid={data.pixel.childImageSharp.fluid} outerWrapperClassName={phoneStyles} />
+        <Img
+          alt="Verkkokauppa.com Front Page"
+          fluid={data.screen.childImageSharp.fluid}
+          outerWrapperClassName={screenStyles}
+        />
+      </div>
+    )}
+  </StaticQuery>
+);
 
 export const Header = () => (
   <header className={headerStyles}>
@@ -77,19 +112,6 @@ export const Header = () => (
         Visit Verkkokauppa.com
       </a>
     </div>
-    <div className={phoneContainerStyles}>
-      <img
-        alt=""
-        className={phoneStyles}
-        src="/portfolio/verkkokauppacom/pixel.png"
-        srcSet="/portfolio/verkkokauppacom/pixel.png 1x, /portfolio/verkkokauppacom/pixel@2x.png 2x, /portfolio/verkkokauppacom/pixel@3x.png 3x"
-      />
-      <img
-        alt="Verkkokauppa.com Front Page"
-        className={screenStyles}
-        src="/portfolio/verkkokauppacom/frontpage.jpg"
-        srcSet="/portfolio/verkkokauppacom/frontpage.jpg 1x, /portfolio/verkkokauppacom/frontpage@2x.jpg 2x, /portfolio/verkkokauppacom/frontpage@3x.jpg 3x"
-      />
-    </div>
+    <PhoneImg />
   </header>
 );
