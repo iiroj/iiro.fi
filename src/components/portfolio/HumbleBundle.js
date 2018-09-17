@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'emotion';
-import Helmet from 'react-helmet';
 
 const articleStyles = css({
   backgroundColor: '#3b3e48',
@@ -28,11 +27,6 @@ const textStyles = css({
 
 export default () => (
   <article className={articleStyles}>
-    <Helmet>
-      <link rel="preload" href="/portfolio/humble/humble-logo.png" as="image" />
-      <link rel="preload" href="/portfolio/humble/humble-logo@2x.png" as="image" />
-      <link rel="preload" href="/portfolio/humble/humble-logo@3x.png" as="image" />
-    </Helmet>
     <img
       alt="Humble Bundle"
       className={logoStyles}

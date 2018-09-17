@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'emotion';
-import Helmet from 'react-helmet';
 
 const sectionStyles = css({
   backgroundColor: '#a4abb3',
@@ -37,11 +36,6 @@ const textStyles = css({
 
 export const SelfPickup = () => (
   <section className={sectionStyles}>
-    <Helmet>
-      <link rel="preload" href="/portfolio/verkkokauppacom/ipad.png" as="image" />
-      <link rel="preload" href="/portfolio/verkkokauppacom/ipad@2x.png" as="image" />
-      <link rel="preload" href="/portfolio/verkkokauppacom/ipad@3x.png" as="image" />
-    </Helmet>
     <img
       alt="Verkkokauppa.com Self-Service Checkout"
       className={imageStyles}
