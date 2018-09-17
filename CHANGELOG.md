@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.4.0"></a>
+# [14.4.0](https://gitlab.com/iiroj/iiro.fi/compare/v14.3.0...v14.4.0) (2018-09-17)
+
+
+### Features
+
+* Add Feature-Policy: ‘none’ header ([4e3bca1](https://gitlab.com/iiroj/iiro.fi/commit/4e3bca1))
+
+
+
 <a name="14.3.0"></a>
 # [14.3.0](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.17...v14.3.0) (2018-09-17)
 
