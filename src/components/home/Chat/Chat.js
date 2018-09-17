@@ -54,19 +54,19 @@ const avatarContainer = css({
   width: '4rem',
   zIndex: 2,
 
-  '> div': {
+  '.gatsby-image-outer-wrapper': {
     bottom: 0,
-    position: 'absolute',
+    position: 'absolute !important',
     transition: 'all 125ms ease-in-out',
     willChange: 'border-radius, height, width'
   },
 
   '&:hover': {
-    '> div': {
+    '.gatsby-image-outer-wrapper': {
       borderRadius: '0.5rem',
       boxShadow: '0 2px 1rem hsla(0, 0%, 0%, 0.1)',
-      height: '16rem',
-      width: '16rem'
+      height: '16rem !important',
+      width: '16rem !important'
     },
 
     '+ *': {
