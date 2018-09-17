@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.3.0"></a>
+# [14.3.0](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.17...v14.3.0) (2018-09-17)
+
+
+### Features
+
+* Remove image-specific stuff to allow Netlify optimization ([515fab0](https://gitlab.com/iiroj/iiro.fi/commit/515fab0))
+
+
+
 <a name="14.2.17"></a>
 ## [14.2.17](https://gitlab.com/iiroj/iiro.fi/compare/v14.2.16...v14.2.17) (2018-09-16)
 
