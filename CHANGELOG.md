@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.6.0"></a>
+# [14.6.0](https://gitlab.com/iiroj/iiro.fi/compare/v14.5.1...v14.6.0) (2018-09-18)
+
+
+### Features
+
+* Upgrade to GatsbyJS 2.0 and fix gatsby-image styles ([ac35167](https://gitlab.com/iiroj/iiro.fi/commit/ac35167))
+
+
+
 <a name="14.5.1"></a>
 ## [14.5.1](https://gitlab.com/iiroj/iiro.fi/compare/v14.5.0...v14.5.1) (2018-09-17)
 
