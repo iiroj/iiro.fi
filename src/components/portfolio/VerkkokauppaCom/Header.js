@@ -89,12 +89,8 @@ const PhoneImg = () => (
   >
     {data => (
       <div className={phoneContainerStyles}>
-        <Img alt="" fluid={data.pixel.childImageSharp.fluid} outerWrapperClassName={phoneStyles} />
-        <Img
-          alt="Verkkokauppa.com Front Page"
-          fluid={data.screen.childImageSharp.fluid}
-          outerWrapperClassName={screenStyles}
-        />
+        <Img alt="" className={phoneStyles} fluid={data.pixel.childImageSharp.fluid} />
+        <Img alt="Verkkokauppa.com Front Page" className={screenStyles} fluid={data.screen.childImageSharp.fluid} />
       </div>
     )}
   </StaticQuery>

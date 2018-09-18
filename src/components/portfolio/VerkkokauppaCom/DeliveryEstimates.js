@@ -26,11 +26,11 @@ const imageStyles = css({
   position: 'relative',
   width: '100%',
 
-  '.gatsby-image-outer-wrapper:first-child': {
+  '.gatsby-image-wrapper:first-child': {
     width: '100%'
   },
 
-  '.gatsby-image-outer-wrapper:last-child': {
+  '.gatsby-image-wrapper:last-child': {
     width: '80%'
   }
 });

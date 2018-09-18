@@ -39,7 +39,7 @@ const HumbleImg = () => (
       }
     `}
   >
-    {data => <Img alt="Humble Bundle" fluid={data.file.childImageSharp.fluid} outerWrapperClassName={humbleImg} />}
+    {data => <Img alt="Humble Bundle" className={humbleImg} fluid={data.file.childImageSharp.fluid} />}
   </StaticQuery>
 );
 

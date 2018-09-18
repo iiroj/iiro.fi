@@ -76,11 +76,7 @@ const BarometerImg = () => (
     `}
   >
     {data => (
-      <Img
-        alt="Verkkokauppa.com Price Barometer"
-        fixed={data.file.childImageSharp.fixed}
-        outerWrapperClassName={imageStyles}
-      />
+      <Img alt="Verkkokauppa.com Price Barometer" className={imageStyles} fixed={data.file.childImageSharp.fixed} />
     )}
   </StaticQuery>
 );

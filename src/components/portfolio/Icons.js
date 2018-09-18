@@ -7,13 +7,13 @@ import link from './link';
 
 const articleStyles = css({
   boxShadow: '0 1px 0 rgba(0, 0, 0, 0.08)',
-  padding: '4rem 1rem 3rem 1rem',
+  padding: '4rem 1rem 3rem',
   position: 'relative',
   textAlign: 'center',
   width: '100%'
 });
 
-const bgImageOuter = css({
+const bgImage = css({
   position: 'absolute !important',
   height: '100%',
   width: '100%',
@@ -21,46 +21,43 @@ const bgImageOuter = css({
   left: 0
 });
 
-const bgImageInner = css({
-  height: '100%',
-  width: '100%'
-});
-
 const titleStyles = css({
   fontSize: '3em',
   lineHeight: 1.2,
-  marginBottom: '4rem',
+  marginBottom: '2rem',
   position: 'relative'
+});
+
+const wrapperStyles = css({
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  margin: '2rem'
 });
 
 const containerStyles = css({
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'center',
-  margin: '0 1rem',
   position: 'relative',
 
-  '.gatsby-image-outer-wrapper': {
-    margin: '0 1rem'
-  },
-
-  a: {
-    margin: 0
+  '.gatsby-image-wrapper': {
+    marginBottom: '2rem'
   }
 });
 
 const Icons = ({ data }) => (
   <article className={articleStyles}>
-    <Img className={bgImageInner} fluid={data.bg.childImageSharp.fluid} outerWrapperClassName={bgImageOuter} />
+    <Img className={bgImage} fluid={data.bg.childImageSharp.fluid} />
     <h1 className={titleStyles}>Icon Aficionado</h1>
     <div className={containerStyles}>
-      <div>
+      <div className={wrapperStyles}>
         <Img alt="Growl" fixed={data.growl.childImageSharp.fixed} />
         <a className={link} href="http://growl.info" target="_blank" rel="noopener noreferrer">
           Growl
         </a>
       </div>
-      <div>
+      <div className={wrapperStyles}>
         <Img alt="Tune•Instructor" fixed={data.tuneinstructor.childImageSharp.fixed} />
         <a className={link} href="https://www.tune-instructor.de/en/" target="_blank" rel="noopener noreferrer">
           Tune•Instructor

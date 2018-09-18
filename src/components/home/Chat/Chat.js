@@ -53,7 +53,7 @@ const avatarContainer = css({
   width: '4rem',
   zIndex: 2,
 
-  '.gatsby-image-outer-wrapper': {
+  '.gatsby-image-wrapper': {
     bottom: 0,
     position: 'absolute !important',
     transition: 'all 125ms ease-in-out',
@@ -61,7 +61,7 @@ const avatarContainer = css({
   },
 
   '&:hover': {
-    '.gatsby-image-outer-wrapper': {
+    '.gatsby-image-wrapper': {
       borderRadius: '0.5rem',
       boxShadow: '0 2px 1rem hsla(0, 0%, 0%, 0.1)',
       height: '16rem !important',

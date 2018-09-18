@@ -3,27 +3,16 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { StaticQuery, graphql } from 'gatsby';
 
-const outerWrapperClassname = css({
+const imageStyles = css({
   borderRadius: '50%',
   flex: '0 0 4rem',
-  height: '4rem',
+  height: '4rem !important',
   overflow: 'hidden',
-  width: '4rem'
-});
-
-const className = css({
-  height: '100% !important',
-  width: '100% !important'
+  width: '4rem !important'
 });
 
 const Picture = ({ data }) => (
-  <Img
-    alt="Iiro Jäppinen"
-    className={className}
-    critical
-    fixed={data.file.childImageSharp.fixed}
-    outerWrapperClassName={outerWrapperClassname}
-  />
+  <Img alt="Iiro Jäppinen" className={imageStyles} critical fixed={data.file.childImageSharp.fixed} />
 );
 
 export default props => (

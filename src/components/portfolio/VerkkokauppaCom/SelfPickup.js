@@ -56,8 +56,8 @@ const IPadImg = () => (
     {data => (
       <Img
         alt="Verkkokauppa.com Self-Service Checkout"
+        className={imageStyles}
         fluid={data.file.childImageSharp.fluid}
-        outerWrapperClassName={imageStyles}
       />
     )}
   </StaticQuery>
