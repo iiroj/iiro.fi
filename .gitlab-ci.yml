@@ -29,6 +29,6 @@ deploy:
   before_script:
     - npm i -g netlify-cli@next
   script:
-    - netlify deploy -d public -f lambda --prod
+    - netlify deploy -d public -f lambda --prod -m $CI_COMMIT_TAG
   only:
     - tags
