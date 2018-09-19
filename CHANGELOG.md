@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.6.3"></a>
+## [14.6.3](https://gitlab.com/iiroj/iiro.fi/compare/v14.6.2...v14.6.3) (2018-09-19)
+
+
+### Bug Fixes
+
+* Remove Webp images from queries ([abb8c30](https://gitlab.com/iiroj/iiro.fi/commit/abb8c30))
+
+
+
 <a name="14.6.2"></a>
 ## [14.6.2](https://gitlab.com/iiroj/iiro.fi/compare/v14.6.1...v14.6.2) (2018-09-19)
 
