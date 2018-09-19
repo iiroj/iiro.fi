@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="14.6.2"></a>
+## [14.6.2](https://gitlab.com/iiroj/iiro.fi/compare/v14.6.1...v14.6.2) (2018-09-19)
+
+
+### Bug Fixes
+
+* Do Not Use Traced SVG as they are bugged in Safari ([6a6cb81](https://gitlab.com/iiroj/iiro.fi/commit/6a6cb81))
+
+
+
 <a name="14.6.1"></a>
 ## [14.6.1](https://gitlab.com/iiroj/iiro.fi/compare/v14.6.0...v14.6.1) (2018-09-18)
 
