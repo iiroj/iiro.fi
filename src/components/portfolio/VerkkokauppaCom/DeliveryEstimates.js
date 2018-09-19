@@ -42,7 +42,7 @@ const EstimateImg = () => (
         dialog: file(name: { in: "dialog" }) {
           childImageSharp {
             fluid(maxWidth: 303) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

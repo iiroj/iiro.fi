@@ -82,7 +82,7 @@ export default props => (
         growl: file(name: { in: "growl" }) {
           childImageSharp {
             fixed(height: 256, width: 256) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
@@ -90,7 +90,7 @@ export default props => (
         tuneinstructor: file(name: { in: "tuneinstructor" }) {
           childImageSharp {
             fixed(height: 256, width: 256) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
