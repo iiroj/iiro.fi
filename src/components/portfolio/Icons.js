@@ -74,7 +74,7 @@ export default props => (
         bg: file(name: { in: "icons" }) {
           childImageSharp {
             fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -82,7 +82,7 @@ export default props => (
         growl: file(name: { in: "growl" }) {
           childImageSharp {
             fixed(height: 256, width: 256) {
-              ...GatsbyImageSharpFixed_withWebp
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -90,7 +90,7 @@ export default props => (
         tuneinstructor: file(name: { in: "tuneinstructor" }) {
           childImageSharp {
             fixed(height: 256, width: 256) {
-              ...GatsbyImageSharpFixed_withWebp
+              ...GatsbyImageSharpFixed
             }
           }
         }

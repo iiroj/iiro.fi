@@ -42,7 +42,7 @@ const EstimateImg = () => (
         dialog: file(name: { in: "dialog" }) {
           childImageSharp {
             fluid(maxWidth: 303) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -50,7 +50,7 @@ const EstimateImg = () => (
         list: file(name: { in: "list" }) {
           childImageSharp {
             fluid(maxWidth: 303) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }

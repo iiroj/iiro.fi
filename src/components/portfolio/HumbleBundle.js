@@ -32,7 +32,7 @@ const HumbleImg = () => (
         file(name: { in: "humble" }) {
           childImageSharp {
             fluid(maxWidth: 512) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }

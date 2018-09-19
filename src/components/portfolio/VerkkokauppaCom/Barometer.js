@@ -68,7 +68,7 @@ const BarometerImg = () => (
         file(name: { in: "price-barometer" }) {
           childImageSharp {
             fixed(width: 368) {
-              ...GatsbyImageSharpFixed_withWebp
+              ...GatsbyImageSharpFixed
             }
           }
         }

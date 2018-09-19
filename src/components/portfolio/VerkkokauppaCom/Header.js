@@ -72,7 +72,7 @@ const PhoneImg = () => (
         pixel: file(name: { in: "pixel" }) {
           childImageSharp {
             fluid(maxWidth: 303) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -80,7 +80,7 @@ const PhoneImg = () => (
         screen: file(name: { in: "frontpage" }) {
           childImageSharp {
             fluid(maxWidth: 303) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }

@@ -46,7 +46,7 @@ const IPadImg = () => (
         file(name: { in: "ipad" }) {
           childImageSharp {
             fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
