@@ -1,7 +1,5 @@
 import React from 'react';
 import { css } from 'emotion';
-import Img from 'gatsby-image';
-import { StaticQuery, graphql } from 'gatsby';
 
 const sectionStyles = css({
   backgroundColor: '#a4abb3',
@@ -17,17 +15,14 @@ const sectionStyles = css({
 });
 
 const imageStyles = css({
-  height: '100%',
-  left: 0,
+  display: 'block',
+  left: '50%',
+  minWidth: '100%',
   opacity: 0.2,
-  position: 'absolute !important',
-  top: 0,
-  width: '100%',
-
-  '> div': {
-    height: '100%',
-    width: '100%'
-  }
+  position: 'absolute',
+  top: '50%',
+  transform: 'translate(-50%, -50%)',
+  zIndex: 1
 });
 
 const textStyles = css({
@@ -39,33 +34,14 @@ const textStyles = css({
   zIndex: 2
 });
 
-const IPadImg = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        file(name: { in: "ipad" }) {
-          childImageSharp {
-            fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `}
-  >
-    {data => (
-      <Img
-        alt="Verkkokauppa.com Self-Service Checkout"
-        className={imageStyles}
-        fluid={data.file.childImageSharp.fluid}
-      />
-    )}
-  </StaticQuery>
-);
-
 export const SelfPickup = () => (
   <section className={sectionStyles}>
-    <IPadImg />
+    <img
+      alt="Verkkokauppa.com Self-Service Checkout"
+      className={imageStyles}
+      src="/portfolio/verkkokauppacom/ipad.jpg"
+      srcSet="/portfolio/verkkokauppacom/ipad.jpg 1x, /portfolio/verkkokauppacom/ipad@2x.jpg 2x, /portfolio/verkkokauppacom/ipad@3x.jpg 3x"
+    />
     <div className={textStyles}>
       <h2>Self-Service order pickup</h2>
       <p>

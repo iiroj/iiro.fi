@@ -1,7 +1,5 @@
-import { css } from 'emotion';
 import React from 'react';
-import Img from 'gatsby-image';
-import { StaticQuery, graphql } from 'gatsby';
+import { css } from 'emotion';
 
 const graph = css({
   height: 120,
@@ -38,15 +36,16 @@ const Graph = () => (
 
 const sectionStyles = css({
   overflowX: 'hidden',
-  margin: '4rem auto 6rem',
+  paddingTop: 192,
   position: 'relative',
   width: '100%'
 });
 
 const imageStyles = css({
+  display: 'block',
   left: '50%',
   position: 'absolute',
-  top: '4rem',
+  top: 0,
   transform: 'translateX(-50%)',
   width: 368
 });
@@ -61,29 +60,14 @@ const textStyles = css({
   }
 });
 
-const BarometerImg = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        file(name: { in: "price-barometer" }) {
-          childImageSharp {
-            fixed(width: 368) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-    `}
-  >
-    {data => (
-      <Img alt="Verkkokauppa.com Price Barometer" className={imageStyles} fixed={data.file.childImageSharp.fixed} />
-    )}
-  </StaticQuery>
-);
-
 export const Barometer = () => (
   <section className={sectionStyles}>
-    <BarometerImg />
+    <img
+      alt="Verkkokauppa.com Price Barometer"
+      className={imageStyles}
+      src="/portfolio/verkkokauppacom/price-barometer.png"
+      srcSet="/portfolio/verkkokauppacom/price-barometer.png 1x, /portfolio/verkkokauppacom/price-barometer@2x.png 2x, /portfolio/verkkokauppacom/price-barometer@3x.png 3x"
+    />
     <Graph />
     <div className={textStyles}>
       <h2>Making Informed Customers</h2>

@@ -1,34 +1,16 @@
-import { css } from 'emotion';
 import React from 'react';
-import Img from 'gatsby-image';
-import { StaticQuery, graphql } from 'gatsby';
+import { css } from 'emotion';
 
-const imageStyles = css({
+const picture = css({
+  backgroundImage: 'url(/picture.jpg)',
+  backgroundSize: 'cover',
   borderRadius: '50%',
   flex: '0 0 4rem',
-  height: '4rem !important',
-  overflow: 'hidden',
-  width: '4rem !important'
+  height: '4rem',
+  position: 'relative',
+  width: '4rem'
 });
 
-const Picture = ({ data }) => (
-  <Img alt="Iiro Jäppinen" className={imageStyles} critical fixed={data.file.childImageSharp.fixed} />
-);
+const Picture = () => <div className={picture} role="img" alt="Iiro Jäppinen" />;
 
-export default props => (
-  <StaticQuery
-    query={graphql`
-      query {
-        file(name: { in: "avatar" }) {
-          childImageSharp {
-            fixed(height: 192, width: 192) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-    `}
-  >
-    {data => <Picture data={data} />}
-  </StaticQuery>
-);
+export default Picture;

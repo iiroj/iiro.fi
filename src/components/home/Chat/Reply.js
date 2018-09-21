@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { css, cx } from 'emotion';
 
 import Send from './Send';
@@ -100,6 +101,10 @@ const inputExpanded = css({
 });
 
 export default class Reply extends React.PureComponent {
+  static propTypes = {
+    onSentFeedback: PropTypes.func.isRequired
+  };
+
   state = {
     dirty: false,
     failed: false,

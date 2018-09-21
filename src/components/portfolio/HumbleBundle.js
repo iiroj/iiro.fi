@@ -1,16 +1,16 @@
-import { css } from 'emotion';
 import React from 'react';
-import Img from 'gatsby-image';
-import { StaticQuery, graphql } from 'gatsby';
+import { css } from 'emotion';
 
 const articleStyles = css({
   backgroundColor: '#3b3e48',
   padding: '4rem 1rem'
 });
 
-const humbleImg = css({
+const logoStyles = css({
+  display: 'block',
   margin: '0 auto 4rem',
-  maxWidth: 480
+  maxHeight: 64,
+  maxWidth: '100%'
 });
 
 const textStyles = css({
@@ -25,27 +25,14 @@ const textStyles = css({
   }
 });
 
-const HumbleImg = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        file(name: { in: "humble" }) {
-          childImageSharp {
-            fluid(maxWidth: 512) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `}
-  >
-    {data => <Img alt="Humble Bundle" className={humbleImg} fluid={data.file.childImageSharp.fluid} />}
-  </StaticQuery>
-);
-
 export default () => (
   <article className={articleStyles}>
-    <HumbleImg alt="Humble Bundle" />
+    <img
+      alt="Humble Bundle"
+      className={logoStyles}
+      src="/portfolio/humble/humble-logo.png"
+      srcSet="/portfolio/humble/humble-logo.png 1x, /portfolio/humble/humble-logo@2x.png 2x, /portfolio/humble/humble-logo@3x.png 3x"
+    />
     <p className={textStyles}>
       I designed the first{' '}
       <a href="https://www.humblebundle.com" target="_blank" rel="noopener noreferrer">

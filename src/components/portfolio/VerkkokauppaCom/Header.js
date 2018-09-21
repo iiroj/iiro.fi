@@ -1,7 +1,5 @@
-import { css } from 'emotion';
 import React from 'react';
-import Img from 'gatsby-image';
-import { StaticQuery, graphql } from 'gatsby';
+import { css } from 'emotion';
 
 import link from '../link';
 
@@ -55,46 +53,17 @@ const phoneContainerStyles = css({
 });
 
 const phoneStyles = css({
-  width: 303
+  width: 303,
+  display: 'block'
 });
 
 const screenStyles = css({
-  left: 15,
-  position: 'absolute !important',
+  display: 'block',
+  width: 270,
+  position: 'absolute',
   top: 63,
-  width: 270
+  left: 15
 });
-
-const PhoneImg = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        pixel: file(name: { in: "pixel" }) {
-          childImageSharp {
-            fluid(maxWidth: 303) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-
-        screen: file(name: { in: "frontpage" }) {
-          childImageSharp {
-            fluid(maxWidth: 303) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `}
-  >
-    {data => (
-      <div className={phoneContainerStyles}>
-        <Img alt="" className={phoneStyles} fluid={data.pixel.childImageSharp.fluid} />
-        <Img alt="Verkkokauppa.com Front Page" className={screenStyles} fluid={data.screen.childImageSharp.fluid} />
-      </div>
-    )}
-  </StaticQuery>
-);
 
 export const Header = () => (
   <header className={headerStyles}>
@@ -108,6 +77,19 @@ export const Header = () => (
         Visit Verkkokauppa.com
       </a>
     </div>
-    <PhoneImg />
+    <div className={phoneContainerStyles}>
+      <img
+        alt=""
+        className={phoneStyles}
+        src="/portfolio/verkkokauppacom/pixel.png"
+        srcSet="/portfolio/verkkokauppacom/pixel.png 1x, /portfolio/verkkokauppacom/pixel@2x.png 2x, /portfolio/verkkokauppacom/pixel@3x.png 3x"
+      />
+      <img
+        alt="Verkkokauppa.com Front Page"
+        className={screenStyles}
+        src="/portfolio/verkkokauppacom/frontpage.jpg"
+        srcSet="/portfolio/verkkokauppacom/frontpage.jpg 1x, /portfolio/verkkokauppacom/frontpage@2x.jpg 2x, /portfolio/verkkokauppacom/frontpage@3x.jpg 3x"
+      />
+    </div>
   </header>
 );
