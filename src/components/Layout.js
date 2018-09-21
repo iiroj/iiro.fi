@@ -1,6 +1,7 @@
 import React from 'react';
 import { injectGlobal } from 'emotion';
 import FontFaceObserver from 'fontfaceobserver';
+import PropTypes from 'prop-types';
 
 const IBMPlexSans = new FontFaceObserver('IBM Plex Sans');
 
@@ -13,6 +14,10 @@ async function unregisterServiceWorkers() {
 }
 
 export default class Layout extends React.PureComponent {
+  static propTypes = {
+    children: PropTypes.any.isRequired
+  };
+
   componentDidMount() {
     // TODO: Remove this after a while
     if ('serviceWorker' in navigator) {

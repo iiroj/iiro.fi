@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { css, cx } from 'emotion';
 
 import Typing from './Typing';
@@ -53,19 +54,19 @@ const avatarContainer = css({
   width: '4rem',
   zIndex: 2,
 
-  '.gatsby-image-wrapper': {
+  '> div': {
     bottom: 0,
-    position: 'absolute !important',
+    position: 'absolute',
     transition: 'all 125ms ease-in-out',
     willChange: 'border-radius, height, width'
   },
 
   '&:hover': {
-    '.gatsby-image-wrapper': {
+    '> div': {
       borderRadius: '0.5rem',
       boxShadow: '0 2px 1rem hsla(0, 0%, 0%, 0.1)',
-      height: '16rem !important',
-      width: '16rem !important'
+      height: '16rem',
+      width: '16rem'
     },
 
     '+ *': {
@@ -115,6 +116,14 @@ const chat = css({
 });
 
 export default class Chat extends React.PureComponent {
+  static propTypes = {
+    messages: PropTypes.array.isRequired,
+    onSentFeedback: PropTypes.func.isRequired,
+    onSkip: PropTypes.func.isRequired,
+    ready: PropTypes.bool.isRequired,
+    typing: PropTypes.bool.isRequired
+  };
+
   state = {
     mounted: false,
     sticky: true
