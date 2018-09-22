@@ -28,8 +28,8 @@ const Home = () => (
   <>
     <Helmet>
       <title>Iiro Jäppinen</title>
+      <script type="application/ld+json">{microdata}</script>
     </Helmet>
-    <script type="application/ld+json">{microdata}</script>
     <Chat />
   </>
 );

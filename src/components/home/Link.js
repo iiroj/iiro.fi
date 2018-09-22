@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
-import GatsbyLink from 'gatsby-link';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const YELLOW = `hsl(44, 100%, 75%)`;
@@ -27,7 +27,7 @@ const link = css({
 });
 
 const Link = ({ children, to, ...props }) => {
-  const Component = to.startsWith('/') ? GatsbyLink : 'a';
+  const Component = to.startsWith('/') ? ReactRouterLink : 'a';
   return (
     <Component className={link} to={to} href={to} {...props}>
       {children}

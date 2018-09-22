@@ -5,25 +5,12 @@ import PropTypes from 'prop-types';
 
 const IBMPlexSans = new FontFaceObserver('IBM Plex Sans');
 
-async function unregisterServiceWorkers() {
-  const registrations = await navigator.serviceWorker.getRegistrations();
-  if (!registrations) return;
-  for (let registration of registrations) {
-    await registration.unregister();
-  }
-}
-
-export default class Layout extends React.PureComponent {
+export default class Layout extends React.Component {
   static propTypes = {
     children: PropTypes.any.isRequired
   };
 
   componentDidMount() {
-    // TODO: Remove this after a while
-    if ('serviceWorker' in navigator) {
-      unregisterServiceWorkers();
-    }
-
     IBMPlexSans.load();
   }
 
@@ -70,15 +57,11 @@ injectGlobal(
       lineHeight: 1.5
     },
 
-    '#___gatsby': {
-      height: '100%',
-
-      '> div': {
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100%',
-        width: '100%'
-      }
+    '#root': {
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100%',
+      width: '100%'
     },
 
     '*': {
