@@ -1,7 +1,12 @@
 import universal from 'react-universal-component';
 import PropTypes from 'prop-types';
 
-const options = { ignoreBabelRename: true, loadingTransition: false };
+const options = {
+  alwaysDelay: true,
+  ignoreBabelRename: true,
+  loadingTransition: false,
+  minDelay: 500
+};
 
 const UniversalComponent = universal(({ src }) => src(), options);
 

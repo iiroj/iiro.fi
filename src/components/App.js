@@ -20,9 +20,13 @@ class App extends React.Component {
   }
 
   state = {
+    loading: false,
     page: routes['/']
   };
 
+  setLoading = () => this.setState({ loading: true });
+
+  setNotLoading = () => this.setState({ loading: false });
 
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
@@ -31,11 +35,16 @@ class App extends React.Component {
   }
 
   render() {
-    const { page } = this.state;
+    const { loading, page } = this.state;
 
     return (
       <Layout>
-        <UniversalComponent src={() => import(`../pages/${page}`)} />
+        <Loading visible={loading} />
+        <UniversalComponent
+          onBefore={this.setLoading}
+          onAfter={this.setNotLoading}
+          src={() => import(`../pages/${page}`)}
+        />
       </Layout>
     );
   }
