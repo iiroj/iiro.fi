@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.0.1"></a>
+## [15.0.1](https://gitlab.com/iiroj/iiro.fi/compare/v15.0.0...v15.0.1) (2018-09-22)
+
+
+### Bug Fixes
+
+* Commit file case-change to git ([79baf15](https://gitlab.com/iiroj/iiro.fi/commit/79baf15))
+
+
+
 <a name="15.0.0"></a>
 # [15.0.0](https://gitlab.com/iiroj/iiro.fi/compare/v14.7.0...v15.0.0) (2018-09-22)
 
