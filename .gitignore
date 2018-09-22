@@ -1,6 +1,5 @@
-.cache
 .env
+build
 lambda
 node_modules
-public
 sketch

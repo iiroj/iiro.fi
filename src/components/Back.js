@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'react-router-dom';
 import { css } from 'emotion';
 
 const back = css({
