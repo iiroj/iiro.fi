@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const IBMPlexSans = new FontFaceObserver('IBM Plex Sans');
 
-export default class Layout extends React.Component {
+export default class Layout extends React.PureComponent {
   static propTypes = {
     children: PropTypes.any.isRequired
   };

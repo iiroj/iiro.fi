@@ -1,15 +1,7 @@
-export default [
-  {
-    page: 'Root',
-    path: '/'
-  },
-  {
-    page: 'Portfolio',
-    path: '/portfolio/'
-  },
-  {
-    defaultPath: true,
-    page: '404',
-    path: '/404'
-  }
-];
+export const NOT_FOUND = '404';
+
+export default {
+  '/': 'Root',
+  '/portfolio': 'Portfolio',
+  '/404': NOT_FOUND
+};

@@ -61,7 +61,7 @@ const config = {
       }
     }),
     new HtmlRendererWebpackPlugin({
-      paths: routes.map(route => route.path),
+      paths: Object.keys(routes),
       renderer
     })
   ],
