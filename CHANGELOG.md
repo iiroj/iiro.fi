@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.1.0"></a>
+# [15.1.0](https://gitlab.com/iiroj/iiro.fi/compare/v15.0.1...v15.1.0) (2018-09-22)
+
+
+### Features
+
+* Add a react-pose loading animation ([dca1f3c](https://gitlab.com/iiroj/iiro.fi/commit/dca1f3c))
+* Use only a single react-universal-component instance ([62fb96c](https://gitlab.com/iiroj/iiro.fi/commit/62fb96c))
+
+
+
 <a name="15.0.1"></a>
 ## [15.0.1](https://gitlab.com/iiroj/iiro.fi/compare/v15.0.0...v15.0.1) (2018-09-22)
 
