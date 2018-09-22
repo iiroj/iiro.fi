@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.0.0"></a>
+# [15.0.0](https://gitlab.com/iiroj/iiro.fi/compare/v14.7.0...v15.0.0) (2018-09-22)
+
+
+### Features
+
+* Use custom framework ([fc01fc0](https://gitlab.com/iiroj/iiro.fi/commit/fc01fc0))
+
+
+### BREAKING CHANGES
+
+* Gatsby is no longer used, but “vanilla” webpack and react-router
+
+
+
 <a name="14.7.0"></a>
 # [14.7.0](https://gitlab.com/iiroj/iiro.fi/compare/v14.6.4...v14.7.0) (2018-09-21)
 
