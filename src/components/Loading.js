@@ -29,9 +29,9 @@ const containerBaseStyles = {
 };
 
 const Container = posed.div({
-  from: { ...containerBaseStyles },
-  enter: { ...containerBaseStyles },
-  exit: { ...containerBaseStyles }
+  from: containerBaseStyles,
+  enter: containerBaseStyles,
+  exit: containerBaseStyles
 });
 
 const Loading = ({ visible }) => (

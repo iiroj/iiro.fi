@@ -24,15 +24,16 @@ class App extends React.Component {
     page: routes['/']
   };
 
-  setLoading = () => this.setState({ loading: true });
+  setLoading = () => {
+    this.setState({ loading: true });
+  };
 
-  setNotLoading = () => this.setState({ loading: false });
-
-  componentDidUpdate(prevProps) {
-    if (this.props.location !== prevProps.location) {
+  setNotLoading = () => {
+    this.setState({ loading: false });
+    if (typeof window !== 'undefined') {
       window.scrollTo(0, 0);
     }
-  }
+  };
 
   render() {
     const { loading, page } = this.state;
