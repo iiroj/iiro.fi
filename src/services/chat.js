@@ -114,6 +114,7 @@ export class MessageProvider extends React.PureComponent {
     messages: [...messages, noScriptMessage],
     ready: true,
     replied: false,
+    started: false,
     typing: false
   };
 
@@ -138,16 +139,18 @@ export class MessageProvider extends React.PureComponent {
       }
     });
 
+  handleStart = () => {
+    if (!this.state.started) {
+      this.setState({ messages: [], ready: false, started: true }, this.generator);
+    }
+  };
+
   handleSkip = () => this.setState({ messages, ready: true, typing: false });
 
   handleSentFeedback = () =>
     this.setState({
       messages: this.state.messages.concat(sentFeedbackMessage)
     });
-
-  componentDidMount() {
-    this.setState({ messages: [], ready: false }, this.generator);
-  }
 
   render() {
     const { messages, ready, typing } = this.state;
@@ -158,6 +161,7 @@ export class MessageProvider extends React.PureComponent {
           messages,
           onSentFeedback: this.handleSentFeedback,
           onSkip: this.handleSkip,
+          onStart: this.handleStart,
           ready,
           typing
         }}

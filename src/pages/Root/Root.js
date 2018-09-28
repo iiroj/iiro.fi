@@ -32,11 +32,7 @@ const Home = () => (
       <title>Iiro Jäppinen</title>
       <script type="application/ld+json">{microdata}</script>
     </Helmet>
-    <MessageConsumer>
-      {({ messages, onSentFeedback, onSkip, ready, typing }) => (
-        <Chat messages={messages} onSentFeedback={onSentFeedback} onSkip={onSkip} ready={ready} typing={typing} />
-      )}
-    </MessageConsumer>
+    <MessageConsumer>{values => <Chat {...values} />}</MessageConsumer>
   </>
 );
 

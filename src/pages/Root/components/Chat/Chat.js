@@ -121,6 +121,7 @@ export default class Chat extends React.PureComponent {
     messages: PropTypes.array.isRequired,
     onSentFeedback: PropTypes.func.isRequired,
     onSkip: PropTypes.func.isRequired,
+    onStart: PropTypes.func.isRequired,
     ready: PropTypes.bool.isRequired,
     typing: PropTypes.bool.isRequired
   };
@@ -138,6 +139,7 @@ export default class Chat extends React.PureComponent {
   };
 
   componentDidMount() {
+    this.props.onStart();
     this.setState({ mounted: true });
     window.addEventListener('scroll', this.handleScroll);
   }
