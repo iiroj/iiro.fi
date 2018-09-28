@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.2.0"></a>
+# [15.2.0](https://gitlab.com/iiroj/iiro.fi/compare/v15.1.1...v15.2.0) (2018-09-28)
+
+
+### Bug Fixes
+
+* Start chat only after visiting Root page ([e832234](https://gitlab.com/iiroj/iiro.fi/commit/e832234))
+
+
+### Features
+
+* Use React Context to move messages to global scope ([74ce529](https://gitlab.com/iiroj/iiro.fi/commit/74ce529))
+
+
+
 <a name="15.1.1"></a>
 ## [15.1.1](https://gitlab.com/iiroj/iiro.fi/compare/v15.1.0...v15.1.1) (2018-09-23)
 
