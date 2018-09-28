@@ -6,7 +6,7 @@ import Link from '../components/Link';
 import Emoji from '../components/Emoji';
 
 import Fraktio from '../components/Fraktio';
-import { Email, GitHub, Npm, Linkedin, Portfolio, Telegram, Twitter } from '../components/icons';
+import { Cv, Email, GitHub, Linkedin, Npm, Portfolio, Telegram, Twitter } from '../components/icons';
 
 const messages = [
   <p key="1">
@@ -41,6 +41,13 @@ const messages = [
   </p>,
   <p key="8">
     I also have a{' '}
+    <Link to="/cv">
+      <Emoji label="CV">
+        <Cv />
+      </Emoji>{' '}
+      CV
+    </Link>
+    ,{' '}
     <Link to="/portfolio">
       <Emoji label="Portfolio">
         <Portfolio />
