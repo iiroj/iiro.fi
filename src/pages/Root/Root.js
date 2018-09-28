@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { hot } from 'react-hot-loader';
 
 import { MessageConsumer } from '../../services/chat';
 
@@ -26,7 +27,7 @@ const microdata = JSON.stringify({
   sameAs: ['https://twitter.com/iirojappinen', 'https://fi.linkedin.com/in/iiroj', 'https://github.com/iiroj']
 });
 
-const Home = () => (
+const Root = () => (
   <>
     <Helmet>
       <title>Iiro Jäppinen</title>
@@ -36,4 +37,4 @@ const Home = () => (
   </>
 );
 
-export default Home;
+export default hot(module)(Root);

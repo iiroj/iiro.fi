@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import Helmet from 'react-helmet';
+import { hot } from 'react-hot-loader';
 
 import Back from '../components/Back';
 
@@ -10,7 +11,7 @@ const h1Styles = css({
   margin: 'auto'
 });
 
-export default () => (
+const NotFound = () => (
   <>
     <Helmet>
       <title>Page Not Found</title>
@@ -19,3 +20,5 @@ export default () => (
     <h1 className={h1Styles}>There’s nothing here...</h1>
   </>
 );
+
+export default hot(module)(NotFound);

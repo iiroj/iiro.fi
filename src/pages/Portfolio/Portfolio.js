@@ -1,12 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { hot } from 'react-hot-loader';
 
 import Back from '../../components/Back';
 
 import { HumbleBundle, Icons, VerkkokauppaCom } from './components';
 import { aside, header } from './styles';
 
-export default () => (
+const Portfolio = () => (
   <>
     <Helmet>
       <title>Portfolio of Iiro Jäppinen</title>
@@ -21,3 +22,5 @@ export default () => (
     <aside className={aside}>With more coming soon...</aside>
   </>
 );
+
+export default hot(module)(Portfolio);
