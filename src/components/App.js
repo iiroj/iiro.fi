@@ -5,6 +5,7 @@ import { withRouter } from 'react-router';
 import routes, { NOT_FOUND } from '../routes';
 import Layout from './Layout';
 import Loading from './Loading';
+import { MessageProvider } from '../services/chat';
 import UniversalComponent from './UniversalComponent';
 
 class App extends React.Component {
@@ -21,6 +22,7 @@ class App extends React.Component {
 
   state = {
     loading: false,
+    messages: [],
     page: routes['/']
   };
 
@@ -40,12 +42,14 @@ class App extends React.Component {
 
     return (
       <Layout>
-        <Loading visible={loading} />
-        <UniversalComponent
-          onBefore={this.setLoading}
-          onAfter={this.setNotLoading}
-          src={() => import(`../pages/${page}`)}
-        />
+        <MessageProvider>
+          <Loading visible={loading} />
+          <UniversalComponent
+            onBefore={this.setLoading}
+            onAfter={this.setNotLoading}
+            src={() => import(`../pages/${page}`)}
+          />
+        </MessageProvider>
       </Layout>
     );
   }

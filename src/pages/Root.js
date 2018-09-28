@@ -1,7 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Chat from '../components/home/Chat';
+import { MessageConsumer } from '../services/chat';
+import Chat from '../components/Chat';
 
 const microdata = JSON.stringify({
   '@context': 'http://schema.org',
@@ -30,7 +31,11 @@ const Home = () => (
       <title>Iiro Jäppinen</title>
       <script type="application/ld+json">{microdata}</script>
     </Helmet>
-    <Chat />
+    <MessageConsumer>
+      {({ messages, onSentFeedback, onSkip, ready, typing }) => (
+        <Chat messages={messages} onSentFeedback={onSentFeedback} onSkip={onSkip} ready={ready} typing={typing} />
+      )}
+    </MessageConsumer>
   </>
 );
 
