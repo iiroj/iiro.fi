@@ -1,8 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import { MessageConsumer } from '../services/chat';
-import Chat from '../components/Chat';
+import { MessageConsumer } from '../../services/chat';
+
+import Chat from './components/Chat';
 
 const microdata = JSON.stringify({
   '@context': 'http://schema.org',

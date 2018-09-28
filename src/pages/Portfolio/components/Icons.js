@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 
-import link from './link';
+import { link } from '../styles';
 
 const articleStyles = css({
   background: 'url(/portfolio/icons/icons.jpg)',

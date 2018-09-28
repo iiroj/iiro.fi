@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 
-import link from '../link';
+import { link } from '../../styles';
 
 const headerStyles = css({
   alignItems: 'center',

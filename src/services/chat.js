@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import baskerville from '../components/baskerville';
-import Fraktio from '../components/Fraktio';
+import baskerville from '../styles/baskerville';
 import Link from '../components/Link';
-import { Email, GitHub, Npm, Linkedin, Portfolio, Telegram, Twitter } from '../components/icons';
-
 import Emoji from '../components/Emoji';
+
+import Fraktio from '../components/Fraktio';
+import { Email, GitHub, Npm, Linkedin, Portfolio, Telegram, Twitter } from '../components/icons';
 
 const messages = [
   <p key="1">
