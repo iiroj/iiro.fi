@@ -7,7 +7,7 @@ import Fraktio from '../../components/Fraktio/Logo';
 import Picture from '../../components/Picture';
 import baskerville from '../../styles/baskerville';
 
-import { container, heading, page, section } from './styles';
+import { container, heading, page, projects, section } from './styles';
 import { DefinitionList, Header, SelfAssesments, Skills } from './components';
 
 const Heading = ({ page }) => (
@@ -290,6 +290,65 @@ const Cv = () => (
                     Valid <time dateTime="2016-03/2018-03">March 2016 – March 2018</time>
                   </em>
                 </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <div className={page}>
+        <Heading page="3/3" />
+
+        <section className={projects}>
+          <h2>Selected Projects</h2>
+          <div>
+            <ul>
+              <li>
+                <h3>Pihlajalinna Digital Services</h3>
+                <p>
+                  Pihlajalinna is a large private and occupational health care provider. I configured Analytics,
+                  designed web pages and internal tools, and developed them in an agile team consisting of Pihlajalinna
+                  employees and other consultants.
+                </p>
+                <DefinitionList>
+                  {[
+                    {
+                      title: 'What',
+                      definition: 'Sketch, Abstract, React, Typescript, Redux, Heroku, Docker'
+                    },
+                    {
+                      title: 'When',
+                      definition: <time dateTime="2017-10/2018-08">October 2017 — August 2018</time>
+                    },
+                    {
+                      title: 'Team size',
+                      definition: '6–8'
+                    }
+                  ]}
+                </DefinitionList>
+              </li>
+              <li>
+                <h3>Brainstorming Tool and Software for Fountain Park</h3>
+                <p>
+                  Fountain Park creates tools for organizations to better define and reach their goals. I designed and
+                  developed a new version of the brainstorming tool and its accompanying admin panel and editor.
+                </p>
+                <DefinitionList>
+                  {[
+                    {
+                      title: 'What',
+                      definition: 'Sketch, React, Redux, Heroku'
+                    },
+                    {
+                      title: 'When',
+                      definition: <time dateTime="2017-10/2018-08">July 2017 — September 2017</time>
+                    },
+                    {
+                      title: 'Team size',
+                      definition: '2'
+                    }
+                  ]}
+                </DefinitionList>
               </li>
             </ul>
           </div>

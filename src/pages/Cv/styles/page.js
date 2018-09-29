@@ -25,6 +25,19 @@ export default css({
     zIndex: -1
   },
 
+  h2: {
+    flex: '0 1 50mm',
+    fontSize: 16,
+    lineHeight: '24px',
+    marginBottom: '2rem'
+  },
+
+  h3: {
+    fontSize: 16,
+    lineHeight: '24px',
+    marginBottom: '1rem'
+  },
+
   '@media (min-width: calc(210mm + 7rem))': {
     height: '297mm',
     padding: '2rem 4rem'
