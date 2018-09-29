@@ -48,6 +48,7 @@ export default css({
     margin: '0 !important',
     padding: '2rem 4rem 0 4rem',
     pageBreakAfter: 'always',
+    pageBreakBefore: 'always',
     width: '100vw',
 
     '&::before': {

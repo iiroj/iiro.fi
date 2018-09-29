@@ -1,32 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
 
 import Back from '../../components/Back';
-import Fraktio from '../../components/Fraktio/Logo';
 import Picture from '../../components/Picture';
 import baskerville from '../../styles/baskerville';
 
-import { container, heading, page, projects, section } from './styles';
-import { DefinitionList, Header, SelfAssesments, Skills } from './components';
-
-const Heading = ({ page }) => (
-  <aside className={heading}>
-    <Fraktio colored />
-    <span>
-      <span>Iiro Jäppinen’s CV, </span>
-      <time dateTime="2018-10-01">October 1st, 2018</time>
-      {page && <span> — {page}</span>}
-    </span>
-  </aside>
-);
-
-Heading.propTypes = {
-  page: PropTypes.string
-};
+import { container, page, projects, section } from './styles';
+import { DefinitionList, Heading, Header, SelfAssesments, Skills } from './components';
 
 const Cv = () => (
   <>
+    <Helmet>
+      <title>CV of Iiro Jäppinen</title>
+    </Helmet>
+
     <Back />
 
     <main className={container}>
@@ -35,7 +23,7 @@ const Cv = () => (
 
         <Header name="Iiro Jäppinen" picture={<Picture />}>
           I’m an UX <span className={baskerville}>&</span> UI designer, and a front-end developer with a passion for
-          precise pixels and accessible solutions. I aim to create real solutions to actual problems with a design that
+          precise pixels and accessible interfaces. I aim to create real solutions to actual problems with a design that
           stands on its own but doesn’t need introduction.
         </Header>
 
@@ -79,7 +67,7 @@ const Cv = () => (
                 <strong>Bachelor of Science</strong>
                 <em> (Did not graduate)</em>
                 <p>
-                  University of Helsinki, <time dateTime="2009-09">2009/09–</time>
+                  University of Helsinki, <time dateTime="2009-09">Sep 2009–</time>
                 </p>
                 <p>Thesis subject: Studying Evolution in the Snowdrift Game With Adaptive Dynamics</p>
                 <p>197 credits in Biomathematics; minor in Genetics</p>
@@ -88,7 +76,7 @@ const Cv = () => (
                 <strong>Matriculation</strong>
                 <p>
                   Helsinki Upper Secondary School of Visual Arts,{' '}
-                  <time dateTime="2006-09/2009-06">2006/08–2009/06</time>
+                  <time dateTime="2006-09/2009-06">Aug 2006 – Jun 2009</time>
                 </p>
               </li>
             </ul>
@@ -277,7 +265,7 @@ const Cv = () => (
                 </p>
                 <p>
                   <em>
-                    Valid <time dateTime="2016-06/2018-06">June 2016 – June 2018</time>
+                    Valid <time dateTime="2016-06/2018-06">Jun 2016 – Jun 2018</time>
                   </em>
                 </p>
               </li>
@@ -287,7 +275,7 @@ const Cv = () => (
                 </p>
                 <p>
                   <em>
-                    Valid <time dateTime="2016-03/2018-03">March 2016 – March 2018</time>
+                    Valid <time dateTime="2016-03/2018-03">Mar 2016 – Mar 2018</time>
                   </em>
                 </p>
               </li>
@@ -313,12 +301,12 @@ const Cv = () => (
                 <DefinitionList>
                   {[
                     {
-                      title: 'What',
+                      title: 'Keywords',
                       definition: 'Sketch, Abstract, React, Typescript, Redux, Heroku, Docker'
                     },
                     {
-                      title: 'When',
-                      definition: <time dateTime="2017-10/2018-08">October 2017 — August 2018</time>
+                      title: 'Date',
+                      definition: <time dateTime="2017-10/2018-08">Oct 2017 — Aug 2018</time>
                     },
                     {
                       title: 'Team size',
@@ -336,12 +324,12 @@ const Cv = () => (
                 <DefinitionList>
                   {[
                     {
-                      title: 'What',
+                      title: 'Keywords',
                       definition: 'Sketch, React, Redux, Heroku'
                     },
                     {
-                      title: 'When',
-                      definition: <time dateTime="2017-10/2018-08">July 2017 — September 2017</time>
+                      title: 'Date',
+                      definition: <time dateTime="2017-10/2018-08">Jul 2017 — Sep 2017</time>
                     },
                     {
                       title: 'Team size',

@@ -8,18 +8,26 @@ const header = css({
 
   div: {
     flex: '1 1 100mm',
-    paddingRight: '4rem'
-  },
+    display: 'flex',
+    flexDirection: 'column',
+    marginRight: '5mm',
 
-  h1: {
-    fontWeight: 600,
-    fontSize: '3rem',
-    lineHeight: '3rem',
-    marginBottom: '2rem'
+    h1: {
+      borderBottom: '1px solid hsl(0,0%,30%)',
+      fontWeight: 600,
+      fontSize: '3rem',
+      lineHeight: '4rem',
+      marginBottom: '1rem'
+    },
+
+    p: {
+      marginTop: 'auto',
+      marginBottom: '2rem'
+    }
   },
 
   img: {
-    flex: '0 1 50mm',
+    flex: '0 1 45mm',
     height: '100%',
     marginBottom: 'auto',
     paddingBottom: '2rem',
