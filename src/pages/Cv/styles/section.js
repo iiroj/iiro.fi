@@ -12,12 +12,17 @@ export default css({
     marginBottom: '2rem'
   },
 
-  '> div': {
-    flex: '1 1 100mm',
-    paddingRight: '4rem'
+  h3: {
+    fontSize: 16,
+    lineHeight: '24px',
+    marginBottom: '1rem'
   },
 
-  dl: {
+  '> div': {
+    flex: '1 1 100mm'
+  },
+
+  'dl.float': {
     dt: {
       float: 'left'
     },

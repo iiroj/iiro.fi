@@ -32,6 +32,7 @@ export default css({
 
   '@media only print': {
     height: '100vh',
+    margin: '0 !important',
     padding: '2rem 4rem 0 4rem',
     pageBreakAfter: 'always',
     width: '100vw',
