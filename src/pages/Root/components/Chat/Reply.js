@@ -9,7 +9,6 @@ const REPLY_URL = `${process.env.LAMBDA_BASE_URL}/telegram`;
 
 const form = css({
   alignItems: 'center',
-  marginLeft: 'auto',
   display: 'flex',
   position: 'relative',
   transition: 'all 125ms ease-in-out'
@@ -18,6 +17,10 @@ const form = css({
 const formDirty = css({
   flexBasis: '100%',
   marginTop: '1rem'
+});
+
+const formReady = css({
+  marginLeft: 'auto'
 });
 
 const button = css({
@@ -70,7 +73,6 @@ const input = css({
   fontFamily: 'inherit',
   height: '4rem',
   lineHeight: '2rem',
-  marginLeft: 'auto',
   opacity: 0,
   outline: 'none',
   padding: '1rem 2rem',
@@ -102,7 +104,8 @@ const inputExpanded = css({
 
 export default class Reply extends React.PureComponent {
   static propTypes = {
-    onSentFeedback: PropTypes.func.isRequired
+    onSentFeedback: PropTypes.func.isRequired,
+    ready: PropTypes.bool.isRequired
   };
 
   state = {
@@ -153,11 +156,16 @@ export default class Reply extends React.PureComponent {
 
   render() {
     const { dirty, failed, sending, text } = this.state;
+    const { ready } = this.props;
 
     const valid = this.state.valid && !sending && !failed;
 
     return (
-      <form className={cx(form, dirty && formDirty)} disabled={sending || failed} onSubmit={this.handleSumbit}>
+      <form
+        className={cx(form, dirty && formDirty, ready && formReady)}
+        disabled={sending || failed}
+        onSubmit={this.handleSumbit}
+      >
         <textarea
           className={cx(input, dirty && !failed && inputExpanded)}
           disabled={sending}

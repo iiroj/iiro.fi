@@ -100,7 +100,7 @@ const skip = css({
   color: 'hsl(0, 0%, 60%)',
   cursor: 'pointer',
   fontSize: '1rem',
-  margin: '1rem 0',
+  margin: '1rem 0 1rem auto',
   outline: 'none',
   textAlign: 'center',
   width: '4rem'
@@ -198,7 +198,7 @@ export default class Chat extends React.PureComponent {
             Skip
           </button>
         )}
-        {mounted && <Reply onSentFeedback={onSentFeedback} />}
+        {mounted && <Reply onSentFeedback={onSentFeedback} ready={ready} />}
       </div>
     );
   }
