@@ -23,9 +23,11 @@ const Cv = () => (
         <Heading page="1/3" />
 
         <Header name="Iiro Jäppinen" picture={<Picture />}>
-          I’m an UX <span className={baskerville}>&</span> UI designer, and a front-end developer with a passion for
-          precise pixels and accessible interfaces. I aim to create real solutions to actual problems with a design that
-          stands on its own but doesn’t need introduction.
+          <p>
+            I’m an UX <span className={baskerville}>&</span> UI designer, and a front-end developer with a passion for
+            precise pixels and accessible interfaces. I aim to create real solutions to actual problems with a design
+            that stands on its own but doesn’t need introduction.
+          </p>
         </Header>
 
         <section className={section}>

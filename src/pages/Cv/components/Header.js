@@ -42,7 +42,7 @@ const Header = ({ children, name, picture }) => (
   <header className={header}>
     <div>
       <h1>{name}</h1>
-      <p>{children}</p>
+      {children}
     </div>
     {picture}
   </header>
