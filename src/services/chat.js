@@ -118,7 +118,8 @@ export class MessageProvider extends React.PureComponent {
   };
 
   state = {
-    messages: [...messages, noScriptMessage],
+    // Replace the last message on SSR, since it's about sending Feedback
+    messages: [...messages.slice(0, messages.length - 1), noScriptMessage],
     ready: true,
     replied: false,
     started: false,
