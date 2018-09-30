@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
 
 import Back from '../../components/Back';
+import Link from '../../components/Link';
 import Picture from '../../components/Picture';
 import baskerville from '../../styles/baskerville';
 
@@ -334,6 +335,38 @@ const Cv = () => (
                     {
                       title: 'Team size',
                       definition: '2'
+                    }
+                  ]}
+                </DefinitionList>
+              </li>
+              <li>
+                <h3>Verkkokauppa.com Investors Portal</h3>
+                <p>
+                  Verkkokauppa.com is the largest online retailer in Finland with ambitious plans to keep growing. I
+                  designed the{' '}
+                  <Link
+                    to="https://www.kauppalehti.fi/lehdistotiedotteet/verkkokauppacomin-sijoittajasivut-palkittiin-vuoden-2018-parhaina/LPuge6z7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    award-winning
+                  </Link>{' '}
+                  Investors Portal with the goal of offering easily accessible information and news about the
+                  corporation.
+                </p>
+                <DefinitionList>
+                  {[
+                    {
+                      title: 'Keywords',
+                      definition: 'Sketch, React'
+                    },
+                    {
+                      title: 'Date',
+                      definition: <time dateTime="2017">2017</time>
+                    },
+                    {
+                      title: 'Team size',
+                      definition: '3'
                     }
                   ]}
                 </DefinitionList>

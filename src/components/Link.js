@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const YELLOW = `hsl(44, 100%, 75%)`;
 
-const link = css({
+export const link = css({
   backgroundImage: `linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%)`,
   backgroundPosition: '0 1em',
   backgroundRepeat: 'no-repeat',

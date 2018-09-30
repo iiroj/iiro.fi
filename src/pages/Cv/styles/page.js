@@ -1,5 +1,7 @@
 import { css } from 'emotion';
 
+import { link } from '../../../components/Link';
+
 export default css({
   backgroundColor: 'white',
   fontSize: 14,
@@ -36,6 +38,11 @@ export default css({
     fontSize: 16,
     lineHeight: '24px',
     marginBottom: '1rem'
+  },
+
+  [`.${link}`]: {
+    backgroundImage: 'none',
+    boxShadow: 'inset 0 -1px 0 hsl(0,0%,30%)'
   },
 
   '@media (min-width: calc(210mm + 7rem))': {
