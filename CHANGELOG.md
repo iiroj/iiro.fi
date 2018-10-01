@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.4.0"></a>
+# [15.4.0](https://gitlab.com/iiroj/iiro.fi/compare/v15.3.0...v15.4.0) (2018-10-01)
+
+
+### Bug Fixes
+
+* Fix webpack-dev-server handling .html files ([7fc00d3](https://gitlab.com/iiroj/iiro.fi/commit/7fc00d3))
+* Minor fixes ([3c3b2ee](https://gitlab.com/iiroj/iiro.fi/commit/3c3b2ee))
+
+
+### Features
+
+* Add CV page stub ([ec3841f](https://gitlab.com/iiroj/iiro.fi/commit/ec3841f))
+
+
+
 <a name="15.3.0"></a>
 # [15.3.0](https://gitlab.com/iiroj/iiro.fi/compare/v15.2.0...v15.3.0) (2018-09-28)
 
