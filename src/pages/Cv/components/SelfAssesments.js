@@ -30,20 +30,20 @@ const SelfAssesments = () => (
         <strong>Junior</strong>
       </dt>
       <span>: </span>
-      <dd>can work with the assist of a professional, or perform simple tasks independently.</dd>
+      <dd>can work with the assistance of a professional, or perform simple tasks independently.</dd>
       <br />
       <dt>
         <strong>Professional</strong>
       </dt>
       <span>: </span>
-      <dd>can independently in any normal project.</dd>
+      <dd>can work independently in any normal project.</dd>
       <br />
       <dt>
         <strong>Senior</strong>
       </dt>
       <span>: </span>
       <dd>
-        can work independently with challenging and new tasks. Has concept or architecture designing/planning
+        can work independently with new and challenging tasks. Has concept or architecture designing/planning
         experience, and is able to teach and guide others.
       </dd>
       <br />

@@ -24,7 +24,7 @@ const Cv = () => (
 
         <Header name="Iiro Jäppinen" picture={<Picture />}>
           <p>
-            I’m an UX <span className={baskerville}>&</span> UI designer, and a front-end developer with a passion for
+            I’m a UX <span className={baskerville}>&</span> UI designer, and a front-end developer with a passion for
             precise pixels and accessible interfaces. I aim to create real solutions to actual problems with a design
             that stands on its own but doesn’t need introduction.
           </p>
@@ -106,7 +106,7 @@ const Cv = () => (
               <li>
                 <p>
                   <strong>
-                    UX <span className={baskerville}>&</span> Designer
+                    UX <span className={baskerville}>&</span> UI Designer
                   </strong>
                   , Verkkokauppa.com
                 </p>
@@ -122,7 +122,7 @@ const Cv = () => (
               <li>
                 <p>
                   <strong>
-                    UX <span className={baskerville}>&</span> Designer
+                    UX <span className={baskerville}>&</span> UI Designer
                   </strong>
                   , Humble Bundle
                 </p>
@@ -344,8 +344,7 @@ const Cv = () => (
               <li>
                 <h3>Verkkokauppa.com Investors Portal</h3>
                 <p>
-                  Verkkokauppa.com is the largest online retailer in Finland with ambitious plans to keep growing. I
-                  designed the{' '}
+                  Verkkokauppa.com is the largest online retailer in Finland. I designed the{' '}
                   <Link
                     to="https://www.kauppalehti.fi/lehdistotiedotteet/verkkokauppacomin-sijoittajasivut-palkittiin-vuoden-2018-parhaina/LPuge6z7"
                     target="_blank"

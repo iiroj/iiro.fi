@@ -14,7 +14,7 @@ const messages = [
   </p>,
   <p key="2">My name is Iiro Jäppinen</p>,
   <p key="3">
-    I’m an UX <span className={baskerville}>&</span> UI Designer
+    I’m a UX <span className={baskerville}>&</span> UI Designer
   </p>,
   <p key="4">But I also code ECMAscript and React!</p>,
   <p key="5">
