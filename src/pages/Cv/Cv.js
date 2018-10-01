@@ -114,7 +114,7 @@ const Cv = () => (
                   Helsinki, <time dateTime="2014/2017">2014–2017</time>
                 </p>
                 <p>
-                  In-house design and project management for a large corporation. Main responsibilites included
+                  In-house design and project management for a large corporation. Main responsibilities included
                   application interface, process and workflow design for both internal and public use.
                 </p>
               </li>
@@ -189,7 +189,7 @@ const Cv = () => (
                       years: 3
                     },
                     {
-                      title: 'Typescript',
+                      title: 'TypeScript',
                       assesment: 'Professional',
                       used: 'Constantly',
                       years: 1
