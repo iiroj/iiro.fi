@@ -46,7 +46,7 @@ const backdrop = css({
   zIndex: 1
 });
 
-const avatarContainer = css({
+const pictureContainer = css({
   bottom: '1rem',
   flex: '0 0 4rem',
   marginRight: '1rem',
@@ -55,7 +55,8 @@ const avatarContainer = css({
   width: '4rem',
   zIndex: 2,
 
-  '> div': {
+  '> img': {
+    borderRadius: '50%',
     bottom: 0,
     position: 'absolute',
     transition: 'all 125ms ease-in-out',
@@ -63,7 +64,7 @@ const avatarContainer = css({
   },
 
   '&:hover': {
-    '> div': {
+    '> img': {
       borderRadius: '0.5rem',
       boxShadow: '0 2px 1rem hsla(0, 0%, 0%, 0.1)',
       height: '16rem',
@@ -99,7 +100,7 @@ const skip = css({
   color: 'hsl(0, 0%, 60%)',
   cursor: 'pointer',
   fontSize: '1rem',
-  margin: '1rem 0',
+  margin: '1rem 0 1rem auto',
   outline: 'none',
   textAlign: 'center',
   width: '4rem'
@@ -175,7 +176,7 @@ export default class Chat extends React.PureComponent {
             messages.length > 0 && messageGroupFullWidth
           )}
         >
-          <div className={avatarContainer}>
+          <div className={pictureContainer}>
             <Picture />
           </div>
           <div className={backdrop} />
@@ -197,7 +198,7 @@ export default class Chat extends React.PureComponent {
             Skip
           </button>
         )}
-        {mounted && <Reply onSentFeedback={onSentFeedback} />}
+        {mounted && <Reply onSentFeedback={onSentFeedback} ready={ready} />}
       </div>
     );
   }

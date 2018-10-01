@@ -6,7 +6,7 @@ import Link from '../components/Link';
 import Emoji from '../components/Emoji';
 
 import Fraktio from '../components/Fraktio';
-import { Email, GitHub, Npm, Linkedin, Portfolio, Telegram, Twitter } from '../components/icons';
+import { Cv, Email, GitHub, Linkedin, Npm, Portfolio, Telegram, Twitter } from '../components/icons';
 
 const messages = [
   <p key="1">
@@ -14,7 +14,7 @@ const messages = [
   </p>,
   <p key="2">My name is Iiro Jäppinen</p>,
   <p key="3">
-    I’m an UX <span className={baskerville}>&</span> UI Designer
+    I’m a UX <span className={baskerville}>&</span> UI Designer
   </p>,
   <p key="4">But I also code ECMAscript and React!</p>,
   <p key="5">
@@ -41,6 +41,13 @@ const messages = [
   </p>,
   <p key="8">
     I also have a{' '}
+    <Link to="/cv">
+      <Emoji label="CV">
+        <Cv />
+      </Emoji>{' '}
+      CV
+    </Link>
+    ,{' '}
     <Link to="/portfolio">
       <Emoji label="Portfolio">
         <Portfolio />
@@ -111,7 +118,8 @@ export class MessageProvider extends React.PureComponent {
   };
 
   state = {
-    messages: [...messages, noScriptMessage],
+    // Replace the last message on SSR, since it's about sending Feedback
+    messages: [...messages.slice(0, messages.length - 1), noScriptMessage],
     ready: true,
     replied: false,
     started: false,

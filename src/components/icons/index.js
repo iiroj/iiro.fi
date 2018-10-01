@@ -1,3 +1,4 @@
+export { default as Cv } from './Cv';
 export { default as Email } from './Email';
 export { default as GitHub } from './GitHub';
 export { default as Linkedin } from './Linkedin';

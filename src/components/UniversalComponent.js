@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const options = {
   alwaysDelay: true,
   ignoreBabelRename: true,
+  loading: () => null,
   loadingTransition: false,
   minDelay: 500
 };
