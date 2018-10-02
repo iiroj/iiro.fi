@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.5.0"></a>
+# [15.5.0](https://gitlab.com/iiroj/iiro.fi/compare/v15.4.2...v15.5.0) (2018-10-02)
+
+
+### Features
+
+* Use hot-reloading with html-renderer-webpack-plugin ([2a917ec](https://gitlab.com/iiroj/iiro.fi/commit/2a917ec))
+
+
+
 <a name="15.4.2"></a>
 ## [15.4.2](https://gitlab.com/iiroj/iiro.fi/compare/v15.4.1...v15.4.2) (2018-10-02)
 
