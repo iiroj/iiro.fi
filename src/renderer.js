@@ -10,9 +10,9 @@ import flushChunks from 'webpack-flush-chunks';
 import { html } from 'common-tags';
 import { minify } from 'html-minifier';
 
-import App from './components/App';
-
 export default async ({ assets, filename, path, publicPath, stats }) => {
+  const App = require('./components/App').default;
+
   const { css, html: app, ids } = extractCritical(
     renderToString(
       <StaticRouter location={path} context={{}}>
