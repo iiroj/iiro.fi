@@ -1,7 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
 import Helmet from 'react-helmet';
-import { hot } from 'react-hot-loader';
 
 import Back from '../components/Back';
 
@@ -21,4 +20,4 @@ const NotFound = () => (
   </>
 );
 
-export default hot(module)(NotFound);
+export default NotFound;

@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { hot } from 'react-hot-loader';
 
 import Back from '../../components/Back';
 import Link from '../../components/Link';
@@ -380,4 +379,4 @@ const Cv = () => (
   </>
 );
 
-export default hot(module)(Cv);
+export default Cv;

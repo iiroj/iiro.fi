@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { hot } from 'react-hot-loader';
 
 import { MessageConsumer } from '../../services/chat';
 
@@ -37,4 +36,4 @@ const Root = () => (
   </>
 );
 
-export default hot(module)(Root);
+export default Root;

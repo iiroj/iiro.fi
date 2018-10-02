@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { hot } from 'react-hot-loader';
 
 import Back from '../../components/Back';
 
@@ -23,4 +22,4 @@ const Portfolio = () => (
   </>
 );
 
-export default hot(module)(Portfolio);
+export default Portfolio;
