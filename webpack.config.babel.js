@@ -4,7 +4,6 @@ import path from 'path';
 import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 import routes from './src/routes';
@@ -48,7 +47,7 @@ const config = {
         use: {
           loader: require.resolve('babel-loader'),
           options: {
-            envName: isProduction ? 'production' : 'development'
+            envName: isProduction ? 'webpack_production' : 'webpack_development'
           }
         }
       }
@@ -94,21 +93,6 @@ const config = {
 
 if (isProduction) {
   config.plugins.push(new CopyWebpackPlugin([{ from: 'static', to: '.' }]));
-
-  config.optimization.minimizer = [
-    new UglifyJsPlugin({
-      cache: true,
-      parallel: true,
-      sourceMap: false,
-      uglifyOptions: {
-        mangle: true,
-        output: {
-          beautify: false,
-          comments: false
-        }
-      }
-    })
-  ];
 } else {
   config.plugins.push(new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin());
 }

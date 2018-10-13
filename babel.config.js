@@ -1,5 +1,6 @@
 module.exports = api => {
-  const isProduction = api.env() === 'production';
+  const env = api.env();
+  const isProduction = env.endsWith('production');
 
   const presetEnv = {
     loose: true,
@@ -7,6 +8,8 @@ module.exports = api => {
     shippedProposals: true,
     useBuiltIns: 'entry'
   };
+
+  const presets = [['@babel/preset-env', presetEnv], ['@babel/preset-react']];
 
   const plugins = [
     ['@babel/plugin-syntax-dynamic-import'],
@@ -21,18 +24,21 @@ module.exports = api => {
     ]
   ];
 
-  if (api.env() === 'node') {
+  if (env.startsWith('webpack')) {
+    plugins.push('babel-plugin-universal-import');
+  }
+
+  if (env.startsWith('node')) {
     presetEnv.modules = 'commonjs';
     presetEnv.targets = {
       node: 'current'
     };
     plugins.push(['babel-plugin-universal-import', { babelServer: true }]);
-  } else {
-    plugins.push('babel-plugin-universal-import');
   }
 
-  return {
-    presets: [['@babel/preset-env', presetEnv], ['@babel/preset-react']],
-    plugins
-  };
+  if (isProduction) {
+    presets.push(['babel-preset-minify', { builtIns: false }]);
+  }
+
+  return { presets, plugins };
 };
