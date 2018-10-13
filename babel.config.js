@@ -4,7 +4,6 @@ module.exports = api => {
 
   const presetEnv = {
     loose: true,
-    modules: false,
     shippedProposals: true,
     useBuiltIns: 'entry'
   };
@@ -25,6 +24,7 @@ module.exports = api => {
   ];
 
   if (env.startsWith('webpack')) {
+    presetEnv.modules = false;
     plugins.push('babel-plugin-universal-import');
   }
 
@@ -34,10 +34,6 @@ module.exports = api => {
       node: 'current'
     };
     plugins.push(['babel-plugin-universal-import', { babelServer: true }]);
-  }
-
-  if (isProduction) {
-    presets.push(['babel-preset-minify', { builtIns: false }]);
   }
 
   return { presets, plugins };
