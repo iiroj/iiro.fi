@@ -25,6 +25,6 @@ deploy:
   before_script:
     - npm i -g netlify-cli@^2
   script:
-    - netlify deploy -d build -f lambda --prod -m $CI_COMMIT_TITLE
+    - netlify deploy -d build -f lambda --prod -m "${CI_COMMIT_TITLE}"
   only:
     - master
