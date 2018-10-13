@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.6.0"></a>
+# [15.6.0](https://gitlab.com/iiroj/iiro.fi/compare/v15.5.0...v15.6.0) (2018-10-13)
+
+
+### Features
+
+* Reduce chunk number with MinChunkSizePlugin ([10387c1](https://gitlab.com/iiroj/iiro.fi/commit/10387c1))
+
+
+
 <a name="15.5.0"></a>
 # [15.5.0](https://gitlab.com/iiroj/iiro.fi/compare/v15.4.2...v15.5.0) (2018-10-02)
 
