@@ -57,14 +57,12 @@ const config = {
 
   plugins: [
     new CaseSensitivePathsPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(isProduction ? 'production' : 'development'),
         LAMBDA_BASE_URL: JSON.stringify(process.env.LAMBDA_BASE_URL)
       }
-    }),
-    new webpack.optimize.MinChunkSizePlugin({
-      minChunkSize: 25600
     }),
     new HtmlRendererWebpackPlugin({
       hotPath: /\/src\//,
@@ -77,18 +75,17 @@ const config = {
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
-        commons: {
+        client: {
           chunks: 'initial',
-          maxInitialRequests: 5,
-          minSize: 0,
-          minChunks: 2
+          minChunks: 2,
+          name: 'client'
         },
         vendor: {
-          test: /node_modules/,
           chunks: 'initial',
+          enforce: true,
           name: 'vendor',
           priority: 10,
-          enforce: true
+          test: /node_modules/
         }
       }
     }
@@ -113,11 +110,7 @@ if (isProduction) {
     })
   ];
 } else {
-  config.plugins.push(
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
-  );
+  config.plugins.push(new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin());
 }
 
 module.exports = config;
