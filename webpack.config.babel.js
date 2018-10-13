@@ -63,6 +63,9 @@ const config = {
         LAMBDA_BASE_URL: JSON.stringify(process.env.LAMBDA_BASE_URL)
       }
     }),
+    new webpack.optimize.MinChunkSizePlugin({
+      minChunkSize: 25600
+    }),
     new HtmlRendererWebpackPlugin({
       hotPath: /\/src\//,
       paths: Object.keys(routes),
