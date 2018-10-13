@@ -12,7 +12,6 @@ build:
     - npm run build
   only:
     - master
-    - tags
   artifacts:
     paths:
       - build/
@@ -26,6 +25,6 @@ deploy:
   before_script:
     - npm i -g netlify-cli@^2
   script:
-    - netlify deploy -d build -f lambda --prod -m $CI_COMMIT_TAG
+    - netlify deploy -d build -f lambda --prod -m $CI_COMMIT_TITLE
   only:
-    - tags
+    - master
