@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.6.5"></a>
+## [15.6.5](https://gitlab.com/iiroj/iiro.fi/compare/v15.6.4...v15.6.5) (2018-10-13)
+
+
+### Bug Fixes
+
+* MinChunkSizePlugin broke SSR ([116b11d](https://gitlab.com/iiroj/iiro.fi/commit/116b11d))
+
+
+
 <a name="15.6.4"></a>
 ## [15.6.4](https://gitlab.com/iiroj/iiro.fi/compare/v15.6.3...v15.6.4) (2018-10-13)
 
