@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.7.0"></a>
+# [15.7.0](https://gitlab.com/iiroj/iiro.fi/compare/v15.6.5...v15.7.0) (2018-10-13)
+
+
+### Features
+
+* Use babel-preset-minify instead of uglify-js ([a509362](https://gitlab.com/iiroj/iiro.fi/commit/a509362))
+
+
+
 <a name="15.6.5"></a>
 ## [15.6.5](https://gitlab.com/iiroj/iiro.fi/compare/v15.6.4...v15.6.5) (2018-10-13)
 
