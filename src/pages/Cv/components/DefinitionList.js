@@ -1,14 +1,14 @@
-import { css } from 'emotion';
-import React from 'react';
-import PropTypes from 'prop-types';
+import { css } from "emotion";
+import React from "react";
+import PropTypes from "prop-types";
 
 const definitionList = css({
   dt: {
-    float: 'left'
+    float: "left"
   },
 
   dd: {
-    paddingLeft: '30mm'
+    paddingLeft: "30mm"
   }
 });
 

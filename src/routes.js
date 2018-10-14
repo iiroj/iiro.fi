@@ -1,8 +1,8 @@
-export const NOT_FOUND = '404';
+export const NOT_FOUND = "NotFound";
 
 export default {
-  '/': 'Root',
-  '/cv': 'Cv',
-  '/portfolio': 'Portfolio',
-  '/404': NOT_FOUND
+  "/": "Root",
+  "/cv": "Cv",
+  "/portfolio": "Portfolio",
+  "/404": NOT_FOUND
 };

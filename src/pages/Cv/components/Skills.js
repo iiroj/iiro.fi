@@ -1,51 +1,51 @@
-import { css } from 'emotion';
-import React from 'react';
-import PropTypes from 'prop-types';
+import { css } from "emotion";
+import React from "react";
+import PropTypes from "prop-types";
 
 const container = css({
-  overflowX: 'auto',
-  padding: '0 2rem 1rem 2rem',
-  margin: '0 -2rem 1rem -2rem'
+  overflowX: "auto",
+  padding: "0 2rem 1rem 2rem",
+  margin: "0 -2rem 1rem -2rem"
 });
 
 const table = css({
-  borderCollapse: 'collapse',
+  borderCollapse: "collapse",
   fontSize: 12,
-  tableLayout: 'fixed',
-  width: '200%',
+  tableLayout: "fixed",
+  width: "200%",
 
-  '& + &': {
-    marginTop: '2rem'
+  "& + &": {
+    marginTop: "2rem"
   },
 
-  'th, td': {
-    padding: '0 2rem',
-    whiteSpace: 'nowrap',
+  "th, td": {
+    padding: "0 2rem",
+    whiteSpace: "nowrap",
 
-    '&:first-child': {
+    "&:first-child": {
       paddingLeft: 0
     },
 
-    '&:last-child': {
+    "&:last-child": {
       paddingRight: 0
     }
   },
 
-  '@media (min-width: 210mm)': {
-    width: '100%'
+  "@media (min-width: 210mm)": {
+    width: "100%"
   }
 });
 
 const thead = css({
-  fontSize: '1rem',
+  fontSize: "1rem",
   fontWeight: 600,
-  textAlign: 'left',
+  textAlign: "left",
 
   th: {
-    borderBottom: '1px solid hsl(0,0%,30%)',
-    verticalAlign: 'baseline',
+    borderBottom: "1px solid hsl(0,0%,30%)",
+    verticalAlign: "baseline",
 
-    '&:first-child': {
+    "&:first-child": {
       fontSize: 14
     }
   }

@@ -1,15 +1,15 @@
-import React from 'react';
-import { css } from 'emotion';
+import React from "react";
+import { css } from "emotion";
 
 const send = css({
-  fill: 'none',
-  height: '2rem',
-  display: 'block',
-  strokeLinecap: 'round',
-  strokeLinejoin: 'round',
+  fill: "none",
+  height: "2rem",
+  display: "block",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
   strokeWidth: 2,
-  stroke: 'hsl(0, 0%, 80%)',
-  width: '2rem'
+  stroke: "hsl(0, 0%, 80%)",
+  width: "2rem"
 });
 
 export default () => (

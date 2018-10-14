@@ -1,44 +1,47 @@
-import 'dotenv/config';
+import "dotenv/config";
 
-import path from 'path';
-import webpack from 'webpack';
-import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+import path from "path";
+import webpack from "webpack";
+import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
+import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import StatsPlugin from "stats-webpack-plugin";
 
-import routes from './src/routes';
-import renderer from './src/renderer';
+import routes from "./src/routes";
+import renderer from "./src/renderer";
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === "production";
 
 const config = {
   devServer: {
-    contentBase: path.join(__dirname, 'static'),
+    contentBase: path.join(__dirname, "static"),
     historyApiFallback: {
       disableDotRule: true,
-      index: '/404.html',
+      index: "/404.html",
       // Try paths with .html extensions before serving 404
-      rewrites: [{ from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + '.html' }]
+      rewrites: [
+        { from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + ".html" }
+      ]
     },
     hot: true,
     overlay: true,
     port: 3000
   },
 
-  mode: isProduction ? 'production' : 'development',
+  mode: isProduction ? "production" : "development",
 
-  devtool: isProduction ? 'nosources-source-map' : 'eval',
+  devtool: isProduction ? "nosources-source-map" : "eval",
 
   entry: {
-    client: path.resolve('./src/index.js')
+    client: path.resolve("./src/index.js")
   },
 
   output: {
-    chunkFilename: isProduction ? '[chunkhash:8].js' : '[name].js',
-    filename: isProduction ? '[chunkhash:8].js' : '[name].js',
-    path: path.resolve('./build'),
-    publicPath: '/'
+    chunkFilename: isProduction ? "[chunkhash:8].js" : "[name].js",
+    filename: isProduction ? "[chunkhash:8].js" : "[name].js",
+    path: path.resolve("./build"),
+    publicPath: "/"
   },
 
   module: {
@@ -46,9 +49,9 @@ const config = {
       {
         test: /\.js$/,
         use: {
-          loader: require.resolve('babel-loader'),
+          loader: require.resolve("babel-loader"),
           options: {
-            envName: isProduction ? 'webpack_production' : 'webpack_development'
+            envName: isProduction ? "webpack_production" : "webpack_development"
           }
         }
       }
@@ -59,8 +62,8 @@ const config = {
     new CaseSensitivePathsPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(isProduction ? 'production' : 'development'),
+      "process.env": {
+        NODE_ENV: JSON.stringify(isProduction ? "production" : "development"),
         LAMBDA_BASE_URL: JSON.stringify(process.env.LAMBDA_BASE_URL)
       }
     }),
@@ -72,18 +75,18 @@ const config = {
   ],
 
   optimization: {
-    runtimeChunk: 'single',
+    runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
         client: {
-          chunks: 'initial',
+          chunks: "initial",
           minChunks: 2,
-          name: 'client'
+          name: "client"
         },
         vendor: {
-          chunks: 'initial',
+          chunks: "initial",
           enforce: true,
-          name: 'vendor',
+          name: "vendor",
           priority: 10,
           test: /node_modules/
         }
@@ -93,9 +96,16 @@ const config = {
 };
 
 if (isProduction) {
-  config.plugins.push(new TerserPlugin({ sourceMap: true }), new CopyWebpackPlugin([{ from: 'static', to: '.' }]));
+  config.plugins.push(
+    new TerserPlugin({ sourceMap: true }),
+    new CopyWebpackPlugin([{ from: "static", to: "." }]),
+    new StatsPlugin("../stats.json", { chunkModules: true })
+  );
 } else {
-  config.plugins.push(new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin());
+  config.plugins.push(
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  );
 }
 
 module.exports = config;

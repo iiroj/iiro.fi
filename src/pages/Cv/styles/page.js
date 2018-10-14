@@ -1,63 +1,63 @@
-import { css } from 'emotion';
+import { css } from "emotion";
 
 export default css({
-  backgroundColor: 'white',
+  backgroundColor: "white",
   fontSize: 14,
-  lineHeight: '24px',
-  margin: '0 auto',
-  maxWidth: '210mm',
-  padding: '2rem',
-  position: 'relative',
+  lineHeight: "24px",
+  margin: "0 auto",
+  maxWidth: "210mm",
+  padding: "2rem",
+  position: "relative",
 
-  '& + &': {
-    marginTop: '2rem'
+  "& + &": {
+    marginTop: "2rem"
   },
 
-  '&::before': {
-    boxShadow: '0 1rem 30rem rgba(0, 0, 0, 0.2)',
+  "&::before": {
+    boxShadow: "0 1rem 30rem rgba(0, 0, 0, 0.2)",
     content: '""',
-    display: 'block',
-    height: '100%',
+    display: "block",
+    height: "100%",
     left: 0,
     top: 0,
-    width: '100%',
-    position: 'absolute',
+    width: "100%",
+    position: "absolute",
     zIndex: -1
   },
 
   h2: {
-    flex: '0 1 50mm',
+    flex: "0 1 50mm",
     fontSize: 16,
-    lineHeight: '24px',
-    marginBottom: '2rem'
+    lineHeight: "24px",
+    marginBottom: "2rem"
   },
 
   h3: {
     fontSize: 16,
-    lineHeight: '24px',
-    marginBottom: '1rem'
+    lineHeight: "24px",
+    marginBottom: "1rem"
   },
 
   a: {
-    backgroundImage: 'none',
-    boxShadow: 'inset 0 -1px 0 hsl(0,0%,30%)'
+    backgroundImage: "none",
+    boxShadow: "inset 0 -1px 0 hsl(0,0%,30%)"
   },
 
-  '@media (min-width: calc(210mm + 7rem))': {
-    height: '297mm',
-    padding: '2rem 4rem'
+  "@media (min-width: calc(210mm + 7rem))": {
+    height: "297mm",
+    padding: "2rem 4rem"
   },
 
-  '@media only print': {
-    height: '100vh',
-    margin: '0 !important',
-    padding: '2rem 4rem 0 4rem',
-    pageBreakAfter: 'always',
-    pageBreakBefore: 'always',
-    width: '100vw',
+  "@media only print": {
+    height: "100vh",
+    margin: "0 !important",
+    padding: "2rem 4rem 0 4rem",
+    pageBreakAfter: "always",
+    pageBreakBefore: "always",
+    width: "100vw",
 
-    '&::before': {
-      display: 'none'
+    "&::before": {
+      display: "none"
     }
   }
 });

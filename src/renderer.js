@@ -1,17 +1,17 @@
-import '@babel/polyfill';
+import "@babel/polyfill";
 
-import React from 'react';
-import { StaticRouter } from 'react-router';
-import { renderToString } from 'react-dom/server';
-import { extractCritical } from 'emotion-server';
-import Helmet from 'react-helmet';
-import { flushChunkNames } from 'react-universal-component/server';
-import flushChunks from 'webpack-flush-chunks';
-import { html } from 'common-tags';
-import { minify } from 'html-minifier';
+import React from "react";
+import { StaticRouter } from "react-router";
+import { renderToString } from "react-dom/server";
+import { extractCritical } from "emotion-server";
+import Helmet from "react-helmet";
+import { flushChunkNames } from "react-universal-component/server";
+import flushChunks from "webpack-flush-chunks";
+import { html } from "common-tags";
+import { minify } from "html-minifier";
 
 export default async ({ assets, filename, path, publicPath, stats }) => {
-  const App = require('./components/App').default;
+  const App = require("./components/App").default;
 
   const { css, html: app, ids } = extractCritical(
     renderToString(
@@ -24,8 +24,8 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
   const helmet = Helmet.renderStatic();
 
   const { scripts } = flushChunks(stats, {
-    before: ['runtime', 'vendor'],
-    after: ['client'],
+    before: ["runtime", "vendor"],
+    after: ["client"],
     chunkNames: flushChunkNames()
   });
 
@@ -46,7 +46,10 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
         ${helmet.link.toString()}
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <style>${css}</style>
-        ${scripts.map(src => `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`)}
+        ${scripts.map(
+          src =>
+            `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
+        )}
         <script id="emotion-ids">${JSON.stringify(ids)}</script>
       </head>
       <body ${helmet.bodyAttributes.toString()}>

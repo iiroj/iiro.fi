@@ -1,20 +1,22 @@
 module.exports = api => {
   const env = api.env();
-  const isProduction = env.endsWith('production');
+  const isProduction = env.endsWith("production");
 
   const presetEnv = {
     loose: true,
     shippedProposals: true,
-    useBuiltIns: 'entry'
+    useBuiltIns: "entry"
   };
 
-  const presets = [['@babel/preset-env', presetEnv], ['@babel/preset-react']];
+  const presets = [["@babel/preset-env", presetEnv], "@babel/preset-react"];
 
   const plugins = [
-    ['@babel/plugin-syntax-dynamic-import'],
-    ['@babel/plugin-proposal-class-properties'],
+    ["@babel/plugin-proposal-export-namespace-from"],
+    ["@babel/plugin-proposal-class-properties"],
+    ["@babel/plugin-syntax-dynamic-import"],
+    ["babel-plugin-transform-export-default-name"],
     [
-      'babel-plugin-emotion',
+      "babel-plugin-emotion",
       {
         autoLabel: !isProduction,
         hoist: isProduction,
@@ -23,17 +25,17 @@ module.exports = api => {
     ]
   ];
 
-  if (env.startsWith('webpack')) {
+  if (env.startsWith("webpack")) {
     presetEnv.modules = false;
-    plugins.push('babel-plugin-universal-import');
+    plugins.push("babel-plugin-universal-import");
   }
 
-  if (env.startsWith('node')) {
-    presetEnv.modules = 'commonjs';
+  if (env.startsWith("node")) {
+    presetEnv.modules = "commonjs";
     presetEnv.targets = {
-      node: 'current'
+      node: "current"
     };
-    plugins.push(['babel-plugin-universal-import', { babelServer: true }]);
+    plugins.push(["babel-plugin-universal-import", { babelServer: true }]);
   }
 
   return { presets, plugins };

@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { withRouter } from 'react-router';
+import PropTypes from "prop-types";
+import React from "react";
+import { withRouter } from "react-router";
 
-import routes, { NOT_FOUND } from '../routes';
-import Layout from './Layout';
-import Loading from './Loading';
-import { MessageProvider } from '../services/chat';
-import UniversalComponent from './UniversalComponent';
+import routes, { NOT_FOUND } from "../routes";
+import Layout from "./Layout";
+import Loading from "./Loading";
+import { MessageProvider } from "../services/chat";
+import UniversalComponent from "./UniversalComponent";
 
 class App extends React.Component {
   static propTypes = {
@@ -17,13 +17,15 @@ class App extends React.Component {
 
   static getDerivedStateFromProps({ location }, state) {
     const page = routes[location.pathname] || NOT_FOUND;
-    return page === state.page ? null : { page: routes[location.pathname] || NOT_FOUND };
+    return page === state.page
+      ? null
+      : { page: routes[location.pathname] || NOT_FOUND };
   }
 
   state = {
     loading: false,
     messages: [],
-    page: routes['/']
+    page: routes["/"]
   };
 
   setLoading = () => {
@@ -32,7 +34,7 @@ class App extends React.Component {
 
   setNotLoading = () => {
     this.setState({ loading: false });
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
     }
   };

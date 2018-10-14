@@ -1,29 +1,33 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from "react";
+import Helmet from "react-helmet";
 
-import { MessageConsumer } from '../../services/chat';
+import { MessageConsumer } from "../../services/chat";
 
-import Chat from './components/Chat';
+import Chat from "./components/Chat";
 
 const microdata = JSON.stringify({
-  '@context': 'http://schema.org',
-  '@type': 'Person',
-  name: 'Iiro Jäppinen',
-  jobTitle: 'Designer',
+  "@context": "http://schema.org",
+  "@type": "Person",
+  name: "Iiro Jäppinen",
+  jobTitle: "Designer",
   worksFor: {
-    '@type': 'Organization',
-    name: 'Fraktio',
-    url: 'https://fraktio.fi'
+    "@type": "Organization",
+    name: "Fraktio",
+    url: "https://fraktio.fi"
   },
-  url: 'https://iiro.fi/',
-  email: 'iiro@jappinen.fi',
-  nationality: 'Finland',
+  url: "https://iiro.fi/",
+  email: "iiro@jappinen.fi",
+  nationality: "Finland",
   address: {
-    '@type': 'PostalAddress',
-    addressCountry: 'Finland',
-    addressLocality: 'Helsinki'
+    "@type": "PostalAddress",
+    addressCountry: "Finland",
+    addressLocality: "Helsinki"
   },
-  sameAs: ['https://twitter.com/iirojappinen', 'https://fi.linkedin.com/in/iiroj', 'https://github.com/iiroj']
+  sameAs: [
+    "https://twitter.com/iirojappinen",
+    "https://fi.linkedin.com/in/iiroj",
+    "https://github.com/iiroj"
+  ]
 });
 
 const Root = () => (

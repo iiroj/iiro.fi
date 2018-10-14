@@ -1,24 +1,24 @@
-import { css } from 'emotion';
-import React from 'react';
-import PropTypes from 'prop-types';
+import { css } from "emotion";
+import React from "react";
+import PropTypes from "prop-types";
 
-import Fraktio from '../../../components/Fraktio/Logo';
+import Fraktio from "../../../components/Fraktio/Logo";
 
 const heading = css({
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'space-between',
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
 
   svg: {
     flexShrink: 0,
-    marginBottom: '1rem',
-    marginRight: '1rem'
+    marginBottom: "1rem",
+    marginRight: "1rem"
   },
 
   span: {
-    fontSize: '1.2rem',
+    fontSize: "1.2rem",
     fontWeight: 600,
-    marginBottom: '2rem',
+    marginBottom: "2rem",
     marginTop: -4
   }
 });

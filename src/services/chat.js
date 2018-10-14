@@ -1,12 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import baskerville from '../styles/baskerville';
-import Link from '../components/Link';
-import Emoji from '../components/Emoji';
+import baskerville from "../styles/baskerville";
+import Link from "../components/Link";
+import Emoji from "../components/Emoji";
 
-import Fraktio from '../components/Fraktio';
-import { Cv, Email, GitHub, Linkedin, Npm, Portfolio, Telegram, Twitter } from '../components/icons';
+import Fraktio from "../components/Fraktio";
+import {
+  Cv,
+  Email,
+  GitHub,
+  Linkedin,
+  Npm,
+  Portfolio,
+  Telegram,
+  Twitter
+} from "../components/icons";
 
 const messages = [
   <p key="1">
@@ -21,70 +30,71 @@ const messages = [
     I work at <Fraktio />
   </p>,
   <p key="6">
-    There I help people realise their ideas, design useful experiences and create beautiful interfaces and interactions.
+    There I help people realise their ideas, design useful experiences and
+    create beautiful interfaces and interactions.
   </p>,
   <p key="7">
-    You should email me at{' '}
+    You should email me at{" "}
     <Link to="mailto:hello@iiro.fi">
       <Emoji label="Email">
         <Email />
-      </Emoji>{' '}
+      </Emoji>{" "}
       hello@iiro.fi
     </Link>
-    , or send a tweet to{' '}
+    , or send a tweet to{" "}
     <Link to="https://twitter.com/iirojappinen">
       <Emoji label="Twitter">
         <Twitter />
-      </Emoji>{' '}
+      </Emoji>{" "}
       @iirojappinen
     </Link>
   </p>,
   <p key="8">
-    I also have a{' '}
+    I also have a{" "}
     <Link to="/cv">
       <Emoji label="CV">
         <Cv />
-      </Emoji>{' '}
+      </Emoji>{" "}
       CV
     </Link>
-    ,{' '}
+    ,{" "}
     <Link to="/portfolio">
       <Emoji label="Portfolio">
         <Portfolio />
-      </Emoji>{' '}
+      </Emoji>{" "}
       Portfolio
-    </Link>{' '}
-    and a{' '}
+    </Link>{" "}
+    and a{" "}
     <Link to="https://fi.linkedin.com/in/iiroj">
       <Emoji label="Linkedin">
         <Linkedin />
-      </Emoji>{' '}
+      </Emoji>{" "}
       LinkedIn
-    </Link>{' '}
+    </Link>{" "}
     profile.
   </p>,
   <p key="9">
-    Check out my{' '}
+    Check out my{" "}
     <Link to="https://github.com/iiroj">
       <Emoji label="GitHub">
         <GitHub />
-      </Emoji>{' '}
+      </Emoji>{" "}
       GitHub
-    </Link>{' '}
-    and{' '}
+    </Link>{" "}
+    and{" "}
     <Link to="https://www.npmjs.com/~iiroj">
       <Emoji label="npmn">
         <Npm />
-      </Emoji>{' '}
+      </Emoji>{" "}
       npm
-    </Link>{' '}
+    </Link>{" "}
     for my open source work.
   </p>,
   <p key="10">
-    Finally, feel free to send me a{' '}
+    Finally, feel free to send me a{" "}
     <Emoji label="Telegram">
       <Telegram />
-    </Emoji>{' '}
+    </Emoji>{" "}
     message from below. Have a nice day!
   </p>
 ];
@@ -97,11 +107,13 @@ const sentFeedbackMessage = (
 
 const noScriptMessage = (
   <p key="noscript">
-    <Emoji label="Warning">⚠️</Emoji> Uh-oh! It seems you don’t have Javascript enabled.
+    <Emoji label="Warning">⚠️</Emoji> Uh-oh! It seems you don’t have Javascript
+    enabled.
   </p>
 );
 
-const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+const randomIntFromInterval = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
 const waitFor = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 function* messageGenerator(i = 0) {
@@ -133,7 +145,10 @@ export class MessageProvider extends React.PureComponent {
         await waitFor(randomIntFromInterval(10, 20) * 100);
         if (!this.state.ready) {
           const message = generateMessage.next().value;
-          this.setState({ messages: this.state.messages.concat(message), typing: false }, resolve);
+          this.setState(
+            { messages: this.state.messages.concat(message), typing: false },
+            resolve
+          );
         } else {
           resolve();
         }
@@ -149,7 +164,10 @@ export class MessageProvider extends React.PureComponent {
 
   handleStart = () => {
     if (!this.state.started) {
-      this.setState({ messages: [], ready: false, started: true }, this.generator);
+      this.setState(
+        { messages: [], ready: false, started: true },
+        this.generator
+      );
     }
   };
 

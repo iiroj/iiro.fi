@@ -1,1 +1,1 @@
-export { default } from './VerkkokauppaCom';
+export { default } from "./VerkkokauppaCom";

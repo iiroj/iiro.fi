@@ -1,64 +1,64 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { css } from 'emotion';
+import React from "react";
+import { Link } from "react-router-dom";
+import { css } from "emotion";
 
 const back = css({
-  background: 'none !important',
-  color: 'transparent',
-  cursor: 'pointer',
+  background: "none !important",
+  color: "transparent",
+  cursor: "pointer",
   fontSize: 0,
-  height: '1.5rem',
+  height: "1.5rem",
   left: 0,
-  margin: '2.4rem 0 0 1rem',
-  overflow: 'hidden',
-  position: 'absolute',
+  margin: "2.4rem 0 0 1rem",
+  overflow: "hidden",
+  position: "absolute",
   top: 0,
-  userSelect: 'none',
-  width: '1.5rem',
+  userSelect: "none",
+  width: "1.5rem",
   zIndex: 10,
 
-  '&::before, &::after': {
-    backgroundColor: 'rgb(77, 77, 77)',
+  "&::before, &::after": {
+    backgroundColor: "rgb(77, 77, 77)",
     borderRadius: 1,
     content: '""',
-    display: 'block',
+    display: "block",
     height: 2,
     marginTop: -1,
-    position: 'absolute',
-    top: '50%',
-    width: '100%',
+    position: "absolute",
+    top: "50%",
+    width: "100%",
     zIndex: -1,
-    transition: 'transform 125ms ease'
+    transition: "transform 125ms ease"
   },
 
-  '&::before': {
-    transform: 'rotate(45deg)'
+  "&::before": {
+    transform: "rotate(45deg)"
   },
 
-  '&::after': {
-    transform: 'rotate(-45deg)'
+  "&::after": {
+    transform: "rotate(-45deg)"
   },
 
-  '&:hover': {
-    '&::before': {
-      transform: 'rotate(45deg) scale(1.2)'
+  "&:hover": {
+    "&::before": {
+      transform: "rotate(45deg) scale(1.2)"
     },
-    '&::after': {
-      transform: 'rotate(-45deg) scale(1.2)'
+    "&::after": {
+      transform: "rotate(-45deg) scale(1.2)"
     }
   },
 
-  '&:active': {
-    '&::before': {
-      transform: 'rotate(45deg) scale(1)'
+  "&:active": {
+    "&::before": {
+      transform: "rotate(45deg) scale(1)"
     },
-    '&::after': {
-      transform: 'rotate(-45deg) scale(1)'
+    "&::after": {
+      transform: "rotate(-45deg) scale(1)"
     }
   },
 
-  '@media print': {
-    display: 'none'
+  "@media print": {
+    display: "none"
   }
 });
 

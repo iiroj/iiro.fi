@@ -1,66 +1,66 @@
-import React from 'react';
-import { css } from 'emotion';
+import React from "react";
+import { css } from "emotion";
 
-import { link } from '../../styles';
+import { link } from "../../styles";
 
 const headerStyles = css({
-  alignItems: 'center',
-  backgroundColor: '#e30613',
-  color: 'white',
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  flex: '0 0 320px',
-  justifyContent: 'center',
-  marginBottom: '10rem',
-  position: 'relative',
-  textShadow: '0 1px 4px rgba(0, 0, 0, 0.2)',
+  alignItems: "center",
+  backgroundColor: "#e30613",
+  color: "white",
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  flex: "0 0 320px",
+  justifyContent: "center",
+  marginBottom: "10rem",
+  position: "relative",
+  textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)",
 
-  '&::before, &::after': {
-    backgroundColor: '#e30613',
+  "&::before, &::after": {
+    backgroundColor: "#e30613",
     content: '""',
-    display: 'block',
-    height: '50%',
+    display: "block",
+    height: "50%",
     left: 0,
-    position: 'absolute',
+    position: "absolute",
     right: 0,
     zIndex: -1
   },
 
-  '&::before': {
+  "&::before": {
     top: 0,
-    transformOrigin: '0%',
-    transform: 'skewY(-2deg)'
+    transformOrigin: "0%",
+    transform: "skewY(-2deg)"
   },
 
-  '&::after': {
+  "&::after": {
     bottom: 0,
-    transformOrigin: '100%',
-    transform: 'skewY(-2deg)'
+    transformOrigin: "100%",
+    transform: "skewY(-2deg)"
   }
 });
 
 const textStyles = css({
-  margin: '4rem',
+  margin: "4rem",
   maxWidth: 480
 });
 
 const phoneContainerStyles = css({
   height: 480,
-  margin: '0 4rem',
+  margin: "0 4rem",
   width: 303,
-  position: 'relative'
+  position: "relative"
 });
 
 const phoneStyles = css({
   width: 303,
-  display: 'block'
+  display: "block"
 });
 
 const screenStyles = css({
-  display: 'block',
+  display: "block",
   width: 270,
-  position: 'absolute',
+  position: "absolute",
   top: 63,
   left: 15
 });
@@ -70,10 +70,15 @@ export const Header = () => (
     <div className={textStyles}>
       <h1>Verkko&shy;kauppa.com</h1>
       <p>
-        UX/UI designer from November 2014 until April 2017. As the resident web designer, I oversaw the visual direction
-        of Verkkokauppa.com’s website.
+        UX/UI designer from November 2014 until April 2017. As the resident web
+        designer, I oversaw the visual direction of Verkkokauppa.com’s website.
       </p>
-      <a className={link} href="https://www.verkkokauppa.com/" target="_blank" rel="noopener noreferrer">
+      <a
+        className={link}
+        href="https://www.verkkokauppa.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Visit Verkkokauppa.com
       </a>
     </div>

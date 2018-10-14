@@ -1,5 +1,5 @@
-import universal from 'react-universal-component';
-import PropTypes from 'prop-types';
+import universal from "react-universal-component";
+import PropTypes from "prop-types";
 
 const options = {
   alwaysDelay: true,

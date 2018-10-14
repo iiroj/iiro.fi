@@ -1,1 +1,1 @@
-export { default } from './FraktioLink';
+export { default } from "./FraktioLink";

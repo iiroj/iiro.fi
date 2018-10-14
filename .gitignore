@@ -3,3 +3,4 @@ build
 lambda
 node_modules
 sketch
+stats.json

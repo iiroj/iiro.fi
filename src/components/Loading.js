@@ -1,30 +1,30 @@
-import posed, { PoseGroup } from 'react-pose';
-import React from 'react';
-import PropTypes from 'prop-types';
+import posed, { PoseGroup } from "react-pose";
+import React from "react";
+import PropTypes from "prop-types";
 
 const pBaseStyles = {
-  backgroundColor: 'hsl(44, 100%, 75%)',
-  cursor: 'wait',
-  height: '200vmax',
-  left: '50%',
-  position: 'fixed',
-  top: '50%',
-  transformOrigin: 'center center',
-  width: '200vmax'
+  backgroundColor: "hsl(44, 100%, 75%)",
+  cursor: "wait",
+  height: "200vmax",
+  left: "50%",
+  position: "fixed",
+  top: "50%",
+  transformOrigin: "center center",
+  width: "200vmax"
 };
 
 const P = posed.div({
-  from: { transform: 'translate(20%, 20%) rotate(45deg)', ...pBaseStyles },
-  enter: { transform: 'translate(-50%, -50%) rotate(45deg)', ...pBaseStyles },
-  exit: { transform: 'translate(-100%, -100%) rotate(45deg)', ...pBaseStyles }
+  from: { transform: "translate(20%, 20%) rotate(45deg)", ...pBaseStyles },
+  enter: { transform: "translate(-50%, -50%) rotate(45deg)", ...pBaseStyles },
+  exit: { transform: "translate(-100%, -100%) rotate(45deg)", ...pBaseStyles }
 });
 
 const containerBaseStyles = {
-  height: '100%',
+  height: "100%",
   left: 0,
-  position: 'fixed',
+  position: "fixed",
   top: 0,
-  width: '100%',
+  width: "100%",
   zIndex: 100
 };
 

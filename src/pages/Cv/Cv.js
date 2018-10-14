@@ -1,13 +1,19 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from "react";
+import Helmet from "react-helmet";
 
-import Back from '../../components/Back';
-import Link from '../../components/Link';
-import Picture from '../../components/Picture';
-import baskerville from '../../styles/baskerville';
+import Back from "../../components/Back";
+import Link from "../../components/Link";
+import Picture from "../../components/Picture";
+import baskerville from "../../styles/baskerville";
 
-import { container, page, projects, section } from './styles';
-import { DefinitionList, Heading, Header, SelfAssesments, Skills } from './components';
+import { container, page, projects, section } from "./styles";
+import {
+  DefinitionList,
+  Heading,
+  Header,
+  SelfAssesments,
+  Skills
+} from "./components";
 
 const Cv = () => (
   <>
@@ -23,9 +29,10 @@ const Cv = () => (
 
         <Header name="Iiro Jäppinen" picture={<Picture />}>
           <p>
-            I’m a UX <span className={baskerville}>&</span> UI designer, and a front-end developer with a passion for
-            precise pixels and accessible interfaces. I aim to create real solutions to actual problems with a design
-            that stands on its own but doesn’t need introduction.
+            I’m a UX <span className={baskerville}>&</span> UI designer, and a
+            front-end developer with a passion for precise pixels and accessible
+            interfaces. I aim to create real solutions to actual problems with a
+            design that stands on its own but doesn’t need introduction.
           </p>
         </Header>
 
@@ -33,8 +40,10 @@ const Cv = () => (
           <h2>Basic Info</h2>
           <div>
             <p>
-              4 Years of professional design experience with another 4 years of freelancer design experience. Two years
-              of front-end development experience. Studied Mathematics and Genetics at the University of Helsinki.
+              4 Years of professional design experience with another 4 years of
+              freelancer design experience. Two years of front-end development
+              experience. Studied Mathematics and Genetics at the University of
+              Helsinki.
             </p>
           </div>
         </section>
@@ -45,16 +54,17 @@ const Cv = () => (
             <DefinitionList>
               {[
                 {
-                  title: 'English',
+                  title: "English",
                   definition: (
                     <>
-                      Excellent (spoken <span className={baskerville}>&</span> written)
+                      Excellent (spoken <span className={baskerville}>&</span>{" "}
+                      written)
                     </>
                   )
                 },
                 {
-                  title: 'Finnish',
-                  definition: 'Native'
+                  title: "Finnish",
+                  definition: "Native"
                 }
               ]}
             </DefinitionList>
@@ -69,15 +79,19 @@ const Cv = () => (
                 <strong>Bachelor of Science</strong>
                 <em> (Did not graduate)</em>
                 <p>
-                  University of Helsinki, <time dateTime="2009-09">Sep 2009–</time>
+                  University of Helsinki,{" "}
+                  <time dateTime="2009-09">Sep 2009–</time>
                 </p>
-                <p>Thesis subject: Studying Evolution in the Snowdrift Game With Adaptive Dynamics</p>
+                <p>
+                  Thesis subject: Studying Evolution in the Snowdrift Game With
+                  Adaptive Dynamics
+                </p>
                 <p>197 credits in Biomathematics; minor in Genetics</p>
               </li>
               <li>
                 <strong>Matriculation</strong>
                 <p>
-                  Helsinki Upper Secondary School of Visual Arts,{' '}
+                  Helsinki Upper Secondary School of Visual Arts,{" "}
                   <time dateTime="2006-09/2009-06">Aug 2006 – Jun 2009</time>
                 </p>
               </li>
@@ -97,8 +111,8 @@ const Cv = () => (
                   Helsinki, <time dateTime="2017">2017–</time>
                 </p>
                 <p>
-                  Design, Front-End Development, Project Management and Customer Relations for various clients both
-                  on-site and remote.
+                  Design, Front-End Development, Project Management and Customer
+                  Relations for various clients both on-site and remote.
                 </p>
               </li>
 
@@ -113,8 +127,10 @@ const Cv = () => (
                   Helsinki, <time dateTime="2014/2017">2014–2017</time>
                 </p>
                 <p>
-                  In-house design and project management for a large corporation. Main responsibilities included
-                  application interface, process and workflow design for both internal and public use.
+                  In-house design and project management for a large
+                  corporation. Main responsibilities included application
+                  interface, process and workflow design for both internal and
+                  public use.
                 </p>
               </li>
 
@@ -128,7 +144,10 @@ const Cv = () => (
                 <p>
                   San Francisco, <time dateTime="2014/2017">2011–2014</time>
                 </p>
-                <p>Remote freelance website and brand design. Later, on-site lead of design on H1B visa.</p>
+                <p>
+                  Remote freelance website and brand design. Later, on-site lead
+                  of design on H1B visa.
+                </p>
               </li>
             </ul>
           </div>
@@ -144,109 +163,110 @@ const Cv = () => (
             <Skills>
               {[
                 {
-                  title: 'Design',
+                  title: "Design",
                   data: [
                     {
-                      title: 'User Experience',
-                      assesment: 'Expert',
-                      used: 'Constantly',
+                      title: "User Experience",
+                      assesment: "Expert",
+                      used: "Constantly",
                       years: 8
                     },
                     {
-                      title: 'User Interface',
-                      assesment: 'Expert',
-                      used: 'Constantly',
+                      title: "User Interface",
+                      assesment: "Expert",
+                      used: "Constantly",
                       years: 8
                     },
                     {
-                      title: 'Logo and Identity',
-                      assesment: 'Senior',
-                      used: 'Constantly',
+                      title: "Logo and Identity",
+                      assesment: "Senior",
+                      used: "Constantly",
                       years: 8
                     },
                     {
-                      title: 'Prototyping',
-                      assesment: 'Senior',
-                      used: 'Constantly',
+                      title: "Prototyping",
+                      assesment: "Senior",
+                      used: "Constantly",
                       years: 5
                     },
                     {
-                      title: 'A/B Testing',
-                      assesment: 'Professional',
-                      used: '2016',
+                      title: "A/B Testing",
+                      assesment: "Professional",
+                      used: "2016",
                       years: 3
                     }
                   ]
                 },
                 {
-                  title: 'Languages',
+                  title: "Languages",
                   data: [
                     {
-                      title: 'ECMAScript',
-                      assesment: 'Professional',
-                      used: 'Constantly',
+                      title: "ECMAScript",
+                      assesment: "Professional",
+                      used: "Constantly",
                       years: 3
                     },
                     {
-                      title: 'TypeScript',
-                      assesment: 'Professional',
-                      used: 'Constantly',
+                      title: "TypeScript",
+                      assesment: "Professional",
+                      used: "Constantly",
                       years: 1
                     }
                   ]
                 },
                 {
-                  title: 'Frameworks',
+                  title: "Frameworks",
                   data: [
                     {
-                      title: 'React',
-                      assesment: 'Senior',
-                      used: 'Constantly',
+                      title: "React",
+                      assesment: "Senior",
+                      used: "Constantly",
                       years: 3
                     },
                     {
-                      title: 'CSS-in-JS (styling)',
-                      assesment: 'Senior',
-                      used: 'Constantly',
+                      title: "CSS-in-JS (styling)",
+                      assesment: "Senior",
+                      used: "Constantly",
                       years: 2
                     },
                     {
                       title: (
                         <>
-                          Redux <span className={baskerville}>&</span> redux-saga
+                          Redux <span className={baskerville}>&</span>{" "}
+                          redux-saga
                         </>
                       ),
-                      assesment: 'Professional',
-                      used: 'Constantly',
+                      assesment: "Professional",
+                      used: "Constantly",
                       years: 1
                     }
                   ]
                 },
                 {
-                  title: 'Deployment',
+                  title: "Deployment",
                   data: [
                     {
-                      title: 'Docker',
-                      assesment: 'Professional',
-                      used: 'Constantly',
+                      title: "Docker",
+                      assesment: "Professional",
+                      used: "Constantly",
                       years: 2
                     },
                     {
-                      title: 'AWS',
-                      assesment: 'Professional',
-                      used: 'Constantly',
+                      title: "AWS",
+                      assesment: "Professional",
+                      used: "Constantly",
                       years: 2
                     },
                     {
-                      title: 'Heroku',
-                      assesment: 'Professional',
-                      used: 'Constantly',
+                      title: "Heroku",
+                      assesment: "Professional",
+                      used: "Constantly",
                       years: 1
                     },
                     {
-                      title: 'Google Cloud',
-                      assesment: 'Professional',
-                      used: 'Constantly',
+                      title: "Google Cloud",
+                      assesment: "Professional",
+                      used: "Constantly",
                       years: 1
                     }
                   ]
@@ -267,7 +287,8 @@ const Cv = () => (
                 </p>
                 <p>
                   <em>
-                    Valid <time dateTime="2016-06/2018-06">Jun 2016 – Jun 2018</time>
+                    Valid{" "}
+                    <time dateTime="2016-06/2018-06">Jun 2016 – Jun 2018</time>
                   </em>
                 </p>
               </li>
@@ -277,7 +298,8 @@ const Cv = () => (
                 </p>
                 <p>
                   <em>
-                    Valid <time dateTime="2016-03/2018-03">Mar 2016 – Mar 2018</time>
+                    Valid{" "}
+                    <time dateTime="2016-03/2018-03">Mar 2016 – Mar 2018</time>
                   </em>
                 </p>
               </li>
@@ -296,23 +318,29 @@ const Cv = () => (
               <li>
                 <h3>Pihlajalinna Digital Services</h3>
                 <p>
-                  Pihlajalinna is a large private and occupational health care provider. I configured Analytics,
-                  designed web pages and internal tools, and developed them in an agile team consisting of Pihlajalinna
-                  employees and other consultants.
+                  Pihlajalinna is a large private and occupational health care
+                  provider. I configured Analytics, designed web pages and
+                  internal tools, and developed them in an agile team consisting
+                  of Pihlajalinna employees and other consultants.
                 </p>
                 <DefinitionList>
                   {[
                     {
-                      title: 'Keywords',
-                      definition: 'Sketch, Abstract, React, Typescript, Redux, Heroku, Docker'
+                      title: "Keywords",
+                      definition:
+                        "Sketch, Abstract, React, Typescript, Redux, Heroku, Docker"
                     },
                     {
-                      title: 'Date',
-                      definition: <time dateTime="2017-10/2018-08">Oct 2017 — Aug 2018</time>
+                      title: "Date",
+                      definition: (
+                        <time dateTime="2017-10/2018-08">
+                          Oct 2017 — Aug 2018
+                        </time>
+                      )
                     },
                     {
-                      title: 'Team size',
-                      definition: '6–8'
+                      title: "Team size",
+                      definition: "6–8"
                     }
                   ]}
                 </DefinitionList>
@@ -320,22 +348,28 @@ const Cv = () => (
               <li>
                 <h3>Brainstorming Tool and Software for Fountain Park</h3>
                 <p>
-                  Fountain Park creates tools for organizations to better define and reach their goals. I designed and
-                  developed a new version of the brainstorming tool and its accompanying admin panel and editor.
+                  Fountain Park creates tools for organizations to better define
+                  and reach their goals. I designed and developed a new version
+                  of the brainstorming tool and its accompanying admin panel and
+                  editor.
                 </p>
                 <DefinitionList>
                   {[
                     {
-                      title: 'Keywords',
-                      definition: 'Sketch, React, Redux, Heroku'
+                      title: "Keywords",
+                      definition: "Sketch, React, Redux, Heroku"
                     },
                     {
-                      title: 'Date',
-                      definition: <time dateTime="2017-10/2018-08">Jul 2017 — Sep 2017</time>
+                      title: "Date",
+                      definition: (
+                        <time dateTime="2017-10/2018-08">
+                          Jul 2017 — Sep 2017
+                        </time>
+                      )
                     },
                     {
-                      title: 'Team size',
-                      definition: '2'
+                      title: "Team size",
+                      definition: "2"
                     }
                   ]}
                 </DefinitionList>
@@ -343,30 +377,31 @@ const Cv = () => (
               <li>
                 <h3>Verkkokauppa.com Investors Portal</h3>
                 <p>
-                  Verkkokauppa.com is the largest online retailer in Finland. I designed the{' '}
+                  Verkkokauppa.com is the largest online retailer in Finland. I
+                  designed the{" "}
                   <Link
                     to="https://www.kauppalehti.fi/lehdistotiedotteet/verkkokauppacomin-sijoittajasivut-palkittiin-vuoden-2018-parhaina/LPuge6z7"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     award-winning
-                  </Link>{' '}
-                  Investors Portal with the goal of offering easily accessible information and news about the
-                  corporation.
+                  </Link>{" "}
+                  Investors Portal with the goal of offering easily accessible
+                  information and news about the corporation.
                 </p>
                 <DefinitionList>
                   {[
                     {
-                      title: 'Keywords',
-                      definition: 'Sketch, React'
+                      title: "Keywords",
+                      definition: "Sketch, React"
                     },
                     {
-                      title: 'Date',
+                      title: "Date",
                       definition: <time dateTime="2017">2017</time>
                     },
                     {
-                      title: 'Team size',
-                      definition: '3'
+                      title: "Team size",
+                      definition: "3"
                     }
                   ]}
                 </DefinitionList>

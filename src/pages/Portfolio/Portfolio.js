@@ -1,10 +1,10 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from "react";
+import Helmet from "react-helmet";
 
-import Back from '../../components/Back';
+import Back from "../../components/Back";
 
-import { HumbleBundle, Icons, VerkkokauppaCom } from './components';
-import { aside, header } from './styles';
+import { HumbleBundle, Icons, VerkkokauppaCom } from "./components";
+import { aside, header } from "./styles";
 
 const Portfolio = () => (
   <>
