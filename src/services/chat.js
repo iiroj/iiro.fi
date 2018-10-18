@@ -41,7 +41,7 @@ const messages = [
       </Emoji>{" "}
       hello@iiro.fi
     </Link>
-    , or send a tweet to{" "}
+    or send a tweet to{" "}
     <Link to="https://twitter.com/iirojappinen">
       <Emoji label="Twitter">
         <Twitter />
