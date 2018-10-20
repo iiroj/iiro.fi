@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.8.6"></a>
+## [15.8.6](https://gitlab.com/iiroj/iiro.fi/compare/v15.8.5...v15.8.6) (2018-10-20)
+
+
+### Bug Fixes
+
+* **telegram:** parse text body ([1e7e4dc](https://gitlab.com/iiroj/iiro.fi/commit/1e7e4dc))
+
+
+
 <a name="15.8.5"></a>
 ## [15.8.5](https://gitlab.com/iiroj/iiro.fi/compare/v15.8.4...v15.8.5) (2018-10-20)
 
