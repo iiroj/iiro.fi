@@ -1,48 +1,54 @@
-if (process.env.NODE_ENV === 'production') {
-  require('dotenv/config');
+/* eslint no-console: 0 */
+
+if (process.env.NODE_ENV === "production") {
+  require("dotenv/config");
 }
 
-const requestPromise = require('minimal-request-promise');
+const requestPromise = require("minimal-request-promise");
 
 const chat_id = process.env.TELEGRAM_CHAT_ID;
-const url = `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`;
+const url = `https://api.telegram.org/bot${
+  process.env.TELEGRAM_TOKEN
+}/sendMessage`;
 const headers = {
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Origin': process.env.LAMBDA_CORS
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Origin": process.env.LAMBDA_CORS
 };
 
 exports.handler = (event, context, callback) => {
-  if (event.httpMethod === 'OPTIONS') {
+  const { body, httpMethod } = event;
+
+  if (httpMethod === "OPTIONS") {
     return callback(null, {
       statusCode: 200,
-      body: '',
+      body: "",
       headers: {
         ...headers,
-        Allow: 'OPTIONS, POST'
+        Allow: "OPTIONS, POST"
       }
     });
   }
 
-  if (event.httpMethod !== 'POST') {
-    console.log(`Incorrect HTTP method ${event.httpMethod}`);
+  if (httpMethod !== "POST") {
+    console.error(`Incorrect HTTP method ${httpMethod}`);
 
     return callback(null, {
       statusCode: 405,
-      body: ''
+      body: ""
     });
   }
 
-  console.log('Posting to Telegram');
+  console.log("Posting to Telegram");
 
   requestPromise
     .post(url, {
       headers: {
-        'Content-type': 'application/json'
+        "Content-type": "application/json"
       },
       body: JSON.stringify({
         chat_id,
-        text: JSON.parse(event.body).text,
-        parse_mode: 'Markdown'
+        text: body,
+        parse_mode: "Markdown"
       })
     })
     .then(() => {
@@ -50,8 +56,8 @@ exports.handler = (event, context, callback) => {
       return callback(null, { statusCode: 204, headers });
     })
     .catch(response => {
-      const { description, error_code } = response.data;
-      console.log(`Telegram: ${error_code} — ${description}`);
+      const { description, error_code } = response.body;
+      console.error(`Telegram: ${error_code} — ${description}`);
       return callback(null, { statusCode: 500, headers });
     });
 };
