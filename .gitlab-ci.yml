@@ -19,7 +19,6 @@ build:
   artifacts:
     paths:
       - build/
-      - lambda/
 
 deploy:
   stage: deploy
@@ -27,8 +26,9 @@ deploy:
     name: production
     url: https://iiro.fi
   before_script:
-    - npm i -g netlify-cli@^2
+    - npm i -g @static/discharge
   script:
-    - netlify deploy -d build -f lambda --prod -m "${CI_COMMIT_TITLE}"
+    - discharge deploy
+    - discharge distribute
   only:
     - master

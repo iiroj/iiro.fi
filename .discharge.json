@@ -1,0 +1,13 @@
+{
+  "domain": "iiro.fi",
+  "build_command": "",
+  "upload_directory": "build",
+  "index_key": "index.html",
+  "error_key": "404.html",
+  "trailing_slashes": false,
+  "cache": 3600,
+  "aws_profile": "default",
+  "aws_region": "eu-west-1",
+  "cdn": true,
+  "dns_configured": true
+}
