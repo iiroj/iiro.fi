@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.8.4"></a>
+## [15.8.4](https://gitlab.com/iiroj/iiro.fi/compare/v15.8.3...v15.8.4) (2018-10-20)
+
+
+### Bug Fixes
+
+* remove built code from git ([7ee4abb](https://gitlab.com/iiroj/iiro.fi/commit/7ee4abb))
+
+
+
 <a name="15.8.3"></a>
 ## [15.8.3](https://gitlab.com/iiroj/iiro.fi/compare/v15.8.2...v15.8.3) (2018-10-20)
 
