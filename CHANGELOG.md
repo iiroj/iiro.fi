@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="16.0.0"></a>
+# [16.0.0](https://gitlab.com/iiroj/iiro.fi/compare/v15.8.8...v16.0.0) (2018-10-20)
+
+
+### Code Refactoring
+
+* remove lambda function from repo ([24c676e](https://gitlab.com/iiroj/iiro.fi/commit/24c676e))
+
+
+### BREAKING CHANGES
+
+* The lambda function has been moved to a separate repo for easier development and release to AWS
+
+
+
 <a name="15.8.8"></a>
 ## [15.8.8](https://gitlab.com/iiroj/iiro.fi/compare/v15.8.7...v15.8.8) (2018-10-20)
 
