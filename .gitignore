@@ -1,6 +1,5 @@
-/.env
-/build
-/lambda/
+.env
+build
 node_modules
-/sketch
-/stats.json
+sketch
+stats.json
