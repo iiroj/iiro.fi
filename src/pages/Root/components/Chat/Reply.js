@@ -132,9 +132,9 @@ export default class Reply extends React.PureComponent {
       setTimeout(reject, 10000);
       fetch(REPLY_URL, {
         method: "POST",
-        body: JSON.stringify({ text: this.state.text }),
+        body: JSON.stringify(this.state.text),
         headers: new Headers({
-          "Content-Type": "application/json"
+          "Content-Type": "text/plain"
         })
       })
         .then(resolve)
