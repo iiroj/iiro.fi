@@ -47,7 +47,7 @@ exports.handler = (event, context, callback) => {
       },
       body: JSON.stringify({
         chat_id,
-        text: body,
+        text: JSON.parse(body),
         parse_mode: "Markdown"
       })
     })
