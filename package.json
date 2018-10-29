@@ -14,7 +14,6 @@
     "build": "NODE_ENV=production BABEL_ENV=node_production webpack",
     "stats": "webpack-bundle-analyzer stats.json",
     "version": "standard-version",
-    "prerelease": "npm run lint && npm run build",
     "release": "git push --follow-tags origin master"
   },
   "dependencies": {
@@ -60,7 +59,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
-    "html-renderer-webpack-plugin": "^3.0.4",
+    "html-renderer-webpack-plugin": "^3.0.5",
     "prettier": "^1.14.3",
     "rimraf": "^2.6.2",
     "standard-version": "^4.4.0",
