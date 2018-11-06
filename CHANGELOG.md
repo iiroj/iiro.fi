@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="16.0.6"></a>
+## [16.0.6](https://gitlab.com/iiroj/iiro.fi/compare/v16.0.5...v16.0.6) (2018-11-06)
+
+
+
 <a name="16.0.5"></a>
 ## [16.0.5](https://gitlab.com/iiroj/iiro.fi/compare/v16.0.4...v16.0.5) (2018-11-03)
 
