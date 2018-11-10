@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="16.1.0"></a>
+# [16.1.0](https://gitlab.com/iiroj/iiro.fi/compare/v16.0.6...v16.1.0) (2018-11-10)
+
+
+### Features
+
+* use react-helmet-async ([96817cd](https://gitlab.com/iiroj/iiro.fi/commit/96817cd))
+
+
+
 <a name="16.0.6"></a>
 ## [16.0.6](https://gitlab.com/iiroj/iiro.fi/compare/v16.0.5...v16.0.6) (2018-11-06)
 
