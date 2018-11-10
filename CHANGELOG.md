@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="16.1.1"></a>
+## [16.1.1](https://gitlab.com/iiroj/iiro.fi/compare/v16.1.0...v16.1.1) (2018-11-10)
+
+
+### Bug Fixes
+
+* run eslint due to prettier updates ([c9af735](https://gitlab.com/iiroj/iiro.fi/commit/c9af735))
+
+
+
 <a name="16.1.0"></a>
 # [16.1.0](https://gitlab.com/iiroj/iiro.fi/compare/v16.0.6...v16.1.0) (2018-11-10)
 
