@@ -3,6 +3,7 @@ import "@babel/polyfill";
 import { hydrate } from "emotion";
 import React from "react";
 import ReactDOM from "react-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./components/App";
@@ -13,7 +14,9 @@ if (typeof window !== "undefined") {
 
   ReactDOM.hydrate(
     <BrowserRouter>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </BrowserRouter>,
     document.getElementById("root")
   );

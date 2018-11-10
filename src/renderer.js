@@ -4,7 +4,7 @@ import React from "react";
 import { StaticRouter } from "react-router";
 import { renderToString } from "react-dom/server";
 import { extractCritical } from "emotion-server";
-import Helmet from "react-helmet";
+import { HelmetProvider } from "react-helmet-async";
 import { flushChunkNames } from "react-universal-component/server";
 import flushChunks from "webpack-flush-chunks";
 import { html } from "common-tags";
@@ -12,16 +12,19 @@ import { minify } from "html-minifier";
 
 export default async ({ assets, filename, path, publicPath, stats }) => {
   const App = require("./components/App").default;
+  const helmetContext = {};
 
   const { css, html: app, ids } = extractCritical(
     renderToString(
       <StaticRouter location={path} context={{}}>
-        <App />
+        <HelmetProvider context={helmetContext}>
+          <App />
+        </HelmetProvider>
       </StaticRouter>
     )
   );
 
-  const helmet = Helmet.renderStatic();
+  const { helmet } = helmetContext;
 
   const { scripts } = flushChunks(stats, {
     before: ["runtime", "vendor"],
