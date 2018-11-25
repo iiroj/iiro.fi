@@ -4,7 +4,6 @@ import path from "path";
 import webpack from "webpack";
 import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
 import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
-import TerserPlugin from "terser-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import StatsPlugin from "stats-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
@@ -95,7 +94,6 @@ const config = {
 
 if (isProduction) {
   config.plugins.push(
-    new TerserPlugin({ sourceMap: true }),
     new CopyWebpackPlugin([{ from: "static", to: "." }]),
     new StatsPlugin("../stats.json", { chunkModules: true })
   );
