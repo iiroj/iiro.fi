@@ -15,7 +15,7 @@ const back = css({
   top: 0,
   userSelect: "none",
   width: "1.5rem",
-  zIndex: 10,
+  zIndex: 3,
 
   "&::before, &::after": {
     backgroundColor: "rgb(77, 77, 77)",

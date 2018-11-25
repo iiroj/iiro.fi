@@ -10,13 +10,17 @@ const pBaseStyles = {
   position: "fixed",
   top: "50%",
   transformOrigin: "center center",
-  width: "200vmax"
+  width: "200vmax",
+
+  transition: {
+    ease: "linear"
+  }
 };
 
-const P = posed.div({
-  from: { transform: "translate(20%, 20%) rotate(45deg)", ...pBaseStyles },
-  enter: { transform: "translate(-50%, -50%) rotate(45deg)", ...pBaseStyles },
-  exit: { transform: "translate(-100%, -100%) rotate(45deg)", ...pBaseStyles }
+const Overlay = posed.div({
+  from: { x: "20%", y: "20%", rotate: "45deg", ...pBaseStyles },
+  enter: { x: "-50%", y: "-50%", rotate: "45deg", ...pBaseStyles },
+  exit: { x: "-100%", y: "-100%", rotate: "45deg", ...pBaseStyles }
 });
 
 const containerBaseStyles = {
@@ -25,7 +29,7 @@ const containerBaseStyles = {
   position: "fixed",
   top: 0,
   width: "100%",
-  zIndex: 100
+  zIndex: 4
 };
 
 const Container = posed.div({
@@ -38,7 +42,12 @@ const Loading = ({ visible }) => (
   <PoseGroup preEnterPose="from" enterPose="enter" exitPose="exit">
     {visible && (
       <Container key="container">
-        <P key="loader" aria-label="Loading" aria-live="polite" role="status" />
+        <Overlay
+          key="loader"
+          aria-label="Loading"
+          aria-live="polite"
+          role="status"
+        />
       </Container>
     )}
   </PoseGroup>
