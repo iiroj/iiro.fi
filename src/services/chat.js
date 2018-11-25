@@ -51,14 +51,14 @@ const messages = [
   </p>,
   <p key="8">
     I also have a{" "}
-    <Link to="/cv">
+    <Link to="/cv/">
       <Emoji label="CV">
         <Cv />
       </Emoji>{" "}
       CV
     </Link>
     ,{" "}
-    <Link to="/portfolio">
+    <Link to="/portfolio/">
       <Emoji label="Portfolio">
         <Portfolio />
       </Emoji>{" "}

@@ -19,11 +19,7 @@ const config = {
     contentBase: path.join(__dirname, "static"),
     historyApiFallback: {
       disableDotRule: true,
-      index: "/404.html",
-      // Try paths with .html extensions before serving 404
-      rewrites: [
-        { from: /./, to: ({ parsedUrl }) => parsedUrl.pathname + ".html" }
-      ]
+      index: "/404.html"
     },
     hot: true,
     overlay: true,
