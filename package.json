@@ -17,7 +17,6 @@
     "release": "git push --follow-tags origin master"
   },
   "dependencies": {
-    "common-tags": "^1.8.0",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "fontfaceobserver": "^2.0.13",

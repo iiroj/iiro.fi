@@ -7,14 +7,21 @@ import { extractCritical } from "emotion-server";
 import { HelmetProvider } from "react-helmet-async";
 import { flushChunkNames } from "react-universal-component/server";
 import flushChunks from "webpack-flush-chunks";
-import { html } from "common-tags";
 import { minify } from "html-minifier";
+
+const getScriptTags = scripts =>
+  scripts
+    .map(
+      src =>
+        `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
+    )
+    .join("\n");
 
 export default async ({ assets, filename, path, publicPath, stats }) => {
   const App = require("./components/App").default;
   const helmetContext = {};
 
-  const { css, html: app, ids } = extractCritical(
+  const { css, html: appHtml, ids: emotionIds } = extractCritical(
     renderToString(
       <StaticRouter location={path} context={{}}>
         <HelmetProvider context={helmetContext}>
@@ -32,8 +39,8 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
     chunkNames: flushChunkNames()
   });
 
-  /* eslint-disable */
-  return minify(html`
+  return minify(
+    `
       <!DOCTYPE html>
       <html lang="en" ${helmet.htmlAttributes.toString()}>
         <head>
@@ -51,15 +58,14 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
           <style>
             ${css}
           </style>
-          ${scripts.map(src =>
-            `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
-          )}
-          <script id="emotion-ids">${JSON.stringify(ids)}</script>
+          ${getScriptTags(scripts)}
+          <script id="emotion-ids">${JSON.stringify(emotionIds)}</script>
         </head>
         <body ${helmet.bodyAttributes.toString()}>
-          <div id="root">${app}</div>
+          <div id="root">${appHtml}</div>
         </body>
       </html>
-    `, { collapseWhitespace: true, preserveLineBreaks: true }
+    `,
+    { collapseWhitespace: true, preserveLineBreaks: true }
   );
 };
