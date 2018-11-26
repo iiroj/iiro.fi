@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="16.1.4"></a>
+## [16.1.4](https://gitlab.com/iiroj/iiro.fi/compare/v16.1.3...v16.1.4) (2018-11-26)
+
+
+### Bug Fixes
+
+* Disable prettier because things ([cb16052](https://gitlab.com/iiroj/iiro.fi/commit/cb16052))
+
+
+
 <a name="16.1.3"></a>
 ## [16.1.3](https://gitlab.com/iiroj/iiro.fi/compare/v16.1.2...v16.1.3) (2018-11-25)
 
