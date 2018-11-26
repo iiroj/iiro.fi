@@ -32,8 +32,8 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
     chunkNames: flushChunkNames()
   });
 
-  return minify(
-    html`
+  /* eslint-disable */
+  return minify(html`
       <!DOCTYPE html>
       <html lang="en" ${helmet.htmlAttributes.toString()}>
         <head>
@@ -41,10 +41,7 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
           <meta charset="utf-8" />
           ${helmet.title.toString()}
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           ${helmet.meta.toString()}
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png" />
@@ -54,24 +51,15 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
           <style>
             ${css}
           </style>
-          ${
-            scripts.map(
-              src =>
-                `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
-            )
-          }
-          <script id="emotion-ids">
-            ${JSON.stringify(ids)};
-          </script>
+          ${scripts.map(src =>
+            `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
+          )}
+          <script id="emotion-ids">${JSON.stringify(ids)}</script>
         </head>
         <body ${helmet.bodyAttributes.toString()}>
           <div id="root">${app}</div>
         </body>
       </html>
-    `,
-    {
-      collapseWhitespace: true,
-      preserveLineBreaks: true
-    }
+    `, { collapseWhitespace: true, preserveLineBreaks: true }
   );
 };
