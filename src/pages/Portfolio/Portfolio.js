@@ -1,3 +1,6 @@
+/** @jsx jsx */
+
+import { jsx } from "@emotion/core";
 import React from "react";
 import Helmet from "react-helmet-async";
 
@@ -12,13 +15,13 @@ const Portfolio = () => (
       <title>Portfolio of Iiro Jäppinen</title>
     </Helmet>
     <Back />
-    <header className={header}>
+    <header css={header}>
       <h1>Portfolio of Iiro Jäppinen</h1>
     </header>
     <VerkkokauppaCom />
     <HumbleBundle />
     <Icons />
-    <aside className={aside}>With more coming soon...</aside>
+    <aside css={aside}>With more coming soon...</aside>
   </>
 );
 

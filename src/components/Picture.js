@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 
 const picture = css({
   flex: "0 0 4rem",
@@ -10,7 +12,7 @@ const picture = css({
 });
 
 const Picture = () => (
-  <img alt="Iiro Jäppinen" className={picture} src="/picture.jpg" />
+  <img alt="Iiro Jäppinen" css={picture} src="/picture.jpg" />
 );
 
 export default Picture;

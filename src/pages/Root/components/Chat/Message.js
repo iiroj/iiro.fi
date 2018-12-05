@@ -1,6 +1,8 @@
+/** @jsx jsx */
+
+import { css, jsx, keyframes } from "@emotion/core";
 import React from "react";
 import PropTypes from "prop-types";
-import { css, keyframes } from "emotion";
 
 const animation = keyframes({
   from: { opacity: 0 },
@@ -23,7 +25,7 @@ const message = css({
   }
 });
 
-const Message = ({ children }) => <li className={message}>{children}</li>;
+const Message = ({ children }) => <li css={message}>{children}</li>;
 
 Message.propTypes = {
   children: PropTypes.any.isRequired

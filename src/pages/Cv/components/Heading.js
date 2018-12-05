@@ -1,4 +1,6 @@
-import { css } from "emotion";
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -24,7 +26,7 @@ const heading = css({
 });
 
 const Heading = ({ page }) => (
-  <aside className={heading}>
+  <aside css={heading}>
     <Fraktio colored />
     <span>
       <time dateTime="2018-10-01">1 Oct 2018</time>

@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 
 import { link } from "../../styles";
 
@@ -66,15 +68,15 @@ const screenStyles = css({
 });
 
 export const Header = () => (
-  <header className={headerStyles}>
-    <div className={textStyles}>
+  <header css={headerStyles}>
+    <div css={textStyles}>
       <h1>Verkko&shy;kauppa.com</h1>
       <p>
         UX/UI designer from November 2014 until April 2017. As the resident web
         designer, I oversaw the visual direction of Verkkokauppa.com’s website.
       </p>
       <a
-        className={link}
+        css={link}
         href="https://www.verkkokauppa.com/"
         target="_blank"
         rel="noopener noreferrer"
@@ -82,16 +84,16 @@ export const Header = () => (
         Visit Verkkokauppa.com
       </a>
     </div>
-    <div className={phoneContainerStyles}>
+    <div css={phoneContainerStyles}>
       <img
         alt=""
-        className={phoneStyles}
+        css={phoneStyles}
         src="/portfolio/verkkokauppacom/pixel.png"
         srcSet="/portfolio/verkkokauppacom/pixel.png 1x, /portfolio/verkkokauppacom/pixel@2x.png 2x, /portfolio/verkkokauppacom/pixel@3x.png 3x"
       />
       <img
         alt="Verkkokauppa.com Front Page"
-        className={screenStyles}
+        css={screenStyles}
         src="/portfolio/verkkokauppacom/frontpage.jpg"
         srcSet="/portfolio/verkkokauppacom/frontpage.jpg 1x, /portfolio/verkkokauppacom/frontpage@2x.jpg 2x, /portfolio/verkkokauppacom/frontpage@3x.jpg 3x"
       />

@@ -3,7 +3,6 @@ import "@babel/polyfill";
 import React from "react";
 import { StaticRouter } from "react-router";
 import { renderToString } from "react-dom/server";
-import { extractCritical } from "emotion-server";
 import { HelmetProvider } from "react-helmet-async";
 import { flushChunkNames } from "react-universal-component/server";
 import flushChunks from "webpack-flush-chunks";
@@ -21,14 +20,12 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
   const App = require("./components/App").default;
   const helmetContext = {};
 
-  const { css, html: appHtml, ids: emotionIds } = extractCritical(
-    renderToString(
-      <StaticRouter location={path} context={{}}>
-        <HelmetProvider context={helmetContext}>
-          <App />
-        </HelmetProvider>
-      </StaticRouter>
-    )
+  const appHtml = renderToString(
+    <StaticRouter location={path} context={{}}>
+      <HelmetProvider context={helmetContext}>
+        <App />
+      </HelmetProvider>
+    </StaticRouter>
   );
 
   const { helmet } = helmetContext;
@@ -55,11 +52,7 @@ export default async ({ assets, filename, path, publicPath, stats }) => {
           <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
           ${helmet.link.toString()}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <style>
-            ${css}
-          </style>
           ${getScriptTags(scripts)}
-          <script id="emotion-ids">${JSON.stringify(emotionIds)}</script>
         </head>
         <body ${helmet.bodyAttributes.toString()}>
           <div id="root">${appHtml}</div>

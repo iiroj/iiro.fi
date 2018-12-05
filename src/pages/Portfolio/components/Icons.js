@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 
 import { link } from "../styles";
 
@@ -38,9 +40,9 @@ const containerStyles = css({
 });
 
 export default () => (
-  <article className={articleStyles}>
-    <h1 className={titleStyles}>Icon Aficionado</h1>
-    <div className={containerStyles}>
+  <article css={articleStyles}>
+    <h1 css={titleStyles}>Icon Aficionado</h1>
+    <div css={containerStyles}>
       <div>
         <img
           alt="Growl"
@@ -48,7 +50,7 @@ export default () => (
           srcSet="/portfolio/icons/growl.png 1x, /portfolio/icons/growl@2x.png 2x, /portfolio/icons/growl@3x.png 3x"
         />
         <a
-          className={link}
+          css={link}
           href="http://growl.info"
           target="_blank"
           rel="noopener noreferrer"
@@ -63,7 +65,7 @@ export default () => (
           srcSet="/portfolio/icons/tuneinstructor.png 1x, /portfolio/icons/tuneinstructor@2x.png 2x, /portfolio/icons/tuneinstructor@3x.png 3x"
         />
         <a
-          className={link}
+          css={link}
           href="https://www.tune-instructor.de/en/"
           target="_blank"
           rel="noopener noreferrer"

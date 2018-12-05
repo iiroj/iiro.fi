@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 
 const articleStyles = css({
   backgroundColor: "#3b3e48",
@@ -26,14 +28,14 @@ const textStyles = css({
 });
 
 export default () => (
-  <article className={articleStyles}>
+  <article css={articleStyles}>
     <img
       alt="Humble Bundle"
-      className={logoStyles}
+      css={logoStyles}
       src="/portfolio/humble/humble-logo.png"
       srcSet="/portfolio/humble/humble-logo.png 1x, /portfolio/humble/humble-logo@2x.png 2x, /portfolio/humble/humble-logo@3x.png 3x"
     />
-    <p className={textStyles}>
+    <p css={textStyles}>
       I designed the first{" "}
       <a
         href="https://www.humblebundle.com"
@@ -45,7 +47,7 @@ export default () => (
       website and many after that. I worked with Humble from its inception in
       2011 until summer 2014.
     </p>
-    <p className={textStyles}>
+    <p css={textStyles}>
       People often follow up with whether or not I also created the beautiful
       icons representing bundled games. I did not.
     </p>

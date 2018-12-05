@@ -1,4 +1,6 @@
-import { css } from "emotion";
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -52,10 +54,10 @@ const thead = css({
 });
 
 const Skills = ({ children }) => (
-  <div className={container}>
+  <div css={container}>
     {children.map(skillset => (
-      <table key={skillset.title} className={table}>
-        <thead className={thead}>
+      <table key={skillset.title} css={table}>
+        <thead css={thead}>
           <tr>
             <th>{skillset.title}</th>
             <th>Self-assesment</th>

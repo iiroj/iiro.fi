@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 
 const sectionStyles = css({
   alignItems: "center",
@@ -29,8 +31,8 @@ const imageStyles = css({
 });
 
 export const DeliveryEstimates = () => (
-  <section className={sectionStyles}>
-    <div className={textStyles}>
+  <section css={sectionStyles}>
+    <div css={textStyles}>
       <h2>Delivery estimates</h2>
       <h3>The Problem</h3>
       <p>
@@ -53,7 +55,7 @@ export const DeliveryEstimates = () => (
         would arrive at the customer.
       </p>
     </div>
-    <figure className={imageStyles}>
+    <figure css={imageStyles}>
       <img
         alt="Verkkokauppa.com Product Availability Estimates"
         src="/portfolio/verkkokauppacom/dialog.png"

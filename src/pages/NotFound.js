@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 import Helmet from "react-helmet-async";
 
 import Back from "../components/Back";
@@ -16,6 +18,6 @@ export default () => (
       <title>Page Not Found</title>
     </Helmet>
     <Back />
-    <h1 className={h1Styles}>There’s nothing here...</h1>
+    <h1 css={h1Styles}>There’s nothing here...</h1>
   </>
 );

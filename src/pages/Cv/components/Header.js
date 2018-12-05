@@ -1,4 +1,6 @@
-import { css } from "emotion";
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -39,7 +41,7 @@ const header = css({
 });
 
 const Header = ({ children, name, picture }) => (
-  <header className={header}>
+  <header css={header}>
     <div>
       <h1>{name}</h1>
       {children}

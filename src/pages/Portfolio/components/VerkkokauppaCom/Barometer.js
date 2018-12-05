@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 
 const graph = css({
   height: 120,
@@ -11,7 +13,7 @@ const graph = css({
 
 const Graph = () => (
   <svg
-    className={graph}
+    css={graph}
     width="1920"
     height="120"
     viewBox="0 0 1920 120"
@@ -67,15 +69,15 @@ const textStyles = css({
 });
 
 export const Barometer = () => (
-  <section className={sectionStyles}>
+  <section css={sectionStyles}>
     <img
       alt="Verkkokauppa.com Price Barometer"
-      className={imageStyles}
+      css={imageStyles}
       src="/portfolio/verkkokauppacom/price-barometer.png"
       srcSet="/portfolio/verkkokauppacom/price-barometer.png 1x, /portfolio/verkkokauppacom/price-barometer@2x.png 2x, /portfolio/verkkokauppacom/price-barometer@3x.png 3x"
     />
     <Graph />
-    <div className={textStyles}>
+    <div css={textStyles}>
       <h2>Making Informed Customers</h2>
       <p>
         <a

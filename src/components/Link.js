@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 import { Link as ReactRouterLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -29,7 +31,7 @@ export const link = css({
 const Link = ({ children, to, ...props }) => {
   const Component = to.startsWith("/") ? ReactRouterLink : "a";
   return (
-    <Component className={link} to={to} href={to} {...props}>
+    <Component css={link} to={to} href={to} {...props}>
       {children}
     </Component>
   );

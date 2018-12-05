@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 
 import { Header } from "./Header";
 import { DeliveryEstimates } from "./DeliveryEstimates";
@@ -30,7 +32,7 @@ const articleStyles = css({
 });
 
 export default () => (
-  <article className={articleStyles}>
+  <article css={articleStyles}>
     <Header />
     <DeliveryEstimates />
     <SelfPickup />

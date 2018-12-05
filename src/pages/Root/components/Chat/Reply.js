@@ -1,6 +1,8 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
 import PropTypes from "prop-types";
-import { css, cx } from "emotion";
 
 import Send from "./Send";
 import Typing from "./Typing";
@@ -163,12 +165,12 @@ export default class Reply extends React.PureComponent {
 
     return (
       <form
-        className={cx(form, dirty && formDirty, ready && formReady)}
+        css={[form, dirty && formDirty, ready && formReady]}
         disabled={sending || failed}
         onSubmit={this.handleSumbit}
       >
         <textarea
-          className={cx(input, dirty && !failed && inputExpanded)}
+          css={[input, dirty && !failed && inputExpanded]}
           disabled={sending}
           onClick={this.handleOpen}
           onChange={this.handleTextInput}
@@ -177,7 +179,7 @@ export default class Reply extends React.PureComponent {
           valid={valid.toString()}
           value={text}
         />
-        <button className={cx(button, valid && buttonValid)} disabled={!valid}>
+        <button css={[button, valid && buttonValid]} disabled={!valid}>
           {sending ? <Typing /> : <Send />}
         </button>
       </form>

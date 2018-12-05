@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
-import { css } from "emotion";
 
 const sectionStyles = css({
   backgroundColor: "#a4abb3",
@@ -35,14 +37,14 @@ const textStyles = css({
 });
 
 export const SelfPickup = () => (
-  <section className={sectionStyles}>
+  <section css={sectionStyles}>
     <img
       alt="Verkkokauppa.com Self-Service Checkout"
-      className={imageStyles}
+      css={imageStyles}
       src="/portfolio/verkkokauppacom/ipad.jpg"
       srcSet="/portfolio/verkkokauppacom/ipad.jpg 1x, /portfolio/verkkokauppacom/ipad@2x.jpg 2x, /portfolio/verkkokauppacom/ipad@3x.jpg 3x"
     />
-    <div className={textStyles}>
+    <div css={textStyles}>
       <h2>Self-Service order pickup</h2>
       <p>
         Customers need to check their order in for pick-up at the

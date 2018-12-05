@@ -1,3 +1,6 @@
+/** @jsx jsx */
+
+import { jsx } from "@emotion/core";
 import React from "react";
 import Helmet from "react-helmet-async";
 
@@ -23,20 +26,20 @@ const Cv = () => (
 
     <Back />
 
-    <main className={container}>
-      <div className={page}>
+    <main css={container}>
+      <div css={page}>
         <Heading page="1/3" />
 
         <Header name="Iiro Jäppinen" picture={<Picture />}>
           <p>
-            I’m a UX <span className={baskerville}>&</span> UI designer, and a
+            I’m a UX <span css={baskerville}>&</span> UI designer, and a
             front-end developer with a passion for precise pixels and accessible
             interfaces. I aim to create real solutions to actual problems with a
             design that stands on its own but doesn’t need introduction.
           </p>
         </Header>
 
-        <section className={section}>
+        <section css={section}>
           <h2>Basic Info</h2>
           <div>
             <p>
@@ -48,7 +51,7 @@ const Cv = () => (
           </div>
         </section>
 
-        <section className={section}>
+        <section css={section}>
           <h2>Language Skills</h2>
           <div>
             <DefinitionList>
@@ -57,7 +60,7 @@ const Cv = () => (
                   title: "English",
                   definition: (
                     <>
-                      Excellent (spoken <span className={baskerville}>&</span>{" "}
+                      Excellent (spoken <span css={baskerville}>&</span>{" "}
                       written)
                     </>
                   )
@@ -71,7 +74,7 @@ const Cv = () => (
           </div>
         </section>
 
-        <section className={section}>
+        <section css={section}>
           <h2>Education</h2>
           <div>
             <ul>
@@ -99,7 +102,7 @@ const Cv = () => (
           </div>
         </section>
 
-        <section className={section}>
+        <section css={section}>
           <h2>Career History</h2>
           <div>
             <ul>
@@ -119,7 +122,7 @@ const Cv = () => (
               <li>
                 <p>
                   <strong>
-                    UX <span className={baskerville}>&</span> UI Designer
+                    UX <span css={baskerville}>&</span> UI Designer
                   </strong>
                   , Verkkokauppa.com
                 </p>
@@ -137,7 +140,7 @@ const Cv = () => (
               <li>
                 <p>
                   <strong>
-                    UX <span className={baskerville}>&</span> UI Designer
+                    UX <span css={baskerville}>&</span> UI Designer
                   </strong>
                   , Humble Bundle
                 </p>
@@ -154,10 +157,10 @@ const Cv = () => (
         </section>
       </div>
 
-      <div className={page}>
+      <div css={page}>
         <Heading page="2/3" />
 
-        <section className={section}>
+        <section css={section}>
           <h2>Skills</h2>
           <div>
             <Skills>
@@ -232,8 +235,7 @@ const Cv = () => (
                     {
                       title: (
                         <>
-                          Redux <span className={baskerville}>&</span>{" "}
-                          redux-saga
+                          Redux <span css={baskerville}>&</span> redux-saga
                         </>
                       ),
                       assesment: "Professional",
@@ -277,7 +279,7 @@ const Cv = () => (
           </div>
         </section>
 
-        <section className={section}>
+        <section css={section}>
           <h2>Certificates</h2>
           <div>
             <ul>
@@ -308,10 +310,10 @@ const Cv = () => (
         </section>
       </div>
 
-      <div className={page}>
+      <div css={page}>
         <Heading page="3/3" />
 
-        <section className={projects}>
+        <section css={projects}>
           <h2>Selected Projects</h2>
           <div>
             <ul>

@@ -1,6 +1,8 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
 import PropTypes from "prop-types";
-import { css, cx } from "emotion";
 
 import Picture from "../../../../components/Picture";
 
@@ -168,27 +170,24 @@ export default class Chat extends React.PureComponent {
     const { mounted } = this.state;
 
     return (
-      <div className={chat} ref={this.ref}>
+      <div css={chat} ref={this.ref}>
         <noscript>
           <style>{`.noscript { display: flex !important; }`}</style>
         </noscript>
         <div
-          className={cx(
+          css={[
             messageGroup,
             mounted ? messageGroupVisible : "noscript",
             messages.length > 0 && messageGroupFullWidth
-          )}
+          ]}
         >
-          <div className={pictureContainer}>
+          <div css={pictureContainer}>
             <Picture />
           </div>
-          <div className={backdrop} />
+          <div css={backdrop} />
           {messages.length > 0 && (
             <ol
-              className={cx(
-                messageListContainer,
-                typing && messageListContainerTyping
-              )}
+              css={[messageListContainer, typing && messageListContainerTyping]}
               aria-live="assertive"
               role="log"
             >
@@ -200,7 +199,7 @@ export default class Chat extends React.PureComponent {
           {typing && <Typing />}
         </div>
         {ready || (
-          <button className={skip} onClick={onSkip}>
+          <button css={skip} onClick={onSkip}>
             Skip
           </button>
         )}

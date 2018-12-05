@@ -1,4 +1,6 @@
-import { css } from "emotion";
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -13,7 +15,7 @@ const definitionList = css({
 });
 
 const DefinitionList = ({ children }) => (
-  <dl className={definitionList}>
+  <dl css={definitionList}>
     {children.map((definition, key) => (
       <React.Fragment key={key}>
         <dt>

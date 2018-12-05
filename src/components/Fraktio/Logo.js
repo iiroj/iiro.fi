@@ -1,4 +1,6 @@
-import { css } from "emotion";
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
 
 const logo = css({
@@ -13,7 +15,7 @@ const logo = css({
 
 const Logo = () => (
   <svg
-    className={logo}
+    css={logo}
     height="14"
     viewBox="0 0 56 14"
     width="56"

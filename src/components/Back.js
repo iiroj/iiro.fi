@@ -1,6 +1,8 @@
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
 import { Link } from "react-router-dom";
-import { css } from "emotion";
 
 const back = css({
   background: "none !important",
@@ -63,7 +65,7 @@ const back = css({
 });
 
 const Back = () => (
-  <Link to="/" className={back} title="Back to iiro.fi" role="navigation">
+  <Link to="/" css={back} title="Back to iiro.fi" role="navigation">
     Back to iiro.fi
   </Link>
 );

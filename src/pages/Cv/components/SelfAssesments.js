@@ -1,4 +1,6 @@
-import { css } from "emotion";
+/** @jsx jsx */
+
+import { css, jsx } from "@emotion/core";
 import React from "react";
 
 const container = css({
@@ -16,7 +18,7 @@ const container = css({
 const SelfAssesments = () => (
   <>
     <h3>Self-assesment explanation</h3>
-    <dl className={container}>
+    <dl css={container}>
       <dt>
         <strong>Beginner</strong>
       </dt>
