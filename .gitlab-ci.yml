@@ -18,7 +18,7 @@ build:
       - node_modules/
   artifacts:
     paths:
-      - build/
+      - public/
 
 deploy:
   stage: deploy
@@ -27,15 +27,15 @@ deploy:
     name: production
     url: https://iiro.fi
   script:
-    - aws s3 sync ./build s3://${AWS_S3_BUCKET_NAME}/ --delete --exclude "*"
+    - aws s3 sync ./public s3://${AWS_S3_BUCKET_NAME}/ --delete --exclude "*"
         --include "*.html"
         --cache-control max-age=0,no-cache-no-store,must-revalidate
-    - aws s3 sync ./build s3://${AWS_S3_BUCKET_NAME}/ --delete --exclude "*"
+    - aws s3 sync ./public s3://${AWS_S3_BUCKET_NAME}/ --delete --exclude "*"
         --include "*.jpg"
         --include "*.png"
         --include "*.ico"
         --cache-control public,max-age=2592000
-    - aws s3 sync ./build s3://${AWS_S3_BUCKET_NAME}/ --delete --exclude "*"
+    - aws s3 sync ./public s3://${AWS_S3_BUCKET_NAME}/ --delete --exclude "*"
         --include "*.js"
         --include "*.map"
         --cache-control public,immutable,max-age=31536000

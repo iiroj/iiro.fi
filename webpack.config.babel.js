@@ -37,7 +37,7 @@ const config = {
   output: {
     chunkFilename: isProduction ? "[chunkhash:8].js" : "[name].js",
     filename: isProduction ? "[chunkhash:8].js" : "[name].js",
-    path: path.resolve("./build"),
+    path: path.resolve("./public"),
     publicPath: "/"
   },
 
@@ -95,7 +95,7 @@ const config = {
 if (isProduction) {
   config.plugins.push(
     new CopyWebpackPlugin([{ from: "static", to: "." }]),
-    new StatsPlugin("../stats.json", { chunkModules: true })
+    new StatsPlugin("stats.json", { chunkModules: true })
   );
 } else {
   config.plugins.push(

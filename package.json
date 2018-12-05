@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "prebuild": "rimraf build",
     "build": "NODE_ENV=production BABEL_ENV=node_production webpack",
-    "stats": "webpack-bundle-analyzer stats.json",
+    "stats": "webpack-bundle-analyzer public/stats.json",
     "version": "standard-version",
     "release": "git push --follow-tags origin master"
   },
