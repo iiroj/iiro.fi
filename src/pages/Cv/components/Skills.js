@@ -22,7 +22,7 @@ const table = css({
     padding: "0 2rem",
     whiteSpace: "nowrap",
 
-    "&:first-child": {
+    "&:first-of-type": {
       paddingLeft: 0
     },
 
@@ -45,7 +45,7 @@ const thead = css({
     borderBottom: "1px solid hsl(0,0%,30%)",
     verticalAlign: "baseline",
 
-    "&:first-child": {
+    "&:first-of-type": {
       fontSize: 14
     }
   }
