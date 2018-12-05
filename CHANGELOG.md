@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="17.0.0"></a>
+# [17.0.0](https://gitlab.com/iiroj/iiro.fi/compare/v16.1.6...v17.0.0) (2018-12-05)
+
+
+### Features
+
+* refactor for [@emotion](https://gitlab.com/emotion)/core 10 ([87c363f](https://gitlab.com/iiroj/iiro.fi/commit/87c363f))
+
+
+### BREAKING CHANGES
+
+* This commit has so many changes a major bump is in order
+
+
+
 <a name="16.1.6"></a>
 ## [16.1.6](https://gitlab.com/iiroj/iiro.fi/compare/v16.1.5...v16.1.6) (2018-12-05)
 
