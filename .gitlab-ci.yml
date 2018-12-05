@@ -1,28 +1,53 @@
 image: node:alpine
 
 stages:
+  - install
   - build
   - deploy
 
-build:
-  stage: build
+# Pull cached dependencies by default
+cache:
+  key: $CI_PIPELINE_ID
+  paths:
+    - node_modules/
+  policy: pull
+
+# Install dependencies in CI mode
+Install:
+  stage: install
   script:
-    - npm install
-    - npm run lint
-    - npm run build
-  only:
-    - master
+    - npm ci
   cache:
-    key: node_modules
+    key: $CI_PIPELINE_ID
     paths:
       - node_modules/
+
+# Audit dependencies
+Audit:
+  stage: build
+  script:
+    - npm audit
+
+# Lint code
+Lint:
+  stage: build
+  script:
+    - npm run lint
+
+# Build static site
+Build:
+  stage: build
+  script:
+    - npm run build
   artifacts:
     paths:
       - public/
 
-deploy:
+# Deploy master
+Deploy:
   stage: deploy
   image: cgswong/aws:latest
+  cache: {} # Cache not needed for Deploy job
   environment:
     name: production
     url: https://iiro.fi
