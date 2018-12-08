@@ -16,7 +16,7 @@ const getScriptTags = scripts =>
     )
     .join("\n");
 
-export default async ({ assets, filename, path, publicPath, stats }) => {
+export default async ({ path, stats }) => {
   const App = require("./components/App").default;
   const helmetContext = {};
 

@@ -17,12 +17,12 @@ Install:
   stage: install
   except:
     - tags
-  script:
-    - npm ci
   cache:
     key: $CI_PIPELINE_ID
     paths:
       - node_modules/
+  script:
+    - npm ci
 
 # Audit dependencies
 Audit:
@@ -54,26 +54,17 @@ Build:
 # Deploy master
 Deploy:
   stage: deploy
-  only:
-    - master
-  image: cgswong/aws:latest
-  cache: {} # Cache not needed for Deploy job
   environment:
     name: production
     url: https://iiro.fi
+  cache: {}
+  before_script:
+    - npm install -g netlify-cli
   script:
-    - aws s3 sync ./public s3://${AWS_S3_BUCKET_NAME}/ --delete --exclude "*"
-        --include "*.html"
-        --cache-control max-age=0,no-cache-no-store,must-revalidate
-    - aws s3 sync ./public s3://${AWS_S3_BUCKET_NAME}/ --delete --exclude "*"
-        --include "*.jpg"
-        --include "*.png"
-        --include "*.ico"
-        --cache-control public,max-age=2592000
-    - aws s3 sync ./public s3://${AWS_S3_BUCKET_NAME}/ --delete --exclude "*"
-        --include "*.js"
-        --include "*.map"
-        --cache-control public,immutable,max-age=31536000
-    - aws cloudfront create-invalidation
-        --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID
-        --paths "/*"
+    - netlify deploy
+      --prod
+      --dir public
+      --functions lambda
+      --message "$CI_COMMIT_TITLE"
+  only:
+    - master

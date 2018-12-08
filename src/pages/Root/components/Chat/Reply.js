@@ -154,7 +154,7 @@ export default class Reply extends React.PureComponent {
         });
         this.props.onSentFeedback();
       })
-      .catch(error => this.setState({ failed: true, sending: false }));
+      .catch(() => this.setState({ failed: true, sending: false }));
   };
 
   render() {

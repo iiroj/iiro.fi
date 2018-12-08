@@ -1,4 +1,5 @@
-.env
-node_modules
-public
-sketch
+/.env
+/lambda
+/node_modules
+/public
+/sketch

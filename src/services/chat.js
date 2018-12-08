@@ -142,7 +142,7 @@ export class MessageProvider extends React.PureComponent {
   };
 
   generator = () =>
-    new Promise(async (resolve, reject) => {
+    new Promise(async resolve => {
       if (!this.state.ready) {
         this.setState({ typing: true });
         await waitFor(randomIntFromInterval(10, 20) * 100);
