@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="17.2.0"></a>
+# [17.2.0](https://gitlab.com/iiroj/iiro.fi/compare/v17.1.1...v17.2.0) (2018-12-09)
+
+
+### Features
+
+* add headers for Netlify ([c30952a](https://gitlab.com/iiroj/iiro.fi/commit/c30952a))
+
+
+
 <a name="17.1.1"></a>
 ## [17.1.1](https://gitlab.com/iiroj/iiro.fi/compare/v17.1.0...v17.1.1) (2018-12-08)
 
