@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { flushChunkNames } from "react-universal-component/server";
 import flushChunks from "webpack-flush-chunks";
 import { minify } from "html-minifier";
+import generateNetlifyHeaders from "./utils/netlifyHeaders";
 
 const getScriptTags = scripts =>
   scripts
@@ -35,6 +36,10 @@ export default async ({ path, stats }) => {
     after: ["client"],
     chunkNames: flushChunkNames()
   });
+
+  if (process.env.NODE_ENV === "production") {
+    generateNetlifyHeaders(path, scripts);
+  }
 
   return minify(
     `
