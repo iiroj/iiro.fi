@@ -77,12 +77,10 @@
     "webpack-flush-chunks": "^2.0.3"
   },
   "keywords": [
-    "aws",
-    "cloudfront",
     "emotion",
     "lambda",
+    "netlify",
     "react",
-    "s3",
     "serverless",
     "static-site",
     "telegram"
