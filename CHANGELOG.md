@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="17.4.0"></a>
+# [17.4.0](https://gitlab.com/iiroj/iiro.fi/compare/v17.3.4...v17.4.0) (2018-12-23)
+
+
+### Features
+
+* use [@emotion](https://gitlab.com/emotion)/babel-preset-css-prop ([ec304ac](https://gitlab.com/iiroj/iiro.fi/commit/ec304ac))
+
+
+
 <a name="17.3.4"></a>
 ## [17.3.4](https://gitlab.com/iiroj/iiro.fi/compare/v17.3.3...v17.3.4) (2018-12-23)
 
