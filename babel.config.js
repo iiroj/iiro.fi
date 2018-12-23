@@ -10,7 +10,7 @@ module.exports = api => {
 
   const presets = [
     ["@babel/preset-env", presetEnv],
-    "@babel/preset-react",
+    ["@babel/preset-react"],
     [
       "@emotion/babel-preset-css-prop",
       {
@@ -21,10 +21,10 @@ module.exports = api => {
   ];
 
   const plugins = [
-    ["@babel/plugin-proposal-export-namespace-from"],
-    ["@babel/plugin-proposal-class-properties"],
-    ["@babel/plugin-syntax-dynamic-import"],
-    ["babel-plugin-transform-export-default-name"]
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-syntax-dynamic-import",
+    "babel-plugin-transform-export-default-name"
   ];
 
   if (env.startsWith("webpack")) {
