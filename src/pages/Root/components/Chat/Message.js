@@ -1,6 +1,4 @@
-/** @jsx jsx */
-
-import { css, jsx, keyframes } from "@emotion/core";
+import { css, keyframes } from "@emotion/core";
 import React from "react";
 import PropTypes from "prop-types";
 
