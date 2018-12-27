@@ -1,7 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { css } from "@emotion/core";
-import posed, { PoseGroup } from "react-pose";
+import PropTypes from "prop-types";
+import React from "react";
 
 import Picture from "../../../../components/Picture";
 
@@ -94,15 +93,6 @@ const messageListContainerTyping = css({
   transition: "all 125ms ease-in-out"
 });
 
-const MessageListContainer = posed.ol({
-  enter: {
-    staggerChildren: 200
-  },
-  exit: {
-    staggerChildren: 200
-  }
-});
-
 const skip = css({
   appearance: "none",
   background: "none",
@@ -127,7 +117,7 @@ const chat = css({
   width: "100%"
 });
 
-class ChatComponent extends React.PureComponent {
+export default class Chat extends React.PureComponent {
   static propTypes = {
     messages: PropTypes.array.isRequired,
     onSentFeedback: PropTypes.func.isRequired,
@@ -137,12 +127,12 @@ class ChatComponent extends React.PureComponent {
     typing: PropTypes.bool.isRequired
   };
 
+  ref = React.createRef();
+
   state = {
     mounted: false,
     sticky: true
   };
-
-  ref = React.createRef();
 
   handleScroll = () => {
     const { height, top } = this.ref.current.getBoundingClientRect();
@@ -160,13 +150,13 @@ class ChatComponent extends React.PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    const { innerRef, messages, typing } = this.props;
+    const { messages, typing } = this.props;
 
     if (!this.state.sticky) return;
 
     if (typing || messages.length !== prevProps.messages.length) {
       const scrollDistance =
-        innerRef.scrollHeight -
+        this.ref.scrollHeight -
         document.documentElement.scrollTop +
         window.innerHeight;
       window.scrollTo(0, scrollDistance);
@@ -174,54 +164,41 @@ class ChatComponent extends React.PureComponent {
   }
 
   render() {
-    const {
-      innerRef,
-      messages,
-      onSentFeedback,
-      onSkip,
-      ready,
-      typing
-    } = this.props;
+    const { messages, onSentFeedback, onSkip, ready, typing } = this.props;
     const { mounted } = this.state;
 
     return (
-      <div css={chat} ref={innerRef}>
+      <div css={chat} ref={this.ref}>
         <noscript>
           <style>{`.noscript { display: flex !important; }`}</style>
         </noscript>
-        <PoseGroup>
-          <div
-            css={[
-              messageGroup,
-              mounted ? messageGroupVisible : "noscript",
-              messages.length > 0 && messageGroupFullWidth
-            ]}
-            key="message-group"
-          >
-            <div css={pictureContainer}>
-              <Picture />
-            </div>
-            <div css={backdrop} />
-            {(messages.length > 0 || typing) && (
-              <MessageListContainer
-                css={[
-                  messageListContainer,
-                  typing && messageListContainerTyping
-                ]}
-                key="chat-list"
-                aria-live="assertive"
-                role="log"
-              >
-                {messages.map((content, key) => (
-                  <Message initialPose="exit" pose="enter" key={key}>
-                    {content}
-                  </Message>
-                ))}
-                {typing && <Typing key="typing" />}
-              </MessageListContainer>
-            )}
+        <div
+          css={[
+            messageGroup,
+            mounted ? messageGroupVisible : "noscript",
+            messages.length > 0 && messageGroupFullWidth
+          ]}
+          key="message-group"
+        >
+          <div css={pictureContainer}>
+            <Picture />
           </div>
-        </PoseGroup>
+          <div css={backdrop} />
+          {(messages.length > 0 || typing) && (
+            <ol
+              css={[messageListContainer, typing && messageListContainerTyping]}
+              aria-live="assertive"
+              role="log"
+            >
+              {messages.map((content, key) => (
+                <Message initialPose="exit" pose="enter" key={key}>
+                  {content}
+                </Message>
+              ))}
+              {typing && <Typing key="typing" />}
+            </ol>
+          )}
+        </div>
         {ready || (
           <button css={skip} onClick={onSkip}>
             Skip
@@ -232,16 +209,3 @@ class ChatComponent extends React.PureComponent {
     );
   }
 }
-
-const Chat = React.forwardRef((props, ref) => (
-  <ChatComponent {...props} innerRef={ref} />
-));
-
-export default posed(Chat)({
-  enter: {
-    staggerChildren: 250
-  },
-  exit: {
-    staggerChildren: 250
-  }
-});

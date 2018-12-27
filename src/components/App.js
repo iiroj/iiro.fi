@@ -1,5 +1,5 @@
 import { css } from "@emotion/core";
-import { Switch, Route, withRouter } from "react-router";
+import { Switch, Route } from "react-router";
 import posed, { PoseGroup } from "react-pose";
 import React from "react";
 
@@ -16,31 +16,35 @@ const routeContainerStyles = css({
 
 const RouteContainer = posed.div({
   from: { opacity: 0 },
-  enter: { opacity: 1, delay: 250, beforeChildren: true },
+  enter: { beforeChildren: true, opacity: 1 },
   exit: { opacity: 0 }
 });
 
-const App = ({ location }) => (
+const App = () => (
   <Layout>
     <MessageProvider>
-      <PoseGroup preEnterPose="from" enterPose="enter" exitPose="exit">
-        <RouteContainer
-          css={routeContainerStyles}
-          key={location.key || "initial-route"}
-        >
-          <Switch location={location}>
-            {routes.map((route, key) => (
-              <Route
-                key={route.path || key}
-                path={route.path}
-                render={props => <route.component {...props} />}
-              />
-            ))}
-          </Switch>
-        </RouteContainer>
-      </PoseGroup>
+      <Route>
+        {({ location }) => (
+          <PoseGroup preEnterPose="from" enterPose="enter" exitPose="exit">
+            <RouteContainer
+              css={routeContainerStyles}
+              key={location.key || "initial-route"}
+            >
+              <Switch location={location}>
+                {routes.map((route, key) => (
+                  <Route
+                    key={route.path || key}
+                    path={route.path}
+                    render={props => <route.component {...props} />}
+                  />
+                ))}
+              </Switch>
+            </RouteContainer>
+          </PoseGroup>
+        )}
+      </Route>
     </MessageProvider>
   </Layout>
 );
 
-export default withRouter(App);
+export default App;

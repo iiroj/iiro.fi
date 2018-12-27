@@ -1,16 +1,18 @@
-import React from "react";
 import Helmet from "react-helmet-async";
+import React from "react";
 
 import Back from "../../components/Back";
+import baskerville from "../../styles/baskerville";
 import Link from "../../components/Link";
 import Picture from "../../components/Picture";
-import baskerville from "../../styles/baskerville";
 
-import { container, page, projects, section } from "./styles";
+import { projects, section } from "./styles";
 import {
+  Container,
   DefinitionList,
   Heading,
   Header,
+  Page,
   SelfAssesments,
   Skills
 } from "./components";
@@ -23,8 +25,8 @@ const Cv = () => (
 
     <Back />
 
-    <main css={container}>
-      <div css={page}>
+    <Container>
+      <Page>
         <Heading page="1/3" />
 
         <Header name="Iiro Jäppinen" picture={<Picture />}>
@@ -152,9 +154,9 @@ const Cv = () => (
             </ul>
           </div>
         </section>
-      </div>
+      </Page>
 
-      <div css={page}>
+      <Page>
         <Heading page="2/3" />
 
         <section css={section}>
@@ -305,9 +307,9 @@ const Cv = () => (
             </ul>
           </div>
         </section>
-      </div>
+      </Page>
 
-      <div css={page}>
+      <Page>
         <Heading page="3/3" />
 
         <section css={projects}>
@@ -408,8 +410,8 @@ const Cv = () => (
             </ul>
           </div>
         </section>
-      </div>
-    </main>
+      </Page>
+    </Container>
   </>
 );
 

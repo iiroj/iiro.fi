@@ -1,6 +1,8 @@
 import { css } from "@emotion/core";
+import posed from "react-pose";
+import React from "react";
 
-export default css({
+const pageStyles = css({
   backgroundColor: "white",
   fontSize: 14,
   lineHeight: "24px",
@@ -60,4 +62,16 @@ export default css({
       display: "none"
     }
   }
+});
+
+const Page = React.forwardRef(({ children, ...props }, ref) => (
+  <div {...props} css={pageStyles} ref={ref}>
+    {children}
+  </div>
+));
+
+export default posed(Page)({
+  from: { opacity: 0, y: 128 },
+  enter: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -128 }
 });

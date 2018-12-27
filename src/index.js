@@ -9,7 +9,7 @@ import ReactDOM from "react-dom";
 
 import App from "./components/App";
 
-loadableReady(() => {
+const render = App =>
   ReactDOM.hydrate(
     <BrowserRouter>
       <HelmetProvider>
@@ -18,4 +18,12 @@ loadableReady(() => {
     </BrowserRouter>,
     document.getElementById("root")
   );
-});
+
+loadableReady(() => render(App));
+
+if (process.env.NODE_ENV !== "production" && module.hot) {
+  module.hot.accept("./components/App.js", () => {
+    const App = require("./components/App").default;
+    render(App);
+  });
+}

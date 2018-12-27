@@ -136,9 +136,10 @@ const Header = React.forwardRef((props, ref) => (
 
 export default posed(Header)({
   from: {
-    opacity: 1
+    opacity: 0
   },
   enter: {
+    opacity: 1,
     staggerChildren: 50
   },
   exit: {

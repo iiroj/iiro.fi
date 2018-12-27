@@ -1,8 +1,9 @@
 import { css } from "@emotion/core";
+import React from "react";
 
 import Back from "../../../components/Back";
 
-export default css({
+const containerStyles = css({
   padding: "6.5rem 0 4rem 0",
 
   "@page": {
@@ -21,3 +22,9 @@ export default css({
     }
   }
 });
+
+export default ({ children, ...props }) => (
+  <main {...props} css={containerStyles}>
+    {children}
+  </main>
+);
