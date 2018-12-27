@@ -12,13 +12,14 @@
     "start:lambda": "NODE_ENV=development lambda-dev serve src/lambda -w webpack.config.lambda.js",
     "start": "concurrently 'npm:start:*'",
     "lint": "eslint .",
+    "prebuild:site": "rimraf public",
     "build:site": "NODE_ENV=production BABEL_ENV=node_production webpack",
+    "prebuild:lambda": "rimraf lambda",
     "build:lambda": "NODE_ENV=production lambda-dev build src/lambda lambda -w webpack.config.lambda.js",
     "prebuild": "rimraf build lambda",
     "build": "concurrently 'npm:build:*'",
-    "stats": "webpack-bundle-analyzer public/stats.json",
     "version": "standard-version",
-    "release": "git push --follow-tags origin master"
+    "push": "git push --follow-tags origin master"
   },
   "dependencies": {
     "@emotion/core": "^10.0.5",
@@ -65,15 +66,14 @@
     "eslint-plugin-react": "^7.11.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-renderer-webpack-plugin": "^3.1.0",
+    "ignore-emit-webpack-plugin": "^1.0.2",
     "lambda-dev": "^1.5.1",
     "minimal-request-promise": "^1.5.0",
     "prettier": "^1.15.3",
     "rimraf": "^2.6.2",
     "standard-version": "^4.4.0",
-    "stats-webpack-plugin": "^0.7.0",
     "terser-webpack-plugin": "^1.2.1",
     "webpack": "^4.28.2",
-    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.13"
   },

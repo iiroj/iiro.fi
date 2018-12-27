@@ -6,7 +6,7 @@ import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
 import LoadablePlugin from "@loadable/webpack-plugin";
 import path from "path";
-import StatsPlugin from "stats-webpack-plugin";
+import IgnoreEmitPlugin from "ignore-emit-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import webpack from "webpack";
 
@@ -99,7 +99,7 @@ const config = {
 if (isProduction) {
   config.plugins.push(
     new CopyWebpackPlugin([{ from: "static", to: "." }]),
-    new StatsPlugin("stats.json", { chunkModules: true })
+    new IgnoreEmitPlugin("loadable-stats.json")
   );
   config.optimization.minimizer = [
     new TerserPlugin({
