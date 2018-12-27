@@ -16,7 +16,7 @@ const routeContainerStyles = css({
 
 const RouteContainer = posed.div({
   from: { opacity: 0 },
-  enter: { opacity: 1, delay: 300, beforeChildren: true },
+  enter: { opacity: 1, delay: 250, beforeChildren: true },
   exit: { opacity: 0 }
 });
 

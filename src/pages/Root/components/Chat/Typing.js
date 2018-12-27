@@ -1,5 +1,6 @@
-import { css, keyframes } from "@emotion/core";
 import React from "react";
+import { css, keyframes } from "@emotion/core";
+import posed from "react-pose";
 
 const jump = keyframes({
   from: { transform: "translateY(-50%)" },
@@ -40,10 +41,21 @@ const typing = css({
   width: "2.5rem"
 });
 
-export default () => (
-  <i css={typing} aria-live="polite">
-    <div css={ball1} i={0} />
-    <div css={ball2} i={1} />
-    <div css={ball3} i={2} />
-  </i>
-);
+const Typing = React.forwardRef((props, ref) => (
+  <li ref={ref}>
+    <i css={typing} aria-live="polite">
+      <div css={ball1} i={0} />
+      <div css={ball2} i={1} />
+      <div css={ball3} i={2} />
+    </i>
+  </li>
+));
+
+export default posed(Typing)({
+  enter: {
+    opacity: 1
+  },
+  exit: {
+    opacity: 0
+  }
+});
