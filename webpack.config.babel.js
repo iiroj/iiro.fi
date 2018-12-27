@@ -1,12 +1,13 @@
 import "dotenv/config";
 
-import LoadablePlugin from "@loadable/webpack-plugin";
 import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
+import LoadablePlugin from "@loadable/webpack-plugin";
 import path from "path";
 import StatsPlugin from "stats-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import webpack from "webpack";
 
 import routes from "./src/routes";
@@ -100,6 +101,11 @@ if (isProduction) {
     new CopyWebpackPlugin([{ from: "static", to: "." }]),
     new StatsPlugin("stats.json", { chunkModules: true })
   );
+  config.optimization.minimizer = [
+    new TerserPlugin({
+      parallel: true
+    })
+  ];
 } else {
   config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
