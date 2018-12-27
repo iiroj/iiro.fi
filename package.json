@@ -22,15 +22,15 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.5",
+    "@loadable/component": "^5.2.2",
+    "common-tags": "^1.8.0",
     "fontfaceobserver": "^2.1.0",
-    "html-minifier": "^3.5.21",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-helmet-async": "^0.2.0",
     "react-pose": "^4.0.4",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "react-universal-component": "^3.0.3"
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -43,10 +43,13 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@emotion/babel-preset-css-prop": "^10.0.5",
+    "@loadable/babel-plugin": "^5.2.2",
+    "@loadable/server": "^5.2.2",
+    "@loadable/webpack-plugin": "^5.2.2",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-transform-export-default-name": "^2.0.4",
-    "babel-plugin-universal-import": "^3.1.2",
     "babel-preset-minify": "^0.5.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "concurrently": "^4.1.0",
@@ -62,7 +65,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
-    "html-renderer-webpack-plugin": "^3.0.10",
+    "html-renderer-webpack-plugin": "^3.1.0",
     "lambda-dev": "^1.5.1",
     "minimal-request-promise": "^1.5.0",
     "prettier": "^1.15.3",
@@ -72,8 +75,7 @@
     "webpack": "^4.28.2",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.13",
-    "webpack-flush-chunks": "^2.0.3"
+    "webpack-dev-server": "^3.1.13"
   },
   "keywords": [
     "emotion",

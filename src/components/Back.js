@@ -63,7 +63,13 @@ const back = css({
 });
 
 const Back = () => (
-  <Link to="/" css={back} title="Back to iiro.fi" role="navigation">
+  <Link
+    css={back}
+    rel="preload"
+    role="navigation"
+    title="Back to iiro.fi"
+    to="/"
+  >
     Back to iiro.fi
   </Link>
 );

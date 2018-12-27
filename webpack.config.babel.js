@@ -1,12 +1,13 @@
 import "dotenv/config";
 
-import path from "path";
-import webpack from "webpack";
+import LoadablePlugin from "@loadable/webpack-plugin";
 import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
-import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import StatsPlugin from "stats-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
+import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
+import path from "path";
+import StatsPlugin from "stats-webpack-plugin";
+import webpack from "webpack";
 
 import routes from "./src/routes";
 import renderer from "./src/renderer";
@@ -45,6 +46,7 @@ const config = {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: require.resolve("babel-loader"),
           options: {
@@ -64,9 +66,10 @@ const config = {
         LAMBDA_BASE_URL: JSON.stringify(process.env.LAMBDA_BASE_URL)
       }
     }),
+    new LoadablePlugin(),
     new HtmlRendererWebpackPlugin({
       hotPath: /\/src\//,
-      paths: Object.keys(routes),
+      paths: [...routes.map(route => route.path).filter(Boolean), "/404"],
       renderer
     })
   ],
