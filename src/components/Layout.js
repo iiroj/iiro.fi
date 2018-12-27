@@ -68,10 +68,7 @@ const Reset = () => (
         },
 
         "#root": {
-          display: "flex",
-          flexDirection: "column",
-          minHeight: "100%",
-          width: "100%"
+          height: "100%"
         },
 
         "*": {

@@ -1,6 +1,5 @@
 module.exports = api => {
   const env = api.env();
-  const isProduction = env.endsWith("production");
 
   const presetEnv = {
     loose: true,
@@ -10,14 +9,8 @@ module.exports = api => {
 
   const presets = [
     ["@babel/preset-env", presetEnv],
-    ["@babel/preset-react"],
-    [
-      "@emotion/babel-preset-css-prop",
-      {
-        autoLabel: !isProduction,
-        sourceMap: !isProduction
-      }
-    ]
+    "@babel/preset-react",
+    "@emotion/babel-preset-css-prop"
   ];
 
   const plugins = [
