@@ -1,11 +1,40 @@
 import { css } from "@emotion/core";
+import posed from "react-pose";
 import React from "react";
 
 import { link } from "../../styles";
 
+const backdrop = css({
+  backgroundColor: "#e30613",
+  height: "100%",
+  left: "-25vw",
+  position: "absolute",
+  transformOrigin: "center",
+  top: "50%",
+  transform: "translateY(-50%)",
+  width: "150vw"
+});
+
+const Backdrop = posed.div({
+  from: {
+    height: "0%",
+    rotate: "0deg",
+    y: "-50%"
+  },
+  enter: {
+    height: "100%",
+    rotate: "-4deg",
+    y: "-50%"
+  },
+  exit: {
+    height: "0%",
+    rotate: "0deg",
+    y: "-50%"
+  }
+});
+
 const headerStyles = css({
   alignItems: "center",
-  backgroundColor: "#e30613",
   color: "white",
   display: "flex",
   flexDirection: "row",
@@ -14,35 +43,25 @@ const headerStyles = css({
   justifyContent: "center",
   marginBottom: "10rem",
   position: "relative",
-  textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)",
-
-  "&::before, &::after": {
-    backgroundColor: "#e30613",
-    content: '""',
-    display: "block",
-    height: "50%",
-    left: 0,
-    position: "absolute",
-    right: 0,
-    zIndex: -1
-  },
-
-  "&::before": {
-    top: 0,
-    transformOrigin: "0%",
-    transform: "skewY(-2deg)"
-  },
-
-  "&::after": {
-    bottom: 0,
-    transformOrigin: "100%",
-    transform: "skewY(-2deg)"
-  }
+  textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
 });
 
 const textStyles = css({
   margin: "4rem",
-  maxWidth: 480
+  maxWidth: 480,
+  position: "relative"
+});
+
+const Text = posed.div({
+  from: {
+    opacity: 0
+  },
+  enter: {
+    opacity: 1
+  },
+  exit: {
+    opacity: 0
+  }
 });
 
 const phoneContainerStyles = css({
@@ -50,6 +69,21 @@ const phoneContainerStyles = css({
   margin: "0 4rem",
   width: 303,
   position: "relative"
+});
+
+const PhoneContainer = posed.div({
+  from: {
+    x: "-100%"
+  },
+  enter: {
+    x: 0,
+    transition: {
+      easing: "easeOut"
+    }
+  },
+  exit: {
+    opacity: 0
+  }
 });
 
 const phoneStyles = css({
@@ -65,9 +99,10 @@ const screenStyles = css({
   left: 15
 });
 
-export const Header = () => (
-  <header css={headerStyles}>
-    <div css={textStyles}>
+const Header = React.forwardRef((props, ref) => (
+  <header css={headerStyles} ref={ref}>
+    <Backdrop css={backdrop} />
+    <Text css={textStyles}>
       <h1>Verkko&shy;kauppa.com</h1>
       <p>
         UX/UI designer from November 2014 until April 2017. As the resident web
@@ -81,8 +116,8 @@ export const Header = () => (
       >
         Visit Verkkokauppa.com
       </a>
-    </div>
-    <div css={phoneContainerStyles}>
+    </Text>
+    <PhoneContainer css={phoneContainerStyles}>
       <img
         alt=""
         css={phoneStyles}
@@ -95,6 +130,18 @@ export const Header = () => (
         src="/portfolio/verkkokauppacom/frontpage.jpg"
         srcSet="/portfolio/verkkokauppacom/frontpage.jpg 1x, /portfolio/verkkokauppacom/frontpage@2x.jpg 2x, /portfolio/verkkokauppacom/frontpage@3x.jpg 3x"
       />
-    </div>
+    </PhoneContainer>
   </header>
-);
+));
+
+export default posed(Header)({
+  from: {
+    opacity: 1
+  },
+  enter: {
+    staggerChildren: 50
+  },
+  exit: {
+    opacity: 0
+  }
+});

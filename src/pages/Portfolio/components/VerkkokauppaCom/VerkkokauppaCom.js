@@ -1,14 +1,13 @@
-import { css } from "@emotion/core";
 import React from "react";
+import { css } from "@emotion/core";
 
-import { Header } from "./Header";
+import Header from "./Header";
 import { DeliveryEstimates } from "./DeliveryEstimates";
 import { SelfPickup } from "./SelfPickup";
 import { Barometer } from "./Barometer";
 
 const articleStyles = css({
   backgroundColor: "white",
-  boxShadow: "0 0 0 1px rgba(0, 0, 0, 0.05)",
   position: "relative",
   zIndex: 1,
 
