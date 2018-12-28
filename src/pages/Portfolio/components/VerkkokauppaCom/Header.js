@@ -80,9 +80,12 @@ const Screen = styled.img({
   left: 15
 });
 
-const Header = ({ isSync }) => (
+const Header = ({ forceInitialPose }) => (
   <Container>
-    <Backdrop initialPose={isSync ? "enter" : "exit"} pose={"enter"} />
+    <Backdrop
+      initialPose={forceInitialPose ? "exit" : "enter"}
+      pose={"enter"}
+    />
     <Text>
       <h1>Verkko&shy;kauppa.com</h1>
       <p>
@@ -97,7 +100,10 @@ const Header = ({ isSync }) => (
         Visit Verkkokauppa.com
       </Link>
     </Text>
-    <PhoneContainer initialPose={isSync ? "enter" : "exit"} pose={"enter"}>
+    <PhoneContainer
+      initialPose={forceInitialPose ? "exit" : "enter"}
+      pose={"enter"}
+    >
       <Phone
         alt=""
         src="/portfolio/verkkokauppacom/pixel.png"
@@ -113,7 +119,7 @@ const Header = ({ isSync }) => (
 );
 
 Header.propTypes = {
-  isSync: PropTypes.bool.isRequired
+  forceInitialPose: PropTypes.bool.isRequired
 };
 
 export default Header;

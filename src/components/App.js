@@ -23,12 +23,22 @@ const RouteContainer = posed(
 
 class App extends React.PureComponent {
   state = {
-    isSync: true
+    forceInitialPose: false
   };
 
-  handleOnBeforePageChange = ({ isSync }) => this.setState({ isSync });
+  componentDidMount() {
+    this.setState({ forceInitialPose: true });
+  }
+
+  componentDidUpdate(prevProps) {
+    const { history, location } = this.props;
+    if (location.key !== prevProps.location.key && history.action !== "POP") {
+      window.scrollTo(0, 0);
+    }
+  }
 
   render() {
+    const { forceInitialPose } = this.state;
     const { location } = this.props;
 
     return (
@@ -37,8 +47,7 @@ class App extends React.PureComponent {
           <PoseGroup>
             <RouteContainer key={location.key || "initial-route"}>
               <UniversalComponent
-                isSync={this.state.isSync}
-                onBefore={this.handleOnBeforePageChange}
+                forceInitialPose={forceInitialPose}
                 src={routes.get(location.pathname) || NotFound}
               />
             </RouteContainer>

@@ -19,7 +19,7 @@ import {
   Skills
 } from "./components";
 
-const Cv = ({ isSync }) => (
+const Cv = ({ forceInitialPose }) => (
   <>
     <Helmet>
       <title>CV of Iiro Jäppinen</title>
@@ -28,7 +28,7 @@ const Cv = ({ isSync }) => (
     <Back />
 
     <Container>
-      <Page initialPose={isSync ? "enter" : "exit"} pose={"enter"}>
+      <Page initialPose={forceInitialPose ? "exit" : "enter"} pose={"enter"}>
         <Heading page="1/3" />
 
         <Header name="Iiro Jäppinen" picture={<Picture />}>
@@ -157,7 +157,7 @@ const Cv = ({ isSync }) => (
         </Section>
       </Page>
 
-      <Page initialPose={isSync ? "enter" : "exit"} pose={"enter"}>
+      <Page initialPose={forceInitialPose ? "exit" : "enter"} pose={"enter"}>
         <Heading page="2/3" />
 
         <Section>
@@ -310,7 +310,7 @@ const Cv = ({ isSync }) => (
         </Section>
       </Page>
 
-      <Page initialPose={isSync ? "enter" : "exit"} pose={"enter"}>
+      <Page initialPose={forceInitialPose ? "exit" : "enter"} pose={"enter"}>
         <Heading page="3/3" />
 
         <Projects>
@@ -417,7 +417,7 @@ const Cv = ({ isSync }) => (
 );
 
 Cv.propTypes = {
-  isSync: PropTypes.bool.isRequired
+  forceInitialPose: PropTypes.bool.isRequired
 };
 
 export default Cv;

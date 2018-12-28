@@ -29,9 +29,9 @@ const Article = styled.article({
   }
 });
 
-const VerkkokauppaCom = ({ isSync }) => (
+const VerkkokauppaCom = ({ forceInitialPose }) => (
   <Article>
-    <Header isSync={isSync} />
+    <Header forceInitialPose={forceInitialPose} />
     <DeliveryEstimates />
     <SelfPickup />
     <Barometer />
@@ -39,7 +39,7 @@ const VerkkokauppaCom = ({ isSync }) => (
 );
 
 VerkkokauppaCom.propTypes = {
-  isSync: PropTypes.bool.isRequired
+  forceInitialPose: PropTypes.bool.isRequired
 };
 
 export default VerkkokauppaCom;

@@ -13,7 +13,7 @@ import {
   VerkkokauppaCom
 } from "./components";
 
-const Portfolio = ({ isSync }) => (
+const Portfolio = ({ forceInitialPose }) => (
   <Container>
     <Helmet>
       <title>Portfolio of Iiro Jäppinen</title>
@@ -22,7 +22,7 @@ const Portfolio = ({ isSync }) => (
     <Header>
       <h1>Portfolio of Iiro Jäppinen</h1>
     </Header>
-    <VerkkokauppaCom isSync={isSync} />
+    <VerkkokauppaCom forceInitialPose={forceInitialPose} />
     <HumbleBundle />
     <Icons />
     <Aside>With more coming soon...</Aside>
@@ -30,7 +30,7 @@ const Portfolio = ({ isSync }) => (
 );
 
 Portfolio.propTypes = {
-  isSync: PropTypes.bool.isRequired
+  forceInitialPose: PropTypes.bool.isRequired
 };
 
 export default Portfolio;

@@ -12,7 +12,7 @@ const options = {
 const UniversalComponent = universal(({ src }) => src(), options);
 
 UniversalComponent.propTypes = {
-  isSync: PropTypes.bool.isRequired,
+  forceInitialPose: PropTypes.bool.isRequired,
   src: PropTypes.func.isRequired
 };
 
