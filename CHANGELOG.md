@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="18.2.0"></a>
+# [18.2.0](https://gitlab.com/iiroj/iiro.fi/compare/v18.1.0...v18.2.0) (2018-12-28)
+
+
+### Features
+
+* use only history instead of react-router ([a45fc01](https://gitlab.com/iiroj/iiro.fi/commit/a45fc01))
+
+
+
 <a name="18.1.0"></a>
 # [18.1.0](https://gitlab.com/iiroj/iiro.fi/compare/v18.0.1...v18.1.0) (2018-12-28)
 
