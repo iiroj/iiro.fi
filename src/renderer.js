@@ -3,7 +3,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { html } from "common-tags";
 import { renderToString } from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
-import { StaticRouter } from "react-router";
+import { createMemoryHistory } from "history";
 import flushChunks from "webpack-flush-chunks";
 import React from "react";
 
@@ -18,17 +18,19 @@ const getScriptTags = scripts =>
     .join("\n");
 
 export default async ({ path, stats }) => {
-  const App = require("./components/App").default;
+  const { HistoryProvider } = require("./components/History");
+  const { default: App } = require("./components/App");
   const sheet = new ServerStyleSheet();
   const helmetContext = {};
+  const history = createMemoryHistory({ initialEntries: [path] });
 
   const appHtml = renderToString(
     sheet.collectStyles(
-      <StaticRouter location={path} context={{}}>
+      <HistoryProvider history={history}>
         <HelmetProvider context={helmetContext}>
           <App />
         </HelmetProvider>
-      </StaticRouter>
+      </HistoryProvider>
     )
   );
 

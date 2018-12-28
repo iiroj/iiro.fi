@@ -1,17 +1,20 @@
-import { BrowserRouter } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import { HelmetProvider } from "react-helmet-async";
 import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./components/App";
+import { HistoryProvider } from "./components/History";
+
+const history = createBrowserHistory();
 
 const render = App =>
   ReactDOM.hydrate(
-    <BrowserRouter>
+    <HistoryProvider history={history}>
       <HelmetProvider>
         <App />
       </HelmetProvider>
-    </BrowserRouter>,
+    </HistoryProvider>,
     document.getElementById("root")
   );
 

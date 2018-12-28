@@ -1,8 +1,9 @@
 import React from "react";
-import { Link as ReactRouterLink } from "react-router-dom";
 import styled from "styled-components";
 
-const Link = styled(ReactRouterLink)({
+import HistoryLink from "./HistoryLink";
+
+const Link = styled(HistoryLink)({
   background: "none !important",
   color: "transparent",
   cursor: "pointer",
@@ -63,7 +64,7 @@ const Link = styled(ReactRouterLink)({
 });
 
 export default () => (
-  <Link rel="preload" role="navigation" title="Back to iiro.fi" to="/">
+  <Link rel="preload" role="navigation" title="Back to iiro.fi" href="/">
     Back to iiro.fi
   </Link>
 );

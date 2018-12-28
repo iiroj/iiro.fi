@@ -1,11 +1,12 @@
-import { withRouter } from "react-router";
 import posed, { PoseGroup } from "react-pose";
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
 import { MessageProvider } from "../services/chat";
 import { NotFound, routes } from "../routes";
 
+import { withHistory } from "./History";
 import Layout from "./Layout";
 import UniversalComponent from "./UniversalComponent";
 
@@ -22,33 +23,45 @@ const RouteContainer = posed(
 });
 
 class App extends React.PureComponent {
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  };
+
   state = {
+    key: this.props.history.location.key,
     forceInitialPose: false
   };
 
   componentDidMount() {
     this.setState({ forceInitialPose: true });
+
+    this.props.history.listen(location => {
+      this.setState({ key: location.key });
+    });
   }
 
   componentDidUpdate(prevProps) {
-    const { history, location } = this.props;
-    if (location.key !== prevProps.location.key && history.action !== "POP") {
+    const { history } = this.props;
+    if (
+      history.location.key !== prevProps.history.location.key &&
+      history.action !== "POP"
+    ) {
       window.scrollTo(0, 0);
     }
   }
 
   render() {
     const { forceInitialPose } = this.state;
-    const { location } = this.props;
+    const { history } = this.props;
 
     return (
       <Layout>
         <MessageProvider>
           <PoseGroup>
-            <RouteContainer key={location.key || "initial-route"}>
+            <RouteContainer key={history.location.key || "initial-route"}>
               <UniversalComponent
                 forceInitialPose={forceInitialPose}
-                src={routes.get(location.pathname) || NotFound}
+                src={routes.get(history.location.pathname) || NotFound}
               />
             </RouteContainer>
           </PoseGroup>
@@ -58,4 +71,4 @@ class App extends React.PureComponent {
   }
 }
 
-export default withRouter(App);
+export default withHistory(App);

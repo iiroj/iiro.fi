@@ -382,7 +382,7 @@ const Cv = ({ forceInitialPose }) => (
                   Verkkokauppa.com is the largest online retailer in Finland. I
                   designed the{" "}
                   <Link
-                    to="https://www.kauppalehti.fi/lehdistotiedotteet/verkkokauppacomin-sijoittajasivut-palkittiin-vuoden-2018-parhaina/LPuge6z7"
+                    href="https://www.kauppalehti.fi/lehdistotiedotteet/verkkokauppacomin-sijoittajasivut-palkittiin-vuoden-2018-parhaina/LPuge6z7"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

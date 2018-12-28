@@ -35,14 +35,14 @@ const messages = [
   </p>,
   <p key="7">
     You should email me at{" "}
-    <Link to="mailto:hello@iiro.fi">
+    <Link href="mailto:hello@iiro.fi">
       <Emoji label="Email">
         <Email />
       </Emoji>{" "}
       hello@iiro.fi
     </Link>
     or send a tweet to{" "}
-    <Link to="https://twitter.com/iirojappinen">
+    <Link href="https://twitter.com/iirojappinen">
       <Emoji label="Twitter">
         <Twitter />
       </Emoji>{" "}
@@ -51,21 +51,21 @@ const messages = [
   </p>,
   <p key="8">
     I also have a{" "}
-    <Link to="/cv/">
+    <Link href="/cv/">
       <Emoji label="CV">
         <Cv />
       </Emoji>{" "}
       CV
     </Link>
     ,{" "}
-    <Link to="/portfolio/">
+    <Link href="/portfolio/">
       <Emoji label="Portfolio">
         <Portfolio />
       </Emoji>{" "}
       Portfolio
     </Link>{" "}
     and a{" "}
-    <Link to="https://fi.linkedin.com/in/iiroj">
+    <Link href="https://fi.linkedin.com/in/iiroj">
       <Emoji label="Linkedin">
         <Linkedin />
       </Emoji>{" "}
@@ -75,14 +75,14 @@ const messages = [
   </p>,
   <p key="9">
     Check out my{" "}
-    <Link to="https://github.com/iiroj">
+    <Link href="https://github.com/iiroj">
       <Emoji label="GitHub">
         <GitHub />
       </Emoji>{" "}
       GitHub
     </Link>{" "}
     and{" "}
-    <Link to="https://www.npmjs.com/~iiroj">
+    <Link href="https://www.npmjs.com/~iiroj">
       <Emoji label="npmn">
         <Npm />
       </Emoji>{" "}

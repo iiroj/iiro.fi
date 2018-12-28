@@ -1,12 +1,12 @@
-import { Link as ReactRouterLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+
+import HistoryLink from "./HistoryLink";
 
 const YELLOW = `hsl(44, 100%, 75%)`;
 
 const Link = styled.a.attrs(props => ({
-  as: props.to.startsWith("/") ? ReactRouterLink : undefined,
-  href: props.to
+  as: props.href.startsWith("/") ? HistoryLink : undefined
 }))({
   backgroundImage: `linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%)`,
   backgroundPosition: "0 1em",
@@ -30,7 +30,7 @@ const Link = styled.a.attrs(props => ({
 
 Link.propTypes = {
   children: PropTypes.any.isRequired,
-  to: PropTypes.string.isRequired
+  href: PropTypes.string.isRequired
 };
 
 export default Link;
