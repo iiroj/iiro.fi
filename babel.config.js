@@ -1,5 +1,6 @@
 module.exports = api => {
   const env = api.env();
+  const isProduction = env.endsWith("production");
 
   const presetEnv = {
     loose: true,
@@ -26,6 +27,15 @@ module.exports = api => {
     presetEnv.modules = "commonjs";
     presetEnv.targets = { node: "current" };
     plugins.push(["babel-plugin-universal-import", { babelServer: true }]);
+  }
+
+  if (isProduction) {
+    presets.push([
+      "babel-preset-minify",
+      {
+        builtIns: false
+      }
+    ]);
   }
 
   return { presets, plugins };

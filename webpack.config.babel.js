@@ -5,7 +5,6 @@ import CopyWebpackPlugin from "copy-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
 import path from "path";
-import TerserPlugin from "terser-webpack-plugin";
 import webpack from "webpack";
 
 import { routes } from "./src/routes";
@@ -96,11 +95,6 @@ const config = {
 
 if (isProduction) {
   config.plugins.push(new CopyWebpackPlugin([{ from: "static", to: "." }]));
-  config.optimization.minimizer = [
-    new TerserPlugin({
-      parallel: true
-    })
-  ];
 } else {
   config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
