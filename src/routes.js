@@ -3,17 +3,23 @@ import loadable from "@loadable/component";
 export default [
   {
     path: "/cv/",
-    component: loadable(() => import("./pages/Cv"))
+    component: loadable(() => import(/* webpackPrefetch: true */ "./pages/Cv"))
   },
   {
     path: "/portfolio/",
-    component: loadable(() => import("./pages/Portfolio"))
+    component: loadable(() =>
+      import(/* webpackPrefetch: true */ "./pages/Portfolio")
+    )
   },
   {
     path: "/",
-    component: loadable(() => import("./pages/Root"))
+    component: loadable(() =>
+      import(/* webpackPrefetch: true */ "./pages/Root")
+    )
   },
   {
-    component: loadable(() => import("./pages/NotFound"))
+    component: loadable(() =>
+      import(/* webpackPrefetch: true */ "./pages/NotFound")
+    )
   }
 ];

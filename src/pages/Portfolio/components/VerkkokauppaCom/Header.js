@@ -4,78 +4,66 @@ import React from "react";
 
 import Link from "../Link";
 
-const Backdrop = styled(
-  posed.div({
-    enter: {
-      height: "100%",
-      rotate: "-4deg",
-      y: "-50%"
-    },
-    exit: {
-      height: "0%",
-      rotate: "0deg",
-      y: "-50%"
-    }
+const Backdrop = posed(
+  styled.div({
+    backgroundColor: "#e30613",
+    height: "100%",
+    left: "-25vw",
+    position: "absolute",
+    transformOrigin: "center",
+    top: "50%",
+    transform: "translateY(-50%)",
+    width: "150vw"
   })
 )({
-  backgroundColor: "#e30613",
-  height: "100%",
-  left: "-25vw",
-  position: "absolute",
-  transformOrigin: "center",
-  top: "50%",
-  transform: "translateY(-50%)",
-  width: "150vw"
+  enter: {
+    height: "100%",
+    rotate: "-4deg",
+    y: "-50%"
+  },
+  exit: {
+    height: "0%",
+    rotate: "0deg",
+    y: "-50%"
+  }
 });
 
-const Container = posed(
-  styled.header({
-    alignItems: "center",
-    color: "white",
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    flex: "0 0 320px",
-    justifyContent: "center",
-    marginBottom: "10rem",
-    position: "relative",
-    textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
-  })
-)({
-  enter: { opacity: 1, staggerChildren: 50 },
-  exit: { opacity: 0 }
+const Container = styled.header({
+  alignItems: "center",
+  color: "white",
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  flex: "0 0 320px",
+  justifyContent: "center",
+  marginBottom: "10rem",
+  position: "relative",
+  textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
 });
 
-const Text = styled(
-  posed.div({
-    enter: { opacity: 1 },
-    exit: { opacity: 0 }
-  })
-)({
+const Text = styled.div({
   margin: "4rem",
   maxWidth: 480,
   position: "relative"
 });
 
-const PhoneContainer = styled(
-  posed.div({
-    enter: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        easing: "easeOut"
-      }
-    },
-    exit: {
-      opacity: 0,
-      x: -100
-    }
+const PhoneContainer = posed(
+  styled.div({
+    height: 480,
+    margin: "0 4rem",
+    width: 303,
+    position: "relative"
   })
 )({
-  height: 480,
-  margin: "0 4rem",
-  width: 303,
-  position: "relative"
+  enter: {
+    x: 0,
+    transition: {
+      easing: "easeOut"
+    }
+  },
+  exit: {
+    x: -100
+  }
 });
 
 const Phone = styled.img({

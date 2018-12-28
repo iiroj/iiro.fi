@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router";
+import { Switch, Route, withRouter } from "react-router";
 import posed, { PoseGroup } from "react-pose";
 import React from "react";
 import styled from "styled-components";
@@ -15,32 +15,28 @@ const RouteContainer = posed(
     width: "100%"
   })
 )({
-  enter: { opacity: 1, staggerChildren: 50 },
-  exit: { opacity: 0, staggerChildren: 50, staggerDirection: -1 }
+  enter: { opacity: 1 },
+  exit: { opacity: 0, staggerDirection: -1 }
 });
 
-const App = () => (
+const App = ({ location }) => (
   <Layout>
     <MessageProvider>
-      <Route>
-        {({ location }) => (
-          <PoseGroup>
-            <RouteContainer key={location.key || "initial-route"}>
-              <Switch location={location}>
-                {routes.map((route, key) => (
-                  <Route
-                    key={route.path || key}
-                    path={route.path}
-                    render={props => <route.component {...props} />}
-                  />
-                ))}
-              </Switch>
-            </RouteContainer>
-          </PoseGroup>
-        )}
-      </Route>
+      <PoseGroup>
+        <RouteContainer key={location.key || "initial-route"}>
+          <Switch location={location}>
+            {routes.map((route, key) => (
+              <Route
+                key={route.path || key}
+                path={route.path}
+                render={props => <route.component {...props} />}
+              />
+            ))}
+          </Switch>
+        </RouteContainer>
+      </PoseGroup>
     </MessageProvider>
   </Layout>
 );
 
-export default App;
+export default withRouter(App);
