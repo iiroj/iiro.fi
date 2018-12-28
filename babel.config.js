@@ -14,7 +14,14 @@ module.exports = api => {
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-export-namespace-from",
     "@babel/plugin-syntax-dynamic-import",
-    "babel-plugin-styled-components",
+    [
+      "babel-plugin-styled-components",
+      {
+        displayName: !isProduction,
+        minify: isProduction,
+        pure: true
+      }
+    ],
     "babel-plugin-transform-export-default-name"
   ];
 
