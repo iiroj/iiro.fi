@@ -17,16 +17,12 @@ const Message = styled.li({
 });
 
 export default posed(Message)({
-  from: {
-    opacity: 0,
-    y: "25%"
-  },
   enter: {
     opacity: 1,
     y: "0%"
   },
   exit: {
     opacity: 0,
-    y: "-25%"
+    y: "25%"
   }
 });

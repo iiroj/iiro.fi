@@ -52,13 +52,6 @@ const Typing = React.forwardRef((props, ref) => (
 ));
 
 export default posed(Typing)({
-  from: {
-    opacity: 0
-  },
-  enter: {
-    opacity: 1
-  },
-  exit: {
-    opacity: 0
-  }
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
 });

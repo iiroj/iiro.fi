@@ -5,6 +5,7 @@ import Back from "../../components/Back";
 
 import {
   Aside,
+  Container,
   Header,
   HumbleBundle,
   Icons,
@@ -12,7 +13,7 @@ import {
 } from "./components";
 
 const Portfolio = () => (
-  <>
+  <Container>
     <Helmet>
       <title>Portfolio of Iiro Jäppinen</title>
     </Helmet>
@@ -24,7 +25,7 @@ const Portfolio = () => (
     <HumbleBundle />
     <Icons />
     <Aside>With more coming soon...</Aside>
-  </>
+  </Container>
 );
 
 export default Portfolio;

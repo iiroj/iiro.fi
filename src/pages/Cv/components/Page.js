@@ -64,7 +64,6 @@ const Page = styled.div({
 });
 
 export default posed(Page)({
-  from: { opacity: 0, y: 128 },
-  enter: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -128 }
+  enter: { y: 0 },
+  exit: { y: 128 }
 });

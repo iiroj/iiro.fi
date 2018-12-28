@@ -6,11 +6,6 @@ import Link from "../Link";
 
 const Backdrop = styled(
   posed.div({
-    from: {
-      height: "0%",
-      rotate: "0deg",
-      y: "-50%"
-    },
     enter: {
       height: "100%",
       rotate: "-4deg",
@@ -47,29 +42,14 @@ const Container = posed(
     textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
   })
 )({
-  from: {
-    opacity: 0
-  },
-  enter: {
-    opacity: 1,
-    staggerChildren: 50
-  },
-  exit: {
-    opacity: 0
-  }
+  enter: { opacity: 1, staggerChildren: 50 },
+  exit: { opacity: 0 }
 });
 
 const Text = styled(
   posed.div({
-    from: {
-      opacity: 0
-    },
-    enter: {
-      opacity: 1
-    },
-    exit: {
-      opacity: 0
-    }
+    enter: { opacity: 1 },
+    exit: { opacity: 0 }
   })
 )({
   margin: "4rem",
@@ -79,17 +59,16 @@ const Text = styled(
 
 const PhoneContainer = styled(
   posed.div({
-    from: {
-      x: "-100%"
-    },
     enter: {
+      opacity: 1,
       x: 0,
       transition: {
         easing: "easeOut"
       }
     },
     exit: {
-      opacity: 0
+      opacity: 0,
+      x: -100
     }
   })
 )({

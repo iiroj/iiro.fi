@@ -15,9 +15,8 @@ const RouteContainer = posed(
     width: "100%"
   })
 )({
-  from: { opacity: 0 },
-  enter: { beforeChildren: true, opacity: 1 },
-  exit: { opacity: 0 }
+  enter: { opacity: 1, staggerChildren: 50 },
+  exit: { opacity: 0, staggerChildren: 50, staggerDirection: -1 }
 });
 
 const App = () => (
@@ -25,7 +24,7 @@ const App = () => (
     <MessageProvider>
       <Route>
         {({ location }) => (
-          <PoseGroup preEnterPose="from" enterPose="enter" exitPose="exit">
+          <PoseGroup>
             <RouteContainer key={location.key || "initial-route"}>
               <Switch location={location}>
                 {routes.map((route, key) => (
