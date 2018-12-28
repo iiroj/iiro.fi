@@ -2,17 +2,18 @@ import Helmet from "react-helmet-async";
 import React from "react";
 
 import Back from "../../components/Back";
-import baskerville from "../../styles/baskerville";
+import Baskerville from "../../components/Baskerville";
 import Link from "../../components/Link";
 import Picture from "../../components/Picture";
 
-import { projects, section } from "./styles";
 import {
   Container,
   DefinitionList,
-  Heading,
   Header,
+  Heading,
   Page,
+  Projects,
+  Section,
   SelfAssesments,
   Skills
 } from "./components";
@@ -31,14 +32,14 @@ const Cv = () => (
 
         <Header name="Iiro Jäppinen" picture={<Picture />}>
           <p>
-            I’m a UX <span css={baskerville}>&</span> UI designer, and a
-            front-end developer with a passion for precise pixels and accessible
+            I’m a UX <Baskerville>&</Baskerville> UI designer, and a front-end
+            developer with a passion for precise pixels and accessible
             interfaces. I aim to create real solutions to actual problems with a
             design that stands on its own but doesn’t need introduction.
           </p>
         </Header>
 
-        <section css={section}>
+        <Section>
           <h2>Basic Info</h2>
           <div>
             <p>
@@ -48,9 +49,9 @@ const Cv = () => (
               Helsinki.
             </p>
           </div>
-        </section>
+        </Section>
 
-        <section css={section}>
+        <Section>
           <h2>Language Skills</h2>
           <div>
             <DefinitionList>
@@ -59,8 +60,7 @@ const Cv = () => (
                   title: "English",
                   definition: (
                     <>
-                      Excellent (spoken <span css={baskerville}>&</span>{" "}
-                      written)
+                      Excellent (spoken <Baskerville>&</Baskerville> written)
                     </>
                   )
                 },
@@ -71,9 +71,9 @@ const Cv = () => (
               ]}
             </DefinitionList>
           </div>
-        </section>
+        </Section>
 
-        <section css={section}>
+        <Section>
           <h2>Education</h2>
           <div>
             <ul>
@@ -99,9 +99,9 @@ const Cv = () => (
               </li>
             </ul>
           </div>
-        </section>
+        </Section>
 
-        <section css={section}>
+        <Section>
           <h2>Career History</h2>
           <div>
             <ul>
@@ -121,7 +121,7 @@ const Cv = () => (
               <li>
                 <p>
                   <strong>
-                    UX <span css={baskerville}>&</span> UI Designer
+                    UX <Baskerville>&</Baskerville> UI Designer
                   </strong>
                   , Verkkokauppa.com
                 </p>
@@ -139,7 +139,7 @@ const Cv = () => (
               <li>
                 <p>
                   <strong>
-                    UX <span css={baskerville}>&</span> UI Designer
+                    UX <Baskerville>&</Baskerville> UI Designer
                   </strong>
                   , Humble Bundle
                 </p>
@@ -153,13 +153,13 @@ const Cv = () => (
               </li>
             </ul>
           </div>
-        </section>
+        </Section>
       </Page>
 
       <Page>
         <Heading page="2/3" />
 
-        <section css={section}>
+        <Section>
           <h2>Skills</h2>
           <div>
             <Skills>
@@ -234,7 +234,7 @@ const Cv = () => (
                     {
                       title: (
                         <>
-                          Redux <span css={baskerville}>&</span> redux-saga
+                          Redux <Baskerville>&</Baskerville> redux-saga
                         </>
                       ),
                       assesment: "Professional",
@@ -276,9 +276,9 @@ const Cv = () => (
             </Skills>
             <SelfAssesments />
           </div>
-        </section>
+        </Section>
 
-        <section css={section}>
+        <Section>
           <h2>Certificates</h2>
           <div>
             <ul>
@@ -306,13 +306,13 @@ const Cv = () => (
               </li>
             </ul>
           </div>
-        </section>
+        </Section>
       </Page>
 
       <Page>
         <Heading page="3/3" />
 
-        <section css={projects}>
+        <Projects>
           <h2>Selected Projects</h2>
           <div>
             <ul>
@@ -409,7 +409,7 @@ const Cv = () => (
               </li>
             </ul>
           </div>
-        </section>
+        </Projects>
       </Page>
     </Container>
   </>

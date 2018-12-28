@@ -1,16 +1,12 @@
-import { css } from "@emotion/core";
-import React from "react";
+import styled from "styled-components";
 
-const picture = css({
+export default styled.img.attrs({
+  alt: "Iiro Jäppinen",
+  src: "/picture.jpg"
+})({
   flex: "0 0 4rem",
   height: "4rem",
   objectFit: "cover",
   position: "relative",
   width: "4rem"
 });
-
-const Picture = () => (
-  <img alt="Iiro Jäppinen" css={picture} src="/picture.jpg" />
-);
-
-export default Picture;

@@ -1,6 +1,6 @@
-import { css } from "@emotion/core";
+import styled from "styled-components";
 
-export default css({
+export default styled.svg({
   fill: "none",
   height: "1.5rem",
   strokeLinecap: "round",

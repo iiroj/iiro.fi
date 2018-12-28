@@ -1,9 +1,9 @@
-import { css } from "@emotion/core";
 import React from "react";
+import styled from "styled-components";
 
-import { link } from "../styles";
+import Link from "./Link";
 
-const articleStyles = css({
+const Article = styled.article({
   background: "url(/portfolio/icons/icons.jpg)",
   backgroundSize: "cover",
   boxShadow: "0 1px 0 rgba(0, 0, 0, 0.08)",
@@ -13,13 +13,13 @@ const articleStyles = css({
   width: "100%"
 });
 
-const titleStyles = css({
+const H1 = styled.h1({
   fontSize: "3em",
   lineHeight: 1.2,
   marginBottom: "4rem"
 });
 
-const containerStyles = css({
+const Container = styled.div({
   display: "flex",
   flexWrap: "wrap",
   justifyContent: "center",
@@ -38,23 +38,22 @@ const containerStyles = css({
 });
 
 export default () => (
-  <article css={articleStyles}>
-    <h1 css={titleStyles}>Icon Aficionado</h1>
-    <div css={containerStyles}>
+  <Article>
+    <H1>Icon Aficionado</H1>
+    <Container>
       <div>
         <img
           alt="Growl"
           src="/portfolio/icons/growl.png"
           srcSet="/portfolio/icons/growl.png 1x, /portfolio/icons/growl@2x.png 2x, /portfolio/icons/growl@3x.png 3x"
         />
-        <a
-          css={link}
+        <Link
           href="http://growl.info"
           target="_blank"
           rel="noopener noreferrer"
         >
           Growl
-        </a>
+        </Link>
       </div>
       <div>
         <img
@@ -62,15 +61,14 @@ export default () => (
           src="/portfolio/icons/tuneinstructor.png"
           srcSet="/portfolio/icons/tuneinstructor.png 1x, /portfolio/icons/tuneinstructor@2x.png 2x, /portfolio/icons/tuneinstructor@3x.png 3x"
         />
-        <a
-          css={link}
+        <Link
           href="https://www.tune-instructor.de/en/"
           target="_blank"
           rel="noopener noreferrer"
         >
           Tune•Instructor
-        </a>
+        </Link>
       </div>
-    </div>
-  </article>
+    </Container>
+  </Article>
 );

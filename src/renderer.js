@@ -1,7 +1,8 @@
 import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
-import { html } from "common-tags";
 import { HelmetProvider } from "react-helmet-async";
+import { html } from "common-tags";
 import { renderToString } from "react-dom/server";
+import { ServerStyleSheet } from "styled-components";
 import { StaticRouter } from "react-router";
 import React from "react";
 
@@ -14,25 +15,29 @@ export default async ({ compilationAssets, path, stats }) => {
     entrypoints: ["client"],
     stats: JSON.parse(compilationAssets["loadable-stats.json"].source())
   });
-
+  const sheet = new ServerStyleSheet();
   const helmetContext = {};
 
   const appHtml = renderToString(
-    <ChunkExtractorManager extractor={extractor}>
-      <StaticRouter location={path} context={{}}>
-        <HelmetProvider context={helmetContext}>
-          <App />
-        </HelmetProvider>
-      </StaticRouter>
-    </ChunkExtractorManager>
+    sheet.collectStyles(
+      <ChunkExtractorManager extractor={extractor}>
+        <StaticRouter location={path} context={{}}>
+          <HelmetProvider context={helmetContext}>
+            <App />
+          </HelmetProvider>
+        </StaticRouter>
+      </ChunkExtractorManager>
+    )
   );
 
+  const styleTags = sheet.getStyleTags();
   const { helmet } = helmetContext;
 
   if (process.env.NODE_ENV === "production") {
     generateNetlifyHeaders(path, getScriptLinks(extractor));
   }
 
+  /* eslint-disable prettier/prettier */
   return html`
     <!DOCTYPE html>
     <html lang="en" ${helmet.htmlAttributes.toString()}>
@@ -49,6 +54,7 @@ export default async ({ compilationAssets, path, stats }) => {
         ${helmet.link.toString()}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         ${getScriptTags(extractor)}
+        ${styleTags}
       </head>
       <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${appHtml}</div>

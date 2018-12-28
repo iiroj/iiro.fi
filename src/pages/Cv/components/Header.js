@@ -1,8 +1,8 @@
-import { css } from "@emotion/core";
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
 
-const header = css({
+const Container = styled.header({
   display: "flex",
   flexWrap: "wrap-reverse",
 
@@ -39,13 +39,13 @@ const header = css({
 });
 
 const Header = ({ children, name, picture }) => (
-  <header css={header}>
+  <Container>
     <div>
       <h1>{name}</h1>
       {children}
     </div>
     {picture}
-  </header>
+  </Container>
 );
 
 Header.propTypes = {

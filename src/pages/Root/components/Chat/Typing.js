@@ -1,14 +1,14 @@
-import React from "react";
-import { css, keyframes } from "@emotion/core";
 import posed from "react-pose";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const jump = keyframes({
   from: { transform: "translateY(-50%)" },
   to: { transform: "translateY(50%)" }
 });
 
-const ball1 = css({
-  animation: `${jump} 500ms ease-in-out forwards alternate infinite`,
+const Ball1 = styled.div({
+  animation: `${jump.getName()} 500ms ease-in-out forwards alternate infinite`,
   backgroundColor: "rgba(0, 0, 0, 0.4)",
   borderRadius: "50%",
   display: "block",
@@ -18,12 +18,12 @@ const ball1 = css({
   width: "0.5rem"
 });
 
-const ball2 = css(ball1, {
+const Ball2 = styled(Ball1)({
   animationDelay: "100ms",
   left: "1rem"
 });
 
-const ball3 = css(ball1, {
+const Ball3 = styled(Ball1)({
   animationDelay: "200ms",
   left: "2rem"
 });
@@ -33,8 +33,8 @@ const fadeIn = keyframes({
   to: { opacity: 1 }
 });
 
-const typing = css({
-  animation: `${fadeIn} 125ms ease-in-out`,
+const Container = styled.i({
+  animation: `${fadeIn.getName()} 125ms ease-in-out`,
   display: "block",
   height: "0.5rem",
   position: "relative",
@@ -43,11 +43,11 @@ const typing = css({
 
 const Typing = React.forwardRef((props, ref) => (
   <li ref={ref}>
-    <i css={typing} aria-live="polite">
-      <div css={ball1} i={0} />
-      <div css={ball2} i={1} />
-      <div css={ball3} i={2} />
-    </i>
+    <Container aria-live="polite">
+      <Ball1 />
+      <Ball2 />
+      <Ball3 />
+    </Container>
   </li>
 ));
 

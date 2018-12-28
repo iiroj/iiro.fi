@@ -1,14 +1,14 @@
-import { css } from "@emotion/core";
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
 
-const container = css({
+const Container = styled.div({
   overflowX: "auto",
   padding: "0 2rem 1rem 2rem",
   margin: "0 -2rem 1rem -2rem"
 });
 
-const table = css({
+const Table = styled.table({
   borderCollapse: "collapse",
   fontSize: 12,
   tableLayout: "fixed",
@@ -36,7 +36,7 @@ const table = css({
   }
 });
 
-const thead = css({
+const Thead = styled.thead({
   fontSize: "1rem",
   fontWeight: 600,
   textAlign: "left",
@@ -52,17 +52,17 @@ const thead = css({
 });
 
 const Skills = ({ children }) => (
-  <div css={container}>
+  <Container>
     {children.map(skillset => (
-      <table key={skillset.title} css={table}>
-        <thead css={thead}>
+      <Table key={skillset.title}>
+        <Thead>
           <tr>
             <th>{skillset.title}</th>
             <th>Self-assesment</th>
             <th>Last used</th>
             <th>Experience (years)</th>
           </tr>
-        </thead>
+        </Thead>
         <tbody>
           {skillset.data.map(row => (
             <tr key={row.title}>
@@ -73,9 +73,9 @@ const Skills = ({ children }) => (
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     ))}
-  </div>
+  </Container>
 );
 
 Skills.propTypes = {

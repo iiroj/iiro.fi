@@ -1,6 +1,6 @@
-import { css } from "@emotion/core";
+import styled from "styled-components";
 
-export default css({
+export default styled.span({
   fontFamily: 'Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", serif',
   fontStyle: "italic",
   fontWeight: 400

@@ -1,8 +1,8 @@
-import { css } from "@emotion/core";
+import styled from "styled-components";
 
-import section from "./section";
+import Section from "./Section";
 
-export default css(section, {
+export default styled(Section)({
   h3: {
     borderBottom: "1px solid hsl(0,0%,30%)",
     fontWeight: 600,

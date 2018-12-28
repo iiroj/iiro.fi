@@ -1,35 +1,31 @@
-import { css } from "@emotion/core";
 import PropTypes from "prop-types";
 import React from "react";
+import styled from "styled-components";
 
 import Picture from "../../../../components/Picture";
 
-import Typing from "./Typing";
 import Message from "./Message";
 import Reply from "./Reply";
+import Typing from "./Typing";
 
-const messageGroup = css({
-  alignItems: "flex-end",
-  display: "none",
-  flex: "1 1",
-  position: "relative",
+const MessageGroup = styled.div(
+  {
+    alignItems: "flex-end",
+    display: "none",
+    flex: "1 1",
+    position: "relative",
 
-  i: {
-    left: "7rem",
-    position: "absolute",
-    bottom: "2rem"
-  }
-});
+    i: {
+      left: "7rem",
+      position: "absolute",
+      bottom: "2rem"
+    }
+  },
+  props => props.mounted && { display: "flex" },
+  props => props.fullWidth && { flexBasis: "100%" }
+);
 
-const messageGroupVisible = css({
-  display: "flex"
-});
-
-const messageGroupFullWidth = css({
-  flexBasis: "100%"
-});
-
-const backdrop = css({
+const Backdrop = styled.div({
   backdropFilter: "blur(2px)",
   background: "hsla(0, 0%, 80%, 0.8)",
   bottom: 0,
@@ -46,7 +42,7 @@ const backdrop = css({
   zIndex: 1
 });
 
-const pictureContainer = css({
+const PictureContainer = styled.div({
   bottom: "1rem",
   flex: "0 0 4rem",
   marginRight: "1rem",
@@ -79,21 +75,23 @@ const pictureContainer = css({
   }
 });
 
-const messageListContainer = css({
-  alignItems: "flex-start",
-  display: "flex",
-  flexDirection: "column",
-  flex: "1 1",
-  justifyContent: "flex-end",
-  listStyle: "none"
-});
+const MessageListContainer = styled.ol(
+  {
+    alignItems: "flex-start",
+    display: "flex",
+    flexDirection: "column",
+    flex: "1 1",
+    justifyContent: "flex-end",
+    listStyle: "none"
+  },
+  props =>
+    props.typing && {
+      marginBottom: "4.5rem",
+      transition: "all 125ms ease-in-out"
+    }
+);
 
-const messageListContainerTyping = css({
-  marginBottom: "4.5rem",
-  transition: "all 125ms ease-in-out"
-});
-
-const skip = css({
+const SkipButton = styled.button({
   appearance: "none",
   background: "none",
   border: "none",
@@ -106,7 +104,7 @@ const skip = css({
   width: "4rem"
 });
 
-const chat = css({
+const Container = styled.div({
   justifyContent: "center",
   margin: "auto",
   display: "flex",
@@ -168,25 +166,25 @@ export default class Chat extends React.PureComponent {
     const { mounted } = this.state;
 
     return (
-      <div css={chat} ref={this.ref}>
+      <Container ref={this.ref}>
         <noscript>
           <style>{`.noscript { display: flex !important; }`}</style>
         </noscript>
-        <div
-          css={[
-            messageGroup,
-            mounted ? messageGroupVisible : "noscript",
-            messages.length > 0 && messageGroupFullWidth
-          ]}
-          key="message-group"
+
+        <MessageGroup
+          className={!mounted && "noscript"}
+          fullWidth={messages.length > 0}
+          mounted={mounted}
         >
-          <div css={pictureContainer}>
+          <PictureContainer>
             <Picture />
-          </div>
-          <div css={backdrop} />
+          </PictureContainer>
+
+          <Backdrop />
+
           {(messages.length > 0 || typing) && (
-            <ol
-              css={[messageListContainer, typing && messageListContainerTyping]}
+            <MessageListContainer
+              typing={typing}
               aria-live="assertive"
               role="log"
             >
@@ -196,16 +194,14 @@ export default class Chat extends React.PureComponent {
                 </Message>
               ))}
               {typing && <Typing key="typing" />}
-            </ol>
+            </MessageListContainer>
           )}
-        </div>
-        {ready || (
-          <button css={skip} onClick={onSkip}>
-            Skip
-          </button>
-        )}
+        </MessageGroup>
+
+        {ready || <SkipButton onClick={onSkip}>Skip</SkipButton>}
+
         {mounted && <Reply onSentFeedback={onSentFeedback} ready={ready} />}
-      </div>
+      </Container>
     );
   }
 }

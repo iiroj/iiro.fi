@@ -7,17 +7,14 @@ module.exports = api => {
     useBuiltIns: "entry"
   };
 
-  const presets = [
-    ["@babel/preset-env", presetEnv],
-    "@babel/preset-react",
-    "@emotion/babel-preset-css-prop"
-  ];
+  const presets = [["@babel/preset-env", presetEnv], "@babel/preset-react"];
 
   const plugins = [
-    "@babel/plugin-proposal-export-namespace-from",
     "@babel/plugin-proposal-class-properties",
-    "babel-plugin-transform-export-default-name",
-    "@loadable/babel-plugin"
+    "@babel/plugin-proposal-export-namespace-from",
+    "@loadable/babel-plugin",
+    "babel-plugin-styled-components",
+    "babel-plugin-transform-export-default-name"
   ];
 
   if (env.startsWith("webpack")) {

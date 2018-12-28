@@ -1,8 +1,7 @@
-import React from "react";
-import { css } from "@emotion/core";
 import posed from "react-pose";
+import styled from "styled-components";
 
-const message = css({
+const Message = styled.li({
   backgroundColor: "hsl(0, 0%, 96%)",
   borderRadius: "0.5rem",
   padding: "1rem 2rem",
@@ -16,12 +15,6 @@ const message = css({
     borderBottomLeftRadius: 0
   }
 });
-
-const Message = React.forwardRef(({ children }, ref) => (
-  <li css={message} ref={ref}>
-    {children}
-  </li>
-));
 
 export default posed(Message)({
   from: {

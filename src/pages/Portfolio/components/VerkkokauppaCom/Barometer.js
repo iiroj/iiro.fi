@@ -1,7 +1,7 @@
-import { css } from "@emotion/core";
 import React from "react";
+import styled from "styled-components";
 
-const graph = css({
+const Svg = styled.svg({
   height: 120,
   left: "50%",
   position: "relative",
@@ -10,8 +10,7 @@ const graph = css({
 });
 
 const Graph = () => (
-  <svg
-    css={graph}
+  <Svg
     width="1920"
     height="120"
     viewBox="0 0 1920 120"
@@ -37,17 +36,17 @@ const Graph = () => (
         stroke="#E30613"
       />
     </g>
-  </svg>
+  </Svg>
 );
 
-const sectionStyles = css({
+const Section = styled.section({
   overflowX: "hidden",
   paddingTop: 192,
   position: "relative",
   width: "100%"
 });
 
-const imageStyles = css({
+const Image = styled.img({
   display: "block",
   left: "50%",
   position: "absolute",
@@ -56,7 +55,7 @@ const imageStyles = css({
   width: 368
 });
 
-const textStyles = css({
+const Text = styled.div({
   margin: "0 auto 2rem auto",
   maxWidth: 480,
   padding: "0 1rem",
@@ -66,16 +65,15 @@ const textStyles = css({
   }
 });
 
-export const Barometer = () => (
-  <section css={sectionStyles}>
-    <img
+export default () => (
+  <Section>
+    <Image
       alt="Verkkokauppa.com Price Barometer"
-      css={imageStyles}
       src="/portfolio/verkkokauppacom/price-barometer.png"
       srcSet="/portfolio/verkkokauppacom/price-barometer.png 1x, /portfolio/verkkokauppacom/price-barometer@2x.png 2x, /portfolio/verkkokauppacom/price-barometer@3x.png 3x"
     />
     <Graph />
-    <div css={textStyles}>
+    <Text>
       <h2>Making Informed Customers</h2>
       <p>
         <a
@@ -95,6 +93,6 @@ export const Barometer = () => (
         the value of their product as used-goods, so they can be confident
         reselling and fighting e-waste.
       </p>
-    </div>
-  </section>
+    </Text>
+  </Section>
 );

@@ -1,12 +1,12 @@
 import React from "react";
-import { css } from "@emotion/core";
+import styled from "styled-components";
 
 import Header from "./Header";
-import { DeliveryEstimates } from "./DeliveryEstimates";
-import { SelfPickup } from "./SelfPickup";
-import { Barometer } from "./Barometer";
+import DeliveryEstimates from "./DeliveryEstimates";
+import SelfPickup from "./SelfPickup";
+import Barometer from "./Barometer";
 
-const articleStyles = css({
+const Article = styled.article({
   backgroundColor: "white",
   position: "relative",
   zIndex: 1,
@@ -29,10 +29,10 @@ const articleStyles = css({
 });
 
 export default () => (
-  <article css={articleStyles}>
+  <Article>
     <Header />
     <DeliveryEstimates />
     <SelfPickup />
     <Barometer />
-  </article>
+  </Article>
 );

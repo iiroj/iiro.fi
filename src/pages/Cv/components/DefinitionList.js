@@ -1,8 +1,8 @@
-import { css } from "@emotion/core";
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
 
-const definitionList = css({
+const Dl = styled.dl({
   dt: {
     float: "left"
   },
@@ -13,7 +13,7 @@ const definitionList = css({
 });
 
 const DefinitionList = ({ children }) => (
-  <dl css={definitionList}>
+  <Dl>
     {children.map((definition, key) => (
       <React.Fragment key={key}>
         <dt>
@@ -22,7 +22,7 @@ const DefinitionList = ({ children }) => (
         <dd>{definition.definition}</dd>
       </React.Fragment>
     ))}
-  </dl>
+  </Dl>
 );
 
 DefinitionList.propTypes = {

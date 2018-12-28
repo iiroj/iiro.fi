@@ -1,7 +1,7 @@
-import { css } from "@emotion/core";
+import styled from "styled-components";
 import React from "react";
 
-const sectionStyles = css({
+const Section = styled.section({
   alignItems: "center",
   display: "flex",
   flexDirection: "row",
@@ -10,12 +10,12 @@ const sectionStyles = css({
   padding: "4rem 0"
 });
 
-const textStyles = css({
+const Text = styled.div({
   margin: "4rem",
   maxWidth: 480
 });
 
-const imageStyles = css({
+const Image = styled.figure({
   alignItems: "center",
   display: "flex",
   flexDirection: "column",
@@ -28,9 +28,9 @@ const imageStyles = css({
   }
 });
 
-export const DeliveryEstimates = () => (
-  <section css={sectionStyles}>
-    <div css={textStyles}>
+export default () => (
+  <Section>
+    <Text>
       <h2>Delivery estimates</h2>
       <h3>The Problem</h3>
       <p>
@@ -52,8 +52,8 @@ export const DeliveryEstimates = () => (
         logic was completely revamped to give an estimate on when the product
         would arrive at the customer.
       </p>
-    </div>
-    <figure css={imageStyles}>
+    </Text>
+    <Image>
       <img
         alt="Verkkokauppa.com Product Availability Estimates"
         src="/portfolio/verkkokauppacom/dialog.png"
@@ -64,6 +64,6 @@ export const DeliveryEstimates = () => (
         src="/portfolio/verkkokauppacom/list.png"
         srcSet="/portfolio/verkkokauppacom/list.png 1x, /portfolio/verkkokauppacom/list@2x.png 2x, /portfolio/verkkokauppacom/list@3x.png 3x"
       />
-    </figure>
-  </section>
+    </Image>
+  </Section>
 );
