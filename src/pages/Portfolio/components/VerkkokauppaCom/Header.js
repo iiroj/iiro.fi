@@ -1,6 +1,8 @@
-import styled from "styled-components";
 import posed from "react-pose";
 import React from "react";
+import styled from "styled-components";
+
+import withFixedEnterPose from "../../../../hoc/withFixedEnterPose";
 
 import Link from "../Link";
 
@@ -79,9 +81,9 @@ const Screen = styled.img({
   left: 15
 });
 
-export default () => (
+const Header = ({ initialPose, pose }) => (
   <Container>
-    <Backdrop />
+    <Backdrop initialPose={initialPose} pose={pose} />
     <Text>
       <h1>Verkko&shy;kauppa.com</h1>
       <p>
@@ -96,7 +98,7 @@ export default () => (
         Visit Verkkokauppa.com
       </Link>
     </Text>
-    <PhoneContainer>
+    <PhoneContainer initialPose={initialPose} pose={pose}>
       <Phone
         alt=""
         src="/portfolio/verkkokauppacom/pixel.png"
@@ -110,3 +112,5 @@ export default () => (
     </PhoneContainer>
   </Container>
 );
+
+export default withFixedEnterPose({ chunkName: "Portfolio" })(Header);
