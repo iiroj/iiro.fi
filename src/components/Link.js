@@ -5,7 +5,7 @@ import styled from "styled-components";
 const YELLOW = `hsl(44, 100%, 75%)`;
 
 const Link = styled.a.attrs(props => ({
-  as: props.to.startsWith("/") ? ReactRouterLink : "a",
+  as: props.to.startsWith("/") ? ReactRouterLink : undefined,
   href: props.to
 }))({
   backgroundImage: `linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%)`,
