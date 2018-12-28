@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="18.1.0"></a>
+# [18.1.0](https://gitlab.com/iiroj/iiro.fi/compare/v18.0.1...v18.1.0) (2018-12-28)
+
+
+### Features
+
+* use babel-preset-minify again ([7295260](https://gitlab.com/iiroj/iiro.fi/commit/7295260))
+
+
+
 <a name="18.0.1"></a>
 ## [18.0.1](https://gitlab.com/iiroj/iiro.fi/compare/v18.0.0...v18.0.1) (2018-12-28)
 
