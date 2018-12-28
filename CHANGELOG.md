@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="18.0.0"></a>
+# [18.0.0](https://gitlab.com/iiroj/iiro.fi/compare/v17.4.0...v18.0.0) (2018-12-28)
+
+
+### Bug Fixes
+
+* Aside doesn’t need to be posed ([abcab97](https://gitlab.com/iiroj/iiro.fi/commit/abcab97))
+* more fixes to initial poses ([27a6302](https://gitlab.com/iiroj/iiro.fi/commit/27a6302))
+* move case-sensitive file ([5437e77](https://gitlab.com/iiroj/iiro.fi/commit/5437e77))
+* remaining fixes to animations ([1912ba0](https://gitlab.com/iiroj/iiro.fi/commit/1912ba0))
+* use terser since babel-minify breaks build ([2204cab](https://gitlab.com/iiroj/iiro.fi/commit/2204cab))
+* workaround for bug with popmotion’s initial pose ([7ec5e2e](https://gitlab.com/iiroj/iiro.fi/commit/7ec5e2e))
+* workaround for keyframes not working inside object styles ([7d493f4](https://gitlab.com/iiroj/iiro.fi/commit/7d493f4))
+
+
+### Features
+
+* add more react-pose ([5ac43f5](https://gitlab.com/iiroj/iiro.fi/commit/5ac43f5))
+* add react-pose to Portfolio’s header section ([e5d3c70](https://gitlab.com/iiroj/iiro.fi/commit/e5d3c70))
+* add route transitions ([c0d85a5](https://gitlab.com/iiroj/iiro.fi/commit/c0d85a5))
+* use loadable-components ([f845f71](https://gitlab.com/iiroj/iiro.fi/commit/f845f71))
+* use styled-components ([9ccc29a](https://gitlab.com/iiroj/iiro.fi/commit/9ccc29a))
+
+
+### BREAKING CHANGES
+
+* Emotion v10 no longer seems cool with its own jsx pragma
+
+
+
 <a name="17.4.0"></a>
 # [17.4.0](https://gitlab.com/iiroj/iiro.fi/compare/v17.3.4...v17.4.0) (2018-12-23)
 
