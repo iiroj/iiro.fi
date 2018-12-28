@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
@@ -28,11 +29,17 @@ const Article = styled.article({
   }
 });
 
-export default () => (
+const VerkkokauppaCom = ({ isSync }) => (
   <Article>
-    <Header />
+    <Header isSync={isSync} />
     <DeliveryEstimates />
     <SelfPickup />
     <Barometer />
   </Article>
 );
+
+VerkkokauppaCom.propTypes = {
+  isSync: PropTypes.bool.isRequired
+};
+
+export default VerkkokauppaCom;

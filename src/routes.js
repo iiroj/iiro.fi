@@ -1,25 +1,7 @@
-import loadable from "@loadable/component";
+export const routes = new Map([
+  ["/cv/", () => import("./pages/Cv")],
+  ["/portfolio/", () => import("./pages/Portfolio")],
+  ["/", () => import("./pages/Root")]
+]);
 
-export default [
-  {
-    path: "/cv/",
-    component: loadable(() => import(/* webpackPrefetch: true */ "./pages/Cv"))
-  },
-  {
-    path: "/portfolio/",
-    component: loadable(() =>
-      import(/* webpackPrefetch: true */ "./pages/Portfolio")
-    )
-  },
-  {
-    path: "/",
-    component: loadable(() =>
-      import(/* webpackPrefetch: true */ "./pages/Root")
-    )
-  },
-  {
-    component: loadable(() =>
-      import(/* webpackPrefetch: true */ "./pages/NotFound")
-    )
-  }
-];
+export const NotFound = () => import("./pages/NotFound");

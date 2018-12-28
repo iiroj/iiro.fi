@@ -1,34 +1,49 @@
-import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
+import { flushChunkNames } from "react-universal-component/server";
 import { HelmetProvider } from "react-helmet-async";
 import { html } from "common-tags";
 import { renderToString } from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
 import { StaticRouter } from "react-router";
+import flushChunks from "webpack-flush-chunks";
 import React from "react";
 
-export default async ({ compilationAssets, path, stats }) => {
+import generateNetlifyHeaders from "./utils/netlifyHeaders";
+
+const getScriptTags = scripts =>
+  scripts
+    .map(
+      src =>
+        `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
+    )
+    .join("\n");
+
+export default async ({ path, stats }) => {
   const App = require("./components/App").default;
-  const extractor = new ChunkExtractor({
-    entrypoints: ["client"],
-    stats: JSON.parse(compilationAssets["loadable-stats.json"].source())
-  });
   const sheet = new ServerStyleSheet();
   const helmetContext = {};
 
   const appHtml = renderToString(
     sheet.collectStyles(
-      <ChunkExtractorManager extractor={extractor}>
-        <StaticRouter location={path} context={{}}>
-          <HelmetProvider context={helmetContext}>
-            <App />
-          </HelmetProvider>
-        </StaticRouter>
-      </ChunkExtractorManager>
+      <StaticRouter location={path} context={{}}>
+        <HelmetProvider context={helmetContext}>
+          <App />
+        </HelmetProvider>
+      </StaticRouter>
     )
   );
 
   const styleTags = sheet.getStyleTags();
   const { helmet } = helmetContext;
+
+  const { scripts } = flushChunks(stats, {
+    before: ["runtime", "vendor"],
+    after: ["client"],
+    chunkNames: flushChunkNames()
+  });
+
+  if (process.env.NODE_ENV === "production") {
+    generateNetlifyHeaders(path, scripts);
+  }
 
   /* eslint-disable prettier/prettier */
   return html`
@@ -46,12 +61,11 @@ export default async ({ compilationAssets, path, stats }) => {
         <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
         ${helmet.link.toString()}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        ${extractor.getLinkTags()}
+        ${getScriptTags(scripts)}
         ${styleTags}
       </head>
       <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${appHtml}</div>
-        ${extractor.getScriptTags()}
       </body>
     </html>
   `.replace(/^\s*$(?:\r\n?|\n)/gm, "");

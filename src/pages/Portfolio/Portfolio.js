@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Helmet from "react-helmet-async";
 import React from "react";
 
@@ -12,7 +13,7 @@ import {
   VerkkokauppaCom
 } from "./components";
 
-const Portfolio = () => (
+const Portfolio = ({ isSync }) => (
   <Container>
     <Helmet>
       <title>Portfolio of Iiro Jäppinen</title>
@@ -21,11 +22,15 @@ const Portfolio = () => (
     <Header>
       <h1>Portfolio of Iiro Jäppinen</h1>
     </Header>
-    <VerkkokauppaCom />
+    <VerkkokauppaCom isSync={isSync} />
     <HumbleBundle />
     <Icons />
     <Aside>With more coming soon...</Aside>
   </Container>
 );
+
+Portfolio.propTypes = {
+  isSync: PropTypes.bool.isRequired
+};
 
 export default Portfolio;

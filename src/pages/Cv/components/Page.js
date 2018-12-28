@@ -1,9 +1,7 @@
 import posed from "react-pose";
 import styled from "styled-components";
 
-import withFixedEnterPose from "../../../hoc/withFixedEnterPose";
-
-const Page = posed(
+export default posed(
   styled.div({
     backgroundColor: "white",
     fontSize: 14,
@@ -69,5 +67,3 @@ const Page = posed(
   enter: { y: 0 },
   exit: { y: 128 }
 });
-
-export default withFixedEnterPose({ chunkName: "Cv" })(Page);

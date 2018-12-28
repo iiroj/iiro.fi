@@ -1,8 +1,7 @@
+import PropTypes from "prop-types";
 import posed from "react-pose";
 import React from "react";
 import styled from "styled-components";
-
-import withFixedEnterPose from "../../../../hoc/withFixedEnterPose";
 
 import Link from "../Link";
 
@@ -81,9 +80,9 @@ const Screen = styled.img({
   left: 15
 });
 
-const Header = ({ initialPose, pose }) => (
+const Header = ({ isSync }) => (
   <Container>
-    <Backdrop initialPose={initialPose} pose={pose} />
+    <Backdrop initialPose={isSync ? "enter" : "exit"} pose={"enter"} />
     <Text>
       <h1>Verkko&shy;kauppa.com</h1>
       <p>
@@ -98,7 +97,7 @@ const Header = ({ initialPose, pose }) => (
         Visit Verkkokauppa.com
       </Link>
     </Text>
-    <PhoneContainer initialPose={initialPose} pose={pose}>
+    <PhoneContainer initialPose={isSync ? "enter" : "exit"} pose={"enter"}>
       <Phone
         alt=""
         src="/portfolio/verkkokauppacom/pixel.png"
@@ -113,4 +112,8 @@ const Header = ({ initialPose, pose }) => (
   </Container>
 );
 
-export default withFixedEnterPose({ chunkName: "Portfolio" })(Header);
+Header.propTypes = {
+  isSync: PropTypes.bool.isRequired
+};
+
+export default Header;

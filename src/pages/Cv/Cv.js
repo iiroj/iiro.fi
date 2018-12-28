@@ -1,4 +1,5 @@
 import Helmet from "react-helmet-async";
+import PropTypes from "prop-types";
 import React from "react";
 
 import Back from "../../components/Back";
@@ -18,7 +19,7 @@ import {
   Skills
 } from "./components";
 
-const Cv = () => (
+const Cv = ({ isSync }) => (
   <>
     <Helmet>
       <title>CV of Iiro Jäppinen</title>
@@ -27,7 +28,7 @@ const Cv = () => (
     <Back />
 
     <Container>
-      <Page>
+      <Page initialPose={isSync ? "enter" : "exit"} pose={"enter"}>
         <Heading page="1/3" />
 
         <Header name="Iiro Jäppinen" picture={<Picture />}>
@@ -156,7 +157,7 @@ const Cv = () => (
         </Section>
       </Page>
 
-      <Page>
+      <Page initialPose={isSync ? "enter" : "exit"} pose={"enter"}>
         <Heading page="2/3" />
 
         <Section>
@@ -309,7 +310,7 @@ const Cv = () => (
         </Section>
       </Page>
 
-      <Page>
+      <Page initialPose={isSync ? "enter" : "exit"} pose={"enter"}>
         <Heading page="3/3" />
 
         <Projects>
@@ -414,5 +415,9 @@ const Cv = () => (
     </Container>
   </>
 );
+
+Cv.propTypes = {
+  isSync: PropTypes.bool.isRequired
+};
 
 export default Cv;
