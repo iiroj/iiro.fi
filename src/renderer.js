@@ -6,9 +6,6 @@ import { ServerStyleSheet } from "styled-components";
 import { StaticRouter } from "react-router";
 import React from "react";
 
-import { getScriptLinks, getScriptTags } from "./utils/loadableScripts";
-import generateNetlifyHeaders from "./utils/netlifyHeaders";
-
 export default async ({ compilationAssets, path, stats }) => {
   const App = require("./components/App").default;
   const extractor = new ChunkExtractor({
@@ -33,10 +30,6 @@ export default async ({ compilationAssets, path, stats }) => {
   const styleTags = sheet.getStyleTags();
   const { helmet } = helmetContext;
 
-  if (process.env.NODE_ENV === "production") {
-    generateNetlifyHeaders(path, getScriptLinks(extractor));
-  }
-
   /* eslint-disable prettier/prettier */
   return html`
     <!DOCTYPE html>
@@ -53,11 +46,12 @@ export default async ({ compilationAssets, path, stats }) => {
         <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
         ${helmet.link.toString()}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        ${getScriptTags(extractor)}
+        ${extractor.getLinkTags()}
         ${styleTags}
       </head>
       <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${appHtml}</div>
+        ${extractor.getScriptTags()}
       </body>
     </html>
   `.replace(/^\s*$(?:\r\n?|\n)/gm, "");
