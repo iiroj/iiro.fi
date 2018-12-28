@@ -1,106 +1,112 @@
-import { css } from "@emotion/core";
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
 
 import Send from "./Send";
 import Typing from "./Typing";
 
 const REPLY_URL = `${process.env.LAMBDA_BASE_URL}/telegram`;
 
-const form = css({
-  alignItems: "center",
-  display: "flex",
-  position: "relative",
-  transition: "all 125ms ease-in-out"
-});
-
-const formDirty = css({
-  flexBasis: "100%",
-  marginTop: "1rem"
-});
-
-const formReady = css({
-  marginLeft: "auto"
-});
-
-const button = css({
-  appearance: "none",
-  background: "none",
-  borderRadius: "0.5rem",
-  border: "none",
-  bottom: 0,
-  cursor: "pointer",
-  display: "block",
-  outline: "none",
-  padding: "1rem",
-  pointerEvents: "none",
-  position: "absolute",
-  right: 0,
-  transition: "all 125ms ease-in-out",
-
-  "&:hover svg circle": {
-    fill: "hsl(44, 100%, 60%)"
+const Form = styled.form(
+  {
+    alignItems: "center",
+    display: "flex",
+    position: "relative",
+    transition: "all 125ms ease-in-out"
   },
+  props =>
+    props.dirty && {
+      flexBasis: "100%",
+      marginTop: "1rem"
+    },
+  props =>
+    props.ready && {
+      marginLeft: "auto"
+    }
+);
 
-  i: {
-    bottom: "1.5rem",
-    left: "-2.5rem",
-    position: "absolute"
-  }
-});
+const Button = styled.button(
+  {
+    appearance: "none",
+    background: "none",
+    borderRadius: "0.5rem",
+    border: "none",
+    bottom: 0,
+    cursor: "pointer",
+    display: "block",
+    outline: "none",
+    padding: "1rem",
+    pointerEvents: "none",
+    position: "absolute",
+    right: 0,
+    transition: "all 125ms ease-in-out",
 
-const buttonValid = css({
-  pointerEvents: "unset",
-
-  svg: {
-    circle: {
-      fill: "hsl(44, 100%, 75%)",
-      stroke: "none"
+    "&:hover svg circle": {
+      fill: "hsl(44, 100%, 60%)"
     },
 
-    path: {
-      fill: "white",
-      stroke: "none"
+    i: {
+      bottom: "1.5rem",
+      left: "-2.5rem",
+      position: "absolute"
     }
-  }
-});
-
-const input = css({
-  appearance: "none",
-  borderRadius: "0.5rem",
-  border: "none",
-  cursor: "pointer",
-  fontFamily: "inherit",
-  height: "4rem",
-  lineHeight: "2rem",
-  opacity: 0,
-  outline: "none",
-  padding: "1rem 2rem",
-  resize: "none",
-  transition: "all 125ms ease-in-out",
-  width: "4rem",
-
-  "&:focus": {
-    border: "2px solid hsl(44, 100%, 75%)",
-    paddingRight: "4rem"
   },
+  props =>
+    props.valid && {
+      pointerEvents: "unset",
 
-  "&:disabled": {
-    background: "hsl(0, 0%, 96%)",
+      svg: {
+        circle: {
+          fill: "hsl(44, 100%, 75%)",
+          stroke: "none"
+        },
+
+        path: {
+          fill: "white",
+          stroke: "none"
+        }
+      }
+    }
+);
+
+const Input = styled.textarea(
+  {
+    appearance: "none",
+    borderRadius: "0.5rem",
     border: "none",
-    pointerEvents: "none"
-  }
-});
+    cursor: "pointer",
+    fontFamily: "inherit",
+    height: "4rem",
+    lineHeight: "2rem",
+    opacity: 0,
+    outline: "none",
+    padding: "1rem 2rem",
+    resize: "none",
+    transition: "all 125ms ease-in-out",
+    width: "4rem",
 
-const inputExpanded = css({
-  border: "2px solid hsl(0, 0%, 80%)",
-  color: "inherit",
-  cursor: "text",
-  height: "auto",
-  opacity: 1,
-  resize: "vertical",
-  width: "100%"
-});
+    "&:focus": {
+      border: "2px solid hsl(44, 100%, 75%)",
+      paddingRight: "4rem"
+    },
+
+    "&:disabled": {
+      background: "hsl(0, 0%, 96%)",
+      border: "none",
+      pointerEvents: "none"
+    }
+  },
+  props =>
+    props.expanded && {
+      border: "2px solid hsl(0, 0%, 80%)",
+      color: "inherit",
+      cursor: "text",
+      height: "auto",
+      opacity: 1,
+      resize: "vertical",
+      width: "100%"
+    }
+);
 
 export default class Reply extends React.PureComponent {
   static propTypes = {
@@ -162,25 +168,26 @@ export default class Reply extends React.PureComponent {
     const valid = this.state.valid && !sending && !failed;
 
     return (
-      <form
-        css={[form, dirty && formDirty, ready && formReady]}
+      <Form
+        dirty={dirty}
         disabled={sending || failed}
         onSubmit={this.handleSumbit}
+        ready={ready}
       >
-        <textarea
-          css={[input, dirty && !failed && inputExpanded]}
+        <Input
           disabled={sending}
-          onClick={this.handleOpen}
+          expanded={dirty && !failed}
           onChange={this.handleTextInput}
+          onClick={this.handleOpen}
           placeholder="Send Feedback"
           ref={this.inputRef}
           valid={valid.toString()}
           value={text}
         />
-        <button css={[button, valid && buttonValid]} disabled={!valid}>
+        <Button disabled={!valid} valid={valid}>
           {sending ? <Typing /> : <Send />}
-        </button>
-      </form>
+        </Button>
+      </Form>
     );
   }
 }

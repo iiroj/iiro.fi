@@ -1,7 +1,7 @@
-import { css } from "@emotion/core";
 import React from "react";
+import styled from "styled-components";
 
-const container = css({
+const Dl = styled.dl({
   fontSize: "1rem",
 
   "dd, dt": {
@@ -16,7 +16,7 @@ const container = css({
 const SelfAssesments = () => (
   <>
     <h3>Self-assesment explanation</h3>
-    <dl css={container}>
+    <Dl>
       <dt>
         <strong>Beginner</strong>
       </dt>
@@ -60,7 +60,7 @@ const SelfAssesments = () => (
         same as above, but has also gained recognition in many organisations,
         and has been in a lead position in a multi-person team of seniors.
       </dd>
-    </dl>
+    </Dl>
   </>
 );
 

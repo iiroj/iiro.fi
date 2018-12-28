@@ -1,8 +1,8 @@
-import { css } from "@emotion/core";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link as ReactRouterLink } from "react-router-dom";
+import styled from "styled-components";
 
-const back = css({
+const Link = styled(ReactRouterLink)({
   background: "none !important",
   color: "transparent",
   cursor: "pointer",
@@ -62,10 +62,8 @@ const back = css({
   }
 });
 
-const Back = () => (
-  <Link to="/" css={back} title="Back to iiro.fi" role="navigation">
+export default () => (
+  <Link rel="preload" role="navigation" title="Back to iiro.fi" to="/">
     Back to iiro.fi
   </Link>
 );
-
-export default Back;

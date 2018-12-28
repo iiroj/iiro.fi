@@ -1,6 +1,6 @@
-import { css } from "@emotion/core";
+import styled from "styled-components";
 
-export default css({
+export default styled.a({
   background: "white !important",
   borderRadius: 2,
   color: "#333333 !important",

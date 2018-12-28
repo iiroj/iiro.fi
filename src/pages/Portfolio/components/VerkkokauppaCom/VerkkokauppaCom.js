@@ -1,14 +1,14 @@
-import { css } from "@emotion/core";
+import PropTypes from "prop-types";
 import React from "react";
+import styled from "styled-components";
 
-import { Header } from "./Header";
-import { DeliveryEstimates } from "./DeliveryEstimates";
-import { SelfPickup } from "./SelfPickup";
-import { Barometer } from "./Barometer";
+import Header from "./Header";
+import DeliveryEstimates from "./DeliveryEstimates";
+import SelfPickup from "./SelfPickup";
+import Barometer from "./Barometer";
 
-const articleStyles = css({
+const Article = styled.article({
   backgroundColor: "white",
-  boxShadow: "0 0 0 1px rgba(0, 0, 0, 0.05)",
   position: "relative",
   zIndex: 1,
 
@@ -29,11 +29,17 @@ const articleStyles = css({
   }
 });
 
-export default () => (
-  <article css={articleStyles}>
-    <Header />
+const VerkkokauppaCom = ({ isSync }) => (
+  <Article>
+    <Header isSync={isSync} />
     <DeliveryEstimates />
     <SelfPickup />
     <Barometer />
-  </article>
+  </Article>
 );
+
+VerkkokauppaCom.propTypes = {
+  isSync: PropTypes.bool.isRequired
+};
+
+export default VerkkokauppaCom;

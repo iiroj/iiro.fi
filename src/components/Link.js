@@ -1,11 +1,13 @@
-import { css } from "@emotion/core";
-import React from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 const YELLOW = `hsl(44, 100%, 75%)`;
 
-export const link = css({
+const Link = styled.a.attrs(props => ({
+  as: props.to.startsWith("/") ? ReactRouterLink : undefined,
+  href: props.to
+}))({
   backgroundImage: `linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%)`,
   backgroundPosition: "0 1em",
   backgroundRepeat: "no-repeat",
@@ -25,15 +27,6 @@ export const link = css({
     color: "black"
   }
 });
-
-const Link = ({ children, to, ...props }) => {
-  const Component = to.startsWith("/") ? ReactRouterLink : "a";
-  return (
-    <Component css={link} to={to} href={to} {...props}>
-      {children}
-    </Component>
-  );
-};
 
 Link.propTypes = {
   children: PropTypes.any.isRequired,

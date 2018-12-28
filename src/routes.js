@@ -1,8 +1,7 @@
-export const NOT_FOUND = "NotFound";
+export const routes = new Map([
+  ["/cv/", () => import("./pages/Cv")],
+  ["/portfolio/", () => import("./pages/Portfolio")],
+  ["/", () => import("./pages/Root")]
+]);
 
-export default {
-  "/": "Root",
-  "/cv/": "Cv",
-  "/portfolio/": "Portfolio",
-  "/404": NOT_FOUND
-};
+export const NotFound = () => import("./pages/NotFound");

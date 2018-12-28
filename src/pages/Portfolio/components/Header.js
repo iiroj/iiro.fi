@@ -1,6 +1,6 @@
-import { css } from "@emotion/core";
+import styled from "styled-components";
 
-export default css({
+export default styled.header({
   backgroundColor: "white",
   fontSize: "1.5rem",
   padding: "2rem 3rem 6rem",

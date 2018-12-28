@@ -1,8 +1,8 @@
-import { css } from "@emotion/core";
+import styled from "styled-components";
 
 import Back from "../../../components/Back";
 
-export default css({
+export default styled.main({
   padding: "6.5rem 0 4rem 0",
 
   "@page": {

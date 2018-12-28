@@ -1,56 +1,48 @@
-import PropTypes from "prop-types";
-import React from "react";
 import { withRouter } from "react-router";
+import posed, { PoseGroup } from "react-pose";
+import React from "react";
+import styled from "styled-components";
 
-import routes, { NOT_FOUND } from "../routes";
-import Layout from "./Layout";
-import Loading from "./Loading";
 import { MessageProvider } from "../services/chat";
+import { NotFound, routes } from "../routes";
+
+import Layout from "./Layout";
 import UniversalComponent from "./UniversalComponent";
 
-class App extends React.Component {
-  static propTypes = {
-    location: PropTypes.shape({
-      pathname: PropTypes.string.isRequired
-    }).isRequired
-  };
+const RouteContainer = posed(
+  styled.div({
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100%",
+    width: "100%"
+  })
+)({
+  enter: { opacity: 1 },
+  exit: { opacity: 0, staggerDirection: -1 }
+});
 
-  static getDerivedStateFromProps({ location }, state) {
-    const page = routes[location.pathname] || NOT_FOUND;
-    return page === state.page
-      ? null
-      : { page: routes[location.pathname] || NOT_FOUND };
-  }
-
+class App extends React.PureComponent {
   state = {
-    loading: false,
-    messages: [],
-    page: routes["/"]
+    isSync: true
   };
 
-  setLoading = () => {
-    this.setState({ loading: true });
-  };
-
-  setNotLoading = () => {
-    this.setState({ loading: false });
-    if (typeof window !== "undefined") {
-      window.scrollTo(0, 0);
-    }
-  };
+  handleOnBeforePageChange = ({ isSync }) => this.setState({ isSync });
 
   render() {
-    const { loading, page } = this.state;
+    const { location } = this.props;
 
     return (
       <Layout>
         <MessageProvider>
-          <Loading visible={loading} />
-          <UniversalComponent
-            onBefore={this.setLoading}
-            onAfter={this.setNotLoading}
-            src={() => import(`../pages/${page}`)}
-          />
+          <PoseGroup>
+            <RouteContainer key={location.key || "initial-route"}>
+              <UniversalComponent
+                isSync={this.state.isSync}
+                onBefore={this.handleOnBeforePageChange}
+                src={routes.get(location.pathname) || NotFound}
+              />
+            </RouteContainer>
+          </PoseGroup>
         </MessageProvider>
       </Layout>
     );

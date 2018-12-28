@@ -1,14 +1,7 @@
-import { css, keyframes } from "@emotion/core";
-import React from "react";
-import PropTypes from "prop-types";
+import posed from "react-pose";
+import styled from "styled-components";
 
-const animation = keyframes({
-  from: { opacity: 0 },
-  to: { opacity: 1 }
-});
-
-const message = css({
-  animation: `${animation} 125ms ease-in-out forwards`,
+const Message = styled.li({
   backgroundColor: "hsl(0, 0%, 96%)",
   borderRadius: "0.5rem",
   padding: "1rem 2rem",
@@ -23,10 +16,13 @@ const message = css({
   }
 });
 
-const Message = ({ children }) => <li css={message}>{children}</li>;
-
-Message.propTypes = {
-  children: PropTypes.any.isRequired
-};
-
-export default Message;
+export default posed(Message)({
+  enter: {
+    opacity: 1,
+    y: "0%"
+  },
+  exit: {
+    opacity: 0,
+    y: "25%"
+  }
+});

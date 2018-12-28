@@ -1,17 +1,18 @@
 import "dotenv/config";
 
-import path from "path";
-import webpack from "webpack";
 import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
-import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import StatsPlugin from "stats-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
+import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
+import path from "path";
+import TerserPlugin from "terser-webpack-plugin";
+import webpack from "webpack";
 
-import routes from "./src/routes";
+import { routes } from "./src/routes";
 import renderer from "./src/renderer";
 
 const isProduction = process.env.NODE_ENV === "production";
+const staticRoutes = [...Array.from(routes).map(route => route[0]), "/404"];
 
 const config = {
   devServer: {
@@ -45,6 +46,7 @@ const config = {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: require.resolve("babel-loader"),
           options: {
@@ -66,7 +68,7 @@ const config = {
     }),
     new HtmlRendererWebpackPlugin({
       hotPath: /\/src\//,
-      paths: Object.keys(routes),
+      paths: staticRoutes,
       renderer
     })
   ],
@@ -93,10 +95,12 @@ const config = {
 };
 
 if (isProduction) {
-  config.plugins.push(
-    new CopyWebpackPlugin([{ from: "static", to: "." }]),
-    new StatsPlugin("stats.json", { chunkModules: true })
-  );
+  config.plugins.push(new CopyWebpackPlugin([{ from: "static", to: "." }]));
+  config.optimization.minimizer = [
+    new TerserPlugin({
+      parallel: true
+    })
+  ];
 } else {
   config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),

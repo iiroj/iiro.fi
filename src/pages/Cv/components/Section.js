@@ -1,6 +1,6 @@
-import { css } from "@emotion/core";
+import styled from "styled-components";
 
-export default css({
+export default styled.section({
   display: "flex",
   flexWrap: "wrap",
   margin: "2rem 0",

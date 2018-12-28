@@ -1,11 +1,36 @@
-import { css } from "@emotion/core";
+import PropTypes from "prop-types";
+import posed from "react-pose";
 import React from "react";
+import styled from "styled-components";
 
-import { link } from "../../styles";
+import Link from "../Link";
 
-const headerStyles = css({
+const Backdrop = posed(
+  styled.div({
+    backgroundColor: "#e30613",
+    height: "100%",
+    left: "-25vw",
+    position: "absolute",
+    transformOrigin: "center",
+    top: "50%",
+    transform: "translateY(-50%)",
+    width: "150vw"
+  })
+)({
+  enter: {
+    height: "100%",
+    rotate: "-4deg",
+    y: "-50%"
+  },
+  exit: {
+    height: "0%",
+    rotate: "0deg",
+    y: "-50%"
+  }
+});
+
+const Container = styled.header({
   alignItems: "center",
-  backgroundColor: "#e30613",
   color: "white",
   display: "flex",
   flexDirection: "row",
@@ -14,50 +39,40 @@ const headerStyles = css({
   justifyContent: "center",
   marginBottom: "10rem",
   position: "relative",
-  textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)",
-
-  "&::before, &::after": {
-    backgroundColor: "#e30613",
-    content: '""',
-    display: "block",
-    height: "50%",
-    left: 0,
-    position: "absolute",
-    right: 0,
-    zIndex: -1
-  },
-
-  "&::before": {
-    top: 0,
-    transformOrigin: "0%",
-    transform: "skewY(-2deg)"
-  },
-
-  "&::after": {
-    bottom: 0,
-    transformOrigin: "100%",
-    transform: "skewY(-2deg)"
-  }
+  textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
 });
 
-const textStyles = css({
+const Text = styled.div({
   margin: "4rem",
-  maxWidth: 480
-});
-
-const phoneContainerStyles = css({
-  height: 480,
-  margin: "0 4rem",
-  width: 303,
+  maxWidth: 480,
   position: "relative"
 });
 
-const phoneStyles = css({
+const PhoneContainer = posed(
+  styled.div({
+    height: 480,
+    margin: "0 4rem",
+    width: 303,
+    position: "relative"
+  })
+)({
+  enter: {
+    x: 0,
+    transition: {
+      easing: "easeOut"
+    }
+  },
+  exit: {
+    x: -100
+  }
+});
+
+const Phone = styled.img({
   width: 303,
   display: "block"
 });
 
-const screenStyles = css({
+const Screen = styled.img({
   display: "block",
   width: 270,
   position: "absolute",
@@ -65,36 +80,40 @@ const screenStyles = css({
   left: 15
 });
 
-export const Header = () => (
-  <header css={headerStyles}>
-    <div css={textStyles}>
+const Header = ({ isSync }) => (
+  <Container>
+    <Backdrop initialPose={isSync ? "enter" : "exit"} pose={"enter"} />
+    <Text>
       <h1>Verkko&shy;kauppa.com</h1>
       <p>
         UX/UI designer from November 2014 until April 2017. As the resident web
         designer, I oversaw the visual direction of Verkkokauppa.com’s website.
       </p>
-      <a
-        css={link}
+      <Link
         href="https://www.verkkokauppa.com/"
         target="_blank"
         rel="noopener noreferrer"
       >
         Visit Verkkokauppa.com
-      </a>
-    </div>
-    <div css={phoneContainerStyles}>
-      <img
+      </Link>
+    </Text>
+    <PhoneContainer initialPose={isSync ? "enter" : "exit"} pose={"enter"}>
+      <Phone
         alt=""
-        css={phoneStyles}
         src="/portfolio/verkkokauppacom/pixel.png"
         srcSet="/portfolio/verkkokauppacom/pixel.png 1x, /portfolio/verkkokauppacom/pixel@2x.png 2x, /portfolio/verkkokauppacom/pixel@3x.png 3x"
       />
-      <img
+      <Screen
         alt="Verkkokauppa.com Front Page"
-        css={screenStyles}
         src="/portfolio/verkkokauppacom/frontpage.jpg"
         srcSet="/portfolio/verkkokauppacom/frontpage.jpg 1x, /portfolio/verkkokauppacom/frontpage@2x.jpg 2x, /portfolio/verkkokauppacom/frontpage@3x.jpg 3x"
       />
-    </div>
-  </header>
+    </PhoneContainer>
+  </Container>
 );
+
+Header.propTypes = {
+  isSync: PropTypes.bool.isRequired
+};
+
+export default Header;

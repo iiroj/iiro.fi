@@ -1,10 +1,10 @@
-import { css } from "@emotion/core";
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
 
 import Fraktio from "../../../components/Fraktio/Logo";
 
-const heading = css({
+const Aside = styled.aside({
   display: "flex",
   flexWrap: "wrap",
   justifyContent: "space-between",
@@ -24,13 +24,13 @@ const heading = css({
 });
 
 const Heading = ({ page }) => (
-  <aside css={heading}>
+  <Aside>
     <Fraktio colored />
     <span>
       <time dateTime="2018-10-01">1 Oct 2018</time>
       {page && <span> — {page}</span>}
     </span>
-  </aside>
+  </Aside>
 );
 
 Heading.propTypes = {

@@ -1,25 +1,36 @@
-import React from "react";
+import PropTypes from "prop-types";
 import Helmet from "react-helmet-async";
+import React from "react";
 
 import Back from "../../components/Back";
 
-import { HumbleBundle, Icons, VerkkokauppaCom } from "./components";
-import { aside, header } from "./styles";
+import {
+  Aside,
+  Container,
+  Header,
+  HumbleBundle,
+  Icons,
+  VerkkokauppaCom
+} from "./components";
 
-const Portfolio = () => (
-  <>
+const Portfolio = ({ isSync }) => (
+  <Container>
     <Helmet>
       <title>Portfolio of Iiro Jäppinen</title>
     </Helmet>
     <Back />
-    <header css={header}>
+    <Header>
       <h1>Portfolio of Iiro Jäppinen</h1>
-    </header>
-    <VerkkokauppaCom />
+    </Header>
+    <VerkkokauppaCom isSync={isSync} />
     <HumbleBundle />
     <Icons />
-    <aside css={aside}>With more coming soon...</aside>
-  </>
+    <Aside>With more coming soon...</Aside>
+  </Container>
 );
+
+Portfolio.propTypes = {
+  isSync: PropTypes.bool.isRequired
+};
 
 export default Portfolio;

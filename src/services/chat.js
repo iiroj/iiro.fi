@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import baskerville from "../styles/baskerville";
-import Link from "../components/Link";
+import Baskerville from "../components/Baskerville";
 import Emoji from "../components/Emoji";
+import Link from "../components/Link";
 
 import Fraktio from "../components/Fraktio";
 import {
@@ -23,7 +23,7 @@ const messages = [
   </p>,
   <p key="2">My name is Iiro Jäppinen</p>,
   <p key="3">
-    I’m a UX <span css={baskerville}>&</span> UI Designer
+    I’m a UX <Baskerville>&</Baskerville> UI Designer
   </p>,
   <p key="4">But I also code ECMAscript and React!</p>,
   <p key="5">

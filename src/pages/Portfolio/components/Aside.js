@@ -1,6 +1,6 @@
-import { css } from "@emotion/core";
+import styled from "styled-components";
 
-export default css({
+export default styled.aside({
   color: "hsl(0, 0%, 60%)",
   fontSize: "1.5em",
   padding: "4rem 0",
