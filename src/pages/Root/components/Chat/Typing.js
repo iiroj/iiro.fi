@@ -7,16 +7,16 @@ const jump = keyframes({
   to: { transform: "translateY(50%)" }
 });
 
-const Ball1 = styled.div({
-  animation: `${jump.getName()} 500ms ease-in-out forwards alternate infinite`,
-  backgroundColor: "rgba(0, 0, 0, 0.4)",
-  borderRadius: "50%",
-  display: "block",
-  height: "0.5rem",
-  position: "absolute",
-  transform: "translateY(-50%)",
-  width: "0.5rem"
-});
+const Ball1 = styled.div`
+  animation: ${jump} 500ms ease-in-out forwards alternate infinite;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  display: block;
+  height: 0.5rem;
+  position: absolute;
+  transform: translateY(-50%);
+  width: 0.5rem;
+`;
 
 const Ball2 = styled(Ball1)({
   animationDelay: "100ms",
@@ -33,13 +33,13 @@ const fadeIn = keyframes({
   to: { opacity: 1 }
 });
 
-const Container = styled.i({
-  animation: `${fadeIn.getName()} 125ms ease-in-out`,
-  display: "block",
-  height: "0.5rem",
-  position: "relative",
-  width: "2.5rem"
-});
+const Container = styled.i`
+  animation: ${fadeIn} 125ms ease-in-out;
+  display: block;
+  height: 0.5rem;
+  position: relative;
+  width: 2.5rem;
+`;
 
 const Typing = React.forwardRef((props, ref) => (
   <li ref={ref}>
