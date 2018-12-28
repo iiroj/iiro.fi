@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="18.0.1"></a>
+## [18.0.1](https://gitlab.com/iiroj/iiro.fi/compare/v18.0.0...v18.0.1) (2018-12-28)
+
+
+### Bug Fixes
+
+* consistently show transitions for preloaded pages ([ef469f5](https://gitlab.com/iiroj/iiro.fi/commit/ef469f5))
+
+
+
 <a name="18.0.0"></a>
 # [18.0.0](https://gitlab.com/iiroj/iiro.fi/compare/v17.4.0...v18.0.0) (2018-12-28)
 
