@@ -125,6 +125,7 @@ export default class Chat extends React.PureComponent {
     typing: PropTypes.bool.isRequired
   };
 
+  containerRef = React.createRef();
   lastMessageRef = React.createRef();
 
   state = {
@@ -132,9 +133,19 @@ export default class Chat extends React.PureComponent {
     sticky: true
   };
 
+  setSticky = () => {
+    const { height, top } = this.containerRef.current.getBoundingClientRect();
+    this.setState({ sticky: window.innerHeight - top >= height });
+  };
+
+  handleScroll = () => {
+    requestAnimationFrame(this.setSticky);
+  };
+
   componentDidMount() {
     this.props.onStart();
     this.setState({ mounted: true });
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -149,12 +160,16 @@ export default class Chat extends React.PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
   render() {
     const { messages, onSentFeedback, onSkip, ready, typing } = this.props;
     const { mounted } = this.state;
 
     return (
-      <Container>
+      <Container ref={this.containerRef}>
         <noscript>
           <style>{`.noscript { display: flex !important; }`}</style>
         </noscript>
