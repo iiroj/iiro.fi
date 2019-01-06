@@ -31,7 +31,10 @@ const config = {
   devtool: isProduction ? "nosources-source-map" : "eval",
 
   entry: {
-    client: path.resolve("./src/index.js")
+    client: [
+      require.resolve("./src/polyfills.js"),
+      path.resolve("./src/index.js")
+    ]
   },
 
   output: {

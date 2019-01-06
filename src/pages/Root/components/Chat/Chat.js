@@ -125,34 +125,24 @@ export default class Chat extends React.PureComponent {
     typing: PropTypes.bool.isRequired
   };
 
-  containerRef = React.createRef();
+  lastMessageRef = React.createRef();
 
   state = {
     mounted: false,
     sticky: true
   };
 
-  setSticky = () => {
-    const { height, top } = this.containerRef.current.getBoundingClientRect();
-    this.setState({ sticky: window.innerHeight - top >= height });
-  };
-
-  handleScroll = () => {
-    requestAnimationFrame(this.setSticky);
-  };
-
   componentDidMount() {
     this.props.onStart();
     this.setState({ mounted: true });
-    window.addEventListener("scroll", this.handleScroll);
   }
 
-  getSnapshotBeforeUpdate(prevProps) {
-    if (prevProps.messages.length < this.props.messages.length) {
-      const container = this.containerRef.current;
-      return container.scrollHeight - container.scrollTop;
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const { messages } = this.props;
+
+    if (prevProps.messages.length < messages.length && this.state.sticky) {
+      this.lastMessageRef.current.scrollIntoView({ behaviour: "smooth" });
     }
-    return null;
   }
 
   render() {
@@ -160,7 +150,7 @@ export default class Chat extends React.PureComponent {
     const { mounted } = this.state;
 
     return (
-      <Container ref={this.containerRef}>
+      <Container>
         <noscript>
           <style>{`.noscript { display: flex !important; }`}</style>
         </noscript>
@@ -183,9 +173,17 @@ export default class Chat extends React.PureComponent {
               role="log"
             >
               {messages.map((content, key) => (
-                <Message initialPose="exit" pose="enter" key={key}>
-                  {content}
-                </Message>
+                <Message
+                  children={content}
+                  initialPose="exit"
+                  key={key}
+                  pose="enter"
+                  ref={
+                    key === messages.length - 1
+                      ? this.lastMessageRef
+                      : undefined
+                  }
+                />
               ))}
               {typing && <Typing key="typing" />}
             </MessageListContainer>
@@ -197,15 +195,5 @@ export default class Chat extends React.PureComponent {
         {mounted && <Reply onSentFeedback={onSentFeedback} ready={ready} />}
       </Container>
     );
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this.state.sticky && snapshot) {
-      document.documentElement.scrollTop += snapshot;
-    }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
   }
 }
