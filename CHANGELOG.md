@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="18.2.3"></a>
+## [18.2.3](https://gitlab.com/iiroj/iiro.fi/compare/v18.2.2...v18.2.3) (2019-01-06)
+
+
+### Bug Fixes
+
+* removing too much code broke sticky ([eb0c1ae](https://gitlab.com/iiroj/iiro.fi/commit/eb0c1ae))
+
+
+
 <a name="18.2.2"></a>
 ## [18.2.2](https://gitlab.com/iiroj/iiro.fi/compare/v18.2.1...v18.2.2) (2019-01-06)
 
