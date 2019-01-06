@@ -125,16 +125,20 @@ export default class Chat extends React.PureComponent {
     typing: PropTypes.bool.isRequired
   };
 
-  ref = React.createRef();
+  containerRef = React.createRef();
 
   state = {
     mounted: false,
     sticky: true
   };
 
-  handleScroll = () => {
-    const { height, top } = this.ref.current.getBoundingClientRect();
+  setSticky = () => {
+    const { height, top } = this.containerRef.current.getBoundingClientRect();
     this.setState({ sticky: window.innerHeight - top >= height });
+  };
+
+  handleScroll = () => {
+    requestAnimationFrame(this.setSticky);
   };
 
   componentDidMount() {
@@ -143,22 +147,12 @@ export default class Chat extends React.PureComponent {
     window.addEventListener("scroll", this.handleScroll);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { messages, typing } = this.props;
-
-    if (!this.state.sticky) return;
-
-    if (typing || messages.length !== prevProps.messages.length) {
-      const scrollDistance =
-        this.ref.scrollHeight -
-        document.documentElement.scrollTop +
-        window.innerHeight;
-      window.scrollTo(0, scrollDistance);
+  getSnapshotBeforeUpdate(prevProps) {
+    if (prevProps.messages.length < this.props.messages.length) {
+      const container = this.containerRef.current;
+      return container.scrollHeight - container.scrollTop;
     }
+    return null;
   }
 
   render() {
@@ -166,7 +160,7 @@ export default class Chat extends React.PureComponent {
     const { mounted } = this.state;
 
     return (
-      <Container ref={this.ref}>
+      <Container ref={this.containerRef}>
         <noscript>
           <style>{`.noscript { display: flex !important; }`}</style>
         </noscript>
@@ -203,5 +197,15 @@ export default class Chat extends React.PureComponent {
         {mounted && <Reply onSentFeedback={onSentFeedback} ready={ready} />}
       </Container>
     );
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.state.sticky && snapshot) {
+      document.documentElement.scrollTop += snapshot;
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 }
