@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="18.2.2"></a>
+## [18.2.2](https://gitlab.com/iiroj/iiro.fi/compare/v18.2.1...v18.2.2) (2019-01-06)
+
+
+### Bug Fixes
+
+* properly use smooth scroll ([a77da3c](https://gitlab.com/iiroj/iiro.fi/commit/a77da3c))
+
+
+
 <a name="18.2.1"></a>
 ## [18.2.1](https://gitlab.com/iiroj/iiro.fi/compare/v18.2.0...v18.2.1) (2019-01-06)
 
