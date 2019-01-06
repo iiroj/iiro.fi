@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="18.2.1"></a>
+## [18.2.1](https://gitlab.com/iiroj/iiro.fi/compare/v18.2.0...v18.2.1) (2019-01-06)
+
+
+### Bug Fixes
+
+* scroll restoration ([2fab35a](https://gitlab.com/iiroj/iiro.fi/commit/2fab35a))
+
+
+
 <a name="18.2.0"></a>
 # [18.2.0](https://gitlab.com/iiroj/iiro.fi/compare/v18.1.0...v18.2.0) (2018-12-28)
 
