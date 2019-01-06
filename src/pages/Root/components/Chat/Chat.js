@@ -141,7 +141,11 @@ export default class Chat extends React.PureComponent {
     const { messages } = this.props;
 
     if (prevProps.messages.length < messages.length && this.state.sticky) {
-      this.lastMessageRef.current.scrollIntoView({ behaviour: "smooth" });
+      this.lastMessageRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
     }
   }
 
