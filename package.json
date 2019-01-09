@@ -4,8 +4,8 @@
   "description": "A static site built with React",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
-  "repository": "gitlab:iiroj/iiro.fi",
-  "bugs": "https://gitlab.com/iiroj/iiro.fi/issues",
+  "repository": "github:iiroj/iiro.fi",
+  "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
     "start:site": "NODE_ENV=development BABEL_ENV=node_development webpack-dev-server",
