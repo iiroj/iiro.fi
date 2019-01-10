@@ -16,7 +16,6 @@
     "build:site": "NODE_ENV=production BABEL_ENV=node_production webpack",
     "prebuild:lambda": "rimraf lambda",
     "build:lambda": "NODE_ENV=production lambda-dev build src/lambda lambda -w webpack.config.lambda.js",
-    "prebuild": "rimraf build lambda",
     "build": "concurrently 'npm:build:*'",
     "version": "standard-version",
     "push": "git push --follow-tags origin master"
