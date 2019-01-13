@@ -56,9 +56,9 @@ jobs:
   deploy:
     executor: worker
     steps:
+      - checkout
       - attach_workspace:
           at: .
-      - checkout
       - run: npm run deploy
 
 workflows:
