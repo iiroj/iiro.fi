@@ -16,7 +16,7 @@ executors:
   worker:
     docker:
       - image: node:alpine
-    working_directory: /tmp
+    working_directory: /ci
 
 jobs:
   audit:
