@@ -12,8 +12,8 @@
   <a href="https://github.com/iiroj/iiro.fi/releases">
     <img src="https://img.shields.io/github/tag/iiroj/iiro.fi.svg">
   </a>
-  <a href="https://circleci.com/gh/iiroj/iiro.fi">
-    <img alt="pipeline status" src="https://circleci.com/gh/iiroj/iiro.fi.svg?style=shield" />
+  <a href="https://travis-ci.com/iiroj/iiro.fi">
+    <img src="https://travis-ci.com/iiroj/iiro.fi.svg?branch=master" />
   </a>
   <a href="https://github.com/iiroj/iiro.fi/blob/master/package.json">
     <img src="https://img.shields.io/david/iiroj/iiro.fi.svg">
