@@ -57,13 +57,8 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: npm install -g netlify-cli
-      - run: |
-          netlify deploy
-            --prod
-            --dir public
-            --functions lambda
-            --message "$CIRCLE_TAG"
+      - *restore_cache
+      - run: npm run deploy
 
 workflows:
   version: 2
