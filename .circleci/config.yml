@@ -58,7 +58,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - *restore_cache
+      - checkout
       - run: npm run deploy
 
 workflows:
