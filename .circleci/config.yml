@@ -15,7 +15,7 @@ references:
 executors:
   worker:
     docker:
-      - image: node:alpine
+      - image: circleci/node
     working_directory: /ci
 
 jobs:
