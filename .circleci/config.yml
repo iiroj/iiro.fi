@@ -63,7 +63,7 @@ jobs:
             --prod
             --dir public
             --functions lambda
-            --message "$CI_COMMIT_TITLE"
+            --message "$CIRCLE_TAG"
 
 workflows:
   version: 2
