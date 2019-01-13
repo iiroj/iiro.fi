@@ -18,6 +18,7 @@ deploy:
   - provider: script
     on:
       tags: true
+    skip_cleanup: true
     script:
       - npm install -g netlify-cli
       - netlify deploy -p -d public -f lambda -m "$TRAVIS_TAG"
