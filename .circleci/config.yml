@@ -1,0 +1,85 @@
+version: 2.1
+
+references:
+  save_cache: &save_cache
+    save_cache:
+      paths:
+        - node_modules
+      key: node_modules-{{ checksum "package.json" }}
+  restore_cache: &restore_cache
+    restore_cache:
+      keys:
+      - node_modules-{{ checksum "package.json" }}
+      - node_modules-
+
+executors:
+  worker:
+    docker:
+      - image: node:alpine
+    working_directory: /tmp
+
+jobs:
+  audit:
+    executor: worker
+    steps:
+      - checkout
+      - run: npm audit
+
+  install:
+    executor: worker
+    steps:
+      - checkout
+      - *restore_cache
+      - run: npm install
+      - *save_cache
+  
+  lint:
+    executor: worker
+    steps:
+      - checkout
+      - *restore_cache
+      - run: npm run lint
+
+  build:
+    executor: worker
+    steps:
+      - checkout
+      - *restore_cache
+      - run: npm run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - public
+            - lambda
+
+  deploy:
+    executor: worker
+    steps:
+      - attach_workspace:
+          at: .
+      - run: npm install -g netlify-cli
+      - run: |
+          netlify deploy
+            --prod
+            --dir public
+            --functions lambda
+            --message "$CI_COMMIT_TITLE"
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - audit
+      - install
+      - lint:
+          requires:
+            - install
+      - build:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^v[0-9]\.[0-9]\.[0-9]$/
