@@ -57,6 +57,7 @@ jobs:
     executor: worker
     steps:
       - checkout
+      - *restore_cache
       - attach_workspace:
           at: .
       - run: npm run deploy
