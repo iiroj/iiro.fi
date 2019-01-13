@@ -16,7 +16,7 @@ executors:
   worker:
     docker:
       - image: circleci/node
-    working_directory: /ci
+    working_directory: /tmp/ci
 
 jobs:
   audit:
