@@ -380,16 +380,9 @@ const Cv = ({ forceInitialPose }) => (
                 <h3>Verkkokauppa.com Investors Portal</h3>
                 <p>
                   Verkkokauppa.com is the largest online retailer in Finland. I
-                  designed the{" "}
-                  <Link
-                    href="https://www.kauppalehti.fi/lehdistotiedotteet/verkkokauppacomin-sijoittajasivut-palkittiin-vuoden-2018-parhaina/LPuge6z7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    award-winning
-                  </Link>{" "}
-                  Investors Portal with the goal of offering easily accessible
-                  information and news about the corporation.
+                  designed the award-winning Investors Portal with the goal of
+                  offering easily accessible information and news about the
+                  corporation.
                 </p>
                 <DefinitionList>
                   {[
