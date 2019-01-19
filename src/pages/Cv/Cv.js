@@ -4,7 +4,6 @@ import React from "react";
 
 import Back from "../../components/Back";
 import Baskerville from "../../components/Baskerville";
-import Link from "../../components/Link";
 import Picture from "../../components/Picture";
 
 import {
