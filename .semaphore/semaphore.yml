@@ -19,7 +19,7 @@ blocks:
         commands:
           - checkout
           - npm ci
-          - cache store node-modules-$SEMAPHORE_PIPELINE_ID node_modules
+          - cache store node-modules-$SEMAPHORE_WORKFLOW_ID node_modules
 
   - name: Build
     task:
@@ -39,10 +39,10 @@ blocks:
       - name: Build
         commands:
           - checkout
-          - cache restore node-modules-$SEMAPHORE_PIPELINE_ID
+          - cache restore node-modules-$SEMAPHORE_WORKFLOW_ID
           - npm run build
-          - cache store build-lambda-$SEMAPHORE_PIPELINE_ID lambda
-          - cache store build-public-$SEMAPHORE_PIPELINE_ID public
+          - cache store build-lambda-$SEMAPHORE_WORKFLOW_ID lambda
+          - cache store build-public-$SEMAPHORE_WORKFLOW_ID public
 
 promotions:
   - name: deploy
