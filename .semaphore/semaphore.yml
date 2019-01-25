@@ -7,20 +7,6 @@ agent:
     os_image: ubuntu1804
 
 blocks:
-  - name: Install
-    task:
-      prologue:
-        commands:
-          - nvm install --lts
-          - sem-version node --lts
-          - npm i -g npm
-      jobs:
-      - name: npm install
-        commands:
-          - checkout
-          - npm ci
-          - cache store node-modules-$SEMAPHORE_WORKFLOW_ID node_modules
-
   - name: Build
     task:
       secrets:
@@ -36,13 +22,13 @@ blocks:
           - sem-version node --lts
           - npm i -g npm
       jobs:
-      - name: Build
-        commands:
-          - checkout
-          - cache restore node-modules-$SEMAPHORE_WORKFLOW_ID
-          - npm run build
-          - cache store build-lambda-$SEMAPHORE_WORKFLOW_ID lambda
-          - cache store build-public-$SEMAPHORE_WORKFLOW_ID public
+        - name: Build
+          commands:
+            - checkout
+            - npm ci
+            - npm run build
+            - cache store build-lambda-$SEMAPHORE_WORKFLOW_ID lambda
+            - cache store build-public-$SEMAPHORE_WORKFLOW_ID public
 
 promotions:
   - name: deploy

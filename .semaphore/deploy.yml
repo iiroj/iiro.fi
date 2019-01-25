@@ -23,4 +23,4 @@ blocks:
             - checkout
             - cache restore build-lambda-$SEMAPHORE_WORKFLOW_ID
             - cache restore build-public-$SEMAPHORE_WORKFLOW_ID
-            - netlify deploy -p -d public -f lambda -m "$TRAVIS_TAG"
+            - netlify deploy -p -d public -f lambda
