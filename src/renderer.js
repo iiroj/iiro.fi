@@ -1,51 +1,36 @@
-import { flushChunkNames } from "react-universal-component/server";
+import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
 import { HelmetProvider } from "react-helmet-async";
 import { html } from "common-tags";
 import { renderToString } from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
 import { createMemoryHistory } from "history";
-import flushChunks from "webpack-flush-chunks";
 import React from "react";
 
-import generateNetlifyHeaders from "./utils/netlifyHeaders";
-
-const getScriptTags = scripts =>
-  scripts
-    .map(
-      src =>
-        `<script type="text/javascript" src="/${src}" rel="subresource" defer></script>`
-    )
-    .join("\n");
-
-export default async ({ path, stats }) => {
-  const { HistoryProvider } = require("./components/History");
-  const { default: App } = require("./components/App");
+export default async ({ compilationAssets, path, stats }) => {
   const sheet = new ServerStyleSheet();
-  const helmetContext = {};
+  const extractor = new ChunkExtractor({
+    entrypoints: ["client"],
+    stats: JSON.parse(compilationAssets["loadable-stats.json"].source())
+  });
+  const { HistoryProvider } = require("./components/History");
   const history = createMemoryHistory({ initialEntries: [path] });
+  const helmetContext = {};
+  const { default: App } = require("./components/App");
 
   const appHtml = renderToString(
     sheet.collectStyles(
-      <HistoryProvider history={history}>
-        <HelmetProvider context={helmetContext}>
-          <App />
-        </HelmetProvider>
-      </HistoryProvider>
+      <ChunkExtractorManager extractor={extractor}>
+        <HistoryProvider history={history}>
+          <HelmetProvider context={helmetContext}>
+            <App />
+          </HelmetProvider>
+        </HistoryProvider>
+      </ChunkExtractorManager>
     )
   );
 
   const styleTags = sheet.getStyleTags();
   const { helmet } = helmetContext;
-
-  const { scripts } = flushChunks(stats, {
-    before: ["runtime", "vendor"],
-    after: ["client"],
-    chunkNames: flushChunkNames()
-  });
-
-  if (process.env.NODE_ENV === "production") {
-    generateNetlifyHeaders(path, scripts);
-  }
 
   /* eslint-disable prettier/prettier */
   return html`
@@ -63,11 +48,12 @@ export default async ({ path, stats }) => {
         <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
         ${helmet.link.toString()}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        ${getScriptTags(scripts)}
+        ${extractor.getLinkTags()}
         ${styleTags}
       </head>
       <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${appHtml}</div>
+        ${extractor.getScriptTags()}
       </body>
     </html>
   `.replace(/^\s*$(?:\r\n?|\n)/gm, "");

@@ -1,7 +1,9 @@
+import loadable from "@loadable/component";
+
 export const routes = new Map([
-  ["/cv/", () => import("./pages/Cv")],
-  ["/portfolio/", () => import("./pages/Portfolio")],
-  ["/", () => import("./pages/Root")]
+  ["/cv/", loadable(() => import("./pages/Cv"))],
+  ["/portfolio/", loadable(() => import("./pages/Portfolio"))],
+  ["/", loadable(() => import("./pages/Root"))]
 ]);
 
-export const NotFound = () => import("./pages/NotFound");
+export const NotFound = loadable(() => import("./pages/NotFound"));

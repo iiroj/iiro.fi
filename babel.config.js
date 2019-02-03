@@ -13,7 +13,6 @@ module.exports = api => {
   const plugins = [
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-export-namespace-from",
-    "@babel/plugin-syntax-dynamic-import",
     [
       "babel-plugin-styled-components",
       {
@@ -22,27 +21,21 @@ module.exports = api => {
         pure: true
       }
     ],
-    "babel-plugin-transform-export-default-name"
+    "babel-plugin-transform-export-default-name",
+    "@loadable/babel-plugin"
   ];
 
   if (env.startsWith("webpack")) {
     presetEnv.modules = false;
-    plugins.push("babel-plugin-universal-import");
   }
 
   if (env.startsWith("node")) {
     presetEnv.modules = "commonjs";
     presetEnv.targets = { node: "current" };
-    plugins.push(["babel-plugin-universal-import", { babelServer: true }]);
-  }
-
-  if (isProduction) {
-    presets.push([
-      "babel-preset-minify",
-      {
-        builtIns: false
-      }
-    ]);
+    plugins.push(
+      "@babel/plugin-syntax-dynamic-import",
+      "babel-plugin-dynamic-import-node"
+    );
   }
 
   return { presets, plugins };

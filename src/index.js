@@ -1,3 +1,4 @@
+import { loadableReady } from "@loadable/component";
 import { createBrowserHistory } from "history";
 import { HelmetProvider } from "react-helmet-async";
 import React from "react";
@@ -25,4 +26,4 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
   });
 }
 
-render(App);
+loadableReady(() => render(App));

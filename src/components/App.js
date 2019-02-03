@@ -8,7 +8,6 @@ import { NotFound, routes } from "../routes";
 
 import { withHistory } from "./History";
 import Layout from "./Layout";
-import UniversalComponent from "./UniversalComponent";
 
 const RouteContainer = posed(
   styled.div({
@@ -54,15 +53,14 @@ class App extends React.PureComponent {
     const { forceInitialPose } = this.state;
     const { history } = this.props;
 
+    const Page = routes.get(history.location.pathname) || NotFound;
+
     return (
       <Layout>
         <MessageProvider>
           <PoseGroup>
             <RouteContainer key={history.location.key || "initial-route"}>
-              <UniversalComponent
-                forceInitialPose={forceInitialPose}
-                src={routes.get(history.location.pathname) || NotFound}
-              />
+              <Page forceInitialPose={forceInitialPose} />
             </RouteContainer>
           </PoseGroup>
         </MessageProvider>
