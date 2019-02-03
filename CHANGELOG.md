@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="18.3.0"></a>
+# [18.3.0](https://github.com/iiroj/iiro.fi/compare/v18.2.21...v18.3.0) (2019-02-03)
+
+
+### Features
+
+* replace react-universal-component with [@loadable](https://github.com/loadable)/component ([2e1a9c7](https://github.com/iiroj/iiro.fi/commit/2e1a9c7))
+
+
+
 <a name="18.2.21"></a>
 ## [18.2.21](https://github.com/iiroj/iiro.fi/compare/v18.2.20...v18.2.21) (2019-01-25)
 
