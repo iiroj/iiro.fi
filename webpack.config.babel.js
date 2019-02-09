@@ -71,11 +71,7 @@ const config = {
       }
     }),
     new LoadablePlugin(),
-    new HtmlRendererWebpackPlugin({
-      hotPath: /\/src\//,
-      paths: staticRoutes,
-      renderer
-    })
+    new HtmlRendererWebpackPlugin({ paths: staticRoutes, renderer })
   ],
 
   optimization: {
