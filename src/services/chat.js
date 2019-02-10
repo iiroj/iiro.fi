@@ -91,11 +91,11 @@ const messages = [
     for my open source work.
   </p>,
   <p key="10">
-    Finally, feel free to send me a{" "}
+    Finally, feel free to send me anonymous{" "}
     <Emoji label="Telegram">
       <Telegram />
     </Emoji>{" "}
-    message from below. Have a nice day!
+    feedback from below. Have a nice day!
   </p>
 ];
 
