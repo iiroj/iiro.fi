@@ -3,24 +3,20 @@ import React from "react";
 
 import { withHistory } from "./History";
 
-class HistoryLink extends React.PureComponent {
-  static propTypes = {
-    history: PropTypes.object.isRequired
-  };
+const HistoryLink = ({ children, history, href, ...rest }) => (
+  <a
+    {...rest}
+    onClick={event => {
+      event.preventDefault();
+      history.push(href);
+    }}
+  >
+    {children}
+  </a>
+);
 
-  handleClick = event => {
-    event.preventDefault();
-    this.props.history.push(this.props.href);
-  };
-
-  render() {
-    const { children, ...rest } = this.props;
-    return (
-      <a {...rest} onClick={this.handleClick}>
-        {children}
-      </a>
-    );
-  }
-}
+HistoryLink.propTypes = {
+  history: PropTypes.object.isRequired
+};
 
 export default withHistory(HistoryLink);
