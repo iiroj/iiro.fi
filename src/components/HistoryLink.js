@@ -1,19 +1,23 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useCallback } from "react";
 
 import { withHistory } from "./History";
 
-const HistoryLink = ({ children, history, href, ...rest }) => (
-  <a
-    {...rest}
-    onClick={event => {
+const HistoryLink = ({ children, history, href, ...rest }) => {
+  const handleClick = useCallback(
+    event => {
       event.preventDefault();
       history.push(href);
-    }}
-  >
-    {children}
-  </a>
-);
+    },
+    [href]
+  );
+
+  return (
+    <a {...rest} onClick={handleClick}>
+      {children}
+    </a>
+  );
+};
 
 HistoryLink.propTypes = {
   history: PropTypes.object.isRequired
