@@ -22,19 +22,15 @@ const RouteContainer = posed(
 });
 
 const App = ({ history }) => {
-  const [initialized, setInitialized] = useState(false);
   const [key, setKey] = useState("initial-route");
   const [forceInitialPose, setForceInitialPose] = useState(false);
 
   useEffect(() => {
-    if (!initialized) {
-      setForceInitialPose(true);
-      history.listen(location => {
-        setKey(location.key);
-      });
-    }
-    setInitialized(true);
-  });
+    setForceInitialPose(true);
+    history.listen(location => {
+      setKey(location.key);
+    });
+  }, []);
 
   useEffect(() => {
     if (history.action !== "POP") {

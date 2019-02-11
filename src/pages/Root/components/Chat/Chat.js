@@ -131,11 +131,12 @@ const useSticky = (isSticky, containerRef) => {
     }
   };
 
-  window.addEventListener("scroll", handleScroll);
-
-  useEffect(() => () => {
-    window.removeEventListener("scroll", handleScroll);
-  });
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return sticky;
 };
@@ -148,11 +149,9 @@ const Chat = ({ messages, onSentFeedback, onSkip, onStart, ready, typing }) => {
   const sticky = useSticky(true, containerRef);
 
   useEffect(() => {
-    if (!initialized) {
-      onStart();
-    }
+    onStart();
     setInitialized(true);
-  });
+  }, []);
 
   useLayoutEffect(() => {
     if (sticky && lastMessageRef.current) {

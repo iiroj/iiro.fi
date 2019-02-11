@@ -115,19 +115,14 @@ const IBMPlexSans600Italic = new FontFaceObserver("IBM Plex Sans", {
 });
 
 const Layout = ({ children }) => {
-  const [initialized, setInitialized] = useState(false);
-
   useEffect(() => {
-    if (!initialized) {
-      Promise.all([
-        IBMPlexSans400.load(),
-        IBMPlexSans400Italic.load(),
-        IBMPlexSans600.load(),
-        IBMPlexSans600Italic.load()
-      ]);
-    }
-    setInitialized(true);
-  });
+    Promise.all([
+      IBMPlexSans400.load(),
+      IBMPlexSans400Italic.load(),
+      IBMPlexSans600.load(),
+      IBMPlexSans600Italic.load()
+    ]);
+  }, []);
 
   return (
     <>
