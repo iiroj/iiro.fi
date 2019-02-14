@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import { MessageProvider } from "../services/chat";
 import { NotFound, routes } from "../routes";
+import { ChatProvider } from "../services/chat";
 
 import { withHistory } from "./History";
 import Layout from "./Layout";
@@ -42,13 +42,13 @@ const App = ({ history }) => {
 
   return (
     <Layout>
-      <MessageProvider>
+      <ChatProvider>
         <PoseGroup>
           <RouteContainer key={history.location.key || "initial-route"}>
             <Page forceInitialPose={forceInitialPose} />
           </RouteContainer>
         </PoseGroup>
-      </MessageProvider>
+      </ChatProvider>
     </Layout>
   );
 };

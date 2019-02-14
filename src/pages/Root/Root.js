@@ -1,8 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet-async";
 
-import { MessageConsumer } from "../../services/chat";
-
 import Chat from "./components/Chat";
 
 const microdata = JSON.stringify({
@@ -36,7 +34,7 @@ const Root = () => (
       <title>Iiro Jäppinen</title>
       <script type="application/ld+json">{microdata}</script>
     </Helmet>
-    <MessageConsumer>{values => <Chat {...values} />}</MessageConsumer>
+    <Chat />
   </>
 );
 

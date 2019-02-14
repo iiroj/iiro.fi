@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import styled from "styled-components";
 
 import Picture from "../../../../components/Picture";
+import { useChat } from "../../../../services/chat";
 
 import Message from "./Message";
 import Reply from "./Reply";
@@ -141,7 +141,8 @@ const useSticky = (isSticky, containerRef) => {
   return sticky;
 };
 
-const Chat = ({ messages, onSentFeedback, onSkip, onStart, ready, typing }) => {
+const Chat = () => {
+  const { handleSentFeedback, handleSkip, messages, ready, typing } = useChat();
   const containerRef = React.createRef();
   const lastMessageRef = React.createRef();
 
@@ -149,7 +150,6 @@ const Chat = ({ messages, onSentFeedback, onSkip, onStart, ready, typing }) => {
   const sticky = useSticky(true, containerRef);
 
   useEffect(() => {
-    onStart();
     setInitialized(true);
   }, []);
 
@@ -200,20 +200,13 @@ const Chat = ({ messages, onSentFeedback, onSkip, onStart, ready, typing }) => {
         )}
       </MessageGroup>
 
-      {ready || <SkipButton onClick={onSkip}>Skip</SkipButton>}
+      {ready || <SkipButton onClick={handleSkip}>Skip</SkipButton>}
 
-      {initialized && <Reply onSentFeedback={onSentFeedback} ready={ready} />}
+      {initialized && (
+        <Reply onSentFeedback={handleSentFeedback} ready={ready} />
+      )}
     </Container>
   );
-};
-
-Chat.propTypes = {
-  messages: PropTypes.array.isRequired,
-  onSentFeedback: PropTypes.func.isRequired,
-  onSkip: PropTypes.func.isRequired,
-  onStart: PropTypes.func.isRequired,
-  ready: PropTypes.bool.isRequired,
-  typing: PropTypes.bool.isRequired
 };
 
 export default Chat;

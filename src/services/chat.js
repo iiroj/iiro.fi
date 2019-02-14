@@ -1,5 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState
+} from "react";
 
 import Baskerville from "../components/Baskerville";
 import Emoji from "../components/Emoji";
@@ -17,7 +22,7 @@ import {
   Twitter
 } from "../components/icons";
 
-const messages = [
+const staticMessages = [
   <p key="1">
     Hello there! <Emoji label="Smiling Face With Sunglasses">😎</Emoji>
   </p>,
@@ -117,85 +122,75 @@ const randomIntFromInterval = (min, max) =>
 const waitFor = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 function* messageGenerator(i = 0) {
-  while (true) yield messages[i++];
+  while (true) yield staticMessages[i++];
 }
 
 const generateMessage = messageGenerator();
 
-const MessageContext = React.createContext();
-
-export class MessageProvider extends React.PureComponent {
-  static propTypes = {
-    children: PropTypes.any.isRequired
-  };
-
-  state = {
+const useChatService = () => {
+  const messages = useRef([
     // Replace the last message on SSR, since it's about sending Feedback
-    messages: [...messages.slice(0, messages.length - 1), noScriptMessage],
-    ready: true,
-    replied: false,
-    started: false,
-    typing: false
-  };
+    ...staticMessages.slice(0, staticMessages.length - 1),
+    noScriptMessage
+  ]);
+  const [firstRun, setFirstRun] = useState(true);
+  const [typing, setTyping] = useState(false);
 
-  generator = () =>
-    new Promise(async resolve => {
-      if (!this.state.ready) {
-        this.setState({ typing: true });
-        await waitFor(randomIntFromInterval(10, 20) * 100);
-        if (!this.state.ready) {
-          const message = generateMessage.next().value;
-          this.setState(
-            { messages: this.state.messages.concat(message), typing: false },
-            resolve
-          );
-        } else {
-          resolve();
-        }
-      }
-    }).then(async () => {
-      if (!this.state.ready && this.state.messages.length < messages.length) {
-        await waitFor(1000);
-        this.generator();
-      } else {
-        this.setState({ ready: true });
-      }
-    });
+  const isReady = () =>
+    staticMessages.every(msg => messages.current.includes(msg));
 
-  handleStart = () => {
-    if (!this.state.started) {
-      this.setState(
-        { messages: [], ready: false, started: true },
-        this.generator
-      );
+  const generator = async () => {
+    if (isReady()) return;
+
+    if (firstRun) {
+      setTyping(true);
+      setFirstRun(false);
+    } else {
+      await waitFor(randomIntFromInterval(10, 20) * 100);
+      setTyping(true);
     }
+
+    await waitFor(randomIntFromInterval(10, 20) * 100);
+    setTyping(false);
+
+    const message = generateMessage.next().value;
+    messages.current.push(message);
   };
 
-  handleSkip = () => this.setState({ messages, ready: true, typing: false });
+  useEffect(() => {
+    messages.current = [];
+  }, []);
 
-  handleSentFeedback = () =>
-    this.setState({
-      messages: this.state.messages.concat(sentFeedbackMessage)
-    });
+  useEffect(() => {
+    generator();
+  });
 
-  render() {
-    const { messages, ready, typing } = this.state;
+  const handleSkip = useCallback(() => {
+    messages.current = staticMessages;
+    setTyping(false);
+  }, []);
 
-    return (
-      <MessageContext.Provider
-        value={{
-          messages,
-          onSentFeedback: this.handleSentFeedback,
-          onSkip: this.handleSkip,
-          onStart: this.handleStart,
-          ready,
-          typing
-        }}
-      >
-        {this.props.children}
-      </MessageContext.Provider>
-    );
-  }
-}
+  const handleSentFeedback = useCallback(() => {
+    messages.current.push(sentFeedbackMessage);
+  }, []);
 
-export const MessageConsumer = MessageContext.Consumer;
+  return {
+    handleSentFeedback,
+    handleSkip,
+    messages: messages.current,
+    ready: isReady(),
+    typing
+  };
+};
+
+const ChatContext = React.createContext();
+
+export const ChatProvider = ({ children }) => {
+  const value = useChatService();
+  return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
+};
+
+export const useChat = () => {
+  const context = useContext(ChatContext);
+  return context;
+};
