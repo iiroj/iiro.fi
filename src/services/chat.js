@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState
-} from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 
 import Baskerville from "../components/Baskerville";
 import Emoji from "../components/Emoji";
@@ -128,7 +122,7 @@ function* messageGenerator(i = 0) {
 const generateMessage = messageGenerator();
 
 const useChatService = () => {
-  const messages = useRef([
+  const [messages, setMessages] = useState([
     // Replace the last message on SSR, since it's about sending Feedback
     ...staticMessages.slice(0, staticMessages.length - 1),
     noScriptMessage
@@ -136,8 +130,7 @@ const useChatService = () => {
   const [firstRun, setFirstRun] = useState(true);
   const [typing, setTyping] = useState(false);
 
-  const isReady = () =>
-    staticMessages.every(msg => messages.current.includes(msg));
+  const isReady = () => staticMessages.every(msg => messages.includes(msg));
 
   const generator = async () => {
     if (isReady()) return;
@@ -152,32 +145,30 @@ const useChatService = () => {
 
     await waitFor(randomIntFromInterval(10, 20) * 100);
     setTyping(false);
-
-    const message = generateMessage.next().value;
-    messages.current.push(message);
+    setMessages(messages.concat(generateMessage.next().value));
   };
 
   useEffect(() => {
-    messages.current = [];
+    setMessages([]);
   }, []);
 
   useEffect(() => {
     generator();
-  });
+  }, [messages]);
 
   const handleSkip = useCallback(() => {
-    messages.current = staticMessages;
+    setMessages(staticMessages);
     setTyping(false);
   }, []);
 
   const handleSentFeedback = useCallback(() => {
-    messages.current.push(sentFeedbackMessage);
+    setMessages(messages => messages.concat(sentFeedbackMessage));
   }, []);
 
   return {
     handleSentFeedback,
     handleSkip,
-    messages: messages.current,
+    messages: messages,
     ready: isReady(),
     typing
   };
