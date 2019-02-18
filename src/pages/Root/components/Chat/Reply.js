@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useCallback, useRef, useState } from "react";
 import styled from "styled-components";
 
 import Send from "./Send";
@@ -108,86 +108,77 @@ const Input = styled.textarea(
     }
 );
 
-export default class Reply extends React.PureComponent {
-  static propTypes = {
-    onSentFeedback: PropTypes.func.isRequired,
-    ready: PropTypes.bool.isRequired
-  };
+const Reply = ({ onSentFeedback, ready }) => {
+  const inputRef = useRef(null);
+  const [dirty, setDirty] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [text, setText] = useState("");
+  const [valid, setValid] = useState(false);
 
-  state = {
-    dirty: false,
-    failed: false,
-    sending: false,
-    submitted: false,
-    text: "",
-    valid: false
-  };
-
-  inputRef = React.createRef();
-
-  handleOpen = () => this.setState({ dirty: true });
-
-  handleTextInput = ({ target }) =>
-    this.setState({ text: target.value, valid: target.value !== "" });
-
-  handleSumbit = event => {
-    event.preventDefault();
-    this.setState({ sending: true });
-
-    return new Promise((resolve, reject) => {
-      setTimeout(reject, 10000);
-      fetch(REPLY_URL, {
-        method: "POST",
-        body: JSON.stringify(this.state.text),
-        headers: new Headers({
-          "Content-Type": "text/plain"
+  const handleSubmit = useCallback(
+    event => {
+      event.preventDefault();
+      setSubmitting(true);
+      return new Promise((resolve, reject) => {
+        setTimeout(reject, 10000);
+        fetch(REPLY_URL, {
+          method: "POST",
+          body: JSON.stringify(text),
+          headers: new Headers({
+            "Content-Type": "text/plain"
+          })
         })
+          .then(resolve)
+          .catch(reject);
       })
-        .then(resolve)
-        .catch(reject);
-    })
-      .then(response => {
-        if (response.status !== 204) throw new Error(response.status);
-        this.inputRef.current.blur();
-        this.setState({
-          dirty: false,
-          sending: false,
-          submitted: true,
-          text: "",
-          valid: false
+        .then(response => {
+          if (response.status !== 204) throw new Error(response.status);
+          inputRef.current.blur();
+          setDirty(false);
+          setSubmitting(false);
+          setText("");
+          setValid("");
+          onSentFeedback();
+        })
+        .catch(() => {
+          setFailed(true);
+          setSubmitting(false);
         });
-        this.props.onSentFeedback();
-      })
-      .catch(() => this.setState({ failed: true, sending: false }));
-  };
+    },
+    [text]
+  );
 
-  render() {
-    const { dirty, failed, sending, text } = this.state;
-    const { ready } = this.props;
+  return (
+    <Form
+      dirty={dirty}
+      disabled={submitting || failed}
+      onSubmit={handleSubmit}
+      ready={ready}
+    >
+      <Input
+        disabled={submitting}
+        expanded={dirty && !failed}
+        onChange={({ target }) => {
+          setText(target.value);
+          setValid(target.value !== "");
+        }}
+        onClick={() => setDirty(true)}
+        placeholder="Send Feedback"
+        ref={inputRef}
+        valid={valid.toString()}
+        value={text}
+      />
+      <Button disabled={!valid} valid={valid}>
+        {submitting ? <Typing /> : <Send />}
+      </Button>
+    </Form>
+  );
+};
 
-    const valid = this.state.valid && !sending && !failed;
+Reply.propTypes = {
+  onSentFeedback: PropTypes.func.isRequired,
+  ready: PropTypes.bool.isRequired
+};
 
-    return (
-      <Form
-        dirty={dirty}
-        disabled={sending || failed}
-        onSubmit={this.handleSumbit}
-        ready={ready}
-      >
-        <Input
-          disabled={sending}
-          expanded={dirty && !failed}
-          onChange={this.handleTextInput}
-          onClick={this.handleOpen}
-          placeholder="Send Feedback"
-          ref={this.inputRef}
-          valid={valid.toString()}
-          value={text}
-        />
-        <Button disabled={!valid} valid={valid}>
-          {sending ? <Typing /> : <Send />}
-        </Button>
-      </Form>
-    );
-  }
-}
+export default Reply;

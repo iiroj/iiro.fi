@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Reset = createGlobalStyle(
   {
@@ -114,24 +114,26 @@ const IBMPlexSans600Italic = new FontFaceObserver("IBM Plex Sans", {
   weight: 600
 });
 
-export default class Layout extends React.PureComponent {
-  static propTypes = {
-    children: PropTypes.any.isRequired
-  };
-
-  componentDidMount() {
+const Layout = ({ children }) => {
+  useEffect(() => {
     Promise.all([
       IBMPlexSans400.load(),
       IBMPlexSans400Italic.load(),
       IBMPlexSans600.load(),
       IBMPlexSans600Italic.load()
     ]);
-  }
+  }, []);
 
-  render = () => (
+  return (
     <>
       <Reset />
-      {this.props.children}
+      {children}
     </>
   );
-}
+};
+
+Layout.propTypes = {
+  children: PropTypes.any.isRequired
+};
+
+export default Layout;

@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 import Picture from "../../../../components/Picture";
+import { useChat } from "../../../../services/chat";
 
 import Message from "./Message";
 import Reply from "./Reply";
@@ -115,104 +115,98 @@ const Container = styled.div({
   width: "100%"
 });
 
-export default class Chat extends React.PureComponent {
-  static propTypes = {
-    messages: PropTypes.array.isRequired,
-    onSentFeedback: PropTypes.func.isRequired,
-    onSkip: PropTypes.func.isRequired,
-    onStart: PropTypes.func.isRequired,
-    ready: PropTypes.bool.isRequired,
-    typing: PropTypes.bool.isRequired
+const useSticky = (isSticky, containerRef) => {
+  if (typeof window === "undefined") return;
+
+  const [sticky, setSticky] = useState(isSticky);
+
+  const updateSticky = () => {
+    const { height, top } = containerRef.current.getBoundingClientRect();
+    setSticky(window.innerHeight - top >= height);
   };
 
-  containerRef = React.createRef();
-  lastMessageRef = React.createRef();
-
-  state = {
-    mounted: false,
-    sticky: true
+  const handleScroll = () => {
+    if (containerRef.current) {
+      requestAnimationFrame(updateSticky);
+    }
   };
 
-  setSticky = () => {
-    const { height, top } = this.containerRef.current.getBoundingClientRect();
-    this.setState({ sticky: window.innerHeight - top >= height });
-  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-  handleScroll = () => {
-    requestAnimationFrame(this.setSticky);
-  };
+  return sticky;
+};
 
-  componentDidMount() {
-    this.props.onStart();
-    this.setState({ mounted: true });
-    window.addEventListener("scroll", this.handleScroll);
-  }
+const Chat = () => {
+  const { handleSentFeedback, handleSkip, messages, ready, typing } = useChat();
+  const containerRef = useRef(null);
+  const lastMessageRef = useRef(null);
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    const { messages } = this.props;
+  const [initialized, setInitialized] = useState(false);
+  const sticky = useSticky(true, containerRef);
 
-    if (prevProps.messages.length < messages.length && this.state.sticky) {
-      this.lastMessageRef.current.scrollIntoView({
+  useEffect(() => {
+    setInitialized(true);
+  }, []);
+
+  useEffect(() => {
+    if (sticky && lastMessageRef.current) {
+      lastMessageRef.current.scrollIntoView({
         behavior: "smooth",
         block: "start",
         inline: "nearest"
       });
     }
-  }
+  }, [messages.length, sticky]);
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
+  return (
+    <Container ref={containerRef}>
+      <noscript>
+        <style>{`.noscript { display: flex !important; }`}</style>
+      </noscript>
 
-  render() {
-    const { messages, onSentFeedback, onSkip, ready, typing } = this.props;
-    const { mounted } = this.state;
+      <MessageGroup
+        className={!initialized && "noscript"}
+        fullWidth={messages.length > 0}
+        mounted={initialized}
+      >
+        <PictureContainer>
+          <Picture />
+        </PictureContainer>
 
-    return (
-      <Container ref={this.containerRef}>
-        <noscript>
-          <style>{`.noscript { display: flex !important; }`}</style>
-        </noscript>
+        <Backdrop />
 
-        <MessageGroup
-          className={!mounted && "noscript"}
-          fullWidth={messages.length > 0}
-          mounted={mounted}
-        >
-          <PictureContainer>
-            <Picture />
-          </PictureContainer>
+        {(messages.length > 0 || typing) && (
+          <MessageListContainer
+            typing={typing}
+            aria-live="assertive"
+            role="log"
+          >
+            {messages.map((content, key) => (
+              <Message
+                children={content}
+                initialPose="exit"
+                key={key}
+                pose="enter"
+                ref={key === messages.length - 1 ? lastMessageRef : undefined}
+              />
+            ))}
+            {typing && <Typing key="typing" />}
+          </MessageListContainer>
+        )}
+      </MessageGroup>
 
-          <Backdrop />
+      {ready || <SkipButton onClick={handleSkip}>Skip</SkipButton>}
 
-          {(messages.length > 0 || typing) && (
-            <MessageListContainer
-              typing={typing}
-              aria-live="assertive"
-              role="log"
-            >
-              {messages.map((content, key) => (
-                <Message
-                  children={content}
-                  initialPose="exit"
-                  key={key}
-                  pose="enter"
-                  ref={
-                    key === messages.length - 1
-                      ? this.lastMessageRef
-                      : undefined
-                  }
-                />
-              ))}
-              {typing && <Typing key="typing" />}
-            </MessageListContainer>
-          )}
-        </MessageGroup>
+      {initialized && (
+        <Reply onSentFeedback={handleSentFeedback} ready={ready} />
+      )}
+    </Container>
+  );
+};
 
-        {ready || <SkipButton onClick={onSkip}>Skip</SkipButton>}
-
-        {mounted && <Reply onSentFeedback={onSentFeedback} ready={ready} />}
-      </Container>
-    );
-  }
-}
+export default Chat;

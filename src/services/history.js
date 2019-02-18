@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useContext } from "react";
 
 const HistoryContext = React.createContext({ history: { location: {} } });
 
@@ -17,11 +17,7 @@ HistoryProvider.propTypes = {
   history: PropTypes.object.isRequired
 };
 
-export const withHistory = Component =>
-  function withHistory(props) {
-    return (
-      <HistoryContext.Consumer>
-        {({ history }) => <Component {...props} history={history} />}
-      </HistoryContext.Consumer>
-    );
-  };
+export const useHistory = () => {
+  const { history } = useContext(HistoryContext);
+  return history;
+};

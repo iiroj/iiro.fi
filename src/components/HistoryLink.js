@@ -1,26 +1,27 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useCallback } from "react";
 
-import { withHistory } from "./History";
+import { useHistory } from "../services/history";
 
-class HistoryLink extends React.PureComponent {
-  static propTypes = {
-    history: PropTypes.object.isRequired
-  };
+const HistoryLink = ({ children, href, ...rest }) => {
+  const history = useHistory();
+  const handleClick = useCallback(
+    event => {
+      event.preventDefault();
+      history.push(href);
+    },
+    [href]
+  );
 
-  handleClick = event => {
-    event.preventDefault();
-    this.props.history.push(this.props.href);
-  };
+  return (
+    <a {...rest} onClick={handleClick}>
+      {children}
+    </a>
+  );
+};
 
-  render() {
-    const { children, ...rest } = this.props;
-    return (
-      <a {...rest} onClick={this.handleClick}>
-        {children}
-      </a>
-    );
-  }
-}
+HistoryLink.propTypes = {
+  href: PropTypes.string.isRequired
+};
 
-export default withHistory(HistoryLink);
+export default HistoryLink;

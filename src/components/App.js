@@ -1,12 +1,11 @@
 import posed, { PoseGroup } from "react-pose";
-import PropTypes from "prop-types";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import { MessageProvider } from "../services/chat";
+import { ChatProvider } from "../services/chat";
+import { useHistory } from "../services/history";
 import { NotFound, routes } from "../routes";
 
-import { withHistory } from "./History";
 import Layout from "./Layout";
 
 const RouteContainer = posed(
@@ -21,52 +20,37 @@ const RouteContainer = posed(
   exit: { opacity: 0, staggerDirection: -1 }
 });
 
-class App extends React.PureComponent {
-  static propTypes = {
-    history: PropTypes.object.isRequired
-  };
+const App = () => {
+  const history = useHistory();
+  const [key, setKey] = useState("initial-route");
+  const [forceInitialPose, setForceInitialPose] = useState(false);
 
-  state = {
-    key: this.props.history.location.key,
-    forceInitialPose: false
-  };
-
-  componentDidMount() {
-    this.setState({ forceInitialPose: true });
-
-    this.props.history.listen(location => {
-      this.setState({ key: location.key });
+  useEffect(() => {
+    setForceInitialPose(true);
+    history.listen(location => {
+      setKey(location.key);
     });
-  }
+  }, []);
 
-  componentDidUpdate(prevProps) {
-    const { history } = this.props;
-    if (
-      history.location.key !== prevProps.history.location.key &&
-      history.action !== "POP"
-    ) {
-      window.scrollTo(0, 0);
+  useEffect(() => {
+    if (history.action !== "POP") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
-  }
+  }, [key]);
 
-  render() {
-    const { forceInitialPose } = this.state;
-    const { history } = this.props;
+  const Page = routes.get(history.location.pathname) || NotFound;
 
-    const Page = routes.get(history.location.pathname) || NotFound;
+  return (
+    <Layout>
+      <ChatProvider>
+        <PoseGroup>
+          <RouteContainer key={history.location.key || "initial-route"}>
+            <Page forceInitialPose={forceInitialPose} />
+          </RouteContainer>
+        </PoseGroup>
+      </ChatProvider>
+    </Layout>
+  );
+};
 
-    return (
-      <Layout>
-        <MessageProvider>
-          <PoseGroup>
-            <RouteContainer key={history.location.key || "initial-route"}>
-              <Page forceInitialPose={forceInitialPose} />
-            </RouteContainer>
-          </PoseGroup>
-        </MessageProvider>
-      </Layout>
-    );
-  }
-}
-
-export default withHistory(App);
+export default App;

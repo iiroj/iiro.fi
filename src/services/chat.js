@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 
 import Baskerville from "../components/Baskerville";
 import Emoji from "../components/Emoji";
@@ -17,7 +16,7 @@ import {
   Twitter
 } from "../components/icons";
 
-const messages = [
+const staticMessages = [
   <p key="1">
     Hello there! <Emoji label="Smiling Face With Sunglasses">😎</Emoji>
   </p>,
@@ -40,7 +39,7 @@ const messages = [
         <Email />
       </Emoji>{" "}
       hello@iiro.fi
-    </Link>
+    </Link>{" "}
     or send a tweet to{" "}
     <Link href="https://twitter.com/iirojappinen">
       <Emoji label="Twitter">
@@ -114,88 +113,77 @@ const noScriptMessage = (
 
 const randomIntFromInterval = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
+
 const waitFor = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 function* messageGenerator(i = 0) {
-  while (true) yield messages[i++];
+  while (true) yield staticMessages[i++];
 }
 
 const generateMessage = messageGenerator();
 
-const MessageContext = React.createContext();
-
-export class MessageProvider extends React.PureComponent {
-  static propTypes = {
-    children: PropTypes.any.isRequired
-  };
-
-  state = {
+const useChatService = () => {
+  const [initialized, setInitialized] = useState(false);
+  const [typing, setTyping] = useState(false);
+  const [messages, setMessages] = useState([
     // Replace the last message on SSR, since it's about sending Feedback
-    messages: [...messages.slice(0, messages.length - 1), noScriptMessage],
-    ready: true,
-    replied: false,
-    started: false,
-    typing: false
-  };
+    ...staticMessages.slice(0, staticMessages.length - 1),
+    noScriptMessage
+  ]);
 
-  generator = () =>
-    new Promise(async resolve => {
-      if (!this.state.ready) {
-        this.setState({ typing: true });
-        await waitFor(randomIntFromInterval(10, 20) * 100);
-        if (!this.state.ready) {
-          const message = generateMessage.next().value;
-          this.setState(
-            { messages: this.state.messages.concat(message), typing: false },
-            resolve
-          );
-        } else {
-          resolve();
-        }
-      }
-    }).then(async () => {
-      if (!this.state.ready && this.state.messages.length < messages.length) {
-        await waitFor(1000);
-        this.generator();
-      } else {
-        this.setState({ ready: true });
-      }
-    });
-
-  handleStart = () => {
-    if (!this.state.started) {
-      this.setState(
-        { messages: [], ready: false, started: true },
-        this.generator
-      );
+  const getMessages = async () => {
+    if (initialized) {
+      await waitFor(randomIntFromInterval(20, 40) * 100);
+      setTyping(messages.length < staticMessages.length);
+    } else {
+      setTyping(true);
+      setInitialized(true);
     }
+
+    await waitFor(randomIntFromInterval(20, 40) * 100);
+    const message = generateMessage.next().value;
+    setMessages(messages =>
+      messages.length >= staticMessages.length
+        ? messages
+        : [...messages, message]
+    );
+    setTyping(false);
   };
 
-  handleSkip = () => this.setState({ messages, ready: true, typing: false });
+  useEffect(() => {
+    setMessages([]);
+  }, []);
 
-  handleSentFeedback = () =>
-    this.setState({
-      messages: this.state.messages.concat(sentFeedbackMessage)
-    });
+  useEffect(() => {
+    getMessages();
+  }, [messages.length]);
 
-  render() {
-    const { messages, ready, typing } = this.state;
+  const handleSkip = useCallback(() => {
+    setMessages(staticMessages);
+    setTyping(false);
+  }, []);
 
-    return (
-      <MessageContext.Provider
-        value={{
-          messages,
-          onSentFeedback: this.handleSentFeedback,
-          onSkip: this.handleSkip,
-          onStart: this.handleStart,
-          ready,
-          typing
-        }}
-      >
-        {this.props.children}
-      </MessageContext.Provider>
-    );
-  }
-}
+  const handleSentFeedback = () => {
+    setMessages(messages => [...messages, sentFeedbackMessage]);
+  };
 
-export const MessageConsumer = MessageContext.Consumer;
+  return {
+    handleSentFeedback,
+    handleSkip,
+    messages,
+    ready: messages.length >= staticMessages.length,
+    typing
+  };
+};
+
+const ChatContext = React.createContext();
+
+export const ChatProvider = ({ children }) => {
+  const value = useChatService();
+  return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
+};
+
+export const useChat = () => {
+  const context = useContext(ChatContext);
+  return context;
+};
