@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 import Picture from "../../../../components/Picture";
@@ -153,7 +153,7 @@ const Chat = () => {
     setInitialized(true);
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (sticky && lastMessageRef.current) {
       lastMessageRef.current.scrollIntoView({
         behavior: "smooth",
