@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [18.4.3](https://github.com/iiroj/iiro.fi/compare/v18.4.2...v18.4.3) (2019-02-18)
+
+
+### Bug Fixes
+
+* useChat is working ([00ecf11](https://github.com/iiroj/iiro.fi/commit/00ecf11))
+
+
+
 <a name="18.4.2"></a>
 ## [18.4.2](https://github.com/iiroj/iiro.fi/compare/v18.4.1...v18.4.2) (2019-02-10)
 
