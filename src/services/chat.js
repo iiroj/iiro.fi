@@ -39,7 +39,7 @@ const staticMessages = [
         <Email />
       </Emoji>{" "}
       hello@iiro.fi
-    </Link>
+    </Link>{" "}
     or send a tweet to{" "}
     <Link href="https://twitter.com/iirojappinen">
       <Emoji label="Twitter">
@@ -113,6 +113,7 @@ const noScriptMessage = (
 
 const randomIntFromInterval = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
+
 const waitFor = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 function* messageGenerator(i = 0) {
@@ -122,30 +123,31 @@ function* messageGenerator(i = 0) {
 const generateMessage = messageGenerator();
 
 const useChatService = () => {
+  const [initialized, setInitialized] = useState(false);
+  const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState([
     // Replace the last message on SSR, since it's about sending Feedback
     ...staticMessages.slice(0, staticMessages.length - 1),
     noScriptMessage
   ]);
-  const [firstRun, setFirstRun] = useState(true);
-  const [typing, setTyping] = useState(false);
 
-  const isReady = () => staticMessages.every(msg => messages.includes(msg));
-
-  const generator = async () => {
-    if (isReady()) return;
-
-    if (firstRun) {
-      setTyping(true);
-      setFirstRun(false);
+  const getMessages = async () => {
+    if (initialized) {
+      await waitFor(randomIntFromInterval(20, 40) * 100);
+      setTyping(messages.length < staticMessages.length);
     } else {
-      await waitFor(randomIntFromInterval(10, 20) * 100);
       setTyping(true);
+      setInitialized(true);
     }
 
-    await waitFor(randomIntFromInterval(10, 20) * 100);
+    await waitFor(randomIntFromInterval(20, 40) * 100);
+    const message = generateMessage.next().value;
+    setMessages(messages =>
+      messages.length >= staticMessages.length
+        ? messages
+        : [...messages, message]
+    );
     setTyping(false);
-    setMessages(messages.concat(generateMessage.next().value));
   };
 
   useEffect(() => {
@@ -153,35 +155,33 @@ const useChatService = () => {
   }, []);
 
   useEffect(() => {
-    generator();
-  }, [messages]);
+    getMessages();
+  }, [messages.length]);
 
   const handleSkip = useCallback(() => {
     setMessages(staticMessages);
     setTyping(false);
   }, []);
 
-  const handleSentFeedback = useCallback(() => {
-    setMessages(messages => messages.concat(sentFeedbackMessage));
-  }, []);
+  const handleSentFeedback = () => {
+    setMessages(messages => [...messages, sentFeedbackMessage]);
+  };
 
   return {
     handleSentFeedback,
     handleSkip,
-    messages: messages,
-    ready: isReady(),
+    messages,
+    ready: messages.length >= staticMessages.length,
     typing
   };
 };
 
 const ChatContext = React.createContext();
 
-export const ChatProvider = ({ children }) => {
-  const value = useChatService();
-  return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
-};
+export const ChatProvider = ({ children }) => (
+  <ChatContext.Provider value={useChatService()}>
+    {children}
+  </ChatContext.Provider>
+);
 
-export const useChat = () => {
-  const context = useContext(ChatContext);
-  return context;
-};
+export const useChat = () => useContext(ChatContext);

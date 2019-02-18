@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 import Picture from "../../../../components/Picture";
@@ -143,8 +143,8 @@ const useSticky = (isSticky, containerRef) => {
 
 const Chat = () => {
   const { handleSentFeedback, handleSkip, messages, ready, typing } = useChat();
-  const containerRef = React.createRef();
-  const lastMessageRef = React.createRef();
+  const containerRef = useRef(null);
+  const lastMessageRef = useRef(null);
 
   const [initialized, setInitialized] = useState(false);
   const sticky = useSticky(true, containerRef);
