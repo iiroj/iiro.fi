@@ -1,12 +1,11 @@
 import posed, { PoseGroup } from "react-pose";
-import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import { NotFound, routes } from "../routes";
 import { ChatProvider } from "../services/chat";
+import { useHistory } from "../services/history";
+import { NotFound, routes } from "../routes";
 
-import { withHistory } from "./History";
 import Layout from "./Layout";
 
 const RouteContainer = posed(
@@ -21,7 +20,8 @@ const RouteContainer = posed(
   exit: { opacity: 0, staggerDirection: -1 }
 });
 
-const App = ({ history }) => {
+const App = () => {
+  const history = useHistory();
   const [key, setKey] = useState("initial-route");
   const [forceInitialPose, setForceInitialPose] = useState(false);
 
@@ -53,8 +53,4 @@ const App = ({ history }) => {
   );
 };
 
-App.propTypes = {
-  history: PropTypes.object.isRequired
-};
-
-export default withHistory(App);
+export default App;

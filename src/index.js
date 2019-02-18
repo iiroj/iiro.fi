@@ -5,7 +5,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./components/App";
-import { HistoryProvider } from "./components/History";
+import { HistoryProvider } from "./services/history";
 
 const history = createBrowserHistory();
 

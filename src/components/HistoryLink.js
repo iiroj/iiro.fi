@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 
-import { withHistory } from "./History";
+import { useHistory } from "../services/history";
 
-const HistoryLink = ({ children, history, href, ...rest }) => {
+const HistoryLink = ({ children, href, ...rest }) => {
+  const history = useHistory();
   const handleClick = useCallback(
     event => {
       event.preventDefault();
@@ -20,7 +21,7 @@ const HistoryLink = ({ children, history, href, ...rest }) => {
 };
 
 HistoryLink.propTypes = {
-  history: PropTypes.object.isRequired
+  href: PropTypes.string.isRequired
 };
 
-export default withHistory(HistoryLink);
+export default HistoryLink;

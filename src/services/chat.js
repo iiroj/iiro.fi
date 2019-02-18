@@ -178,10 +178,12 @@ const useChatService = () => {
 
 const ChatContext = React.createContext();
 
-export const ChatProvider = ({ children }) => (
-  <ChatContext.Provider value={useChatService()}>
-    {children}
-  </ChatContext.Provider>
-);
+export const ChatProvider = ({ children }) => {
+  const value = useChatService();
+  return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
+};
 
-export const useChat = () => useContext(ChatContext);
+export const useChat = () => {
+  const context = useContext(ChatContext);
+  return context;
+};
