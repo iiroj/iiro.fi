@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 const Reset = createGlobalStyle(
   {
