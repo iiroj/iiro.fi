@@ -133,7 +133,7 @@ const useChatService = () => {
 
   const getMessages = async () => {
     if (initialized) {
-      await waitFor(randomIntFromInterval(20, 40) * 100);
+      await waitFor(1000);
       setTyping(messages.length < staticMessages.length);
     } else {
       setTyping(true);
