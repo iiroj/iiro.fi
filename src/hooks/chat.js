@@ -124,34 +124,44 @@ const generateMessage = messageGenerator();
 
 const useChatService = () => {
   const [initialized, setInitialized] = useState(false);
-  const [typing, setTyping] = useState(false);
-  const [messages, setMessages] = useState([
-    // Replace the last message on SSR, since it's about sending Feedback
-    ...staticMessages.slice(0, staticMessages.length - 1),
-    noScriptMessage
-  ]);
+  const [{ messages, typing }, setState] = useState({
+    initialized: false,
+    messages: [
+      // Replace the last message on SSR, since it's about sending Feedback
+      ...staticMessages.slice(0, staticMessages.length - 1),
+      noScriptMessage
+    ],
+    typing: false
+  });
 
   const getMessages = async () => {
     if (initialized) {
       await waitFor(1000);
-      setTyping(messages.length < staticMessages.length);
     } else {
-      setTyping(true);
       setInitialized(true);
     }
 
-    await waitFor(randomIntFromInterval(20, 40) * 100);
-    const message = generateMessage.next().value;
-    setMessages(messages =>
-      messages.length >= staticMessages.length
-        ? messages
-        : [...messages, message]
-    );
-    setTyping(false);
+    if (messages.length < staticMessages.length) {
+      setState(state => ({ ...state, typing: true }));
+      await waitFor(randomIntFromInterval(20, 40) * 100);
+      const message = generateMessage.next().value;
+      setState(state => ({
+        ...state,
+        messages:
+          state.messages.length >= staticMessages.length
+            ? state.messages
+            : [...state.messages, message],
+        typing: false
+      }));
+    }
   };
 
   useEffect(() => {
-    setMessages([]);
+    setState(state => ({
+      ...state,
+      messages: [],
+      typing: true
+    }));
   }, []);
 
   useEffect(() => {
@@ -159,12 +169,18 @@ const useChatService = () => {
   }, [messages.length]);
 
   const handleSkip = useCallback(() => {
-    setMessages(staticMessages);
-    setTyping(false);
+    setState(state => ({
+      ...state,
+      messages: staticMessages,
+      typing: false
+    }));
   }, []);
 
   const handleSentFeedback = () => {
-    setMessages(messages => [...messages, sentFeedbackMessage]);
+    setState(state => ({
+      ...state,
+      messages: [...state.messages, sentFeedbackMessage]
+    }));
   };
 
   return {
