@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Picture from "../../../../components/Picture";
 import { useChat } from "../../../../services/chat";
+import { useSticky } from "../../../../services/sticky";
 
 import Message from "./Message";
 import Reply from "./Reply";
@@ -114,32 +115,6 @@ const Container = styled.div({
   position: "relative",
   width: "100%"
 });
-
-const useSticky = (isSticky, containerRef) => {
-  if (typeof window === "undefined") return;
-
-  const [sticky, setSticky] = useState(isSticky);
-
-  const updateSticky = () => {
-    const { height, top } = containerRef.current.getBoundingClientRect();
-    setSticky(window.innerHeight - top >= height);
-  };
-
-  const handleScroll = () => {
-    if (containerRef.current) {
-      requestAnimationFrame(updateSticky);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return sticky;
-};
 
 const Chat = () => {
   const { handleSentFeedback, handleSkip, messages, ready, typing } = useChat();
