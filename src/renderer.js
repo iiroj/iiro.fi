@@ -15,7 +15,7 @@ export default async ({ compilationAssets, path, stats }) => {
     entrypoints: ["client"],
     stats: JSON.parse(compilationAssets["loadable-stats.json"].source())
   });
-  const { HistoryProvider } = require("./services/history");
+  const { HistoryProvider } = require("./hooks/history");
   const history = createMemoryHistory({ initialEntries: [path] });
   const helmetContext = {};
   const { default: App } = require("./components/App");

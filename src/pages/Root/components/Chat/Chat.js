@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 import Picture from "../../../../components/Picture";
-import { useChat } from "../../../../services/chat";
-import { useSticky } from "../../../../services/sticky";
+import useChat from "../../../../hooks/chat";
+import useSticky from "../../../../hooks/sticky";
 
 import Message from "./Message";
 import Reply from "./Reply";

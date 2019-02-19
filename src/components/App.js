@@ -2,8 +2,8 @@ import posed, { PoseGroup } from "react-pose";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import { ChatProvider } from "../services/chat";
-import { useHistory } from "../services/history";
+import { ChatProvider } from "../hooks/chat";
+import useHistory from "../hooks/history";
 import { NotFound, routes } from "../routes";
 
 import Layout from "./Layout";

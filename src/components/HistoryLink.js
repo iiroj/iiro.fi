@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 
-import { useHistory } from "../services/history";
+import useHistory from "../hooks/history";
 
 const HistoryLink = ({ children, href, ...rest }) => {
   const history = useHistory();
