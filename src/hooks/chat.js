@@ -192,6 +192,9 @@ const useChatService = () => {
 
 const ChatContext = React.createContext();
 
+ChatContext.displayName = "ChatContext";
+ChatContext.Consumer.displayName = "ChatContext";
+
 export const ChatProvider = ({ children }) => {
   const value = useChatService();
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
