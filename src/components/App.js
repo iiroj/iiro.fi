@@ -27,7 +27,7 @@ const App = () => {
 
   useEffect(() => {
     setForceInitialPose(true);
-    history.listen(location => {
+    return history.listen(location => {
       setKey(location.key);
     });
   }, []);
