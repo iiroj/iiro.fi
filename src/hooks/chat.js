@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState
-} from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 
 import Baskerville from "../components/Baskerville";
 import Emoji from "../components/Emoji";
@@ -178,13 +172,13 @@ const useChatService = () => {
     getMessages();
   }, [messages.length]);
 
-  const handleSkip = useCallback(() => {
+  const handleSkip = () => {
     setState(state => ({
       ...state,
       messages: staticMessages,
       typing: false
     }));
-  }, []);
+  };
 
   const handleSentFeedback = () => {
     setState(state => ({
