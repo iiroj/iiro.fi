@@ -1,4 +1,10 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState
+} from "react";
 
 import Baskerville from "../components/Baskerville";
 import Emoji from "../components/Emoji";
@@ -134,6 +140,10 @@ const useChatService = () => {
     typing: false
   });
 
+  const ready = useMemo(() => messages.length >= staticMessages.length, [
+    messages.length
+  ]);
+
   const getMessages = async () => {
     if (initialized) {
       await waitFor(1000);
@@ -141,7 +151,7 @@ const useChatService = () => {
       setInitialized(true);
     }
 
-    if (messages.length < staticMessages.length) {
+    if (!ready) {
       setState(state => ({ ...state, typing: true }));
       await waitFor(randomIntFromInterval(20, 40) * 100);
       const message = generateMessage.next().value;
@@ -183,13 +193,7 @@ const useChatService = () => {
     }));
   };
 
-  return {
-    handleSentFeedback,
-    handleSkip,
-    messages,
-    ready: messages.length >= staticMessages.length,
-    typing
-  };
+  return { handleSentFeedback, handleSkip, messages, ready, typing };
 };
 
 const ChatContext = React.createContext();
