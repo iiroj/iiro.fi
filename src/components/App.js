@@ -44,7 +44,7 @@ const App = () => {
     <Layout>
       <ChatProvider>
         <PoseGroup>
-          <RouteContainer key={history.location.key || "initial-route"}>
+          <RouteContainer key={key}>
             <Page forceInitialPose={forceInitialPose} />
           </RouteContainer>
         </PoseGroup>
