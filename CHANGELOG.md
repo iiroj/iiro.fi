@@ -2,12 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [18.4.6](https://github.com/iiroj/iiro.fi/compare/v18.4.5...v18.4.6) (2019-02-19)
+## [18.4.7](https://github.com/iiroj/iiro.fi/compare/v18.4.6...v18.4.7) (2019-02-22)
 
 
 ### Bug Fixes
 
-* use single state for typing and messages ([c23f223](https://github.com/iiroj/iiro.fi/commit/c23f223))
+* use proper key for RouterContainer ([d1df7c9](https://github.com/iiroj/iiro.fi/commit/d1df7c9))
 
 
 
