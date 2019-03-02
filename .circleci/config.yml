@@ -54,11 +54,8 @@ jobs:
       - attach_workspace:
           at: ~/ci
       - run:
-          name: install netlify-cli
-          command: npm i -g npm netlify-cli
-      - run:
           name: deploy
-          command: netlify deploy -p -d public -f lambda
+          command: ./node_modules/.bin/netlify deploy -p -d public -f lambda -m $CIRCLE_TAG
 
 workflows:
   version: 2
