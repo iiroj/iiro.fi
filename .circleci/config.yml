@@ -61,7 +61,10 @@ workflows:
   version: 2
   ci:
     jobs:
-      - install
+      - install:
+          filters:
+            tags:
+              only: /.*/
       - lint:
           requires:
             - install
