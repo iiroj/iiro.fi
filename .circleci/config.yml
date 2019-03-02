@@ -1,0 +1,81 @@
+version: 2.1
+
+executors:
+  worker:
+    docker:
+      - image: circleci/node
+    working_directory: ~/ci
+
+jobs:
+  install:
+    executor: worker
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node_modules-{{ checksum "package.json" }}
+          - node_modules-
+      - run:
+          name: install
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: node_modules-{{ checksum "package.json" }}
+
+  lint:
+    executor: worker
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node_modules-{{ checksum "package.json" }}
+      - run:
+          name: lint
+          command: npm run lint
+
+  build:
+    executor: worker
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node_modules-{{ checksum "package.json" }}
+      - run:
+          name: build
+          command: npm run build
+      - persist_to_workspace:
+          root: ~/ci
+          paths: .
+
+  deploy:
+    executor: worker
+    steps:
+      - attach_workspace:
+          at: ~/ci
+      - run:
+          name: install netlify-cli
+          command: npm i -g npm netlify-cli
+      - run:
+          name: deploy
+          command: netlify deploy -p -d public -f lambda
+
+workflows:
+  version: 2
+  ci:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - build:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - lint
+            - build
+          context: netlify token
+          filters:
+            tags:
+              only: /^v[0-9]\.[0-9]\.[0-9]$/
