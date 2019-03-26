@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [19.0.1](https://github.com/iiroj/iiro.fi/compare/v19.0.0...v19.0.1) (2019-03-26)
+
+
+### Bug Fixes
+
+* add core-js as a dependency ([d1f7334](https://github.com/iiroj/iiro.fi/commit/d1f7334))
+
+
+
 # [19.0.0](https://github.com/iiroj/iiro.fi/compare/v18.5.0...v19.0.0) (2019-03-26)
 
 
