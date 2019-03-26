@@ -5,10 +5,7 @@ const Svg = styled.svg({
   verticalAlign: "-1px",
   position: "relative",
   display: "inline-block",
-
-  path: {
-    fill: "hsl(0, 0%, 30%)"
-  }
+  fill: "currentcolor"
 });
 
 const Logo = () => (

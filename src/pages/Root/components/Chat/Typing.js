@@ -9,7 +9,7 @@ const jump = keyframes({
 
 const Ball1 = styled.div`
   animation: ${jump} 500ms ease-in-out forwards alternate infinite;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--text-secondary);
   border-radius: 50%;
   display: block;
   height: 0.5rem;

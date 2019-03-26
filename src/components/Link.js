@@ -3,16 +3,14 @@ import styled from "styled-components";
 
 import HistoryLink from "./HistoryLink";
 
-const YELLOW = `hsl(44, 100%, 75%)`;
-
 const Link = styled.a.attrs(props => ({
   as: props.href.startsWith("/") ? HistoryLink : undefined
 }))({
-  backgroundImage: `linear-gradient(to bottom, ${YELLOW} 0%, ${YELLOW} 100%)`,
+  backgroundImage: `linear-gradient(to bottom, var(--actionable) 0%, var(--actionable) 100%)`,
   backgroundPosition: "0 1em",
   backgroundRepeat: "no-repeat",
   backgroundSize: "100%",
-  color: "inherit",
+  color: "var(--text-primary)",
   display: "inline-block",
   textDecoration: "none",
   transition: "background-position 125ms ease-out 250ms",
@@ -24,7 +22,7 @@ const Link = styled.a.attrs(props => ({
   },
 
   "&:active": {
-    color: "black"
+    color: "var(--text-active)"
   }
 });
 

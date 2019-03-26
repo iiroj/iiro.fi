@@ -8,7 +8,7 @@ const Svg = styled.svg({
   strokeLinecap: "round",
   strokeLinejoin: "round",
   strokeWidth: 2,
-  stroke: "hsl(0, 0%, 80%)",
+  stroke: "var(--text-secondary)",
   width: "2rem"
 });
 

@@ -2,8 +2,9 @@ import posed from "react-pose";
 import styled from "styled-components";
 
 const Message = styled.li({
-  backgroundColor: "hsl(0, 0%, 96%)",
+  backgroundColor: "var(--background-secondary)",
   borderRadius: "0.5rem",
+  color: "var(--text-primary)",
   padding: "1rem 2rem",
   transition: "all 125ms",
 

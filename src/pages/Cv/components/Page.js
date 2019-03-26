@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default posed(
   styled.div({
-    backgroundColor: "white",
+    backgroundColor: "var(--background-secondary)",
     fontSize: 14,
     lineHeight: "24px",
     margin: "0 auto",

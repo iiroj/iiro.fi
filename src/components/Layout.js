@@ -49,14 +49,32 @@ const Reset = createGlobalStyle(
     }
   },
   {
+    ":root": {
+      "--background-primary": "hsl(0, 0%, 100%)",
+      "--background-secondary": "hsl(0, 0%, 96%)",
+      "--text-primary": "hsl(0, 0%, 30%)",
+      "--text-secondary": "hsl(0, 0%, 60%)",
+      "--text-active": "hsl(0, 0%, 0%)",
+      "--actionable": "hsl(44, 100%, 75%)",
+
+      "@media (prefers-color-scheme: dark)": {
+        "--background-primary": "hsl(0, 0%, 10%)",
+        "--background-secondary": "hsl(0, 0%, 16%)",
+        "--text-primary": "hsl(0, 0%, 80%)",
+        "--text-secondary": "hsl(0, 0%, 40%)",
+        "--text-active": "hsl(0, 0%, 70%)",
+        "--actionable": "hsla(44, 100%, 33%, 0.4)"
+      }
+    },
+
     html: {
       height: "100%",
       fontSize: 12
     },
 
     body: {
-      backgroundColor: "white",
-      color: "hsl(0, 0%, 30%)",
+      backgroundColor: "var(--background-primary)",
+      color: "var(--text-primary)",
       fontFamily:
         '"IBM Plex Sans", -apple-system,  BlinkMacSystemFont,  "Segoe UI",  Roboto,  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
       fontSize: 16,

@@ -19,7 +19,7 @@ const Link = styled(HistoryLink)({
   zIndex: 3,
 
   "&::before, &::after": {
-    backgroundColor: "rgb(77, 77, 77)",
+    backgroundColor: "var(--text-primary)",
     borderRadius: 1,
     content: '""',
     display: "block",

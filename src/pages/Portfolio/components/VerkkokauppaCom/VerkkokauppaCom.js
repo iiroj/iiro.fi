@@ -8,7 +8,7 @@ import SelfPickup from "./SelfPickup";
 import Barometer from "./Barometer";
 
 const Article = styled.article({
-  backgroundColor: "white",
+  backgroundColor: "var(--background-primary)",
   position: "relative",
   zIndex: 1,
 

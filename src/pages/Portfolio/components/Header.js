@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default styled.header({
-  backgroundColor: "white",
+  backgroundColor: "var(--background-primary)",
   fontSize: "1.5rem",
   padding: "2rem 3rem 6rem",
   textAlign: "center"

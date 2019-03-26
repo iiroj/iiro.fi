@@ -42,7 +42,7 @@ const Button = styled.button(
     transition: "all 125ms ease-in-out",
 
     "&:hover svg circle": {
-      fill: "hsl(44, 100%, 60%)"
+      fill: "var(--actionable)"
     },
 
     i: {
@@ -57,12 +57,12 @@ const Button = styled.button(
 
       svg: {
         circle: {
-          fill: "hsl(44, 100%, 75%)",
+          fill: "var(--actionable)",
           stroke: "none"
         },
 
         path: {
-          fill: "white",
+          fill: "var(--text-primary)",
           stroke: "none"
         }
       }
@@ -86,20 +86,21 @@ const Input = styled.textarea(
     width: "4rem",
 
     "&:focus": {
-      border: "2px solid hsl(44, 100%, 75%)",
+      border: "2px solid var(--actionable)",
       paddingRight: "4rem"
     },
 
     "&:disabled": {
-      background: "hsl(0, 0%, 96%)",
+      background: "var(--background-secondary)",
       border: "none",
       pointerEvents: "none"
     }
   },
   props =>
     props.expanded && {
-      border: "2px solid hsl(0, 0%, 80%)",
-      color: "inherit",
+      backgroundColor: "var(--background-primary)",
+      border: "2px solid var(--background-secondary)",
+      color: "var(--text-primary)",
       cursor: "text",
       height: "auto",
       opacity: 1,
