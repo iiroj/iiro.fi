@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [19.1.0](https://github.com/iiroj/iiro.fi/compare/v19.0.1...v19.1.0) (2019-03-26)
+
+
+### Features
+
+* add .browserslistrc ([17b68f3](https://github.com/iiroj/iiro.fi/commit/17b68f3))
+
+
+
 ## [19.0.1](https://github.com/iiroj/iiro.fi/compare/v19.0.0...v19.0.1) (2019-03-26)
 
 
