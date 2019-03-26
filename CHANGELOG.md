@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [18.5.0](https://github.com/iiroj/iiro.fi/compare/v18.4.13...v18.5.0) (2019-03-26)
+
+
+### Features
+
+* add support for dark color scheme ([113fa90](https://github.com/iiroj/iiro.fi/commit/113fa90))
+
+
+
 ## [18.4.13](https://github.com/iiroj/iiro.fi/compare/v18.4.12...v18.4.13) (2019-03-07)
 
 
