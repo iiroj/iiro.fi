@@ -23,6 +23,7 @@
   "dependencies": {
     "@loadable/component": "^5.7.0",
     "common-tags": "^1.8.0",
+    "core-js": "^3.0.0",
     "fontfaceobserver": "^2.1.0",
     "history": "^4.9.0",
     "react": "^16.8.5",
