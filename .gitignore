@@ -1,6 +1,4 @@
-/.env
-/lambda
-/node_modules
-/public
-/sketch
-/static/_headers
+.cache
+node_modules
+public
+sketch

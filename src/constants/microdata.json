@@ -1,0 +1,25 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Iiro Jäppinen",
+  "jobTitle": "Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Verkkokauppa.com",
+    "url": "https://www.verkkokauppa.com"
+  },
+  "url": "https://iiro.fi/",
+  "email": "iiro@jappinen.fi",
+  "nationality": "Finland",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "Finland",
+    "addressLocality": "Helsinki"
+  },
+  "sameAs": [
+    "https://twitter.com/iirojappinen",
+    "https://fi.linkedin.com/in/iiroj",
+    "https://github.com/iiroj",
+    "https://gitlab.com/iiroj"
+  ]
+}

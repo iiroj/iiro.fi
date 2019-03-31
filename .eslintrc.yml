@@ -1,8 +1,22 @@
+parser: "@typescript-eslint/parser"
+
 extends:
+  - plugin:@typescript-eslint/recommended
   - plugin:react-app/recommended
   - plugin:prettier/recommended
+  - prettier/@typescript-eslint
   - prettier/react
+
 plugins:
+  - "@typescript-eslint"
   - prettier
+
 rules:
+  "@typescript-eslint/explicit-function-return-type": off
+  "@typescript-eslint/no-object-literal-type-assertion": off
   react-app/jsx-a11y/accessible-emoji: off
+
+overrides:
+  - files: "*.js"
+    rules:
+      '@typescript-eslint/no-var-requires': off
