@@ -8,13 +8,13 @@
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
-    "start": "gatsby develop"
+    "start": "gatsby develop",
+    "version": "standard-version"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npx eslint . && npx tsc --noEmit",
-      "pre-push": "if npx git-branch-is master; then npx standard-version; fi"
+      "pre-commit": "npx eslint . && npx tsc --noEmit"
     }
   },
   "dependencies": {
