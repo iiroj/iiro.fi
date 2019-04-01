@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [20.0.0](https://github.com/iiroj/iiro.fi/compare/v19.1.2...v20.0.0) (2019-04-01)
+
+
+### Bug Fixes
+
+* correct case ([04d2726](https://github.com/iiroj/iiro.fi/commit/04d2726))
+* remove pre-push hook since it prevented push ([06488f6](https://github.com/iiroj/iiro.fi/commit/06488f6))
+
+
+### Features
+
+* clear out everything to start fresh with gatsby ([4ac9bca](https://github.com/iiroj/iiro.fi/commit/4ac9bca))
+
+
+### BREAKING CHANGES
+
+* Major version bump because of new design and framework change
+
+
+
 ## [19.1.2](https://github.com/iiroj/iiro.fi/compare/v19.1.1...v19.1.2) (2019-03-27)
 
 
