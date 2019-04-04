@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "20.0.2",
+  "version": "20.0.3",
   "description": "A static site built with React",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",

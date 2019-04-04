@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [20.0.3](https://github.com/iiroj/iiro.fi/compare/v20.0.2...v20.0.3) (2019-04-04)
+
+
+### Bug Fixes
+
+* get meta description from first employment ([e300994](https://github.com/iiroj/iiro.fi/commit/e300994))
+
+
+
 ## [20.0.2](https://github.com/iiroj/iiro.fi/compare/v20.0.1...v20.0.2) (2019-04-02)
 
 
