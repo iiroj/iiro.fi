@@ -80,7 +80,7 @@ export default () => (
       <title>Iiro Jäppinen</title>
       <meta
         name="description"
-        content="I'm a Design System Engineer at Verkkokauppa.com"
+        content={`I'm a ${experience[0].jobTitle} at ${experience[0].company}`}
       />
       <script type="application/ld+json">{JSON.stringify(microdata)}</script>
     </Helmet>
