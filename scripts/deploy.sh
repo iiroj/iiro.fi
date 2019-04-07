@@ -1,5 +1,14 @@
 #!/usr/bin/env sh
 
+ENV_SOURCE=".env"
+
+if [ ! -f "$ENV_SOURCE" ]; then
+  echo "Error: Environment Source does not exist"
+  exit 1
+else
+  source $ENV_SOURCE
+fi
+
 DEPLOY_DIR="public"
 
 if [ ! -d "$DEPLOY_DIR" ]; then
