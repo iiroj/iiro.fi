@@ -9,6 +9,8 @@
   "private": true,
   "scripts": {
     "start": "gatsby develop",
+    "lint": "eslint --ext .js,.ts,.tsx .",
+    "build": "gatsby build",
     "version": "standard-version"
   },
   "husky": {
