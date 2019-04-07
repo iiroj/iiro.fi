@@ -1,7 +1,7 @@
 {
   "name": "iiro.fi",
   "version": "20.0.5",
-  "description": "A static site built with React",
+  "description": "Static site built with GatsbyJS",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
   "repository": "github:iiroj/iiro.fi",
@@ -10,6 +10,7 @@
   "scripts": {
     "start": "gatsby develop",
     "lint": "eslint --ext .js,.ts,.tsx .",
+    "prebuild": "rimraf public",
     "build": "gatsby build"
   },
   "husky": {
@@ -52,16 +53,19 @@
     "gatsby-transformer-sharp": "^2.1.17",
     "husky": "^1.3.1",
     "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
     "s3-redeploy": "^1.1.1",
     "standard-version": "^5.0.2",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.2"
   },
   "keywords": [
+    "aws",
+    "CloudFront",
     "gatsby",
     "gatsbyJS",
-    "netlify",
     "react",
+    "S3",
     "serverless",
     "static-site"
   ]
