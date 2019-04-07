@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "20.0.5",
+  "version": "20.0.6",
   "description": "Static site built with GatsbyJS",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
