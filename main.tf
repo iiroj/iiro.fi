@@ -15,7 +15,7 @@ locals {
 }
 
 resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
-  comment = "Origin Access Identity for iiro.fi"
+  comment = "Origin Access Identity for ${local.domain}"
 }
 
 data "aws_iam_policy_document" "s3_policy" {
