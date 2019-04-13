@@ -14,6 +14,13 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-emotion",
-    "gatsby-plugin-typescript"
+    "gatsby-plugin-typescript",
+    {
+      resolve: "gatsby-plugin-fathom",
+      options: {
+        trackingUrl: "ping.iiro.fi",
+        siteId: "FSKVL"
+      }
+    }
   ]
 };
