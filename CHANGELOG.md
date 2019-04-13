@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [20.2.0](https://github.com/iiroj/iiro.fi/compare/v20.1.0...v20.2.0) (2019-04-13)
+
+
+### Features
+
+* add security headers via Lamda@Edge ([31c2a01](https://github.com/iiroj/iiro.fi/commit/31c2a01))
+
+
+
 # [20.1.0](https://github.com/iiroj/iiro.fi/compare/v20.0.9...v20.1.0) (2019-04-13)
 
 
