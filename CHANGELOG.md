@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [20.1.0](https://github.com/iiroj/iiro.fi/compare/v20.0.9...v20.1.0) (2019-04-13)
+
+
+### Features
+
+* add Fathom analytics ([5326dd6](https://github.com/iiroj/iiro.fi/commit/5326dd6))
+
+
+
 ## [20.0.9](https://github.com/iiroj/iiro.fi/compare/v20.0.8...v20.0.9) (2019-04-13)
 
 
