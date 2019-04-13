@@ -7,13 +7,14 @@ export default ({ children }: { children: React.ReactNode }) => (
   <>
     <Helmet>
       <html lang="en" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link rel="preconnect" href="https://ping.iiro.fi" />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="icon" href="/favicon.png" type="image/x-icon" />
       <link rel="apple-touch-icon" href="/icon.png" />
       <link rel="mask-icon" href="/icon.svg" color="#333333" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#ffffff" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     </Helmet>
 
