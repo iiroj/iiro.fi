@@ -8,7 +8,6 @@ export default ({ children }: { children: React.ReactNode }) => (
     <Helmet>
       <html lang="en" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link rel="preconnect" href="https://ping.iiro.fi" />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="icon" href="/favicon.png" type="image/x-icon" />
       <link rel="apple-touch-icon" href="/icon.png" />
