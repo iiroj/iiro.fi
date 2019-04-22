@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="21.1.1"></a>
+## [21.1.1](https://github.com/iiroj/iiro.fi/compare/v21.1.0...v21.1.1) (2019-04-22)
+
+
+### Bug Fixes
+
+* deploy sw.js ([2e9cb98](https://github.com/iiroj/iiro.fi/commit/2e9cb98))
+
+
+
 <a name="21.1.0"></a>
 # [21.1.0](https://github.com/iiroj/iiro.fi/compare/v21.0.4...v21.1.0) (2019-04-22)
 
