@@ -44,7 +44,7 @@ export default function renderer({ path, stats }: RendererArgs): string {
       </head>
       <body>
         ${appHtml}
-        <script async src="${client}"></script>
+        <script async src="/${client}"></script>
       </body>
     </html>
   `.replace(/^\s*$(?:\r\n?|\n)/gm, "");

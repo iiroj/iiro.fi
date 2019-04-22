@@ -31,7 +31,7 @@ fi
 
 # Upload immutable assets
 npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
-  --pattern '*.js'                                        \
+  --pattern 'static/*.js'                                 \
   --gzip                                                  \
   --cache 31536000                                        \
   --immutable
@@ -39,7 +39,7 @@ npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
 # Upload cacheable assets
 npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
   --no-rm                                                 \
-  --pattern '*.{jpg,png,svg,txt,webmanifest}'             \
+  --pattern '**/*.{jpg,png,svg,txt,webmanifest}'          \
   --cache 630000
 
 npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
