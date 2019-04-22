@@ -7,10 +7,12 @@ import {
 } from "./constants/fonts";
 
 (document => {
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = GOOGLE_FONTS_URL;
-  document.head.appendChild(link);
+  if (!document.documentElement.dataset.hasOwnProperty("fromSw")) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = GOOGLE_FONTS_URL;
+    document.head.appendChild(link);
+  }
 })(document);
 
 const IBMPlexSerif300 = new FontFaceObserver(IBM_PLEX_SERIF, {
