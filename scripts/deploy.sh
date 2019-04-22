@@ -49,7 +49,7 @@ npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
   --cf-dist-id $AWS_CLOUDFRONT_ID
 
 # Tag new version
-npx standard-version
+npx standard-version --no-verify
 
 # Push to git
 git push --follow-tags origin master
