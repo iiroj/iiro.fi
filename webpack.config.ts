@@ -29,8 +29,8 @@ const config: Configuration = {
   },
 
   output: {
-    chunkFilename: isProduction ? "[chunkhash:8].js" : "[name].js",
-    filename: isProduction ? "[chunkhash:8].js" : "[name].js",
+    chunkFilename: isProduction ? "static/[chunkhash:8].js" : "[name].js",
+    filename: isProduction ? "static/[chunkhash:8].js" : "[name].js",
     path: path.resolve("./public"),
     publicPath: "/"
   },
