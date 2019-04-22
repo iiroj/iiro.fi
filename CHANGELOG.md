@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="21.0.3"></a>
+## [21.0.3](https://github.com/iiroj/iiro.fi/compare/v21.0.2...v21.0.3) (2019-04-22)
+
+
+### Bug Fixes
+
+* append Google Fonts link to head ([cb110fc](https://github.com/iiroj/iiro.fi/commit/cb110fc))
+
+
+
 <a name="21.0.2"></a>
 ## [21.0.2](https://github.com/iiroj/iiro.fi/compare/v21.0.1...v21.0.2) (2019-04-22)
 
