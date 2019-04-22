@@ -8,7 +8,7 @@ interface Props extends Experience {
   highlight?: boolean;
 }
 
-export default ({ company, highlight, jobTitle, url }: Props) => (
+export default React.memo(({ company, highlight, jobTitle, url }: Props) => (
   <>
     <strong css={highlight && highlightStyle}>{jobTitle}</strong>{" "}
     <span>at </span>
@@ -16,4 +16,4 @@ export default ({ company, highlight, jobTitle, url }: Props) => (
       {company}
     </a>
   </>
-);
+));

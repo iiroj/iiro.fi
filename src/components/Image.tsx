@@ -1,13 +1,19 @@
 import { css } from "@emotion/core";
-import GatsbyImage from "gatsby-image";
-import { StaticQuery, graphql } from "gatsby";
 import * as React from "react";
+import lqip from "lqip.macro";
 
-import { scale } from "../design";
+import { breakpoints, scale } from "../design";
 
-const image = css({
-  height: "100%",
-  width: "100%",
+const preview = lqip("../../static/self-desktop.jpg");
+
+const container = css({
+  backgroundImage: `url(${preview})`,
+  backgroundPosition: "center",
+  backgroundSize: "cover",
+  flex: "1 1 50%",
+  minHeight: scale(12),
+  overflowY: "hidden",
+  position: "relative",
 
   "&::after": {
     background: `
@@ -33,36 +39,23 @@ const image = css({
   }
 });
 
-const imageContainer = css({
-  flex: "1 1 50%",
-  minHeight: scale(9),
-  overflowY: "hidden",
-  position: "relative"
+const image = css({
+  height: "100%",
+  objectFit: "cover",
+  position: "absolute",
+  width: "100%"
 });
 
 export default () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        file(relativePath: { eq: "self.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <figure css={imageContainer}>
-        <GatsbyImage
-          alt="Iiro Jäppinen"
-          backgroundColor="white"
-          css={image}
-          fluid={data.file.childImageSharp.fluid}
-          style={{ position: "absolute" }}
-        />
-      </figure>
-    )}
-  />
+  <picture css={container}>
+    <source
+      media={`(max-width: ${breakpoints.desktop - 1}px)`}
+      srcSet="/self-mobile.jpg, /self-mobile@2x.jpg 1.5x, /self-mobile@3x.jpg 2x"
+    />
+    <source
+      media={`(min-width: ${breakpoints.desktop}px)`}
+      srcSet="/self-desktop.jpg, /self-desktop@2x.jpg 1.5x, /self-desktop@3x.jpg 2x"
+    />
+    <img alt="Iiro Jäppinen" src="/self-desktop.jpg" css={image} />
+  </picture>
 );

@@ -9,13 +9,6 @@ else
   source $ENV_SOURCE
 fi
 
-DEPLOY_DIR="public"
-
-if [ ! -d "$DEPLOY_DIR" ]; then
-  echo "Error: Public Directory does not exist"
-  exit 1
-fi
-
 if ${AWS_S3_BUCKET+false}; then
   echo "Error: \$AWS_S3_BUCKET is not defined"
   exit 1
@@ -27,19 +20,18 @@ if ${AWS_CLOUDFRONT_ID+false}; then
 fi
 
 # Build site
-npx rimraf public
-npx gatsby build
+npm run build
+
+DEPLOY_DIR="public"
+
+if [ ! -d "$DEPLOY_DIR" ]; then
+  echo "Error: Public Directory does not exist"
+  exit 1
+fi
 
 # Upload immutable assets
 npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
-  --pattern '!(render-page).{js,js.map}'                  \
-  --gzip                                                  \
-  --cache 31536000                                        \
-  --immutable
-
-npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
-  --no-rm                                                 \
-  --pattern 'static/**'                                   \
+  --pattern '*.js'                                        \
   --gzip                                                  \
   --cache 31536000                                        \
   --immutable
@@ -47,18 +39,12 @@ npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
 # Upload cacheable assets
 npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
   --no-rm                                                 \
-  --pattern '*.{png,svg,txt,webmanifest}'                 \
+  --pattern '*.{jpg,png,svg,txt,webmanifest}'             \
   --cache 630000
 
-# Upload non-cached assets
 npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
   --no-rm                                                 \
-  --pattern '!(static)/**/*.{html,json}'                  \
-  --gzip
-
-npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
-  --no-rm                                                 \
-  --pattern '*.{html,json}'                               \
+  --pattern '*.html'                                      \
   --gzip                                                  \
   --cf-dist-id $AWS_CLOUDFRONT_ID
 
