@@ -8,12 +8,9 @@ import {
 
 (document => {
   const link = document.createElement("link");
-  var firstScriptTag = document.getElementsByTagName("script")[0];
   link.rel = "stylesheet";
   link.href = GOOGLE_FONTS_URL;
-  if (firstScriptTag.parentNode) {
-    firstScriptTag.parentNode.insertBefore(link, firstScriptTag);
-  }
+  document.head.appendChild(link);
 })(document);
 
 const IBMPlexSerif300 = new FontFaceObserver(IBM_PLEX_SERIF, {
