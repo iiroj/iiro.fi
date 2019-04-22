@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="21.1.0"></a>
+# [21.1.0](https://github.com/iiroj/iiro.fi/compare/v21.0.4...v21.1.0) (2019-04-22)
+
+
+### Bug Fixes
+
+* correct css ([161da42](https://github.com/iiroj/iiro.fi/commit/161da42))
+
+
+### Features
+
+* add data-from-sw to precached html ([99f9c87](https://github.com/iiroj/iiro.fi/commit/99f9c87))
+* add ServiceWorker with workbox precaching ([c7e7e6d](https://github.com/iiroj/iiro.fi/commit/c7e7e6d))
+
+
+
 <a name="21.0.4"></a>
 ## [21.0.4](https://github.com/iiroj/iiro.fi/compare/v21.0.3...v21.0.4) (2019-04-22)
 
