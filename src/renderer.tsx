@@ -24,7 +24,7 @@ export default function renderer({ path, stats }: RendererArgs): string {
   /* eslint-disable prettier/prettier */
   return html`
     <!DOCTYPE html>
-    <html lang="en>
+    <html lang="en">
       <head>
         <meta name="version" content="${stats.hash}" />
         <meta charset="utf-8" />
