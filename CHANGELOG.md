@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="21.0.4"></a>
+## [21.0.4](https://github.com/iiroj/iiro.fi/compare/v21.0.3...v21.0.4) (2019-04-22)
+
+
+### Bug Fixes
+
+* update deploy script for static assets ([5b8d4b7](https://github.com/iiroj/iiro.fi/commit/5b8d4b7))
+
+
+
 <a name="21.0.3"></a>
 ## [21.0.3](https://github.com/iiroj/iiro.fi/compare/v21.0.2...v21.0.3) (2019-04-22)
 
