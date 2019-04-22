@@ -26,7 +26,7 @@ export const fonts = {
       },
 
       h1: {
-        IBM_PLEX_SERIF
+        fontFamily: IBM_PLEX_SERIF
       }
     }
   },
