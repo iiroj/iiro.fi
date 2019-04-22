@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="21.0.2"></a>
+## [21.0.2](https://github.com/iiroj/iiro.fi/compare/v21.0.1...v21.0.2) (2019-04-22)
+
+
+### Bug Fixes
+
+* add missing closing quote ([47dacc4](https://github.com/iiroj/iiro.fi/commit/47dacc4))
+
+
+
 <a name="21.0.1"></a>
 ## [21.0.1](https://github.com/iiroj/iiro.fi/compare/v21.0.0...v21.0.1) (2019-04-22)
 
