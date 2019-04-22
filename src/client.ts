@@ -42,3 +42,9 @@ const IBMPlexSansCondensed600 = new FontFaceObserver(IBM_PLEX_SANS_CONDENSED, {
     document.documentElement.classList.add("body-font-loaded");
   });
 })();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js");
+  });
+}

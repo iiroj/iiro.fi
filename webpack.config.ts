@@ -6,6 +6,7 @@ import path from "path";
 import TerserPlugin from "terser-webpack-plugin";
 import WatchExternalFilesPlugin from "webpack-watch-files-plugin";
 import webpack, { Configuration } from "webpack";
+import { InjectManifest } from "workbox-webpack-plugin";
 
 import renderer from "./src/renderer";
 import { routes } from "./src/routes";
@@ -29,8 +30,10 @@ const config: Configuration = {
   },
 
   output: {
-    chunkFilename: isProduction ? "static/[chunkhash:8].js" : "[name].js",
-    filename: isProduction ? "static/[chunkhash:8].js" : "[name].js",
+    chunkFilename: isProduction
+      ? "static/[chunkhash:8].js"
+      : "static/[name].[chunkhash:8].js",
+    filename: isProduction ? "static/[hash:8].js" : "static/[name].[hash:8].js",
     path: path.resolve("./public"),
     publicPath: "/"
   },
@@ -59,7 +62,13 @@ const config: Configuration = {
       }
     }),
     new HtmlRendererWebpackPlugin({ paths: staticRoutes, renderer }),
-    new CopyPlugin([{ from: "static/" }])
+    new CopyPlugin([{ from: "static/" }]),
+    new InjectManifest({
+      swSrc: "./src/sw.js",
+      swDest: "sw.js",
+      importWorkboxFrom: "cdn",
+      precacheManifestFilename: "static/sw.[manifestHash].js"
+    })
   ],
 
   optimization: {}

@@ -4,14 +4,14 @@ import lqip from "lqip.macro";
 
 import { breakpoints, scale } from "../design";
 
-const preview = lqip("../../static/static/self-desktop.jpg");
+const preview = lqip("../../static/self-desktop.jpg");
 
 const container = css({
   backgroundImage: `url(${preview})`,
   backgroundPosition: "center",
   backgroundSize: "cover",
   flex: "1 1 50%",
-  minHeight: scale(12),
+  minHeight: scale(9),
   overflowY: "hidden",
   position: "relative",
 
@@ -42,6 +42,7 @@ const container = css({
 const image = css({
   height: "100%",
   objectFit: "cover",
+  objectPosition: "80% 50%",
   position: "absolute",
   width: "100%"
 });
@@ -51,23 +52,23 @@ export default () => (
     <source
       type="image/jpeg"
       media={`(max-width: ${breakpoints.desktop - 1}px)`}
-      srcSet="/static/self-mobile.jpg, /static/self-mobile@2x.jpg 1.5x, /static/self-mobile@3x.jpg 2x"
+      srcSet="/self-mobile.jpg, /self-mobile@2x.jpg 1.5x, /self-mobile@3x.jpg 2x"
     />
     <source
       type="image/jpeg"
       media={`(min-width: ${breakpoints.desktop}px)`}
-      srcSet="/static/self-desktop.jpg, /static/self-desktop@2x.jpg 1.5x, /static/self-desktop@3x.jpg 2x"
+      srcSet="/self-desktop.jpg, /self-desktop@2x.jpg 1.5x, /self-desktop@3x.jpg 2x"
     />
     <source
       type="image/webp"
       media={`(max-width: ${breakpoints.desktop - 1}px)`}
-      srcSet="/static/self-mobile.webp, /static/self-mobile@2x.webp 1.5x, /static/self-mobile@3x.webp 2x"
+      srcSet="/self-mobile.webp, /self-mobile@2x.webp 1.5x, /self-mobile@3x.webp 2x"
     />
     <source
       type="image/webp"
       media={`(min-width: ${breakpoints.desktop}px)`}
-      srcSet="/static/self-desktop.webp, /static/self-desktop@2x.webp 1.5x, /static/self-desktop@3x.webp 2x"
+      srcSet="/self-desktop.webp, /self-desktop@2x.webp 1.5x, /self-desktop@3x.webp 2x"
     />
-    <img alt="Iiro Jäppinen" src="/static/self-desktop.jpg" css={image} />
+    <img alt="Iiro Jäppinen" src="/self-desktop.jpg" css={image} />
   </picture>
 );
