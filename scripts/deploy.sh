@@ -44,7 +44,7 @@ npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
 
 npx s3-redeploy --cwd $DEPLOY_DIR --bucket $AWS_S3_BUCKET \
   --no-rm                                                 \
-  --pattern '*.html'                                      \
+  --pattern '{*.html,sw.js}'                              \
   --gzip                                                  \
   --cf-dist-id $AWS_CLOUDFRONT_ID
 
