@@ -5,6 +5,8 @@ import { renderToString } from "react-dom/server";
 import { createMemoryHistory } from "history";
 import React from "react";
 
+import { GOOGLE_FONTS_URL } from "./constants/fonts";
+
 /* eslint-disable @typescript-eslint/no-var-requires */
 export default function renderer({ path, stats }: RendererArgs): string {
   const { default: App } = require("./components/App");
@@ -31,7 +33,7 @@ export default function renderer({ path, stats }: RendererArgs): string {
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
-        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,600|IBM+Plex+Serif:300" rel="stylesheet" />
+        <link href="${GOOGLE_FONTS_URL}" rel="preload" as="style" crossorigin="anonymous" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="icon" href="/favicon.png" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/icon.png" />
@@ -39,10 +41,10 @@ export default function renderer({ path, stats }: RendererArgs): string {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <script async src="${client}"></script>
       </head>
       <body>
         ${appHtml}
+        <script async src="${client}"></script>
       </body>
     </html>
   `.replace(/^\s*$(?:\r\n?|\n)/gm, "");

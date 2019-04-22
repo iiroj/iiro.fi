@@ -2,6 +2,13 @@ exports.handler = (event, context, callback) => {
   const response = event.Records[0].cf.response;
   const headers = response.headers;
 
+  headers["link"] = [
+    {
+      key: "Link",
+      value:
+        "<https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,600|IBM+Plex+Serif:300>;crossorigin=anonymous;rel=preload;as=style;"
+    }
+  ];
   headers["strict-transport-security"] = [
     {
       key: "Strict-Transport-Security",

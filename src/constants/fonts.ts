@@ -1,3 +1,6 @@
+export const GOOGLE_FONTS_URL =
+  "https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,600|IBM+Plex+Serif:300";
+
 export const IBM_PLEX_SERIF = "IBM Plex Serif";
 
 export const IBM_PLEX_SANS_CONDENSED = "IBM Plex Sans Condensed";

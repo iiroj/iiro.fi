@@ -1,6 +1,20 @@
 import FontFaceObserver from "fontfaceobserver";
 
-import { IBM_PLEX_SANS_CONDENSED, IBM_PLEX_SERIF } from "./constants/fonts";
+import {
+  GOOGLE_FONTS_URL,
+  IBM_PLEX_SANS_CONDENSED,
+  IBM_PLEX_SERIF
+} from "./constants/fonts";
+
+(document => {
+  const link = document.createElement("link");
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  link.rel = "stylesheet";
+  link.href = GOOGLE_FONTS_URL;
+  if (firstScriptTag.parentNode) {
+    firstScriptTag.parentNode.insertBefore(link, firstScriptTag);
+  }
+})(document);
 
 const IBMPlexSerif300 = new FontFaceObserver(IBM_PLEX_SERIF, {
   style: "normal",
