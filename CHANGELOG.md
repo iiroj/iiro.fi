@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="21.1.5"></a>
+## [21.1.5](https://github.com/iiroj/iiro.fi/compare/v21.1.4...v21.1.5) (2019-04-23)
+
+
+### Bug Fixes
+
+* catch FontFaceObserver errors ([9008f64](https://github.com/iiroj/iiro.fi/commit/9008f64))
+* do not cache Google Fonts for now ([893a331](https://github.com/iiroj/iiro.fi/commit/893a331))
+
+
+
 <a name="21.1.4"></a>
 ## [21.1.4](https://github.com/iiroj/iiro.fi/compare/v21.1.3...v21.1.4) (2019-04-23)
 
