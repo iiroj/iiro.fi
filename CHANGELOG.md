@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="21.1.2"></a>
+## [21.1.2](https://github.com/iiroj/iiro.fi/compare/v21.1.1...v21.1.2) (2019-04-23)
+
+
+### Bug Fixes
+
+* use local workbox ([e285a82](https://github.com/iiroj/iiro.fi/commit/e285a82))
+
+
+
 <a name="21.1.1"></a>
 ## [21.1.1](https://github.com/iiroj/iiro.fi/compare/v21.1.0...v21.1.1) (2019-04-22)
 
