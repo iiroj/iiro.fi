@@ -11,8 +11,7 @@ exports.handler = (event, context, callback) => {
         "font-src 'self' https://fonts.gstatic.com",
         "img-src 'self' data:",
         "script-src 'self' 'unsafe-inline'",
-        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-        "worker-src 'self'"
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com"
       ].join(";")
     }
   ];

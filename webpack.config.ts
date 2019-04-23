@@ -6,7 +6,6 @@ import path from "path";
 import TerserPlugin from "terser-webpack-plugin";
 import WatchExternalFilesPlugin from "webpack-watch-files-plugin";
 import webpack, { Configuration } from "webpack";
-import { InjectManifest } from "workbox-webpack-plugin";
 
 import renderer from "./src/renderer";
 import { routes } from "./src/routes";
@@ -62,13 +61,7 @@ const config: Configuration = {
       }
     }),
     new HtmlRendererWebpackPlugin({ paths: staticRoutes, renderer }),
-    new CopyPlugin([{ from: "static/" }]),
-    new InjectManifest({
-      swSrc: "./src/sw.js",
-      swDest: "sw.js",
-      importWorkboxFrom: "local",
-      precacheManifestFilename: "static/sw.[manifestHash].js"
-    })
+    new CopyPlugin([{ from: "static/" }])
   ],
 
   optimization: {}
