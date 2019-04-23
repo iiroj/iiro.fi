@@ -13,18 +13,10 @@ export const fonts = {
     "&.body-font-loaded": {
       body: {
         fontFamily: IBM_PLEX_SANS_CONDENSED
-      },
-
-      h1: {
-        fontFamily: IBM_PLEX_SERIF
       }
     },
 
-    "&[data-from-sw]": {
-      body: {
-        fontFamily: IBM_PLEX_SANS_CONDENSED
-      },
-
+    "&.header-font-loaded": {
       h1: {
         fontFamily: IBM_PLEX_SERIF
       }
