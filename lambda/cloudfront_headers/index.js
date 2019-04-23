@@ -9,17 +9,26 @@ exports.handler = (event, context, callback) => {
         "<https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,600|IBM+Plex+Serif:300>;crossorigin=anonymous;rel=preload;as=style;"
     }
   ];
+
+  headers["content-security-policy"] = [
+    {
+      key: "Content-Security-Policy",
+      value: [
+        "default-src 'none'",
+        "connect-src 'self' https://fonts.gstatic.com",
+        "font-src 'self' https://fonts.gstatic.com",
+        "img-src 'self' data:",
+        "script-src 'self' 'unsafe-inline'",
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+        "worker-src 'self'"
+      ].join(";")
+    }
+  ];
+
   headers["strict-transport-security"] = [
     {
       key: "Strict-Transport-Security",
       value: "max-age=63072000; includeSubdomains; preload"
-    }
-  ];
-  headers["content-security-policy"] = [
-    {
-      key: "Content-Security-Policy",
-      value:
-        "default-src 'none'; connect-src 'self' https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com"
     }
   ];
   headers["x-content-type-options"] = [

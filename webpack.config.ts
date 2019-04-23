@@ -66,7 +66,7 @@ const config: Configuration = {
     new InjectManifest({
       swSrc: "./src/sw.js",
       swDest: "sw.js",
-      importWorkboxFrom: "cdn",
+      importWorkboxFrom: "local",
       precacheManifestFilename: "static/sw.[manifestHash].js"
     })
   ],
