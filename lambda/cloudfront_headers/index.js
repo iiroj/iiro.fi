@@ -2,14 +2,6 @@ exports.handler = (event, context, callback) => {
   const response = event.Records[0].cf.response;
   const headers = response.headers;
 
-  headers["link"] = [
-    {
-      key: "Link",
-      value:
-        "<https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,600|IBM+Plex+Serif:300>;crossorigin=anonymous;rel=preload;as=style;"
-    }
-  ];
-
   headers["content-security-policy"] = [
     {
       key: "Content-Security-Policy",
@@ -39,7 +31,7 @@ exports.handler = (event, context, callback) => {
     { key: "X-XSS-Protection", value: "1; mode=block" }
   ];
   headers["referrer-policy"] = [
-    { key: "Referrer-Policy", value: "same-origin" }
+    { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" }
   ];
   headers["feature-policy"] = [
     { key: "Feature-Policy", value: "default 'none'" }
