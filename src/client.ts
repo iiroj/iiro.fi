@@ -50,13 +50,3 @@ const IBMPlexSansCondensed600 = new FontFaceObserver(IBM_PLEX_SANS_CONDENSED, {
       console.error("💅 Error loading web fonts");
     });
 })();
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    try {
-      navigator.serviceWorker.register("/sw.js");
-    } catch (error) {
-      console.error("⚙️ Service Worker registration failed:", error);
-    }
-  });
-}
