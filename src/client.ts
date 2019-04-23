@@ -22,9 +22,13 @@ const IBMPlexSerif300 = new FontFaceObserver(IBM_PLEX_SERIF, {
 });
 
 (() => {
-  IBMPlexSerif300.load().then(() => {
-    document.documentElement.classList.add("header-font-loaded");
-  });
+  IBMPlexSerif300.load()
+    .then(() => {
+      document.documentElement.classList.add("header-font-loaded");
+    })
+    .catch(() => {
+      console.error("💅 Error loading web fonts");
+    });
 })();
 
 const IBMPlexSansCondensed400 = new FontFaceObserver(IBM_PLEX_SANS_CONDENSED, {
@@ -38,12 +42,13 @@ const IBMPlexSansCondensed600 = new FontFaceObserver(IBM_PLEX_SANS_CONDENSED, {
 });
 
 (() => {
-  Promise.all([
-    IBMPlexSansCondensed400.load(),
-    IBMPlexSansCondensed600.load()
-  ]).then(() => {
-    document.documentElement.classList.add("body-font-loaded");
-  });
+  Promise.all([IBMPlexSansCondensed400.load(), IBMPlexSansCondensed600.load()])
+    .then(() => {
+      document.documentElement.classList.add("body-font-loaded");
+    })
+    .catch(() => {
+      console.error("💅 Error loading web fonts");
+    });
 })();
 
 if ("serviceWorker" in navigator) {
