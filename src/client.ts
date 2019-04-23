@@ -11,6 +11,7 @@ import {
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = GOOGLE_FONTS_URL;
+    link.crossOrigin = "anonymous";
     document.head.appendChild(link);
   }
 })(document);
