@@ -9,29 +9,13 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-locals {
-  domain = "iiro.fi"
-  s3_origin_id = "S3Origin-${local.domain}"
-}
-
-resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
-  comment = "Origin Access Identity for ${local.domain}"
-}
-
-data "aws_iam_policy_document" "s3_policy" {
-  statement {
-    actions   = ["s3:GetObject"]
-    resources = ["${aws_s3_bucket.site.arn}/*"]
-
-    principals {
-      type        = "AWS"
-      identifiers = ["${aws_cloudfront_origin_access_identity.origin_access_identity.iam_arn}"]
-    }
-  }
-}
-
 resource "aws_s3_bucket" "site" {
-  bucket = "${local.domain}"
+  bucket = "${var.domain}"
+
+  website {
+    index_document = "index.html"
+    error_document = "404.html"
+  }
 
   server_side_encryption_configuration {
     rule {
@@ -40,16 +24,32 @@ resource "aws_s3_bucket" "site" {
       }
     }
   }
-}
 
-resource "aws_s3_bucket_policy" "site" {
-  bucket = "${aws_s3_bucket.site.id}"
-  policy = "${data.aws_iam_policy_document.s3_policy.json}"
+  policy = <<POLICY
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::${var.domain}/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:UserAgent": "${var.cloudfront-authentication-user-agent}"
+                }
+            }
+
+        }
+    ]
+}
+POLICY
 }
 
 data "aws_acm_certificate" "certificate" {
   provider    = "aws.useast1"
-  domain      = "${local.domain}"
+  domain      = "${var.domain}"
   types       = ["AMAZON_ISSUED"]
   most_recent = true
 }
@@ -61,7 +61,7 @@ data "archive_file" "cloudfront_headers" {
 }
 
 resource "aws_iam_role" "lambda_iam" {
-  name = "lambda_iam"
+  name = "lambda_iam_iiro-fi"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -82,10 +82,10 @@ resource "aws_iam_role" "lambda_iam" {
 EOF
 }
 
-resource "aws_lambda_function" "cloudfront_lambda" {
+resource "aws_lambda_function" "lambda_cloudfront_headers" {
   provider    = "aws.useast1"
   filename         = "lambda/cloudfront_headers.zip"
-  function_name    = "cloudfront_headers"
+  function_name    = "cloudfront_headers_iiro-fi"
   role             = "${aws_iam_role.lambda_iam.arn}"
   handler          = "index.handler"
   runtime          = "nodejs8.10"
@@ -93,21 +93,28 @@ resource "aws_lambda_function" "cloudfront_lambda" {
   publish          = "true"
 }
 
-
 resource "aws_cloudfront_distribution" "cdn" {
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
-  aliases             = ["${local.domain}"]
+  aliases             = ["${var.domain}"]
   price_class         = "PriceClass_200"
   wait_for_deployment = false
 
   origin {
-    domain_name = "${aws_s3_bucket.site.bucket_domain_name}"
-    origin_id   = "${local.s3_origin_id}"
+    domain_name = "${aws_s3_bucket.site.website_endpoint}"
+    origin_id   = "${var.s3_origin_id}"
 
-    s3_origin_config {
-      origin_access_identity = "${aws_cloudfront_origin_access_identity.origin_access_identity.cloudfront_access_identity_path}"
+    custom_origin_config {
+      http_port              = "80"
+      https_port             = "443"
+      origin_protocol_policy = "http-only"
+      origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
+    }
+
+     custom_header {
+      name  = "User-Agent"
+      value = "${var.cloudfront-authentication-user-agent}"
     }
   }
 
@@ -121,7 +128,7 @@ resource "aws_cloudfront_distribution" "cdn" {
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "${local.s3_origin_id}"
+    target_origin_id = "${var.s3_origin_id}"
     compress         = true
 
     forwarded_values {
@@ -139,7 +146,7 @@ resource "aws_cloudfront_distribution" "cdn" {
 
     lambda_function_association {
       event_type = "viewer-response"
-      lambda_arn = "${aws_lambda_function.cloudfront_lambda.arn}:${aws_lambda_function.cloudfront_lambda.version}"
+      lambda_arn = "${aws_lambda_function.lambda_cloudfront_headers.arn}:${aws_lambda_function.lambda_cloudfront_headers.version}"
     }
   }
 
