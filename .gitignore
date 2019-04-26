@@ -1,7 +1,4 @@
 .env
-.terraform
 node_modules
 public
-secrets.tf
 sketch
-terraform.tfstate*
