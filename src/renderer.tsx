@@ -41,10 +41,10 @@ export default function renderer({ path, stats }: RendererArgs): string {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <script async src="/${client}"></script>
       </head>
       <body>
         ${appHtml}
-        <script async src="/${client}"></script>
       </body>
     </html>
   `.replace(/^\s*$(?:\r\n?|\n)/gm, "");
