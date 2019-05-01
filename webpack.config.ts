@@ -18,6 +18,10 @@ const config: Configuration = {
 
   mode: isProduction ? "production" : "development",
 
+  devServer: {
+    watchContentBase: true
+  },
+
   devtool: isProduction ? "nosources-source-map" : "eval",
 
   resolve: {
