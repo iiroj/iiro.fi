@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="21.2.0"></a>
+# [21.2.0](https://github.com/iiroj/iiro.fi/compare/v21.1.9...v21.2.0) (2019-05-01)
+
+
+### Features
+
+* deploy to Netlify ([96f2e29](https://github.com/iiroj/iiro.fi/commit/96f2e29))
+
+
+
 <a name="21.1.9"></a>
 ## [21.1.9](https://github.com/iiroj/iiro.fi/compare/v21.1.8...v21.1.9) (2019-04-28)
 
