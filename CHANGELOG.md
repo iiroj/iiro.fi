@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="21.2.1"></a>
+## [21.2.1](https://github.com/iiroj/iiro.fi/compare/v21.2.0...v21.2.1) (2019-05-01)
+
+
+### Bug Fixes
+
+* set cache-control correctly for html ([e32c22a](https://github.com/iiroj/iiro.fi/commit/e32c22a))
+
+
+
 <a name="21.2.0"></a>
 # [21.2.0](https://github.com/iiroj/iiro.fi/compare/v21.1.9...v21.2.0) (2019-05-01)
 
