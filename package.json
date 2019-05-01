@@ -1,7 +1,7 @@
 {
   "name": "iiro.fi",
   "version": "21.1.9",
-  "description": "Static site built with GatsbyJS",
+  "description": "A Static site",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
   "repository": "github:iiroj/iiro.fi",
@@ -13,12 +13,11 @@
     "lint": "eslint --ext .js,.ts,.tsx .",
     "prebuild": "rimraf public",
     "build": "NODE_ENV=production webpack -r register.ts",
-    "deploy": "./scripts/deploy.sh"
+    "version": "standard-version --no-verify"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npx eslint . && npx tsc --noEmit"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "dependencies": {
@@ -85,10 +84,8 @@
     "webpack-watch-files-plugin": "^1.0.3"
   },
   "keywords": [
-    "aws",
-    "CloudFront",
+    "netlify",
     "react",
-    "S3",
     "serverless",
     "static-site"
   ]
