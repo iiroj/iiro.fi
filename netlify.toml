@@ -5,7 +5,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Cache-Control = "public,max-age=2592000"
+    Cache-Control = "max-age=0,no-cache,no-store,must-revalidate"
     Content-Security-Policy = "default-src 'none'; connect-src 'self' https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com"
     Link = "<https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,600|IBM+Plex+Serif:300> rel=\"preload\" as=\"style\" crossorigin=\"anonymous\""
     Referrer-Policy = "strict-origin-when-cross-origin"
@@ -15,9 +15,29 @@
     X-XSS-Protection = "1; mode=block"
 
 [[headers]]
-  for = "/*.html"
+  for = "/*.jpg"
   [headers.values]
-    Cache-Control = "max-age=0,no-cache,no-store,must-revalidate"
+    Cache-Control = "public,max-age=2592000"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public,max-age=2592000"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public,max-age=2592000"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public,max-age=2592000"
+
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Cache-Control = "public,max-age=2592000"
 
 [[headers]]
   for = "/static/*"
