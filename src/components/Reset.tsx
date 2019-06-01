@@ -15,8 +15,15 @@ export default React.memo(() => (
 
       {
         "html, body": {
-          backgroundColor: colors.background.primary,
           height: "100%"
+        },
+
+        body: {
+          backgroundColor: colors.background.primary,
+
+          "@media (-webkit-min-device-pixel-ratio: 1.5)": {
+            "-webkit-font-smoothing": "antialiased"
+          }
         },
 
         "#___gatsby": {
