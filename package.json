@@ -29,6 +29,11 @@
       "pre-commit": "lint-staged"
     }
   },
+  "standard-version": {
+    "scripts": {
+      "prerelease": "npm run lint && npm run build"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.5.0",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
