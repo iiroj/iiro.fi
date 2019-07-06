@@ -10,7 +10,7 @@ const container = css({
   backgroundImage: `url(${preview})`,
   backgroundPosition: "center",
   backgroundSize: "cover",
-  flex: "1 1 50%",
+  flex: "0 1 756px",
   minHeight: scale(9),
   overflowY: "hidden",
   position: "relative",
