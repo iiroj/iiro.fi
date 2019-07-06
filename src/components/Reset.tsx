@@ -22,7 +22,7 @@ export default React.memo(() => (
           backgroundColor: colors.background.primary,
 
           "@media (-webkit-min-device-pixel-ratio: 1.5)": {
-            "-webkit-font-smoothing": "antialiased"
+            WebkitFontSmoothing: "antialiased"
           }
         },
 

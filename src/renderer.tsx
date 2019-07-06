@@ -21,8 +21,6 @@ export default function renderer({ path, stats }: RendererArgs): string {
 
   const { helmet } = helmetContext as FilledContext;
 
-  const client = stats.entrypoints.client.assets[0];
-
   /* eslint-disable prettier/prettier */
   return html`
     <!DOCTYPE html>
@@ -33,7 +31,7 @@ export default function renderer({ path, stats }: RendererArgs): string {
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
-        <link href="${GOOGLE_FONTS_URL}" rel="preload" as="style" crossorigin="anonymous" />
+        <link href="${GOOGLE_FONTS_URL}" rel="stylesheet" crossorigin="anonymous">
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="icon" href="/favicon.png" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/icon.png" />
@@ -41,7 +39,6 @@ export default function renderer({ path, stats }: RendererArgs): string {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <script async src="/${client}"></script>
       </head>
       <body>
         ${appHtml}

@@ -9,23 +9,9 @@ import {
 } from "../constants/fonts";
 
 export const fonts = {
-  html: {
-    "&.body-font-loaded": {
-      body: {
-        fontFamily: IBM_PLEX_SANS_CONDENSED
-      }
-    },
-
-    "&.header-font-loaded": {
-      h1: {
-        fontFamily: IBM_PLEX_SERIF
-      }
-    }
-  },
-
   body: {
     color: colors.text.primary,
-    fontFamily: SYSTEM_FONT,
+    fontFamily: IBM_PLEX_SANS_CONDENSED + ", " + SYSTEM_FONT,
     fontStyle: "normal",
     fontSize: 18,
     lineHeight: scale.ratio,
@@ -41,6 +27,7 @@ export const fonts = {
   },
 
   h1: {
+    fontFamily: IBM_PLEX_SERIF + ", " + SYSTEM_FONT,
     fontSize: 32,
     letterSpacing: "-2",
     lineHeight: "0.8em",
