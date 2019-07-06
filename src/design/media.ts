@@ -31,7 +31,7 @@ interface MediaGeneric {
 }
 
 type Media = {
-  [size in keyof typeof breakpoints]: ReturnType<typeof createQuery>
+  [size in keyof typeof breakpoints]: ReturnType<typeof createQuery>;
 };
 
 /**

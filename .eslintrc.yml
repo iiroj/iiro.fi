@@ -1,21 +1,28 @@
 parser: "@typescript-eslint/parser"
 
 parserOptions:
+  ecmaVersion: 6
+  ecmaFeatures:
+    jsx: true
   project: 'tsconfig.json'
+  sourceType: module
   tsconfigRootDir: '.'
 
 extends:
-  - plugin:@typescript-eslint/recommended
-  - plugin:react-app/recommended
   - plugin:prettier/recommended
-  - prettier/@typescript-eslint
+  - plugin:react/recommended
   - prettier/react
 
 plugins:
   - "@typescript-eslint"
+  - react-hooks
   - prettier
 
 rules:
-  react-app/jsx-a11y/accessible-emoji: off
-  "@typescript-eslint/explicit-function-return-type": off
-  "@typescript-eslint/no-non-null-assertion": off
+  react/display-name: off
+  react-hooks/rules-of-hooks: "error"
+  react-hooks/exhaustive-deps: "warn"
+
+settings:
+  react:
+    version: "detect"

@@ -91,7 +91,7 @@ export default () => (
       </header>
 
       <section css={listContainer}>
-        <p>I'm a</p>
+        <p>I&apos;m a</p>
         <ul css={list}>
           {experience.map((item, key) => (
             <li key={key} style={{ opacity: key === 0 ? 1 : 0.8 - key * 0.2 }}>
