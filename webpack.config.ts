@@ -1,6 +1,6 @@
 import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import CopyPlugin from "copy-webpack-plugin";
-import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
 import path from "path";
 import TerserPlugin from "terser-webpack-plugin";
@@ -16,11 +16,9 @@ const staticRoutes = [...Array.from(routes).map(route => route[0]), "/404"];
 const config: Configuration = {
   target: "web",
 
-  mode: isProduction ? "production" : "development",
+  stats: isProduction ? "normal" : "minimal",
 
-  devServer: {
-    watchContentBase: true
-  },
+  mode: isProduction ? "production" : "development",
 
   devtool: isProduction ? "nosources-source-map" : "eval",
 
@@ -57,6 +55,7 @@ const config: Configuration = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
     new CaseSensitivePathsPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
@@ -81,8 +80,7 @@ if (isProduction) {
   config.plugins!.push(
     new WatchExternalFilesPlugin({ files: ["./src/**/*"], exclude: [/\.DS*/] }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new FriendlyErrorsWebpackPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   );
 }
 
