@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [21.2.6](https://github.com/iiroj/iiro.fi/compare/v21.2.5...v21.2.6) (2019-07-06)
+
+
+### Build System
+
+* add prerelease script for standard-version ([386fe4b](https://github.com/iiroj/iiro.fi/commit/386fe4b))
+* use lint-staged ([50b0717](https://github.com/iiroj/iiro.fi/commit/50b0717))
+
+
+
 ### [21.2.5](https://github.com/iiroj/iiro.fi/compare/v21.2.4...v21.2.5) (2019-07-06)
 
 
