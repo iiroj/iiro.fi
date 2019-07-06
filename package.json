@@ -15,9 +15,13 @@
     "build": "NODE_ENV=production webpack -r register.ts",
     "version": "standard-version --no-verify"
   },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "npm run lint"
+  },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
     }
   },
   "devDependencies": {
@@ -67,6 +71,7 @@
     "history": "^4.9.0",
     "html-renderer-webpack-plugin": "^4.0.20",
     "husky": "^3.0.0",
+    "lint-staged": "^9.0.2",
     "lqip.macro": "^0.1.5",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
