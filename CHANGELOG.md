@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [21.4.0](https://github.com/iiroj/iiro.fi/compare/v21.3.0...v21.4.0) (2019-07-06)
+
+
+### Bug Fixes
+
+* re-enable live reload ([e363075](https://github.com/iiroj/iiro.fi/commit/e363075))
+
+
+### Features
+
+* use netlify dev for development ([ad4908e](https://github.com/iiroj/iiro.fi/commit/ad4908e))
+
+
+
 ## [21.3.0](https://github.com/iiroj/iiro.fi/compare/v21.2.6...v21.3.0) (2019-07-06)
 
 
