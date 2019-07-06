@@ -7,6 +7,8 @@ import React from "react";
 
 import { GOOGLE_FONTS_URL } from "./constants/fonts";
 
+const isProduction = process.env.NODE_ENV === "production";
+
 /* eslint-disable @typescript-eslint/no-var-requires */
 export default function renderer({ path, stats }: RendererArgs): string {
   const { default: App } = require("./components/App");
@@ -18,6 +20,8 @@ export default function renderer({ path, stats }: RendererArgs): string {
       <App history={history} />
     </HelmetProvider>
   );
+
+  const client = stats.entrypoints.client.assets[0];
 
   const { helmet } = helmetContext as FilledContext;
 
@@ -39,6 +43,7 @@ export default function renderer({ path, stats }: RendererArgs): string {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        ${isProduction ? '' : `<script async src="/${client}"></script>`}
       </head>
       <body>
         ${appHtml}
