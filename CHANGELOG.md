@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [21.3.0](https://github.com/iiroj/iiro.fi/compare/v21.2.6...v21.3.0) (2019-07-06)
+
+
+### Features
+
+* remove fontfaceobserver since google supports font-display ([b8f3a14](https://github.com/iiroj/iiro.fi/commit/b8f3a14))
+
+
+
 ### [21.2.6](https://github.com/iiroj/iiro.fi/compare/v21.2.5...v21.2.6) (2019-07-06)
 
 
