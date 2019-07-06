@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [21.2.5](https://github.com/iiroj/iiro.fi/compare/v21.2.4...v21.2.5) (2019-07-06)
+
+
+### Bug Fixes
+
+* upgrade packages and replace eslint plugins ([de6d52a](https://github.com/iiroj/iiro.fi/commit/de6d52a))
+
+
+
 ### [21.2.4](https://github.com/iiroj/iiro.fi/compare/v21.2.3...v21.2.4) (2019-06-01)
 
 
