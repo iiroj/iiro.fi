@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [21.5.2](https://github.com/iiroj/iiro.fi/compare/v21.5.1...v21.5.2) (2019-07-07)
+
+
+### Bug Fixes
+
+* load workbox from local url because of CSP ([9d43c82](https://github.com/iiroj/iiro.fi/commit/9d43c82))
+
+
+
 ### [21.5.1](https://github.com/iiroj/iiro.fi/compare/v21.5.0...v21.5.1) (2019-07-07)
 
 
