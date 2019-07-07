@@ -67,6 +67,7 @@ const config: Configuration = {
     new HtmlRendererWebpackPlugin({ paths: staticRoutes, renderer }),
     new CopyPlugin([{ from: "static/" }]),
     new InjectManifest({
+      importWorkboxFrom: "local",
       swDest: "sw.js",
       swSrc: "./src/sw.js"
     })
