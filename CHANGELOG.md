@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [21.5.3](https://github.com/iiroj/iiro.fi/compare/v21.5.2...v21.5.3) (2019-07-07)
+
+
+### Bug Fixes
+
+* add https://fonts.googleapis.com to CSP ([86619fa](https://github.com/iiroj/iiro.fi/commit/86619fa))
+
+
+
 ### [21.5.2](https://github.com/iiroj/iiro.fi/compare/v21.5.1...v21.5.2) (2019-07-07)
 
 
