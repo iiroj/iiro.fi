@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [21.5.1](https://github.com/iiroj/iiro.fi/compare/v21.5.0...v21.5.1) (2019-07-07)
+
+
+### Bug Fixes
+
+* add service worker scripts to CSP ([539ae2c](https://github.com/iiroj/iiro.fi/commit/539ae2c))
+
+
+
 ## [21.5.0](https://github.com/iiroj/iiro.fi/compare/v21.4.1...v21.5.0) (2019-07-07)
 
 
