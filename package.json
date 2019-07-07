@@ -57,6 +57,7 @@
     "@types/webpack": "^4.4.34",
     "@types/webpack-dev-server": "^3.1.6",
     "@types/webpack-env": "^1.13.9",
+    "@types/workbox-sw": "^4.2.0",
     "@types/workbox-webpack-plugin": "^4.1.0",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
@@ -93,7 +94,8 @@
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2",
-    "webpack-watch-files-plugin": "^1.0.3"
+    "webpack-watch-files-plugin": "^1.0.3",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "keywords": [
     "netlify",

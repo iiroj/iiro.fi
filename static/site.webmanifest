@@ -10,5 +10,8 @@
   ],
   "start_url": "/?utm_source=homescreen",
   "background_color": "#ffffff",
-  "theme_color": "#ffffff"
+  "theme_color": "#ffffff",
+  "serviceworker": {
+    "src": "./sw.js"
+  }
 }

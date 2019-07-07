@@ -1,6 +1,7 @@
 import CaseSensitivePathsPlugin from "case-sensitive-paths-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import CopyPlugin from "copy-webpack-plugin";
+import { InjectManifest } from "workbox-webpack-plugin";
 import HtmlRendererWebpackPlugin from "html-renderer-webpack-plugin";
 import path from "path";
 import TerserPlugin from "terser-webpack-plugin";
@@ -64,7 +65,11 @@ const config: Configuration = {
       }
     }),
     new HtmlRendererWebpackPlugin({ paths: staticRoutes, renderer }),
-    new CopyPlugin([{ from: "static/" }])
+    new CopyPlugin([{ from: "static/" }]),
+    new InjectManifest({
+      swDest: "sw.js",
+      swSrc: "./src/sw.js"
+    })
   ],
 
   optimization: {}
