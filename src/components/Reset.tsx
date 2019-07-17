@@ -26,14 +26,6 @@ export default React.memo(() => (
           }
         },
 
-        "#___gatsby": {
-          height: "100%",
-
-          "> div": {
-            height: "100%"
-          }
-        },
-
         a: {
           color: "inherit",
           textDecoration: "none"
