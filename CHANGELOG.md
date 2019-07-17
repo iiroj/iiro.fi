@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [21.5.6](https://github.com/iiroj/iiro.fi/compare/v21.5.5...v21.5.6) (2019-07-17)
+
+
+### Bug Fixes
+
+* remove leftover code ([e8a43ec](https://github.com/iiroj/iiro.fi/commit/e8a43ec))
+
+
+
 ### [21.5.5](https://github.com/iiroj/iiro.fi/compare/v21.5.4...v21.5.5) (2019-07-17)
 
 
