@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-object-literal-type-assertion */
-
 import { ObjectInterpolation } from "@emotion/core";
 
 import { breakpoints } from "./breakpoints";
