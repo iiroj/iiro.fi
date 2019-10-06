@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "declaration": false,
     "esModuleInterop": true,
     "jsx": "preserve",
@@ -12,7 +11,12 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "typeRoots": ["./types/"]
   },
-  "exclude": ["node_modules", "public"]
+  "exclude": [
+    "./src/sw.ts",
+    "./node_modules/react-helmet-async/index.d.ts",
+    "./public"
+  ]
 }

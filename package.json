@@ -8,10 +8,10 @@
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
-    "start": "netlify dev --port 3000",
-    "watch": "webpack-dev-server -r register.ts --watch-content-base --silent --port 3000",
+    "dev": "webpack-dev-server -r register.ts --watch-content-base --silent --port $PORT",
     "build": "NODE_ENV=production webpack -r register.ts",
     "lint": "eslint --ext .js,.ts,.tsx .",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.sw.json --noEmit",
     "version": "standard-version --no-verify"
   },
   "lint-staged": {
@@ -52,7 +52,7 @@
     "@types/history": "^4.7.3",
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
-    "@types/react-helmet": "^5.0.11",
+    "@types/react-helmet": "^5.0.10",
     "@types/terser-webpack-plugin": "^1.2.1",
     "@types/webpack": "^4.39.2",
     "@types/webpack-dev-server": "^3.1.7",
@@ -81,13 +81,11 @@
     "husky": "^3.0.8",
     "lint-staged": "^9.4.1",
     "lqip.macro": "^0.1.5",
-    "netlify-cli": "^2.15.0",
     "prettier": "^1.18.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet-async": "^1.0.3",
     "react-style-reset": "^1.2.14",
-    "s3-redeploy": "^1.1.1",
     "standard-version": "^7.0.0",
     "terser-webpack-plugin": "^2.1.2",
     "typescript": "^3.6.3",
@@ -95,10 +93,12 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2",
     "webpack-watch-files-plugin": "^1.0.3",
-    "workbox-webpack-plugin": "^4.3.1"
+    "workbox-webpack-plugin": "^5.0.0-beta.1"
+  },
+  "peerDependencies": {
+    "now": "^16.3.1"
   },
   "keywords": [
-    "netlify",
     "react",
     "serverless",
     "static-site"
