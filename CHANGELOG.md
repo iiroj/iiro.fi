@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [21.6.0](https://github.com/iiroj/iiro.fi/compare/v21.5.8...v21.6.0) (2019-10-06)
+
+
+### Features
+
+* update workbox, sort out react-helmet-async, use now.sh ([ca50dea](https://github.com/iiroj/iiro.fi/commit/ca50dea))
+
 ### [21.5.8](https://github.com/iiroj/iiro.fi/compare/v21.5.7...v21.5.8) (2019-09-22)
 
 ### [21.5.7](https://github.com/iiroj/iiro.fi/compare/v21.5.6...v21.5.7) (2019-08-27)
