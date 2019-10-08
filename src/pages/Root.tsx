@@ -11,10 +11,6 @@ import microdata from "../constants/microdata.json";
 import Experience from "../components/Experience";
 import Image from "../components/Image";
 
-const h1 = css({
-  marginBottom: spacing.medium
-});
-
 const link = css(highlight, {
   ...transition("background-position"),
 
@@ -54,8 +50,8 @@ const main = css({
     maxWidth: scale(13)
   },
 
-  "> section": {
-    marginBottom: spacing.medium
+  "> header, section": {
+    marginBottom: spacing.small
   },
 
   ...minWidth.tablet({
@@ -87,7 +83,7 @@ export default () => (
 
     <main css={main}>
       <header>
-        <h1 css={h1}>Iiro Jäppinen</h1>
+        <h1>Iiro Jäppinen</h1>
       </header>
 
       <section css={listContainer}>

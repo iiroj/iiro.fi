@@ -2,16 +2,16 @@ import { css } from "@emotion/core";
 import * as React from "react";
 import lqip from "lqip.macro";
 
-import { breakpoints, scale } from "../design";
+import { breakpoints, scale, minWidth } from "../design";
 
 const preview = lqip("../../static/self-desktop.jpg");
 
 const container = css({
   backgroundImage: `url(${preview})`,
-  backgroundPosition: "center",
+  backgroundPosition: "80% 50%",
   backgroundSize: "cover",
   flex: "0 1 756px",
-  minHeight: scale(9),
+  maxHeight: scale(8),
   overflowY: "hidden",
   position: "relative",
 
@@ -36,7 +36,11 @@ const container = css({
       linear-gradient(120deg, hsla(0, 0%, 10%, 1) 0%, hsla(0, 0%, 10%, 0) 50%)
     `
     }
-  }
+  },
+
+  ...minWidth.tablet({
+    maxHeight: "100%"
+  })
 });
 
 const image = css({
