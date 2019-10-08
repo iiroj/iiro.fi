@@ -16,9 +16,16 @@
       "continue": true
     },
     {
+      "src": "/*.html",
+      "headers": {
+        "Cache-Control": "public,max-age=0,must-revalidate,s-maxage=2592000,stale-while-revalidate"
+      },
+      "dest": "/$1"
+    },
+    {
       "src": "/static/(.*)",
       "headers": {
-        "Cache-Control": "public,immutable,max-age=31536000"
+        "Cache-Control": "public,immutable,max-age=31536000,stale-while-revalidate"
       },
       "dest": "/static/$1",
       "continue": true
@@ -26,7 +33,7 @@
     {
       "src": "/*.(jpg|png|svg|site.webmanifest)$",
       "headers": {
-        "Cache-Control": "public,max-age=2592000"
+        "Cache-Control": "public,max-age=2592000,stale-while-revalidate"
       },
       "dest": "/$1"
     }
