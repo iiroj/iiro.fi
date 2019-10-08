@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [21.6.1](https://github.com/iiroj/iiro.fi/compare/v21.6.0...v21.6.1) (2019-10-08)
+
+
+### Bug Fixes
+
+* limit image height on mobile ([f20b817](https://github.com/iiroj/iiro.fi/commit/f20b817))
+
 ## [21.6.0](https://github.com/iiroj/iiro.fi/compare/v21.5.8...v21.6.0) (2019-10-06)
 
 
