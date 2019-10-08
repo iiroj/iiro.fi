@@ -8,7 +8,6 @@ import TerserPlugin from "terser-webpack-plugin";
 import WatchExternalFilesPlugin from "webpack-watch-files-plugin";
 import webpack, { Configuration } from "webpack";
 
-import renderer from "./src/renderer";
 import { routes } from "./src/routes";
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -64,7 +63,10 @@ const config: Configuration = {
         NODE_ENV: JSON.stringify(isProduction ? "production" : "development")
       }
     }),
-    new HtmlRendererWebpackPlugin({ paths: staticRoutes, renderer }),
+    new HtmlRendererWebpackPlugin({
+      paths: staticRoutes,
+      renderer: "./src/renderer"
+    }),
     new CopyPlugin([{ from: "static/" }]),
     new InjectManifest({ swDest: "sw.js", swSrc: "./src/sw.ts" })
   ],
