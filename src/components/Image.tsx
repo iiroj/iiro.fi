@@ -1,13 +1,13 @@
 import { css } from "@emotion/core";
 import * as React from "react";
-import lqip from "lqip.macro";
 
 import { breakpoints, scale, minWidth } from "../design";
 
-const preview = lqip("../../static/self-desktop.jpg");
+const preview =
+  "iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQCAIAAACtAwlQAAAB3klEQVR4AVTIAQaAUBjA4O3X/Q8bIvIWXtAHbJ5dRrJJsWQGgaNRfNat8id7zZcVrwgBQCXUrMBGAEDPd7Ftp7ZtYyp+qVNt27ZtO7Z9jDV17vz8/of0980lj00OqsxAp9XNxSG5FiAIoNXIxUmNawIYjf6MJitAOd6mylrPWBQDEzlm0njv+y+/I4mkTQjyRUJYbraPsaimzV8ez1PJfKVUpX2R6MzgGfnc9WwmFSsxIAQjErF8wrRFJw5se/Ttm9s+tkqVUoVcYab3594DrV/Pf45egdG1YafEu30dvvby+8rr9686YOuE2FlYOjeTDCumz7n+9uWXrx8ROvt0390k1YsU8pUVs2dGU7GdcmIjBgkEfJarLhrrSEYC8MaN0wRYc/o4pVFqMGoQhZigkckOfmnLsbPE2Om1Ym7jCgMiFLJiGdBsdVU64GZAF/rxo8HeOXj3vAjBO54PCo1186o58PyF00Y6F4TiifnTDbeeU602yxcKIZ0JsTjlakM+mzt1//O/x/ceveVLBFOVRplm+BgOYUS32wW7PYYtwxMdSD5HhQLRD77Euw9vtRpds9vl2LpJbypVyjIRSmAYFKFlHYrmi0VZslbMp2U4IMAxmUKeLaSRHkNX8mHf7z5iBfLTazOPsQAAAABJRU5ErkJggg==";
 
 const container = css({
-  backgroundImage: `url(${preview})`,
+  backgroundImage: `url(data:image/jpeg;base64,${preview})`,
   backgroundPosition: "80% 50%",
   backgroundSize: "cover",
   flex: "0 1 756px",

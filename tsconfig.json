@@ -1,22 +1,33 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "declaration": false,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["dom", "esnext"],
-    "module": "es6",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
+    "skipLibCheck": false,
     "strict": true,
     "target": "esnext",
-    "typeRoots": ["./types/"]
   },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "babel.config.js",
+    "next.config.js",
+    "next-env.d.ts"
+  ],
   "exclude": [
-    "./src/sw.ts",
-    "./node_modules/react-helmet-async/index.d.ts",
-    "./public"
+    "./out"
   ]
 }

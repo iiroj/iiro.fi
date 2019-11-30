@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import * as React from "react";
 
 import { minWidth, spacing } from "../design";
+import { NextPage } from "next";
 
 const main = css({
   display: "flex",
@@ -21,7 +22,7 @@ const container = css({
   minHeight: "100%"
 });
 
-export default () => (
+const NotFound: NextPage<{}> = () => (
   <div css={container}>
     <Helmet>
       <title>Page Not Found</title>
@@ -34,3 +35,5 @@ export default () => (
     </main>
   </div>
 );
+
+export default React.memo(NotFound);

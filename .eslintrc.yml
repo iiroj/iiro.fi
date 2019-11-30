@@ -6,7 +6,6 @@ parserOptions:
     jsx: true
   project:
     - 'tsconfig.json'
-    - 'tsconfig.sw.json'
   sourceType: module
   tsconfigRootDir: '.'
 
@@ -22,6 +21,7 @@ plugins:
 
 rules:
   react/display-name: off
+  react/prop-types: off
   react-hooks/rules-of-hooks: "error"
   react-hooks/exhaustive-deps: "warn"
 

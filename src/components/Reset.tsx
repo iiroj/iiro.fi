@@ -8,13 +8,10 @@ export default React.memo(() => (
   <Global
     styles={[
       reset,
-
       colorVariables,
-
       fonts,
-
       {
-        "html, body": {
+        "html, body, #__next": {
           height: "100%"
         },
 

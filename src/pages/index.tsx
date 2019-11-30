@@ -10,6 +10,7 @@ import microdata from "../constants/microdata.json";
 
 import Experience from "../components/Experience";
 import Image from "../components/Image";
+import { NextPage } from "next";
 
 const link = css(highlight, {
   ...transition("background-position"),
@@ -70,7 +71,7 @@ const container = css({
   })
 });
 
-export default () => (
+const Root: NextPage<{}> = () => (
   <div css={container}>
     <Helmet>
       <title>Iiro Jäppinen</title>
@@ -126,3 +127,5 @@ export default () => (
     <Image />
   </div>
 );
+
+export default React.memo(Root);
