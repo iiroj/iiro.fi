@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [22.0.0](https://github.com/iiroj/iiro.fi/compare/v21.6.2...v22.0.0) (2019-11-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* The runtime environment changed
+
+### Features
+
+* convert site to Next.js ([480dc5c](https://github.com/iiroj/iiro.fi/commit/480dc5c6f2d0f29fc47c3f1627df0fcac5e19df5))
+
 ### [21.6.2](https://github.com/iiroj/iiro.fi/compare/v21.6.1...v21.6.2) (2019-11-19)
 
 ### [21.6.1](https://github.com/iiroj/iiro.fi/compare/v21.6.0...v21.6.1) (2019-10-08)
