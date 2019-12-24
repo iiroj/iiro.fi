@@ -1,4 +1,4 @@
-import { ObjectInterpolation } from "@emotion/core";
+import { Interpolation } from "@emotion/core";
 
 import { breakpoints } from "./breakpoints";
 
@@ -9,7 +9,7 @@ import { breakpoints } from "./breakpoints";
  * @param styles Supplied object interpolation styles
  */
 const createQuery = <MP = undefined>(minWidth?: number, maxWidth?: number) => (
-  styles: ObjectInterpolation<MP>
+  styles: Interpolation<MP>
 ) => {
   let query = "@media (";
 

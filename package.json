@@ -34,40 +34,41 @@
     }
   },
   "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "next": "9.1.5-canary.8",
+    "@emotion/core": "11.0.0-next.9",
+    "@emotion/styled": "11.0.0-next.9",
+    "next": "9.1.6",
     "polished": "^3.4.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet-async": "^1.0.4",
-    "react-style-reset": "1.2.14"
+    "react-style-reset": "1.2.15"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@emotion/babel-preset-css-prop": "^10.0.23",
-    "@types/node": "12.12.14",
-    "@types/react": "16.9.13",
+    "@emotion/babel-preset-css-prop": "11.0.0-next.8",
+    "@types/node": "13.1.0",
+    "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
     "@types/react-helmet": "5.0.14",
-    "@typescript-eslint/eslint-plugin": "2.9.0",
-    "@typescript-eslint/parser": "2.9.0",
+    "@typescript-eslint/eslint-plugin": "2.13.0",
+    "@typescript-eslint/parser": "2.13.0",
     "babel-eslint": "^10.0.3",
     "babel-plugin-polished": "^1.1.0",
     "commitlint": "^8.2.0",
-    "eslint": "^6.7.1",
+    "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "^3.1.0",
-    "lint-staged": "^10.0.0-beta.6",
+    "lint-staged": "10.0.0-beta.14",
     "prettier": "^1.19.1",
     "standard-version": "^7.0.1",
-    "typescript": "3.7.2"
+    "typescript": "3.7.4"
   },
   "peerDependencies": {
-    "now": "^16.6.0"
+    "now": "^16.7.0"
   },
   "keywords": [
     "react",
