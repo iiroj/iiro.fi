@@ -12,7 +12,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     if (registrations.length === 0) return;
     for (const registration of registrations) {
-      console.log("registration", registration);
       registration.unregister();
     }
   }, [registrations]);
