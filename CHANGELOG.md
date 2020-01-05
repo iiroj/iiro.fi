@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [22.1.1](https://github.com/iiroj/iiro.fi/compare/v22.1.0...v22.1.1) (2020-01-05)
+
+
+### Bug Fixes
+
+* remove console.log from Service Worker unregistration ([459b816](https://github.com/iiroj/iiro.fi/commit/459b81623fd587fa89bd5eb9f6657e123147b0c3))
+
 ## [22.1.0](https://github.com/iiroj/iiro.fi/compare/v22.0.2...v22.1.0) (2020-01-05)
 
 
