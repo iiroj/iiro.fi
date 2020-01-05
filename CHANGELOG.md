@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [22.1.0](https://github.com/iiroj/iiro.fi/compare/v22.0.2...v22.1.0) (2020-01-05)
+
+
+### Features
+
+* unregister possible leftover Service Workers ([b92806d](https://github.com/iiroj/iiro.fi/commit/b92806da6551ce7da5c018b6ab8798e0b1a5a62a))
+
 ### [22.0.2](https://github.com/iiroj/iiro.fi/compare/v22.0.1...v22.0.2) (2020-01-04)
 
 ### [22.0.1](https://github.com/iiroj/iiro.fi/compare/v22.0.0...v22.0.1) (2019-12-24)
