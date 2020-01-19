@@ -1,4 +1,4 @@
-import { Global } from "@emotion/core";
+import { Global } from "@emotion/react";
 import reset from "react-style-reset";
 import * as React from "react";
 

@@ -1,4 +1,4 @@
-import { Interpolation } from "@emotion/core";
+import { Interpolation } from "@emotion/react";
 
 import { breakpoints } from "./breakpoints";
 
