@@ -13,13 +13,14 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "lint": "eslint --ext .js,.ts,.tsx .",
+    "lint:base": "eslint --ext .js,.ts,.tsx",
+    "lint": "npm run lint:base -- .",
     "typecheck": "tsc --noEmit",
     "version": "standard-version --no-verify",
     "check": "npm run lint && npm run typecheck && npm run build"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": "npm run lint"
+    "*.{js,ts,tsx}": "npm run lint:base --"
   },
   "commitlint": {
     "extends": [
