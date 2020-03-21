@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [22.2.0](https://github.com/iiroj/iiro.fi/compare/v22.1.5...v22.2.0) (2020-03-21)
+
+
+### Features
+
+* no longer bumb version for dependencies, add pre-push hook ([c4bf318](https://github.com/iiroj/iiro.fi/commit/c4bf318d50d59accab36e52189007638559f4667))
+
 ### [22.1.5](https://github.com/iiroj/iiro.fi/compare/v22.1.4...v22.1.5) (2020-03-21)
 
 ### [22.1.4](https://github.com/iiroj/iiro.fi/compare/v22.1.3...v22.1.4) (2020-03-10)
