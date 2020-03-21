@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [22.1.5](https://github.com/iiroj/iiro.fi/compare/v22.1.4...v22.1.5) (2020-03-21)
+
 ### [22.1.4](https://github.com/iiroj/iiro.fi/compare/v22.1.3...v22.1.4) (2020-03-10)
 
 ### [22.1.3](https://github.com/iiroj/iiro.fi/compare/v22.1.2...v22.1.3) (2020-02-29)
