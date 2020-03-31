@@ -12,14 +12,14 @@ const main = css({
   padding: `${spacing.medium} ${spacing.small} ${spacing.small}`,
 
   ...minWidth.tablet({
-    padding: `${spacing.large} ${spacing.medium}`
-  })
+    padding: `${spacing.large} ${spacing.medium}`,
+  }),
 });
 
 const container = css({
   alignItems: "stretch",
   display: "flex",
-  minHeight: "100%"
+  minHeight: "100%",
 });
 
 const NotFound: NextPage<{}> = () => (

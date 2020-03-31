@@ -1,14 +1,14 @@
 const colorBases = {
   background: {
     primary: "--background-primary",
-    secondary: "--background-secondary"
+    secondary: "--background-secondary",
   },
   text: {
     primary: "--text-primary",
     secondary: "--text-secondary",
-    active: "--text-active"
+    active: "--text-active",
   },
-  actionable: "--actionable"
+  actionable: "--actionable",
 };
 
 export const colorVariables = {
@@ -26,20 +26,20 @@ export const colorVariables = {
       [colorBases.text.primary]: "hsl(0, 0%, 80%)",
       [colorBases.text.secondary]: "hsl(0, 0%, 40%)",
       [colorBases.text.active]: "hsl(0, 0%, 70%)",
-      [colorBases.actionable]: "hsla(44, 100%, 33%, 0.4)"
-    }
-  }
+      [colorBases.actionable]: "hsla(44, 100%, 33%, 0.4)",
+    },
+  },
 };
 
 export const colors = {
   background: {
     primary: `var(${colorBases.background.primary})`,
-    secondary: `var(${colorBases.background.secondary})`
+    secondary: `var(${colorBases.background.secondary})`,
   },
   text: {
     primary: `var(${colorBases.text.primary})`,
     secondary: `var(${colorBases.text.secondary})`,
-    active: `var(${colorBases.text.active})`
+    active: `var(${colorBases.text.active})`,
   },
-  actionable: `var(${colorBases.actionable})`
+  actionable: `var(${colorBases.actionable})`,
 };

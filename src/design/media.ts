@@ -20,7 +20,7 @@ const createQuery = <MP = undefined>(minWidth?: number, maxWidth?: number) => (
   query += ")";
 
   return {
-    [query]: styles
+    [query]: styles,
   };
 };
 

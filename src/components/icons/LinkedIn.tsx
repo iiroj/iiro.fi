@@ -8,8 +8,8 @@ const svg = css({
 
   circle: {
     fill: "hsl(0, 0%, 40%)",
-    stroke: "none"
-  }
+    stroke: "none",
+  },
 });
 
 export default () => (

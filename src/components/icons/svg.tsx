@@ -9,5 +9,5 @@ export default css({
   strokeLinejoin: "round",
   strokeWidth: 2.5,
   verticalAlign: "-12%",
-  width: "1em"
+  width: "1em",
 });

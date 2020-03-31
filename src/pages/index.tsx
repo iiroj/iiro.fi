@@ -16,8 +16,8 @@ const link = css(highlight, {
   ...transition("background-position"),
 
   "&:hover": {
-    backgroundPosition: "0"
-  }
+    backgroundPosition: "0",
+  },
 });
 
 const list = css({
@@ -27,8 +27,8 @@ const list = css({
   marginLeft: "0.8ch",
 
   "li + li": {
-    marginTop: "0.5em"
-  }
+    marginTop: "0.5em",
+  },
 });
 
 const listContainer = css({
@@ -36,8 +36,8 @@ const listContainer = css({
   display: "flex",
 
   "> p": {
-    flexShrink: 0
-  }
+    flexShrink: 0,
+  },
 });
 
 const main = css({
@@ -48,16 +48,16 @@ const main = css({
   padding: `${spacing.medium} ${spacing.small} ${spacing.small}`,
 
   "> *": {
-    maxWidth: scale(13)
+    maxWidth: scale(13),
   },
 
   "> header, section": {
-    marginBottom: spacing.small
+    marginBottom: spacing.small,
   },
 
   ...minWidth.tablet({
-    padding: `${spacing.large} ${spacing.medium}`
-  })
+    padding: `${spacing.large} ${spacing.medium}`,
+  }),
 });
 
 const container = css({
@@ -67,8 +67,8 @@ const container = css({
   minHeight: "100%",
 
   ...minWidth.desktop({
-    flexDirection: "row"
-  })
+    flexDirection: "row",
+  }),
 });
 
 const Root: NextPage<{}> = () => (

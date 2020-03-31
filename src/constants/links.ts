@@ -4,16 +4,16 @@ export default [
   {
     Icon: GitHub,
     href: "https://github.com/iiroj",
-    label: "GitHub"
+    label: "GitHub",
   },
   {
     Icon: Twitter,
     href: "https://twitter.com/iirojappinen",
-    label: "Twitter"
+    label: "Twitter",
   },
   {
     Icon: LinkedIn,
     href: "https://fi.linkedin.com/in/iiroj",
-    label: "LinkedIn"
-  }
+    label: "LinkedIn",
+  },
 ];

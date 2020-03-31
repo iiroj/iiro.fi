@@ -9,6 +9,6 @@ export const useServiceWorkerRegistrations = () => {
   const [registrations, setRegistrations] = useState<
     readonly ServiceWorkerRegistration[]
   >([]);
-  getRegistrations().then(registrations => setRegistrations(registrations));
+  getRegistrations().then((registrations) => setRegistrations(registrations));
   return registrations;
 };

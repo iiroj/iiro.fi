@@ -5,7 +5,7 @@ import { scale } from "./scale";
 import {
   IBM_PLEX_SANS_CONDENSED,
   IBM_PLEX_SERIF,
-  SYSTEM_FONT
+  SYSTEM_FONT,
 } from "../constants/fonts";
 
 export const fonts = {
@@ -18,12 +18,12 @@ export const fonts = {
     fontWeight: 400,
 
     ...minWidth.tablet({
-      fontSize: 24
-    })
+      fontSize: 24,
+    }),
   },
 
   strong: {
-    fontWeight: 600
+    fontWeight: 600,
   },
 
   h1: {
@@ -33,11 +33,11 @@ export const fonts = {
     lineHeight: "0.8em",
 
     ...minWidth.tablet({
-      fontSize: 48
+      fontSize: 48,
     }),
 
     ...minWidth.desktop({
-      fontSize: 64
-    })
-  }
+      fontSize: 64,
+    }),
+  },
 };

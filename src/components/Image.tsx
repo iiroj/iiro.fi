@@ -34,13 +34,13 @@ const container = css({
       linear-gradient(hsla(0, 0%, 10%, 1) 0%, hsla(0, 0%, 10%, 0) 33%),
       linear-gradient(to right, hsla(0, 0%, 10%, 1) 0%, hsla(0, 0%, 10%, 0) 25%),
       linear-gradient(120deg, hsla(0, 0%, 10%, 1) 0%, hsla(0, 0%, 10%, 0) 50%)
-    `
-    }
+    `,
+    },
   },
 
   ...minWidth.tablet({
-    maxHeight: "100%"
-  })
+    maxHeight: "100%",
+  }),
 });
 
 const image = css({
@@ -48,7 +48,7 @@ const image = css({
   objectFit: "cover",
   objectPosition: "80% 50%",
   position: "absolute",
-  width: "100%"
+  width: "100%",
 });
 
 export default () => (

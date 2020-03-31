@@ -5,7 +5,9 @@ const duration = 150;
 
 export const transition = Object.assign(
   (...props: TransitionPropertyProperty[]) => ({
-    transition: props.map(prop => `${prop} ${duration}ms ${timing}`).join(", ")
+    transition: props
+      .map((prop) => `${prop} ${duration}ms ${timing}`)
+      .join(", "),
   }),
   { duration, timing }
 );

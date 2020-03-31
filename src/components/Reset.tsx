@@ -12,22 +12,22 @@ export default React.memo(() => (
       fonts,
       {
         "html, body, #__next": {
-          height: "100%"
+          height: "100%",
         },
 
         body: {
           backgroundColor: colors.background.primary,
 
           "@media (-webkit-min-device-pixel-ratio: 1.5)": {
-            WebkitFontSmoothing: "antialiased"
-          }
+            WebkitFontSmoothing: "antialiased",
+          },
         },
 
         a: {
           color: "inherit",
-          textDecoration: "none"
-        }
-      }
+          textDecoration: "none",
+        },
+      },
     ]}
   />
 ));
