@@ -2,7 +2,7 @@
   "@context": "http://schema.org",
   "@type": "Person",
   "name": "Iiro Jäppinen",
-  "jobTitle": "Developer",
+  "jobTitle": "Platform Developer",
   "worksFor": {
     "@type": "Organization",
     "name": "Verkkokauppa.com",

@@ -6,7 +6,7 @@ export interface Experience {
 
 const experience: Experience[] = [
   {
-    jobTitle: "Front-end Developer",
+    jobTitle: "Platform Developer",
     company: "Verkkokauppa.com",
     url: "https://www.verkkokauppa.com",
   },
