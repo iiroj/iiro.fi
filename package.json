@@ -12,7 +12,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export -o dist",
     "lint:base": "eslint --ext .js,.ts,.tsx",
     "lint": "npm run lint:base -- .",
     "typecheck": "tsc --noEmit",

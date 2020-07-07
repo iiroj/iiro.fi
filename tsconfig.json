@@ -23,6 +23,7 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "lambda/**/*.js",
     "babel.config.js",
     "next.config.js",
     "next-env.d.ts"
