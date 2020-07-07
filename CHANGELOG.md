@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [22.3.0](https://github.com/iiroj/iiro.fi/compare/v22.2.0...v22.3.0) (2020-07-07)
+
+
+### Features
+
+* deploy to S3 instead of Vercel Now ([2cddc2f](https://github.com/iiroj/iiro.fi/commit/2cddc2fffd81b127a452d28184fce3cf56a96ab9))
+
 ## [22.2.0](https://github.com/iiroj/iiro.fi/compare/v22.1.5...v22.2.0) (2020-03-21)
 
 
