@@ -11,7 +11,7 @@
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "start": "next",
     "build": "next build && next export -o dist",
     "lint:base": "eslint --ext .js,.ts,.tsx",
     "lint": "npm run lint:base -- .",
