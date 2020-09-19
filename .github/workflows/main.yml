@@ -45,14 +45,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-north-1
       - name: Sync files
-        run: |
-          aws s3 sync dist s3://iiro.fi
-          --delete
-          --sse
+        run: aws s3 sync dist s3://iiro.fi --delete --sse
       - name: Create invalidation
-        run: |
-          aws cloudfront create-invalidation
-          --distribution-id "$AWS_CLOUDFRONT_DISTRIBUTION_ID"
-          --paths "*"
+        run: aws cloudfront create-invalidation --distribution-id "$AWS_CLOUDFRONT_DISTRIBUTION_ID" --paths "*"
         env:
           AWS_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
