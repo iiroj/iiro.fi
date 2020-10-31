@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [22.3.2](https://github.com/iiroj/iiro.fi/compare/v22.3.1...v22.3.2) (2020-10-31)
+
+
+### Bug Fixes
+
+* **tsc:** import emotion css prop type ([4d20538](https://github.com/iiroj/iiro.fi/commit/4d20538e0a7e14d115cbabd4c1eac1072cbdeb66))
+* move static head elements into _app ([2151bee](https://github.com/iiroj/iiro.fi/commit/2151bee5680b24e29f7c291a41fcd2b18b1349b1))
+* remove serviceworker declaration from webmanifest ([76922d7](https://github.com/iiroj/iiro.fi/commit/76922d72d8e16d74c456d6a917ec3a0719b0c8ce))
+* render Next.js Html component ([e9493c1](https://github.com/iiroj/iiro.fi/commit/e9493c1c6ad8711a764398365059e0dc9a01cf4c))
+
 ### [22.3.1](https://github.com/iiroj/iiro.fi/compare/v22.3.0...v22.3.1) (2020-07-07)
 
 ## [22.3.0](https://github.com/iiroj/iiro.fi/compare/v22.2.0...v22.3.0) (2020-07-07)
