@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { colors, colorVariables, fonts } from "../design";
 
-export default React.memo(() => (
+const Reset = () => (
   <Global
     styles={[
       reset,
@@ -30,4 +30,6 @@ export default React.memo(() => (
       },
     ]}
   />
-));
+);
+
+export default Reset;

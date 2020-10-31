@@ -12,7 +12,7 @@ const svg = css({
   },
 });
 
-export default () => (
+const LinkedIn = () => (
   <svg css={svg} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
     <g>
       <path d="m4 31h25c1 0 2-1 2-2.052v-25.948c0-1-1-2-2-2h-26c-1 0-2 1-2 2v25" />
@@ -22,3 +22,5 @@ export default () => (
     </g>
   </svg>
 );
+
+export default LinkedIn;

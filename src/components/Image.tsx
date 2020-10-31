@@ -51,7 +51,7 @@ const image = css({
   width: "100%",
 });
 
-export default () => (
+const Image = () => (
   <picture css={container}>
     <source
       type="image/jpeg"
@@ -76,3 +76,5 @@ export default () => (
     <img alt="Iiro Jäppinen" src="/self-desktop.jpg" css={image} />
   </picture>
 );
+
+export default Image;

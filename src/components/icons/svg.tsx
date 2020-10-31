@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-export default css({
+const svg = css({
   fill: "none",
   height: "1em",
   marginRight: "0.25ch",
@@ -11,3 +11,5 @@ export default css({
   verticalAlign: "-12%",
   width: "1em",
 });
+
+export default svg;

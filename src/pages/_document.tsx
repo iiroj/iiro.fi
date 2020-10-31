@@ -4,7 +4,7 @@ import React from "react";
 
 import { GOOGLE_FONTS_URL } from "../constants/fonts";
 
-export default class Document extends NextDocument<{
+class Document extends NextDocument<{
   helmetContext: FilledContext;
 }> {
   static getInitialProps: typeof NextDocument.getInitialProps = async (ctx) => {
@@ -57,3 +57,5 @@ export default class Document extends NextDocument<{
     );
   }
 }
+
+export default Document;

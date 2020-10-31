@@ -2,13 +2,13 @@ import * as React from "react";
 
 import { highlight as highlightStyle } from "../design";
 
-import { Experience } from "../constants/experience";
+import { Experience as ExperienceType } from "../constants/experience";
 
-interface Props extends Experience {
+interface Props extends ExperienceType {
   highlight?: boolean;
 }
 
-export default React.memo(({ company, highlight, jobTitle, url }: Props) => (
+const Experience = ({ company, highlight, jobTitle, url }: Props) => (
   <>
     <strong css={highlight && highlightStyle}>{jobTitle}</strong>{" "}
     <span>at </span>
@@ -16,4 +16,6 @@ export default React.memo(({ company, highlight, jobTitle, url }: Props) => (
       {company}
     </a>
   </>
-));
+);
+
+export default Experience;
