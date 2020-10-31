@@ -128,4 +128,4 @@ const Root: NextPage<{}> = () => (
   </div>
 );
 
-export default React.memo(Root);
+export default Root;

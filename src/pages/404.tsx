@@ -36,4 +36,4 @@ const NotFound: NextPage<{}> = () => (
   </div>
 );
 
-export default React.memo(NotFound);
+export default NotFound;
