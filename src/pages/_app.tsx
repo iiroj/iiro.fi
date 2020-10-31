@@ -1,3 +1,4 @@
+import type {} from "@emotion/react/types/css-prop";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { HelmetProvider } from "react-helmet-async";
