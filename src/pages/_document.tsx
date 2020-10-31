@@ -2,8 +2,6 @@ import NextDocument, { Head, Html, Main, NextScript } from "next/document";
 import { FilledContext } from "react-helmet-async";
 import React from "react";
 
-import { GOOGLE_FONTS_URL } from "../constants/fonts";
-
 class Document extends NextDocument<{
   helmetContext: FilledContext;
 }> {
@@ -28,18 +26,6 @@ class Document extends NextDocument<{
     return (
       <Html lang="en">
         <Head>
-          <link
-            crossOrigin="anonymous"
-            href={GOOGLE_FONTS_URL}
-            rel="stylesheet"
-          />
-          <link rel="manifest" href="/site.webmanifest" />
-          <link rel="icon" href="/favicon.png" type="image/x-icon" />
-          <link rel="apple-touch-icon" href="/icon.png" />
-          <link rel="mask-icon" href="/icon.svg" color="#333333" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#ffffff" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           {helmetContext && helmetContext.helmet && (
             <>
               {helmetContext && helmetContext.helmet.meta.toComponent()}
