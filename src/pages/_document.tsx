@@ -1,4 +1,4 @@
-import NextDocument, { Head, Main, NextScript } from "next/document";
+import NextDocument, { Head, Html, Main, NextScript } from "next/document";
 import { FilledContext } from "react-helmet-async";
 import React from "react";
 
@@ -26,7 +26,7 @@ class Document extends NextDocument<{
     const { helmetContext } = this.props;
 
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
           <link
             crossOrigin="anonymous"
@@ -53,7 +53,7 @@ class Document extends NextDocument<{
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
