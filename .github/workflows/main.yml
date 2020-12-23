@@ -22,6 +22,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
+          CF_WEB_ANALYTICS_TOKEN: ${{ secrets.CF_WEB_ANALYTICS_TOKEN }}
           NEXT_TELEMETRY_DISABLED: "1"
       - name: Upload artifact
         uses: actions/upload-artifact@v1
