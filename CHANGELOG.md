@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [22.5.0](https://github.com/iiroj/iiro.fi/compare/v22.4.0...v22.5.0) (2020-12-23)
+
+
+### Features
+
+* publish to Cloudflare Workers Site ([5cdeb0d](https://github.com/iiroj/iiro.fi/commit/5cdeb0d46655eb53ebc131c39169efa3158ffe25))
+
 ## [22.4.0](https://github.com/iiroj/iiro.fi/compare/v22.3.2...v22.4.0) (2020-12-23)
 
 
