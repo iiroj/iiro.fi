@@ -4,6 +4,7 @@ import Head from "next/head";
 import { HelmetProvider } from "react-helmet-async";
 import React, { useEffect } from "react";
 
+import CloudflareWebAnalytics from "../components/CloudflareWebAnalytics";
 import Reset from "../components/Reset";
 import { GOOGLE_FONTS_URL } from "../constants/fonts";
 import { useServiceWorkerRegistrations } from "../hooks";
@@ -37,6 +38,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <Reset />
       <HelmetProvider context={helmet.current}>
+        <CloudflareWebAnalytics />
         <Component {...pageProps} helmetContext={helmet.current} />
       </HelmetProvider>
     </>
