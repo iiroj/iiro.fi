@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [22.4.0](https://github.com/iiroj/iiro.fi/compare/v22.3.2...v22.4.0) (2020-12-23)
+
+
+### Features
+
+* add Cloudflare Web Analytics ([256131f](https://github.com/iiroj/iiro.fi/commit/256131ffd1e62bf569f81ecad79ab70918d378e8))
+
+
+### Bug Fixes
+
+* **tsc:** update csstype type usage ([7da0398](https://github.com/iiroj/iiro.fi/commit/7da0398ff1334e73a2eeb6eb25943541f2604428))
+
 ### [22.3.2](https://github.com/iiroj/iiro.fi/compare/v22.3.1...v22.3.2) (2020-10-31)
 
 
