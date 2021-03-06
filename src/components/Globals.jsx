@@ -9,7 +9,6 @@ const globals = css`
     #root {
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
     }
 
     body {
