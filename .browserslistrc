@@ -1,4 +1,6 @@
->1%
-not dead
-not ie 11
-not op_mini all
+Edge >= 79
+Firefox >= 67
+Chrome >= 63
+Safari >= 11.1
+iOS >= 11
+not IE <= 11
