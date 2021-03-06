@@ -1,1 +1,0 @@
-export { useServiceWorkerRegistrations } from "./sw";
