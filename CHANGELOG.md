@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.0.0](https://github.com/iiroj/iiro.fi/compare/v22.5.1...v23.0.0) (2021-03-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* The underlying framework Next.js has been replaced
+with homegrown robust scalable solutions
+
+### Features
+
+* redo site with custom framework ([cb8a8c1](https://github.com/iiroj/iiro.fi/commit/cb8a8c122aae238455a66e431decd8157e7b6923))
+
 ### [22.5.1](https://github.com/iiroj/iiro.fi/compare/v22.5.0...v22.5.1) (2020-12-23)
 
 ## [22.5.0](https://github.com/iiroj/iiro.fi/compare/v22.4.0...v22.5.0) (2020-12-23)
