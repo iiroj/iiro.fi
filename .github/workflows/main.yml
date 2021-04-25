@@ -3,8 +3,10 @@ name: Main
 on:
   pull_request:
   push:
+    branches:
+      - "*"
     tags-ignore:
-    - "*"
+      - "*"
 
 jobs:
   install:
