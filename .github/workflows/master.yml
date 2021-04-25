@@ -18,12 +18,22 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16
-      - name: Update npm
-        run: npm install --global npm@latest
-      - name: Install dependencies
-        run: npm install
-      - name: Build
+      - uses: actions/cache@v2
+        id: cache-node_modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Node.js modules
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Build site
         run: npm run build
+      - name: Build Worker
+        run: npm --prefix workers-site run build
       - name: Publish
         uses: cloudflare/wrangler-action@1.3.0
         with:
