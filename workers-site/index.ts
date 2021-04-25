@@ -1,46 +1,59 @@
 import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
 
-const isPlaintextRequest = (request: Request) => {
+/**
+ * Whether the request should be responded with in plaintext:
+ *
+ * 1. `false` if the request's `Accept` header includes `text/html`
+ * 1. `true` if the request's `Accept` header includes `text/plain`
+ * 1. `true` if the request's `User-Agent` header starts with `curl`
+ * 1. `true` if the request's `User-Agent` header starts with `Wget`
+ * 1. `false` otherwise
+ */
+const isPlaintextRequest = (request: Request): boolean => {
     const acceptHeader = request.headers.get('Accept')
 
-    const isAcceptHtml = !!acceptHeader && acceptHeader.includes('text/html')
-    if (isAcceptHtml) {
+    if (acceptHeader?.includes('text/html')) {
         return false
     }
 
-    const isAcceptPlaintext = !!acceptHeader && acceptHeader.includes('text/plain')
-    if (isAcceptPlaintext) {
+    if (acceptHeader?.includes('text/plain')) {
         return true
     }
 
     const userAgentHeader = request.headers.get('User-Agent')
 
-    const isCurlUserAgent = userAgentHeader && userAgentHeader.startsWith('curl')
-    const isWgetUserAgent = userAgentHeader && userAgentHeader.startsWith('Wget')
-    if (isCurlUserAgent || isWgetUserAgent) {
+    if (userAgentHeader?.startsWith('curl') || userAgentHeader?.startsWith('Wget')) {
         return true
     }
 
     return false
 }
 
+/** The plaintext response to be sent instead of rich HTML content */
 const PLAINTEXT_BODY = `Iiro Jäppinen
 - https://github.com/iiroj
 - https://linkedin.com/in/iiroj
 `
 
-const PLAINTEXT_OPTIONS = { headers: { 'Content-Type': 'text/plain' } }
+/** The `Content-Type: text/plain` header */
+const PLAINTEXT_OPTIONS = {
+    headers: { 'Content-Type': 'text/plain' },
+}
 
-const getPlaintextResponse = async (event: FetchEvent) => {
-    const url = new URL(event.request.url)
+/** Get plaintext response to a fetch event */
+const getPlaintextResponse = async (event: FetchEvent): Promise<Response> => {
+    const { pathname } = new URL(event.request.url)
 
-    if (url.pathname === '/') {
+    /** Only respond with 200 to the root pathname */
+    if (pathname === '/') {
         return new Response(PLAINTEXT_BODY, { ...PLAINTEXT_OPTIONS, status: 200 })
     }
 
+    /** Otherwise respond with 404 */
     return new Response('404 — Page Not Found', { ...PLAINTEXT_OPTIONS, status: 404 })
 }
 
+/** The static headers to be added to rich HTML responses */
 const STATIC_HEADERS = [
     [
         'Content-Security-Policy',
@@ -53,7 +66,8 @@ const STATIC_HEADERS = [
     ['X-XSS-Protection', '1; mode=block'],
 ]
 
-const withResponseHeaders = async (response: Response) => {
+/** Add static headers to responses with OK status */
+const withResponseHeaders = async (response: Response): Promise<Response> => {
     if (!response.ok) return response
 
     for (const [key, value] of STATIC_HEADERS) {
@@ -63,7 +77,16 @@ const withResponseHeaders = async (response: Response) => {
     return response
 }
 
-const getResponse = async (event: FetchEvent) => {
+const notFoundError = new Error('Failed to respond with 404')
+
+/**
+ * Get the rich HTML response to a fetch event:
+ *
+ * 1. Get a file from Cloudflare Workers KV storage and assign static headers
+ * 1. Else, get the 404 response file assign its headers
+ * 1. Else, respond with error message and code 500
+ */
+const getResponse = async (event: FetchEvent): Promise<Response> => {
     try {
         const response = await getAssetFromKV(event)
         return withResponseHeaders(response)
@@ -79,12 +102,19 @@ const getResponse = async (event: FetchEvent) => {
                     status: 404,
                 })
             )
-        } catch {}
-
-        return new Response(error.message || error.toString(), { status: 500 })
+        } catch {
+            throw notFoundError
+        }
     }
 }
 
+/**
+ * Listen to fetch events and get response:
+ *
+ * 1. If the request is for plaintext, respond accordingly
+ * 1. Else, get rich HTML response with static headers
+ * 1. Else, respond with status 500
+ */
 addEventListener('fetch', async (event: FetchEvent) => {
     try {
         if (isPlaintextRequest(event.request)) {
