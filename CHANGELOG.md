@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.2.2](https://github.com/iiroj/iiro.fi/compare/v23.2.1...v23.2.2) (2021-04-25)
+
+
+### Bug Fixes
+
+* use correct entrypoint script name ([be73aa8](https://github.com/iiroj/iiro.fi/commit/be73aa82ef1531dd0e09af48b959fa98f810e38b))
+
 ### [23.2.1](https://github.com/iiroj/iiro.fi/compare/v23.2.0...v23.2.1) (2021-04-25)
 
 
