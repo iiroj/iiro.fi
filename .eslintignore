@@ -2,4 +2,4 @@ dist
 node_modules
 public
 
-workers-site/index.js
+workers-site/script.js
