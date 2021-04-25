@@ -31,8 +31,8 @@
     "history": "^5.0.0",
     "path-to-regexp": "^6.2.0",
     "polished": "^4.1.1",
-    "react": " 0.0.0-709f94841",
-    "react-dom": " 0.0.0-709f94841",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet-async": "^1.0.9",
     "react-style-reset": "^1.3.2",
     "use-breakpoint": "^2.0.0"
