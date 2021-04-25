@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.2.1](https://github.com/iiroj/iiro.fi/compare/v23.2.0...v23.2.1) (2021-04-25)
+
+
+### Bug Fixes
+
+* use stable React ([6c4e0dc](https://github.com/iiroj/iiro.fi/commit/6c4e0dc957ab37ed8f52c33f4c1f876985b57c25))
+
 ## [23.2.0](https://github.com/iiroj/iiro.fi/compare/v23.1.0...v23.2.0) (2021-04-25)
 
 
