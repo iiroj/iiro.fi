@@ -95,6 +95,6 @@ addEventListener('fetch', async (event) => {
         const response = getResponse(event)
         return event.respondWith(response)
     } catch {
-        event.respondWith(new Response('Internal Error', { status: 500 }))
+        event.respondWith(new Response('500 — Internal Error', { ...PLAINTEXT_OPTIONS, status: 500 }))
     }
 })
