@@ -3,18 +3,19 @@ import { CacheProvider } from '@emotion/react'
 import createEmotionServer from '@emotion/server/create-instance'
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 import { createMemoryHistory } from 'history'
-import React from 'react'
+import type { Renderer } from 'html-renderer-webpack-plugin'
 import { renderToString } from 'react-dom/server'
+import type { FilledContext } from 'react-helmet-async'
 
 import App from './components/App'
 
 const whitespaceRegExp = /^\s+/gm
 const emptyLineRegExp = /^\s*$(?:\r\n?|\n)/gm
 
-const renderer = async ({ path, stats }) => {
+const renderer: Renderer = async ({ path, stats }) => {
     const extractor = new ChunkExtractor({ entrypoints: ['main'], stats })
-    const history = createMemoryHistory({ initialEntries: [path] })
-    const helmetContext = {}
+    const history = createMemoryHistory({ initialEntries: [path!] })
+    const helmetContext = {} as FilledContext
     const cache = createCache({ key: 'css' })
     const { extractCritical } = createEmotionServer(cache)
 

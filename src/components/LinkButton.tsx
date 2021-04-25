@@ -1,9 +1,9 @@
 import { css } from '@emotion/react'
-import React from 'react'
 
 import { colors } from '../design/colors'
 import spacing from '../design/spacing'
 import transition from '../design/transition'
+import type { Props } from './Link'
 import Link from './Link'
 
 const style = css({
@@ -24,6 +24,6 @@ const style = css({
     },
 })
 
-const LinkButton = (props) => <Link {...props} css={style} />
+const LinkButton = (props: Props) => <Link {...props} css={style} />
 
 export default LinkButton

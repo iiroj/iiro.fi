@@ -16,7 +16,7 @@
         "plugin:import/warnings",
         "prettier"
     ],
-    "plugins": ["@typescript-eslint", "react-hooks", "prettier", "simple-import-sort"],
+    "plugins": ["@emotion", "@typescript-eslint", "react-hooks", "prettier", "simple-import-sort"],
     "rules": {
         "arrow-body-style": ["error", "as-needed"],
         "import/no-unused-modules": "error",
@@ -24,6 +24,7 @@
         "no-undef": "error",
         "no-unused-vars": "error",
         "react/display-name": "off",
+        "react/react-in-jsx-scope": "off",
         "react/prop-types": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",

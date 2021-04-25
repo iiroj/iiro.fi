@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-unassigned-import
-require('@babel/register')
+require('@babel/register')({
+    extensions: ['.es6', '.es', '.jsx', '.js', '.mjs', '.ts', '.tsx'],
+})
 
 const LoadablePlugin = require('@loadable/webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
@@ -12,7 +14,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { routes } = require('./src/routes')
 
 const paths = ['/404'].concat(routes.map(([{ path }]) => path))
-const renderer = path.resolve('./src/server.jsx')
+const renderer = path.resolve('./src/server.tsx')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -32,7 +34,7 @@ const config = {
     devtool: isProduction ? 'source-map' : 'eval-source-map',
 
     entry: {
-        main: path.resolve('./src/client.jsx'),
+        main: path.resolve('./src/client.tsx'),
     },
 
     output: {
@@ -43,14 +45,14 @@ const config = {
     },
 
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
 
     module: {
         rules: [
             {
                 exclude: undefined,
-                test: /\.jsx?$/,
+                test: /\.(jsx?|tsx?)$/,
                 use: [
                     {
                         loader: 'babel-loader',

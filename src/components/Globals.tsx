@@ -1,5 +1,4 @@
 import { css, Global } from '@emotion/react'
-import React from 'react'
 import reset from 'react-style-reset/string'
 
 import { colors, colorVariables } from '../design/colors'

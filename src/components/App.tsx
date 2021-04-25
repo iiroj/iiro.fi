@@ -1,5 +1,4 @@
-import React from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { FilledContext, Helmet, HelmetProvider } from 'react-helmet-async'
 
 import microdata from '../constants/microdata.json'
 import withRouter from '../hocs/withRouter'
@@ -8,7 +7,11 @@ import Globals from './Globals'
 
 const htmlClass = typeof window === 'undefined' ? 'no-js' : 'js'
 
-const App = ({ helmetContext }) => {
+interface Props {
+    helmetContext?: Partial<FilledContext>
+}
+
+const App = ({ helmetContext }: Props) => {
     const { route } = useRouter()
     const { Route } = route
 

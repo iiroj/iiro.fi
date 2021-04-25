@@ -9,7 +9,7 @@ const colorBases = {
         active: '--text-active',
     },
     actionable: '--actionable',
-}
+} as const
 
 export const colorVariables = {
     ':root': {
@@ -29,7 +29,7 @@ export const colorVariables = {
             [colorBases.actionable]: 'hsla(44, 100%, 33%, 0.4)',
         },
     },
-}
+} as const
 
 export const colors = {
     background: {
@@ -42,4 +42,4 @@ export const colors = {
         active: `var(${colorBases.text.active})`,
     },
     actionable: `var(${colorBases.actionable})`,
-}
+} as const

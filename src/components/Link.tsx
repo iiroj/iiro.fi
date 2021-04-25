@@ -1,12 +1,19 @@
-import React, { useCallback } from 'react'
+import type { HTMLProps, MouseEvent, MouseEventHandler, ReactNode } from 'react'
+import { useCallback } from 'react'
 
 import useRouter from '../hooks/useRouter'
 
-const Link = ({ onClick, children, to, ...rest }) => {
+export interface Props extends HTMLProps<HTMLAnchorElement> {
+    onClick?: MouseEventHandler<HTMLAnchorElement>
+    children: ReactNode
+    to: string
+}
+
+const Link = ({ onClick, children, to, ...rest }: Props) => {
     const { history } = useRouter()
 
     const handleClick = useCallback(
-        (event) => {
+        (event: MouseEvent<HTMLAnchorElement>) => {
             if (typeof onClick === 'function') {
                 onClick(event)
             }

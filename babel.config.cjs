@@ -11,6 +11,7 @@ const presets = [
             cssPropOptimization: true,
         },
     ],
+    '@babel/preset-typescript',
 ]
 
 const plugins = ['@loadable/babel-plugin']

@@ -1,10 +1,18 @@
 import { css } from '@emotion/react'
-import React from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import LinkButton from '../components/LinkButton'
 import { minWidth } from '../design/media'
 import spacing from '../design/spacing'
+
+const list = css({
+    display: 'flex',
+    margin: `-${spacing.tiny}`,
+
+    li: {
+        margin: spacing.tiny,
+    },
+})
 
 const main = css({
     display: 'flex',
@@ -31,21 +39,32 @@ const container = css({
     minHeight: '100%',
 })
 
-const NotFound = () => (
+const Root = () => (
     <div css={container}>
         <Helmet>
-            <title>Page Not Found</title>
+            <title>Iiro Jäppinen</title>
         </Helmet>
 
         <main css={main}>
             <header>
-                <h1>404 — Page Not Found</h1>
+                <h1>Iiro Jäppinen</h1>
             </header>
             <section>
-                <LinkButton to="/">Back Home</LinkButton>
+                <ul css={list}>
+                    <li>
+                        <LinkButton to="https://github.com/iiroj" rel="author">
+                            GitHub
+                        </LinkButton>
+                    </li>
+                    <li>
+                        <LinkButton to="https://linkedin.com/in/iiroj" rel="author">
+                            LinkedIn
+                        </LinkButton>
+                    </li>
+                </ul>
             </section>
         </main>
     </div>
 )
 
-export default NotFound
+export default Root
