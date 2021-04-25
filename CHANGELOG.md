@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.2.0](https://github.com/iiroj/iiro.fi/compare/v23.1.0...v23.2.0) (2021-04-25)
+
+
+### Features
+
+* remove external fronts ([e1be1ea](https://github.com/iiroj/iiro.fi/commit/e1be1ea896fe26337cbc9e201119a39dd55fcfbc))
+
+
+### Bug Fixes
+
+* add Content-Type: text/plain header to error response ([7e4b8a5](https://github.com/iiroj/iiro.fi/commit/7e4b8a5eff86f29f7ee6d107e01058058334e851))
+* if request accepts text/html, do not treat it as plaintext ([4615b47](https://github.com/iiroj/iiro.fi/commit/4615b47284ab3b8da4c83dc9344f3fe27d17b10c))
+
 ## [23.1.0](https://github.com/iiroj/iiro.fi/compare/v23.0.0...v23.1.0) (2021-04-25)
 
 
