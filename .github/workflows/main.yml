@@ -30,7 +30,7 @@ jobs:
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
 
-  eslint:
+  lint:
     needs: install
     name: ESLint
     runs-on: ubuntu-latest
