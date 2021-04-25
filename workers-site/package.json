@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "script.js",
+  "main": "dist/script.js",
   "scripts": {
     "build": "NODE_ENV=production BABEL_ENV=node_production webpack"
   },

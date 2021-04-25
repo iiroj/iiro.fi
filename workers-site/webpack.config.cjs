@@ -14,12 +14,12 @@ const config = {
     devtool: isProduction ? 'source-map' : 'eval-source-map',
 
     entry: {
-        script: path.resolve('./index.ts'),
+        index: path.resolve('./index.ts'),
     },
 
     output: {
         filename: '[name].js',
-        path: path.resolve('./'),
+        path: path.resolve('./dist'),
         publicPath: '/',
     },
 
