@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.1.0](https://github.com/iiroj/iiro.fi/compare/v23.0.0...v23.1.0) (2021-04-25)
+
+
+### Features
+
+* add support for plaintext response ([7fd643c](https://github.com/iiroj/iiro.fi/commit/7fd643cf16f9bd02d178233c8cd1cd55fe68a177))
+
+
+### Bug Fixes
+
+* do not use language-specific URL ([2caa14e](https://github.com/iiroj/iiro.fi/commit/2caa14e7a2dc71d0c9fdff9765a29d0c89af1f1c))
+* remove unnecessary min-width style ([da4803e](https://github.com/iiroj/iiro.fi/commit/da4803e965025ce0c33938039cb87daf99cfe473))
+
 ## [23.0.0](https://github.com/iiroj/iiro.fi/compare/v22.5.1...v23.0.0) (2021-03-06)
 
 
