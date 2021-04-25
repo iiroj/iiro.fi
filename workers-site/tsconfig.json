@@ -1,0 +1,10 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "lib": ["ES2020", "WebWorker"],
+        "rootDir": "./",
+        "types": ["@cloudflare/workers-types"]
+    },
+    "include": ["index.ts"],
+    "exclude": ["node_modules", "worker"]
+}

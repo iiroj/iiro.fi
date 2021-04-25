@@ -1,5 +1,6 @@
 {
   "env": {
+    "serviceworker": true,
     "worker": true
   }
 }

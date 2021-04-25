@@ -8,3 +8,8 @@ route = "iiro.fi/*"
 [site]
 bucket = "./dist"
 entry-point = "workers-site"
+
+[build]
+"upload.format" = "service-worker"
+command = "npm ci && npm run build"
+cwd = "workers-site"

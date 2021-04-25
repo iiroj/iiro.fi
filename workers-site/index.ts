@@ -1,6 +1,6 @@
 import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
 
-const isPlaintextRequest = (request) => {
+const isPlaintextRequest = (request: Request) => {
     const acceptHeader = request.headers.get('Accept')
 
     const isAcceptHtml = !!acceptHeader && acceptHeader.includes('text/html')
@@ -31,7 +31,7 @@ const PLAINTEXT_BODY = `Iiro Jäppinen
 
 const PLAINTEXT_OPTIONS = { headers: { 'Content-Type': 'text/plain' } }
 
-const getPlaintextResponse = async (event) => {
+const getPlaintextResponse = async (event: FetchEvent) => {
     const url = new URL(event.request.url)
 
     if (url.pathname === '/') {
@@ -53,7 +53,7 @@ const STATIC_HEADERS = [
     ['X-XSS-Protection', '1; mode=block'],
 ]
 
-const withResponseHeaders = async (response) => {
+const withResponseHeaders = async (response: Response) => {
     if (!response.ok) return response
 
     for (const [key, value] of STATIC_HEADERS) {
@@ -63,7 +63,7 @@ const withResponseHeaders = async (response) => {
     return response
 }
 
-const getResponse = async (event) => {
+const getResponse = async (event: FetchEvent) => {
     try {
         const response = await getAssetFromKV(event)
         return withResponseHeaders(response)
@@ -85,7 +85,7 @@ const getResponse = async (event) => {
     }
 }
 
-addEventListener('fetch', async (event) => {
+addEventListener('fetch', async (event: FetchEvent) => {
     try {
         if (isPlaintextRequest(event.request)) {
             const plaintextResponse = getPlaintextResponse(event)
