@@ -31,6 +31,7 @@ jobs:
   eslint:
     needs: install
     name: ESLint
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -51,6 +52,7 @@ jobs:
   build-site:
     needs: install
     name: Build Site
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -76,6 +78,7 @@ jobs:
   build-worker:
     needs: install
     name: Build Worker
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
