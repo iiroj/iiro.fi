@@ -1,5 +1,41 @@
 import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
 
+const isPlaintextRequest = (request) => {
+    const acceptHeader = request.headers.get('Accept')
+    const isAcceptPlaintext = !!acceptHeader && acceptHeader.includes('text/plain')
+
+    if (isAcceptPlaintext) {
+        return true
+    }
+
+    const userAgentHeader = request.headers.get('User-Agent')
+    const isCurlUserAgent = userAgentHeader && userAgentHeader.startsWith('curl')
+    const isWgetUserAgent = userAgentHeader && userAgentHeader.startsWith('Wget')
+
+    if (isCurlUserAgent || isWgetUserAgent) {
+        return true
+    }
+
+    return false
+}
+
+const PLAINTEXT_BODY = `Iiro Jäppinen
+- https://github.com/iiroj
+- https://fi.linkedin.com/in/iiroj
+`
+
+const PLAINTEXT_OPTIONS = { headers: { 'Content-Type': 'text/plain' } }
+
+const getPlaintextResponse = async (event) => {
+    const url = new URL(event.request.url)
+
+    if (url.pathname === '/') {
+        return new Response(PLAINTEXT_BODY, { ...PLAINTEXT_OPTIONS, status: 200 })
+    }
+
+    return new Response('404 — Page Not Found', { ...PLAINTEXT_OPTIONS, status: 404 })
+}
+
 const STATIC_HEADERS = [
     [
         'Content-Security-Policy',
@@ -50,6 +86,11 @@ const getResponse = async (event) => {
 
 addEventListener('fetch', async (event) => {
     try {
+        if (isPlaintextRequest(event.request)) {
+            const plaintextResponse = getPlaintextResponse(event)
+            return event.respondWith(plaintextResponse)
+        }
+
         const response = getResponse(event)
         return event.respondWith(response)
     } catch {
