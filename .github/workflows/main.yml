@@ -48,8 +48,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Build
-        run: npm run build
+      - name: ESLint
+        run: npm run lint
 
   build-site:
     needs: install
@@ -69,8 +69,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: ESLint
-        run: npm run lint
+      - name: Build
+        run: npm run build
       - uses: actions/upload-artifact@v2
         with:
           name: site
