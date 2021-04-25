@@ -1,4 +1,4 @@
-import { IBM_PLEX_SANS_CONDENSED, IBM_PLEX_SERIF, SYSTEM_FONT } from '../constants/fonts'
+import { SYSTEM_FONT } from '../constants/fonts'
 import { colors } from './colors'
 import { minWidth } from './media'
 import scale from './scale'
@@ -6,7 +6,7 @@ import scale from './scale'
 export const fonts = {
     body: {
         color: colors.text.primary,
-        fontFamily: IBM_PLEX_SANS_CONDENSED + ', ' + SYSTEM_FONT,
+        fontFamily: SYSTEM_FONT,
         fontStyle: 'normal',
         fontSize: 18,
         lineHeight: scale.ratio,
@@ -22,8 +22,8 @@ export const fonts = {
     },
 
     h1: {
-        fontFamily: IBM_PLEX_SERIF + ', ' + SYSTEM_FONT,
         fontSize: 32,
+        fontWeight: 400,
         letterSpacing: '-2',
         lineHeight: '0.8em',
 

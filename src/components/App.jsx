@@ -1,7 +1,6 @@
 import React from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 
-import { GOOGLE_FONTS_URL } from '../constants/fonts'
 import microdata from '../constants/microdata.json'
 import withRouter from '../hocs/withRouter'
 import useRouter from '../hooks/useRouter'
@@ -17,7 +16,6 @@ const App = ({ helmetContext }) => {
         <HelmetProvider context={helmetContext}>
             <Helmet>
                 <html className={htmlClass} lang="en" />
-                <link crossOrigin="anonymous" href={GOOGLE_FONTS_URL} rel="stylesheet" />
                 <link rel="manifest" href="/site.webmanifest" />
                 <link rel="icon" href="/favicon.png" type="image/x-icon" />
                 <link rel="apple-touch-icon" href="/icon.png" />
