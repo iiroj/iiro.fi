@@ -3,6 +3,7 @@
     "compilerOptions": {
         "allowJs": false,
         "lib": ["ES2020", "WebWorker"],
+        "module": "CommonJS",
         "noEmit": false,
         "removeComments": true,
         "rootDir": "./",
