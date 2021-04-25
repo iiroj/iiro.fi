@@ -1,7 +1,9 @@
 {
     "extends": "../tsconfig.json",
     "compilerOptions": {
+        "allowJs": false,
         "lib": ["ES2020", "WebWorker"],
+        "noEmit": false,
         "removeComments": true,
         "rootDir": "./",
         "types": ["@cloudflare/workers-types"]
