@@ -10,6 +10,9 @@
   },
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
+  "workspaces": [
+    "workers-site"
+  ],
   "scripts": {
     "start": "NODE_ENV=development BABEL_ENV=node_development webpack serve",
     "prebuild": "rimraf dist",
