@@ -2,16 +2,21 @@ import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
 
 const isPlaintextRequest = (request) => {
     const acceptHeader = request.headers.get('Accept')
-    const isAcceptPlaintext = !!acceptHeader && acceptHeader.includes('text/plain')
 
+    const isAcceptHtml = !!acceptHeader && acceptHeader.includes('text/html')
+    if (isAcceptHtml) {
+        return false
+    }
+
+    const isAcceptPlaintext = !!acceptHeader && acceptHeader.includes('text/plain')
     if (isAcceptPlaintext) {
         return true
     }
 
     const userAgentHeader = request.headers.get('User-Agent')
+
     const isCurlUserAgent = userAgentHeader && userAgentHeader.startsWith('curl')
     const isWgetUserAgent = userAgentHeader && userAgentHeader.startsWith('Wget')
-
     if (isCurlUserAgent || isWgetUserAgent) {
         return true
     }
