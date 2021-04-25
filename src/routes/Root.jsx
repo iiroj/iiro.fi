@@ -58,7 +58,7 @@ const Root = () => (
                         </LinkButton>
                     </li>
                     <li>
-                        <LinkButton to="https://fi.linkedin.com/in/iiroj" rel="author">
+                        <LinkButton to="https://linkedin.com/in/iiroj" rel="author">
                             LinkedIn
                         </LinkButton>
                     </li>

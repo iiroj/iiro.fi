@@ -21,7 +21,7 @@ const isPlaintextRequest = (request) => {
 
 const PLAINTEXT_BODY = `Iiro Jäppinen
 - https://github.com/iiroj
-- https://fi.linkedin.com/in/iiroj
+- https://linkedin.com/in/iiroj
 `
 
 const PLAINTEXT_OPTIONS = { headers: { 'Content-Type': 'text/plain' } }
