@@ -74,7 +74,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: site
-          path: dist/
+          path: dist
           retention-days: 1
 
   build-worker:
@@ -100,7 +100,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: worker
-          path: workers-site/dist/
+          path: workers-site/dist
           retention-days: 1
 
   publish:
@@ -125,9 +125,11 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: site
+          path: dist
       - uses: actions/download-artifact@v2
         with:
           name: worker
+          path: workers-site/dist
       - name: Publish
         uses: cloudflare/wrangler-action@1.3.0
         with:
