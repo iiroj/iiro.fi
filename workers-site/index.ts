@@ -59,6 +59,8 @@ const STATIC_HEADERS = [
         'Content-Security-Policy',
         "default-src 'none'; connect-src 'self'; font-src 'self'; img-src 'self' data:; manifest-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
     ],
+    /** Disable Google's FLoC */
+    ['Permissions-Policy', 'interest-cohort=()'],
     ['Referrer-Policy', 'strict-origin-when-cross-origin'],
     ['Strict-Transport-Security', 'max-age=63072000; includeSubdomains; preload'],
     ['X-Content-Type-Options', 'nosniff'],
