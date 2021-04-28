@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.2.3](https://github.com/iiroj/iiro.fi/compare/v23.2.2...v23.2.3) (2021-04-28)
+
+
+### Bug Fixes
+
+* disable Google's FLoC ([b497112](https://github.com/iiroj/iiro.fi/commit/b497112a3199cf60096fcd6d3cb8138a236cb9f8))
+* remove redundant CSP headers ([e5cf15f](https://github.com/iiroj/iiro.fi/commit/e5cf15f6ada4ee7811e66c269a2032f6e89867c7))
+
 ### [23.2.2](https://github.com/iiroj/iiro.fi/compare/v23.2.1...v23.2.2) (2021-04-25)
 
 
