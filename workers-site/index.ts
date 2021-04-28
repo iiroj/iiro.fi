@@ -57,7 +57,7 @@ const getPlaintextResponse = async (event: FetchEvent): Promise<Response> => {
 const STATIC_HEADERS = [
     [
         'Content-Security-Policy',
-        "default-src 'none'; connect-src 'self'; font-src 'self'; img-src 'self' data:; manifest-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
+        "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
     ],
     /** Disable Google's FLoC */
     ['Permissions-Policy', 'interest-cohort=()'],
