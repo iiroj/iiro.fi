@@ -9,5 +9,5 @@
         "types": ["@cloudflare/workers-types"]
     },
     "include": ["index.ts"],
-    "exclude": ["node_modules", "worker"]
+    "exclude": ["node_modules"]
 }
