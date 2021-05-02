@@ -18,8 +18,6 @@ const renderer = path.resolve('./src/server.tsx')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-const mode = isProduction ? 'production' : 'development'
-
 const config = {
     devServer: {
         contentBase: path.resolve('./public'),
@@ -29,17 +27,24 @@ const config = {
         transportMode: 'ws',
     },
 
-    mode,
+    mode: isProduction ? 'production' : 'development',
 
-    devtool: isProduction ? 'source-map' : 'eval-source-map',
+    target: ['web', 'es6'],
+
+    devtool: isProduction ? 'source-map' : false,
 
     entry: {
         main: path.resolve('./src/client.tsx'),
     },
 
+    experiments: {
+        outputModule: true,
+    },
+
     output: {
         chunkFilename: isProduction ? 'build/[name].[chunkhash:8].js' : 'build/[name].js',
         filename: isProduction ? 'build/[name].[chunkhash:8].js' : 'build/[name].js',
+        module: true,
         path: path.resolve('./dist'),
         publicPath: '/',
     },
