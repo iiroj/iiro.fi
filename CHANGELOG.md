@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.3.0](https://github.com/iiroj/iiro.fi/compare/v23.2.4...v23.3.0) (2021-05-04)
+
+
+### Features
+
+* improve site content ([9e4edfd](https://github.com/iiroj/iiro.fi/commit/9e4edfd5623db88f7b1d1d06d12aaded301c0e4a))
+* improve worker ([85a1eb0](https://github.com/iiroj/iiro.fi/commit/85a1eb0bb4e3d763be0dd6c8cc9efe7a15d2ad8b))
+* remove plaintext response ([cade322](https://github.com/iiroj/iiro.fi/commit/cade322a74f10aa0b13f161f11bd52376e2642f4))
+
 ### [23.2.4](https://github.com/iiroj/iiro.fi/compare/v23.2.3...v23.2.4) (2021-05-02)
 
 ### [23.2.3](https://github.com/iiroj/iiro.fi/compare/v23.2.2...v23.2.3) (2021-04-28)
