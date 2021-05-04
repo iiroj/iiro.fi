@@ -23,6 +23,7 @@ const App = ({ helmetContext }: Props) => {
                 <link rel="icon" href="/favicon.png" type="image/x-icon" />
                 <link rel="apple-touch-icon" href="/icon.png" />
                 <link rel="mask-icon" href="/icon.svg" color="#333333" />
+                <meta name="description" content="Platform Developer at Verkkokauppa.com" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="theme-color" content="#ffffff" />
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

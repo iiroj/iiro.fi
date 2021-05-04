@@ -8,11 +8,15 @@ export const fonts = {
         color: colors.text.primary,
         fontFamily: SYSTEM_FONT,
         fontStyle: 'normal',
-        fontSize: 18,
+        fontSize: 16,
         lineHeight: scale.ratio,
         fontWeight: 400,
 
         ...minWidth.tablet({
+            fontSize: 18,
+        }),
+
+        ...minWidth.desktop({
             fontSize: 24,
         }),
     },
@@ -23,9 +27,9 @@ export const fonts = {
 
     h1: {
         fontSize: 32,
-        fontWeight: 400,
+        fontWeight: 600,
         letterSpacing: '-2',
-        lineHeight: '0.8em',
+        lineHeight: scale.ratio,
 
         ...minWidth.tablet({
             fontSize: 48,
@@ -33,6 +37,19 @@ export const fonts = {
 
         ...minWidth.desktop({
             fontSize: 64,
+        }),
+    },
+
+    h2: {
+        fontSize: 24,
+        lineHeight: scale.ratio,
+
+        ...minWidth.tablet({
+            fontSize: 28,
+        }),
+
+        ...minWidth.desktop({
+            fontSize: 32,
         }),
     },
 }

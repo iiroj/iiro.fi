@@ -9,17 +9,25 @@ const main = css({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: `${spacing.medium} ${spacing.small} ${spacing.small}`,
+    padding: `${spacing.large} ${spacing.medium} ${spacing.medium}`,
 
-    'header + section': {
-        marginTop: spacing.medium,
+    h1: {
+        marginBottom: spacing.tiny,
+    },
+
+    h2: {
+        marginBottom: spacing.small,
     },
 
     ...minWidth.tablet({
-        padding: `${spacing.large} ${spacing.medium}`,
+        padding: `${spacing.huge} ${spacing.large} ${spacing.large}`,
 
-        'header + section': {
-            marginTop: spacing.large,
+        h1: {
+            marginBottom: spacing.small,
+        },
+
+        h2: {
+            marginBottom: spacing.medium,
         },
     }),
 })
@@ -37,12 +45,13 @@ const NotFound = () => (
         </Helmet>
 
         <main css={main}>
-            <header>
-                <h1>404 — Page Not Found</h1>
-            </header>
-            <section>
+            <h1>Four Zero Four</h1>
+
+            <h2>Page Not Found</h2>
+
+            <nav>
                 <LinkButton to="/">Back Home</LinkButton>
-            </section>
+            </nav>
         </main>
     </div>
 )

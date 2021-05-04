@@ -12,7 +12,7 @@ const style = css({
     borderRadius: spacing.medium,
     color: 'inherit',
     display: 'inline-block',
-    padding: `${spacing.tiny} ${spacing.small}`,
+    padding: `${spacing.tiny} ${spacing.regular}`,
     textDecoration: 'none',
 
     ':hover': {
