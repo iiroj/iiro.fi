@@ -39,11 +39,11 @@ const renderer: Renderer = async ({ path, stats }) => {
         ${helmetContext.helmet.link.toString()}
         ${helmetContext.helmet.title.toString()}
         ${helmetContext.helmet.script.toString()}
-        ${scriptTags}
         <style>${css}</style>
       </head>
       <body ${helmetContext.helmet.bodyAttributes.toString()}>
         <div id="root">${html}</div>
+        ${scriptTags}
       </body>
     </html>
   `
