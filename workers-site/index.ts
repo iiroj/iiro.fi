@@ -1,4 +1,11 @@
-import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
+import { getAssetFromKV, NotFoundError } from '@cloudflare/kv-asset-handler'
+
+const KV_OPTIONS = {
+    cacheControl: {
+        browserTTL: 60 * 60 /** One hour */,
+        edgeTTL: 2 * 60 * 60 * 24 /** Two days */,
+    },
+}
 
 /** The static headers to be added to rich HTML responses */
 const STATIC_HEADERS = [
@@ -26,8 +33,6 @@ const withResponseHeaders = async (response: Response): Promise<Response> => {
     return response
 }
 
-const notFoundError = new Error('Failed to respond with 404')
-
 /**
  * Get the rich HTML response to a fetch event:
  *
@@ -37,10 +42,10 @@ const notFoundError = new Error('Failed to respond with 404')
  */
 const getResponse = async (event: FetchEvent): Promise<Response> => {
     try {
-        const response = await getAssetFromKV(event)
+        const response = await getAssetFromKV(event, KV_OPTIONS)
         return withResponseHeaders(response)
     } catch (error) {
-        try {
+        if (error instanceof NotFoundError) {
             const notFoundResponse = await getAssetFromKV(event, {
                 mapRequestToAsset: (req) => new Request(`${new URL(req.url).origin}/404.html`, req),
             })
@@ -49,11 +54,16 @@ const getResponse = async (event: FetchEvent): Promise<Response> => {
                 new Response(notFoundResponse.body, {
                     ...notFoundResponse,
                     status: 404,
+                    statusText: 'not found',
                 })
             )
-        } catch {
-            throw notFoundError
         }
+
+        return new Response('500 — Internal Error', {
+            headers: { 'Content-Type': 'text/plain' },
+            status: 500,
+            statusText: 'intrernal error',
+        })
     }
 }
 
@@ -65,15 +75,6 @@ const getResponse = async (event: FetchEvent): Promise<Response> => {
  * 1. Else, respond with status 500
  */
 addEventListener('fetch', async (event: FetchEvent) => {
-    try {
-        const response = getResponse(event)
-        return event.respondWith(response)
-    } catch {
-        event.respondWith(
-            new Response('500 — Internal Error', {
-                headers: { 'Content-Type': 'text/plain' },
-                status: 500,
-            })
-        )
-    }
+    const response = getResponse(event)
+    return event.respondWith(response)
 })
