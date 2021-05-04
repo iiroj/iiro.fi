@@ -28,6 +28,7 @@ const renderer: Renderer = async ({ path, stats }) => {
     )
 
     const { html, css } = extractCritical(renderToString(app))
+    const linkTags = extractor.getLinkTags()
     const scriptTags = extractor.getScriptTags({ type: 'module' }).replace(/async/gm, 'defer')
 
     return `
@@ -35,6 +36,7 @@ const renderer: Renderer = async ({ path, stats }) => {
     <html ${helmetContext.helmet.htmlAttributes.toString()}>
       <head>
         <meta name="version" content="${stats.hash}" />
+        ${linkTags}
         ${helmetContext.helmet.meta.toString()}
         ${helmetContext.helmet.link.toString()}
         ${helmetContext.helmet.title.toString()}
