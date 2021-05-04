@@ -1,58 +1,5 @@
 import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
 
-/**
- * Whether the request should be responded with in plaintext:
- *
- * 1. `false` if the request's `Accept` header includes `text/html`
- * 1. `true` if the request's `Accept` header includes `text/plain`
- * 1. `true` if the request's `User-Agent` header starts with `curl`
- * 1. `true` if the request's `User-Agent` header starts with `Wget`
- * 1. `false` otherwise
- */
-const isPlaintextRequest = (request: Request): boolean => {
-    const acceptHeader = request.headers.get('Accept')
-
-    if (acceptHeader?.includes('text/html')) {
-        return false
-    }
-
-    if (acceptHeader?.includes('text/plain')) {
-        return true
-    }
-
-    const userAgentHeader = request.headers.get('User-Agent')
-
-    if (userAgentHeader?.startsWith('curl') || userAgentHeader?.startsWith('Wget')) {
-        return true
-    }
-
-    return false
-}
-
-/** The plaintext response to be sent instead of rich HTML content */
-const PLAINTEXT_BODY = `Iiro Jäppinen
-- https://github.com/iiroj
-- https://linkedin.com/in/iiroj
-`
-
-/** The `Content-Type: text/plain` header */
-const PLAINTEXT_OPTIONS = {
-    headers: { 'Content-Type': 'text/plain' },
-}
-
-/** Get plaintext response to a fetch event */
-const getPlaintextResponse = async (event: FetchEvent): Promise<Response> => {
-    const { pathname } = new URL(event.request.url)
-
-    /** Only respond with 200 to the root pathname */
-    if (pathname === '/') {
-        return new Response(PLAINTEXT_BODY, { ...PLAINTEXT_OPTIONS, status: 200 })
-    }
-
-    /** Otherwise respond with 404 */
-    return new Response('404 — Page Not Found', { ...PLAINTEXT_OPTIONS, status: 404 })
-}
-
 /** The static headers to be added to rich HTML responses */
 const STATIC_HEADERS = [
     [
@@ -119,14 +66,14 @@ const getResponse = async (event: FetchEvent): Promise<Response> => {
  */
 addEventListener('fetch', async (event: FetchEvent) => {
     try {
-        if (isPlaintextRequest(event.request)) {
-            const plaintextResponse = getPlaintextResponse(event)
-            return event.respondWith(plaintextResponse)
-        }
-
         const response = getResponse(event)
         return event.respondWith(response)
     } catch {
-        event.respondWith(new Response('500 — Internal Error', { ...PLAINTEXT_OPTIONS, status: 500 }))
+        event.respondWith(
+            new Response('500 — Internal Error', {
+                headers: { 'Content-Type': 'text/plain' },
+                status: 500,
+            })
+        )
     }
 })
