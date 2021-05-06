@@ -80,7 +80,10 @@ const Root = () => (
 
             <h2>Platform Developer at Verkkokauppa.com</h2>
 
-            <p>I build design systems, develop tooling, maintain open-source libraries, and build containers.</p>
+            <p>
+                I build design systems, develop tooling, and maintain open-source libraries — all inside Docker
+                containers.
+            </p>
 
             <footer>
                 <nav>
