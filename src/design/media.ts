@@ -8,14 +8,16 @@ import { breakpoints } from './breakpoints'
  * @param maxWidth optional maximum width for the media query target
  * @param styles Supplied object interpolation styles
  */
-const createQuery = (minWidth?: number, maxWidth?: number) => (styles: CSSObject): CSSObject => {
-    let query = '@media ('
-    if (minWidth && !maxWidth) query += `min-width: ${minWidth}px`
-    if (minWidth && maxWidth) query += ' and '
-    if (maxWidth) query += `max-width: ${minWidth}px`
-    query += ')'
-    return { [query]: styles }
-}
+const createQuery =
+    (minWidth?: number, maxWidth?: number) =>
+    (styles: CSSObject): CSSObject => {
+        let query = '@media ('
+        if (minWidth && !maxWidth) query += `min-width: ${minWidth}px`
+        if (minWidth && maxWidth) query += ' and '
+        if (maxWidth) query += `max-width: ${minWidth}px`
+        query += ')'
+        return { [query]: styles }
+    }
 
 type Media = {
     -readonly [Key in keyof typeof breakpoints]: ReturnType<typeof createQuery> // eslint-disable-line no-unused-vars
