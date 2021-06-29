@@ -17,7 +17,7 @@ const renderer: Renderer = async ({ path, stats }) => {
     const history = createMemoryHistory({ initialEntries: [path!] })
     const helmetContext = {} as FilledContext
     const cache = createCache({ key: 'css' })
-    const { extractCritical } = createEmotionServer(cache)
+    const { extractCriticalToChunks, constructStyleTagsFromChunks } = createEmotionServer(cache)
 
     const app = (
         <ChunkExtractorManager extractor={extractor}>
@@ -27,7 +27,7 @@ const renderer: Renderer = async ({ path, stats }) => {
         </ChunkExtractorManager>
     )
 
-    const { html, css } = extractCritical(renderToString(app))
+    const { html, styles } = extractCriticalToChunks(renderToString(app))
     const linkTags = extractor.getLinkTags()
     const scriptTags = extractor.getScriptTags({ type: 'module' }).replace(/async/gm, 'defer')
 
@@ -41,7 +41,7 @@ const renderer: Renderer = async ({ path, stats }) => {
         ${helmetContext.helmet.link.toString()}
         ${helmetContext.helmet.title.toString()}
         ${helmetContext.helmet.script.toString()}
-        <style>${css}</style>
+        ${constructStyleTagsFromChunks({ html, styles })}
       </head>
       <body ${helmetContext.helmet.bodyAttributes.toString()}>
         <div id="root">${html}</div>
