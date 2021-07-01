@@ -29,7 +29,10 @@ const renderer: Renderer = async ({ path, stats }) => {
 
     const { html, styles } = extractCriticalToChunks(renderToString(app))
     const linkTags = extractor.getLinkTags()
-    const scriptTags = extractor.getScriptTags({ type: 'module' }).replace(/async/gm, 'defer')
+    const scriptTags = extractor
+        .getScriptTags({ type: 'module' })
+        .replace(/async/gm, 'defer')
+        .replace(/^.*hot-update\.mjs.*$/gm, '')
 
     return `
     <!DOCTYPE html>

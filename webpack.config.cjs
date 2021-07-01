@@ -10,6 +10,7 @@ const HtmlRendererWebpackPlugin = require('html-renderer-webpack-plugin')
 const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const { HotModuleReplacementPlugin } = require('webpack')
 
 const { routes } = require('./src/routes')
 
@@ -24,6 +25,7 @@ const config = {
         historyApiFallback: { index: '/404.html' },
         hot: true,
         port: 3000,
+        sockPath: '/__hmr',
         transportMode: 'ws',
     },
 
@@ -76,10 +78,13 @@ const config = {
         new CopyPlugin({
             patterns: [{ from: 'public', to: '.' }],
         }),
+        !isProduction && new HotModuleReplacementPlugin(),
         !isProduction &&
             new ReactRefreshWebpackPlugin({
                 overlay: {
                     sockIntegration: 'wds',
+                    sockPath: '/__hmr',
+                    sockProtocol: 'ws',
                 },
             }),
     ].filter(Boolean),
