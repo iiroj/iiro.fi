@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import React from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import LinkButton from '../components/LinkButton'
@@ -32,28 +33,20 @@ const main = css({
     }),
 })
 
-const container = css({
-    alignItems: 'stretch',
-    display: 'flex',
-    minHeight: '100%',
-})
-
 const NotFound = () => (
-    <div css={container}>
+    <main css={main}>
         <Helmet>
             <title>Page Not Found</title>
         </Helmet>
 
-        <main css={main}>
-            <h1>Four Zero Four</h1>
+        <h1>Four Zero Four</h1>
 
-            <h2>Page Not Found</h2>
+        <h2>Page Not Found</h2>
 
-            <nav>
-                <LinkButton to="/">Back Home</LinkButton>
-            </nav>
-        </main>
-    </div>
+        <nav>
+            <LinkButton to="/">Back Home</LinkButton>
+        </nav>
+    </main>
 )
 
 export default NotFound

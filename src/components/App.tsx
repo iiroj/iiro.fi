@@ -1,3 +1,4 @@
+import React from 'react'
 import { FilledContext, Helmet, HelmetProvider } from 'react-helmet-async'
 
 import microdata from '../constants/microdata.json'

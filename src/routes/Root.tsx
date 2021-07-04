@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import React from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import LinkButton from '../components/LinkButton'
@@ -63,46 +64,37 @@ const main = css({
     }),
 })
 
-const container = css({
-    alignItems: 'stretch',
-    display: 'flex',
-    minHeight: '100%',
-})
-
 const Root = () => (
-    <div css={container}>
+    <main css={main}>
         <Helmet>
             <title>Iiro Jäppinen</title>
         </Helmet>
 
-        <main css={main}>
-            <h1>Iiro Jäppinen</h1>
+        <h1>Iiro Jäppinen</h1>
 
-            <h2>Platform Developer at Verkkokauppa.com</h2>
+        <h2>Platform Developer at Verkkokauppa.com</h2>
 
-            <p>
-                I build design systems, develop tooling, and maintain open-source libraries — all inside Docker
-                containers.
-            </p>
+        <p>
+            I build design systems, develop tooling, and maintain open-source libraries — all inside Docker containers.
+        </p>
 
-            <footer>
-                <nav>
-                    <ul css={list}>
-                        <li>
-                            <LinkButton to="https://github.com/iiroj" rel="author">
-                                GitHub
-                            </LinkButton>
-                        </li>
-                        <li>
-                            <LinkButton to="https://linkedin.com/in/iiroj" rel="author">
-                                LinkedIn
-                            </LinkButton>
-                        </li>
-                    </ul>
-                </nav>
-            </footer>
-        </main>
-    </div>
+        <footer>
+            <nav>
+                <ul css={list}>
+                    <li>
+                        <LinkButton to="https://github.com/iiroj" rel="author">
+                            GitHub
+                        </LinkButton>
+                    </li>
+                    <li>
+                        <LinkButton to="https://linkedin.com/in/iiroj" rel="author">
+                            LinkedIn
+                        </LinkButton>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </main>
 )
 
 export default Root

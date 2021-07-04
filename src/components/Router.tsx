@@ -1,5 +1,6 @@
 import type { History } from 'history'
 import type { ReactNode } from 'react'
+import React from 'react'
 
 import RouterContext from '../contexts/Router'
 import useRoute from '../hooks/useRoute'
