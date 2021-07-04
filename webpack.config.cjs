@@ -28,7 +28,7 @@ const config = {
 
     mode: isProduction ? 'production' : 'development',
 
-    target: ['web', 'es6'],
+    target: 'browserslist',
 
     devtool: isProduction ? 'source-map' : false,
 
