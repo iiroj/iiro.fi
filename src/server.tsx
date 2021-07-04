@@ -47,7 +47,7 @@ const renderer: Renderer = async ({ path, stats }) => {
         ${scriptTags}
       </head>
       <body ${helmetContext.helmet.bodyAttributes.toString()}>
-        <div id="root">${html}</div>
+        ${html}
       </body>
     </html>
   `

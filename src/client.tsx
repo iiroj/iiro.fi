@@ -10,9 +10,7 @@ const boot = async (): Promise<void> => {
         loadableReady(),
     ])
 
-    const root = document.getElementById('root')
-
-    hydrate(<App history={createBrowserHistory()} />, root)
+    hydrate(<App history={createBrowserHistory()} />, document.body)
 }
 
 window.addEventListener('DOMContentLoaded', boot)
