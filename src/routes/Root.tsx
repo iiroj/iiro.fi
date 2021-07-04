@@ -1,12 +1,12 @@
-import { css } from '@emotion/react'
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
+import styled from 'styled-components'
 
 import LinkButton from '../components/LinkButton'
 import { minWidth } from '../design/media'
 import spacing from '../design/spacing'
 
-const list = css({
+const List = styled.ul({
     display: 'flex',
     margin: `-${spacing.tiny}`,
 
@@ -15,7 +15,7 @@ const list = css({
     },
 })
 
-const main = css({
+const Main = styled.main({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -65,7 +65,7 @@ const main = css({
 })
 
 const Root = () => (
-    <main css={main}>
+    <Main>
         <Helmet>
             <title>Iiro Jäppinen</title>
         </Helmet>
@@ -80,7 +80,7 @@ const Root = () => (
 
         <footer>
             <nav>
-                <ul css={list}>
+                <List>
                     <li>
                         <LinkButton to="https://github.com/iiroj" rel="author">
                             GitHub
@@ -91,10 +91,12 @@ const Root = () => (
                             LinkedIn
                         </LinkButton>
                     </li>
-                </ul>
+                </List>
             </nav>
         </footer>
-    </main>
+    </Main>
 )
+
+Root.displayName = 'Root'
 
 export default Root

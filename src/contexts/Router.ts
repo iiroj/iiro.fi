@@ -15,4 +15,6 @@ export interface RouterContext {
 
 const Router = createContext<Partial<RouterContext>>({})
 
+Router.displayName = 'Router'
+
 export default Router

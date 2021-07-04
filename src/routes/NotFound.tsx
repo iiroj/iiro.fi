@@ -1,12 +1,12 @@
-import { css } from '@emotion/react'
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
+import styled from 'styled-components'
 
 import LinkButton from '../components/LinkButton'
 import { minWidth } from '../design/media'
 import spacing from '../design/spacing'
 
-const main = css({
+const Main = styled.main({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -34,7 +34,7 @@ const main = css({
 })
 
 const NotFound = () => (
-    <main css={main}>
+    <Main>
         <Helmet>
             <title>Page Not Found</title>
         </Helmet>
@@ -46,7 +46,9 @@ const NotFound = () => (
         <nav>
             <LinkButton to="/">Back Home</LinkButton>
         </nav>
-    </main>
+    </Main>
 )
+
+NotFound.displayName = 'NotFound'
 
 export default NotFound

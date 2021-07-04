@@ -16,7 +16,7 @@
         "plugin:import/warnings",
         "prettier"
     ],
-    "plugins": ["@emotion", "@typescript-eslint", "react-hooks", "prettier", "simple-import-sort"],
+    "plugins": ["@typescript-eslint", "react-hooks", "prettier", "simple-import-sort"],
     "rules": {
         "arrow-body-style": ["error", "as-needed"],
         "import/no-unused-modules": "error",

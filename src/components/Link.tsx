@@ -33,4 +33,6 @@ const Link = ({ onClick, children, to, ...rest }: Props) => {
     )
 }
 
+Link.displayName = 'Link'
+
 export default Link

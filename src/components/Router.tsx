@@ -23,4 +23,6 @@ const Router = ({ children, history }: Props) => {
     return <RouterContext.Provider value={routerContext}>{children}</RouterContext.Provider>
 }
 
+Router.displayName = 'Router'
+
 export default Router

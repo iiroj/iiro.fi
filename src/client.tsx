@@ -1,6 +1,5 @@
-/// <reference types="@emotion/react/types/css-prop" />
-
 import { loadableReady } from '@loadable/component'
+import React from 'react'
 import { hydrate } from 'react-dom'
 
 const boot = async (): Promise<void> => {

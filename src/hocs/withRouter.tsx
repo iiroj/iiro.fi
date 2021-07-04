@@ -1,5 +1,6 @@
 import { History } from 'history'
 import type { ComponentProps, FunctionComponent } from 'react'
+import React from 'react'
 
 import Router from '../components/Router'
 
