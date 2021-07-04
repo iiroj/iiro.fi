@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.3.5](https://github.com/iiroj/iiro.fi/compare/v23.3.4...v23.3.5) (2021-07-04)
+
+
+### Bug Fixes
+
+* do not include preload links for deferred modules ([b4f377c](https://github.com/iiroj/iiro.fi/commit/b4f377c8aeff450a891955b3c39007f72c915342))
+
 ### [23.3.4](https://github.com/iiroj/iiro.fi/compare/v23.3.3...v23.3.4) (2021-07-04)
 
 ### [23.3.3](https://github.com/iiroj/iiro.fi/compare/v23.3.2...v23.3.3) (2021-07-04)
