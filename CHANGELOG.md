@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.3.3](https://github.com/iiroj/iiro.fi/compare/v23.3.2...v23.3.3) (2021-07-04)
+
+
+### Bug Fixes
+
+* **deps:** update html-renderer-webpack-plugin@6 ([7a4761a](https://github.com/iiroj/iiro.fi/commit/7a4761a3d48bc176e19762d9ee3042fc6cf5a5d6))
+
 ### [23.3.2](https://github.com/iiroj/iiro.fi/compare/v23.3.1...v23.3.2) (2021-06-29)
 
 
