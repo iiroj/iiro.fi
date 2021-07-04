@@ -7,6 +7,7 @@ const LoadablePlugin = require('@loadable/webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const HtmlRendererWebpackPlugin = require('html-renderer-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
@@ -88,9 +89,24 @@ const config = {
                 use: [
                     {
                         loader: 'babel-loader',
-                        options: {
-                            envName: isProduction ? 'webpack_production' : 'webpack_development',
-                        },
+                        options: { envName: isProduction ? 'webpack_production' : 'webpack_development' },
+                    },
+                    {
+                        loader: '@linaria/webpack-loader',
+                        options: { sourceMap: true },
+                    },
+                ],
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: { esModule: true },
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: { sourceMap: true },
                     },
                 ],
             },
@@ -102,6 +118,10 @@ const config = {
         new HtmlRendererWebpackPlugin({ paths, renderer }),
         new CopyPlugin({
             patterns: [{ from: 'public', to: '.' }],
+        }),
+        new MiniCssExtractPlugin({
+            filename: isProduction ? 'build/[name].[chunkhash:8].css' : 'build/[name].css',
+            experimentalUseImportModule: true,
         }),
         !isProduction &&
             new ReactRefreshWebpackPlugin({

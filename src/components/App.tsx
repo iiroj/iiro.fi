@@ -1,10 +1,31 @@
+import { css } from '@linaria/core'
 import React from 'react'
 import { FilledContext, Helmet, HelmetProvider } from 'react-helmet-async'
 
 import microdata from '../constants/microdata.json'
+import { colors } from '../design/colors'
 import withRouter from '../hocs/withRouter'
 import useRouter from '../hooks/useRouter'
-import Globals from './Globals'
+import colorStyles from '../styles/colors'
+import fonts from '../styles/fonts'
+
+export const globals = css`
+    :global() {
+        :root {
+            ${colorStyles}
+        }
+
+        ${fonts}
+
+        body {
+            background-color: ${colors.background.primary};
+            color: ${colors.text.primary};
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+    }
+`
 
 const htmlClass = typeof window === 'undefined' ? 'no-js' : 'js'
 
@@ -32,8 +53,6 @@ const App = ({ helmetContext }: Props) => {
                     {JSON.stringify(microdata)}
                 </script>
             </Helmet>
-
-            <Globals />
 
             <Route />
         </HelmetProvider>

@@ -4,7 +4,6 @@ import type { Renderer } from 'html-renderer-webpack-plugin'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import type { FilledContext } from 'react-helmet-async'
-import { ServerStyleSheet } from 'styled-components'
 
 import App from './components/App'
 
@@ -15,7 +14,6 @@ const renderer: Renderer = async ({ path, stats }) => {
     const extractor = new ChunkExtractor({ entrypoints: ['main'], stats })
     const history = createMemoryHistory({ initialEntries: [path!] })
     const helmetContext = {} as FilledContext
-    const sheet = new ServerStyleSheet()
 
     const app = (
         <ChunkExtractorManager extractor={extractor}>
@@ -23,10 +21,9 @@ const renderer: Renderer = async ({ path, stats }) => {
         </ChunkExtractorManager>
     )
 
-    const html = renderToString(sheet.collectStyles(app))
+    const html = renderToString(app)
 
-    const styleTags = sheet.getStyleTags()
-    sheet.seal()
+    const styleTags = extractor.getStyleTags()
 
     const scriptTags = extractor
         .getScriptTags({ type: 'module' })

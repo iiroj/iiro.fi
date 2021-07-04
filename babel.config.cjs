@@ -1,8 +1,8 @@
 const presetEnv = {}
 
-const presets = [['@babel/preset-env', presetEnv], ['@babel/preset-react'], ['@babel/preset-typescript']]
+const presets = [['@babel/preset-env', presetEnv], '@babel/preset-react', '@babel/preset-typescript', '@linaria']
 
-const plugins = ['@loadable/babel-plugin', 'babel-plugin-styled-components']
+const plugins = ['@loadable/babel-plugin']
 
 module.exports = (api) => {
     const env = api.env()

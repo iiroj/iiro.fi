@@ -1,40 +1,40 @@
+import { css } from '@linaria/core'
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import styled from 'styled-components'
 
 import LinkButton from '../components/LinkButton'
-import { minWidth } from '../design/media'
 import spacing from '../design/spacing'
+import { minWidth } from '../styles/media'
 
-const Main = styled.main({
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: `${spacing.large} ${spacing.medium} ${spacing.medium}`,
+const main = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: ${spacing.large} ${spacing.medium} ${spacing.medium};
 
-    h1: {
-        marginBottom: spacing.tiny,
-    },
+    h1 {
+        margin-bottom: ${spacing.tiny};
+    }
 
-    h2: {
-        marginBottom: spacing.small,
-    },
+    h2 {
+        margin-bottom: ${spacing.small};
+    }
 
-    ...minWidth.tablet({
-        padding: `${spacing.huge} ${spacing.large} ${spacing.large}`,
+    ${minWidth.tablet} {
+        padding: ${spacing.huge} ${spacing.large} ${spacing.large};
 
-        h1: {
-            marginBottom: spacing.small,
-        },
+        h1 {
+            margin-bottom: ${spacing.small};
+        }
 
-        h2: {
-            marginBottom: spacing.medium,
-        },
-    }),
-})
+        h2 {
+            margin-bottom: ${spacing.medium};
+        }
+    }
+`
 
 const NotFound = () => (
-    <Main>
+    <main className={main}>
         <Helmet>
             <title>Page Not Found</title>
         </Helmet>
@@ -46,7 +46,7 @@ const NotFound = () => (
         <nav>
             <LinkButton to="/">Back Home</LinkButton>
         </nav>
-    </Main>
+    </main>
 )
 
 NotFound.displayName = 'NotFound'

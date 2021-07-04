@@ -1,71 +1,73 @@
+import { css } from '@linaria/core'
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import styled from 'styled-components'
 
 import LinkButton from '../components/LinkButton'
-import { minWidth } from '../design/media'
 import spacing from '../design/spacing'
+import { minWidth } from '../styles/media'
 
-const List = styled.ul({
-    display: 'flex',
-    margin: `-${spacing.tiny}`,
+const list = css`
+    display: flex;
+    list-style: none;
+    margin: -${spacing.tiny};
+    padding: 0;
 
-    li: {
-        margin: spacing.tiny,
-    },
-})
+    li {
+        margin: ${spacing.tiny};
+    }
+`
 
-const Main = styled.main({
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: `${spacing.large} ${spacing.medium} ${spacing.medium}`,
+const main = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: ${spacing.large} ${spacing.medium} ${spacing.medium};
 
-    h1: {
-        marginBottom: spacing.tiny,
-    },
+    h1 {
+        margin-bottom: ${spacing.tiny};
+    }
 
-    h2: {
-        marginBottom: spacing.small,
-    },
+    h2 {
+        margin-bottom: ${spacing.small};
+    }
 
-    footer: {
-        marginTop: spacing.regular,
-    },
+    footer {
+        margin-top: ${spacing.regular};
+    }
 
-    ...minWidth.tablet({
-        padding: `${spacing.huge} ${spacing.large} ${spacing.large}`,
+    ${minWidth.tablet} {
+        padding: ${spacing.huge} ${spacing.large} ${spacing.large};
 
-        h1: {
-            marginBottom: spacing.small,
-        },
+        h1 {
+            margin-bottom: ${spacing.small};
+        }
 
-        h2: {
-            marginBottom: spacing.regular,
-        },
+        h2 {
+            margin-bottom: ${spacing.regular};
+        }
 
-        footer: {
-            marginTop: spacing.medium,
-        },
-    }),
+        footer {
+            margin-top: ${spacing.medium};
+        }
+    }
 
-    ...minWidth.desktop({
-        h1: {
-            marginBottom: spacing.regular,
-        },
+    ${minWidth.desktop} {
+        h1 {
+            margin-bottom: ${spacing.regular};
+        }
 
-        h2: {
-            marginBottom: spacing.medium,
-        },
+        h2 {
+            margin-bottom: ${spacing.medium};
+        }
 
-        footer: {
-            marginTop: spacing.large,
-        },
-    }),
-})
+        footer {
+            margin-top: ${spacing.large};
+        }
+    }
+`
 
 const Root = () => (
-    <Main>
+    <main className={main}>
         <Helmet>
             <title>Iiro Jäppinen</title>
         </Helmet>
@@ -80,7 +82,7 @@ const Root = () => (
 
         <footer>
             <nav>
-                <List>
+                <ul className={list}>
                     <li>
                         <LinkButton to="https://github.com/iiroj" rel="author">
                             GitHub
@@ -91,10 +93,10 @@ const Root = () => (
                             LinkedIn
                         </LinkButton>
                     </li>
-                </List>
+                </ul>
             </nav>
         </footer>
-    </Main>
+    </main>
 )
 
 Root.displayName = 'Root'
