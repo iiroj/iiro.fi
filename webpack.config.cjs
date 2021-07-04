@@ -18,6 +18,34 @@ const renderer = path.resolve('./src/server.tsx')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
+const minimizer = isProduction
+    ? [
+          new TerserJSPlugin({
+              extractComments: false,
+              terserOptions: {
+                  compress: {
+                      arguments: true,
+                      ecma: 8,
+                      module: true,
+                      passes: 2,
+                      unsafe_arrows: true,
+                  },
+                  output: {
+                      comments: false,
+                      ecma: 8,
+                  },
+                  ecma: 8,
+                  module: true,
+              },
+          }),
+          new BundleAnalyzerPlugin({
+              analyzerMode: 'disabled',
+              generateStatsFile: true,
+              openAnalyzer: false,
+          }),
+      ]
+    : undefined
+
 const config = {
     devServer: {
         historyApiFallback: { index: '/404.html' },
@@ -86,33 +114,15 @@ const config = {
     ].filter(Boolean),
 
     optimization: {
-        minimizer: isProduction
-            ? [
-                  new TerserJSPlugin({
-                      extractComments: false,
-                      terserOptions: {
-                          compress: {
-                              arguments: true,
-                              ecma: 8,
-                              module: true,
-                              passes: 2,
-                              unsafe_arrows: true,
-                          },
-                          output: {
-                              comments: false,
-                              ecma: 8,
-                          },
-                          ecma: 8,
-                          module: true,
-                      },
-                  }),
-                  new BundleAnalyzerPlugin({
-                      analyzerMode: 'disabled',
-                      generateStatsFile: true,
-                      openAnalyzer: false,
-                  }),
-              ]
-            : undefined,
+        chunkIds: isProduction ? 'deterministic' : 'named',
+        minimizer,
+        moduleIds: isProduction ? 'deterministic' : 'named',
+        removeAvailableModules: isProduction,
+        runtimeChunk: 'single',
+        splitChunks: {
+            chunks: 'async',
+            minSize: 500,
+        },
     },
 }
 
