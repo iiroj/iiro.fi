@@ -10,7 +10,6 @@ const HtmlRendererWebpackPlugin = require('html-renderer-webpack-plugin')
 const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
-const { HotModuleReplacementPlugin } = require('webpack')
 
 const { routes } = require('./src/routes')
 
@@ -21,12 +20,10 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 const config = {
     devServer: {
-        contentBase: path.resolve('./public'),
         historyApiFallback: { index: '/404.html' },
         hot: true,
         port: 3000,
-        sockPath: '/__hmr',
-        transportMode: 'ws',
+        static: path.resolve('./public'),
     },
 
     mode: isProduction ? 'production' : 'development',
@@ -78,12 +75,11 @@ const config = {
         new CopyPlugin({
             patterns: [{ from: 'public', to: '.' }],
         }),
-        !isProduction && new HotModuleReplacementPlugin(),
         !isProduction &&
             new ReactRefreshWebpackPlugin({
+                esModule: true,
                 overlay: {
                     sockIntegration: 'wds',
-                    sockPath: '/__hmr',
                     sockProtocol: 'ws',
                 },
             }),
