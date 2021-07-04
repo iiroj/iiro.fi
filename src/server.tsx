@@ -28,7 +28,7 @@ const renderer: Renderer = async ({ path, stats }) => {
     )
 
     const { html, styles } = extractCriticalToChunks(renderToString(app))
-    const linkTags = extractor.getLinkTags()
+
     const scriptTags = extractor
         .getScriptTags({ type: 'module' })
         .replace(/async/gm, 'defer')
@@ -39,16 +39,15 @@ const renderer: Renderer = async ({ path, stats }) => {
     <html ${helmetContext.helmet.htmlAttributes.toString()}>
       <head>
         <meta name="version" content="${stats.hash}" />
-        ${linkTags}
         ${helmetContext.helmet.meta.toString()}
         ${helmetContext.helmet.link.toString()}
         ${helmetContext.helmet.title.toString()}
         ${helmetContext.helmet.script.toString()}
         ${constructStyleTagsFromChunks({ html, styles })}
+        ${scriptTags}
       </head>
       <body ${helmetContext.helmet.bodyAttributes.toString()}>
         <div id="root">${html}</div>
-        ${scriptTags}
       </body>
     </html>
   `
