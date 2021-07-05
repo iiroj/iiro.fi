@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.5.0](https://github.com/iiroj/iiro.fi/compare/v23.4.0...v23.5.0) (2021-07-05)
+
+
+### Features
+
+* add Cloudflare Web Analytics script ([068b288](https://github.com/iiroj/iiro.fi/commit/068b2887c3ed2478dfc4b025771522bb0bba7f84))
+
 ## [23.4.0](https://github.com/iiroj/iiro.fi/compare/v23.3.6...v23.4.0) (2021-07-05)
 
 
