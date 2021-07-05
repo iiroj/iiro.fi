@@ -3,16 +3,19 @@
 
 import { loadableReady } from '@loadable/component'
 import React from 'react'
-import { createRoot } from 'react-dom'
 
 const boot = async (): Promise<void> => {
-    const [{ default: App }, { createBrowserHistory }] = await Promise.all([
+    const [{ createRoot }, { default: App }, { createBrowserHistory }] = await Promise.all([
+        import('react-dom'),
         import('./components/App'),
         import('history'),
         loadableReady(),
     ])
 
-    createRoot(document.body).render(<App history={createBrowserHistory()} />)
+    const history = createBrowserHistory()
+    const root = createRoot(document.body)
+
+    root.render(<App history={history} />)
 }
 
 window.addEventListener('DOMContentLoaded', boot)
