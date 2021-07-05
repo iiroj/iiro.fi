@@ -1,18 +1,22 @@
-// eslint-disable-next-line import/no-unassigned-import
+/**
+ * Register babel to all extensions so that
+ * `./server/renderer.tsx` works correctly
+ */
 require('@babel/register')({
     extensions: ['.es6', '.es', '.jsx', '.js', '.mjs', '.ts', '.tsx'],
 })
 
-const LoadablePlugin = require('@loadable/webpack-plugin')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const HtmlRendererWebpackPlugin = require('html-renderer-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const path = require('path')
-const TerserJSPlugin = require('terser-webpack-plugin')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+import LoadablePlugin from '@loadable/webpack-plugin'
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import CopyPlugin from 'copy-webpack-plugin'
+import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import path from 'path'
+import TerserJSPlugin from 'terser-webpack-plugin'
+import type { Configuration } from 'webpack'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-const { getServerRoutes } = require('./server/routes')
+import { getServerRoutes } from './server/routes'
 
 const renderer = path.resolve('./server/renderer.tsx')
 
@@ -25,16 +29,16 @@ const minimizer = isProduction
               terserOptions: {
                   compress: {
                       arguments: true,
-                      ecma: 8,
+                      ecma: 2020,
                       module: true,
                       passes: 2,
                       unsafe_arrows: true,
                   },
                   output: {
                       comments: false,
-                      ecma: 8,
+                      ecma: 2020,
                   },
-                  ecma: 8,
+                  ecma: 2020,
                   module: true,
               },
           }),
@@ -46,7 +50,7 @@ const minimizer = isProduction
       ]
     : undefined
 
-const config = {
+const configuration: Configuration = {
     devServer: {
         historyApiFallback: { index: '/404.html' },
         hot: true,
@@ -112,6 +116,7 @@ const config = {
         ],
     },
 
+    /** @ts-expect-error: LoadablePlugin has bad types */
     plugins: [
         new LoadablePlugin({ outputAsset: false, writeToDisk: false }),
         new HtmlRendererWebpackPlugin({ paths: getServerRoutes, renderer }),
@@ -145,4 +150,4 @@ const config = {
     },
 }
 
-module.exports = config
+export default configuration
