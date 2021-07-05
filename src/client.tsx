@@ -12,8 +12,11 @@ const boot = async (): Promise<void> => {
         loadableReady(),
     ])
 
+    const rootElement = document.getElementById('root')
+    if (!rootElement) return
+
+    const root = createRoot(rootElement)
     const history = createBrowserHistory()
-    const root = createRoot(document.body)
 
     root.render(<App history={history} />)
 }

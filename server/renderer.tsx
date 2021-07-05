@@ -6,6 +6,7 @@ import { renderToString } from 'react-dom/server'
 import type { FilledContext } from 'react-helmet-async'
 
 import App from '../src/components/App'
+import { webAnalytics } from './cloudflareWebAnalytics'
 
 const whitespaceRegExp = /^\s+/gm
 const emptyLineRegExp = /^\s*$(?:\r\n?|\n)/gm
@@ -31,22 +32,23 @@ const renderer: Renderer = async ({ path, stats }) => {
         .replace(/^.*hot-update\.mjs.*$/gm, '')
 
     return `
-    <!DOCTYPE html>
-    <html ${helmetContext.helmet.htmlAttributes.toString()}>
-      <head>
-        <meta name="version" content="${stats.hash}" />
-        ${helmetContext.helmet.title.toString()}
-        ${helmetContext.helmet.meta.toString()}
-        ${helmetContext.helmet.link.toString()}
-        ${helmetContext.helmet.script.toString()}
-        ${styleTags}
-        ${scriptTags}
-      </head>
-      <body ${helmetContext.helmet.bodyAttributes.toString()}>
-        ${html}
-      </body>
-    </html>
-  `
+      <!DOCTYPE html>
+      <html ${helmetContext.helmet.htmlAttributes.toString()}>
+        <head>
+          <meta name="version" content="${stats.hash}" />
+          ${helmetContext.helmet.title.toString()}
+          ${helmetContext.helmet.meta.toString()}
+          ${helmetContext.helmet.link.toString()}
+          ${helmetContext.helmet.script.toString()}
+          ${styleTags}
+          ${scriptTags}
+        </head>
+        <body ${helmetContext.helmet.bodyAttributes.toString()}>
+          <div id="root">${html}</div>
+          ${webAnalytics}
+        </body>
+      </html>
+    `
         .replace(whitespaceRegExp, '')
         .replace(emptyLineRegExp, '')
 }

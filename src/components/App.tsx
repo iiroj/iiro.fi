@@ -20,8 +20,6 @@ export const globals = css`
         body {
             background-color: ${colors.background.primary};
             color: ${colors.text.primary};
-            display: flex;
-            flex-direction: column;
             margin: 0;
         }
     }
