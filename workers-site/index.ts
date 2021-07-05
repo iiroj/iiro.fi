@@ -11,7 +11,7 @@ const KV_OPTIONS = {
 const STATIC_HEADERS = [
     [
         'Content-Security-Policy',
-        "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
+        "default-src 'self'; connect-src 'self' https://cloudflareinsights.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'",
     ],
     /** Disable Google's FLoC */
     ['Permissions-Policy', 'interest-cohort=()'],
