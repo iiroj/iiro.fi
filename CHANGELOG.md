@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.5.1](https://github.com/iiroj/iiro.fi/compare/v23.5.0...v23.5.1) (2021-07-05)
+
+
+### Bug Fixes
+
+* add CSP headers for Cloudflare Web Analytics ([4d01a7e](https://github.com/iiroj/iiro.fi/commit/4d01a7e6c4d217a5aefae8ff8e9ada7a0f1bbb30))
+
 ## [23.5.0](https://github.com/iiroj/iiro.fi/compare/v23.4.0...v23.5.0) (2021-07-05)
 
 
