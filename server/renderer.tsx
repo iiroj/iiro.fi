@@ -5,7 +5,7 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import type { FilledContext } from 'react-helmet-async'
 
-import App from './components/App'
+import App from '../src/components/App'
 
 const whitespaceRegExp = /^\s+/gm
 const emptyLineRegExp = /^\s*$(?:\r\n?|\n)/gm

@@ -12,10 +12,9 @@ const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-const { routes } = require('./src/routes')
+const { getServerRoutes } = require('./server/routes')
 
-const paths = ['/404'].concat(routes.map(([{ path }]) => path))
-const renderer = path.resolve('./src/server.tsx')
+const renderer = path.resolve('./server/renderer.tsx')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -115,7 +114,7 @@ const config = {
 
     plugins: [
         new LoadablePlugin({ outputAsset: false, writeToDisk: false }),
-        new HtmlRendererWebpackPlugin({ paths, renderer }),
+        new HtmlRendererWebpackPlugin({ paths: getServerRoutes, renderer }),
         new CopyPlugin({
             patterns: [{ from: 'public', to: '.' }],
         }),
