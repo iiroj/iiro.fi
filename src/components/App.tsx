@@ -1,6 +1,7 @@
 import { css } from '@linaria/core'
 import React from 'react'
-import { FilledContext, Helmet, HelmetProvider } from 'react-helmet-async'
+import type { FilledContext } from 'react-helmet-async'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 import microdata from '../constants/microdata.json'
 import { colors } from '../design/colors'

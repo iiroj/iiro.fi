@@ -1,5 +1,5 @@
-import { LoadableComponent } from '@loadable/component'
-import { History } from 'history'
+import type { LoadableComponent } from '@loadable/component'
+import type { History } from 'history'
 import { createContext } from 'react'
 
 import type { LocationState, Match } from '../hooks/useRoute'

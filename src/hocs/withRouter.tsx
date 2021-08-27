@@ -1,4 +1,4 @@
-import { History } from 'history'
+import type { History } from 'history'
 import type { ComponentProps, FunctionComponent } from 'react'
 import React from 'react'
 
