@@ -7,7 +7,7 @@ route = "iiro.fi/*"
 
 [site]
 bucket = "./dist"
-entry-point = "workers-site"
+entry-point = "worker"
 
 [build]
 command = "exit 0"

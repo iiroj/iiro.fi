@@ -70,13 +70,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Build
-        run: npm run build
+        run: npm run --workspace=site build
         env:
           CF_WEB_ANALYTICS_TOKEN:  ${{ secrets.CF_WEB_ANALYTICS_TOKEN }}
       - uses: actions/upload-artifact@v2
         with:
           name: site
-          path: dist
+          path: site/dist
           retention-days: 1
 
   build-worker:
@@ -98,11 +98,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Build
-        run: npm --prefix workers-site run build
+        run: npm run --workspace=worker build
       - uses: actions/upload-artifact@v2
         with:
           name: worker
-          path: workers-site/dist
+          path: worker/dist
           retention-days: 1
 
   publish:
@@ -127,11 +127,11 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: site
-          path: dist
+          path: site/dist
       - uses: actions/download-artifact@v2
         with:
           name: worker
-          path: workers-site/dist
+          path: worker/dist
       - name: Publish
         uses: cloudflare/wrangler-action@1.3.0
         with:

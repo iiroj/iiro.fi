@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "prerelease": "npm run lint && npm run -w=site build && npm run -w=workers-site build"
+    "prerelease": "npm run lint && npm run build"
   }
 }

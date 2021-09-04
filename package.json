@@ -13,11 +13,12 @@
   "type": "module",
   "workspaces": [
     "site",
-    "workers-site"
+    "worker"
   ],
   "scripts": {
     "start": "npm run -w=site start",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "build": "npm run --workspaces build",
     "version": "standard-version --no-verify"
   },
   "devDependencies": {
