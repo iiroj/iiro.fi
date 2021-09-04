@@ -1,13 +1,18 @@
 {
-    "extends": "../tsconfig.json",
     "compilerOptions": {
         "allowJs": false,
-        "lib": ["ES2020", "WebWorker"],
-        "noEmit": false,
+        "lib": ["ESNext", "WebWorker"],
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "outDir": "./dist",
         "removeComments": true,
-        "rootDir": "./",
+        "resolveJsonModule": true,
+        "rootDir": "./src",
+        "strict": true,
+        "target": "ESNext",
         "types": ["@cloudflare/workers-types"]
     },
-    "include": ["index.ts"],
     "exclude": ["node_modules"]
 }
