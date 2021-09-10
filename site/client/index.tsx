@@ -2,20 +2,19 @@
 /// <reference types="react/experimental" />
 
 import { loadableReady } from '@loadable/component'
+import { createBrowserHistory } from 'history'
 import React from 'react'
+import { hydrateRoot } from 'react-dom'
+
+import App from '../src/index'
 
 const boot = async (): Promise<void> => {
-    const [{ createRoot }, { default: App }, { createBrowserHistory }] = await Promise.all([
-        import('react-dom'),
-        import('./components/App'),
-        import('history'),
-        loadableReady(),
-    ])
+    await loadableReady()
 
     const rootElement = document.getElementById('root')
     if (!rootElement) return
 
-    const root = createRoot(rootElement)
+    const root = hydrateRoot(rootElement)
     const history = createBrowserHistory()
 
     root.render(<App history={history} />)

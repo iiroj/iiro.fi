@@ -2,17 +2,26 @@ import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 import { createMemoryHistory } from 'history'
 import type { Renderer } from 'html-renderer-webpack-plugin'
 import React from 'react'
-import { renderToString } from 'react-dom/server'
+import { pipeToNodeWritable } from 'react-dom/server'
 import type { FilledContext } from 'react-helmet-async'
 
-import App from '../src/components/App'
+import App from '../src/index'
 import { webAnalytics } from './cloudflareWebAnalytics'
+import { getWritable } from './writable'
+
+const timeout = (ms: number, callback: () => void) =>
+    new Promise<void>((_, reject) => {
+        setTimeout(() => {
+            callback()
+            reject(new Error('Timeout'))
+        }, ms)
+    })
 
 const whitespaceRegExp = /^\s+/gm
 const emptyLineRegExp = /^\s*$(?:\r\n?|\n)/gm
 
 const renderer: Renderer = async ({ path, stats }) => {
-    const extractor = new ChunkExtractor({ entrypoints: ['main'], stats })
+    const extractor = new ChunkExtractor({ entrypoints: ['client'], stats })
     const history = createMemoryHistory({ initialEntries: [path!] })
     const helmetContext = {} as FilledContext
 
@@ -22,7 +31,17 @@ const renderer: Renderer = async ({ path, stats }) => {
         </ChunkExtractorManager>
     )
 
-    const html = renderToString(app)
+    const { writable, done, getData } = getWritable()
+
+    const { abort, startWriting } = pipeToNodeWritable(app, writable, {
+        onCompleteAll() {
+            startWriting()
+        },
+    })
+
+    await Promise.race([done, timeout(250, abort)])
+
+    const html = getData()
 
     const styleTags = extractor.getStyleTags()
 

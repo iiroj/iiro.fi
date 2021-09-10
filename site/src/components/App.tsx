@@ -1,5 +1,5 @@
 import { css } from '@linaria/core'
-import React from 'react'
+import React, { Suspense } from 'react'
 import type { FilledContext } from 'react-helmet-async'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 
@@ -53,7 +53,9 @@ const App = ({ helmetContext }: Props) => {
                 </script>
             </Helmet>
 
-            <Route />
+            <Suspense fallback={<>Loading...</>}>
+                <Route />
+            </Suspense>
         </HelmetProvider>
     )
 }

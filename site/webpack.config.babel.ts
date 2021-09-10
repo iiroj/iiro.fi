@@ -65,7 +65,7 @@ const configuration: Configuration = {
     devtool: isProduction ? 'source-map' : false,
 
     entry: {
-        main: path.resolve('./src/client.tsx'),
+        client: path.resolve('./client/index.tsx'),
     },
 
     experiments: {

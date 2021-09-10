@@ -10,8 +10,10 @@ export interface RouteConfig {
 
 export type Route<P = any> = [RouteConfig, LoadableComponent<P>]
 
-const rootRoute: Route = [{ path: '/', exact: true }, loadable(() => import('./routes/Root'))]
+const Root = loadable(() => import('./routes/Root'))
+const rootRoute: Route = [{ path: '/', exact: true }, Root]
 
 export const routes = [rootRoute]
 
-export const notFoundRoute: Route = [{ path: '/' }, loadable(() => import('./routes/NotFound'))]
+const NotFound = loadable(() => import('./routes/NotFound'))
+export const notFoundRoute: Route = [{ path: '/' }, NotFound]

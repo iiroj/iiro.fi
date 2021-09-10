@@ -126,14 +126,11 @@ const useRoute = (history: History) => {
 
     // Callback to update current route
     useEffect(() => {
-        // If loading takes longer than 250 ms, set loading status
-        const timeout = setTimeout(() => setLoading(true), 250)
+        setLoading(true)
         const route = getRoute(location)
-        // loadable component async method
+        setRoute(route)
         route.Route.load().then(() => {
-            clearTimeout(timeout)
             setLoading(false)
-            setRoute(route)
         })
     }, [location])
 
