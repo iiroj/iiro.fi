@@ -4,6 +4,7 @@ const KV_OPTIONS = {
     cacheControl: {
         browserTTL: 60 * 60 /** One hour */,
         edgeTTL: 2 * 60 * 60 * 24 /** Two days */,
+        bypassCache: false,
     },
 }
 
