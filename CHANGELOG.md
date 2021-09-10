@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.6.1](https://github.com/iiroj/iiro.fi/compare/v23.6.0...v23.6.1) (2021-09-10)
+
+
+### Bug Fixes
+
+* remove 'unsafe-inline' CSP policies as unnecessary ([311cb87](https://github.com/iiroj/iiro.fi/commit/311cb87ff73f58f080285a56ec7b662722181d16))
+
 ## [23.6.0](https://github.com/iiroj/iiro.fi/compare/v23.5.4...v23.6.0) (2021-09-10)
 
 
