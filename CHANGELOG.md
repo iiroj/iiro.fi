@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.6.0](https://github.com/iiroj/iiro.fi/compare/v23.5.4...v23.6.0) (2021-09-10)
+
+
+### Features
+
+* use experimental pipeToNodeWritable for SSR ([310ad36](https://github.com/iiroj/iiro.fi/commit/310ad3659fb503c4e080c39e75200ecf512906b1))
+
+
+### Bug Fixes
+
+* add explicit default value ([2916c48](https://github.com/iiroj/iiro.fi/commit/2916c48528c1da1dfcb947c65c7893a6784885e7))
+
 ### [23.5.4](https://github.com/iiroj/iiro.fi/compare/v23.5.3...v23.5.4) (2021-09-04)
 
 ### [23.5.3](https://github.com/iiroj/iiro.fi/compare/v23.5.2...v23.5.3) (2021-08-27)
