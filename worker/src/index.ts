@@ -37,7 +37,7 @@ const withResponseHeaders = async (response: Response): Promise<Response> => {
  * Get the rich HTML response to a fetch event:
  *
  * 1. Get a file from Cloudflare Workers KV storage and assign static headers
- * 1. Else, get the 404 response file assign its headers
+ * 1. Else, get the 404 response file and assign its headers
  * 1. Else, respond with error message and code 500
  */
 const getResponse = async (event: FetchEvent): Promise<Response> => {
@@ -67,13 +67,7 @@ const getResponse = async (event: FetchEvent): Promise<Response> => {
     }
 }
 
-/**
- * Listen to fetch events and get response:
- *
- * 1. If the request is for plaintext, respond accordingly
- * 1. Else, get rich HTML response with static headers
- * 1. Else, respond with status 500
- */
+/** Listen to fetch events and get response */
 addEventListener('fetch', async (event: FetchEvent) => {
     const response = getResponse(event)
     return event.respondWith(response)
