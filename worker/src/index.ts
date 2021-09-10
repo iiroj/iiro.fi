@@ -12,10 +12,14 @@ const KV_OPTIONS = {
 const STATIC_HEADERS = [
     [
         'Content-Security-Policy',
-        "default-src 'self'; connect-src 'self' https://cloudflareinsights.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'",
+        [
+            `default-src 'self'`,
+            `connect-src 'self' https://cloudflareinsights.com`,
+            `script-src 'self' https://static.cloudflareinsights.com`,
+            `style-src 'self'`,
+        ].join(';'),
     ],
-    /** Disable Google's FLoC */
-    ['Permissions-Policy', 'interest-cohort=()'],
+    ['Permissions-Policy', 'interest-cohort=()'] /** Disable Google's FLoC */,
     ['Referrer-Policy', 'strict-origin-when-cross-origin'],
     ['Strict-Transport-Security', 'max-age=63072000; includeSubdomains; preload'],
     ['X-Content-Type-Options', 'nosniff'],
