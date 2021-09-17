@@ -1,3 +1,5 @@
+compatibility_date = "2021-09-17"
+
 name = "iiro_fi"
 type = "javascript"
 workers_dev = false
