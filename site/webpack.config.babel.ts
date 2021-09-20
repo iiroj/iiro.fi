@@ -119,7 +119,7 @@ const configuration: Configuration = {
             patterns: [{ from: 'public', to: '.' }],
         }),
         new VanillaExtractPlugin({
-            identifiers: isProduction ? 'short' : 'debug',
+            identifiers: 'debug',
         }),
         new MiniCssExtractPlugin({
             filename: isProduction ? 'build/[name].[chunkhash:8].css' : 'build/[name].css',
