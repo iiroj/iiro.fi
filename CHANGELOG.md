@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.7.0](https://github.com/iiroj/iiro.fi/compare/v23.6.1...v23.7.0) (2021-09-20)
+
+
+### Features
+
+* use [@vanilla-extract](https://github.com/vanilla-extract) for CSS ([e4875cf](https://github.com/iiroj/iiro.fi/commit/e4875cf7ba0fe5dcc7a2395320adca9aab7c7ea6))
+
 ### [23.6.1](https://github.com/iiroj/iiro.fi/compare/v23.6.0...v23.6.1) (2021-09-10)
 
 
