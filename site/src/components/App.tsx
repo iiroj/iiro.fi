@@ -1,30 +1,12 @@
-import { css } from '@linaria/core'
+import './App.css' // eslint-disable-line import/no-unassigned-import
+
 import React, { Suspense } from 'react'
 import type { FilledContext } from 'react-helmet-async'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 import microdata from '../constants/microdata.json'
-import { colors } from '../design/colors'
 import withRouter from '../hocs/withRouter'
 import useRouter from '../hooks/useRouter'
-import colorStyles from '../styles/colors'
-import fonts from '../styles/fonts'
-
-export const globals = css`
-    :global() {
-        :root {
-            ${colorStyles}
-        }
-
-        ${fonts}
-
-        body {
-            background-color: ${colors.background.primary};
-            color: ${colors.text.primary};
-            margin: 0;
-        }
-    }
-`
 
 const htmlClass = typeof window === 'undefined' ? 'no-js' : 'js'
 

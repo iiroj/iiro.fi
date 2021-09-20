@@ -1,6 +1,6 @@
-import scale from './scale'
+import { scale } from './scale.css'
 
-const spacing = {
+export const spacing = {
     tiny: scale(0.33),
     small: scale(0.67),
     regular: scale(1),
@@ -8,5 +8,3 @@ const spacing = {
     large: scale(1.66),
     huge: scale(2),
 }
-
-export default spacing
