@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.7.1](https://github.com/iiroj/iiro.fi/compare/v23.7.0...v23.7.1) (2021-09-20)
+
+
+### Bug Fixes
+
+* always emit debug class names to work around build issue ([21bba24](https://github.com/iiroj/iiro.fi/commit/21bba24300e35254cc7d39fc19e3d73f8d2124e2))
+
 ## [23.7.0](https://github.com/iiroj/iiro.fi/compare/v23.6.1...v23.7.0) (2021-09-20)
 
 
