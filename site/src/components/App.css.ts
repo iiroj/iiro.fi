@@ -2,33 +2,33 @@ import { assignVars, globalStyle } from '@vanilla-extract/css'
 
 import { SYSTEM_FONT } from '../constants/fonts'
 import { breakpoint } from '../design/breakpoint.css'
-import { colors } from '../design/colors.css'
+import { colors, raw } from '../design/colors.css'
 import { ratio } from '../design/scale.css'
 
 globalStyle(':root', {
     vars: assignVars(colors, {
         background: {
-            primary: 'hsl(0, 0%, 100%)',
-            secondary: 'hsl(0, 0%, 96%)',
+            primary: raw.background.primary.light,
+            secondary: raw.background.secondary.light,
         },
         text: {
-            primary: 'hsl(0, 0%, 30%)',
-            active: 'hsl(0, 0%, 0%)',
+            primary: raw.text.primary.light,
+            active: raw.text.active.light,
         },
-        actionable: 'hsl(44, 100%, 75%)',
+        actionable: raw.actionable.light,
     }),
     '@media': {
         '(prefers-color-scheme: dark)': {
             vars: assignVars(colors, {
                 background: {
-                    primary: 'hsl(0, 0%, 10%)',
-                    secondary: 'hsl(0, 0%, 16%)',
+                    primary: raw.background.primary.dark,
+                    secondary: raw.background.secondary.dark,
                 },
                 text: {
-                    primary: 'hsl(0, 0%, 80%)',
-                    active: 'hsl(0, 0%, 70%)',
+                    primary: raw.text.primary.light,
+                    active: raw.text.active.light,
                 },
-                actionable: 'hsla(44, 100%, 33%, 0.4)',
+                actionable: raw.actionable.dark,
             }),
         },
     },

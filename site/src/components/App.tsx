@@ -5,6 +5,7 @@ import type { FilledContext } from 'react-helmet-async'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 import microdata from '../constants/microdata.json'
+import { raw } from '../design/colors.css'
 import withRouter from '../hocs/withRouter'
 import useRouter from '../hooks/useRouter'
 
@@ -28,8 +29,8 @@ const App = ({ helmetContext }: Props) => {
                 <link rel="mask-icon" href="/icon.svg" color="#333333" />
                 <meta name="description" content="Platform Developer at Verkkokauppa.com" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
-                <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+                <meta name="theme-color" content={raw.background.primary.dark} media="(prefers-color-scheme: dark)" />
+                <meta name="theme-color" content={raw.background.primary.light} media="(prefers-color-scheme: light)" />
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <script type="application/ld+json" data-rh="true">
                     {JSON.stringify(microdata)}
