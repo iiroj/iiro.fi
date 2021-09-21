@@ -34,14 +34,13 @@ globalStyle(':root', {
     },
 })
 
-globalStyle('body', {
+globalStyle('html', {
     backgroundColor: colors.background.primary,
     color: colors.text.primary,
     fontFamily: SYSTEM_FONT,
     fontStyle: 'normal',
     fontSize: 16,
     lineHeight: ratio,
-    margin: 0,
     fontWeight: 400,
 
     ...breakpoint({
@@ -52,4 +51,8 @@ globalStyle('body', {
             fontSize: 24,
         },
     }),
+})
+
+globalStyle('body', {
+    margin: 0,
 })

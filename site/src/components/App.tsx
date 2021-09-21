@@ -28,7 +28,8 @@ const App = ({ helmetContext }: Props) => {
                 <link rel="mask-icon" href="/icon.svg" color="#333333" />
                 <meta name="description" content="Platform Developer at Verkkokauppa.com" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="theme-color" content="#ffffff" />
+                <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+                <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <script type="application/ld+json" data-rh="true">
                     {JSON.stringify(microdata)}
