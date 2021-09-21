@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.8.0](https://github.com/iiroj/iiro.fi/compare/v23.7.1...v23.8.0) (2021-09-21)
+
+
+### Features
+
+* adjust color styles for Safari 15 UI ([db9c660](https://github.com/iiroj/iiro.fi/commit/db9c66093b730d1495b3652e3c9e542e27d33575))
+
 ### [23.7.1](https://github.com/iiroj/iiro.fi/compare/v23.7.0...v23.7.1) (2021-09-20)
 
 
