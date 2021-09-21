@@ -25,8 +25,8 @@ globalStyle(':root', {
                     secondary: raw.background.secondary.dark,
                 },
                 text: {
-                    primary: raw.text.primary.light,
-                    active: raw.text.active.light,
+                    primary: raw.text.primary.dark,
+                    active: raw.text.active.dark,
                 },
                 actionable: raw.actionable.dark,
             }),
