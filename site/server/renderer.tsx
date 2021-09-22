@@ -6,7 +6,6 @@ import { pipeToNodeWritable } from 'react-dom/server'
 import type { FilledContext } from 'react-helmet-async'
 
 import App from '../src/index'
-import { webAnalytics } from './cloudflareWebAnalytics'
 import { getWritable } from './writable'
 
 const timeout = (ms: number, callback: () => void) =>
@@ -64,7 +63,6 @@ const renderer: Renderer = async ({ path, stats }) => {
         </head>
         <body ${helmetContext.helmet.bodyAttributes.toString()}>
           <div id="root">${html}</div>
-          ${webAnalytics}
         </body>
       </html>
     `
