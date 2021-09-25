@@ -1,4 +1,4 @@
-compatibility_date = "2021-09-17"
+compatibility_date = "2021-09-25"
 
 name = "iiro_fi"
 type = "javascript"
@@ -15,4 +15,4 @@ entry-point = "worker"
 command = "exit 0"
 
 [build.upload]
-  format  = "service-worker"
+format  = "service-worker"
