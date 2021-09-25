@@ -10,12 +10,7 @@ const KV_OPTIONS = {
 
 /** The static headers to be added to rich HTML responses */
 const staticHeaders = new Headers({
-    'Content-Security-Policy': [
-        `default-src 'self'`,
-        `connect-src 'self' https://cloudflareinsights.com`,
-        `script-src 'self' https://static.cloudflareinsights.com`,
-        `style-src 'self'`,
-    ].join(';'),
+    'Content-Security-Policy': `default-src 'self'`,
     'Permissions-Policy': 'interest-cohort=()' /** Disable Google's FLoC */,
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Strict-Transport-Security': 'max-age=63072000; includeSubdomains; preload',
