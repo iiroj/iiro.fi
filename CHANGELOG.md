@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.9.0](https://github.com/iiroj/iiro.fi/compare/v23.8.2...v23.9.0) (2021-09-26)
+
+
+### Features
+
+* update website icons ([97a3247](https://github.com/iiroj/iiro.fi/commit/97a3247cde73f39e9571de99790290ee8d3bd3c5))
+
 ### [23.8.2](https://github.com/iiroj/iiro.fi/compare/v23.8.1...v23.8.2) (2021-09-21)
 
 
