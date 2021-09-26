@@ -9,6 +9,7 @@ const NotFound = () => (
     <main className={main}>
         <Helmet>
             <title>Page Not Found</title>
+            <meta content="noarchive, nofollow, noindex" name="robots" />
         </Helmet>
 
         <h1 className={h1}>Four Zero Four</h1>

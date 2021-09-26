@@ -6,6 +6,7 @@ import { pipeToNodeWritable } from 'react-dom/server'
 import type { FilledContext } from 'react-helmet-async'
 
 import App from '../src/index'
+import staticHead from './staticHead'
 import { getWritable } from './writable'
 
 const timeout = (ms: number, callback: () => void) =>
@@ -58,6 +59,7 @@ const renderer: Renderer = async ({ path, stats }) => {
           ${helmetContext.helmet.meta.toString()}
           ${helmetContext.helmet.link.toString()}
           ${helmetContext.helmet.script.toString()}
+          ${staticHead}
           ${styleTags}
           ${scriptTags}
         </head>
