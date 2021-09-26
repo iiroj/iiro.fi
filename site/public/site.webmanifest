@@ -3,12 +3,61 @@
   "name": "iiro.fi",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "icon-16.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "16x16",
+      "purpose": "maskable monochrome any"
+    },
+    {
+      "src": "icon-16.png",
+      "type": "image/webp",
+      "sizes": "16x16",
+      "purpose": "maskable monochrome any"
+    },
+    {
+      "src": "icon-32.png",
+      "type": "image/png",
+      "sizes": "32x32",
+      "purpose": "maskable monochrome any"
+    },
+    {
+      "src": "icon-32.png",
+      "type": "image/webp",
+      "sizes": "32x32",
+      "purpose": "maskable monochrome any"
+    },
+    {
+      "src": "icon-128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "maskable monochrome any"
+    },
+    {
+      "src": "icon-128.png",
+      "type": "image/webp",
+      "sizes": "128x128",
+      "purpose": "maskable monochrome any"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable monochrome any"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/webp",
+      "sizes": "512x512",
+      "purpose": "maskable monochrome any"
+    },
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "maskable monochrome any"
     }
   ],
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "/",
   "background_color": "#ffffff",
   "theme_color": "#ffffff"
 }
