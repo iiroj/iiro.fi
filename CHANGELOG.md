@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.10.0](https://github.com/iiroj/iiro.fi/compare/v23.9.0...v23.10.0) (2021-09-29)
+
+
+### Features
+
+* update employment ([85147e4](https://github.com/iiroj/iiro.fi/commit/85147e40dcdb59a4d77c9a2b0aa68d914647ad9e))
+
+
+### Bug Fixes
+
+* remove opacity from raster icons ([b3962b6](https://github.com/iiroj/iiro.fi/commit/b3962b66fdd1503165614aabf6c4191c35316f4e))
+
 ## [23.9.0](https://github.com/iiroj/iiro.fi/compare/v23.8.2...v23.9.0) (2021-09-26)
 
 
