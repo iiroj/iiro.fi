@@ -2,11 +2,11 @@
   "@context": "http://schema.org",
   "@type": "Person",
   "name": "Iiro Jäppinen",
-  "jobTitle": "Platform Developer",
+  "jobTitle": "Senior Web Engineer",
   "worksFor": {
     "@type": "Organization",
-    "name": "Verkkokauppa.com",
-    "url": "https://www.verkkokauppa.com"
+    "name": "SOK",
+    "url": "https://s-ryhma.fi/en"
   },
   "url": "https://iiro.fi/",
   "email": "iiro@jappinen.fi",
@@ -17,7 +17,7 @@
     "addressLocality": "Helsinki"
   },
   "sameAs": [
-    "https://linkedin.com/in/iiroj",
-    "https://github.com/iiroj"
+    "https://github.com/iiroj",
+    "https://linkedin.com/in/iiroj"
   ]
 }

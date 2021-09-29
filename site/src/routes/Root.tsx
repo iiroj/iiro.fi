@@ -11,17 +11,15 @@ const Root = () => (
     <main className={main}>
         <Helmet>
             <title>Iiro Jäppinen</title>
-            <meta content="Platform Developer at Verkkokauppa.com" name="description" />
+            <meta content="Senior Web Engineer at SOK" name="description" />
             <script type="application/ld+json">{JSON.stringify(microdata)}</script>
         </Helmet>
 
         <h1 className={h1}>Iiro Jäppinen</h1>
 
-        <h2 className={h2}>Platform Developer at Verkkokauppa.com</h2>
+        <h2 className={h2}>Senior Web Engineer at SOK</h2>
 
-        <p className={p}>
-            I build design systems, develop tooling, and maintain open-source libraries — all inside Docker containers.
-        </p>
+        <p className={p}>I build web experiences, develop tooling, and maintain open-source libraries.</p>
 
         <footer>
             <nav>
