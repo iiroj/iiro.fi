@@ -3,58 +3,34 @@
   "name": "iiro.fi",
   "icons": [
     {
-      "src": "icon-16.png",
-      "type": "image/png",
-      "sizes": "16x16",
-      "purpose": "maskable monochrome any"
-    },
-    {
-      "src": "icon-16.png",
-      "type": "image/webp",
-      "sizes": "16x16",
-      "purpose": "maskable monochrome any"
-    },
-    {
-      "src": "icon-32.png",
-      "type": "image/png",
-      "sizes": "32x32",
-      "purpose": "maskable monochrome any"
-    },
-    {
-      "src": "icon-32.png",
-      "type": "image/webp",
-      "sizes": "32x32",
-      "purpose": "maskable monochrome any"
-    },
-    {
-      "src": "icon-128.png",
-      "type": "image/png",
-      "sizes": "128x128",
-      "purpose": "maskable monochrome any"
-    },
-    {
-      "src": "icon-128.png",
-      "type": "image/webp",
-      "sizes": "128x128",
-      "purpose": "maskable monochrome any"
-    },
-    {
-      "src": "icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "maskable monochrome any"
-    },
-    {
-      "src": "icon-512.png",
-      "type": "image/webp",
-      "sizes": "512x512",
-      "purpose": "maskable monochrome any"
-    },
-    {
-      "src": "icon.svg",
+      "src": "/icon.svg",
       "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "maskable monochrome any"
+    },
+    {
+      "src": "/icon-192.webp",
+      "type": "image/webp",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512.webp",
+      "type": "image/webp",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
     }
   ],
   "start_url": "/",
