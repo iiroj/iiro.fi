@@ -2,7 +2,7 @@ import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 import { createMemoryHistory } from 'history'
 import type { Renderer } from 'html-renderer-webpack-plugin'
 import React from 'react'
-import { pipeToNodeWritable } from 'react-dom/server'
+import { renderToPipeableStream } from 'react-dom/server'
 import type { FilledContext } from 'react-helmet-async'
 
 import App from '../src/index'
@@ -33,9 +33,9 @@ const renderer: Renderer = async ({ path, stats }) => {
 
     const { writable, done, getData } = getWritable()
 
-    const { abort, startWriting } = pipeToNodeWritable(app, writable, {
+    const { abort, pipe } = renderToPipeableStream(app, {
         onCompleteAll() {
-            startWriting()
+            pipe(writable)
         },
     })
 
