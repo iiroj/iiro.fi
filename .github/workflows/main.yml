@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node.js 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 16
       - uses: actions/cache@v2
@@ -38,7 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node.js 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 16
       - uses: actions/cache@v2
@@ -59,7 +59,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node.js 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 16
       - uses: actions/cache@v2
@@ -85,7 +85,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node.js 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 16
       - uses: actions/cache@v2
@@ -112,7 +112,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node.js 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 16
       - uses: actions/cache@v2
