@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.10.1](https://github.com/iiroj/iiro.fi/compare/v23.10.0...v23.10.1) (2021-10-08)
+
+
+### Bug Fixes
+
+* **react:** migrate `pipeToNodeWritable` to `renderToPipeableStream` ([b454e1e](https://github.com/iiroj/iiro.fi/commit/b454e1ecf5a80cd8c1ed6f1db27a51720c4a5f2c))
+
 ## [23.10.0](https://github.com/iiroj/iiro.fi/compare/v23.9.0...v23.10.0) (2021-09-29)
 
 
