@@ -118,9 +118,7 @@ const configuration: Configuration = {
         new CopyPlugin({
             patterns: [{ from: 'public', to: '.' }],
         }),
-        new VanillaExtractPlugin({
-            identifiers: 'debug',
-        }),
+        new VanillaExtractPlugin(),
         new MiniCssExtractPlugin({
             filename: isProduction ? 'build/[name].[chunkhash:8].css' : 'build/[name].css',
             experimentalUseImportModule: true,
