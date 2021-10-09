@@ -9,6 +9,6 @@ export const p = style({
 export const ul = style({
     display: 'flex',
     listStyle: 'none',
-    margin: -spacing.tiny,
+    margin: `-${spacing.tiny}`,
     padding: 0,
 })
