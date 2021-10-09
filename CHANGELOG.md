@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.10.3](https://github.com/iiroj/iiro.fi/compare/v23.10.2...v23.10.3) (2021-10-09)
+
+
+### Bug Fixes
+
+* wrap negative rem spacing in template string ([ef62649](https://github.com/iiroj/iiro.fi/commit/ef62649c2384c87672c799ea19215af11ddf7190))
+
 ### [23.10.2](https://github.com/iiroj/iiro.fi/compare/v23.10.1...v23.10.2) (2021-10-08)
 
 ### [23.10.1](https://github.com/iiroj/iiro.fi/compare/v23.10.0...v23.10.1) (2021-10-08)
