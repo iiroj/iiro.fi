@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.10.4](https://github.com/iiroj/iiro.fi/compare/v23.10.3...v23.10.4) (2021-10-09)
+
+
+### Bug Fixes
+
+* remove tiny negative spacing altogether ([2a2259f](https://github.com/iiroj/iiro.fi/commit/2a2259f7026cd2f32712d096aa4cc9df63473353))
+
 ### [23.10.3](https://github.com/iiroj/iiro.fi/compare/v23.10.2...v23.10.3) (2021-10-09)
 
 
