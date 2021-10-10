@@ -19,13 +19,14 @@ export const processSRITags = (
         <>
             {Children.map(scriptElements, (child) => {
                 const asset = stats.assets!.find(({ name }) => `${child.key}`.replace(/^\//, '') === name)
+                const isScriptFile = `${child.key}`.endsWith('.js')
 
                 const newProps: ScriptProps = {
                     ...child.props,
                     async: undefined,
-                    defer: true,
+                    defer: isScriptFile ? true : undefined,
                     integrity: asset?.integrity,
-                    type: `${child.key}`.endsWith('.js') ? 'module' : child.props.type,
+                    type: isScriptFile ? 'module' : child.props.type,
                 }
 
                 return cloneElement(child, newProps)
