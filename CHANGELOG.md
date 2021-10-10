@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.11.1](https://github.com/iiroj/iiro.fi/compare/v23.11.0...v23.11.1) (2021-10-10)
+
+
+### Bug Fixes
+
+* add `defer` prop only to script elements ([9ffd993](https://github.com/iiroj/iiro.fi/commit/9ffd9930d0d9f4c6f96c3fa5243d296be91adb30))
+* use React.cloneElement instead of mutating props ([976d4b1](https://github.com/iiroj/iiro.fi/commit/976d4b1e9fc100cc3123f1750474a330a4d2594d))
+
 ## [23.11.0](https://github.com/iiroj/iiro.fi/compare/v23.10.4...v23.11.0) (2021-10-10)
 
 
