@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.11.0](https://github.com/iiroj/iiro.fi/compare/v23.10.4...v23.11.0) (2021-10-10)
+
+
+### Features
+
+* add SRI to style and script tags ([352b8b4](https://github.com/iiroj/iiro.fi/commit/352b8b4fdb4614928fdfb5987a49039b2a50587c))
+
 ### [23.10.4](https://github.com/iiroj/iiro.fi/compare/v23.10.3...v23.10.4) (2021-10-09)
 
 
