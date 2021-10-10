@@ -1,9 +1,7 @@
 import React, { Children, ReactElement } from 'react'
-import { renderToPipeableStream } from 'react-dom/server'
 import { StatsCompilation } from 'webpack'
 
-import { timeout } from './timeout'
-import { getWritable } from './writable'
+import { reactRender } from './reactRender'
 
 interface ScriptProps {
     async?: boolean
@@ -13,9 +11,10 @@ interface ScriptProps {
     type?: string
 }
 
-export const processSRITags = async (scriptElements: ReactElement<ScriptProps>[], stats: StatsCompilation) => {
-    const { writable, done, getData } = getWritable()
-
+export const processSRITags = (
+    scriptElements: ReactElement<ScriptProps>[],
+    stats: StatsCompilation
+): Promise<string> => {
     const scripts = (
         <>
             {Children.map(scriptElements, (child) => {
@@ -35,13 +34,5 @@ export const processSRITags = async (scriptElements: ReactElement<ScriptProps>[]
         </>
     )
 
-    const { abort, pipe } = renderToPipeableStream(scripts, {
-        onCompleteAll() {
-            pipe(writable)
-        },
-    })
-
-    await Promise.race([done, timeout(250, abort)])
-
-    return getData()
+    return reactRender(scripts)
 }

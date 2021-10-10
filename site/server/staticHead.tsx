@@ -19,6 +19,4 @@ const StaticHead = () => (
     </>
 )
 
-const staticHead = renderToStaticMarkup(<StaticHead />)
-
-export default staticHead
+export const staticHead = renderToStaticMarkup(<StaticHead />)

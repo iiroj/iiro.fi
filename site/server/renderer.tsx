@@ -2,14 +2,12 @@ import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 import { createMemoryHistory } from 'history'
 import type { Renderer } from 'html-renderer-webpack-plugin'
 import React from 'react'
-import { renderToPipeableStream } from 'react-dom/server'
 import type { FilledContext } from 'react-helmet-async'
 
 import App from '../src/index'
+import { reactRender } from './reactRender'
 import { processSRITags } from './sri'
-import staticHead from './staticHead'
-import { timeout } from './timeout'
-import { getWritable } from './writable'
+import { staticHead } from './staticHead'
 
 const whitespaceRegExp = /^\s+/gm
 const emptyLineRegExp = /^\s*$(?:\r\n?|\n)/gm
@@ -25,17 +23,7 @@ const renderer: Renderer = async ({ path, stats }) => {
         </ChunkExtractorManager>
     )
 
-    const { writable, done, getData } = getWritable()
-
-    const { abort, pipe } = renderToPipeableStream(app, {
-        onCompleteAll() {
-            pipe(writable)
-        },
-    })
-
-    await Promise.race([done, timeout(250, abort)])
-
-    const html = getData()
+    const html = await reactRender(app)
 
     const styleElements = extractor.getStyleElements()
     const scriptElements = extractor.getScriptElements()
