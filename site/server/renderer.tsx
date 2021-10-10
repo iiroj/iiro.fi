@@ -6,16 +6,10 @@ import { renderToPipeableStream } from 'react-dom/server'
 import type { FilledContext } from 'react-helmet-async'
 
 import App from '../src/index'
+import { processSRITags } from './sri'
 import staticHead from './staticHead'
+import { timeout } from './timeout'
 import { getWritable } from './writable'
-
-const timeout = (ms: number, callback: () => void) =>
-    new Promise<void>((_, reject) => {
-        setTimeout(() => {
-            callback()
-            reject(new Error('Timeout'))
-        }, ms)
-    })
 
 const whitespaceRegExp = /^\s+/gm
 const emptyLineRegExp = /^\s*$(?:\r\n?|\n)/gm
@@ -43,12 +37,13 @@ const renderer: Renderer = async ({ path, stats }) => {
 
     const html = getData()
 
-    const styleTags = extractor.getStyleTags()
+    const styleElements = extractor.getStyleElements()
+    const scriptElements = extractor.getScriptElements()
 
-    const scriptTags = extractor
-        .getScriptTags({ type: 'module' })
-        .replace(/async/gm, 'defer')
-        .replace(/^.*hot-update\.mjs.*$/gm, '')
+    const [styleTags, scriptTags] = await Promise.all([
+        processSRITags(styleElements as any, stats),
+        processSRITags(scriptElements as any, stats),
+    ])
 
     return `
       <!DOCTYPE html>

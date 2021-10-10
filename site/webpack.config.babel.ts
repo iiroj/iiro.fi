@@ -6,7 +6,6 @@ require('@babel/register')({
     extensions: ['.es6', '.es', '.jsx', '.js', '.mjs', '.ts', '.tsx'],
 })
 
-import LoadablePlugin from '@loadable/webpack-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
@@ -16,6 +15,7 @@ import path from 'path'
 import TerserJSPlugin from 'terser-webpack-plugin'
 import type { Configuration } from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { SubresourceIntegrityPlugin } from 'webpack-subresource-integrity'
 
 import { getServerRoutes } from './server/routes'
 
@@ -74,8 +74,9 @@ const configuration: Configuration = {
     },
 
     output: {
-        chunkFilename: isProduction ? 'build/[name].[chunkhash:8].js' : 'build/[name].js',
-        filename: isProduction ? 'build/[name].[chunkhash:8].js' : 'build/[name].js',
+        crossOriginLoading: 'anonymous',
+        chunkFilename: isProduction ? 'build/[name].[contenthash].js' : 'build/[name].js',
+        filename: isProduction ? 'build/[name].[contenthash].js' : 'build/[name].js',
         module: true,
         path: path.resolve('./dist'),
         publicPath: '/',
@@ -105,22 +106,14 @@ const configuration: Configuration = {
         ],
     },
 
-    /** @ts-expect-error: LoadablePlugin has bad types */
+    /** @ts-expect-error: Filtering leads to bad types */
     plugins: [
-        new LoadablePlugin({
-            outputAsset: false,
-            writeToDisk: false,
-        }),
-        new HtmlRendererWebpackPlugin({
-            paths: getServerRoutes,
-            renderer,
-        }),
         new CopyPlugin({
             patterns: [{ from: 'public', to: '.' }],
         }),
         new VanillaExtractPlugin(),
         new MiniCssExtractPlugin({
-            filename: isProduction ? 'build/[name].[chunkhash:8].css' : 'build/[name].css',
+            filename: isProduction ? 'build/[name].[contenthash].css' : 'build/[name].css',
             experimentalUseImportModule: true,
         }),
         !isProduction &&
@@ -131,6 +124,11 @@ const configuration: Configuration = {
                     sockProtocol: 'ws',
                 },
             }),
+        new SubresourceIntegrityPlugin(),
+        new HtmlRendererWebpackPlugin({
+            paths: getServerRoutes,
+            renderer,
+        }),
     ].filter(Boolean),
 
     optimization: {
