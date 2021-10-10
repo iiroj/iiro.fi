@@ -1,4 +1,4 @@
-import React, { Children, ReactElement } from 'react'
+import React, { Children, cloneElement, ReactElement } from 'react'
 import { StatsCompilation } from 'webpack'
 
 import { reactRender } from './reactRender'
@@ -18,18 +18,17 @@ export const processSRITags = (
     const scripts = (
         <>
             {Children.map(scriptElements, (child) => {
-                /** Scripts should be `defer` instead of `async` */
-                delete child.props.async
-                child.props.defer = true
-
-                /** Get integrity hash from Webpack Stats, via `webpack-subresource-integrity` */
                 const asset = stats.assets!.find(({ name }) => `${child.key}`.replace(/^\//, '') === name)
-                if (asset) child.props.integrity = asset.integrity
 
-                /** Mark JS files as ESM modules */
-                if (`${child.key}`.endsWith('.js')) child.props.type = 'module'
+                const newProps: ScriptProps = {
+                    ...child.props,
+                    async: undefined,
+                    defer: true,
+                    integrity: asset?.integrity,
+                    type: `${child.key}`.endsWith('.js') ? 'module' : child.props.type,
+                }
 
-                return child
+                return cloneElement(child, newProps)
             })}
         </>
     )
