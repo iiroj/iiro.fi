@@ -9,6 +9,8 @@ import { reactRender } from './reactRender'
 import { processSRITags } from './sri'
 import { staticHead } from './staticHead'
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 const whitespaceRegExp = /^\s+/gm
 const emptyLineRegExp = /^\s*$(?:\r\n?|\n)/gm
 
@@ -44,7 +46,10 @@ const renderer: Renderer = async ({ path, stats }) => {
           ${helmetContext.helmet.script.toString()}
           ${staticHead}
           ${styleTags}
-          ${scriptTags}
+          ${
+              /** Do not include script tags in production build */
+              isProduction ? '' : scriptTags
+          }
         </head>
         <body ${helmetContext.helmet.bodyAttributes.toString()}>
           <div id="root">${html}</div>
