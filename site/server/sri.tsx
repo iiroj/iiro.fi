@@ -3,7 +3,7 @@ import { StatsCompilation } from 'webpack'
 
 import { reactRender } from './reactRender'
 
-interface ScriptProps {
+export interface ScriptProps {
     async?: boolean
     defer?: boolean
     integrity?: string
@@ -18,14 +18,14 @@ export const processSRITags = (
     const scripts = (
         <>
             {Children.map(scriptElements, (child) => {
-                const asset = stats.assets!.find(({ name }) => `${child.key}`.replace(/^\//, '') === name)
-                const isScriptFile = `${child.key}`.endsWith('.js')
+                const asset = stats.assets?.find(({ name }) => `${child.key ?? ''}`.replace(/^\//, '') === name)
+                const isScriptFile = `${child.key ?? ''}`.endsWith('.js')
 
                 const newProps: ScriptProps = {
                     ...child.props,
                     async: undefined,
                     defer: isScriptFile ? true : undefined,
-                    integrity: asset?.integrity,
+                    integrity: asset?.integrity as string | undefined,
                     type: isScriptFile ? 'module' : child.props.type,
                 }
 

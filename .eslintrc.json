@@ -1,33 +1,20 @@
 {
     "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 2020,
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "extraFileExtensions": [".cjs"],
-        "project": ["site/tsconfig.json", "worker/tsconfig.json"],
-        "sourceType": "module"
-    },
     "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:prettier/recommended",
-        "plugin:react/recommended",
         "plugin:import/errors",
         "plugin:import/warnings",
         "prettier"
     ],
-    "plugins": ["@typescript-eslint", "react-hooks", "prettier", "simple-import-sort"],
+    "plugins": ["@typescript-eslint", "prettier", "simple-import-sort"],
+    "root": true,
     "rules": {
         "arrow-body-style": ["error", "as-needed"],
         "import/no-unused-modules": "error",
         "import/no-unassigned-import": "error",
-        "no-undef": "error",
-        "no-unused-vars": "error",
-        "react/display-name": "off",
-        "react/react-in-jsx-scope": "off",
-        "react/prop-types": "off",
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
         "simple-import-sort/imports": "error"
     },
     "settings": {
@@ -35,13 +22,9 @@
             "node": {
                 "extensions": [".js", ".jsx", ".ts", ".tsx"]
             }
-        },
-        "react": {
-            "version": "detect"
         }
     },
     "env": {
-        "es6": true,
         "node": true
     }
 }

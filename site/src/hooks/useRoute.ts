@@ -25,7 +25,7 @@ let cacheCount = 0
  * @see https://github.com/ReactTraining/react-router/blob/29e02a301a6d2f73f6c009d973f87e004c83bea4/packages/react-router/modules/matchPath.js#L7
  */
 const compilePath = (path: string, options: CompileOptions): Compilation => {
-    const cacheKey = `${options.end}${options.strict}${options.sensitive}`
+    const cacheKey = `${String(options.end)}${String(options.strict)}${String(options.sensitive)}`
     const pathCache = cache[cacheKey] || (cache[cacheKey] = {})
 
     if (pathCache[path]) return pathCache[path]
@@ -129,7 +129,7 @@ const useRoute = (history: History) => {
         setLoading(true)
         const route = getRoute(location)
         setRoute(route)
-        route.Route.load().then(() => {
+        void route.Route.load().then(() => {
             setLoading(false)
         })
     }, [location])

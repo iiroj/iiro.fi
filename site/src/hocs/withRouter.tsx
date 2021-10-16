@@ -1,16 +1,16 @@
 import type { History } from 'history'
-import type { ComponentProps, FunctionComponent } from 'react'
+import type { ComponentPropsWithoutRef, FC } from 'react'
 import React from 'react'
 
 import Router from '../components/Router'
 
 type HistoryProp = { history: History }
-type WithRouter<C extends FunctionComponent> = FunctionComponent<ComponentProps<C> & HistoryProp>
+type WithRouterProp<C extends FC> = FC<ComponentPropsWithoutRef<C> & HistoryProp>
 
-const withRouter = <C extends FunctionComponent<any>>(Component: C): WithRouter<C> => {
-    const WithRouter: WithRouter<C> = ({ history, ...rest }) => (
+const withRouter = <C extends FC<any>>(Component: C): WithRouterProp<C> => {
+    const WithRouter: WithRouterProp<C> = ({ history, ...rest }) => (
         <Router history={history}>
-            <Component {...(rest as ComponentProps<C>)} />
+            <Component {...(rest as ComponentPropsWithoutRef<C>)} />
         </Router>
     )
 

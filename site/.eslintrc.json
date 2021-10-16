@@ -1,0 +1,18 @@
+{
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+    ],
+    "parserOptions": {
+        "extraFileExtensions": [".cjs"],
+        "project": "site/tsconfig.json"
+    },
+    "rules": {
+        "react/prop-types": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}

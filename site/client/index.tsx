@@ -20,4 +20,4 @@ const boot = async (): Promise<void> => {
     root.render(<App history={history} />)
 }
 
-window.addEventListener('DOMContentLoaded', boot)
+window.addEventListener('DOMContentLoaded', () => void boot())

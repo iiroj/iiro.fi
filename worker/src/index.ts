@@ -22,9 +22,9 @@ const staticHeaders = new Headers({
 /** Add static headers to a Response */
 const withHeaders = (response: Response): Response => {
     if (response.ok) {
-        for (const [key, value] of staticHeaders.entries()) {
+        staticHeaders.forEach((value, key) => {
             response.headers.set(key, value)
-        }
+        })
     }
 
     return response
@@ -68,7 +68,7 @@ const getResponse = async (event: FetchEvent): Promise<Response> => {
 }
 
 /** Listen to fetch events and get response */
-addEventListener('fetch', (event: FetchEvent) => {
-    const response = getResponse(event)
-    return event.respondWith(response)
+addEventListener('fetch', (event) => {
+    const response = getResponse(event as FetchEvent)
+    return (event as FetchEvent).respondWith(response)
 })
