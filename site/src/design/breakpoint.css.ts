@@ -21,6 +21,7 @@ export const breakpoint = (obj: StyleObj): StyleRule => {
     for (const [key, value] of Object.entries(obj)) {
         const width = widths[key as keyof typeof widths]
         if (width) {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             styles[MEDIA]![`(min-width: ${width}px)`] = value
         }
     }
