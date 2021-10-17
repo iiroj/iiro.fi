@@ -1,17 +1,13 @@
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
-import { createMemoryHistory } from 'history'
-import type { ReactElement } from 'react'
 import React from 'react'
 import type { FilledContext } from 'react-helmet-async'
+import { StaticRouter } from 'react-router-dom/server'
 import type { StatsCompilation } from 'webpack'
 
 import App from '../src/index'
 import { reactRender } from './reactRender'
-import type { ScriptProps } from './sri'
-import { processSRITags } from './sri'
+import { processSRI } from './sri'
 import { staticHead } from './staticHead'
-
-const isProduction = process.env.NODE_ENV === 'production'
 
 const whitespaceRegExp = /^\s+/gm
 const emptyLineRegExp = /^\s*$(?:\r\n?|\n)/gm
@@ -23,24 +19,23 @@ interface Renderer {
 
 const renderer = async ({ path, stats }: Renderer): Promise<string> => {
     const extractor = new ChunkExtractor({ entrypoints: ['client'], stats })
-    const history = createMemoryHistory({ initialEntries: [path] })
     const helmetContext = {} as FilledContext
 
     const app = (
         <ChunkExtractorManager extractor={extractor}>
-            <App helmetContext={helmetContext} history={history} />
+            <StaticRouter location={path}>
+                <App helmetContext={helmetContext} />
+            </StaticRouter>
         </ChunkExtractorManager>
     )
 
     const html = await reactRender(app)
 
-    const styleElements = extractor.getStyleElements()
-    const scriptElements = extractor.getScriptElements()
-
-    const [styleTags, scriptTags] = await Promise.all([
-        processSRITags(styleElements as ReactElement<ScriptProps>[], stats),
-        processSRITags(scriptElements as ReactElement<ScriptProps>[], stats),
-    ])
+    const styleTags = extractor.getStyleTags()
+    const scriptTags = extractor
+        .getScriptTags({ type: 'module' })
+        .replaceAll('async', 'defer')
+        .replaceAll(/^.*hot-update\.mjs.*$/gm, '')
 
     return `
       <!DOCTYPE html>
@@ -52,11 +47,8 @@ const renderer = async ({ path, stats }: Renderer): Promise<string> => {
           ${helmetContext.helmet.link.toString()}
           ${helmetContext.helmet.script.toString()}
           ${staticHead}
-          ${styleTags}
-          ${
-              /** Do not include script tags in production build */
-              isProduction ? '' : scriptTags
-          }
+          ${processSRI(styleTags, stats)}
+          ${processSRI(scriptTags, stats)}
         </head>
         <body ${helmetContext.helmet.bodyAttributes.toString()}>
           <div id="root">${html}</div>

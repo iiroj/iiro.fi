@@ -18,8 +18,6 @@ import type { Configuration } from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { SubresourceIntegrityPlugin } from 'webpack-subresource-integrity'
 
-import { getServerRoutes } from './server/routes'
-
 const renderer = path.resolve('./server/renderer.tsx')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -120,14 +118,10 @@ const configuration: Configuration = {
         !isProduction &&
             new ReactRefreshWebpackPlugin({
                 esModule: true,
-                overlay: {
-                    sockIntegration: 'wds',
-                    sockProtocol: 'ws',
-                },
             }),
         new SubresourceIntegrityPlugin(),
         new HtmlRendererWebpackPlugin({
-            paths: getServerRoutes,
+            paths: ['/', '/404'],
             renderer,
         }),
     ].filter(Boolean),
