@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [23.12.0](https://github.com/iiroj/iiro.fi/compare/v23.11.2...v23.12.0) (2021-10-17)
+
+
+### Features
+
+* use react-router-dom ([b38554a](https://github.com/iiroj/iiro.fi/commit/b38554a831f0888364aaff08c995f1fc1cfd78b6))
+
 ### [23.11.2](https://github.com/iiroj/iiro.fi/compare/v23.11.1...v23.11.2) (2021-10-16)
 
 ### [23.11.1](https://github.com/iiroj/iiro.fi/compare/v23.11.0...v23.11.1) (2021-10-10)
