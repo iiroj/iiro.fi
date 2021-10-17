@@ -7,53 +7,30 @@ require('@babel/register')({
     extensions: ['.es6', '.es', '.jsx', '.js', '.mjs', '.ts', '.tsx'],
 })
 
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import path from 'path'
 import TerserJSPlugin from 'terser-webpack-plugin'
-import type { Configuration } from 'webpack'
+import type { Configuration as WebpackConfiguration } from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server'
 import { SubresourceIntegrityPlugin } from 'webpack-subresource-integrity'
 
 const renderer = path.resolve('./server/renderer.tsx')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-const minimizer = isProduction
-    ? [
-          new TerserJSPlugin({
-              extractComments: false,
-              terserOptions: {
-                  compress: {
-                      arguments: true,
-                      ecma: 2020,
-                      module: true,
-                      passes: 2,
-                      unsafe_arrows: true,
-                  },
-                  output: {
-                      comments: false,
-                      ecma: 2020,
-                  },
-                  ecma: 2020,
-                  module: true,
-              },
-          }),
-          new BundleAnalyzerPlugin({
-              analyzerMode: 'disabled',
-              generateStatsFile: true,
-              openAnalyzer: false,
-          }),
-      ]
-    : undefined
+type Configuration = WebpackConfiguration & {
+    devServer: DevServerConfiguration
+}
 
 const configuration: Configuration = {
     devServer: {
         historyApiFallback: { index: '/404.html' },
-        hot: true,
+        hot: false,
+        liveReload: true,
         port: 3000,
         static: path.resolve('./public'),
     },
@@ -105,7 +82,6 @@ const configuration: Configuration = {
         ],
     },
 
-    /** @ts-expect-error: Filtering leads to bad types */
     plugins: [
         new CopyPlugin({
             patterns: [{ from: 'public', to: '.' }],
@@ -115,10 +91,6 @@ const configuration: Configuration = {
             filename: isProduction ? 'build/[name].[contenthash].css' : 'build/[name].css',
             experimentalUseImportModule: true,
         }),
-        !isProduction &&
-            new ReactRefreshWebpackPlugin({
-                esModule: true,
-            }),
         new SubresourceIntegrityPlugin(),
         new HtmlRendererWebpackPlugin({
             paths: ['/', '/404'],
@@ -128,7 +100,33 @@ const configuration: Configuration = {
 
     optimization: {
         chunkIds: isProduction ? 'deterministic' : 'named',
-        minimizer,
+        minimizer: isProduction
+            ? [
+                  new TerserJSPlugin({
+                      extractComments: false,
+                      terserOptions: {
+                          compress: {
+                              arguments: true,
+                              ecma: 2020,
+                              module: true,
+                              passes: 2,
+                              unsafe_arrows: true,
+                          },
+                          output: {
+                              comments: false,
+                              ecma: 2020,
+                          },
+                          ecma: 2020,
+                          module: true,
+                      },
+                  }),
+                  new BundleAnalyzerPlugin({
+                      analyzerMode: 'disabled',
+                      generateStatsFile: true,
+                      openAnalyzer: false,
+                  }),
+              ]
+            : undefined,
         moduleIds: isProduction ? 'deterministic' : 'named',
         removeAvailableModules: isProduction,
         runtimeChunk: 'single',

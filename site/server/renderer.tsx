@@ -34,8 +34,8 @@ const renderer = async ({ path, stats }: Renderer): Promise<string> => {
     const styleTags = extractor.getStyleTags()
     const scriptTags = extractor
         .getScriptTags({ type: 'module' })
-        .replaceAll('async', 'defer')
-        .replaceAll(/^.*hot-update\.mjs.*$/gm, '')
+        .replace(/async/gm, 'defer')
+        .replace(/^.*hot-update\.mjs.*$/gm, '')
 
     return `
       <!DOCTYPE html>
