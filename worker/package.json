@@ -12,6 +12,6 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.0.0",
-    "esbuild": "^0.13.7"
+    "esbuild": "^0.13.8"
   }
 }
