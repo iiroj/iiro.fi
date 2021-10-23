@@ -9,10 +9,11 @@ require('@babel/register')({
 
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
+import esbuild from 'esbuild'
+import { ESBuildMinifyPlugin } from 'esbuild-loader'
 import HtmlRendererWebpackPlugin from 'html-renderer-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import path from 'path'
-import TerserJSPlugin from 'terser-webpack-plugin'
 import type { Configuration as WebpackConfiguration } from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server'
@@ -68,9 +69,19 @@ const configuration: Configuration = {
                 exclude: undefined,
                 test: /\.(jsx?|tsx?)$/,
                 use: [
+                    /** babel is used for `vanilla-extract` and `loadable-components` */
                     {
                         loader: 'babel-loader',
-                        options: { envName: isProduction ? 'webpack_production' : 'webpack_development' },
+                        options: { envName: 'webpack' },
+                    },
+                    /** esbuild handles most of the transpilation */
+                    {
+                        loader: 'esbuild-loader',
+                        options: {
+                            implementation: esbuild,
+                            loader: 'tsx',
+                            target: 'es2020',
+                        },
                     },
                 ],
             },
@@ -102,23 +113,9 @@ const configuration: Configuration = {
         chunkIds: isProduction ? 'deterministic' : 'named',
         minimizer: isProduction
             ? [
-                  new TerserJSPlugin({
-                      extractComments: false,
-                      terserOptions: {
-                          compress: {
-                              arguments: true,
-                              ecma: 2020,
-                              module: true,
-                              passes: 2,
-                              unsafe_arrows: true,
-                          },
-                          output: {
-                              comments: false,
-                              ecma: 2020,
-                          },
-                          ecma: 2020,
-                          module: true,
-                      },
+                  new ESBuildMinifyPlugin({
+                      css: true,
+                      target: 'es2020',
                   }),
                   new BundleAnalyzerPlugin({
                       analyzerMode: 'disabled',

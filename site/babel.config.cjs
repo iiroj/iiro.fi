@@ -1,6 +1,9 @@
-const presetEnv = {}
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 
-const presets = [['@babel/preset-env', presetEnv], '@babel/preset-react', '@babel/preset-typescript']
+const presets = []
 
 const plugins = ['@loadable/babel-plugin', '@vanilla-extract/babel-plugin']
 
@@ -9,11 +12,17 @@ module.exports = (api) => {
 
     api.cache.using(() => env)
 
-    if (env.startsWith('webpack')) {
-        presetEnv.modules = false
-        presetEnv.targets = { esmodules: true }
-    } else if (env.startsWith('node')) {
-        presetEnv.targets = { node: 'current' }
+    if (env.startsWith('node')) {
+        presets.push(
+            [
+                '@babel/preset-env',
+                {
+                    targets: { node: 'current' },
+                },
+            ],
+            '@babel/preset-react',
+            '@babel/preset-typescript'
+        )
         plugins.push('@babel/plugin-syntax-dynamic-import')
     }
 
