@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [23.12.4](https://github.com/iiroj/iiro.fi/compare/v23.12.3...v23.12.4) (2021-10-23)
+
+
+### Bug Fixes
+
+* use native a tags instead of Link component on root page ([2d6ce2b](https://github.com/iiroj/iiro.fi/commit/2d6ce2bf7bc9798c42518887d48c96b9cc97ec30))
+
 ### [23.12.3](https://github.com/iiroj/iiro.fi/compare/v23.12.2...v23.12.3) (2021-10-23)
 
 ### [23.12.2](https://github.com/iiroj/iiro.fi/compare/v23.12.1...v23.12.2) (2021-10-23)
