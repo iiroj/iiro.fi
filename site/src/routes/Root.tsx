@@ -25,12 +25,12 @@ const Root = () => (
             <nav>
                 <ul className={ul}>
                     <li>
-                        <LinkButton to="https://github.com/iiroj" rel="author">
+                        <LinkButton href="https://github.com/iiroj" rel="author">
                             GitHub
                         </LinkButton>
                     </li>
                     <li>
-                        <LinkButton to="https://linkedin.com/in/iiroj" rel="author">
+                        <LinkButton href="https://linkedin.com/in/iiroj" rel="author">
                             LinkedIn
                         </LinkButton>
                     </li>

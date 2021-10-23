@@ -4,9 +4,16 @@ import { Link } from 'react-router-dom'
 
 import { linkButton } from './LinkButton.css'
 
-type Props = ComponentPropsWithoutRef<typeof Link>
+type NextLinkProps = ComponentPropsWithoutRef<typeof Link>
 
-const LinkButton = (props: Props) => <Link className={linkButton} {...props} />
+type Props =
+    | NextLinkProps
+    | ({
+          href: string
+      } & Omit<NextLinkProps, 'to'>)
+
+const LinkButton = (props: Props) =>
+    'href' in props ? <a className={linkButton} {...props} /> : <Link className={linkButton} {...props} />
 
 LinkButton.displayName = 'LinkButton'
 
