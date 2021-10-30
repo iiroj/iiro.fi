@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [24.0.0](https://github.com/iiroj/iiro.fi/compare/v23.12.4...v24.0.0) (2021-10-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* use Next.js and `@sls-next/serverless-component`
+
+### Features
+
+* use Next.js and `@sls-next/serverless-component` ([55191bc](https://github.com/iiroj/iiro.fi/commit/55191bcc292cd9051ad4fe33d5e7bcabb90842e6))
+
 ### [23.12.4](https://github.com/iiroj/iiro.fi/compare/v23.12.3...v23.12.4) (2021-10-23)
 
 
