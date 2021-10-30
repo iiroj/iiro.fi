@@ -1,19 +1,20 @@
-import React from 'react'
-import { Helmet } from 'react-helmet-async'
+import Head from 'next/head'
+import type { VFC } from 'react'
+import React, { memo } from 'react'
 
 import LinkButton from '../components/LinkButton'
 import microdata from '../constants/microdata.json'
 import { main } from '../design/main.css'
 import { h1, h2 } from '../design/text.css'
-import { p, ul } from './Root.css'
+import { p, ul } from '../pageCss/index.css'
 
-const Root = () => (
+const Root: VFC = () => (
     <main className={main}>
-        <Helmet>
+        <Head>
             <title>Iiro Jäppinen</title>
             <meta content="Senior Web Engineer at SOK" name="description" />
             <script type="application/ld+json">{JSON.stringify(microdata)}</script>
-        </Helmet>
+        </Head>
 
         <h1 className={h1}>Iiro Jäppinen</h1>
 
@@ -42,4 +43,4 @@ const Root = () => (
 
 Root.displayName = 'Root'
 
-export default Root
+export default memo(Root)

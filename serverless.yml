@@ -1,0 +1,32 @@
+name: iiro.fi
+
+iiro.fi:
+    component: ./node_modules/@sls-next/serverless-component
+    inputs:
+        build:
+            cmd: npm
+            args: ['run', 'build']
+            cwd: ./site
+            env:
+                NODE_ENV: production
+            useV2Handler: true
+        nextConfigDir: ./site
+        bucketName: iiro.fi
+        bucketRegion: eu-north-1
+        description: Lambda@Edge for iiro.fi
+        enableS3Acceleration: false # Not supported in eu-north-1
+        cloudfront:
+            distributionId: E16FEZ3W4V4PTV
+            priceClass: PriceClass_100
+            defaults:
+                forward:
+                    headers: 
+                        - Host
+        domainRedirects:
+            www.iiro.fi: https://iiro.fi
+            iiro.jappinen.fi: https://iiro.fi
+        name:
+            defaultLambda: iiro-fi-next-default-lambda
+        memory: 128
+        runtime: nodejs14.x
+        removeOldLambdaVersions: true

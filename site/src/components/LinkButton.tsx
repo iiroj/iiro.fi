@@ -1,19 +1,18 @@
-import type { ComponentPropsWithoutRef } from 'react'
+import Link from 'next/link'
+import type { AnchorHTMLAttributes, FC } from 'react'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import { linkButton } from './LinkButton.css'
 
-type NextLinkProps = ComponentPropsWithoutRef<typeof Link>
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
+    href: string
+}
 
-type Props =
-    | NextLinkProps
-    | ({
-          href: string
-      } & Omit<NextLinkProps, 'to'>)
-
-const LinkButton = (props: Props) =>
-    'href' in props ? <a className={linkButton} {...props} /> : <Link className={linkButton} {...props} />
+const LinkButton: FC<Props> = ({ href, ...props }) => (
+    <Link href={href} passHref>
+        <a className={linkButton} {...props} />
+    </Link>
+)
 
 LinkButton.displayName = 'LinkButton'
 

@@ -4,7 +4,7 @@
         "plugin:react-hooks/recommended"
     ],
     "parserOptions": {
-        "extraFileExtensions": [".cjs"],
+        "extraFileExtensions": [".mjs"],
         "project": "site/tsconfig.json"
     },
     "rules": {
