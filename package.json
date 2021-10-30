@@ -12,8 +12,7 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "site",
-    "worker"
+    "site"
   ],
   "scripts": {
     "start": "npm run -w=site start",
