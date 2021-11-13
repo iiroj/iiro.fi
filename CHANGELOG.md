@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [24.0.3](https://github.com/iiroj/iiro.fi/compare/v24.0.2...v24.0.3) (2021-11-13)
+
+
+### Bug Fixes
+
+* really fix `vanilla-extract` CSS styles for real ([3aaccf4](https://github.com/iiroj/iiro.fi/commit/3aaccf4f47c10dde2c79ec61d28e16fa1d52f5f0))
+
 ### [24.0.2](https://github.com/iiroj/iiro.fi/compare/v24.0.1...v24.0.2) (2021-11-13)
 
 ### [24.0.1](https://github.com/iiroj/iiro.fi/compare/v24.0.0...v24.0.1) (2021-10-30)
