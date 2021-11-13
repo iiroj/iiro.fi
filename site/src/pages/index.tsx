@@ -2,11 +2,11 @@ import Head from 'next/head'
 import type { VFC } from 'react'
 import React, { memo } from 'react'
 
+import { p, ul } from '../components/index.css'
 import LinkButton from '../components/LinkButton'
 import microdata from '../constants/microdata.json'
 import { main } from '../design/main.css'
 import { h1, h2 } from '../design/text.css'
-import { p, ul } from '../pageCss/index.css'
 
 const Root: VFC = () => (
     <main className={main}>

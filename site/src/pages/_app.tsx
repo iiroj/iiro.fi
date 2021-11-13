@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unassigned-import
-import '../pageCss/_app.css'
+import '../components/_app.css'
 
 import type { AppProps } from 'next/app'
 import React, { memo, VFC } from 'react'
