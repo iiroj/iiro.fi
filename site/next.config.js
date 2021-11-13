@@ -25,6 +25,6 @@ const config = {
     webpack5: true,
 }
 
-const plugins = [createVanillaExtractPlugin()]
+const plugins = [createVanillaExtractPlugin]
 
 module.exports = withPlugins(plugins, config)
