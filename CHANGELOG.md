@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [24.0.2](https://github.com/iiroj/iiro.fi/compare/v24.0.1...v24.0.2) (2021-11-13)
+
 ### [24.0.1](https://github.com/iiroj/iiro.fi/compare/v24.0.0...v24.0.1) (2021-10-30)
 
 ## [24.0.0](https://github.com/iiroj/iiro.fi/compare/v23.12.4...v24.0.0) (2021-10-30)
