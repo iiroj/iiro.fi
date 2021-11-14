@@ -5,10 +5,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/require-await */
 
-const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin')
-const { getGlobalCssLoader } = require('next/dist/build/webpack/config/blocks/css/loaders')
+const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin')
 
 const headers = require('./next/headers')
+
+const withVanillaExtract = createVanillaExtractPlugin()
 
 const config = {
     eslint: { ignoreDuringBuilds: true },
@@ -19,30 +20,6 @@ const config = {
     swcMinify: true,
     target: 'serverless',
     typescript: { ignoreBuildErrors: true },
-    webpack(config, { dev, isServer }) {
-        const oneOfRule = config.module.rules.find((rule) => 'oneOf' in rule)
-
-        oneOfRule.oneOf.unshift({
-            test: /\.vanilla\.css$/i,
-            sideEffects: true,
-            use: getGlobalCssLoader(
-                {
-                    assetPrefix: config.assetPrefix,
-                    isClient: !isServer,
-                    isServer,
-                    isDevelopment: dev,
-                    future: config.future || {},
-                    experimental: config.experimental || {},
-                },
-                [],
-                []
-            ),
-        })
-
-        config.plugins.push(new VanillaExtractPlugin())
-
-        return config
-    },
 }
 
-module.exports = config
+module.exports = withVanillaExtract(config)

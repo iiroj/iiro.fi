@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@vanilla-extract/babel-plugin": "1.1.2",
-    "@vanilla-extract/webpack-plugin": "2.1.1",
+    "@vanilla-extract/next-plugin": "1.0.1",
     "@types/react": "17.0.34",
     "@types/react-dom": "17.0.11"
   }
