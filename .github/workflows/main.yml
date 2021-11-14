@@ -11,7 +11,7 @@ on:
 jobs:
   install:
     name: Install
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
+      - run: npm i -g npm@latest
       - uses: actions/cache@v2
         id: cache-node_modules
         with:
@@ -33,7 +34,7 @@ jobs:
   lint:
     needs: install
     name: ESLint
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -54,7 +55,7 @@ jobs:
   typecheck:
     needs: install
     name: TypeScript Compiler check
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -76,7 +77,7 @@ jobs:
     if: ${{ startsWith(github.ref, 'refs/heads/') }} # only for commits
     needs: install
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -93,6 +94,8 @@ jobs:
             ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Build
         run: npm run --workspaces build
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
 
   deploy:
     if: ${{ startsWith(github.ref, 'refs/tags/v') }} # only for tags
@@ -100,7 +103,7 @@ jobs:
       - lint
       - typecheck
     name: Deploy
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -126,6 +129,8 @@ jobs:
       - name: Serverless state download
         run: npm run serverless:state:download
       - name: Serverless deploy
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
         run: npm run serverless:deploy
       - name: Serverless state upload
         run: npm run serverless:state:upload
