@@ -1,10 +1,10 @@
-import { style } from '@vanilla-extract/css'
+import styled from 'styled-components'
 
-import { breakpoint } from '../design/breakpoint.css'
-import { spacing } from '../design/spacing.css'
-import { ratio } from './scale.css'
+import { breakpoint } from '../design/breakpoint'
+import { ratio } from '../design/scale'
+import { spacing } from '../design/spacing'
 
-export const h1 = style({
+const H1 = styled.h1({
     fontSize: 32,
     fontWeight: 600,
     letterSpacing: -2,
@@ -23,7 +23,7 @@ export const h1 = style({
     }),
 })
 
-export const h2 = style({
+const H2 = styled.h2({
     fontSize: 25,
     fontWeight: 400,
     lineHeight: ratio,
@@ -40,3 +40,11 @@ export const h2 = style({
         },
     }),
 })
+
+const P = styled.p({
+    margin: 0,
+})
+
+const Text = { H1, H2, P }
+
+export default Text

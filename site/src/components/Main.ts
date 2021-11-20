@@ -1,9 +1,9 @@
-import { style } from '@vanilla-extract/css'
+import styled from 'styled-components'
 
-import { breakpoint } from '../design/breakpoint.css'
-import { spacing } from '../design/spacing.css'
+import { breakpoint } from '../design/breakpoint'
+import { spacing } from '../design/spacing'
 
-export const main = style({
+const Main = styled.main({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -15,3 +15,5 @@ export const main = style({
         },
     }),
 })
+
+export default Main

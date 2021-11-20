@@ -1,10 +1,14 @@
-// eslint-disable-next-line import/no-unassigned-import
-import '../components/_app.css'
-
 import type { AppProps } from 'next/app'
 import React, { memo, VFC } from 'react'
 
-const App: VFC<AppProps> = ({ Component, pageProps }) => <Component {...pageProps} />
+import Globals from '../components/Globals'
+
+const App: VFC<AppProps> = ({ Component, pageProps }) => (
+    <>
+        <Globals />
+        <Component {...pageProps} />
+    </>
+)
 
 App.displayName = 'App'
 

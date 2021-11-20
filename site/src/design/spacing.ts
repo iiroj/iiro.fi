@@ -1,4 +1,4 @@
-import { scale } from './scale.css'
+import { scale } from './scale'
 
 export const spacing = {
     tiny: scale(0.33),

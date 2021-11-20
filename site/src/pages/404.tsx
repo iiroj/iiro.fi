@@ -2,24 +2,24 @@ import Head from 'next/head'
 import React, { memo } from 'react'
 
 import LinkButton from '../components/LinkButton'
-import { main } from '../design/main.css'
-import { h1, h2 } from '../design/text.css'
+import Main from '../components/Main'
+import Text from '../components/Text'
 
 const NotFound = () => (
-    <main className={main}>
+    <Main>
         <Head>
             <title>Page Not Found</title>
             <meta content="noarchive, nofollow, noindex" name="robots" />
         </Head>
 
-        <h1 className={h1}>Four Zero Four</h1>
+        <Text.H1>Four Zero Four</Text.H1>
 
-        <h2 className={h2}>Page Not Found</h2>
+        <Text.H2>Page Not Found</Text.H2>
 
         <nav>
             <LinkButton href="/">Back Home</LinkButton>
         </nav>
-    </main>
+    </Main>
 )
 
 NotFound.displayName = 'NotFound'
