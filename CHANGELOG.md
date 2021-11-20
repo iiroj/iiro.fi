@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [24.1.0](https://github.com/iiroj/iiro.fi/compare/v24.0.4...v24.1.0) (2021-11-20)
+
+
+### Features
+
+* replace `[@vanilla-extract](https://github.com/vanilla-extract)` with `styled-components` ([0ecf5df](https://github.com/iiroj/iiro.fi/commit/0ecf5dfdf2438807313b91ff2a3f4a8994421ec8))
+
 ### [24.0.4](https://github.com/iiroj/iiro.fi/compare/v24.0.3...v24.0.4) (2021-11-20)
 
 ### [24.0.3](https://github.com/iiroj/iiro.fi/compare/v24.0.2...v24.0.3) (2021-11-13)
