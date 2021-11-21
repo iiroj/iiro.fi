@@ -27,6 +27,7 @@ iiro.fi:
             iiro.jappinen.fi: https://iiro.fi
         name:
             defaultLambda: iiro-fi-next-default-lambda
-        memory: 128
         runtime: nodejs14.x
+        memory: 128
+        minifyHandlers: true
         removeOldLambdaVersions: true
