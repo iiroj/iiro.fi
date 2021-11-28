@@ -19,4 +19,4 @@ const staticHeaders = [
 
 const headers = async () => [{ source: '/:path*', headers: staticHeaders }]
 
-export default headers
+module.exports = headers

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/require-await */
 
-import headers from './next/headers.mjs'
+const headers = require('./next/headers')
 
 const config = {
     eslint: {
@@ -21,4 +21,4 @@ const config = {
     },
 }
 
-export default config
+module.exports = config
