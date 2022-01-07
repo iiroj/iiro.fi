@@ -15,6 +15,12 @@ const config = {
     headers,
     poweredByHeader: false,
     reactStrictMode: true,
+    rewrites: async () => [
+        {
+            source: '/favicon',
+            destination: '/favicon.ico',
+        },
+    ],
     swcMinify: true,
     typescript: {
         ignoreBuildErrors: true,
