@@ -17,6 +17,9 @@ const staticHeaders = [
     { key: 'X-XSS-Protection', value: '1; mode=block' },
 ].filter(Boolean)
 
-const headers = async () => [{ source: '/:path*', headers: staticHeaders }]
+const headers = async () => [
+    { source: '/:path*', headers: staticHeaders },
+    { source: '/test', headers: [{ key: 'Content-Type', value: 'text/html' }] },
+]
 
 module.exports = headers
