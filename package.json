@@ -20,13 +20,14 @@
     "typecheck": "tsc --project site/tsconfig.json",
     "build": "npm run --workspaces build",
     "serverless:state:download": "aws s3 sync s3://iiro.fi-serverless-state .serverless --delete",
-    "serverless:deploy": "serverless --debug",
+    "serverless:deploy": "components --debug",
     "serverless:state:upload": "aws s3 sync .serverless s3://iiro.fi-serverless-state --delete",
     "version": "standard-version --no-verify"
   },
   "dependencies": {
     "@commitlint/cli": "16.1.0",
     "@commitlint/config-conventional": "16.0.0",
+    "@serverless/cli": "1.6.0",
     "@sls-next/serverless-component": "3.6.0",
     "@typescript-eslint/eslint-plugin": "5.10.1",
     "@typescript-eslint/parser": "5.10.1",
