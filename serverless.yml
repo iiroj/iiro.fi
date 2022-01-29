@@ -4,11 +4,9 @@ iiro.fi:
     component: ./node_modules/@sls-next/serverless-component
     inputs:
         build:
-            cmd: npm
-            args: ['run', 'build']
-            cwd: ./site
             env:
                 NODE_ENV: production
+            baseDir: ./
             useV2Handler: true
         nextConfigDir: ./site
         bucketName: iiro.fi
