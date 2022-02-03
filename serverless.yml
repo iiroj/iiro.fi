@@ -4,13 +4,7 @@ iiro.fi:
     component: ./node_modules/@sls-next/serverless-component
     inputs:
         build:
-            cmd: npm
-            args: ['run', 'build']
-            cwd: ./site
-            env:
-                NODE_ENV: production
             useV2Handler: true
-        nextConfigDir: ./site
         bucketName: iiro.fi
         bucketRegion: eu-north-1
         description: Lambda@Edge for iiro.fi
