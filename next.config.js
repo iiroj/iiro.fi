@@ -5,9 +5,6 @@
 const headers = require('./next/headers')
 
 const config = {
-    compiler: {
-        styledComponents: true,
-    },
     eslint: {
         ignoreDuringBuilds: true,
     },
@@ -15,6 +12,7 @@ const config = {
     headers,
     poweredByHeader: false,
     reactStrictMode: true,
+    swcMinify: true,
     typescript: {
         ignoreBuildErrors: true,
     },
