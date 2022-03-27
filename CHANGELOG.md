@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [24.2.0](https://github.com/iiroj/iiro.fi/compare/v24.1.19...v24.2.0) (2022-03-27)
+
+
+### Features
+
+* add Vercel Analytics to CSP ([a533fe2](https://github.com/iiroj/iiro.fi/commit/a533fe2c29613843318b5cf7be7ff10c2aff45a4))
+
 ### [24.1.19](https://github.com/iiroj/iiro.fi/compare/v24.1.18...v24.1.19) (2022-03-12)
 
 ### [24.1.18](https://github.com/iiroj/iiro.fi/compare/v24.1.17...v24.1.18) (2022-02-26)
