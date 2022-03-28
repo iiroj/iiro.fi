@@ -5,17 +5,11 @@
 const headers = require('./next/headers')
 
 const config = {
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
     exportPathMap: async (defaultPaths) => defaultPaths,
     headers,
     poweredByHeader: false,
     reactStrictMode: true,
     swcMinify: true,
-    typescript: {
-        ignoreBuildErrors: true,
-    },
 }
 
 module.exports = config
