@@ -1,3 +1,10 @@
+### [24.3.11](https://github.com/iiroj/iiro.fi/compare/v24.3.10...v24.3.11) (2022-04-02)
+
+
+### Bug Fixes
+
+* setup deployment environment ([9ecfc1d](https://github.com/iiroj/iiro.fi/commit/9ecfc1d8269ffad20680defdc0c0ecc541f6a763))
+
 ### [24.3.10](https://github.com/iiroj/iiro.fi/compare/v24.3.9...v24.3.10) (2022-04-02)
 
 
