@@ -5,6 +5,9 @@
 const headers = require('./next/headers')
 
 const config = {
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
     experimental: {
         runtime: 'edge',
     },
@@ -13,6 +16,9 @@ const config = {
     poweredByHeader: false,
     reactStrictMode: true,
     swcMinify: true,
+    typescript: {
+        ignoreBuildErrors: true,
+    },
 }
 
 module.exports = config
