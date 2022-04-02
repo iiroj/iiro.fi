@@ -81,6 +81,8 @@ jobs:
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
       - name: Build
         run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
       - name: Deploy to Vercel
         run: npx vercel --token ${VERCEL_TOKEN} --prod
         env:
