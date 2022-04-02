@@ -108,3 +108,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
       - run: npx semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}

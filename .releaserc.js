@@ -12,6 +12,14 @@ module.exports = {
                 message: 'chore(release): ${nextRelease.version}\n\n${nextRelease.notes}',
             },
         ],
+        [
+            '@semantic-release/github',
+            {
+                failTitle: false,
+                labels: false,
+                releasedLabels: false,
+            },
+        ],
     ],
     repositoryUrl: process.env.GITHUB_ACTIONS ? 'https://github.com/iiroj/iiro.fi' : 'git@github.com:iiroj/iiro.fi.git',
 }
