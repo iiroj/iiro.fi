@@ -1,3 +1,10 @@
+### [24.3.10](https://github.com/iiroj/iiro.fi/compare/v24.3.9...v24.3.10) (2022-04-02)
+
+
+### Bug Fixes
+
+* create GitHub release ([f0dba1d](https://github.com/iiroj/iiro.fi/commit/f0dba1dfea6e9ddf3ff87c413d9e8c1cc0f268a0))
+
 ### [24.3.9](https://github.com/iiroj/iiro.fi/compare/v24.3.8...v24.3.9) (2022-04-02)
 
 
