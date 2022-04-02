@@ -32,7 +32,7 @@ class Document extends NextDocument {
 
     render() {
         return (
-            <Html lang="fi">
+            <Html>
                 <Head />
                 <body>
                     <Main />
