@@ -1,3 +1,10 @@
+### [24.3.8](https://github.com/iiroj/iiro.fi/compare/v24.3.7...v24.3.8) (2022-04-02)
+
+
+### Bug Fixes
+
+* commit versioned files ([c44134b](https://github.com/iiroj/iiro.fi/commit/c44134b5fa6610b1d9b64511de608e92cba27ffd))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
