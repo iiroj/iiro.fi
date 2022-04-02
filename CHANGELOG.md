@@ -1,3 +1,10 @@
+## [24.4.0](https://github.com/iiroj/iiro.fi/compare/v24.3.12...v24.4.0) (2022-04-02)
+
+
+### Features
+
+* simplify styles to remove styled-components ([265be1d](https://github.com/iiroj/iiro.fi/commit/265be1d52095034f3d20a0e4afbdcd84d5056edb))
+
 ### [24.3.12](https://github.com/iiroj/iiro.fi/compare/v24.3.11...v24.3.12) (2022-04-02)
 
 
