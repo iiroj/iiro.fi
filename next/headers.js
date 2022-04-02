@@ -6,7 +6,11 @@ const staticHeaders = [
     isProduction
         ? {
               key: 'Content-Security-Policy',
-              value: `default-src 'self'; style-src 'unsafe-inline' 'self'; connect-src 'sef' https://vitals.vercel-insights.com;`,
+              value: [
+                  `default-src 'self'`,
+                  `style-src 'unsafe-inline' 'self'`,
+                  `connect-src 'sef' https://vitals.vercel-insights.com`,
+              ].join(';'),
           }
         : null,
     { key: 'Permissions-Policy', value: 'interest-cohort=()' /** Disable Google's FLoC */ },

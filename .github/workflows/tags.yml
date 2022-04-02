@@ -25,6 +25,9 @@ jobs:
         run: npm ci
 
   Deploy:
+    environment: 
+      name: Production
+      url: https://iiro.fi
     needs:
       - Install
     runs-on: ubuntu-latest

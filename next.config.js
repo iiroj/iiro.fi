@@ -11,10 +11,7 @@ const config = {
     experimental: {
         runtime: 'edge',
     },
-    exportPathMap: async (defaultPaths) => defaultPaths,
     headers,
-    poweredByHeader: false,
-    reactStrictMode: true,
     swcMinify: true,
     typescript: {
         ignoreBuildErrors: true,
