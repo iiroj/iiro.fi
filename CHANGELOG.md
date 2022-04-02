@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [24.3.0](https://github.com/iiroj/iiro.fi/compare/v24.2.1...v24.3.0) (2022-04-02)
+
+
+### Features
+
+* update React 18, other dependencies ([df5e749](https://github.com/iiroj/iiro.fi/commit/df5e74909a0c869ee5bbb2604445d7793c2ad384))
+
 ### [24.2.1](https://github.com/iiroj/iiro.fi/compare/v24.2.0...v24.2.1) (2022-03-28)
 
 ## [24.2.0](https://github.com/iiroj/iiro.fi/compare/v24.1.19...v24.2.0) (2022-03-27)
