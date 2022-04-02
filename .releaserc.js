@@ -13,6 +13,7 @@ module.exports = {
                 preset: 'conventionalcommits',
             },
         ],
+        '@semantic-release/changelog',
         [
             '@semantic-release/git',
             {
@@ -21,7 +22,5 @@ module.exports = {
             },
         ],
     ],
-    repositoryUrl: process.env.GITHUB_ACTIONS
-        ? 'https://github.com/iiroj/iiro.fi'
-        : 'git@github.com:iiroj/iiro.fi.git',
+    repositoryUrl: process.env.GITHUB_ACTIONS ? 'https://github.com/iiroj/iiro.fi' : 'git@github.com:iiroj/iiro.fi.git',
 }
