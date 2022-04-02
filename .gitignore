@@ -6,3 +6,4 @@ node_modules
 sketch
 
 tsconfig.tsbuildinfo
+.vercel
