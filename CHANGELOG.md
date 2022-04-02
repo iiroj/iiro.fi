@@ -1,3 +1,11 @@
+### [24.3.9](https://github.com/iiroj/iiro.fi/compare/v24.3.8...v24.3.9) (2022-04-02)
+
+
+### Bug Fixes
+
+* allow actions to run on release tag ([7f2b984](https://github.com/iiroj/iiro.fi/commit/7f2b9841da4692d4511e0b50779d145189ca6e29))
+* bump package.json version number on release ([487722d](https://github.com/iiroj/iiro.fi/commit/487722dd665d89e2760c6d0a0cb9e1db9682acd1))
+
 ### [24.3.8](https://github.com/iiroj/iiro.fi/compare/v24.3.7...v24.3.8) (2022-04-02)
 
 
