@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import type { VFC } from 'react'
-import React, { memo } from 'react'
+import React from 'react'
 
 import LinkButton from '../components/LinkButton'
 import Main from '../components/Main'
@@ -43,4 +43,4 @@ const Root: VFC = () => (
 
 Root.displayName = 'Root'
 
-export default memo(Root)
+export default Root

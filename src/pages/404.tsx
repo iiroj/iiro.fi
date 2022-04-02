@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { memo } from 'react'
+import React from 'react'
 
 import LinkButton from '../components/LinkButton'
 import Main from '../components/Main'
@@ -24,4 +24,4 @@ const NotFound = () => (
 
 NotFound.displayName = 'NotFound'
 
-export default memo(NotFound)
+export default NotFound
