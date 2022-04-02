@@ -1,3 +1,10 @@
+### [24.3.12](https://github.com/iiroj/iiro.fi/compare/v24.3.11...v24.3.12) (2022-04-02)
+
+
+### Bug Fixes
+
+* attribute release commit to previous author ([1fed717](https://github.com/iiroj/iiro.fi/commit/1fed71742d51a94157916a32efd20ec3afa002c4))
+
 ### [24.3.11](https://github.com/iiroj/iiro.fi/compare/v24.3.10...v24.3.11) (2022-04-02)
 
 
