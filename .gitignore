@@ -1,9 +1,7 @@
 .next
-.serverless
-.serverless_nextjs
+.vercel
 dist
 node_modules
 sketch
 
 tsconfig.tsbuildinfo
-.vercel
