@@ -61,7 +61,7 @@ jobs:
 
   Build:
     needs:
-      - Lint
+      - ESLint
       - Typecheck
     runs-on: ubuntu-latest
     steps:
