@@ -6,8 +6,6 @@
     },
     "extends": [
         "eslint:recommended",
-        "next",
-        "next/core-web-vitals",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/errors",
@@ -24,7 +22,6 @@
     ],
     "root": true,
     "rules": {
-        "@next/next/no-html-link-for-pages": ["error", "src/pages/"],
         "arrow-body-style": ["error", "as-needed"],
         "import/no-unused-modules": "error",
         "import/no-unassigned-import": "error",
