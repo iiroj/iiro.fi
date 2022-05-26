@@ -1,3 +1,10 @@
+## [24.5.0](https://github.com/iiroj/iiro.fi/compare/v24.4.3...v24.5.0) (2022-05-26)
+
+
+### Features
+
+* update title ([bc48749](https://github.com/iiroj/iiro.fi/commit/bc487497879f8db2cc19af66432ff21cea34c035))
+
 ### [24.4.3](https://github.com/iiroj/iiro.fi/compare/v24.4.2...v24.4.3) (2022-05-22)
 
 
