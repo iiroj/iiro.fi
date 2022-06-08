@@ -1,3 +1,10 @@
+## [24.5.1](https://github.com/iiroj/iiro.fi/compare/v24.5.0...v24.5.1) (2022-06-08)
+
+
+### Bug Fixes
+
+* update title ([b257106](https://github.com/iiroj/iiro.fi/commit/b257106b0033b56b43244b237378776df5b7c152))
+
 ## [24.5.0](https://github.com/iiroj/iiro.fi/compare/v24.4.3...v24.5.0) (2022-05-26)
 
 
