@@ -8,12 +8,12 @@ const Index: VFC = () => (
     <>
         <Head>
             <title>Iiro Jäppinen</title>
-            <meta content="Web Competence Lead at S Group" name="description" />
+            <meta content="Web Competence Lead at SOK" name="description" />
         </Head>
 
         <h1>Iiro Jäppinen</h1>
 
-        <h2>Web Competence Lead at S Group</h2>
+        <h2>Web Competence Lead at SOK</h2>
 
         <p>I build web experiences, develop tooling, and maintain open-source libraries.</p>
 
