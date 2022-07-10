@@ -1,6 +1,7 @@
 {
-  "github": {
-    "enabled": false,
-    "silent": true
-  }
+  "cleanUrls": true,
+  "github": { "enabled": false },
+  "public": false,
+  "regions": ["arn1"],
+  "trailingSlash": false
 }
