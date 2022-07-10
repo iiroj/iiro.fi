@@ -1,3 +1,11 @@
+## [24.5.2](https://github.com/iiroj/iiro.fi/compare/v24.5.1...v24.5.2) (2022-07-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependencies ([7471da1](https://github.com/iiroj/iiro.fi/commit/7471da1ed6b89ed3ef8e10ffca918276f076856a))
+* **next:** set runtime as "experimental-edge" ([7fb6910](https://github.com/iiroj/iiro.fi/commit/7fb6910067bc6ccae9813fc7307b461c5e11b435))
+
 ## [24.5.1](https://github.com/iiroj/iiro.fi/compare/v24.5.0...v24.5.1) (2022-06-08)
 
 
