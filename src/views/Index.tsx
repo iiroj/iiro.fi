@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import type { VFC } from 'react'
+import Link from 'next/link'
+import type { FC } from 'react'
 import React from 'react'
 
-import LinkButton from '../components/LinkButton'
-
-const Index: VFC = () => (
+const Index: FC = () => (
     <>
         <Head>
             <title>Iiro Jäppinen</title>
@@ -21,14 +20,14 @@ const Index: VFC = () => (
             <nav>
                 <ul>
                     <li>
-                        <LinkButton href="https://github.com/iiroj" rel="author">
+                        <Link href="https://github.com/iiroj" rel="author">
                             GitHub
-                        </LinkButton>
+                        </Link>
                     </li>
                     <li>
-                        <LinkButton href="https://linkedin.com/in/iiroj" rel="author">
+                        <Link href="https://linkedin.com/in/iiroj" rel="author">
                             LinkedIn
-                        </LinkButton>
+                        </Link>
                     </li>
                 </ul>
             </nav>

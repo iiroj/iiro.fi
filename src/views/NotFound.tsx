@@ -1,9 +1,9 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import type { FC } from 'react'
 import React from 'react'
 
-import LinkButton from '../components/LinkButton'
-
-const NotFound = () => (
+const NotFound: FC = () => (
     <>
         <Head>
             <title>Page Not Found</title>
@@ -15,7 +15,7 @@ const NotFound = () => (
         <h2>Page Not Found</h2>
 
         <nav>
-            <LinkButton href="/">Back Home</LinkButton>
+            <Link href="/">Back Home</Link>
         </nav>
     </>
 )

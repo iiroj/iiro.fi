@@ -2,9 +2,10 @@
 import '../styles.css'
 
 import type { AppProps } from 'next/app'
-import React, { VFC } from 'react'
+import type { FC } from 'react'
+import React from 'react'
 
-const App: VFC<AppProps> = ({ Component, pageProps }) => <Component {...pageProps} />
+const App: FC<AppProps> = ({ Component, pageProps }) => <Component {...pageProps} />
 
 App.displayName = 'App'
 
