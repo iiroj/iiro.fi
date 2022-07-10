@@ -8,7 +8,7 @@ module.exports = {
         ignoreDuringBuilds: true,
     },
     experimental: {
-        runtime: 'edge',
+        runtime: 'experimental-edge',
     },
     /* eslint-disable-next-line @typescript-eslint/require-await  */
     headers: async () => [
