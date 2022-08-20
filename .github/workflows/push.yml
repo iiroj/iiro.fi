@@ -1,4 +1,4 @@
-name: Pushes
+name: Push
 
 on:
   push:
