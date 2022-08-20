@@ -1,3 +1,10 @@
+## [24.5.5](https://github.com/iiroj/iiro.fi/compare/v24.5.4...v24.5.5) (2022-08-20)
+
+
+### Performance Improvements
+
+* add CSS styles as preload Link header ([154215d](https://github.com/iiroj/iiro.fi/commit/154215db2515c81d4f589d823f421fbd34c2f569))
+
 ## [24.5.4](https://github.com/iiroj/iiro.fi/compare/v24.5.3...v24.5.4) (2022-08-20)
 
 
