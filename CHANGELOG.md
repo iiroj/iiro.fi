@@ -1,3 +1,10 @@
+## [24.5.7](https://github.com/iiroj/iiro.fi/compare/v24.5.6...v24.5.7) (2022-08-20)
+
+
+### Bug Fixes
+
+* add token arg for Vercel config pull ([2be93eb](https://github.com/iiroj/iiro.fi/commit/2be93ebd97319d9cb11af728af1f46b31d35be0b))
+
 ## [24.5.6](https://github.com/iiroj/iiro.fi/compare/v24.5.5...v24.5.6) (2022-08-20)
 
 
