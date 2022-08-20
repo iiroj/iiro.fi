@@ -1,18 +1,28 @@
 const isProduction = process.env.NODE_ENV === 'production'
 
-/**
- * @type {import('next').NextConfig}
- */
+// @ts-check
+/** @type {import('next').NextConfig} */
 module.exports = {
+    cleanDistDir: true,
+
     eslint: {
         ignoreDuringBuilds: true,
     },
+
     experimental: {
         browsersListForSwc: true,
         runtime: 'experimental-edge',
     },
-    /* eslint-disable-next-line @typescript-eslint/require-await  */
-    headers: async () => [
+
+    generateBuildId: () => {
+        if (process.env.GITHUB_SHA) {
+            return process.env.GITHUB_SHA
+        }
+
+        return null
+    },
+
+    headers: () => [
         {
             source: '/:path*',
             headers: [
@@ -25,7 +35,9 @@ module.exports = {
             ].filter(Boolean),
         },
     ],
+
     swcMinify: true,
+
     typescript: {
         ignoreBuildErrors: true,
     },
