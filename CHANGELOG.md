@@ -1,3 +1,15 @@
+## [24.5.6](https://github.com/iiroj/iiro.fi/compare/v24.5.5...v24.5.6) (2022-08-20)
+
+
+### Bug Fixes
+
+* pull Vercel info before building ([e1ce0ee](https://github.com/iiroj/iiro.fi/commit/e1ce0ee46df11d7a5d37806c49aec8e2862f3649))
+
+
+### Reverts
+
+* Revert "ci: ignore "Pushes" workflow on semver tags" ([223e709](https://github.com/iiroj/iiro.fi/commit/223e70937b70b5463158ec0ff0d282064dfb69de))
+
 ## [24.5.5](https://github.com/iiroj/iiro.fi/compare/v24.5.4...v24.5.5) (2022-08-20)
 
 
