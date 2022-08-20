@@ -1,3 +1,10 @@
+## [24.5.9](https://github.com/iiroj/iiro.fi/compare/v24.5.8...v24.5.9) (2022-08-20)
+
+
+### Bug Fixes
+
+* sync action with Vercel example ([5c2861e](https://github.com/iiroj/iiro.fi/commit/5c2861e56846b962438535f73ab8560a5fece8af))
+
 ## [24.5.8](https://github.com/iiroj/iiro.fi/compare/v24.5.7...v24.5.8) (2022-08-20)
 
 
