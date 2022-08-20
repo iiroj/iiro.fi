@@ -1,3 +1,10 @@
+## [24.5.8](https://github.com/iiroj/iiro.fi/compare/v24.5.7...v24.5.8) (2022-08-20)
+
+
+### Bug Fixes
+
+* set Vercel build to prod target ([da1b411](https://github.com/iiroj/iiro.fi/commit/da1b4115d795e2f5269af594c35acb45752eb22e))
+
 ## [24.5.7](https://github.com/iiroj/iiro.fi/compare/v24.5.6...v24.5.7) (2022-08-20)
 
 
