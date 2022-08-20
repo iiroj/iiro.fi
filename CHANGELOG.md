@@ -1,3 +1,10 @@
+## [24.5.4](https://github.com/iiroj/iiro.fi/compare/v24.5.3...v24.5.4) (2022-08-20)
+
+
+### Bug Fixes
+
+* wrap 404 page link to footer and list ([d6eaaea](https://github.com/iiroj/iiro.fi/commit/d6eaaea548bb3e8001812931fd9bdeab27abd3b3))
+
 ## [24.5.3](https://github.com/iiroj/iiro.fi/compare/v24.5.2...v24.5.3) (2022-08-20)
 
 
