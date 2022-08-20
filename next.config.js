@@ -8,6 +8,7 @@ module.exports = {
         ignoreDuringBuilds: true,
     },
     experimental: {
+        browsersListForSwc: true,
         runtime: 'experimental-edge',
     },
     /* eslint-disable-next-line @typescript-eslint/require-await  */
