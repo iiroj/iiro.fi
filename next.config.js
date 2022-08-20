@@ -26,13 +26,14 @@ module.exports = {
         {
             source: '/:path*',
             headers: [
-                isProduction ? { key: 'Content-Security-Policy', value: `default-src 'self'` } : null,
+                { key: 'Link', value: `</styles.css>; rel=preload; as=style` },
+                { key: 'Content-Security-Policy', value: isProduction ? `default-src 'self'` : '' },
                 { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
                 { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubdomains; preload' },
                 { key: 'X-Content-Type-Options', value: 'nosniff' },
                 { key: 'X-Frame-Options', value: 'DENY' },
                 { key: 'X-XSS-Protection', value: '1; mode=block' },
-            ].filter(Boolean),
+            ],
         },
     ],
 
