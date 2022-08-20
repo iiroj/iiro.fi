@@ -14,9 +14,15 @@ const NotFound: FC = () => (
 
         <h2>Page Not Found</h2>
 
-        <nav>
-            <Link href="/">Back Home</Link>
-        </nav>
+        <footer>
+            <nav>
+                <ul>
+                    <li>
+                        <Link href="/">Back Home</Link>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
     </>
 )
 
