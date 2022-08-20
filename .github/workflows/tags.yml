@@ -57,7 +57,7 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       - name: Build Vercel app
-        run: npx vercel build
+        run: npx vercel build --prod
         env:
           NEXT_TELEMETRY_DISABLED: '1'
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
