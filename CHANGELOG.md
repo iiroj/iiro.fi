@@ -1,3 +1,11 @@
+## [24.5.10](https://github.com/iiroj/iiro.fi/compare/v24.5.9...v24.5.10) (2022-09-24)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([04a7902](https://github.com/iiroj/iiro.fi/commit/04a7902d792cb5c11dd613437221f4924419d47a))
+* **deps:** update all dependencies ([09713ca](https://github.com/iiroj/iiro.fi/commit/09713caef1f640772e0f609b9ca026c84e0ab28d))
+
 ## [24.5.9](https://github.com/iiroj/iiro.fi/compare/v24.5.8...v24.5.9) (2022-08-20)
 
 
