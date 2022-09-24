@@ -11,7 +11,6 @@ module.exports = {
 
     experimental: {
         browsersListForSwc: true,
-        runtime: 'experimental-edge',
     },
 
     generateBuildId: () => {
