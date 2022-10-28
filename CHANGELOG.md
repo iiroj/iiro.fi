@@ -1,3 +1,10 @@
+## [24.6.0](https://github.com/iiroj/iiro.fi/compare/v24.5.11...v24.6.0) (2022-10-28)
+
+
+### Features
+
+* **deps:** update Next.js 13 and other dependencies ([c50290e](https://github.com/iiroj/iiro.fi/commit/c50290e29e071704ffebeea0eaf6d96b6c5b238e))
+
 ## [24.5.11](https://github.com/iiroj/iiro.fi/compare/v24.5.10...v24.5.11) (2022-10-12)
 
 
