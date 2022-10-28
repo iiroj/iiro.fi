@@ -9,10 +9,6 @@ module.exports = {
         ignoreDuringBuilds: true,
     },
 
-    experimental: {
-        browsersListForSwc: true,
-    },
-
     generateBuildId: () => {
         if (process.env.GITHUB_SHA) {
             return process.env.GITHUB_SHA
@@ -35,8 +31,6 @@ module.exports = {
             ],
         },
     ],
-
-    swcMinify: true,
 
     typescript: {
         ignoreBuildErrors: true,
