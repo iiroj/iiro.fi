@@ -23,7 +23,7 @@ export const getHeaders = (init: Headers) => {
     const isProduction = process.env.NODE_ENV === 'production'
     if (isProduction) {
         /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy */
-        headers.set('Content-Security-Policy', `default-src 'self'; script-src: 'self' 'unsafe-inline'`)
+        headers.set('Content-Security-Policy', `default-src 'self'; script-src 'self' 'unsafe-inline'`)
     }
 
     for (const [headerName, headerValue] of Object.entries(SECURITY_HEADERS)) {
