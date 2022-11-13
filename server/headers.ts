@@ -1,6 +1,5 @@
 const SECURITY_HEADERS = {
-    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy */
-    'Content-Security-Policy': "default-src 'self' example.com *.example.com",
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security */
     'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload',
     /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection */
     'X-XSS-Protection': '1; mode=block',
@@ -21,11 +20,17 @@ const SECURITY_HEADERS = {
 export const getHeaders = (init: Headers) => {
     const headers = new Headers(init)
 
-    headers.set('Link', '</styles.css>; rel=preload; as=style')
+    const isProduction = process.env.NODE_ENV === 'production'
+    if (isProduction) {
+        /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy */
+        headers.set('Content-Security-Policy', `default-src 'self'; script-src: 'self' 'unsafe-inline'`)
+    }
 
     for (const [headerName, headerValue] of Object.entries(SECURITY_HEADERS)) {
         headers.set(headerName, headerValue)
     }
+
+    headers.set('Link', '</styles.css>; rel=preload; as=style')
 
     return headers
 }
