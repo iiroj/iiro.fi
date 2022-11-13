@@ -1,3 +1,10 @@
+## [25.0.3](https://github.com/iiroj/iiro.fi/compare/v25.0.2...v25.0.3) (2022-11-13)
+
+
+### Bug Fixes
+
+* **worker:** fix typo in CSP header ([4a0a8e0](https://github.com/iiroj/iiro.fi/commit/4a0a8e07868ed1f41013790c30cbfe234490f936))
+
 ## [25.0.2](https://github.com/iiroj/iiro.fi/compare/v25.0.1...v25.0.2) (2022-11-13)
 
 
