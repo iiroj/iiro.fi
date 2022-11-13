@@ -1,3 +1,10 @@
+## [25.0.1](https://github.com/iiroj/iiro.fi/compare/v25.0.0...v25.0.1) (2022-11-13)
+
+
+### Bug Fixes
+
+* **ci:** use correct tag for GitHub Action ([1077dc1](https://github.com/iiroj/iiro.fi/commit/1077dc11b0b21789c12c7e1694662b9dcc427c26))
+
 ## [25.0.0](https://github.com/iiroj/iiro.fi/compare/v24.6.0...v25.0.0) (2022-11-13)
 
 
