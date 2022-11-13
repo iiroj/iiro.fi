@@ -12,20 +12,21 @@
         "plugin:import/warnings",
         "plugin:prettier/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:react/recommended",
+        "plugin:react/all",
         "prettier"
     ],
-    "plugins": [
-        "@typescript-eslint",
-        "prettier",
-        "simple-import-sort"
-    ],
+    "plugins": ["@typescript-eslint", "prettier", "react", "simple-import-sort"],
     "root": true,
     "rules": {
         "arrow-body-style": ["error", "as-needed"],
-        "import/no-unused-modules": "error",
         "import/no-unassigned-import": "error",
+        "import/no-unused-modules": "error",
+        "react/function-component-definition": ["error", { "namedComponents": "arrow-function" }],
+        "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
+        "react/jsx-max-depth": "off",
+        "react/jsx-no-literals": "off",
         "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
         "simple-import-sort/imports": "error"
     },
     "settings": {

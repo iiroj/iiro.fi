@@ -1,15 +1,16 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare'
+import { Link } from '@remix-run/react'
 import type { FC } from 'react'
-import React from 'react'
+
+export const loader: LoaderFunction = () => json(null, { status: 404 })
+
+export const meta: MetaFunction = () => ({
+    title: 'Page Not Found',
+    robots: 'noarchive, noindex',
+})
 
 const NotFound: FC = () => (
     <>
-        <Head>
-            <title>Page Not Found</title>
-            <meta content="noarchive, nofollow, noindex" name="robots" />
-        </Head>
-
         <h1>Four Zero Four</h1>
 
         <h2>Page Not Found</h2>
@@ -18,7 +19,7 @@ const NotFound: FC = () => (
             <nav>
                 <ul>
                     <li>
-                        <Link href="/">Back Home</Link>
+                        <Link to="/">Back Home</Link>
                     </li>
                 </ul>
             </nav>

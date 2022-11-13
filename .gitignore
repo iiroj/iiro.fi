@@ -1,7 +1,5 @@
-.next
-.vercel
-dist
+.cache
+build
 node_modules
-sketch
 
 tsconfig.tsbuildinfo
