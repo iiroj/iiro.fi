@@ -1,3 +1,10 @@
+## [25.0.2](https://github.com/iiroj/iiro.fi/compare/v25.0.1...v25.0.2) (2022-11-13)
+
+
+### Bug Fixes
+
+* **worker:** update CSP header ([20f101d](https://github.com/iiroj/iiro.fi/commit/20f101db5137e151dde57a90e8cadcd6c30c4393))
+
 ## [25.0.1](https://github.com/iiroj/iiro.fi/compare/v25.0.0...v25.0.1) (2022-11-13)
 
 
