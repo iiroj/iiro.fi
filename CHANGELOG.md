@@ -1,3 +1,19 @@
+## [25.0.0](https://github.com/iiroj/iiro.fi/compare/v24.6.0...v25.0.0) (2022-11-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate to Remix + Cloudflare Workers
+
+### Features
+
+* migrate to Remix + Cloudflare Workers ([907a0d4](https://github.com/iiroj/iiro.fi/commit/907a0d4a5923f090ee1f7ab6e9a4281d2d67bf71))
+
+
+### Bug Fixes
+
+* **typescript:** set TSC skipLibCheck to true ([fa8e48e](https://github.com/iiroj/iiro.fi/commit/fa8e48e7f244338cbe2031c3cffb2e7de60f178a))
+
 ## [24.6.0](https://github.com/iiroj/iiro.fi/compare/v24.5.11...v24.6.0) (2022-10-28)
 
 
