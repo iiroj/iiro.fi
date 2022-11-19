@@ -1,3 +1,10 @@
+## [25.0.5](https://github.com/iiroj/iiro.fi/compare/v25.0.4...v25.0.5) (2022-11-19)
+
+
+### Bug Fixes
+
+* restore LiveReload with explicit port ([2b1fc67](https://github.com/iiroj/iiro.fi/commit/2b1fc678e4b20f7a485972cf6c3bb1514c5bde36))
+
 ## [25.0.4](https://github.com/iiroj/iiro.fi/compare/v25.0.3...v25.0.4) (2022-11-19)
 
 
