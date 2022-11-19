@@ -1,5 +1,5 @@
 import type { MetaFunction } from '@remix-run/cloudflare'
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
 
 export const meta: MetaFunction = () => ({
     charset: 'utf-8',
@@ -18,6 +18,7 @@ const App = () => (
             <Outlet />
             <ScrollRestoration />
             <Scripts />
+            <LiveReload port={8002} />
         </body>
     </html>
 )
