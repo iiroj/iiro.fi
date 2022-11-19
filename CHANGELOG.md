@@ -1,3 +1,10 @@
+## [25.0.4](https://github.com/iiroj/iiro.fi/compare/v25.0.3...v25.0.4) (2022-11-19)
+
+
+### Bug Fixes
+
+* remove LiveReload for now as it's not working ([c06f392](https://github.com/iiroj/iiro.fi/commit/c06f392efbd3ed2d843542ba480fcb8d4e384992))
+
 ## [25.0.3](https://github.com/iiroj/iiro.fi/compare/v25.0.2...v25.0.3) (2022-11-13)
 
 
