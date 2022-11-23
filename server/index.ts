@@ -1,15 +1,16 @@
-import { createRequestHandler, handleAsset } from '@remix-run/cloudflare-workers'
+import { createRequestHandler } from '@remix-run/cloudflare'
+import { handleAsset } from '@remix-run/cloudflare-workers'
 import * as build from '@remix-run/dev/server-build'
 
 import { getHeaders } from './headers'
 
-const handleRequest = createRequestHandler({ build })
+const handleRequest = createRequestHandler(build)
 
 const handleEvent = async (event: FetchEvent) => {
     const asset = await handleAsset(event, build)
     if (asset) return asset
 
-    const response = await handleRequest(event)
+    const response = await handleRequest(event.request)
     return new Response(response.body, {
         headers: getHeaders(response.headers),
         status: response.status,
