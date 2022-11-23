@@ -1,3 +1,10 @@
+## [25.0.6](https://github.com/iiroj/iiro.fi/compare/v25.0.5...v25.0.6) (2022-11-23)
+
+
+### Performance Improvements
+
+* use createRequestHandler directly from @remix-run/cloudflare instead of cloudflare-workers ([79d902a](https://github.com/iiroj/iiro.fi/commit/79d902a672ec1282b08309693e6bbfad1f6e3782))
+
 ## [25.0.5](https://github.com/iiroj/iiro.fi/compare/v25.0.4...v25.0.5) (2022-11-19)
 
 
