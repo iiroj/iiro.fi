@@ -1,3 +1,10 @@
+## [25.0.7](https://github.com/iiroj/iiro.fi/compare/v25.0.6...v25.0.7) (2022-12-18)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([16ab81c](https://github.com/iiroj/iiro.fi/commit/16ab81ce1b4d1cdd0820f0aa6ca37b96c588030e))
+
 ## [25.0.6](https://github.com/iiroj/iiro.fi/compare/v25.0.5...v25.0.6) (2022-11-23)
 
 
