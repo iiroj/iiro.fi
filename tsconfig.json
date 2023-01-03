@@ -8,8 +8,8 @@
     "incremental": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "module": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
     "moduleResolution": "Node",
     "noEmit": true,
     "noUnusedLocals": true,
@@ -17,7 +17,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES2022"
+    "target": "ESNext"
   },
   "exclude": ["node_modules"],
   "include": ["env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.mjs"]
