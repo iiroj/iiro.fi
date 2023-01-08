@@ -1,3 +1,11 @@
+## [25.1.1](https://github.com/iiroj/iiro.fi/compare/v25.1.0...v25.1.1) (2023-01-08)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([29d973d](https://github.com/iiroj/iiro.fi/commit/29d973d19fded5ea671b3fa709a4b533f93221b5))
+* **wrangler:** publish to production env ([ad52a78](https://github.com/iiroj/iiro.fi/commit/ad52a78daeceb064d8e06a011d5554b3f00e1ba5))
+
 ## [25.1.0](https://github.com/iiroj/iiro.fi/compare/v25.0.8...v25.1.0) (2023-01-08)
 
 
