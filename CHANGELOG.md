@@ -1,3 +1,10 @@
+## [25.1.3](https://github.com/iiroj/iiro.fi/compare/v25.1.2...v25.1.3) (2023-01-08)
+
+
+### Bug Fixes
+
+* **wrangler:** set explicit production env name to match previous ([c534951](https://github.com/iiroj/iiro.fi/commit/c534951e78841a92469fe5b281c8433d17054188))
+
 ## [25.1.2](https://github.com/iiroj/iiro.fi/compare/v25.1.1...v25.1.2) (2023-01-08)
 
 
