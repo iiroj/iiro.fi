@@ -19,6 +19,11 @@ const App = () => (
             <ScrollRestoration />
             <Scripts />
             <LiveReload port={8002} />
+            <script
+                data-cf-beacon={'{"token": "c7794cb559534b8d894864b0398f9f7f"}'}
+                defer
+                src="https://static.cloudflareinsights.com/beacon.min.js"
+            />
         </body>
     </html>
 )
