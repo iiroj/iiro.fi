@@ -1,3 +1,10 @@
+## [25.1.4](https://github.com/iiroj/iiro.fi/compare/v25.1.3...v25.1.4) (2023-01-08)
+
+
+### Bug Fixes
+
+* definitely fix loading Cloudflare analytics script ([8975404](https://github.com/iiroj/iiro.fi/commit/8975404a2b0110d017bbd9be57b10267fa328631))
+
 ## [25.1.3](https://github.com/iiroj/iiro.fi/compare/v25.1.2...v25.1.3) (2023-01-08)
 
 
