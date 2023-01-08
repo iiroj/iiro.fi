@@ -1,3 +1,10 @@
+## [25.1.0](https://github.com/iiroj/iiro.fi/compare/v25.0.8...v25.1.0) (2023-01-08)
+
+
+### Features
+
+* add Cloudflare analytics script ([b8ef9c6](https://github.com/iiroj/iiro.fi/commit/b8ef9c6a06a18cf7ec5a9c1439e124d97202532c))
+
 ## [25.0.8](https://github.com/iiroj/iiro.fi/compare/v25.0.7...v25.0.8) (2023-01-03)
 
 
