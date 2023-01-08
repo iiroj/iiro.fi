@@ -1,3 +1,10 @@
+## [25.1.2](https://github.com/iiroj/iiro.fi/compare/v25.1.1...v25.1.2) (2023-01-08)
+
+
+### Bug Fixes
+
+* use correct format for CSP header ([dcf70ec](https://github.com/iiroj/iiro.fi/commit/dcf70ec333dfa6ae7db4e8c35744a849c1dc7ec7))
+
 ## [25.1.1](https://github.com/iiroj/iiro.fi/compare/v25.1.0...v25.1.1) (2023-01-08)
 
 
