@@ -25,11 +25,7 @@ export const getHeaders = (init: Headers) => {
         /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy */
         headers.set(
             'Content-Security-Policy',
-            [
-                `default-src 'self'`,
-                /** @see https://static.cloudflareinsights.com/beacon.min.js */
-                `script-src 'self' 'unsafe-inline' sha512-d1a843625f3ae943212ae61c5b4efc49c31a957aad1498209bb4e6954b69d14943e1e424d08c5f9e6e729172af1893458cb328a2bb5db1e4dfb114fca027e018`,
-            ].join(';')
+            `default-src 'self'; connect-src cloudflareinsights.com; script-src 'self' 'unsafe-inline' static.cloudflareinsights.com`
         )
     }
 

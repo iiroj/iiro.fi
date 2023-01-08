@@ -29,8 +29,10 @@ const App = () => {
 
                 {cfBeaconToken ? (
                     <script
+                        crossOrigin="anonymous"
                         data-cf-beacon={`{"token": "${cfBeaconToken}"}`}
                         defer
+                        integrity="sha384-ikHI8F+DCZ/OP4pxSzGmk/E2UZdZ8TNqbm/HJcr90E1vUeqCnW7y8D8dC9AGuWV9"
                         src="https://static.cloudflareinsights.com/beacon.min.js"
                     />
                 ) : null}
