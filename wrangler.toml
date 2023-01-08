@@ -1,4 +1,4 @@
-name = "iiro"
+name = "iiro-dev"
 
 workers_dev = true
 compatibility_date = "2022-11-13"
@@ -14,6 +14,9 @@ command = "npm run build"
 
 [vars]
 CF_BEACON_TOKEN = ""
+
+[env.production]
+name = "iiro"
 
 [env.production.vars]
 CF_BEACON_TOKEN = "c7794cb559534b8d894864b0398f9f7f"
