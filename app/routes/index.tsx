@@ -3,14 +3,14 @@ import type { FC } from 'react'
 
 export const meta: MetaFunction = () => ({
     title: 'Iiro Jäppinen',
-    description: 'Web Competence Lead at SOK',
+    description: 'Web Competence Lead at S Group',
 })
 
 const Root: FC = () => (
     <>
         <h1>Iiro Jäppinen</h1>
 
-        <h2>Web Competence Lead at SOK</h2>
+        <h2>Web Competence Lead at S Group</h2>
 
         <p>I build web experiences, develop tooling, and maintain open-source libraries.</p>
 
