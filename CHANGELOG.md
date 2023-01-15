@@ -1,3 +1,15 @@
+## [25.2.0](https://github.com/iiroj/iiro.fi/compare/v25.1.4...v25.2.0) (2023-01-15)
+
+
+### Features
+
+* use English version of company name ([5dada98](https://github.com/iiroj/iiro.fi/commit/5dada9815ce78766d3dce29ecbf1d7a02b50dd75))
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([5b3dd5b](https://github.com/iiroj/iiro.fi/commit/5b3dd5be22bbe53dfc90a0fc522ebb6fee493d7b))
+
 ## [25.1.4](https://github.com/iiroj/iiro.fi/compare/v25.1.3...v25.1.4) (2023-01-08)
 
 
