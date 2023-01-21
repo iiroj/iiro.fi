@@ -1,3 +1,10 @@
+## [25.3.2](https://github.com/iiroj/iiro.fi/compare/v25.3.1...v25.3.2) (2023-01-21)
+
+
+### Bug Fixes
+
+* remove console.log ([55c0af8](https://github.com/iiroj/iiro.fi/commit/55c0af85d5033b1c8c47162bd1dcd8122c1a6883))
+
 ## [25.3.1](https://github.com/iiroj/iiro.fi/compare/v25.3.0...v25.3.1) (2023-01-21)
 
 
