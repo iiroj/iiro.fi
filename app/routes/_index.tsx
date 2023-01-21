@@ -1,6 +1,8 @@
 import type { V2_MetaFunction } from '@remix-run/cloudflare'
 import type { FC } from 'react'
 
+import Page from '../components/Page'
+
 export const meta: V2_MetaFunction = () => [
     {
         title: 'Iiro Jäppinen',
@@ -11,31 +13,22 @@ export const meta: V2_MetaFunction = () => [
     },
 ]
 
+const links = [
+    <a href="https://github.com/iiroj" key="github" rel="author noreferrer" target="_blank">
+        GitHub
+    </a>,
+    <a href="https://linkedin.com/in/iiroj" key="linkedin" rel="author noreferrer" target="_blank">
+        LinkedIn
+    </a>,
+]
+
 const Root: FC = () => (
-    <>
-        <h1>Iiro Jäppinen</h1>
-
+    <Page links={links} title="Iiro Jäppinen">
         <h2>Web Competence Lead at S Group</h2>
-
         <p>I build web experiences, develop tooling, and maintain open-source libraries.</p>
-
-        <footer>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://github.com/iiroj" rel="author noreferrer" target="_blank">
-                            GitHub
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://linkedin.com/in/iiroj" rel="author noreferrer" target="_blank">
-                            LinkedIn
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
-    </>
+    </Page>
 )
+
+Root.displayName = 'Root'
 
 export default Root

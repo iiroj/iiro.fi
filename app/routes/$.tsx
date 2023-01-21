@@ -2,6 +2,8 @@ import { json, LoaderFunction, V2_MetaFunction } from '@remix-run/cloudflare'
 import { Link } from '@remix-run/react'
 import type { FC } from 'react'
 
+import Page from '../components/Page'
+
 export const loader: LoaderFunction = () => json(null, { status: 404 })
 
 export const meta: V2_MetaFunction = () => [
@@ -14,22 +16,16 @@ export const meta: V2_MetaFunction = () => [
     },
 ]
 
+const links = [
+    <Link key="/" to="/">
+        Back Home
+    </Link>,
+]
+
 const NotFound: FC = () => (
-    <>
-        <h1>Four Zero Four</h1>
-
-        <h2>Page Not Found</h2>
-
-        <footer>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Back Home</Link>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
-    </>
+    <Page links={links} title="Page Not Found">
+        <h2>Four Zero Four</h2>
+    </Page>
 )
 
 NotFound.displayName = 'NotFound'
