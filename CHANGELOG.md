@@ -1,3 +1,15 @@
+## [25.4.0](https://github.com/iiroj/iiro.fi/compare/v25.3.3...v25.4.0) (2023-01-21)
+
+
+### Features
+
+* use ESM module workers ([69641ab](https://github.com/iiroj/iiro.fi/commit/69641abbd38def8e43930f7aeabf412afe4ff5db))
+
+
+### Bug Fixes
+
+* make config files ESM compatible ([45ee237](https://github.com/iiroj/iiro.fi/commit/45ee237c2970baecd7c0f87eecd5f3653c21a28a))
+
 ## [25.3.3](https://github.com/iiroj/iiro.fi/compare/v25.3.2...v25.3.3) (2023-01-21)
 
 
