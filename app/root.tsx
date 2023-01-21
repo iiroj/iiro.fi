@@ -1,11 +1,15 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react'
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 export const loader = () => ({
     cfBeaconToken: CF_BEACON_TOKEN || null,
 })
 
 const App = () => {
     const { cfBeaconToken } = useLoaderData<typeof loader>()
+
+    console.log({ isProduction })
 
     return (
         <html lang="en">
@@ -18,9 +22,12 @@ const App = () => {
             </head>
             <body>
                 <Outlet />
-                <ScrollRestoration />
-                <Scripts />
-                <LiveReload port={8002} />
+
+                {isProduction ? null : <ScrollRestoration />}
+
+                {isProduction ? null : <Scripts />}
+
+                {isProduction ? null : <LiveReload port={8002} />}
 
                 {cfBeaconToken ? (
                     <script
