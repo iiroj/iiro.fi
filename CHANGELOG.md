@@ -1,3 +1,21 @@
+## [25.3.0](https://github.com/iiroj/iiro.fi/compare/v25.2.0...v25.3.0) (2023-01-21)
+
+
+### Features
+
+* use V2 meta ([0e1e56b](https://github.com/iiroj/iiro.fi/commit/0e1e56bf2cfa12e3ad83402302ae0797487dbf90))
+* use V2 route naming ([693e462](https://github.com/iiroj/iiro.fi/commit/693e462f832f639da2ec20185efad1a438816ff7))
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([2887d29](https://github.com/iiroj/iiro.fi/commit/2887d2939b07085c1fd66ae97fdf86a8f458c414))
+
+
+### Performance Improvements
+
+* disable JS in production ([46fcf97](https://github.com/iiroj/iiro.fi/commit/46fcf9755687de4198d766e6de1226ce043cc9ab))
+
 ## [25.2.0](https://github.com/iiroj/iiro.fi/compare/v25.1.4...v25.2.0) (2023-01-15)
 
 
