@@ -17,7 +17,7 @@ const SECURITY_HEADERS = {
     'Cross-Origin-Resource-Policy': 'same-site',
 }
 
-export const getHeaders = (init: Headers) => {
+export const getHeaders = (init: Headers, isHTML?: boolean) => {
     const headers = new Headers(init)
 
     const isProduction = process.env.NODE_ENV === 'production'
@@ -33,7 +33,9 @@ export const getHeaders = (init: Headers) => {
         headers.set(headerName, headerValue)
     }
 
-    headers.set('Link', '</styles.css>; rel=preload; as=style')
+    if (isHTML) {
+        headers.set('Link', '</styles.css>; rel=preload; as=style')
+    }
 
     return headers
 }

@@ -1,9 +1,9 @@
 name = "iiro-dev"
 
 workers_dev = true
-compatibility_date = "2023-01-21"
+compatibility_date = "2023-01-15"
 
-main = "./build/index.js"
+main = "./worker/index.ts"
 
 [site]
 bucket = "./public"
@@ -11,11 +11,5 @@ bucket = "./public"
 [build]
 command = "npm run build"
 
-[vars]
-CF_BEACON_TOKEN = ""
-
 [env.production]
 name = "iiro"
-
-[env.production.vars]
-CF_BEACON_TOKEN = "c7794cb559534b8d894864b0398f9f7f"

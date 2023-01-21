@@ -1,5 +1,6 @@
-/// <reference types="@remix-run/dev" />
-/// <reference types="@remix-run/cloudflare/dist/globals" />
 /// <reference types="@cloudflare/workers-types" />
 
-declare const CF_BEACON_TOKEN: string
+declare module '__STATIC_CONTENT_MANIFEST' {
+    const manifest: string
+    export default manifest
+}
