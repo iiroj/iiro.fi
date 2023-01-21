@@ -1,7 +1,3 @@
-Edge >= 79
-Firefox >= 60
-Chrome >= 64
-Safari >= 13.1
-iOS >= 13.4
+last 2 versions
 not IE <= 11
 not dead
