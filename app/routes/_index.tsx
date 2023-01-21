@@ -1,4 +1,4 @@
-import type { V2_MetaFunction } from '@remix-run/server-runtime'
+import type { V2_MetaFunction } from '@remix-run/cloudflare'
 import type { FC } from 'react'
 
 import Page from '../components/Page'

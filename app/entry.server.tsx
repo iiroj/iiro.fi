@@ -1,5 +1,5 @@
+import type { EntryContext } from '@remix-run/cloudflare'
 import { RemixServer } from '@remix-run/react'
-import type { EntryContext } from '@remix-run/server-runtime'
 import { renderToReadableStream } from 'react-dom/server'
 
 const handleRequest = async (

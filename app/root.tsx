@@ -1,14 +1,13 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react'
-import type { LoaderFunction } from '@remix-run/server-runtime'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-export const loader: LoaderFunction = ({ context }) => ({
-    cfBeaconToken: context.env.CF_BEACON_TOKEN || null,
+export const loader = () => ({
+    cfBeaconToken: CF_BEACON_TOKEN || null,
 })
 
 const App = () => {
-    const { cfBeaconToken } = useLoaderData<{ cfBeaconToken: string }>()
+    const { cfBeaconToken } = useLoaderData<typeof loader>()
 
     return (
         <html lang="en">
