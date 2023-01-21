@@ -1,3 +1,10 @@
+## [25.3.3](https://github.com/iiroj/iiro.fi/compare/v25.3.2...v25.3.3) (2023-01-21)
+
+
+### Bug Fixes
+
+* **cloudflare:** remove compatibility flag ([982116e](https://github.com/iiroj/iiro.fi/commit/982116eadbd0d249af9f89e67bf67ef42e035d22))
+
 ## [25.3.2](https://github.com/iiroj/iiro.fi/compare/v25.3.1...v25.3.2) (2023-01-21)
 
 
