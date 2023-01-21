@@ -2,7 +2,7 @@
 export default {
     /** @see LiveReload in `app/root.tsx` */
     devServerPort: 8002,
-    server: './worker/index.ts',
+    server: './server/index.ts',
     serverBuildTarget: 'cloudflare-workers',
 
     future: {
