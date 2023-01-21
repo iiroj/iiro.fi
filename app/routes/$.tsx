@@ -1,10 +1,11 @@
-import { json, LoaderFunction, V2_MetaFunction } from '@remix-run/cloudflare'
 import { Link } from '@remix-run/react'
+import type { V2_MetaFunction } from '@remix-run/server-runtime'
+import { json } from '@remix-run/server-runtime'
 import type { FC } from 'react'
 
 import Page from '../components/Page'
 
-export const loader: LoaderFunction = () => json(null, { status: 404 })
+export const loader = () => json(null, { status: 404 })
 
 export const meta: V2_MetaFunction = () => [
     {
