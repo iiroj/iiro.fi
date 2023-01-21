@@ -1,3 +1,11 @@
+## [25.4.1](https://github.com/iiroj/iiro.fi/compare/v25.4.0...v25.4.1) (2023-01-21)
+
+
+### Reverts
+
+* Revert "feat: use ESM module workers" ([8452f1d](https://github.com/iiroj/iiro.fi/commit/8452f1de68caf2de2b2a8f1b067fa48259235414))
+* Revert "refactor: rename directory to worker/" ([c22e58c](https://github.com/iiroj/iiro.fi/commit/c22e58c72918038084334aba0ee7bc4e92803a9f))
+
 ## [25.4.0](https://github.com/iiroj/iiro.fi/compare/v25.3.3...v25.4.0) (2023-01-21)
 
 
