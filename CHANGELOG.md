@@ -1,3 +1,10 @@
+## [25.3.1](https://github.com/iiroj/iiro.fi/compare/v25.3.0...v25.3.1) (2023-01-21)
+
+
+### Performance Improvements
+
+* support only last 2 versions in browserslistrc ([5ed2f36](https://github.com/iiroj/iiro.fi/commit/5ed2f360ad206662ea22e35df4c5d030bad978a6))
+
 ## [25.3.0](https://github.com/iiroj/iiro.fi/compare/v25.2.0...v25.3.0) (2023-01-21)
 
 
