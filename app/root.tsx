@@ -9,8 +9,6 @@ export const loader = () => ({
 const App = () => {
     const { cfBeaconToken } = useLoaderData<typeof loader>()
 
-    console.log({ isProduction })
-
     return (
         <html lang="en">
             <head>

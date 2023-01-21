@@ -15,7 +15,7 @@
     "clean": "rimraf .cache build",
     "build": "npm run clean && remix build",
     "dev:remix": "NODE_ENV=development remix watch",
-    "dev:worker": "NODE_ENV=development miniflare -w -d",
+    "dev:worker": "NODE_ENV=development miniflare --watch",
     "start": "npm run build && concurrently npm:dev:*",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "typecheck": "tsc --project tsconfig.json"
