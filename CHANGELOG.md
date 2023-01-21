@@ -1,3 +1,19 @@
+## [26.0.0](https://github.com/iiroj/iiro.fi/compare/v25.4.1...v26.0.0) (2023-01-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove Remix and just serve static HTML files from Cloudflare Worker
+
+### Features
+
+* remove Remix and just serve static HTML files from Cloudflare Worker ([b3d40a6](https://github.com/iiroj/iiro.fi/commit/b3d40a606a0ce7107188b4524fb445251a53a7ca))
+
+
+### Bug Fixes
+
+* **deps:** update to wrangler 2 ([067e71c](https://github.com/iiroj/iiro.fi/commit/067e71c1a3e3f2dce05013d172b06139837c4b4f))
+
 ## [25.4.1](https://github.com/iiroj/iiro.fi/compare/v25.4.0...v25.4.1) (2023-01-21)
 
 
