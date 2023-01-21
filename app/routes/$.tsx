@@ -1,13 +1,18 @@
-import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare'
+import { json, LoaderFunction, V2_MetaFunction } from '@remix-run/cloudflare'
 import { Link } from '@remix-run/react'
 import type { FC } from 'react'
 
 export const loader: LoaderFunction = () => json(null, { status: 404 })
 
-export const meta: MetaFunction = () => ({
-    title: 'Page Not Found',
-    robots: 'noarchive, noindex',
-})
+export const meta: V2_MetaFunction = () => [
+    {
+        title: 'Page Not Found',
+    },
+    {
+        name: 'robots',
+        content: 'noarchive, noindex',
+    },
+]
 
 const NotFound: FC = () => (
     <>

@@ -1,10 +1,15 @@
-import type { MetaFunction } from '@remix-run/cloudflare'
+import type { V2_MetaFunction } from '@remix-run/cloudflare'
 import type { FC } from 'react'
 
-export const meta: MetaFunction = () => ({
-    title: 'Iiro Jäppinen',
-    description: 'Web Competence Lead at S Group',
-})
+export const meta: V2_MetaFunction = () => [
+    {
+        title: 'Iiro Jäppinen',
+    },
+    {
+        name: 'description',
+        content: 'Web Competence Lead at S Group',
+    },
+]
 
 const Root: FC = () => (
     <>

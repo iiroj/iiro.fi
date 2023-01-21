@@ -1,11 +1,4 @@
-import type { MetaFunction } from '@remix-run/cloudflare'
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react'
-
-export const meta: MetaFunction = () => ({
-    charset: 'utf-8',
-    title: 'Iiro Jäppinen',
-    viewport: 'width=device-width,initial-scale=1',
-})
 
 export const loader = () => ({
     cfBeaconToken: CF_BEACON_TOKEN || null,
@@ -17,6 +10,8 @@ const App = () => {
     return (
         <html lang="en">
             <head>
+                <meta charSet="utf-8" />
+                <meta content="width=device-width,initial-scale=1" name="viewport" />
                 <link href="/styles.css" rel="stylesheet" />
                 <Meta />
                 <Links />
