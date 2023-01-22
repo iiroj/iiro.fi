@@ -1,4 +1,4 @@
-import esbuild from 'esbuild'
+import esbuild from 'esbuild';
 
 await esbuild.build({
     bundle: true,
@@ -11,4 +11,4 @@ await esbuild.build({
     outdir: './dist',
     platform: 'browser',
     target: 'es2020',
-})
+});

@@ -15,27 +15,27 @@ const SECURITY_HEADERS = {
     'Cross-Origin-Opener-Policy': 'same-site; report-to="default";',
     /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP) */
     'Cross-Origin-Resource-Policy': 'same-site',
-}
+};
 
 export const getHeaders = (init: Headers, isHTML?: boolean) => {
-    const headers = new Headers(init)
+    const headers = new Headers(init);
 
-    const isProduction = process.env.NODE_ENV === 'production'
+    const isProduction = process.env.NODE_ENV === 'production';
     if (isProduction) {
         /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy */
         headers.set(
             'Content-Security-Policy',
-            `default-src 'self'; connect-src cloudflareinsights.com; script-src 'self' 'unsafe-inline' static.cloudflareinsights.com`
-        )
+            `default-src 'self'; connect-src cloudflareinsights.com; script-src 'self' 'unsafe-inline' static.cloudflareinsights.com`,
+        );
     }
 
     for (const [headerName, headerValue] of Object.entries(SECURITY_HEADERS)) {
-        headers.set(headerName, headerValue)
+        headers.set(headerName, headerValue);
     }
 
     if (isHTML) {
-        headers.set('Link', '</styles.css>; rel=preload; as=style')
+        headers.set('Link', '</styles.css>; rel=preload; as=style');
     }
 
-    return headers
-}
+    return headers;
+};

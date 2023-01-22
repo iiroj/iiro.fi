@@ -22,4 +22,4 @@ module.exports = {
         ],
     ],
     repositoryUrl: process.env.GITHUB_ACTIONS ? 'https://github.com/iiroj/iiro.fi' : 'git@github.com:iiroj/iiro.fi.git',
-}
+};
