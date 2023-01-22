@@ -1,4 +1,6 @@
 const SECURITY_HEADERS = {
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy */
+    'Content-Security-Policy': `default-src 'self'; connect-src cloudflareinsights.com; script-src static.cloudflareinsights.com`,
     /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security */
     'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload',
     /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection */
@@ -19,15 +21,6 @@ const SECURITY_HEADERS = {
 
 export const getHeaders = (init: Headers, isHTML?: boolean) => {
     const headers = new Headers(init);
-
-    const isProduction = process.env.NODE_ENV === 'production';
-    if (isProduction) {
-        /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy */
-        headers.set(
-            'Content-Security-Policy',
-            `default-src 'self'; connect-src cloudflareinsights.com; script-src 'self' 'unsafe-inline' static.cloudflareinsights.com`,
-        );
-    }
 
     for (const [headerName, headerValue] of Object.entries(SECURITY_HEADERS)) {
         headers.set(headerName, headerValue);

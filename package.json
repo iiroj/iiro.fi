@@ -15,7 +15,7 @@
   "module": "./dist/index.js",
   "scripts": {
     "build": "node build.js",
-    "start": "NODE_ENV=development wrangler dev --local",
+    "start": "wrangler dev --local",
     "rome:check": "rome check .",
     "rome:format": "rome format .",
     "lint": "concurrently npm:rome:*",
