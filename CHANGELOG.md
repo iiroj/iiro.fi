@@ -1,3 +1,10 @@
+## [26.0.1](https://github.com/iiroj/iiro.fi/compare/v26.0.0...v26.0.1) (2023-01-22)
+
+
+### Bug Fixes
+
+* always add CSP headers ([2847a71](https://github.com/iiroj/iiro.fi/commit/2847a71fcb08001f73944d2cc3cd7d7074866b90))
+
 ## [26.0.0](https://github.com/iiroj/iiro.fi/compare/v25.4.1...v26.0.0) (2023-01-21)
 
 
