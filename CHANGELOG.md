@@ -1,3 +1,10 @@
+## [26.1.0](https://github.com/iiroj/iiro.fi/compare/v26.0.1...v26.1.0) (2023-02-04)
+
+
+### Features
+
+* respond with plaintext (markdown) when text/html is not accepted ([0f4a222](https://github.com/iiroj/iiro.fi/commit/0f4a222dec427efe0674fcb22a4a326dfda35d32))
+
 ## [26.0.1](https://github.com/iiroj/iiro.fi/compare/v26.0.0...v26.0.1) (2023-01-22)
 
 
