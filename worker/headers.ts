@@ -27,6 +27,7 @@ export const getHeaders = (init: Headers, isHTML?: boolean) => {
     }
 
     if (isHTML) {
+        headers.set('Vary', 'Accept');
         headers.set('Link', '</styles.css>; rel=preload; as=style');
     }
 
