@@ -1,0 +1,10 @@
+name = "iiro"
+
+compatibility_date = "2023-01-15"
+workers_dev = false
+route = "https://iiro.fi/*"
+
+main = "./worker/index.ts"
+
+[site]
+bucket = "./public"

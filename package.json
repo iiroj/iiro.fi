@@ -14,29 +14,28 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "scripts": {
-    "start": "wrangler pages dev public/ --compatibility-date=2023-02-05",
+    "start": "wrangler dev --experimental-local",
     "rome:check": "rome check .",
     "rome:format": "rome format .",
     "lint": "concurrently npm:rome:*",
     "typecheck": "tsc --project tsconfig.json"
   },
   "dependencies": {
-    "mime": "3.0.0"
+    "@cloudflare/kv-asset-handler": "0.3.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230115.0",
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "17.4.2",
+    "@miniflare/tre": "3.0.0-next.10",
     "@semantic-release/changelog": "6.0.2",
     "@semantic-release/commit-analyzer": "9.0.2",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.0.7",
     "@semantic-release/npm": "9.0.2",
     "@semantic-release/release-notes-generator": "10.0.3",
-    "@types/mime": "3.0.1",
     "concurrently": "7.6.0",
     "conventional-changelog-conventionalcommits": "5.0.0",
-    "esbuild": "0.17.5",
     "husky": "8.0.3",
     "lint-staged": "13.1.0",
     "rimraf": "4.1.2",
