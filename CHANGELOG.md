@@ -1,3 +1,10 @@
+## [26.1.1](https://github.com/iiroj/iiro.fi/compare/v26.1.0...v26.1.1) (2023-02-05)
+
+
+### Bug Fixes
+
+* return HTML instead of Markdown when all text types are accepted ([ad230a3](https://github.com/iiroj/iiro.fi/commit/ad230a3d8a27dea84396a23165803364ae2f7372))
+
 ## [26.1.0](https://github.com/iiroj/iiro.fi/compare/v26.0.1...v26.1.0) (2023-02-04)
 
 
