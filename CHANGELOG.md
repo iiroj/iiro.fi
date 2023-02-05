@@ -1,3 +1,16 @@
+## [26.2.0](https://github.com/iiroj/iiro.fi/compare/v26.1.1...v26.2.0) (2023-02-05)
+
+
+### Features
+
+* deploy to Cloudflare Pages instead of Workers ([c5778ba](https://github.com/iiroj/iiro.fi/commit/c5778ba97be066808f31466cc596a801fc01cc69))
+
+
+### Bug Fixes
+
+* add SRI hash to CSS file ([fd46199](https://github.com/iiroj/iiro.fi/commit/fd4619931cc24e181719141fc0b3e13542e23bc8))
+* handle mapping 404 responses to Markdown ([7712977](https://github.com/iiroj/iiro.fi/commit/77129776f198667cc5f410d51c0bc5db496c569b))
+
 ## [26.1.1](https://github.com/iiroj/iiro.fi/compare/v26.1.0...v26.1.1) (2023-02-05)
 
 
