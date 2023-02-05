@@ -31,18 +31,23 @@ const handleMarkdownFallback: PagesFunction = async ({ env, next, request }) => 
         : `${url.pathname}.html`;
 
     const isHtmlResponse = filePath.endsWith('.html');
+
     if (!isHtmlResponse) {
         return next();
     }
 
     const acceptsHtmlResponse = getAcceptsHtmlResponse(request);
 
-    if (acceptsHtmlResponse && !filePath.startsWith('/404.')) {
-        return withHtmlHeaders(await next(), true);
-    }
-
     const fileUrl = acceptsHtmlResponse ? url : new URL(filePath.replace('.html', '.md'), url);
     const response = await env.ASSETS.fetch(new Request(fileUrl, request));
+
+    /** Rewrite 404 response to special "/404.html" or "/404.md" files */
+    if (response.status === 404) {
+        const notFoundFileUrl = new URL(acceptsHtmlResponse ? '/404' : '/404.md', url);
+        const response = await env.ASSETS.fetch(new Request(notFoundFileUrl, request));
+        const notFoundResponse = new Response(response.body, { headers: response.headers, status: 404 });
+        return withHtmlHeaders(notFoundResponse, acceptsHtmlResponse);
+    }
 
     /** Apply 404 status code to special "/404.html" and "/404.md" files */
     if (['/404', '/404.md'].includes(fileUrl.pathname)) {
