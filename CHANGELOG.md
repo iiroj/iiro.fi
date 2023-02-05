@@ -1,3 +1,10 @@
+## [26.2.1](https://github.com/iiroj/iiro.fi/compare/v26.2.0...v26.2.1) (2023-02-05)
+
+
+### Bug Fixes
+
+* **ci:** switch release job to default branch to trigger production deployment ([f0c863d](https://github.com/iiroj/iiro.fi/commit/f0c863daa5c0ab1a47190d1fed3f48e7dfe17948))
+
 ## [26.2.0](https://github.com/iiroj/iiro.fi/compare/v26.1.1...v26.2.0) (2023-02-05)
 
 
