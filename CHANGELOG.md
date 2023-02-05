@@ -1,3 +1,10 @@
+## [26.3.0](https://github.com/iiroj/iiro.fi/compare/v26.2.2...v26.3.0) (2023-02-05)
+
+
+### Features
+
+* revert runtime to Cloudflare Workers instead of Pages ([5dbe100](https://github.com/iiroj/iiro.fi/commit/5dbe1001039842f6aeb9d1c7e7056b02c7fedbd2))
+
 ## [26.2.2](https://github.com/iiroj/iiro.fi/compare/v26.2.1...v26.2.2) (2023-02-05)
 
 
