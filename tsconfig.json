@@ -3,6 +3,7 @@
     "lib": ["ESNext"],
     "module": "ESNext",
     "moduleResolution": "node",
+    "noEmit": true,
     "target": "ESNext",
     "types": ["@cloudflare/workers-types"]
   }
