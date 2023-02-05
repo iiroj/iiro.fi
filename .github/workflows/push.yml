@@ -44,24 +44,6 @@ jobs:
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
       - run: npm run typecheck
 
-  Build:
-    needs:
-      - Install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - uses: actions/cache@v3
-        id: cache-node_modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-      - run: npm run build
-
   Release:
     # Prevent infinite release loop
     if: ${{ !startsWith(github.event.head_commit.message, 'chore(release)') }}
