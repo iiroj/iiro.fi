@@ -5,8 +5,11 @@ import { getHeaders } from './headers';
 
 const ASSET_MANIFEST = JSON.parse(manifest) as Record<string, string>;
 
+const HTML_MIME_TYPES = /\btext\/(?:html|\*)\b/i;
+
 const mapHtmlToMarkdown = (request: Request) => {
-    if (request.headers.get('accept')?.includes('text/html')) {
+    const accept = request.headers.get('accept');
+    if (accept && HTML_MIME_TYPES.test(accept)) {
         return request;
     }
 
@@ -19,14 +22,12 @@ const fetch: ExportedHandlerFetchHandler<{ __STATIC_CONTENT: string }> = async (
         ASSET_MANIFEST,
     };
 
-    const waitUntil = (promise: Promise<Response>) => ctx.waitUntil(promise);
-
     const assetRequest = mapRequestToAsset(req, options);
     const isHtmlRequest = assetRequest.url.endsWith('.html');
 
     try {
         const request = isHtmlRequest ? mapHtmlToMarkdown(assetRequest) : assetRequest;
-        const event = { request, waitUntil } as FetchEvent;
+        const event = { request, waitUntil: ctx.waitUntil } as FetchEvent;
         const response = await getAssetFromKV(event, options);
         return new Response(response.body, {
             headers: getHeaders(response.headers, isHtmlRequest),
@@ -36,7 +37,7 @@ const fetch: ExportedHandlerFetchHandler<{ __STATIC_CONTENT: string }> = async (
         if (error instanceof NotFoundError) {
             const notFoundRequest = new Request(new URL('/404.html', assetRequest.url), assetRequest);
             const request = isHtmlRequest ? mapHtmlToMarkdown(notFoundRequest) : notFoundRequest;
-            const notFoundEvent = { request, waitUntil } as FetchEvent;
+            const notFoundEvent = { request, waitUntil: ctx.waitUntil } as FetchEvent;
             const notFoundResponse = await getAssetFromKV(notFoundEvent, options);
             return new Response(notFoundResponse.body, {
                 headers: getHeaders(notFoundResponse.headers, isHtmlRequest),
