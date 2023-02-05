@@ -15,14 +15,14 @@
   "module": "./dist/index.js",
   "scripts": {
     "build": "node build.js",
-    "start": "wrangler dev --local",
+    "start": "wrangler pages dev public/ --compatibility-date=2023-02-05",
     "rome:check": "rome check .",
     "rome:format": "rome format .",
     "lint": "concurrently npm:rome:*",
     "typecheck": "tsc --project tsconfig.json"
   },
   "dependencies": {
-    "@cloudflare/kv-asset-handler": "0.3.0"
+    "mime": "3.0.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230115.0",
@@ -34,6 +34,7 @@
     "@semantic-release/github": "8.0.7",
     "@semantic-release/npm": "9.0.2",
     "@semantic-release/release-notes-generator": "10.0.3",
+    "@types/mime": "3.0.1",
     "concurrently": "7.6.0",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "esbuild": "0.17.5",
