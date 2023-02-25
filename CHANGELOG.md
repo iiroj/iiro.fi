@@ -1,3 +1,10 @@
+## [26.3.1](https://github.com/iiroj/iiro.fi/compare/v26.3.0...v26.3.1) (2023-02-25)
+
+
+### Performance Improvements
+
+* use Array.includes() instead of Regex ([a6bc687](https://github.com/iiroj/iiro.fi/commit/a6bc687ad61bcfea15c3222bb5667cb02a2c6a31))
+
 ## [26.3.0](https://github.com/iiroj/iiro.fi/compare/v26.2.2...v26.3.0) (2023-02-05)
 
 
