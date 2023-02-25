@@ -1,3 +1,10 @@
+## [26.3.2](https://github.com/iiroj/iiro.fi/compare/v26.3.1...v26.3.2) (2023-02-25)
+
+
+### Reverts
+
+* Revert "perf: use Array.includes() instead of Regex" ([b584196](https://github.com/iiroj/iiro.fi/commit/b58419688595458d9335d23a5da2023e171ad91e))
+
 ## [26.3.1](https://github.com/iiroj/iiro.fi/compare/v26.3.0...v26.3.1) (2023-02-25)
 
 
