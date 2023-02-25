@@ -5,16 +5,15 @@ import { getHeaders } from './headers';
 
 const ASSET_MANIFEST = JSON.parse(manifest) as Record<string, string>;
 
-const HTML_MIME_TYPES = ['text/hmtl', 'text/*'];
+const HTML_MIME_TYPES = /\btext\/(?:html|\*)\b/i;
 
 const mapHtmlToMarkdown = (request: Request) => {
     const accept = request.headers.get('accept');
-    if (HTML_MIME_TYPES.includes(accept)) {
+    if (accept && HTML_MIME_TYPES.test(accept)) {
         return request;
     }
 
-    const mdUrl = new URL(request.url.replace(/\.html$/, '.md'));
-    return new Request(mdUrl, request);
+    return new Request(new URL(request.url.replace(/\.html$/, '.md')), request);
 };
 
 const fetch: ExportedHandlerFetchHandler<{ __STATIC_CONTENT: string }> = async (req, env, ctx) => {
