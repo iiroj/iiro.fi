@@ -1,3 +1,10 @@
+## [26.3.3](https://github.com/iiroj/iiro.fi/compare/v26.3.2...v26.3.3) (2023-03-18)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependencies ([7963ab4](https://github.com/iiroj/iiro.fi/commit/7963ab4c88271b62de108135b7d24ef4885d7ca5))
+
 ## [26.3.2](https://github.com/iiroj/iiro.fi/compare/v26.3.1...v26.3.2) (2023-02-25)
 
 
