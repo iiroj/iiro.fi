@@ -5,7 +5,7 @@
     "indentSize": 4,
     "lineWidth": 120,
     "ignore": [
-      "dist",
+      ".next",
       "node_modules"
     ]
   },
@@ -20,7 +20,7 @@
       "recommended": true
     },
     "ignore": [
-      "dist",
+      ".next",
       "node_modules"
     ]
   }

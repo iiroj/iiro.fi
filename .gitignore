@@ -1,5 +1,6 @@
-.cache
-dist
+.next
+.vercel
+.vscode
 node_modules
 
 tsconfig.tsbuildinfo
