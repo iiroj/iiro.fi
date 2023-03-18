@@ -37,7 +37,11 @@ export default async function (phase) {
                         /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy */
                         {
                             key: 'Content-Security-Policy',
-                            value: `default-src 'self' 'unsafe-inline' 'unsafe-eval'`,
+                            value: [
+                                `default-src 'self'`,
+                                `connect-src 'self' vitals.vercel-insights.com`,
+                                `script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.vercel-insights.com`,
+                            ].join(';'),
                         },
                         /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security */
                         {

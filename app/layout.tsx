@@ -1,5 +1,6 @@
 import 'styles.css';
 
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
@@ -13,7 +14,10 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }) => (
     <html lang="en">
-        <body>{children}</body>
+        <body>
+            {children}
+            <Analytics />
+        </body>
     </html>
 );
 
