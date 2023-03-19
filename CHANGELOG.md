@@ -1,3 +1,10 @@
+## [27.0.1](https://github.com/iiroj/iiro.fi/compare/v27.0.0...v27.0.1) (2023-03-19)
+
+
+### Bug Fixes
+
+* **vercel:** check for Vercel "Web Analytics" instead of other "Analytics" ([6f462c0](https://github.com/iiroj/iiro.fi/commit/6f462c0073a2efbdfc34195777823a68e0a54f9c))
+
 ## [27.0.0](https://github.com/iiroj/iiro.fi/compare/v26.3.3...v27.0.0) (2023-03-19)
 
 
