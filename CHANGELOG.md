@@ -1,3 +1,20 @@
+## [27.0.0](https://github.com/iiroj/iiro.fi/compare/v26.3.3...v27.0.0) (2023-03-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* switch to Next.js (Beta App Routing)
+
+### Features
+
+* setup Vercel Analytics ([26af01f](https://github.com/iiroj/iiro.fi/commit/26af01faf2190167fb756daf4a23a88e0b0585fc))
+* switch to Next.js (Beta App Routing) ([fc69d16](https://github.com/iiroj/iiro.fi/commit/fc69d169b7c40e6101a36506bf77970c71c32247))
+
+
+### Bug Fixes
+
+* skip rendering Analytics component when disabled (during build) ([b078f81](https://github.com/iiroj/iiro.fi/commit/b078f811e7116355fbe7ed9af169966f0e9f8a22))
+
 ## [26.3.3](https://github.com/iiroj/iiro.fi/compare/v26.3.2...v26.3.3) (2023-03-18)
 
 
