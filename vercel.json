@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "framework": "nextjs",
+  "public": false,
+  "regions": [
+    "arn1"
+  ],
+  "trailingSlash": false
+}
