@@ -62,13 +62,38 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-      - run: npm run build
+
+  Preview:
+    if: ${{ github.event_name == 'pull_request' }}
+    needs:
+      - Lint
+      - Typecheck
+    environment: development
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - uses: actions/cache@v3
+        id: cache-node_modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      - name: Pull Vercel Environment Information
+        run: npx vercel pull --yes --environment=development --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: npx vercel build --token=${{ secrets.VERCEL_TOKEN }}
         env:
           NEXT_TELEMETRY_DISABLED: '1'
+      - name: Deploy Project Artifacts to Vercel
+        run: npx vercel --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
 
   Release:
     # Run only in `main`, and skip release commits themselves to prevent infinite release loop
-    if: ${{ github.ref_name == 'main' && !startsWith(github.event.head_commit.message, 'chore(release)') }}
+    if: ${{ github.event_name != 'pull_request' && !startsWith(github.event.head_commit.message, 'chore(release)') }}
     needs:
       - Lint
       - Typecheck
