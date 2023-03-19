@@ -1,4 +1,4 @@
-import 'styles.css';
+import '../styles/root.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';

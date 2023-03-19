@@ -14,7 +14,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "scripts": {
-    "start": "next dev",
+    "start": "next dev --turbo",
     "rome:check": "rome check .",
     "rome:format": "rome format .",
     "lint": "concurrently npm:rome:*",
