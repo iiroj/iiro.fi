@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
-const vercelAnalyticsEnabled = !!process.env.NEXT_PUBLIC_VERCEL_ANALYTICS;
+const vercelAnalyticsEnabled = !!process.env.NEXT_PUBLIC_WEB_VERCEL_ANALYTICS;
 
 export const metadata: Metadata = {
     viewport: 'width=device-width,initial-scale=1',
