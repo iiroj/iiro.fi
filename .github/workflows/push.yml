@@ -68,7 +68,9 @@ jobs:
     needs:
       - Lint
       - Typecheck
-    environment: development
+    environment:
+      name: Development
+      url: ${{ steps.deployment.outputs.url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -89,7 +91,8 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: '1'
       - name: Deploy Project Artifacts to Vercel
-        run: npx vercel --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+        id: deployment
+        run: echo "url=$(npx vercel --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> "$GITHUB_OUTPUT"
 
   Release:
     # Run only in `main`, and skip release commits themselves to prevent infinite release loop
