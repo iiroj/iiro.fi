@@ -47,6 +47,8 @@ jobs:
       - run: npm run typecheck
 
   Build:
+    # No need build Pull Requests because of the Preview job below
+    if: ${{ github.event_name != 'pull_request' }}
     needs:
       - Install
     runs-on: ubuntu-latest
