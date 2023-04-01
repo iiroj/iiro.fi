@@ -1,7 +1,6 @@
 // @ts-check
 
 import { headers } from './utils/headers.mjs';
-import { isVerceWeblAnalyticsEnabled } from './utils/is-vercel-web-analytics-enabled.mjs';
 
 /**
  * @type {(phase: string) => Promise<import('next').NextConfig>}
@@ -9,7 +8,7 @@ import { isVerceWeblAnalyticsEnabled } from './utils/is-vercel-web-analytics-ena
 export default async function (phase) {
     const { PHASE_DEVELOPMENT_SERVER } = await import('next/dist/shared/lib/constants.js');
     const isProduction = phase !== PHASE_DEVELOPMENT_SERVER;
-    const vercelWebAnalyticsEnabled = !isProduction || (await isVerceWeblAnalyticsEnabled());
+    const vercelWebAnalyticsEnabled = !isProduction || !!process.env.VERCEL_WEB_ANALYTICS_ID;
 
     return {
         cleanDistDir: true,
