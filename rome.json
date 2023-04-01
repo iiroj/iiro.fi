@@ -1,27 +1,37 @@
 {
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentSize": 4,
-    "lineWidth": 120,
-    "ignore": [
-      ".next",
-      "node_modules"
-    ]
-  },
-  "javascript": {
     "formatter": {
-      "quoteStyle": "single"
-    }
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
+        "enabled": true,
+        "indentStyle": "space",
+        "indentSize": 4,
+        "lineWidth": 120,
+        "ignore": [
+            ".next",
+            ".vercel",
+            "node_modules"
+        ]
     },
-    "ignore": [
-      ".next",
-      "node_modules"
-    ]
-  }
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single"
+        }
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true
+        },
+        "ignore": [
+            ".next",
+            ".vercel",
+            "node_modules"
+        ]
+    },
+    "organizeImports": {
+        "enabled": true,
+        "ignore": [
+            ".next",
+            ".vercel",
+            "node_modules"
+        ]
+    }
 }

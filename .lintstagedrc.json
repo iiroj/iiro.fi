@@ -1,6 +1,3 @@
 {
-  "*.{cjs,js,mjs,ts}": [
-    "rome check",
-    "rome format --write"
-  ]
+    "*.{cjs,js,mjs,ts}": ["rome check", "rome format --write"]
 }
