@@ -4,11 +4,7 @@
         "indentStyle": "space",
         "indentSize": 4,
         "lineWidth": 120,
-        "ignore": [
-            ".next",
-            ".vercel",
-            "node_modules"
-        ]
+        "ignore": [".next", ".vercel", "node_modules"]
     },
     "javascript": {
         "formatter": {
@@ -20,18 +16,10 @@
         "rules": {
             "recommended": true
         },
-        "ignore": [
-            ".next",
-            ".vercel",
-            "node_modules"
-        ]
+        "ignore": [".next", ".vercel", "node_modules"]
     },
     "organizeImports": {
         "enabled": true,
-        "ignore": [
-            ".next",
-            ".vercel",
-            "node_modules"
-        ]
+        "ignore": [".next", ".vercel", "node_modules"]
     }
 }
