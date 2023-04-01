@@ -3,13 +3,13 @@ import type { FC } from 'react';
 
 export const metadata: Metadata = {
     title: 'Iiro Jäppinen',
-    description: 'Web Competence Lead at S Group',
+    description: 'Principal Engineer at SOK',
 };
 
 const Page: FC = () => (
     <>
         <h1>Iiro Jäppinen</h1>
-        <h2>Web Competence Lead at S Group</h2>
+        <h2>Principal Engineer at SOK</h2>
         <p>I build web experiences, develop tooling, and maintain open-source libraries.</p>
         <footer>
             <nav>
