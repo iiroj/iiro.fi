@@ -1,3 +1,11 @@
+## [27.0.2](https://github.com/iiroj/iiro.fi/compare/v27.0.1...v27.0.2) (2023-04-01)
+
+
+### Bug Fixes
+
+* bump job title ([7cce6cf](https://github.com/iiroj/iiro.fi/commit/7cce6cf5f11d70a06767288cbf5c79f5a8aae505))
+* **deps:** update all dependencies ([34d26f0](https://github.com/iiroj/iiro.fi/commit/34d26f05de17ce80c4a939b5da0af065c3d92ea2))
+
 ## [27.0.1](https://github.com/iiroj/iiro.fi/compare/v27.0.0...v27.0.1) (2023-03-19)
 
 
