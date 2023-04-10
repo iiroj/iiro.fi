@@ -1,6 +1,6 @@
-import type { LinksFunction, LoaderFunction, V2_MetaFunction } from '@vercel/remix';
 import { Links, Meta, Outlet, useLoaderData } from '@remix-run/react';
 import { Analytics } from '@vercel/analytics/react';
+import type { LinksFunction, LoaderFunction, V2_MetaFunction } from '@vercel/remix';
 
 type LoaderData = {
     analyticsEnabled: boolean;

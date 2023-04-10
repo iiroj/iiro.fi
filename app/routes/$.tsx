@@ -1,5 +1,6 @@
-import { json, LoaderFunction, V2_MetaFunction } from '@vercel/remix';
 import { Link } from '@remix-run/react';
+import type { HeadersFunction, LoaderFunction, V2_MetaFunction } from '@vercel/remix';
+import { json } from '@vercel/remix';
 import type { FC } from 'react';
 
 import Page from '../components/Page';

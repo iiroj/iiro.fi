@@ -3,8 +3,6 @@
     "framework": "remix",
     "installCommand": "",
     "public": false,
-    "regions": [
-        "arn1"
-    ],
+    "regions": ["arn1"],
     "trailingSlash": false
 }
