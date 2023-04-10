@@ -32,6 +32,8 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 0;
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
     min-height: stretch;
     padding: 2rem 1rem;
 }
