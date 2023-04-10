@@ -1,6 +1,7 @@
 {
     "cleanUrls": true,
     "framework": "remix",
+    "installCommand": "",
     "public": false,
     "regions": [
         "arn1"
