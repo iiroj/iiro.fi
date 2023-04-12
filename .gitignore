@@ -1,6 +1,7 @@
-.next
-.vercel
+.cache
 .vscode
+build
 node_modules
+public/build
 
 tsconfig.tsbuildinfo
