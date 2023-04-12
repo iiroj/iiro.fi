@@ -1,3 +1,10 @@
+## [28.0.1](https://github.com/iiroj/iiro.fi/compare/v28.0.0...v28.0.1) (2023-04-12)
+
+
+### Performance Improvements
+
+* use `createEventHandler` instead of custom function ([437f98c](https://github.com/iiroj/iiro.fi/commit/437f98ce7d8c2f31ade42e805b6b9d05e459e8a6))
+
 ## [28.0.0](https://github.com/iiroj/iiro.fi/compare/v27.0.2...v28.0.0) (2023-04-12)
 
 
