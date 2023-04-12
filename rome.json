@@ -4,7 +4,7 @@
         "indentStyle": "space",
         "indentSize": 4,
         "lineWidth": 120,
-        "ignore": [".next", ".vercel", "node_modules"]
+        "ignore": [".cache", "build", "node_modules", "public/build"]
     },
     "javascript": {
         "formatter": {
@@ -16,10 +16,10 @@
         "rules": {
             "recommended": true
         },
-        "ignore": [".next", ".vercel", "node_modules"]
+        "ignore": [".cache", "build", "node_modules", "public/build"]
     },
     "organizeImports": {
         "enabled": true,
-        "ignore": [".next", ".vercel", "node_modules"]
+        "ignore": [".cache", "build", "node_modules", "public/build"]
     }
 }
