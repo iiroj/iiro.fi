@@ -1,3 +1,14 @@
+## [28.0.0](https://github.com/iiroj/iiro.fi/compare/v27.0.2...v28.0.0) (2023-04-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate back to Remix on Cloudflare Workers
+
+### Features
+
+* migrate back to Remix on Cloudflare Workers ([75e23d8](https://github.com/iiroj/iiro.fi/commit/75e23d8abd120ec2f9270266cddad153b4e071e1))
+
 ## [27.0.2](https://github.com/iiroj/iiro.fi/compare/v27.0.1...v27.0.2) (2023-04-01)
 
 
