@@ -11,8 +11,6 @@ jobs:
     uses: ./.github/workflows/install.yml
 
   Lint:
-    needs:
-      - Install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -30,9 +28,6 @@ jobs:
 
   Preview:
     if: ${{ github.event_name == 'pull_request' }}
-    needs:
-      - Lint
-      - Typecheck
     environment:
       name: Development
       url: ${{ steps.deployment.outputs.url }}
