@@ -1,3 +1,10 @@
+## [29.0.1](https://github.com/iiroj/iiro.fi/compare/v29.0.0...v29.0.1) (2023-04-22)
+
+
+### Bug Fixes
+
+* set explicit branch name for release deployments ([3fcba74](https://github.com/iiroj/iiro.fi/commit/3fcba743ca4f204019185f6a0a93863bd868c290))
+
 ## [29.0.0](https://github.com/iiroj/iiro.fi/compare/v28.0.1...v29.0.0) (2023-04-22)
 
 
