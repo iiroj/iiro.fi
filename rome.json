@@ -4,7 +4,7 @@
         "indentStyle": "space",
         "indentSize": 4,
         "lineWidth": 120,
-        "ignore": [".cache", "build", "node_modules", "public/build"]
+        "ignore": [".cache", "node_modules"]
     },
     "javascript": {
         "formatter": {
@@ -16,10 +16,10 @@
         "rules": {
             "recommended": true
         },
-        "ignore": [".cache", "build", "node_modules", "public/build"]
+        "ignore": [".cache", "node_modules"]
     },
     "organizeImports": {
         "enabled": true,
-        "ignore": [".cache", "build", "node_modules", "public/build"]
+        "ignore": [".cache", "node_modules"]
     }
 }

@@ -1,7 +1,7 @@
 {
   "name": "iiro.fi",
   "version": "28.0.1",
-  "description": "A serverless site",
+  "description": "A static site",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
   "repository": {
@@ -11,44 +11,27 @@
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
-    "rome:check": "rome check .",
-    "rome:format": "rome format .",
-    "lint": "concurrently npm:rome:*",
+    "rome:check": "rome check --apply-unsafe .",
+    "rome:format": "rome format . --write",
+    "lint": "npm run rome:check && npm run rome:format",
     "typecheck": "tsc --project tsconfig.json",
-    "prebuild": "rimraf .cache build",
-    "build": "remix build",
-    "dev:remix": "NODE_ENV=development remix watch",
-    "dev:worker": "NODE_ENV=development wrangler dev --experimental-local",
-    "start": "npm run build && concurrently npm:dev:*"
-  },
-  "dependencies": {
-    "@remix-run/cloudflare": "1.15.0",
-    "@remix-run/cloudflare-workers": "1.15.0",
-    "@remix-run/node": "1.15.0",
-    "@remix-run/react": "1.15.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "start": "wrangler pages dev ./public --compatibility-date=2023-04-04 --port 3000"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.5.1",
-    "@commitlint/config-conventional": "17.4.4",
-    "@miniflare/tre": "3.0.0-next.10",
-    "@remix-run/dev": "1.15.0",
+    "@commitlint/cli": "17.6.1",
+    "@commitlint/config-conventional": "17.6.1",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "9.0.2",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.0.7",
     "@semantic-release/npm": "10.0.3",
     "@semantic-release/release-notes-generator": "10.0.3",
-    "@types/react": "18.0.35",
-    "@types/react-dom": "18.0.11",
-    "concurrently": "8.0.1",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.1",
     "rome": "12.0.0",
     "semantic-release": "21.0.1",
     "typescript": "5.0.4",
-    "wrangler": "2.15.0"
+    "wrangler": "2.16.0"
   }
 }
