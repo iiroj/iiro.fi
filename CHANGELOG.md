@@ -1,3 +1,14 @@
+## [29.0.0](https://github.com/iiroj/iiro.fi/compare/v28.0.1...v29.0.0) (2023-04-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate to static Cloudflare Pages
+
+### Features
+
+* migrate to static Cloudflare Pages ([bf3aafc](https://github.com/iiroj/iiro.fi/commit/bf3aafc2e652391847ccb051c7b91a5def9d7ec2))
+
 ## [28.0.1](https://github.com/iiroj/iiro.fi/compare/v28.0.0...v28.0.1) (2023-04-12)
 
 
