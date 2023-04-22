@@ -11,9 +11,8 @@
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
-    "rome:check": "rome check --apply-unsafe .",
-    "rome:format": "rome format . --write",
-    "lint": "npm run rome:check && npm run rome:format",
+    "lint": "rome check . && rome format .",
+    "lint:fix": "rome check --apply-unsafe . && rome format . --write",
     "start": "wrangler pages dev ./public --compatibility-date=2023-04-04 --port 3000"
   },
   "devDependencies": {
