@@ -55,9 +55,6 @@ jobs:
   Release:
     # Run only in `main`, and skip release commits themselves to prevent infinite release loop
     if: ${{ github.ref_name == 'main' && !startsWith(github.event.head_commit.message, 'chore(release)') }}
-    needs:
-      - Lint
-      - Typecheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
