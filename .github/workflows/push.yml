@@ -7,9 +7,6 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  Install:
-    uses: ./.github/workflows/install.yml
-
   Lint:
     runs-on: ubuntu-latest
     needs:
@@ -26,6 +23,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      - if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm ci
       - run: npm run lint
 
   Preview:
