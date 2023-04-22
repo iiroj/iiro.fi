@@ -14,7 +14,6 @@
     "rome:check": "rome check --apply-unsafe .",
     "rome:format": "rome format . --write",
     "lint": "npm run rome:check && npm run rome:format",
-    "typecheck": "tsc --project tsconfig.json",
     "start": "wrangler pages dev ./public --compatibility-date=2023-04-04 --port 3000"
   },
   "devDependencies": {
@@ -31,7 +30,6 @@
     "lint-staged": "13.2.1",
     "rome": "12.0.0",
     "semantic-release": "21.0.1",
-    "typescript": "5.0.4",
     "wrangler": "2.16.0"
   }
 }
