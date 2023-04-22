@@ -8,9 +8,6 @@ on:
 concurrency: production_deployment
 
 jobs:
-  Install:
-    uses: ./.github/workflows/install.yml
-
   Deploy:
     environment:
       name: Production
@@ -25,3 +22,4 @@ jobs:
           projectName: iiro
           directory: public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
