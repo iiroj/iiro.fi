@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: cloudflare/pages-action@v1
+      - uses: iiroj/pages-action@branch-deployment-status
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           projectName: iiro
           directory: public
-          # gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          # branch: main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
