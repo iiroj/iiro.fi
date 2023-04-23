@@ -29,9 +29,6 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     needs:
       - Lint
-    environment:
-      name: Development
-      url: ${{ steps.deployment.outputs.url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
