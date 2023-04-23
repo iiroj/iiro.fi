@@ -1,3 +1,10 @@
+## [29.0.2](https://github.com/iiroj/iiro.fi/compare/v29.0.1...v29.0.2) (2023-04-23)
+
+
+### Bug Fixes
+
+* **ci:** use forked Cloudflare Pages action ([1a924c7](https://github.com/iiroj/iiro.fi/commit/1a924c766433f18f14deefaa132761c75879883a))
+
 ## [29.0.1](https://github.com/iiroj/iiro.fi/compare/v29.0.0...v29.0.1) (2023-04-22)
 
 
