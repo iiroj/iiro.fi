@@ -1,3 +1,10 @@
+## [29.0.3](https://github.com/iiroj/iiro.fi/compare/v29.0.2...v29.0.3) (2023-04-25)
+
+
+### Bug Fixes
+
+* **dependencies:** update wrangler@2.17.0 ([6b6412d](https://github.com/iiroj/iiro.fi/commit/6b6412d7370427a1ea4366e6dcc932a5abecb036))
+
 ## [29.0.2](https://github.com/iiroj/iiro.fi/compare/v29.0.1...v29.0.2) (2023-04-23)
 
 
