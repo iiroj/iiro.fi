@@ -3,48 +3,16 @@ name: Push
 on:
   push:
     branches: [main]
-  pull_request:
-    types: [opened, synchronize]
 
 jobs:
-  Lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - uses: actions/cache@v3
-        id: cache-node_modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-      - if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: npm ci
-      - run: npm run lint
-
-  Preview:
-    if: ${{ github.event_name == 'pull_request' }}
-    needs:
-      - Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: iiroj/pages-action@branch-deployment-status
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: iiro
-          directory: public
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+  Shared:
+    uses: ./.github/workflows/install-lint.yml
 
   Release:
-    # Run only in `main`, and skip release commits themselves to prevent infinite release loop
-    if: ${{ github.ref_name == 'main' && !startsWith(github.event.head_commit.message, 'chore(release)') }}
+    # Skip release commits themselves to prevent infinite release loop
+    if: ${{ !startsWith(github.event.head_commit.message, 'chore(release)') }}
     needs:
-      - Lint
+      - Shared
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
