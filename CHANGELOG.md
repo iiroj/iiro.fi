@@ -1,3 +1,10 @@
+## [29.0.4](https://github.com/iiroj/iiro.fi/compare/v29.0.3...v29.0.4) (2023-05-01)
+
+
+### Bug Fixes
+
+* **cloudflare:** update Beacon SRI hash ([80422ee](https://github.com/iiroj/iiro.fi/commit/80422eeb8b772ab051466224daf93a67816cb886))
+
 ## [29.0.3](https://github.com/iiroj/iiro.fi/compare/v29.0.2...v29.0.3) (2023-04-25)
 
 
