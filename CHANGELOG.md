@@ -1,3 +1,9 @@
+## [29.0.6](https://github.com/iiroj/iiro.fi/compare/v29.0.5...v29.0.6) (2023-05-14)
+
+### Bug Fixes
+
+- **ci:** format CHANGELOG.md before committing ([01e216c](https://github.com/iiroj/iiro.fi/commit/01e216ce5ad3feb1630a41975a388c9e95542cf5))
+
 ## [29.0.5](https://github.com/iiroj/iiro.fi/compare/v29.0.4...v29.0.5) (2023-05-14)
 
 ### Bug Fixes
