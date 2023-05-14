@@ -1,3 +1,10 @@
+## [29.0.5](https://github.com/iiroj/iiro.fi/compare/v29.0.4...v29.0.5) (2023-05-14)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependencies ([035e5e1](https://github.com/iiroj/iiro.fi/commit/035e5e1407b81a745e617ff0bc069646cc70eba8))
+
 ## [29.0.4](https://github.com/iiroj/iiro.fi/compare/v29.0.3...v29.0.4) (2023-05-01)
 
 ### Bug Fixes
