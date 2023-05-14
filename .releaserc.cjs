@@ -13,7 +13,7 @@ module.exports = {
       {
         assets: ["CHANGELOG.md", "package-lock.json", "package.json"],
         message:
-          "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}",
+          "chore(release): ${nextRelease.version}\n\n${nextRelease.notes} [skip ci]",
       },
     ],
     [
