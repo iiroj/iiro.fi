@@ -1,3 +1,3 @@
 {
-    "*.{cjs,js,mjs,ts}": ["rome check --apply-unsafe", "rome format --write"]
+  "*": "prettier -u --write"
 }

@@ -1,5 +1,5 @@
 {
-    "version": 1,
-    "include": ["/*"],
-    "exclude": ["/build/*", "/static/*", "/favicon.ico", "/site.webmanifest"]
+  "version": 1,
+  "include": ["/*"],
+  "exclude": ["/build/*", "/static/*", "/favicon.ico", "/site.webmanifest"]
 }

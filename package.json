@@ -11,8 +11,7 @@
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
-    "lint": "rome check . && rome format .",
-    "lint:fix": "rome check --apply-unsafe . && rome format . --write",
+    "lint": "prettier --list-different .",
     "start": "wrangler pages dev ./public --compatibility-date=2023-04-04 --port 3000"
   },
   "devDependencies": {
@@ -27,7 +26,7 @@
     "conventional-changelog-conventionalcommits": "5.0.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.1",
-    "rome": "12.0.0",
+    "prettier": "2.8.8",
     "semantic-release": "21.0.1",
     "wrangler": "2.17.0"
   }
