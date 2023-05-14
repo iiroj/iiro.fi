@@ -1,3 +1,9 @@
+## [29.0.7](https://github.com/iiroj/iiro.fi/compare/v29.0.6...v29.0.7) (2023-05-14)
+
+### Reverts
+
+- Revert "ci: add message to release commit so that Actions don't run" ([318b785](https://github.com/iiroj/iiro.fi/commit/318b7855a98c2e2abf3172a33bcb96c7ed13810e))
+
 ## [29.0.6](https://github.com/iiroj/iiro.fi/compare/v29.0.5...v29.0.6) (2023-05-14)
 
 ### Bug Fixes
