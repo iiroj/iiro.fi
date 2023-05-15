@@ -1,3 +1,9 @@
+## [29.0.8](https://github.com/iiroj/iiro.fi/compare/v29.0.7...v29.0.8) (2023-05-15)
+
+### Bug Fixes
+
+- formatting ([42abf29](https://github.com/iiroj/iiro.fi/commit/42abf293613ac8dc310ac54789011887ca51870d))
+
 ## [29.0.7](https://github.com/iiroj/iiro.fi/compare/v29.0.6...v29.0.7) (2023-05-14)
 
 ### Reverts
