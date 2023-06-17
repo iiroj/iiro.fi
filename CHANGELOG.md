@@ -1,3 +1,9 @@
+## [29.0.10](https://github.com/iiroj/iiro.fi/compare/v29.0.9...v29.0.10) (2023-06-17)
+
+### Bug Fixes
+
+- make sure content is vertically centered ([03cc735](https://github.com/iiroj/iiro.fi/commit/03cc735a12e5ce77a2ac09cc3a4649f38b8c9fbe))
+
 ## [29.0.9](https://github.com/iiroj/iiro.fi/compare/v29.0.8...v29.0.9) (2023-06-04)
 
 ### Bug Fixes
