@@ -1,3 +1,9 @@
+## [29.0.11](https://github.com/iiroj/iiro.fi/compare/v29.0.10...v29.0.11) (2023-06-24)
+
+### Bug Fixes
+
+- add "apple-touch-icon" ([75e2207](https://github.com/iiroj/iiro.fi/commit/75e22077a776e0add1624b89bd35cd45b455b0f5))
+
 ## [29.0.10](https://github.com/iiroj/iiro.fi/compare/v29.0.9...v29.0.10) (2023-06-17)
 
 ### Bug Fixes
