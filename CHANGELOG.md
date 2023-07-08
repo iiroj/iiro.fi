@@ -1,3 +1,13 @@
+## [30.0.0](https://github.com/iiroj/iiro.fi/compare/v29.0.11...v30.0.0) (2023-07-08)
+
+### ⚠ BREAKING CHANGES
+
+- remove Cloudflare Pages deployment
+
+### Features
+
+- remove Cloudflare Pages deployment ([5a43ac3](https://github.com/iiroj/iiro.fi/commit/5a43ac3a7e270bcac9f0987d12a9c22556732e04))
+
 ## [29.0.11](https://github.com/iiroj/iiro.fi/compare/v29.0.10...v29.0.11) (2023-06-24)
 
 ### Bug Fixes
