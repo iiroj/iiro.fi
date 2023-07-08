@@ -11,8 +11,7 @@
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "scripts": {
-    "lint": "prettier --list-different .",
-    "start": "wrangler pages dev ./public --compatibility-date=2023-05-18 --port 3000"
+    "lint": "prettier --list-different ."
   },
   "devDependencies": {
     "@commitlint/cli": "17.6.6",
@@ -23,12 +22,11 @@
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "9.0.3",
     "@semantic-release/npm": "10.0.4",
-    "@semantic-release/release-notes-generator": "11.0.3",
+    "@semantic-release/release-notes-generator": "11.0.4",
     "conventional-changelog-conventionalcommits": "6.1.0",
     "husky": "8.0.3",
-    "lint-staged": "13.2.2",
+    "lint-staged": "13.2.3",
     "prettier": "2.8.8",
-    "semantic-release": "21.0.5",
-    "wrangler": "3.1.1"
+    "semantic-release": "21.0.7"
   }
 }
