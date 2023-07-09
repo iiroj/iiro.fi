@@ -34,22 +34,26 @@ export class StaticSite extends Construct {
       domainName
     );
 
-    const cfOAI = new cloudfront.OriginAccessIdentity(
+    const originAccessIdentity = new cloudfront.OriginAccessIdentity(
       this,
-      "OriginAccessIdentity"
+      "OriginAccessIdentity",
+      { comment: `Allow Cloudfront access to "s3://${domainName}"` }
     );
 
-    destinationBucket.addToResourcePolicy(
-      new iam.PolicyStatement({
-        actions: ["s3:GetObject"],
-        resources: [destinationBucket.arnForObjects("*")],
-        principals: [
-          new iam.CanonicalUserPrincipal(
-            cfOAI.cloudFrontOriginAccessIdentityS3CanonicalUserId
-          ),
-        ],
-      })
+    const policyStatement = new iam.PolicyStatement({
+      actions: ["s3:GetObject"],
+      resources: [destinationBucket.arnForObjects("*")],
+      principals: [originAccessIdentity.grantPrincipal],
+    });
+
+    const bucketPolicy = new s3.BucketPolicy(
+      this,
+      "cloudfrontAccessBucketPolicy",
+      { bucket: destinationBucket }
     );
+
+    /** Adjust policy of existing bucket to grant access to Cloudfront */
+    bucketPolicy.document.addStatements(policyStatement);
 
     new cdk.CfnOutput(this, "Bucket", {
       value: destinationBucket.bucketName,
@@ -137,6 +141,7 @@ export class StaticSite extends Construct {
         origin: new cloudfrontOrigins.S3Origin(destinationBucket, {
           connectionAttempts: 1,
           connectionTimeout: cdk.Duration.seconds(5),
+          originAccessIdentity,
         }),
         responseHeadersPolicy,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
