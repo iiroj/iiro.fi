@@ -10,8 +10,10 @@
   },
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
+  "type": "module",
   "scripts": {
-    "lint": "prettier --list-different ."
+    "lint": "prettier --list-different .",
+    "cdk": "cdk"
   },
   "devDependencies": {
     "@commitlint/cli": "17.6.6",
@@ -23,6 +25,11 @@
     "@semantic-release/github": "9.0.3",
     "@semantic-release/npm": "10.0.4",
     "@semantic-release/release-notes-generator": "11.0.4",
+    "@swc-node/register": "1.6.6",
+    "@types/aws-cloudfront-function": "1.0.2",
+    "aws-cdk": "2.87.0",
+    "aws-cdk-lib": "2.87.0",
+    "constructs": "10.2.69",
     "conventional-changelog-conventionalcommits": "6.1.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
