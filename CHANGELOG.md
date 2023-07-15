@@ -1,3 +1,9 @@
+## [30.0.1](https://github.com/iiroj/iiro.fi/compare/v30.0.0...v30.0.1) (2023-07-15)
+
+### Performance Improvements
+
+- add robots.txt and sitemap.xml ([0b6523f](https://github.com/iiroj/iiro.fi/commit/0b6523f076212391e32567e0a774499ec52ce08f))
+
 ## [30.0.0](https://github.com/iiroj/iiro.fi/compare/v29.0.11...v30.0.0) (2023-07-08)
 
 ### ⚠ BREAKING CHANGES
