@@ -1,3 +1,9 @@
+## [30.1.0](https://github.com/iiroj/iiro.fi/compare/v30.0.1...v30.1.0) (2023-08-11)
+
+### Features
+
+- handle 404 mapping in Cloudfront function level ([fe79e65](https://github.com/iiroj/iiro.fi/commit/fe79e65ac703998ee7d53a4cd32383d8257becd7))
+
 ## [30.0.1](https://github.com/iiroj/iiro.fi/compare/v30.0.0...v30.0.1) (2023-07-15)
 
 ### Performance Improvements
