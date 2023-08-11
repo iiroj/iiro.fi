@@ -10,10 +10,8 @@ import * as s3 from "aws-cdk-lib/aws-s3";
 import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
 
-const resolvePath = (relativePath: string): string => {
-  const __dirname = path.dirname(fileURLToPath(import.meta.url));
-  return path.resolve(__dirname, relativePath);
-};
+import { listPublicFiles } from "../scripts/list-public-files";
+import { resolvePath } from "../scripts/resolve-path";
 
 interface StackProps {
   certificateArn: string;
@@ -126,11 +124,39 @@ export class StaticSite extends Construct {
       },
     );
 
-    const cfFunction = new cloudfront.Function(this, "Function", {
-      code: cloudfront.FunctionCode.fromFile({
-        filePath: resolvePath("../functions/redirects.js"),
-      }),
+    const cfFunctionViewerRequestCode = cloudfront.FunctionCode.fromFile({
+      filePath: resolvePath(import.meta.url, "../functions/viewer-request.js"),
     });
+    const publicFiles = listPublicFiles();
+    const injectedCfFunctionViewerRequestCode = cfFunctionViewerRequestCode
+      .render()
+      .replace(
+        `KNOWN_PUBLIC_FILES = []`,
+        `KNOWN_PUBLIC_FILES = ${JSON.stringify(publicFiles)}`,
+      );
+
+    const cfFunctionViewerRequest = new cloudfront.Function(
+      this,
+      "ViewerRequestFunction",
+      {
+        code: cloudfront.FunctionCode.fromInline(
+          injectedCfFunctionViewerRequestCode,
+        ),
+      },
+    );
+
+    const cfFunctionViewerResponse = new cloudfront.Function(
+      this,
+      "ViewerResponseFunction",
+      {
+        code: cloudfront.FunctionCode.fromFile({
+          filePath: resolvePath(
+            import.meta.url,
+            "../functions/viewer-response.js",
+          ),
+        }),
+      },
+    );
 
     const distribution = new cloudfront.Distribution(this, "Distribution", {
       defaultBehavior: {
@@ -148,7 +174,11 @@ export class StaticSite extends Construct {
         functionAssociations: [
           {
             eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
-            function: cfFunction,
+            function: cfFunctionViewerRequest,
+          },
+          {
+            eventType: cloudfront.FunctionEventType.VIEWER_RESPONSE,
+            function: cfFunctionViewerResponse,
           },
         ],
       },
@@ -177,7 +207,9 @@ export class StaticSite extends Construct {
       destinationBucket,
       distribution,
       distributionPaths: ["/*"],
-      sources: [s3deploy.Source.asset(resolvePath("../public"))],
+      sources: [
+        s3deploy.Source.asset(resolvePath(import.meta.url, "../public")),
+      ],
     });
   }
 }
