@@ -24,20 +24,20 @@ export class StaticSite extends Construct {
   constructor(
     parent: cdk.Stack,
     id: string,
-    { certificateArn, domainName }: StackProps
+    { certificateArn, domainName }: StackProps,
   ) {
     super(parent, id);
 
     const destinationBucket = s3.Bucket.fromBucketName(
       this,
       "bucket",
-      domainName
+      domainName,
     );
 
     const originAccessIdentity = new cloudfront.OriginAccessIdentity(
       this,
       "OriginAccessIdentity",
-      { comment: `Allow Cloudfront access to "s3://${domainName}"` }
+      { comment: `Allow Cloudfront access to "s3://${domainName}"` },
     );
 
     const policyStatement = new iam.PolicyStatement({
@@ -49,7 +49,7 @@ export class StaticSite extends Construct {
     const bucketPolicy = new s3.BucketPolicy(
       this,
       "cloudfrontAccessBucketPolicy",
-      { bucket: destinationBucket }
+      { bucket: destinationBucket },
     );
 
     /** Adjust policy of existing bucket to grant access to Cloudfront */
@@ -62,7 +62,7 @@ export class StaticSite extends Construct {
     const certificate = acm.Certificate.fromCertificateArn(
       this,
       "Certificate",
-      certificateArn
+      certificateArn,
     );
 
     new cdk.CfnOutput(this, "CertificateARN", {
@@ -123,7 +123,7 @@ export class StaticSite extends Construct {
             override: true,
           },
         },
-      }
+      },
     );
 
     const cfFunction = new cloudfront.Function(this, "Function", {
