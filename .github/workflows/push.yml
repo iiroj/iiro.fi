@@ -9,8 +9,6 @@ jobs:
     uses: ./.github/workflows/install-lint.yml
 
   Release:
-    # Skip release commits themselves to prevent infinite release loop
-    if: ${{ !startsWith(github.event.head_commit.message, 'chore(release)') }}
     needs:
       - Shared
     runs-on: ubuntu-latest
@@ -28,10 +26,12 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-      - run: npx semantic-release
+            - name: Create Release Pull Request
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
+        with:
+          commit: "chore(release): bump version"
+          title: "chore(release): bump version"
+          publish: npx changeset tag
         env:
-          GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-          GIT_AUTHOR_NAME: ${{ github.event.head_commit.author.name }}
-          GIT_AUTHOR_EMAIL: ${{ github.event.head_commit.author.email }}
-          GIT_GIT_COMMITTER_NAME_NAME: ${{ github.event.head_commit.committer.name }}
-          GIT_GIT_COMMITTER_NAME_EMAIL: ${{ github.event.head_commit.committer.email }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
