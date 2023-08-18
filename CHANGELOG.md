@@ -1,5 +1,11 @@
 # iiro.fi
 
+## 30.2.0
+
+### Minor Changes
+
+- [#18](https://github.com/iiroj/iiro.fi/pull/18) [`3c20f35d`](https://github.com/iiroj/iiro.fi/commit/3c20f35d201647646ebfb85eb4bb0ccba790982c) Thanks [@iiroj](https://github.com/iiroj)! - Use 🦋 changesets for versioning
+
 ## [30.1.0](https://github.com/iiroj/iiro.fi/compare/v30.0.1...v30.1.0) (2023-08-11)
 
 ### Features
