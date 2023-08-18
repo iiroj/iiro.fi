@@ -32,6 +32,7 @@ jobs:
         with:
           commit: "chore(release): bump version"
           title: "chore(release): bump version"
+          version: npx changeset version && npm i --package-lock-only
           publish: npx changeset tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
