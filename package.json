@@ -14,6 +14,9 @@
   "scripts": {
     "lint": "prettier --list-different .",
     "changeset": "changeset",
+    "version": "npx changeset version",
+    "postversion": "npm i --package-lock-only && git commit -am \"chore(changeset): release\"",
+    "publish": "npx changeset tag",
     "cdk": "cdk"
   },
   "devDependencies": {

@@ -8,6 +8,7 @@ jobs:
     uses: ./.github/workflows/install-lint.yml
 
   changesets:
+    if: ${{ !(github.event.head_commit.message, 'chore(changeset)') }}
     needs:
       - Shared
     runs-on: ubuntu-latest
