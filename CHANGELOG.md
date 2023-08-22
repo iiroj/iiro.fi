@@ -1,5 +1,11 @@
 # iiro.fi
 
+## 30.2.1
+
+### Patch Changes
+
+- [`9396bc2`](https://github.com/iiroj/iiro.fi/commit/9396bc2a47d4b44e7031685b9853f76ca71cb17d) Thanks [@iiroj](https://github.com/iiroj)! - remove S3-specific response headers
+
 ## 30.2.0
 
 ### Minor Changes
