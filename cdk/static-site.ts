@@ -72,7 +72,11 @@ export class StaticSite extends Construct {
       "ResponseHeadersPolicy",
       {
         comment: "Add static headers to response",
-        removeHeaders: ["server"],
+        removeHeaders: [
+          "server",
+          "x-amz-server-side-encryption",
+          "x-amz-version-id",
+        ],
         customHeadersBehavior: {
           customHeaders: [
             {
