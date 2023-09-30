@@ -1,5 +1,11 @@
 # iiro.fi
 
+## 31.1.0
+
+### Minor Changes
+
+- [#24](https://github.com/iiroj/iiro.fi/pull/24) [`575e3c8`](https://github.com/iiroj/iiro.fi/commit/575e3c8a94a5e844b75fcd2f6aec5463712c69b2) Thanks [@iiroj](https://github.com/iiroj)! - Add Open Graph tags and refer to S Group instead of SOK
+
 ## 31.0.0
 
 ### Major Changes
