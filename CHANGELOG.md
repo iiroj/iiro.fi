@@ -1,5 +1,11 @@
 # iiro.fi
 
+## 31.0.0
+
+### Major Changes
+
+- [#22](https://github.com/iiroj/iiro.fi/pull/22) [`aa1b0f5`](https://github.com/iiroj/iiro.fi/commit/aa1b0f5e76ce63237edec3714f951886213e2561) Thanks [@iiroj](https://github.com/iiroj)! - Site deployment has been migrated back to Vercel, as a static site, and PR previews are back.
+
 ## 30.2.1
 
 ### Patch Changes
