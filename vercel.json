@@ -4,7 +4,6 @@
   "cleanUrls": true,
   "framework": null,
   "installCommand": null,
-  "outputDirectory": "public",
   "public": false,
   "trailingSlash": false
 }
