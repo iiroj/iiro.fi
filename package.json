@@ -12,7 +12,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare": "husky install",
     "start": "vercel dev",
     "build": "exit 0",
     "lint": "prettier --list-different .",
