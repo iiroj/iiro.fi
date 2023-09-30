@@ -1,5 +1,11 @@
 # iiro.fi
 
+## 31.2.0
+
+### Minor Changes
+
+- [#26](https://github.com/iiroj/iiro.fi/pull/26) [`47543ad`](https://github.com/iiroj/iiro.fi/commit/47543ad267f744dd5d8cd5e119b19af47581555b) Thanks [@iiroj](https://github.com/iiroj)! - Add image to page and og:image tag
+
 ## 31.1.0
 
 ### Minor Changes
