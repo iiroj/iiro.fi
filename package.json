@@ -12,26 +12,27 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prepare": "husky install",
+    "start": "vercel dev",
+    "build": "exit 0",
     "lint": "prettier --list-different .",
     "changeset": "changeset",
     "version": "npx changeset version",
     "postversion": "npm i --package-lock-only && git commit -am \"chore(changeset): release\"",
-    "publish": "npx changeset tag",
-    "cdk": "cdk"
+    "publish": "npx changeset tag"
+  },
+  "dependencies": {
+    "@vercel/edge": "1.1.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.2",
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
-    "@swc-node/register": "1.6.7",
-    "@types/aws-cloudfront-function": "1.0.2",
-    "aws-cdk": "2.92.0",
-    "aws-cdk-lib": "2.92.0",
-    "constructs": "10.2.69",
     "conventional-changelog-conventionalcommits": "6.1.0",
     "husky": "8.0.3",
     "lint-staged": "14.0.0",
-    "prettier": "3.0.2"
+    "prettier": "3.0.2",
+    "vercel": "32.3.1"
   }
 }

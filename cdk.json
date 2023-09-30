@@ -1,3 +1,0 @@
-{
-  "app": "node --loader @swc-node/register/esm cdk/index.ts"
-}

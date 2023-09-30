@@ -47,3 +47,37 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
       - run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+  Preview:
+    needs:
+      - Shared
+      - changesets
+      - commitlint
+    runs-on: ubuntu-latest
+    environment:
+      name: Development
+      url: ${{ steps.deployment.outputs.url }}
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - uses: actions/cache@v3
+        id: cache-node_modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      - name: Pull Vercel Environment Information
+        run: npx vercel pull --yes --environment=development --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: npx vercel build --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+      - name: Deploy Project Artifacts to Vercel
+        id: deployment
+        run: echo "url=$(npx vercel --prebuilt --archive --token=${{ secrets.VERCEL_TOKEN }})" >> "$GITHUB_OUTPUT"
