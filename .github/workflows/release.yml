@@ -41,4 +41,4 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: "1"
       - name: Deploy Project Artifacts to Vercel
-        run: npx vercel --prod --prebuilt --archive --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod --prebuilt --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}

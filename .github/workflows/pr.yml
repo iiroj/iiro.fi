@@ -80,4 +80,4 @@ jobs:
           NEXT_TELEMETRY_DISABLED: "1"
       - name: Deploy Project Artifacts to Vercel
         id: deployment
-        run: echo "url=$(npx vercel --prebuilt --archive --token=${{ secrets.VERCEL_TOKEN }})" >> "$GITHUB_OUTPUT"
+        run: echo "url=$(npx vercel --prebuilt --archive=tgz --token=${{ secrets.VERCEL_TOKEN }})" >> "$GITHUB_OUTPUT"
