@@ -5,6 +5,7 @@ const SECURITY_HEADERS = {
   "Cross-Origin-Embedder-Policy": `require-corp; report-to="default"`,
   "Cross-Origin-Opener-Policy": `same-site; report-to="default"`,
   "Cross-Origin-Resource-Policy": `same-site`,
+  "Permissions-Policy": `browsing-topics=(), interest-cohort=()`,
   "Referrer-Policy": `strict-origin-when-cross-origin`,
   "Strict-Transport-Security": `max-age=31536000; includeSubDomains; preload`,
   "X-Content-Type-Options": `nosniff`,
