@@ -6,13 +6,13 @@
     <title>Iiro Jäppinen</title>
     <link
       href="/static/styles.css"
-      integrity="sha384-S/e0+M16QeZrmkySKqr3E0MWnppB9G8TAptkgstzDBrG+dV4S/8+ghoLfE0fssTG"
+      integrity="sha384-4zjposkYyhrgeQR1jF28nzV4i6j9ujOP/N6JU57B8kYuGtnkkyX+hnkQ7NwI4jqb%"
       rel="stylesheet"
     />
     <link rel="apple-touch-icon" href="/static/icon-512.png" />
     <meta name="description" content="Principal Engineer at S Group" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <meta property="og:image" content="/static/icon-512.png" />
+    <meta property="og:image" content="/static/profile-512.png" />
     <meta
       property="og:title"
       content="Iiro Jäppinen, Principal Engineer at S Group"
@@ -25,8 +25,23 @@
   </head>
 
   <body>
-    <h1>Iiro Jäppinen</h1>
-    <h2>Principal Engineer at S Group</h2>
+    <header>
+      <img
+        alt="Iiro Jäppinen"
+        height="96px"
+        srcset="
+          /static/profile-144.jpg 1x,
+          /static/profile-296.jpg 2x,
+          /static/profile-512.jpg 3x
+        "
+        src="/static/profile-144.jpg"
+        width="96px"
+      />
+      <div>
+        <h1>Iiro Jäppinen</h1>
+        <h2>Principal Engineer at S Group</h2>
+      </div>
+    </header>
     <p>
       I build web experiences, develop tooling, and maintain open-source
       libraries.
