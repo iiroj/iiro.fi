@@ -1,3 +1,9 @@
+## [31.2.2](https://github.com/iiroj/iiro.fi/compare/v31.2.1...v31.2.2) (2023-10-01)
+
+### Bug Fixes
+
+- **release:** workaround for releasing ([36013ac](https://github.com/iiroj/iiro.fi/commit/36013ac5bd5b500ca408bd91c7453d1a2fad7cfa))
+
 ## [31.2.1](https://github.com/iiroj/iiro.fi/compare/v31.2.0...v31.2.1) (2023-10-01)
 
 ### Performance Improvements
