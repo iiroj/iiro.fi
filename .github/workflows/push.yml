@@ -5,22 +5,14 @@ on:
     branches: [main]
 
 jobs:
-  Shared:
-    # Skip release commits themselves to prevent infinite release loop
-    if: ${{ !endsWith(github.event.head_commit.message, '[semantic-release]') }}
-    uses: ./.github/workflows/install-lint.yml
-
   Release:
     # Skip release commits themselves to prevent infinite release loop
     if: ${{ !endsWith(github.event.head_commit.message, '[semantic-release]') }}
-    needs:
-      - Shared
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          persist-credentials: false
       - uses: actions/setup-node@v3
         with:
           node-version: 20
@@ -31,7 +23,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-            - name: Create Release Pull Request
+      - if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm ci
       - run: npx semantic-release
         env:
           GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}

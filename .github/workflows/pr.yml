@@ -4,13 +4,14 @@ on:
   pull_request:
 
 jobs:
-  Shared:
-    uses: ./.github/workflows/install-lint.yml
-
-  commitlint:
-    needs:
-      - Shared
+  Preview:
     runs-on: ubuntu-latest
+    environment:
+      name: Development
+      url: ${{ steps.deployment.outputs.url }}
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -25,30 +26,9 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      - if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm ci
       - run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
-
-  Preview:
-    needs:
-      - Shared
-    runs-on: ubuntu-latest
-    environment:
-      name: Development
-      url: ${{ steps.deployment.outputs.url }}
-    env:
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - uses: actions/cache@v3
-        id: cache-node_modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
       - name: Pull Vercel Environment Information
         run: npx vercel pull --yes --environment=development --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
