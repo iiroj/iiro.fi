@@ -1,3 +1,9 @@
+## [31.2.1](https://github.com/iiroj/iiro.fi/compare/v31.2.0...v31.2.1) (2023-10-01)
+
+### Performance Improvements
+
+- add lazy-loading to img ([34c21de](https://github.com/iiroj/iiro.fi/commit/34c21de5103da742b758d465aa26dcd9132a9faf))
+
 # iiro.fi
 
 ## 31.2.0
