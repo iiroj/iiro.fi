@@ -7,12 +7,12 @@ on:
 jobs:
   Shared:
     # Skip release commits themselves to prevent infinite release loop
-    if: ${{ !startsWith(github.event.head_commit.message, '[semantic-release]') }}
+    if: ${{ !endsWith(github.event.head_commit.message, '[semantic-release]') }}
     uses: ./.github/workflows/install-lint.yml
 
   Release:
     # Skip release commits themselves to prevent infinite release loop
-    if: ${{ !startsWith(github.event.head_commit.message, '[semantic-release]') }}
+    if: ${{ !endsWith(github.event.head_commit.message, '[semantic-release]') }}
     needs:
       - Shared
     runs-on: ubuntu-latest
