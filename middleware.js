@@ -1,7 +1,7 @@
 import { next } from "@vercel/edge";
 
 const SECURITY_HEADERS = {
-  "Content-Security-Policy": `default-src 'self'`,
+  "Content-Security-Policy": `default-src 'self'; style-src 'self' 'unsafe-inline'`,
   "Cross-Origin-Embedder-Policy": `require-corp; report-to="default"`,
   "Cross-Origin-Opener-Policy": `same-site; report-to="default"`,
   "Cross-Origin-Resource-Policy": `same-site`,
