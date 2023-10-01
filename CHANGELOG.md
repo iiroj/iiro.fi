@@ -1,3 +1,9 @@
+## [31.2.3](https://github.com/iiroj/iiro.fi/compare/v31.2.2...v31.2.3) (2023-10-01)
+
+### Bug Fixes
+
+- **release:** prevent infinite loop in CI release ([dc0be9d](https://github.com/iiroj/iiro.fi/commit/dc0be9de8a79c958c23e4152f6d46faec62484f5))
+
 ## [31.2.2](https://github.com/iiroj/iiro.fi/compare/v31.2.1...v31.2.2) (2023-10-01)
 
 ### Bug Fixes
