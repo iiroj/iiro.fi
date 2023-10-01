@@ -1,3 +1,9 @@
+## [31.2.4](https://github.com/iiroj/iiro.fi/compare/v31.2.3...v31.2.4) (2023-10-01)
+
+### Bug Fixes
+
+- **ci:** do not persist credentials ([bd648f1](https://github.com/iiroj/iiro.fi/commit/bd648f15738b989f668aad4899254f01e4ed4401))
+
 ## [31.2.3](https://github.com/iiroj/iiro.fi/compare/v31.2.2...v31.2.3) (2023-10-01)
 
 ### Bug Fixes
