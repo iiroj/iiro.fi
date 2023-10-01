@@ -7,27 +7,6 @@ jobs:
   Shared:
     uses: ./.github/workflows/install-lint.yml
 
-  changesets:
-    if: ${{ !startsWith(github.event.pull_request.title, '🦋 Changeset release') }}
-    needs:
-      - Shared
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - uses: actions/cache@v3
-        id: cache-node_modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-      - run: npx changeset status --since=${{ github.event.pull_request.base.sha }}
-
   commitlint:
     needs:
       - Shared
@@ -51,8 +30,6 @@ jobs:
   Preview:
     needs:
       - Shared
-      - changesets
-      - commitlint
     runs-on: ubuntu-latest
     environment:
       name: Development
