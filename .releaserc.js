@@ -25,7 +25,7 @@ export default {
       {
         assets: ["CHANGELOG.md", "package-lock.json", "package.json"],
         message:
-          "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}\n\n[skip ci]",
+          "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}\n\n[semantic-release]",
       },
     ],
     [
