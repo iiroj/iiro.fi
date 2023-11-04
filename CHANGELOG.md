@@ -1,3 +1,9 @@
+## [31.3.0](https://github.com/iiroj/iiro.fi/compare/v31.2.4...v31.3.0) (2023-11-04)
+
+### Features
+
+- add Bluesky profile link ([443fe84](https://github.com/iiroj/iiro.fi/commit/443fe8452a6260937a460679bb36444065f40ae1))
+
 ## [31.2.4](https://github.com/iiroj/iiro.fi/compare/v31.2.3...v31.2.4) (2023-10-01)
 
 ### Bug Fixes
