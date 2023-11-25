@@ -19,16 +19,16 @@
     "@vercel/edge": "1.1.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "18.4.1",
-    "@commitlint/config-conventional": "18.4.0",
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-conventional": "18.4.3",
     "conventional-changelog-conventionalcommits": "7.0.2",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "husky": "8.0.3",
     "lint-staged": "15.1.0",
-    "prettier": "3.0.3",
-    "semantic-release": "22.0.7",
-    "vercel": "32.5.3"
+    "prettier": "3.1.0",
+    "semantic-release": "22.0.8",
+    "vercel": "32.5.6"
   }
 }
