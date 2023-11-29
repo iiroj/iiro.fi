@@ -1,3 +1,10 @@
+## [32.0.1](https://github.com/iiroj/iiro.fi/compare/v32.0.0...v32.0.1) (2023-11-29)
+
+### Bug Fixes
+
+- do not set duplicate environment ([68c9b5a](https://github.com/iiroj/iiro.fi/commit/68c9b5a3906e666d200545829624610fc25569d1))
+- use Cloudflare Pages Action instead of automatic deployment ([9afac1e](https://github.com/iiroj/iiro.fi/commit/9afac1e8ba2491ffd24c6be3117cdbfc1a49136f))
+
 ## [32.0.0](https://github.com/iiroj/iiro.fi/compare/v31.3.0...v32.0.0) (2023-11-29)
 
 ### ⚠ BREAKING CHANGES
