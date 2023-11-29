@@ -6,9 +6,6 @@ on:
 jobs:
   Preview:
     runs-on: ubuntu-latest
-    environment:
-      name: Development
-      url: ${{ steps.deployment.outputs.url }}
     steps:
       - uses: actions/checkout@v3
         with:
