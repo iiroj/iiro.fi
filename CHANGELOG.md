@@ -1,3 +1,13 @@
+## [32.0.0](https://github.com/iiroj/iiro.fi/compare/v31.3.0...v32.0.0) (2023-11-29)
+
+### ⚠ BREAKING CHANGES
+
+- Vercel is no longer used
+
+### Features
+
+- migrate to Cloudflare Pages ([3f280fc](https://github.com/iiroj/iiro.fi/commit/3f280fc4e377dfff19b27c970cf680f1545c54b2))
+
 ## [31.3.0](https://github.com/iiroj/iiro.fi/compare/v31.2.4...v31.3.0) (2023-11-04)
 
 ### Features
