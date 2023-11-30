@@ -1,3 +1,10 @@
+## [32.0.2](https://github.com/iiroj/iiro.fi/compare/v32.0.1...v32.0.2) (2023-11-30)
+
+### Bug Fixes
+
+- allow Cloudflare Web Analytics in CSP ([496c24d](https://github.com/iiroj/iiro.fi/commit/496c24d8079bd46f23f5555dc7fee9e7918a47e8))
+- update stylesheet integrity hash ([27fe8ef](https://github.com/iiroj/iiro.fi/commit/27fe8ef1a457ef71ad1818f60c59de1283bfe1af))
+
 ## [32.0.1](https://github.com/iiroj/iiro.fi/compare/v32.0.0...v32.0.1) (2023-11-29)
 
 ### Bug Fixes
