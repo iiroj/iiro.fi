@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'
+  Content-Security-Policy: default-src 'self'; connect-src https://cloudflareinsights.com; script-src https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'
   Cross-Origin-Embedder-Policy: require-corp; report-to="default"
   Cross-Origin-Opener-Policy: same-site; report-to="default"
   Cross-Origin-Resource-Policy: same-site
