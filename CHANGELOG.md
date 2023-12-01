@@ -1,3 +1,9 @@
+## [32.0.3](https://github.com/iiroj/iiro.fi/compare/v32.0.2...v32.0.3) (2023-12-01)
+
+### Bug Fixes
+
+- update bsky link ([a39e92a](https://github.com/iiroj/iiro.fi/commit/a39e92a83f4bb0852e2adb7354c1a75dd1f05c1d))
+
 ## [32.0.2](https://github.com/iiroj/iiro.fi/compare/v32.0.1...v32.0.2) (2023-11-30)
 
 ### Bug Fixes
