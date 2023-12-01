@@ -12,8 +12,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "wrangler pages dev ./public --compatibility-date=2023-11-29",
+    "start": "wrangler pages dev ./public --compatibility-date=2023-10-30",
     "lint": "prettier --list-different ."
+  },
+  "dependencies": {
+    "react": "18.3.0-canary-c17a27ef4-20231127",
+    "react-dom": "18.3.0-canary-c17a27ef4-20231127"
   },
   "devDependencies": {
     "@commitlint/cli": "18.4.3",
@@ -26,6 +30,6 @@
     "lint-staged": "15.1.0",
     "prettier": "3.1.0",
     "semantic-release": "22.0.8",
-    "wrangler": "3.17.1"
+    "wrangler": "3.18.0"
   }
 }
