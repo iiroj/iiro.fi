@@ -45,16 +45,16 @@ header {
   margin: 0 0 1rem 0;
 }
 
+picture {
+  display: flex;
+}
+
 img {
   border-radius: 6rem;
-  flex: 0 0 6rem;
-  height: 6rem;
   object-fit: cover;
   overflow: hidden;
   pointer-events: none;
   user-select: none;
-  vertical-align: baseline;
-  width: 6rem;
 }
 
 h1 {
