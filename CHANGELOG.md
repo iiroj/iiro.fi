@@ -1,3 +1,9 @@
+## [32.0.4](https://github.com/iiroj/iiro.fi/compare/v32.0.3...v32.0.4) (2023-12-27)
+
+### Performance Improvements
+
+- optimize image sizes ([9b549d9](https://github.com/iiroj/iiro.fi/commit/9b549d9f9ab11d550e34369aef40b46f8949f066))
+
 ## [32.0.3](https://github.com/iiroj/iiro.fi/compare/v32.0.2...v32.0.3) (2023-12-01)
 
 ### Bug Fixes
