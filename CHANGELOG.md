@@ -1,3 +1,9 @@
+## [32.0.5](https://github.com/iiroj/iiro.fi/compare/v32.0.4...v32.0.5) (2024-01-21)
+
+### Bug Fixes
+
+- remove Bluesky link ([20a1a8e](https://github.com/iiroj/iiro.fi/commit/20a1a8e91c74b60c45314834db8607b09a7c7cbf))
+
 ## [32.0.4](https://github.com/iiroj/iiro.fi/compare/v32.0.3...v32.0.4) (2023-12-27)
 
 ### Performance Improvements
