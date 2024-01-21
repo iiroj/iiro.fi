@@ -1,3 +1,9 @@
+## [32.0.6](https://github.com/iiroj/iiro.fi/compare/v32.0.5...v32.0.6) (2024-01-21)
+
+### Bug Fixes
+
+- opt out of latest Google Chrome spyware features via Permissions Policy ([a9094bc](https://github.com/iiroj/iiro.fi/commit/a9094bc5544841957fe6cae6fafd9eecb4f1d546))
+
 ## [32.0.5](https://github.com/iiroj/iiro.fi/compare/v32.0.4...v32.0.5) (2024-01-21)
 
 ### Bug Fixes
