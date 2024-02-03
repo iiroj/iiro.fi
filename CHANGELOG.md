@@ -1,3 +1,9 @@
+## [32.0.7](https://github.com/iiroj/iiro.fi/compare/v32.0.6...v32.0.7) (2024-02-03)
+
+### Bug Fixes
+
+- once again update info ([74974d2](https://github.com/iiroj/iiro.fi/commit/74974d26058a397c05e4c40c08f53169afa7ed77))
+
 ## [32.0.6](https://github.com/iiroj/iiro.fi/compare/v32.0.5...v32.0.6) (2024-01-21)
 
 ### Bug Fixes
