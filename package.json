@@ -13,7 +13,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "start": "wrangler pages dev ./public --compatibility-date=2023-12-01",
+    "start": "wrangler pages dev ./public --compatibility-date=2024-03-04",
     "lint": "prettier --list-different ."
   },
   "devDependencies": {
