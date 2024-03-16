@@ -1,3 +1,9 @@
+## [32.0.8](https://github.com/iiroj/iiro.fi/compare/v32.0.7...v32.0.8) (2024-03-16)
+
+### Bug Fixes
+
+- **cloudflare:** bump compatibility date ([95d5503](https://github.com/iiroj/iiro.fi/commit/95d55034cd8eeab6e9c68fd5d5fddf5cf0062b8f))
+
 ## [32.0.7](https://github.com/iiroj/iiro.fi/compare/v32.0.6...v32.0.7) (2024-02-03)
 
 ### Bug Fixes
