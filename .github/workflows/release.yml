@@ -10,6 +10,9 @@ concurrency: production_deployment
 
 jobs:
   Deploy:
+    environment:
+      name: Production
+      url: https://iiro.fi
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,11 +28,9 @@ jobs:
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
       - if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
-      - uses: cloudflare/pages-action@v1
+      - run: npm run build
+      - uses: cloudflare/wrangler-action@v3
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          branch: main
-          directory: public
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: iiro
+          command: pages deploy --project-name=iiro --branch=main
