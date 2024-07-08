@@ -1,12 +1,12 @@
 import React from "react";
 
-export const Head = () => (
+export const Head = async () => (
   <>
     <title>Iiro Jäppinen</title>
   </>
 );
 
-export const Body = () => (
+export const Body = async () => (
   <>
     <header>
       <picture>

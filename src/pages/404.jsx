@@ -1,13 +1,13 @@
 import React from "react";
 
-export const Head = () => (
+export const Head = async () => (
   <>
     <title>Page Not Found</title>
     <meta name="robots" content="noarchive, noindex" />
   </>
 );
 
-export const Body = () => (
+export const Body = async () => (
   <>
     <h1>Body Not Found</h1>
 
