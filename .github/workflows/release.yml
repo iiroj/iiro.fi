@@ -10,6 +10,9 @@ concurrency: production_deployment
 
 jobs:
   Deploy:
+    environment:
+      name: Production
+      url: https://iiro.fi
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

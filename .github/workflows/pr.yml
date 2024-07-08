@@ -5,6 +5,9 @@ on:
 
 jobs:
   Preview:
+    environment:
+      name: Preview
+      url: ${{ steps.deployment.outputs.deployment-url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
