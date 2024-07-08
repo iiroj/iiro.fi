@@ -1,0 +1,5 @@
+name = "iiro"
+compatibility_date = "2024-07-08"
+
+[build]
+command = "npm run build"

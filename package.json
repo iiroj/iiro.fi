@@ -13,8 +13,9 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "start": "wrangler pages dev ./public --compatibility-date=2024-06-03",
-    "lint": "prettier --list-different ."
+    "start": "wrangler pages dev ./public",
+    "lint": "prettier --list-different .",
+    "build": "node --import=./scripts/import-register-esbuild-loader.js ./scripts/build.js"
   },
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
@@ -23,9 +24,12 @@
     "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "conventional-changelog-conventionalcommits": "8.0.0",
+    "esbuild": "0.23.0",
     "husky": "9.0.11",
     "lint-staged": "15.2.7",
     "prettier": "3.3.2",
+    "react": "19.0.0-rc-df783f9ea1-20240708",
+    "react-dom": "19.0.0-rc-df783f9ea1-20240708",
     "semantic-release": "24.0.0",
     "wrangler": "3.63.1"
   }
