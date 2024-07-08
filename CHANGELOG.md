@@ -1,3 +1,9 @@
+## [32.2.0](https://github.com/iiroj/iiro.fi/compare/v32.1.0...v32.2.0) (2024-07-08)
+
+### Features
+
+- add React rendering build-step ([6a9b4bd](https://github.com/iiroj/iiro.fi/commit/6a9b4bddaf5b78aeecf001332b7b567c6298a378))
+
 ## [32.1.0](https://github.com/iiroj/iiro.fi/compare/v32.0.9...v32.1.0) (2024-07-08)
 
 ### Features
