@@ -26,11 +26,8 @@ jobs:
       - if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
       - run: npm run build
-      - uses: cloudflare/pages-action@v1
+      - uses: cloudflare/wrangler-action@v3
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          branch: main
-          directory: public
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: iiro
+          command: pages deploy --project-name=iiro --branch=main
