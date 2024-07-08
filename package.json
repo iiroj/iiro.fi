@@ -13,9 +13,10 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "start": "wrangler pages dev ./public",
     "lint": "prettier --list-different .",
-    "build": "node --import=./scripts/import-register-esbuild-loader.js ./scripts/build.js"
+    "build": "node --import=./scripts/import-register-esbuild-loader.js ./scripts/build.js",
+    "prestart": "npm run build",
+    "start": "wrangler pages dev ./public"
   },
   "devDependencies": {
     "@commitlint/cli": "19.3.0",

@@ -25,6 +25,7 @@ jobs:
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
       - if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
+      - run: npm run build
       - uses: cloudflare/pages-action@v1
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
