@@ -1,3 +1,10 @@
+## [32.1.0](https://github.com/iiroj/iiro.fi/compare/v32.0.9...v32.1.0) (2024-07-08)
+
+### Features
+
+- add Cloudflare Analytics beacon ([d55ef67](https://github.com/iiroj/iiro.fi/commit/d55ef67aa4baed8073d479e8f324a9438e839112))
+- add CSS file integrity to CSP header ([07f17b5](https://github.com/iiroj/iiro.fi/commit/07f17b5cf451df4942a60d377f1824f728ad0f2b))
+
 ## [32.0.9](https://github.com/iiroj/iiro.fi/compare/v32.0.8...v32.0.9) (2024-07-08)
 
 ### Bug Fixes
