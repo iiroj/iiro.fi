@@ -1,13 +1,13 @@
-import React from "react";
+import React, { type FunctionComponent } from "react";
 
-export const Head = async () => (
+export const Head: FunctionComponent<{}> = async () => (
   <>
     <title>Page Not Found</title>
     <meta name="robots" content="noarchive, noindex" />
   </>
 );
 
-export const Body = async () => (
+export const Body: FunctionComponent<{}> = async () => (
   <>
     <h1>Body Not Found</h1>
 

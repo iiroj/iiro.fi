@@ -3,11 +3,13 @@ import { PassThrough } from "node:stream";
 import React from "react";
 import { renderToPipeableStream } from "react-dom/server";
 
-import DefaultHead from "../src/components/Head.jsx";
-import Html from "../src/components/Html.jsx";
+import DefaultHead from "../src/components/Head.tsx";
+import Html from "../src/components/Html.tsx";
 
-/** @type {(componentPath: string, urlPath: string) => PassThrough} */
-export const renderReactToHTML = async (componentPath, urlPath) => {
+export const renderReactToHTML = async (
+  componentPath: string,
+  urlPath: string,
+): Promise<PassThrough> => {
   const { Body, Head } = await import(componentPath);
 
   const { pipe } = renderToPipeableStream(

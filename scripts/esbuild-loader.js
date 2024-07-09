@@ -5,7 +5,7 @@ import esbuild from "esbuild";
 
 const isNodeModule = (moduleUrl) => moduleUrl.includes("/node_modules/");
 
-const isJSModule = (moduleUrl) => /\.m?jsx?$/i.test(moduleUrl);
+const isJSModule = (moduleUrl) => /\.m?[jt]sx?$/i.test(moduleUrl);
 
 export const load = async (sourceUrl, context, nextLoad) => {
   if (!isJSModule(sourceUrl) || isNodeModule(sourceUrl)) {
@@ -17,7 +17,7 @@ export const load = async (sourceUrl, context, nextLoad) => {
 
   const { code: source } = await esbuild.transform(rawSource, {
     format: "esm",
-    loader: "jsx",
+    loader: "tsx",
     sourcefile,
     sourcemap: "inline",
     target: "esnext",

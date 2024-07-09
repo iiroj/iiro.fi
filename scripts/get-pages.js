@@ -19,13 +19,13 @@ const traverse = async (dir, result = []) => {
   return result;
 };
 
-/** @type {() => Promise<{ page: string; component: string }>} */
+/** @type {() => Promise<Array<{ page: string; component: string }>>} */
 export const getPages = async () => {
   const pagesDir = resolveRelativePath(import.meta.url, "../src/pages");
   const pages = await traverse(pagesDir);
 
   return pages.map((page) => ({
-    page: path.relative(pagesDir, page).replace(/\.jsx$/, ".html"),
+    page: path.relative(pagesDir, page).replace(/\.m?[jt]sx$/, ".html"),
     component: page,
   }));
 };

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { type FunctionComponent } from "react";
 
-export const Head = async () => (
+export const Head: FunctionComponent<{}> = async () => (
   <>
     <title>Iiro Jäppinen</title>
   </>
 );
 
-export const Body = async () => (
+export const Body: FunctionComponent<{}> = async () => (
   <>
     <header>
       <picture>

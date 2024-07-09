@@ -1,6 +1,6 @@
-import React from "react";
+import React, { type FunctionComponent } from "react";
 
-const Head = () => (
+const Head: FunctionComponent<{}> = () => (
   <>
     <meta charSet="utf-8" />
     <link
