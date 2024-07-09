@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { getPages } from "./get-pages.js";
-import { renderReactToHTML } from "./render-react-to-html.jsx";
+import { renderReactToHTML } from "./render-react-to-html.tsx";
 import { resolveRelativePath } from "./resolve-relative-path.js";
 
 const pages = await getPages();

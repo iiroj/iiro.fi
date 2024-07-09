@@ -1,6 +1,8 @@
-import React from "react";
+import React, { type FunctionComponent } from "react";
 
-const Head = () => (
+import { CloudflareBeacon } from "./CloudflareBeacon.tsx";
+
+const Head: FunctionComponent<{}> = () => (
   <>
     <meta charSet="utf-8" />
     <link
@@ -21,12 +23,10 @@ const Head = () => (
       content="I build web experiences, develop tooling, and maintain open-source libraries."
     />
     <meta property="og:url" content="https://iiro.fi" />
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "2dcdc91efcdc4bb79f51ea6813121a74"}'
-    ></script>
+    <CloudflareBeacon token="2dcdc91efcdc4bb79f51ea6813121a74" />
   </>
 );
+
+Head.displayName = "Head";
 
 export default Head;
