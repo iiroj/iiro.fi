@@ -1,5 +1,7 @@
 import React, { type FunctionComponent } from "react";
 
+import { FooterLinks } from "../components/FooterLinks.tsx";
+
 export const Head: FunctionComponent<{}> = async () => (
   <>
     <title>Iiro Jäppinen</title>
@@ -35,31 +37,22 @@ export const Body: FunctionComponent<{}> = async () => (
       libraries.
     </p>
 
-    <footer>
-      <nav>
-        <ul>
-          <li>
-            <a
-              href="https://github.com/iiroj"
-              rel="author noreferrer"
-              target="_blank"
-            >
-              GitHub
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://linkedin.com/in/iiroj"
-              rel="author noreferrer"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </footer>
+    <FooterLinks>
+      {[
+        {
+          href: "https://github.com/iiroj",
+          rel: "author noreferrer",
+          target: "_blank",
+          title: "GitHub",
+        },
+        {
+          href: "https://linkedin.com/in/iiroj",
+          rel: "author noreferrer",
+          target: "_blank",
+          title: "LinkedIn",
+        },
+      ]}
+    </FooterLinks>
   </>
 );
 

@@ -1,5 +1,7 @@
 import React, { type FunctionComponent } from "react";
 
+import { FooterLinks } from "../components/FooterLinks.tsx";
+
 export const Head: FunctionComponent<{}> = async () => (
   <>
     <title>Page Not Found</title>
@@ -11,19 +13,11 @@ Head.displayName = "Page(Head((404))";
 
 export const Body: FunctionComponent<{}> = async () => (
   <>
-    <h1>Body Not Found</h1>
+    <h1>Page Not Found</h1>
 
     <h2>Four Zero Four</h2>
 
-    <footer>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Back Home</a>
-          </li>
-        </ul>
-      </nav>
-    </footer>
+    <FooterLinks>{[{ href: "/", title: "Back Home" }]}</FooterLinks>
   </>
 );
 
