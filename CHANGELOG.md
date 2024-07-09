@@ -1,3 +1,9 @@
+## [32.3.0](https://github.com/iiroj/iiro.fi/compare/v32.2.0...v32.3.0) (2024-07-09)
+
+### Features
+
+- use TypeScript for React code ([4567007](https://github.com/iiroj/iiro.fi/commit/4567007ee888141829d35b90cddc544d2e026196))
+
 ## [32.2.0](https://github.com/iiroj/iiro.fi/compare/v32.1.0...v32.2.0) (2024-07-08)
 
 ### Features
