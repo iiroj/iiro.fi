@@ -7,6 +7,8 @@ export const Head: FunctionComponent<{}> = async () => (
   </>
 );
 
+Head.displayName = "Page(Head((404))";
+
 export const Body: FunctionComponent<{}> = async () => (
   <>
     <h1>Body Not Found</h1>
@@ -24,3 +26,5 @@ export const Body: FunctionComponent<{}> = async () => (
     </footer>
   </>
 );
+
+Body.displayName = "Page(Body((404))";

@@ -29,4 +29,6 @@ const Head: FunctionComponent<{}> = () => (
   </>
 );
 
+Head.displayName = "Head";
+
 export default Head;
