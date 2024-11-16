@@ -1,3 +1,9 @@
+## [32.3.1](https://github.com/iiroj/iiro.fi/compare/v32.3.0...v32.3.1) (2024-11-16)
+
+### Bug Fixes
+
+- **deps:** update dependencies ([eae5e80](https://github.com/iiroj/iiro.fi/commit/eae5e800a2f877f2e2e4fb0474baecf346e590c3))
+
 ## [32.3.0](https://github.com/iiroj/iiro.fi/compare/v32.2.0...v32.3.0) (2024-07-09)
 
 ### Features
