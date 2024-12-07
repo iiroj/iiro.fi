@@ -1,3 +1,9 @@
+## [32.4.0](https://github.com/iiroj/iiro.fi/compare/v32.3.1...v32.4.0) (2024-12-07)
+
+### Features
+
+- **deps:** upgrade to React 19 ([7288384](https://github.com/iiroj/iiro.fi/commit/7288384b6e7ccb4284a0ca3b761c284c692a5ca7))
+
 ## [32.3.1](https://github.com/iiroj/iiro.fi/compare/v32.3.0...v32.3.1) (2024-11-16)
 
 ### Bug Fixes
