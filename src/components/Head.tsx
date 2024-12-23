@@ -8,7 +8,7 @@ const Head: FunctionComponent<{}> = () => (
     <link
       href="/static/styles.css"
       rel="stylesheet"
-      integrity="sha384-QGI3d3fuvjdMoD/QcANuoE0eMFeRyDv3OTFfz9AGURb2dy3VWu0/fVe1dHi3acIH"
+      integrity="sha384-aCfms8Q11f0zmiPsixCB9y/TMf8RsJUD6ydrRXE3/W0yuUNVOKSQXZDVDdjfNpjN"
     />
     <link rel="apple-touch-icon" href="/static/icon-512.png" />
     <meta name="description" content="Principal Engineer at SOK" />

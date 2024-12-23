@@ -50,7 +50,7 @@ picture {
 }
 
 img {
-  background-color: #3c5a00;
+  background: #2f3614;
   border-radius: 6rem;
   object-fit: cover;
   overflow: hidden;

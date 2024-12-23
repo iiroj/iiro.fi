@@ -19,8 +19,9 @@ export const Body: FunctionComponent<{}> = async () => (
           decoding="async"
           height="96px"
           loading="eager"
-          srcSet="/static/profile-96.jpg  1x, /static/profile-192.jpg 2x, /static/profile-288.jpg 3x"
           src="/static/profile-96.jpg"
+          srcSet="/static/profile-96.jpg  1x, /static/profile-192.jpg 2x, /static/profile-288.jpg 3x"
+          style={{ background: "#2f3614" }}
           width="96px"
         />
       </picture>
