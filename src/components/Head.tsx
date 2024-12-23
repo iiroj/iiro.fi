@@ -2,13 +2,17 @@ import React, { type FunctionComponent } from "react";
 
 import { CloudflareBeacon } from "./CloudflareBeacon.tsx";
 
-const Head: FunctionComponent<{}> = () => (
+type Integrity = {
+  styles: string;
+};
+
+const Head: FunctionComponent<{ integrity: Integrity }> = ({ integrity }) => (
   <>
     <meta charSet="utf-8" />
     <link
       href="/static/styles.css"
       rel="stylesheet"
-      integrity="sha384-aCfms8Q11f0zmiPsixCB9y/TMf8RsJUD6ydrRXE3/W0yuUNVOKSQXZDVDdjfNpjN"
+      integrity={integrity.styles}
     />
     <link rel="apple-touch-icon" href="/static/icon-512.png" />
     <meta name="description" content="Principal Engineer at SOK" />

@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 
@@ -9,7 +10,16 @@ const pages = await getPages();
 
 const publicDir = resolveRelativePath(import.meta.url, "../public");
 
+const getPublicAssetHash = async (filePath) => {
+  const file = await fs.readFile(path.resolve(publicDir, filePath), "utf-8");
+  return crypto.createHash("sha384").update(file).digest("base64");
+};
+
+const integrity = {
+  styles: await getPublicAssetHash("static/styles.css"),
+};
+
 for (const { component, page } of pages) {
-  const html = await renderReactToHTML(component, page);
+  const html = await renderReactToHTML(component, page, integrity);
   await fs.writeFile(path.resolve(publicDir, page), html);
 }
