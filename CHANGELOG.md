@@ -1,3 +1,9 @@
+## [32.5.0](https://github.com/iiroj/iiro.fi/compare/v32.4.0...v32.5.0) (2024-12-23)
+
+### Features
+
+- update profile image ([b0a043f](https://github.com/iiroj/iiro.fi/commit/b0a043f3fc9b5e8a7badb59abf9f1243e9555d13))
+
 ## [32.4.0](https://github.com/iiroj/iiro.fi/compare/v32.3.1...v32.4.0) (2024-12-07)
 
 ### Features
