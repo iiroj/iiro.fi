@@ -1,3 +1,14 @@
+## [32.6.0](https://github.com/iiroj/iiro.fi/compare/v32.5.0...v32.6.0) (2025-01-06)
+
+### Features
+
+- update image ([cb2cf65](https://github.com/iiroj/iiro.fi/commit/cb2cf658b2f03e53b99fc4080d881c9536823d52))
+- update text ([2f05f99](https://github.com/iiroj/iiro.fi/commit/2f05f99071f1ba856c1230f6980ed03a397b8368))
+
+### Bug Fixes
+
+- prefix hash algorithm to integrity hash ([adcffcd](https://github.com/iiroj/iiro.fi/commit/adcffcd7baeaa62a8419483fcc2733b77a722e34))
+
 ## [32.5.0](https://github.com/iiroj/iiro.fi/compare/v32.4.0...v32.5.0) (2024-12-23)
 
 ### Features
