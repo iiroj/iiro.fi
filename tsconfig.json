@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "allowImportingTsExtensions": true,
+    "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "lib": ["esnext"],
-    "module": "esnext",
+    "lib": ["ESNext"],
+    "moduleResolution": "bundler",
+    "module": "ESNext",
     "noEmit": true,
     "strict": true,
-    "target": "esnext",
-    "types": ["./.wrangler/types/runtime.d.ts"]
+    "target": "ESNext"
   }
 }

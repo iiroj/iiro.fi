@@ -1,10 +1,10 @@
-import React, { type FunctionComponent } from "react";
+import React, { type FC } from "react";
 
-export type Integrity = {
+type Integrity = {
   styles: string;
 };
 
-const Head: FunctionComponent<{ integrity: Integrity }> = ({ integrity }) => (
+const Head: FC<{ integrity: Integrity }> = ({ integrity }) => (
   <>
     <meta charSet="utf-8" />
     <link
@@ -27,7 +27,5 @@ const Head: FunctionComponent<{ integrity: Integrity }> = ({ integrity }) => (
     <meta property="og:url" content="https://iiro.fi" />
   </>
 );
-
-Head.displayName = "Head";
 
 export default Head;

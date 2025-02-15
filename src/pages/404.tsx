@@ -9,8 +9,6 @@ export const Head: FunctionComponent<{}> = async () => (
   </>
 );
 
-Head.displayName = "Page(Head((404))";
-
 export const Body: FunctionComponent<{}> = async () => (
   <>
     <h1>Page Not Found</h1>
@@ -20,5 +18,3 @@ export const Body: FunctionComponent<{}> = async () => (
     <FooterLinks>{[{ href: "/", title: "Back Home" }]}</FooterLinks>
   </>
 );
-
-Body.displayName = "Page(Body((404))";

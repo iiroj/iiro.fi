@@ -1,33 +1,3 @@
-## [32.7.4](https://github.com/iiroj/iiro.fi/compare/v32.7.3...v32.7.4) (2025-02-15)
-
-### Bug Fixes
-
-- set separate jpg/webp link preload headers ([7ce6854](https://github.com/iiroj/iiro.fi/commit/7ce6854b761007c1c12fc360b097c6fe369aab7d))
-
-## [32.7.3](https://github.com/iiroj/iiro.fi/compare/v32.7.2...v32.7.3) (2025-02-15)
-
-### Bug Fixes
-
-- enable Worker cache based on version ([601075d](https://github.com/iiroj/iiro.fi/commit/601075db07c783cf20fd2f83d76d3890faa53712))
-
-## [32.7.2](https://github.com/iiroj/iiro.fi/compare/v32.7.1...v32.7.2) (2025-02-15)
-
-### Bug Fixes
-
-- remove Cloudflare component ([83f8dfe](https://github.com/iiroj/iiro.fi/commit/83f8dfe750ac6c0f2b7ffe7f2abf3d4242a41d47))
-
-## [32.7.1](https://github.com/iiroj/iiro.fi/compare/v32.7.0...v32.7.1) (2025-02-15)
-
-### Bug Fixes
-
-- **ci:** remove build command from release action ([89b5173](https://github.com/iiroj/iiro.fi/commit/89b5173eedb1b3d7bfa098a5cb0a7183cba707f7))
-
-## [32.7.0](https://github.com/iiroj/iiro.fi/compare/v32.6.0...v32.7.0) (2025-02-15)
-
-### Features
-
-- swap from Cloudflare Pages to Workers ([9e1b9f3](https://github.com/iiroj/iiro.fi/commit/9e1b9f339451faddf0f130dff20730120d5daca4))
-
 ## [32.6.0](https://github.com/iiroj/iiro.fi/compare/v32.5.0...v32.6.0) (2025-01-06)
 
 ### Features

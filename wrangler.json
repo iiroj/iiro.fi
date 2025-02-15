@@ -1,21 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "iiro",
+  "pages_build_output_dir": "./public",
   "compatibility_date": "2024-11-11",
-  "send_metrics": false,
-
-  "main": "src/index.ts",
-  "upload_source_maps": true,
-
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "public",
-    "html_handling": "drop-trailing-slash",
-    "not_found_handling": "404-page",
-    "run_worker_first": false
-  },
-
-  "version_metadata": {
-    "binding": "CF_VERSION_METADATA"
-  }
+  "send_metrics": false
 }
