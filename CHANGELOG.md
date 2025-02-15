@@ -1,3 +1,9 @@
+## [32.7.3](https://github.com/iiroj/iiro.fi/compare/v32.7.2...v32.7.3) (2025-02-15)
+
+### Bug Fixes
+
+- enable Worker cache based on version ([601075d](https://github.com/iiroj/iiro.fi/commit/601075db07c783cf20fd2f83d76d3890faa53712))
+
 ## [32.7.2](https://github.com/iiroj/iiro.fi/compare/v32.7.1...v32.7.2) (2025-02-15)
 
 ### Bug Fixes
