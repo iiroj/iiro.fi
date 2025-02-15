@@ -1,3 +1,9 @@
+## [32.7.0](https://github.com/iiroj/iiro.fi/compare/v32.6.0...v32.7.0) (2025-02-15)
+
+### Features
+
+- swap from Cloudflare Pages to Workers ([9e1b9f3](https://github.com/iiroj/iiro.fi/commit/9e1b9f339451faddf0f130dff20730120d5daca4))
+
 ## [32.6.0](https://github.com/iiroj/iiro.fi/compare/v32.5.0...v32.6.0) (2025-01-06)
 
 ### Features
