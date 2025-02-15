@@ -1,3 +1,9 @@
+## [32.7.1](https://github.com/iiroj/iiro.fi/compare/v32.7.0...v32.7.1) (2025-02-15)
+
+### Bug Fixes
+
+- **ci:** remove build command from release action ([89b5173](https://github.com/iiroj/iiro.fi/commit/89b5173eedb1b3d7bfa098a5cb0a7183cba707f7))
+
 ## [32.7.0](https://github.com/iiroj/iiro.fi/compare/v32.6.0...v32.7.0) (2025-02-15)
 
 ### Features
