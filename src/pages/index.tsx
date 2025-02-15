@@ -23,7 +23,6 @@ export const Body: FunctionComponent<{}> = async () => (
           loading="eager"
           src="/static/profile-96.jpg"
           srcSet="/static/profile-96.jpg  1x, /static/profile-192.jpg 2x, /static/profile-288.jpg 3x"
-          style={{ background: "#45810C" }}
           width="96px"
         />
       </picture>
