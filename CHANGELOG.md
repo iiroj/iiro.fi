@@ -1,3 +1,9 @@
+## [32.7.2](https://github.com/iiroj/iiro.fi/compare/v32.7.1...v32.7.2) (2025-02-15)
+
+### Bug Fixes
+
+- remove Cloudflare component ([83f8dfe](https://github.com/iiroj/iiro.fi/commit/83f8dfe750ac6c0f2b7ffe7f2abf3d4242a41d47))
+
 ## [32.7.1](https://github.com/iiroj/iiro.fi/compare/v32.7.0...v32.7.1) (2025-02-15)
 
 ### Bug Fixes
