@@ -1,5 +1,9 @@
-/*
-  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'
+interface Integrity {
+  styles: string;
+}
+
+export const getCloudflarePagesHeaders = (integrity: Integrity) => `/*
+  Content-Security-Policy: default-src 'self'; style-src 'self' '${integrity.styles}'
   Cross-Origin-Embedder-Policy: require-corp; report-to="default"
   Cross-Origin-Opener-Policy: same-site; report-to="default"
   Cross-Origin-Resource-Policy: same-site
@@ -15,3 +19,4 @@
 /static/*
   ! Content-Security-Policy
   ! Link
+`;
