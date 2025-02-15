@@ -1,3 +1,9 @@
+## [32.7.4](https://github.com/iiroj/iiro.fi/compare/v32.7.3...v32.7.4) (2025-02-15)
+
+### Bug Fixes
+
+- set separate jpg/webp link preload headers ([7ce6854](https://github.com/iiroj/iiro.fi/commit/7ce6854b761007c1c12fc360b097c6fe369aab7d))
+
 ## [32.7.3](https://github.com/iiroj/iiro.fi/compare/v32.7.2...v32.7.3) (2025-02-15)
 
 ### Bug Fixes
