@@ -1,3 +1,9 @@
+## [32.8.3](https://github.com/iiroj/iiro.fi/compare/v32.8.2...v32.8.3) (2025-02-15)
+
+### Bug Fixes
+
+- remove inline style tag ([b7a74f1](https://github.com/iiroj/iiro.fi/commit/b7a74f198a54bf072edf2ab000c0a454adf18ac7))
+
 ## [32.8.2](https://github.com/iiroj/iiro.fi/compare/v32.8.1...v32.8.2) (2025-02-15)
 
 ### Bug Fixes
