@@ -1,7 +1,5 @@
 import React, { type FunctionComponent } from "react";
 
-import { CloudflareBeacon } from "./CloudflareBeacon.tsx";
-
 export type Integrity = {
   styles: string;
 };
@@ -27,7 +25,6 @@ const Head: FunctionComponent<{ integrity: Integrity }> = ({ integrity }) => (
       content="I build web experiences, develop tooling, and maintain open-source libraries."
     />
     <meta property="og:url" content="https://iiro.fi" />
-    <CloudflareBeacon token="2dcdc91efcdc4bb79f51ea6813121a74" />
   </>
 );
 
