@@ -12,9 +12,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "postinstall": "wrangler types --experimental-include-runtime",
     "prepare": "husky",
     "lint": "prettier --list-different .",
+    "typecheck": "wrangler types",
     "start": "wrangler dev"
   },
   "dependencies": {
