@@ -28,8 +28,9 @@ jobs:
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
       - if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
+      - run: npm run build
       - uses: cloudflare/wrangler-action@v3
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          command: versions upload --tag "${{ github.ref_name }}"
+          command: pages deploy --project-name=iiro --branch=main

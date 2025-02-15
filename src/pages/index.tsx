@@ -8,8 +8,6 @@ export const Head: FunctionComponent<{}> = async () => (
   </>
 );
 
-Head.displayName = "Page(Head((Index))";
-
 export const Body: FunctionComponent<{}> = async () => (
   <>
     <header>
@@ -60,5 +58,3 @@ export const Body: FunctionComponent<{}> = async () => (
     </FooterLinks>
   </>
 );
-
-Body.displayName = "Page(Body((Index))";

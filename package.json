@@ -14,12 +14,9 @@
   "scripts": {
     "prepare": "husky",
     "lint": "prettier --list-different .",
-    "typecheck": "wrangler types",
-    "start": "wrangler dev"
-  },
-  "dependencies": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "build": "node --import=./scripts/import-register-esbuild-loader.ts ./scripts/build.ts",
+    "watch": "nodemon --exec 'npm run build' --ext .js,.jsx,.ts,.tsx",
+    "start": "npm run watch & wrangler pages dev ./public"
   },
   "devDependencies": {
     "@commitlint/cli": "19.7.1",
@@ -30,9 +27,13 @@
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
     "conventional-changelog-conventionalcommits": "8.0.0",
+    "esbuild": "0.25.0",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
+    "nodemon": "3.1.9",
     "prettier": "3.5.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "semantic-release": "24.2.2",
     "wrangler": "3.109.1"
   }

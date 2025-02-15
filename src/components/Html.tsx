@@ -1,9 +1,7 @@
-import React, { type FunctionComponent, type ReactNode } from "react";
+import React, { type FC, type ReactNode } from "react";
 
-const Html: FunctionComponent<{ children: ReactNode }> = ({ children }) => (
+const Html: FC<{ children: ReactNode }> = ({ children }) => (
   <html lang="en">{children}</html>
 );
-
-Html.displayName = "Html";
 
 export default Html;

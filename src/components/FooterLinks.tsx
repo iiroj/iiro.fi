@@ -1,7 +1,4 @@
-import React, {
-  type FunctionComponent,
-  type HTMLAttributeAnchorTarget,
-} from "react";
+import React, { type FC, type HTMLAttributeAnchorTarget } from "react";
 
 type Link = {
   href: string;
@@ -14,7 +11,7 @@ type Props = {
   children: Link[];
 };
 
-export const FooterLinks: FunctionComponent<Props> = ({ children }) => (
+export const FooterLinks: FC<Props> = ({ children }) => (
   <footer>
     <nav>
       <ul>
@@ -29,3 +26,5 @@ export const FooterLinks: FunctionComponent<Props> = ({ children }) => (
     </nav>
   </footer>
 );
+
+export default FooterLinks;
