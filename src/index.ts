@@ -1,4 +1,4 @@
-import { getResponseBodyHash } from "./get-response-body-hash";
+import { getSha384hash } from "./get-sha384-hash";
 import { getHtmlResponseHeaders } from "./get-html-response-headers";
 import { handleRequest } from "./handle-request";
 
@@ -27,7 +27,7 @@ const fetch = async (
   );
 
   const integrity = {
-    styles: await getResponseBodyHash(stylesResponse),
+    styles: await getSha384hash(await stylesResponse.arrayBuffer()),
   };
 
   const response = await handleRequest(request, currentVersion, integrity);

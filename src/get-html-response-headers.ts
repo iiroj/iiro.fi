@@ -8,14 +8,13 @@ const getCspHeader = (integrity: Integrity) =>
     `style-src 'self' '${integrity.styles}'`,
   ].join(";");
 
-export const getHtmlResponseHeaders = (integrity: Integrity, ETag: string) => {
+export const getHtmlResponseHeaders = (integrity: Integrity) => {
   const headers = new Headers({
     "Content-Security-Policy": getCspHeader(integrity),
     "Content-Type": "text/html",
     "Cross-Origin-Embedder-Policy": 'require-corp; report-to="default"',
     "Cross-Origin-Opener-Policy": 'same-site; report-to="default"',
     "Cross-Origin-Resource-Policy": "same-site",
-    ETag,
     "Permissions-Policy":
       "browsing-topics=(), conversion-measurement=(), interest-cohort=(), join-ad-interest-group=(), run-ad-auction=()",
     "Referrer-Policy": "strict-origin-when-cross-origin",
