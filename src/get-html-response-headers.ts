@@ -8,19 +8,20 @@ const getCspHeader = (integrity: Integrity) =>
     `style-src 'self' '${integrity.styles}'`,
   ].join(";");
 
-export const getHtmlResponseHeaders = (integrity: Integrity) => {
+export const getHtmlResponseHeaders = (integrity: Integrity, ETag: string) => {
   const headers = new Headers({
     "Content-Security-Policy": getCspHeader(integrity),
+    "Content-Type": "text/html",
     "Cross-Origin-Embedder-Policy": 'require-corp; report-to="default"',
     "Cross-Origin-Opener-Policy": 'same-site; report-to="default"',
     "Cross-Origin-Resource-Policy": "same-site",
+    ETag,
     "Permissions-Policy":
       "browsing-topics=(), conversion-measurement=(), interest-cohort=(), join-ad-interest-group=(), run-ad-auction=()",
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "DENY",
-    "Content-Type": "text/html",
   });
 
   headers.append("Link", "</static/styles.css>; rel=preload; as=style");

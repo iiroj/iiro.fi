@@ -7,11 +7,19 @@ const fetch = async (
   env: Env,
   context: EventContext<Env, string, unknown>,
 ) => {
-  const cache = caches.default;
-  const cachedResponse = await cache.match(request);
+  const currentVersion = env.CF_VERSION_METADATA.id;
+  const versionedCache = await caches.open(`html:${currentVersion}`);
+  const cachedResponse = await versionedCache.match(request);
 
   if (cachedResponse) {
-    return cachedResponse;
+    const response = new Response(cachedResponse.body, {
+      headers: cachedResponse.headers,
+      status: cachedResponse.status,
+      statusText: cachedResponse.statusText,
+    });
+    response.headers.set("cache-control", "public, max-age=0, s-max-age=3600");
+
+    return response;
   }
 
   const stylesResponse = await env.ASSETS.fetch(
@@ -22,15 +30,12 @@ const fetch = async (
     styles: await getResponseBodyHash(stylesResponse),
   };
 
-  const { response, allReady } = await handleRequest(request, integrity);
-
-  for (const [headerName, headerValue] of getHtmlResponseHeaders(integrity)) {
-    response.headers.set(headerName, headerValue);
-  }
+  const response = await handleRequest(request, currentVersion, integrity);
 
   const cacheResponse = async () => {
-    await allReady;
-    await cache.put(request, response.clone());
+    const cachedResponse = response.clone();
+    cachedResponse.headers.set("cache-control", "immutable");
+    await versionedCache.put(request, cachedResponse);
   };
 
   void context.waitUntil(cacheResponse());
