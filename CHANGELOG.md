@@ -1,3 +1,9 @@
+## [32.8.0](https://github.com/iiroj/iiro.fi/compare/v32.7.4...v32.8.0) (2025-02-15)
+
+### Features
+
+- revert back to Cloudflare Pages ([1f73930](https://github.com/iiroj/iiro.fi/commit/1f7393015856196404274a5487480d53e4673fec))
+
 ## [32.6.0](https://github.com/iiroj/iiro.fi/compare/v32.5.0...v32.6.0) (2025-01-06)
 
 ### Features
