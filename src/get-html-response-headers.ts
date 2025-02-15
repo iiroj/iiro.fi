@@ -28,7 +28,12 @@ export const getHtmlResponseHeaders = (integrity: Integrity, ETag: string) => {
 
   headers.append(
     "Link",
-    '</static/profile-96.jpg>; rel=preload; as=image; imagesrcset="/static/profile-96.jpg 1x, /static/profile-192.jpg 2x, /static/profile-288.jpg 3x"',
+    `</static/profile-96.webp>; rel=preload; as=image; type="image/webp" imagesrcset="/static/profile-96.webp 1x, /static/profile-192.webp 2x, /static/profile-288.webp 3x"`,
+  );
+
+  headers.append(
+    "Link",
+    `</static/profile-96.jpg>; rel=preload; as=image; type="image/jpg" imagesrcset="/static/profile-96.jpg 1x, /static/profile-192.jpg 2x, /static/profile-288.jpg 3x"`,
   );
 
   return headers;
