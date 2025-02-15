@@ -1,3 +1,9 @@
+## [32.8.1](https://github.com/iiroj/iiro.fi/compare/v32.8.0...v32.8.1) (2025-02-15)
+
+### Bug Fixes
+
+- update CSP ([dceef93](https://github.com/iiroj/iiro.fi/commit/dceef93251e0f6d5ce57d1adf3bb173e63d48d2b))
+
 ## [32.8.0](https://github.com/iiroj/iiro.fi/compare/v32.7.4...v32.8.0) (2025-02-15)
 
 ### Features
