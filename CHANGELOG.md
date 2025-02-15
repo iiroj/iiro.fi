@@ -1,3 +1,9 @@
+## [32.8.2](https://github.com/iiroj/iiro.fi/compare/v32.8.1...v32.8.2) (2025-02-15)
+
+### Bug Fixes
+
+- generate headers file with CSP integrity hashes ([f7787ed](https://github.com/iiroj/iiro.fi/commit/f7787ed2328c522f311610b0007c553e812db8f0))
+
 ## [32.8.1](https://github.com/iiroj/iiro.fi/compare/v32.8.0...v32.8.1) (2025-02-15)
 
 ### Bug Fixes
