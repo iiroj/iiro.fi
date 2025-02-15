@@ -12,29 +12,28 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "postinstall": "wrangler types --experimental-include-runtime",
     "prepare": "husky",
     "lint": "prettier --list-different .",
-    "build": "node --import=./scripts/import-register-esbuild-loader.js ./scripts/build.js",
-    "watch": "nodemon --exec 'npm run build' --ext .js,.jsx,.ts,.tsx",
-    "start": "npm run watch & wrangler pages dev ./public"
+    "start": "wrangler dev"
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.6.1",
-    "@commitlint/config-conventional": "19.6.0",
+    "@commitlint/cli": "19.7.1",
+    "@commitlint/config-conventional": "19.7.1",
     "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/exec": "6.0.3",
+    "@semantic-release/exec": "7.0.3",
     "@semantic-release/git": "10.0.1",
-    "@types/react": "19.0.3",
-    "@types/react-dom": "19.0.2",
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
     "conventional-changelog-conventionalcommits": "8.0.0",
-    "esbuild": "0.24.2",
     "husky": "9.1.7",
-    "lint-staged": "15.3.0",
-    "nodemon": "3.1.9",
-    "prettier": "3.4.2",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "semantic-release": "24.2.1",
-    "wrangler": "3.99.0"
+    "lint-staged": "15.4.3",
+    "prettier": "3.5.1",
+    "semantic-release": "24.2.2",
+    "wrangler": "3.109.1"
   }
 }

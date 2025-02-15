@@ -2,7 +2,7 @@ import React, { type FunctionComponent } from "react";
 
 import { CloudflareBeacon } from "./CloudflareBeacon.tsx";
 
-type Integrity = {
+export type Integrity = {
   styles: string;
 };
 

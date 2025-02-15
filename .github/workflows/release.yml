@@ -33,4 +33,4 @@ jobs:
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          command: pages deploy --project-name=iiro --branch=main
+          command: deploy --name=iiro --branch=main

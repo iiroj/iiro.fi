@@ -1,4 +1,3 @@
 .vscode
 .wrangler
-public/**/*.html
 node_modules
