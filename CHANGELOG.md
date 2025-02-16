@@ -1,3 +1,9 @@
+## [32.8.4](https://github.com/iiroj/iiro.fi/compare/v32.8.3...v32.8.4) (2025-02-16)
+
+### Bug Fixes
+
+- drop Cloudflare default CORS header ([a285d91](https://github.com/iiroj/iiro.fi/commit/a285d91d3036f1b2404fe70231384a23461d7144))
+
 ## [32.8.3](https://github.com/iiroj/iiro.fi/compare/v32.8.2...v32.8.3) (2025-02-15)
 
 ### Bug Fixes
