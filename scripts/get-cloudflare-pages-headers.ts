@@ -16,6 +16,9 @@ export const getCloudflarePagesHeaders = (integrity: Integrity) => `/*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
 
+  # Cloudflare adds this by default with "*" value
+  ! Access-Control-Allow-Origin
+
 /static/*
   ! Content-Security-Policy
   ! Link
