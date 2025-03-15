@@ -15,7 +15,7 @@ const Head: FC<{ integrity: Integrity }> = ({ integrity }) => (
     <link rel="apple-touch-icon" href="/static/icon-512.png" />
     <meta name="description" content="Principal Engineer at SOK" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <meta property="og:image" content="/static/profile-512.png" />
+    <meta property="og:image" content="/static/icon-512.png" />
     <meta
       property="og:title"
       content="Iiro Jäppinen, Principal Engineer at SOK"
