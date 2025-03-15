@@ -2,7 +2,6 @@ import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-import { getCloudflarePagesHeaders } from "./get-cloudflare-pages-headers.ts";
 import { getPages } from "./get-pages.ts";
 import { renderReactToHTML } from "./render-react-to-html.tsx";
 import { resolveRelativePath } from "./resolve-relative-path.ts";
@@ -25,6 +24,3 @@ for (const { component, page } of pages) {
   const html = await renderReactToHTML(component, page, integrity);
   await fs.writeFile(path.resolve(publicDir, page), html);
 }
-
-const headers = getCloudflarePagesHeaders(integrity);
-await fs.writeFile(path.resolve(publicDir, "_headers"), headers);

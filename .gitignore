@@ -1,5 +1,3 @@
 .vscode
-.wrangler
-public/_headers
 public/**/*.html
 node_modules
