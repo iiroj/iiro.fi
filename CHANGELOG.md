@@ -1,3 +1,9 @@
+## [32.8.5](https://github.com/iiroj/iiro.fi/compare/v32.8.4...v32.8.5) (2025-03-15)
+
+### Bug Fixes
+
+- fix og image ([dda9152](https://github.com/iiroj/iiro.fi/commit/dda9152e1eb083d9da02ce66a2143a4fe484ed5c))
+
 ## [32.8.4](https://github.com/iiroj/iiro.fi/compare/v32.8.3...v32.8.4) (2025-02-16)
 
 ### Bug Fixes
