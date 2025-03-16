@@ -22,6 +22,8 @@ resource "bunnynet_pullzone" "iiro" {
   }
 
   block_post_requests = true
+  cache_enabled       = true # Smart cache
+  cache_errors        = true
   cors_enabled        = false
   cors_extensions     = []
   tls_support         = []
