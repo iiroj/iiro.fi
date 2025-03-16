@@ -1,10 +1,10 @@
 import * as BunnySDK from "@bunny.net/edgescript-sdk";
 
+const CSP_SCRIPT_INTEGRITY = process.env.CSP_SCRIPT_INTEGRITY;
+const STYLE_SRC = `style-src 'self'${CSP_SCRIPT_INTEGRITY ? ` '${CSP_SCRIPT_INTEGRITY}'` : ""}`;
+
 const HEADERS = [
-  [
-    "Content-Security-Policy",
-    `default-src 'self'; style-src 'self' 'sha384-Nw/nmDva0qXRRGDLR7blMuDE6eUQ+Lq/ZgwnunmGEeduk6MJP0l6NjkuByIHki1O'`,
-  ],
+  ["Content-Security-Policy", `default-src 'self'; ${STYLE_SRC}`],
   ["Cross-Origin-Embedder-Policy", `require-corp; report-to="default"`],
   ["Cross-Origin-Opener-Policy", `same-site; report-to="default"`],
   ["Cross-Origin-Resource-Policy", `same-site`],
