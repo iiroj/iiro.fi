@@ -7,7 +7,6 @@ jobs:
   Preview:
     environment:
       name: Preview
-      url: ${{ steps.deployment.outputs.deployment-url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,9 +26,3 @@ jobs:
         run: npm ci
       - run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
       - run: npm run build
-      - id: deployment
-        uses: cloudflare/wrangler-action@v3
-        with:
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          command: pages deploy --project-name=iiro

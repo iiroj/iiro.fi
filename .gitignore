@@ -1,5 +1,4 @@
-.vscode
-.wrangler
-public/_headers
-public/**/*.html
-node_modules
+/bunny
+/node_modules
+/public/_headers
+/public/**/*.html
