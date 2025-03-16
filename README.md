@@ -18,5 +18,4 @@ Currently these are manually configured in the Bunny dashboard:
 
 1. Create working local development setup for Bunny middleware
 1. Add Github Action for updating Storage Zone and purge Pull Zone caches
-1. Commit Terraform resources into repository
 1. Figure out a way to do pull request preview deployments
