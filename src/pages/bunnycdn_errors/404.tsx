@@ -1,6 +1,6 @@
 import React, { type FunctionComponent } from "react";
 
-import { FooterLinks } from "../components/FooterLinks.tsx";
+import { FooterLinks } from "../../components/FooterLinks.tsx";
 
 export const Head: FunctionComponent<{}> = async () => (
   <>

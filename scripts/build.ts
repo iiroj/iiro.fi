@@ -22,5 +22,7 @@ const integrity = {
 
 for (const { component, page } of pages) {
   const html = await renderReactToHTML(component, page, integrity);
-  await fs.writeFile(path.resolve(publicDir, page), html);
+  const publicFile = path.resolve(publicDir, page);
+  await fs.mkdir(path.dirname(publicFile), { recursive: true });
+  await fs.writeFile(publicFile, html);
 }
