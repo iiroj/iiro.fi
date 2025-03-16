@@ -1,3 +1,9 @@
+## [33.0.2](https://github.com/iiroj/iiro.fi/compare/v33.0.1...v33.0.2) (2025-03-16)
+
+### Bug Fixes
+
+- inject style integrity during build-time ([43f24d0](https://github.com/iiroj/iiro.fi/commit/43f24d040042554b6115be28c664060ac29ca51d))
+
 ## [33.0.1](https://github.com/iiroj/iiro.fi/compare/v33.0.0...v33.0.1) (2025-03-16)
 
 ### Bug Fixes
