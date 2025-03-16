@@ -2,6 +2,7 @@ import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 
+import { compileBunnyScripts } from "./compile-bunny-scripts.ts";
 import { getPages } from "./get-pages.ts";
 import { renderReactToHTML } from "./render-react-to-html.tsx";
 import { resolveRelativePath } from "./resolve-relative-path.ts";
@@ -26,3 +27,5 @@ for (const { component, page } of pages) {
   await fs.mkdir(path.dirname(publicFile), { recursive: true });
   await fs.writeFile(publicFile, html);
 }
+
+await compileBunnyScripts();

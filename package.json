@@ -14,13 +14,14 @@
   "scripts": {
     "prepare": "husky",
     "lint": "prettier --list-different .",
-    "prebuild": "rm public/**/*.html",
+    "prebuild": "rm -f ./public/**/*.html && rm -rf ./bunny",
     "build": "node --import=./scripts/import-register-esbuild-loader.ts ./scripts/build.ts",
     "watch": "nodemon --exec 'npm run build' --ext .js,.jsx,.ts,.tsx"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.8.0",
-    "@commitlint/config-conventional": "19.8.0",
+    "@bunny.net/edgescript-sdk": "0.11.5",
+    "@commitlint/cli": "19.7.1",
+    "@commitlint/config-conventional": "19.7.1",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/exec": "7.0.3",
     "@semantic-release/git": "10.0.1",
