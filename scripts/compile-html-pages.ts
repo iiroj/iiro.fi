@@ -1,4 +1,3 @@
-import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 
@@ -6,7 +5,7 @@ import { listFiles } from "./list-files.ts";
 import { renderReactToHTML } from "./render-react-to-html.tsx";
 import { resolveRelativePath } from "./resolve-relative-path.ts";
 
-export const compileHtmlPages = async () => {
+export const compileHtmlPages = async (styleIntegrity: string) => {
   console.log("▶︎ Compiling HTML pages…");
 
   const pagesDir = resolveRelativePath(import.meta.url, "../src/pages");
@@ -17,15 +16,7 @@ export const compileHtmlPages = async () => {
 
   const publicDir = resolveRelativePath(import.meta.url, "../public");
 
-  const getPublicAssetHash = async (filePath: string) => {
-    const file = await fs.readFile(path.resolve(publicDir, filePath), "utf-8");
-    const hash = crypto.createHash("sha384").update(file).digest("base64");
-    return `sha384-${hash}`;
-  };
-
-  const integrity = {
-    styles: await getPublicAssetHash("static/styles.css"),
-  };
+  const integrity = { styles: styleIntegrity };
 
   for (const { component, page } of pages) {
     const html = await renderReactToHTML(component, page, integrity);

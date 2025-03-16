@@ -6,7 +6,7 @@ import esbuild from "esbuild";
 import { listFiles } from "./list-files.ts";
 import { resolveRelativePath } from "./resolve-relative-path.ts";
 
-export const compileBunnyScripts = async () => {
+export const compileBunnyScripts = async (styleIntegrity: string) => {
   console.log("▶︎ Compiling Bunny scripts…");
 
   const bunnyScriptingDir = resolveRelativePath(
@@ -26,6 +26,9 @@ export const compileBunnyScripts = async () => {
 
     await esbuild.build({
       bundle: true,
+      define: {
+        ["process.env.CSP_STYLE_INTEGRITY"]: JSON.stringify(styleIntegrity),
+      },
       entryPoints: [script],
       format: "esm",
       outfile,
