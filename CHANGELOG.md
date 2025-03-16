@@ -1,3 +1,19 @@
+## [33.0.0](https://github.com/iiroj/iiro.fi/compare/v32.8.5...v33.0.0) (2025-03-16)
+
+### ⚠ BREAKING CHANGES
+
+- remove all Cloudflare code
+
+### Features
+
+- add origin response script for headers ([a077842](https://github.com/iiroj/iiro.fi/commit/a07784280d022843e1a965ee5b8e558ebd7638f1))
+- remove all Cloudflare code ([6e645e5](https://github.com/iiroj/iiro.fi/commit/6e645e55bcb099e172296bd48168045156412b71))
+
+### Bug Fixes
+
+- move 404 page back to root ([c31eb0c](https://github.com/iiroj/iiro.fi/commit/c31eb0c5d4f318a44b00cba6c58b1e32ebd750bc))
+- move 404 page to Bunny-specific directory ([fd55cda](https://github.com/iiroj/iiro.fi/commit/fd55cda345f6cb592dede20db492f8419f67a640))
+
 ## [32.8.5](https://github.com/iiroj/iiro.fi/compare/v32.8.4...v32.8.5) (2025-03-15)
 
 ### Bug Fixes
