@@ -38,5 +38,5 @@ const onOriginResponse = async ({
 };
 
 BunnySDK.net.http
-  .servePullZone({ url: "http://localhost:3000" })
+  .servePullZone({ url: "http://localhost:3001" })
   .onOriginResponse(onOriginResponse);
