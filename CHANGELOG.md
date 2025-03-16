@@ -1,3 +1,9 @@
+## [33.0.1](https://github.com/iiroj/iiro.fi/compare/v33.0.0...v33.0.1) (2025-03-16)
+
+### Bug Fixes
+
+- configure CSP style integrity hash via env variable ([4d63501](https://github.com/iiroj/iiro.fi/commit/4d63501fa38c42fc3333dfb1a982fa9bdd6f224b))
+
 ## [33.0.0](https://github.com/iiroj/iiro.fi/compare/v32.8.5...v33.0.0) (2025-03-16)
 
 ### ⚠ BREAKING CHANGES
