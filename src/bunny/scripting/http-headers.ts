@@ -29,11 +29,16 @@ const HEADERS = [
   ["X-Frame-Options", `DENY`],
 ];
 
+const isHTMLResponse = (response: Response) =>
+  response.headers.get("content-type")?.includes("text/html");
+
 const onOriginResponse = async ({
   response,
 }: BunnySDK.OriginResponseContext) => {
-  for (const [headerName, headerValue] of HEADERS) {
-    response.headers.append(headerName, headerValue);
+  if (isHTMLResponse(response)) {
+    for (const [headerName, headerValue] of HEADERS) {
+      response.headers.append(headerName, headerValue);
+    }
   }
 
   return response;
