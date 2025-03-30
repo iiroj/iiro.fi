@@ -1,3 +1,9 @@
+## [33.1.0](https://github.com/iiroj/iiro.fi/compare/v33.0.3...v33.1.0) (2025-03-30)
+
+### Features
+
+- deploy public files with Terraform ([87f0bfb](https://github.com/iiroj/iiro.fi/commit/87f0bfba88dc17b3a9cfc99057f3d207d663a29a))
+
 ## [33.0.3](https://github.com/iiroj/iiro.fi/compare/v33.0.2...v33.0.3) (2025-03-30)
 
 ### Bug Fixes
