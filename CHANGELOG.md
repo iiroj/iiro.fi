@@ -1,3 +1,9 @@
+## [33.0.3](https://github.com/iiroj/iiro.fi/compare/v33.0.2...v33.0.3) (2025-03-30)
+
+### Bug Fixes
+
+- assign security headers only to HTML response ([437aee5](https://github.com/iiroj/iiro.fi/commit/437aee501f966705f92762cf0a800eacc47993e9))
+
 ## [33.0.2](https://github.com/iiroj/iiro.fi/compare/v33.0.1...v33.0.2) (2025-03-16)
 
 ### Bug Fixes
