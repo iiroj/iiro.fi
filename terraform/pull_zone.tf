@@ -21,12 +21,14 @@ resource "bunnynet_pullzone" "iiro" {
     filters = ["eu", "scripting"]
   }
 
-  block_post_requests = true
-  cache_enabled       = true # Smart cache
-  cache_errors        = true
-  cors_enabled        = false
-  cors_extensions     = []
-  tls_support         = []
+  block_post_requests           = true
+  cache_enabled                 = false    // Smart cache
+  cache_expiration_time         = 31919000 // cache for 1 year on server
+  cache_expiration_time_browser = 0        // don't cache in browser
+  cache_errors                  = true
+  cors_enabled                  = false
+  cors_extensions               = []
+  tls_support                   = []
 }
 
 resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
