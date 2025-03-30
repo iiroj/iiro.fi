@@ -6,10 +6,11 @@ terraform {
   }
 }
 
-provider "bunnynet" {
-  api_key = var.BUNNYNET_API_KEY
+variable "BUNNYNET_API_KEY" {
+  type      = string
+  sensitive = true
 }
 
-data "bunnynet_region" "default" {
-  region_code = "DE"
+provider "bunnynet" {
+  api_key = var.BUNNYNET_API_KEY
 }

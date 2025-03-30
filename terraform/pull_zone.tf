@@ -11,7 +11,7 @@ resource "bunnynet_pullzone" "iiro" {
 
   origin {
     type              = "StorageZone"
-    storagezone       = bunnynet_storage_zone.iiro-fi-site.id
+    storagezone       = bunnynet_storage_zone.storage.id
     middleware_script = bunnynet_compute_script.http_headers.id
   }
 
