@@ -1,24 +1,15 @@
-
-resource "bunnynet_compute_script" "http_headers" {
-  name = "http-headers"
-  type = "middleware"
-
-  content = file("../bunny/scripting/http-headers.js")
-}
-
 resource "bunnynet_pullzone" "iiro" {
   name = "iiro"
 
   origin {
-    type              = "StorageZone"
-    storagezone       = bunnynet_storage_zone.storage.id
-    middleware_script = bunnynet_compute_script.http_headers.id
+    type        = "StorageZone"
+    storagezone = bunnynet_storage_zone.storage.id
   }
 
   routing {
     tier    = "Standard"
     zones   = ["EU"]
-    filters = ["eu", "scripting"]
+    filters = ["eu"]
   }
 
   block_post_requests           = true
@@ -49,8 +40,8 @@ resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
 
   triggers = [
     {
-      type       = "Url"
       match_type = "MatchNone"
+      type       = "Url"
       patterns   = ["https://iiro.fi*"]
       parameter1 = null
       parameter2 = null
