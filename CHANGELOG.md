@@ -1,3 +1,9 @@
+## [33.2.0](https://github.com/iiroj/iiro.fi/compare/v33.1.0...v33.2.0) (2025-04-05)
+
+### Features
+
+- replace edge script with static rules ([1e448a9](https://github.com/iiroj/iiro.fi/commit/1e448a9614db3bba4a2921d1b0d63f5a634570eb))
+
 ## [33.1.0](https://github.com/iiroj/iiro.fi/compare/v33.0.3...v33.1.0) (2025-03-30)
 
 ### Features
