@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  Release:
+  semantic-release:
     # Skip release commits themselves to prevent infinite release loop
     if: ${{ !endsWith(github.event.head_commit.message, '[semantic-release]') }}
     runs-on: ubuntu-latest
@@ -27,6 +27,8 @@ jobs:
             ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
       - if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
+      - run: npm run lint
+      - run: npm run build
       - run: npx semantic-release
         env:
           GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
