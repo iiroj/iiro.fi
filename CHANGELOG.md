@@ -1,3 +1,9 @@
+## [33.2.1](https://github.com/iiroj/iiro.fi/compare/v33.2.0...v33.2.1) (2025-04-20)
+
+### Performance Improvements
+
+- **cdn:** enable CDN cache background update ([a4a8214](https://github.com/iiroj/iiro.fi/commit/a4a821446f918edc010905fa1d29a4b1aabe5854))
+
 ## [33.2.0](https://github.com/iiroj/iiro.fi/compare/v33.1.0...v33.2.0) (2025-04-05)
 
 ### Features
