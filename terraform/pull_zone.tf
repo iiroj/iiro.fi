@@ -24,6 +24,44 @@ resource "bunnynet_pullzone" "iiro" {
   use_background_update         = true
 }
 
+resource "bunnynet_pullzone_shield" "shield" {
+  pullzone = bunnynet_pullzone.iiro.id
+  tier     = "Basic"
+
+  ddos {
+    level = "Low"
+    mode  = "Block"
+  }
+
+  waf {
+    enabled = true
+    mode    = "Block"
+    allowed_http_methods = [
+      "GET",
+      "HEAD",
+      "OPTIONS",
+    ]
+    allowed_http_versions = [
+      "HTTP/1.0",
+      "HTTP/1.1",
+      "HTTP/2",
+      "HTTP/2.0",
+    ]
+    allowed_request_content_types = [
+      "application/csp-report",
+      "application/json",
+      "application/xss-auditor-report",
+      "text/plain",
+      "text/xml",
+    ]
+    blocking_sensitivity  = 1
+    detection_sensitivity = 1
+    execution_sensitivity = 1
+    log_headers           = false
+    log_headers_excluded  = []
+  }
+}
+
 resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
