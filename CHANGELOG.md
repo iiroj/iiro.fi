@@ -1,3 +1,9 @@
+## [33.2.2](https://github.com/iiroj/iiro.fi/compare/v33.2.1...v33.2.2) (2025-06-01)
+
+### Bug Fixes
+
+- commit terraform changes ([1bc301e](https://github.com/iiroj/iiro.fi/commit/1bc301eef859aa1334dd5009b518a5948cbb8cbc))
+
 ## [33.2.1](https://github.com/iiroj/iiro.fi/compare/v33.2.0...v33.2.1) (2025-04-20)
 
 ### Performance Improvements
