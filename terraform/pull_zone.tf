@@ -29,7 +29,7 @@ resource "bunnynet_pullzone_shield" "shield" {
   tier     = "Basic"
 
   ddos {
-    level = "Low"
+    level = "Medium"
     mode  = "Block"
   }
 
@@ -54,9 +54,9 @@ resource "bunnynet_pullzone_shield" "shield" {
       "text/plain",
       "text/xml",
     ]
-    blocking_sensitivity  = 1
-    detection_sensitivity = 1
-    execution_sensitivity = 1
+    blocking_sensitivity  = 2
+    detection_sensitivity = 2
+    execution_sensitivity = 2
     log_headers           = false
     log_headers_excluded  = []
   }
