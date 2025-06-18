@@ -1,3 +1,9 @@
+## [33.2.3](https://github.com/iiroj/iiro.fi/compare/v33.2.2...v33.2.3) (2025-06-18)
+
+### Bug Fixes
+
+- adjust rules for Let's Encrypt ([fa1f2dd](https://github.com/iiroj/iiro.fi/commit/fa1f2dd40d43a32ee7c7c5fc1086355272760be6))
+
 ## [33.2.2](https://github.com/iiroj/iiro.fi/compare/v33.2.1...v33.2.2) (2025-06-01)
 
 ### Bug Fixes
