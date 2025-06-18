@@ -57,7 +57,7 @@ resource "bunnynet_pullzone_shield" "shield" {
     blocking_sensitivity  = 2
     detection_sensitivity = 2
     execution_sensitivity = 2
-    log_headers           = false
+    log_headers           = true
     log_headers_excluded  = []
   }
 }
@@ -66,6 +66,7 @@ resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
   description = "Redirect requests to canonical domain"
+  priority    = 1
 
   actions = [
     {
@@ -82,7 +83,7 @@ resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
     {
       match_type = "MatchNone"
       type       = "Url"
-      patterns   = ["https://iiro.fi*"]
+      patterns   = ["https://iiro.fi*", "*://*/.well-know*"]
       parameter1 = null
       parameter2 = null
     }

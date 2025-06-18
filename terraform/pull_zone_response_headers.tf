@@ -2,6 +2,7 @@ resource "bunnynet_pullzone_edgerule" "response_headers" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
   description = "Response Headers"
+  priority = 2
 
   actions = [
     {
