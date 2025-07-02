@@ -1,3 +1,10 @@
+## [33.3.0](https://github.com/iiroj/iiro.fi/compare/v33.2.3...v33.3.0) (2025-07-02)
+
+### Features
+
+- add Bluesky link ([aa384d8](https://github.com/iiroj/iiro.fi/commit/aa384d8fb7c70f19103791cd6b80dc24d537458f))
+- add link icons ([b9902ef](https://github.com/iiroj/iiro.fi/commit/b9902efad9a600694109e23ddd4a5b731667272c))
+
 ## [33.2.3](https://github.com/iiroj/iiro.fi/compare/v33.2.2...v33.2.3) (2025-06-18)
 
 ### Bug Fixes
