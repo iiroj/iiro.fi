@@ -3,27 +3,9 @@
   "name": "iiro.fi",
   "icons": [
     {
-      "src": "/static/icon.svg",
-      "type": "image/svg+xml",
-      "sizes": "any",
-      "purpose": "maskable monochrome any"
-    },
-    {
-      "src": "/static/icon-192.webp",
-      "type": "image/webp",
-      "sizes": "192x192",
-      "purpose": "maskable any"
-    },
-    {
       "src": "/static/icon-192.png",
       "type": "image/png",
       "sizes": "192x192",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/static/icon-512.webp",
-      "type": "image/webp",
-      "sizes": "512x512",
       "purpose": "maskable any"
     },
     {
