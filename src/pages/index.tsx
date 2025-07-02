@@ -37,11 +37,6 @@ export const Body: FunctionComponent<{}> = async () => (
       </div>
     </header>
 
-    <p>
-      I help people grow, create collaboration, build web experiences, develop
-      tooling, and maintain open-source libraries.
-    </p>
-
     <FooterLinks>
       {[
         {
