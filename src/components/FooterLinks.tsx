@@ -23,8 +23,8 @@ export const FooterLinks: FC<Props> = ({ children }) => (
                 <img
                   alt=""
                   src={icon}
-                  height={24}
-                  width={24}
+                  height={20}
+                  width={20}
                   loading="lazy"
                   decoding="async"
                 />
