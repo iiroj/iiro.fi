@@ -48,6 +48,12 @@ export const Body: FunctionComponent<{}> = async () => (
           title: "GitHub",
         },
         {
+          href: "https://bsky.app/profile/iiro.fi",
+          rel: "author noreferrer",
+          target: "_blank",
+          title: "Bluesky",
+        },
+        {
           href: "https://linkedin.com/in/iiroj",
           rel: "author noreferrer",
           target: "_blank",
