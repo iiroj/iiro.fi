@@ -43,18 +43,21 @@ export const Body: FunctionComponent<{}> = async () => (
       {[
         {
           href: "https://github.com/iiroj",
+          icon: "/static/github.svg",
           rel: "author noreferrer",
           target: "_blank",
           title: "GitHub",
         },
         {
           href: "https://bsky.app/profile/iiro.fi",
+          icon: "/static/bluesky.svg",
           rel: "author noreferrer",
           target: "_blank",
           title: "Bluesky",
         },
         {
           href: "https://linkedin.com/in/iiroj",
+          icon: "/static/linkedin.svg",
           rel: "author noreferrer",
           target: "_blank",
           title: "LinkedIn",

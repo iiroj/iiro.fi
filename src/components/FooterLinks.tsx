@@ -2,6 +2,7 @@ import React, { type FC, type HTMLAttributeAnchorTarget } from "react";
 
 type Link = {
   href: string;
+  icon?: string;
   rel?: string;
   target?: HTMLAttributeAnchorTarget;
   title: string;
@@ -15,10 +16,20 @@ export const FooterLinks: FC<Props> = ({ children }) => (
   <footer>
     <nav>
       <ul>
-        {children.map(({ href, rel, target, title }, index) => (
+        {children.map(({ href, icon, rel, target, title }, index) => (
           <li key={index}>
             <a href={href} rel={rel} target={target}>
-              {title}
+              {icon ? (
+                <img
+                  alt=""
+                  src={icon}
+                  height={24}
+                  width={24}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : null}
+              <span>{title}</span>
             </a>
           </li>
         ))}
