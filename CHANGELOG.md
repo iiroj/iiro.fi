@@ -1,3 +1,16 @@
+## [33.4.0](https://github.com/iiroj/iiro.fi/compare/v33.3.0...v33.4.0) (2025-07-02)
+
+### Features
+
+- inline svg icons and support dark mode ([c4a57af](https://github.com/iiroj/iiro.fi/commit/c4a57af246921fe79ae9ea8d7957dbb6449b43b4))
+- update favicon setup ([30b4687](https://github.com/iiroj/iiro.fi/commit/30b4687de09f52c286895d70bbb3873e158af83d))
+- update page ([b5604fd](https://github.com/iiroj/iiro.fi/commit/b5604fde381dad87574abed7a0aa60b90b20a2fa))
+
+### Bug Fixes
+
+- display icons at 20x20 px ([4a92d20](https://github.com/iiroj/iiro.fi/commit/4a92d2075614a6c3320ff33dd68249816eabd415))
+- icons scale dynamically ([41962ad](https://github.com/iiroj/iiro.fi/commit/41962adc8f8a327c34f1d10b04137a3ef15a6e68))
+
 ## [33.3.0](https://github.com/iiroj/iiro.fi/compare/v33.2.3...v33.3.0) (2025-07-02)
 
 ### Features
