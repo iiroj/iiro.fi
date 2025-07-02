@@ -1,8 +1,12 @@
-import React, { type FC, type HTMLAttributeAnchorTarget } from "react";
+import React, {
+  type FC,
+  type HTMLAttributeAnchorTarget,
+  type ReactNode,
+} from "react";
 
 type Link = {
   href: string;
-  icon?: string;
+  icon?: ReactNode;
   rel?: string;
   target?: HTMLAttributeAnchorTarget;
   title: string;
@@ -19,16 +23,7 @@ export const FooterLinks: FC<Props> = ({ children }) => (
         {children.map(({ href, icon, rel, target, title }, index) => (
           <li key={index}>
             <a href={href} rel={rel} target={target}>
-              {icon ? (
-                <img
-                  alt=""
-                  src={icon}
-                  height={20}
-                  width={20}
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : null}
+              {icon}
               <span>{title}</span>
             </a>
           </li>
