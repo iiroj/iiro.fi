@@ -1,12 +1,12 @@
 import React, { type FC } from "react";
 
-export const Bluesky: FC<{ fill?: string; size?: number }> = ({
+export const Bluesky: FC<{ fill?: string; size?: string }> = ({
   fill = "currentColor",
-  size = 20,
+  size = "0.75rem",
 }) => (
   <svg
-    width={`${size}px`}
-    height={`${size}px`}
+    width={size}
+    height={size}
     role="presentation"
     viewBox="0 0 24 24"
     version="1.1"
