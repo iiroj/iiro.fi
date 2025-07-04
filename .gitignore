@@ -2,3 +2,5 @@
 /node_modules
 /public/_headers
 /public/**/*.html
+
+*.tfvars
