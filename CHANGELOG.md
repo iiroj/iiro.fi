@@ -1,3 +1,9 @@
+## [33.5.0](https://github.com/iiroj/iiro.fi/compare/v33.4.0...v33.5.0) (2025-07-04)
+
+### Features
+
+- add cache purging on file change ([6fa4855](https://github.com/iiroj/iiro.fi/commit/6fa48559bfe6d4427205696781df121dfbdf4480))
+
 ## [33.4.0](https://github.com/iiroj/iiro.fi/compare/v33.3.0...v33.4.0) (2025-07-02)
 
 ### Features
