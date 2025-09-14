@@ -55,6 +55,7 @@ resource "bunnynet_pullzone_shield" "shield" {
       "text/xml",
     ]
     blocking_sensitivity  = 2
+    body_limit_request    = "Block"
     detection_sensitivity = 2
     execution_sensitivity = 2
     log_headers           = true
