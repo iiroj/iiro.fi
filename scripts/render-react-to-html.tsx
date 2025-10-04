@@ -1,7 +1,7 @@
 import { PassThrough } from "node:stream";
 
 import React from "react";
-import { prerenderToNodeStream } from "react-dom/static";
+import { prerender } from "react-dom/static";
 
 import DefaultHead from "../src/components/Head.tsx";
 import Html from "../src/components/Html.tsx";
@@ -14,10 +14,10 @@ export const renderReactToHTML = async (
   componentPath: string,
   urlPath: string,
   integrity: Integrity,
-): Promise<PassThrough> => {
+): Promise<ReadableStream> => {
   const { Body, Head } = await import(componentPath);
 
-  const { prelude } = await prerenderToNodeStream(
+  const { prelude } = await prerender(
     <Html>
       <head>
         <DefaultHead integrity={integrity} />
@@ -29,8 +29,5 @@ export const renderReactToHTML = async (
     </Html>,
   );
 
-  const stream = new PassThrough();
-  prelude.pipe(stream);
-
-  return stream;
+  return prelude;
 };
