@@ -1,3 +1,9 @@
+## [33.5.1](https://github.com/iiroj/iiro.fi/compare/v33.5.0...v33.5.1) (2025-10-04)
+
+### Bug Fixes
+
+- set WebSockets as explicitly disabled ([55782c3](https://github.com/iiroj/iiro.fi/commit/55782c3e61d3983de0c58eed1e0ddb5f4b1b5cc9))
+
 ## [33.5.0](https://github.com/iiroj/iiro.fi/compare/v33.4.0...v33.5.0) (2025-07-04)
 
 ### Features
