@@ -11,9 +11,10 @@ export const Head: FunctionComponent<{}> = async () => (
 
 export const Body: FunctionComponent<{}> = async () => (
   <>
-    <h1>Page Not Found</h1>
-
-    <h2>Four Zero Four</h2>
+    <header>
+      <h1>Page Not Found</h1>
+      <h2>Four Zero Four</h2>
+    </header>
 
     <FooterLinks>{[{ href: "/", title: "Back Home" }]}</FooterLinks>
   </>
