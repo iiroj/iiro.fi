@@ -1,3 +1,9 @@
+## [33.6.0](https://github.com/iiroj/iiro.fi/compare/v33.5.1...v33.6.0) (2025-10-04)
+
+### Features
+
+- update layout to be centered ([38fd6f8](https://github.com/iiroj/iiro.fi/commit/38fd6f8ce37c648a5083e54093e2ba2388b532d6))
+
 ## [33.5.1](https://github.com/iiroj/iiro.fi/compare/v33.5.0...v33.5.1) (2025-10-04)
 
 ### Bug Fixes
