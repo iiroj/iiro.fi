@@ -22,6 +22,7 @@ resource "bunnynet_pullzone" "iiro" {
   cors_extensions               = []
   tls_support                   = []
   use_background_update         = true
+  websockets_enabled            = false
 }
 
 resource "bunnynet_pullzone_shield" "shield" {
