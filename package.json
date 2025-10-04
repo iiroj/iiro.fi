@@ -16,7 +16,7 @@
     "lint": "prettier --list-different .",
     "prebuild": "rm -f ./public/**/*.html",
     "build": "node --import=./scripts/import-register-esbuild-loader.ts ./scripts/build.ts",
-    "watch": "nodemon --exec 'npm run build' --ext .js,.jsx,.ts,.tsx --watch src",
+    "watch": "nodemon --exec 'npm run build' --ext .js,.jsx,.ts,.tsx,.css",
     "start": "npm run watch & serve public --listen=3000"
   },
   "devDependencies": {

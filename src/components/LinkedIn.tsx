@@ -2,7 +2,7 @@ import React, { type FC } from "react";
 
 export const LinkedIn: FC<{ fill?: string; size?: string }> = ({
   fill = "currentColor",
-  size = "0.75rem",
+  size = "24",
 }) => (
   <svg
     width={size}
