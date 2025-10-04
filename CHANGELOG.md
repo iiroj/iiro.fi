@@ -1,3 +1,9 @@
+## [33.6.1](https://github.com/iiroj/iiro.fi/compare/v33.6.0...v33.6.1) (2025-10-04)
+
+### Bug Fixes
+
+- add header element to 404 page ([eea35c8](https://github.com/iiroj/iiro.fi/commit/eea35c8387858c586e09ed383ebd1b46ca2f49c8))
+
 ## [33.6.0](https://github.com/iiroj/iiro.fi/compare/v33.5.1...v33.6.0) (2025-10-04)
 
 ### Features
