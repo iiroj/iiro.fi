@@ -13,7 +13,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "lint": "prettier --list-different .",
+    "lint": "eslint",
     "prebuild": "rm -f ./public/**/*.html",
     "build": "node --import=./scripts/import-register-esbuild-loader.ts ./scripts/build.ts",
     "watch": "nodemon --exec 'npm run build' --ext .js,.jsx,.ts,.tsx,.css",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
+    "@eslint/js": "9.37.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/exec": "7.1.0",
     "@semantic-release/git": "10.0.1",
@@ -29,6 +30,11 @@
     "@types/react-dom": "19.2.0",
     "conventional-changelog-conventionalcommits": "9.1.0",
     "esbuild": "0.25.10",
+    "eslint": "9.37.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.4",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "globals": "16.4.0",
     "husky": "9.1.7",
     "lint-staged": "16.2.3",
     "nodemon": "3.1.10",
@@ -36,6 +42,8 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "semantic-release": "24.2.9",
-    "serve": "14.2.5"
+    "serve": "14.2.5",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.46.0"
   }
 }

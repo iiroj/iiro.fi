@@ -1,17 +1,17 @@
-import React, { type FunctionComponent } from "react";
+import React from "react";
 
 import { Bluesky } from "../components/Bluesky.tsx";
 import { FooterLinks } from "../components/FooterLinks.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
 
-export const Head: FunctionComponent<{}> = async () => (
+export const Head = async () => (
   <>
     <title>Iiro Jäppinen</title>
   </>
 );
 
-export const Body: FunctionComponent<{}> = async () => (
+export const Body = async () => (
   <>
     <header>
       <picture>

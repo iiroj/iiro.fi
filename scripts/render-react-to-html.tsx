@@ -4,9 +4,9 @@ import { prerender } from "react-dom/static";
 import DefaultHead from "../src/components/Head.tsx";
 import Html from "../src/components/Html.tsx";
 
-type Integrity = {
+interface Integrity {
   styles: string;
-};
+}
 
 export const renderReactToHTML = async (
   componentPath: string,

@@ -1,15 +1,15 @@
-import React, { type FunctionComponent } from "react";
+import React from "react";
 
 import { FooterLinks } from "../components/FooterLinks.tsx";
 
-export const Head: FunctionComponent<{}> = async () => (
+export const Head = async () => (
   <>
     <title>Page Not Found</title>
     <meta name="robots" content="noarchive, noindex" />
   </>
 );
 
-export const Body: FunctionComponent<{}> = async () => (
+export const Body = async () => (
   <>
     <header>
       <h1>Page Not Found</h1>

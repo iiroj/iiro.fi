@@ -4,17 +4,17 @@ import React, {
   type ReactNode,
 } from "react";
 
-type Link = {
+interface Link {
   href: string;
   icon?: ReactNode;
   rel?: string;
   target?: HTMLAttributeAnchorTarget;
   title: string;
-};
+}
 
-type Props = {
+interface Props {
   children: Link[];
-};
+}
 
 export const FooterLinks: FC<Props> = ({ children }) => (
   <footer>

@@ -4,7 +4,7 @@ import { listFiles } from "./list-files.ts";
 import { resolveRelativePath } from "./resolve-relative-path.ts";
 
 export const getPages = async (): Promise<
-  Array<{ page: string; component: string }>
+  { page: string; component: string }[]
 > => {
   const pagesDir = resolveRelativePath(import.meta.url, "../src/pages");
   const pages = await listFiles(pagesDir);

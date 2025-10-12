@@ -1,8 +1,8 @@
 import React, { type FC } from "react";
 
-type Integrity = {
+interface Integrity {
   styles: string;
-};
+}
 
 const Head: FC<{ integrity: Integrity }> = ({ integrity }) => (
   <>
