@@ -8,8 +8,8 @@ resource "bunnynet_pullzone" "iiro" {
 
   routing {
     tier    = "Standard"
-    zones   = ["EU"]
-    filters = ["eu"]
+    zones   = ["EU", "ASIA", "US"]
+    filters = ["all"]
   }
 
   block_post_requests           = true
@@ -30,7 +30,7 @@ resource "bunnynet_pullzone_shield" "shield" {
   tier     = "Basic"
 
   ddos {
-    level = "Medium"
+    level = "High"
     mode  = "Block"
   }
 
@@ -55,10 +55,10 @@ resource "bunnynet_pullzone_shield" "shield" {
       "text/plain",
       "text/xml",
     ]
-    blocking_sensitivity  = 2
+    blocking_sensitivity  = 3
     body_limit_request    = "Block"
-    detection_sensitivity = 2
-    execution_sensitivity = 2
+    detection_sensitivity = 3
+    execution_sensitivity = 3
     log_headers           = true
     log_headers_excluded  = []
   }
