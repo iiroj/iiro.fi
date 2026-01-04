@@ -1,3 +1,9 @@
+## [33.6.2](https://github.com/iiroj/iiro.fi/compare/v33.6.1...v33.6.2) (2026-01-04)
+
+### Bug Fixes
+
+- bump last modified ([90a3173](https://github.com/iiroj/iiro.fi/commit/90a3173aea1afe65266d51cc664980abfa868e84))
+
 ## [33.6.1](https://github.com/iiroj/iiro.fi/compare/v33.6.0...v33.6.1) (2025-10-04)
 
 ### Bug Fixes
