@@ -7,8 +7,14 @@ resource "bunnynet_pullzone" "iiro" {
   }
 
   routing {
-    tier    = "Standard"
-    zones   = ["EU", "ASIA", "US"]
+    tier = "Standard"
+    zones = [
+      "EU",   // Europe
+      "ASIA", // Asia & Oceania
+      "US",   // North America
+      "AF",   // Middle East & Africa
+      "SA"    // South America
+    ]
     filters = ["all"]
   }
 
