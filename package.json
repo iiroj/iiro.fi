@@ -11,13 +11,20 @@
   "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "type": "module",
+  "devEngines": {
+    "runtime": {
+      "name": "bun"
+    },
+    "packageManager": {
+      "name": "bun"
+    }
+  },
   "scripts": {
     "prepare": "husky",
-    "lint": "eslint",
     "prebuild": "rm -f ./public/**/*.html",
-    "build": "node --import=./scripts/import-register-esbuild-loader.ts ./scripts/build.ts",
-    "watch": "nodemon --exec 'npm run build' --ext .js,.jsx,.ts,.tsx,.css",
-    "start": "npm run watch & serve public --listen=3000"
+    "build": "bun --import=./scripts/import-register-esbuild-loader.ts ./scripts/build.ts",
+    "watch": "nodemon --exec 'bun run build' --ext .js,.jsx,.ts,.tsx,.css",
+    "start": "bun watch & serve public --listen=3000"
   },
   "devDependencies": {
     "@commitlint/cli": "20.3.0",
@@ -44,6 +51,6 @@
     "semantic-release": "25.0.2",
     "serve": "14.2.5",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.51.0"
+    "typescript-eslint": "8.52.0"
   }
 }
