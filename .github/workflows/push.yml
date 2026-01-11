@@ -15,6 +15,11 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+      # Required by semantic-release
+      - uses: actions/setup-node@v6
+        with:
+          node-version: latest
+          package-manager-cache: false
       - uses: oven-sh/setup-bun@v2
       - uses: actions/cache@v5
         id: cache-node_modules
