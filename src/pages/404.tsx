@@ -1,11 +1,10 @@
-import React from "react";
+import type { FC } from "react";
+import FooterLinks from "../components/FooterLinks.tsx";
 
-import { FooterLinks } from "../components/FooterLinks.tsx";
-
-export default () => (
+const NotFound: FC = () => (
   <>
     <title>Page Not Found</title>
-    <meta name="robots" content="noarchive, noindex" />
+    <meta content="noarchive, noindex" name="robots" />
 
     <header>
       <h1>Page Not Found</h1>
@@ -15,3 +14,5 @@ export default () => (
     <FooterLinks>{[{ href: "/", title: "Back Home" }]}</FooterLinks>
   </>
 );
+
+export default NotFound;

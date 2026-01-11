@@ -3,10 +3,10 @@
     "allowImportingTsExtensions": true,
     "allowJs": true,
     "esModuleInterop": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["ESNext"],
-    "moduleResolution": "bundler",
     "module": "ESNext",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "strict": true,
     "target": "ESNext"

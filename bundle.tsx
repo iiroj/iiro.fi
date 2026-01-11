@@ -1,4 +1,3 @@
-import React from "react";
 import { prerender } from "react-dom/static";
 
 import Html from "./src/components/Html.tsx";
@@ -17,7 +16,7 @@ export const prerenderResponse = async (src: string) => {
 };
 
 for (const [route, src] of Object.entries(pagesRouter.routes)) {
-  let dest = "./public" + route;
+  let dest = `./public${route}`;
   if (dest.endsWith("/")) dest += "index";
   dest += ".html";
 

@@ -20,7 +20,7 @@ Bun.serve({
           return response;
         }
 
-        const staticFile = Bun.file("./public" + urlPathname);
+        const staticFile = Bun.file(`./public${urlPathname}`);
         if (await staticFile.exists()) {
           return new Response(staticFile);
         }
@@ -33,5 +33,3 @@ Bun.serve({
     },
   },
 });
-
-export {};

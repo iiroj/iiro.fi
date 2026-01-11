@@ -1,11 +1,10 @@
-import React from "react";
-
+import type { FC } from "react";
 import { Bluesky } from "../components/Bluesky.tsx";
-import { FooterLinks } from "../components/FooterLinks.tsx";
+import FooterLinks from "../components/FooterLinks.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
 
-export default () => (
+const Index: FC = () => (
   <>
     <title>Iiro Jäppinen</title>
 
@@ -60,3 +59,5 @@ export default () => (
     </FooterLinks>
   </>
 );
+
+export default Index;
