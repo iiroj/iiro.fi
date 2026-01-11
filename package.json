@@ -22,8 +22,8 @@
   "scripts": {
     "prepare": "husky",
     "prebuild": "rm -f ./public/**/*.html",
-    "build": "bun --import=./scripts/import-register-esbuild-loader.ts ./scripts/build.ts",
-    "watch": "nodemon --exec 'bun run build' --ext .js,.jsx,.ts,.tsx,.css",
+    "build": "bun run ./scripts/build.ts",
+    "watch": "bun --watch run ./scripts/build.ts",
     "start": "bun watch & serve public --listen=3000"
   },
   "devDependencies": {
@@ -36,7 +36,6 @@
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "conventional-changelog-conventionalcommits": "9.1.0",
-    "esbuild": "0.27.2",
     "eslint": "9.39.2",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.4",
