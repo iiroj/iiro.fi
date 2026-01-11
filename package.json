@@ -13,10 +13,12 @@
   "type": "module",
   "devEngines": {
     "runtime": {
-      "name": "bun"
+      "name": "bun",
+      "onFail": "warn"
     },
     "packageManager": {
-      "name": "bun"
+      "name": "bun",
+      "onFail": "warn"
     }
   },
   "scripts": {
