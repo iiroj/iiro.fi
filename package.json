@@ -21,9 +21,9 @@
   },
   "scripts": {
     "prepare": "husky",
-    "prebuild": "rm -f ./public/**/*.html",
-    "build": "bun run scripts/build.ts",
-    "start": "bun --watch run dev.ts"
+    "prebundle": "rm -f ./public/**/*.html",
+    "bundle": "bun run bundle.tsx",
+    "start": "bun --watch run dev.tsx"
   },
   "devDependencies": {
     "@commitlint/cli": "20.3.0",

@@ -5,14 +5,10 @@ import { FooterLinks } from "../components/FooterLinks.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
 
-export const Head = async () => (
+export default () => (
   <>
     <title>Iiro Jäppinen</title>
-  </>
-);
 
-export const Body = async () => (
-  <>
     <header>
       <picture>
         <source
