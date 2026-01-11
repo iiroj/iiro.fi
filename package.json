@@ -21,7 +21,7 @@
   },
   "scripts": {
     "bundle": "bun run bundle.tsx",
-    "lint": "bunx @biomejs/biome check",
+    "lint": "bunx biome check",
     "prebundle": "rm -f ./public/**/*.html",
     "prepare": "husky",
     "start": "bun --watch run dev.tsx"
@@ -38,6 +38,7 @@
     "@types/react-dom": "19.2.3",
     "conventional-changelog-conventionalcommits": "9.1.0",
     "husky": "9.1.7",
+    "prettier": "3.7.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "semantic-release": "25.0.2"

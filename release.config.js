@@ -16,7 +16,7 @@ export default {
     [
       "@semantic-release/exec",
       {
-        prepareCmd: "bunx @biome/biomejs --write CHANGELOG.md",
+        prepareCmd: "prettier --write CHANGELOG.md",
       },
     ],
     ["@semantic-release/npm", { npmPublish: false }],
