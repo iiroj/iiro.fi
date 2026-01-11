@@ -1,8 +1,4 @@
-import React, {
-  type FC,
-  type HTMLAttributeAnchorTarget,
-  type ReactNode,
-} from "react";
+import type { FC, HTMLAttributeAnchorTarget, ReactNode } from "react";
 
 interface Link {
   href: string;
@@ -16,12 +12,12 @@ interface Props {
   children: Link[];
 }
 
-export const FooterLinks: FC<Props> = ({ children }) => (
+const FooterLinks: FC<Props> = ({ children }) => (
   <footer>
     <nav>
       <ul>
-        {children.map(({ href, icon, rel, target, title }, index) => (
-          <li key={index}>
+        {children.map(({ href, icon, rel, target, title }) => (
+          <li key={href}>
             <a href={href} rel={rel} target={target}>
               {icon}
               <span>{title}</span>

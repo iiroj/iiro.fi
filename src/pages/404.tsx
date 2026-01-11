@@ -1,16 +1,11 @@
-import React from "react";
+import type { FC } from "react";
+import FooterLinks from "../components/FooterLinks.tsx";
 
-import { FooterLinks } from "../components/FooterLinks.tsx";
-
-export const Head = async () => (
+const NotFound: FC = () => (
   <>
     <title>Page Not Found</title>
-    <meta name="robots" content="noarchive, noindex" />
-  </>
-);
+    <meta content="noarchive, noindex" name="robots" />
 
-export const Body = async () => (
-  <>
     <header>
       <h1>Page Not Found</h1>
       <h2>Four Zero Four</h2>
@@ -19,3 +14,5 @@ export const Body = async () => (
     <FooterLinks>{[{ href: "/", title: "Back Home" }]}</FooterLinks>
   </>
 );
+
+export default NotFound;

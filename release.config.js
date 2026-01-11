@@ -16,7 +16,7 @@ export default {
     [
       "@semantic-release/exec",
       {
-        prepareCmd: "npx prettier --write CHANGELOG.md",
+        prepareCmd: "bunx @biome/biomejs --write CHANGELOG.md",
       },
     ],
     ["@semantic-release/npm", { npmPublish: false }],
@@ -25,6 +25,7 @@ export default {
       {
         assets: ["CHANGELOG.md", "package-lock.json", "package.json"],
         message:
+          // biome-ignore lint/suspicious/noTemplateCurlyInString: semantic-release template
           "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}\n\n[semantic-release]",
       },
     ],
