@@ -1,3 +1,15 @@
+## [34.0.0](https://github.com/iiroj/iiro.fi/compare/v33.6.2...v34.0.0) (2026-01-11)
+
+### ⚠ BREAKING CHANGES
+
+- use Bun features for bundling and development
+
+### Features
+
+- build and run dev server with Bun ([9bff94a](https://github.com/iiroj/iiro.fi/commit/9bff94af4911052b4031bb377f0e59d3018f4c4b))
+- use bun as package manager ([bd29f7d](https://github.com/iiroj/iiro.fi/commit/bd29f7d903ca2123abc112dabacde1be253914d8))
+- use Bun features for bundling and development ([7b540ec](https://github.com/iiroj/iiro.fi/commit/7b540ec4f0ca3b96af9400fb4f2c3b09669f4585))
+
 ## [33.6.2](https://github.com/iiroj/iiro.fi/compare/v33.6.1...v33.6.2) (2026-01-04)
 
 ### Bug Fixes
