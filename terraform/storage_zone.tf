@@ -7,8 +7,8 @@ resource "random_uuid" "storage_zone_name" {
 resource "bunnynet_storage_zone" "storage" {
   name                = random_uuid.storage_zone_name.id
   zone_tier           = "Edge"
-  region              = "DE"         // Frankfurt
-  replication_regions = ["SG", "LA"] // Singapore, Los Angeles
+  region              = "DE"   // Frankfurth
+  replication_regions = ["SE"] // Stockholm
 
   custom_404_file_path = "/404.html"
 }

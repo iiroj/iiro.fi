@@ -7,15 +7,9 @@ resource "bunnynet_pullzone" "iiro" {
   }
 
   routing {
-    tier = "Standard"
-    zones = [
-      "EU",   // Europe
-      "ASIA", // Asia & Oceania
-      "US",   // North America
-      "AF",   // Middle East & Africa
-      "SA"    // South America
-    ]
-    filters = ["all"]
+    tier    = "Standard"
+    zones   = ["EU"]
+    filters = ["eu"]
   }
 
   block_post_requests           = true
