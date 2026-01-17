@@ -1,3 +1,24 @@
-prettier $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g') --write --ignore-unknown
-biome check --staged --no-errors-on-unmatched
+get_staged_files() {
+    git diff --staged --name-only --diff-filter ACMR -z -- "$@" | xargs --null
+}
+
+DIM='\033[1;30m'
+NC='\033[0m'
+
+lint_staged() {
+    local command="$1"
+    shift # remove first argument
+
+    local files=$(get_staged_files "$@")
+    if [ -n "$files" ]; then
+        echo "${DIM}${command} $files${NC}"
+        eval "$command" $files
+        echo ""
+    fi
+}
+
+lint_staged "biome check --no-errors-on-unmatched" "*"
+lint_staged "prettier --check" "*.json" "*.md"
+lint_staged "terraform fmt -check" "*.tf"
+
 git update-index --again
