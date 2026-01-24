@@ -20,5 +20,3 @@ lint_staged() {
 lint_staged "biome check --no-errors-on-unmatched" "*"
 lint_staged "prettier --check" "*.json" "*.md"
 lint_staged "terraform fmt -check" "*.tf"
-
-git update-index --again
