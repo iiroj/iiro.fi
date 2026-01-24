@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import { Bluesky } from "../components/Bluesky.tsx";
 import FooterLinks from "../components/FooterLinks.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
@@ -40,13 +39,6 @@ const Index: FC = () => (
           rel: "author noreferrer",
           target: "_blank",
           title: "GitHub",
-        },
-        {
-          href: "https://bsky.app/profile/iiro.fi",
-          icon: <Bluesky />,
-          rel: "author noreferrer",
-          target: "_blank",
-          title: "Bluesky",
         },
         {
           href: "https://linkedin.com/in/iiroj",
