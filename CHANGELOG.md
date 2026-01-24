@@ -1,3 +1,9 @@
+## [34.1.0](https://github.com/iiroj/iiro.fi/compare/v34.0.0...v34.1.0) (2026-01-24)
+
+### Features
+
+- remove Bluesky link ([5e58132](https://github.com/iiroj/iiro.fi/commit/5e581321faa3d446b8225e4e8a2a9fb860285db7))
+
 ## [34.0.0](https://github.com/iiroj/iiro.fi/compare/v33.6.2...v34.0.0) (2026-01-11)
 
 ### ⚠ BREAKING CHANGES
