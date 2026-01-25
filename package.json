@@ -21,11 +21,11 @@
     }
   },
   "scripts": {
-    "bundle": "bun run bundle.tsx",
-    "lint": "biome check",
-    "prebundle": "rm -f ./public/**/*.html",
     "prepare": "husky",
     "start": "bun --watch run dev.tsx",
+    "lint": "biome check",
+    "prebundle": "rm -f ./public/**/*.html",
+    "bundle": "bun run bundle.tsx",
     "version": "semantic-release --no-ci"
   },
   "devDependencies": {
