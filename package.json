@@ -6,9 +6,8 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iiroj/iiro.fi.git"
+    "url": "https://codeberg.org/iiroj/iiro.fi.git"
   },
-  "bugs": "https://github.com/iiroj/iiro.fi/issues",
   "private": true,
   "type": "module",
   "devEngines": {
@@ -26,7 +25,8 @@
     "lint": "bunx biome check",
     "prebundle": "rm -f ./public/**/*.html",
     "prepare": "husky",
-    "start": "bun --watch run dev.tsx"
+    "start": "bun --watch run dev.tsx",
+    "version": "semantic-release"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",

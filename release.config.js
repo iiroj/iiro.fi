@@ -2,10 +2,17 @@
 export default {
   branches: ["main"],
   plugins: [
-    ["@semantic-release/commit-analyzer", { preset: "conventionalcommits" }],
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        preset: "conventionalcommits",
+      },
+    ],
     [
       "@semantic-release/release-notes-generator",
-      { preset: "conventionalcommits" },
+      {
+        preset: "conventionalcommits",
+      },
     ],
     [
       "@semantic-release/changelog",
@@ -19,7 +26,12 @@ export default {
         prepareCmd: "prettier --write CHANGELOG.md",
       },
     ],
-    ["@semantic-release/npm", { npmPublish: false }],
+    [
+      "@semantic-release/npm",
+      {
+        npmPublish: false,
+      },
+    ],
     [
       "@semantic-release/git",
       {
@@ -29,16 +41,6 @@ export default {
           "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}\n\n[semantic-release]",
       },
     ],
-    [
-      "@semantic-release/github",
-      {
-        failTitle: false,
-        labels: false,
-        releasedLabels: false,
-      },
-    ],
   ],
-  repositoryUrl: process.env.GITHUB_ACTIONS
-    ? "https://github.com/iiroj/iiro.fi"
-    : "git@github.com:iiroj/iiro.fi.git",
+  repositoryUrl: "ssh://git@codeberg.org/iiroj/iiro.fi.git",
 };
