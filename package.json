@@ -22,11 +22,11 @@
   },
   "scripts": {
     "bundle": "bun run bundle.tsx",
-    "lint": "bunx biome check",
+    "lint": "biome check",
     "prebundle": "rm -f ./public/**/*.html",
     "prepare": "husky",
     "start": "bun --watch run dev.tsx",
-    "version": "semantic-release"
+    "version": "semantic-release --no-ci"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
