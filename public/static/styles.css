@@ -1,18 +1,16 @@
 :root {
   --background: white;
   --foreground: black;
-  --opacity05: hsla(0, 0%, 0%, 0.05);
-  --opacity20: hsla(0, 0%, 0%, 0.2);
-  --opacity40: hsla(0, 0%, 0%, 0.4);
+  --highlight: hsla(91, 84%, 27%, 1);
+  --active: hsla(91, 95%, 15%, 1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: black;
     --foreground: white;
-    --opacity05: hsla(0, 0%, 100%, 0.2);
-    --opacity20: hsla(0, 0%, 100%, 0.3);
-    --opacity40: hsla(0, 0%, 100%, 0.4);
+    --highlight: hsla(91, 80%, 40%, 1);
+    --active: hsla(91, 84%, 27%, 1);
   }
 }
 
@@ -77,12 +75,16 @@ p {
   max-width: 700px;
 }
 
-ul {
-  align-items: center;
+nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
   justify-content: center;
+}
+
+ul {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -90,26 +92,26 @@ ul {
 
 a {
   align-items: center;
-  border-radius: 0.25rem;
+  border-radius: 0.05rem;
   color: inherit;
   column-gap: 0.25rem;
   display: inline-flex;
-  padding: 0.25rem 0.5rem;
   text-decoration: none;
+  transition: color 125ms ease-out;
 }
 
 a:hover {
-  background: var(--opacity20);
-  outline: none;
+  color: var(--highlight);
 }
 
 a:focus-visible {
-  box-shadow: inset 0 0 0 2px var(--opacity20);
-  outline: none;
+  color: var(--highlight);
+  outline: 2px solid var(--highlight);
+  outline-offset: 2px;
 }
 
 a:active {
-  background: var(--opacity40);
+  color: var(--active);
 }
 
 @media (min-width: 768px) {
