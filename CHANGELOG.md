@@ -1,3 +1,9 @@
+## [34.2.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.1.0...v34.2.0) (2026-01-26)
+
+### Features
+
+- add Codeberg link ([d0ce097](https://codeberg.org/iiroj/iiro.fi/commit/d0ce09798121ae5110d8566f295a7b52afd90ec6))
+
 ## [34.1.0](https://github.com/iiroj/iiro.fi/compare/v34.0.0...v34.1.0) (2026-01-24)
 
 ### Features

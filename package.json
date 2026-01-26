@@ -1,6 +1,6 @@
 {
   "name": "iiro.fi",
-  "version": "34.1.0",
+  "version": "34.2.0",
   "description": "A static site",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "lint": "biome check",
     "prebundle": "rm -f ./public/**/*.html",
     "bundle": "bun run bundle.tsx",
-    "version": "semantic-release --no-ci"
+    "semver": "semantic-release --no-ci"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
