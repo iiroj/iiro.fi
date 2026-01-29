@@ -1,3 +1,9 @@
+## [34.3.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.2.0...v34.3.0) (2026-01-29)
+
+### Features
+
+- save static files to pages/ as submodule ([3cf0f2e](https://codeberg.org/iiroj/iiro.fi/commit/3cf0f2eb692057d7dc2ae19a064e3a81a8d498c6))
+
 ## [34.2.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.1.0...v34.2.0) (2026-01-26)
 
 ### Features
