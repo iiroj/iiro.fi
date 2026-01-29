@@ -1,6 +1,6 @@
 resource "null_resource" "cache_purge" {
   triggers = {
-    files_hash = md5(join(",", [for file in bunnynet_storage_file.public : file.checksum]))
+    files_hash = md5(join(",", [for file in bunnynet_storage_file.pages : file.checksum]))
   }
 
   provisioner "local-exec" {

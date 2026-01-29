@@ -16,7 +16,7 @@ export const prerenderResponse = async (src: string) => {
 };
 
 for (const [route, src] of Object.entries(pagesRouter.routes)) {
-  let dest = `./public${route}`;
+  let dest = `./pages${route}`;
   if (dest.endsWith("/")) dest += "index";
   dest += ".html";
 

@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from "react";
 
-const styles = Bun.file("./public/static/styles.css");
+const styles = Bun.file("./pages/static/styles.css");
 
 const integrity = new Bun.CryptoHasher("sha256")
   .update(await styles.text())
