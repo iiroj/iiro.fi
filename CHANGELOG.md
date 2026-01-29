@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.4.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.4.0...v34.4.1) (2026-01-29)
+
+### Bug Fixes
+
+- update sitemap.xml date ([ae4125d](https://codeberg.org/iiroj/iiro.fi/commit/ae4125db99fc6ee22d76996dfab3e18a881658bf))
+
 ## [34.4.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.3.1...v34.4.0) (2026-01-29)
 
 ### Features
