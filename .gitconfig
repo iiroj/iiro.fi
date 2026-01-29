@@ -1,4 +1,0 @@
-[pull]
-	rebase = merges
-[push]
-	followTags = true
