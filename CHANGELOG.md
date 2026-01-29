@@ -1,3 +1,9 @@
+## [34.3.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.3.0...v34.3.1) (2026-01-29)
+
+### Reverts
+
+- Revert "feat: save static files to pages/ as submodule" ([e82c35e](https://codeberg.org/iiroj/iiro.fi/commit/e82c35edf41529f0b5e2fb31d0ec7acf561b588a))
+
 ## [34.3.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.2.0...v34.3.0) (2026-01-29)
 
 ### Features
