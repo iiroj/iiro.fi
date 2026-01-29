@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.4.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.3.1...v34.4.0) (2026-01-29)
+
+### Features
+
+- replace `semantic-release` with `commit-and-tag-version` ([2f10940](https://codeberg.org/iiroj/iiro.fi/commit/2f10940712ba6a82945927a64859cf9cff75402d))
+
 ## [34.3.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.3.0...v34.3.1) (2026-01-29)
 
 ### Reverts
