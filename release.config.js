@@ -32,15 +32,5 @@ export default {
         npmPublish: false,
       },
     ],
-    [
-      "@semantic-release/git",
-      {
-        assets: ["CHANGELOG.md", "package-lock.json", "package.json"],
-        message:
-          // biome-ignore lint/suspicious/noTemplateCurlyInString: semantic-release template
-          "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}\n\n[semantic-release]",
-      },
-    ],
   ],
-  repositoryUrl: "ssh://git@codeberg.org/iiroj/iiro.fi.git",
 };
