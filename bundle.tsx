@@ -23,4 +23,5 @@ for (const [route, src] of Object.entries(pagesRouter.routes)) {
   const response = await prerenderResponse(src);
 
   await Bun.write(dest, await response.text());
+  await Bun.$`prettier --write ${dest}`;
 }
