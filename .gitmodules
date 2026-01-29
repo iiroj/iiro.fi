@@ -1,3 +1,0 @@
-[submodule "pages"]
-	path = pages
-	url = ssh://git@codeberg.org/iiroj/pages.git

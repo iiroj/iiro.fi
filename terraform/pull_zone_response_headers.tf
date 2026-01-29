@@ -26,7 +26,7 @@ resource "bunnynet_pullzone_edgerule" "response_headers" {
     {
       type       = "SetResponseHeader"
       parameter1 = "Content-Security-Policy"
-      parameter2 = "default-src 'self'; style-src 'self' 'sha256-${base64sha256(file("../pages/static/styles.css"))}'"
+      parameter2 = "default-src 'self'; style-src 'self' 'sha256-${base64sha256(file("../public/static/styles.css"))}'"
       parameter3 = null
     },
     {

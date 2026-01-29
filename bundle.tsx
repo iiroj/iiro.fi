@@ -16,12 +16,12 @@ export const prerenderResponse = async (src: string) => {
 };
 
 for (const [route, src] of Object.entries(pagesRouter.routes)) {
-  let dest = `./pages${route}`;
+  let dest = `./public${route}`;
   if (dest.endsWith("/")) dest += "index";
   dest += ".html";
 
   const response = await prerenderResponse(src);
 
   await Bun.write(dest, await response.text());
-  await Bun.$`prettier --write ${dest}`;
+  await Bun.$`prettier --ignore-path=.prettier-ignore --write "${dest}"`;
 }
