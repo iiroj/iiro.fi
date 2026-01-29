@@ -13,11 +13,11 @@
   "devEngines": {
     "runtime": {
       "name": "bun",
-      "onFail": "warn"
+      "onFail": "error"
     },
     "packageManager": {
       "name": "bun",
-      "onFail": "warn"
+      "onFail": "error"
     }
   },
   "scripts": {
