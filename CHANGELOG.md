@@ -1,3 +1,7 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
 ## [34.3.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.3.0...v34.3.1) (2026-01-29)
 
 ### Reverts
@@ -872,10 +876,6 @@
 ### Bug Fixes
 
 - commit versioned files ([c44134b](https://github.com/iiroj/iiro.fi/commit/c44134b5fa6610b1d9b64511de608e92cba27ffd))
-
-# Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ### [24.3.5](https://github.com/iiroj/iiro.fi/compare/v24.3.4...v24.3.5) (2022-04-02)
 
