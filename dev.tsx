@@ -1,5 +1,5 @@
-import { prerenderResponse } from "./bundle.tsx";
-import { pagesDir, pagesRouter } from "./src/router.ts";
+import "./bundle.tsx";
+import { pagesRouter } from "./src/router.ts";
 
 Bun.serve({
   hostname: "localhost",
@@ -8,16 +8,12 @@ Bun.serve({
   routes: {
     "/*": async (req) => {
       try {
-        const urlPathname = new URL(req.url).pathname;
+        let urlPathname = new URL(req.url).pathname;
 
         const routeMatch = pagesRouter.match(urlPathname);
         if (routeMatch) {
-          const pageSrc = `${pagesDir}/${routeMatch?.src}`;
-
-          const response = await prerenderResponse(pageSrc);
-
-          response.headers.set("Content-Type", "text/html");
-          return response;
+          const filename = routeMatch.src.split(".")[0];
+          urlPathname = `/${filename}.html`;
         }
 
         const staticFile = Bun.file(`./public${urlPathname}`);
