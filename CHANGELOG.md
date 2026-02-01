@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.4.2](https://codeberg.org/iiroj/iiro.fi/compare/v34.4.1...v34.4.2) (2026-02-01)
+
+### Bug Fixes
+
+- serve bundled 404 page during development ([8cef54d](https://codeberg.org/iiroj/iiro.fi/commit/8cef54d10a3fa18e8adff3a06c1e968b7de135f1))
+- serve bundled HTML files during development ([9ee6add](https://codeberg.org/iiroj/iiro.fi/commit/9ee6addb0591d81625185f67b0c9734feca71edc))
+
 ## [34.4.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.4.0...v34.4.1) (2026-01-29)
 
 ### Bug Fixes
