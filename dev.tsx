@@ -1,5 +1,12 @@
 import "./bundle.tsx";
-import { pagesRouter } from "./src/router.ts";
+
+const htmlRouter = new Bun.FileSystemRouter({
+  dir: "./public",
+  fileExtensions: [".html"],
+  style: "nextjs",
+});
+
+const notFoundFile = Bun.file(htmlRouter.routes["/404"]);
 
 Bun.serve({
   hostname: "localhost",
@@ -10,10 +17,9 @@ Bun.serve({
       try {
         let urlPathname = new URL(req.url).pathname;
 
-        const routeMatch = pagesRouter.match(urlPathname);
-        if (routeMatch) {
-          const filename = routeMatch.src.split(".")[0];
-          urlPathname = `/${filename}.html`;
+        const html = htmlRouter.match(urlPathname);
+        if (html) {
+          urlPathname = `/${html.src}`;
         }
 
         const staticFile = Bun.file(`./public${urlPathname}`);
@@ -21,7 +27,7 @@ Bun.serve({
           return new Response(staticFile);
         }
 
-        return new Response(null, { status: 404 });
+        return new Response(notFoundFile, { status: 404 });
       } catch (error) {
         console.error(error);
         return new Response(null, { status: 500 });
