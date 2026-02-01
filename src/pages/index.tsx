@@ -1,8 +1,9 @@
 import type { FC } from "react";
+
 import { Codeberg } from "../components/Codeberg.tsx";
-import FooterLinks from "../components/FooterLinks.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
+import { Nav } from "../components/Nav.tsx";
 
 const Index: FC = () => (
   <>
@@ -32,31 +33,33 @@ const Index: FC = () => (
       </div>
     </header>
 
-    <FooterLinks>
-      {[
-        {
-          href: "https://codeberg.org/iiroj",
-          icon: <Codeberg />,
-          rel: "author",
-          target: "_blank",
-          title: "Codeberg",
-        },
-        {
-          href: "https://github.com/iiroj",
-          icon: <GitHub />,
-          rel: "author",
-          target: "_blank",
-          title: "GitHub",
-        },
-        {
-          href: "https://linkedin.com/in/iiroj",
-          icon: <LinkedIn />,
-          rel: "author",
-          target: "_blank",
-          title: "LinkedIn",
-        },
-      ]}
-    </FooterLinks>
+    <footer>
+      <Nav>
+        {[
+          {
+            href: "https://codeberg.org/iiroj",
+            icon: <Codeberg />,
+            rel: "author",
+            target: "_blank",
+            title: "Codeberg",
+          },
+          {
+            href: "https://github.com/iiroj",
+            icon: <GitHub />,
+            rel: "author",
+            target: "_blank",
+            title: "GitHub",
+          },
+          {
+            href: "https://linkedin.com/in/iiroj",
+            icon: <LinkedIn />,
+            rel: "author",
+            target: "_blank",
+            title: "LinkedIn",
+          },
+        ]}
+      </Nav>
+    </footer>
   </>
 );
 

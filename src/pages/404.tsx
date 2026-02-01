@@ -1,5 +1,6 @@
 import type { FC } from "react";
-import FooterLinks from "../components/FooterLinks.tsx";
+
+import { Nav } from "../components/Nav.tsx";
 
 const NotFound: FC = () => (
   <>
@@ -11,7 +12,9 @@ const NotFound: FC = () => (
       <h2>Four Zero Four</h2>
     </header>
 
-    <FooterLinks>{[{ href: "/", title: "Back Home" }]}</FooterLinks>
+    <footer>
+      <Nav>{[{ href: "/", title: "Back Home" }]}</Nav>
+    </footer>
   </>
 );
 
