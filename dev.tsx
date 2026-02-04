@@ -1,7 +1,7 @@
 import "./bundle.tsx";
 
 const htmlRouter = new Bun.FileSystemRouter({
-  dir: "./public",
+  dir: "./pages",
   fileExtensions: [".html"],
   style: "nextjs",
 });

@@ -1,6 +1,6 @@
 # iiro.fi
 
-My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and running on [Bunny.net](https://bunny.net).
+My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and server from [Codeberg Pages](https://codeberg.page).
 
 ## Development and Deployment
 
@@ -34,14 +34,16 @@ Build production assets with _Bun_:
 bun run bundle
 ```
 
-Deploy to [Bunny.net](https://bunny.net) with [OpenTofu](https://opentofu.org):
+Commit changes to the `pages/` submodule and push changes to [Codeberg](https://codeberg.org):
 
 ```shell
-cd terraform/
-tofu apply
+cd pages/
+git commit --all --amend --no-edit
+git push --force --force-with-lease
+cd ..
 ```
 
-Commit changes to repo using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), and create a new version:
+Commit changes to the root repo using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), and create a new version:
 
 ```shell
 git commit -am "feat: my new feature"
