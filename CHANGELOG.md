@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.5.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.4.2...v34.5.0) (2026-02-04)
+
+### Features
+
+- setup Codeberg pages submodule ([23b6428](https://codeberg.org/iiroj/iiro.fi/commit/23b6428de5cf1ffedfc95520df99c907f939a051))
+
 ## [34.4.2](https://codeberg.org/iiroj/iiro.fi/compare/v34.4.1...v34.4.2) (2026-02-01)
 
 ### Bug Fixes
