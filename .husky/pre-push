@@ -1,2 +1,4 @@
-bun run lint
-bun run bundle
+#!/usr/bin/env sh
+
+bun lint
+bun bundle

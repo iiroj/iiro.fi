@@ -13,6 +13,7 @@
         "@types/react-dom": "19.2.3",
         "commit-and-tag-version": "12.6.1",
         "husky": "9.1.7",
+        "lint-staged.sh": "0.1.2",
         "prettier": "3.8.1",
         "react": "19.2.4",
         "react-dom": "19.2.4",
@@ -289,6 +290,8 @@
     "kind-of": ["kind-of@6.0.3", "", {}, "sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw=="],
 
     "lines-and-columns": ["lines-and-columns@1.2.4", "", {}, "sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg=="],
+
+    "lint-staged.sh": ["lint-staged.sh@0.1.2", "", { "bin": { "lint-staged.sh": "lint-staged.sh" } }, "sha512-yi8A+I/TcSSMlZHkroawDwrwAZqS++J8WwujKgcz7oCL0AwDHN4pBaJMM2K1JYo+qG/VyqoLOGbYCuSrqawCgg=="],
 
     "load-json-file": ["load-json-file@4.0.0", "", { "dependencies": { "graceful-fs": "^4.1.2", "parse-json": "^4.0.0", "pify": "^3.0.0", "strip-bom": "^3.0.0" } }, "sha512-Kx8hMakjX03tiGTLAIdJ+lL0htKnXjEZN6hk/tozf/WOuYGdZBJrZ+rCJRbVCugsjB3jMLn9746NsQIf5VjBMw=="],
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 COMMIT_MSG=$(cat $1)
 
-echo "$COMMIT_MSG" | bunx commitlint
+echo "$COMMIT_MSG" | commitlint
