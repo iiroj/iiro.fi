@@ -35,14 +35,14 @@ const Index: FC = () => (
     <section>
       <h3>About</h3>
       <p>
-        I'm a software engineer with roots in user interface design. I have an
+        I’m a software engineer with roots in user interface design. I have an
         eye for detail and like to solve complex problems. I believe to create
         business, you need to use design as a plan and technology as a tool to
         get there. I've learned helping others grow in their career is the true
         force multiplier.
       </p>
       <p>
-        Currently I'm bringing digitalization to{" "}
+        Currently I’m bringing digitalization to{" "}
         <a href="https://s-ryhma.fi/en" rel="noopener" target="_blank">
           S Group
         </a>{" "}

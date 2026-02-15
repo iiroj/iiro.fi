@@ -22,7 +22,7 @@ const Html: FC<{ children: ReactNode }> = async ({ children }) => {
           property="og:title"
         />
         <meta
-          content="I'm a software engineer with roots in user interface design."
+          content="I’m a software engineer with roots in user interface design."
           property="og:description"
         />
         <meta content="https://iiro.fi" property="og:url" />
