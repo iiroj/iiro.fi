@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.7.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.6.0...v34.7.0) (2026-02-15)
+
+### Features
+
+- remove font-size media queries ([c5fd33e](https://codeberg.org/iiroj/iiro.fi/commit/c5fd33ebbadd1b8585880bcd62d22be69488d62a))
+
 ## [34.6.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.5.1...v34.6.0) (2026-02-15)
 
 ### Features
