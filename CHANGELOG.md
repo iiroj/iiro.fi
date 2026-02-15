@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.6.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.5.1...v34.6.0) (2026-02-15)
+
+### Features
+
+- add more content ([ea0c554](https://codeberg.org/iiroj/iiro.fi/commit/ea0c554c95abb6bf3d1f5e6504f3e6400ac9c6cd))
+
+### Bug Fixes
+
+- use punctuation apostrophe ([166851f](https://codeberg.org/iiroj/iiro.fi/commit/166851f695fac63267d2fe89c3534fa8718d1bd2))
+
 ## [34.5.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.5.0...v34.5.1) (2026-02-04)
 
 ### Bug Fixes
