@@ -8,8 +8,10 @@ const NotFound: FC = () => (
     <meta content="noarchive, noindex" name="robots" />
 
     <header>
-      <h1>Page Not Found</h1>
-      <h2>Four Zero Four</h2>
+      <div>
+        <h1>Page Not Found</h1>
+        <h2>Four Zero Four</h2>
+      </div>
     </header>
 
     <footer>

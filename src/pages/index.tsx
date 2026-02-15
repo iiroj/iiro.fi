@@ -1,65 +1,141 @@
 import type { FC } from "react";
 
+import { Avatar } from "../components/Avatar.tsx";
 import { Codeberg } from "../components/Codeberg.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
 import { Nav } from "../components/Nav.tsx";
+import { Npm } from "../components/Npm.tsx";
+import { Projects } from "../components/Projects.tsx";
 
 const Index: FC = () => (
   <>
     <title>Iiro Jäppinen</title>
 
     <header>
-      <picture>
-        <source
-          srcSet="/static/profile-96.webp  1x, /static/profile-192.webp 2x, /static/profile-288.webp 3x"
-          type="image/webp"
-        />
-        <img
-          alt="Iiro Jäppinen"
-          decoding="async"
-          height="96px"
-          loading="eager"
-          src="/static/profile-96.jpg"
-          srcSet="/static/profile-96.jpg  1x, /static/profile-192.jpg 2x, /static/profile-288.jpg 3x"
-          width="96px"
-        />
-      </picture>
+      <Avatar />
 
       <div>
         <h1>Iiro Jäppinen</h1>
 
-        <h2>Principal Engineer at SOK</h2>
+        <h2>
+          Principal Engineer at{" "}
+          <a
+            href="https://s-ryhma.fi/en/investors/sok-corporation"
+            rel="noopener"
+            target="_blank"
+            title="SOK Corporation"
+          >
+            SOK
+          </a>
+        </h2>
       </div>
     </header>
 
-    <footer>
+    <section>
+      <h3>About</h3>
+      <p>
+        I'm a software engineer with roots in user interface design. I have an
+        eye for detail and like to solve complex problems. I believe to create
+        business, you need to use design as a plan and technology as a tool to
+        get there. I've learned helping others grow in their career is the true
+        force multiplier.
+      </p>
+      <p>
+        Currently I'm bringing digitalization to{" "}
+        <a href="https://s-ryhma.fi/en" rel="noopener" target="_blank">
+          S Group
+        </a>{" "}
+        grocery stores across Finland. Previously I worked on creating{" "}
+        <a href="https://www.s-kaupat.fi" rel="noopener" target="_blank">
+          S-kaupat
+        </a>
+        , the biggest e-commerce platform for grocery in Finland. Before that, I
+        worked at{" "}
+        <a href="https://www.verkkokauppa.com" rel="noopener" target="_blank">
+          Verkkokauppa.com
+        </a>
+        , the largest Finnish online retailer at the time.
+      </p>
+    </section>
+
+    <section>
+      <h3>Open-Source</h3>
+      <Projects>
+        {[
+          {
+            description: (
+              <>
+                <a href="https://nodejs.org/en" rel="noopener" target="_blank">
+                  Node.js
+                </a>
+                -based tool to improve your{" "}
+                <a href="https://git-scm.com" rel="noopener" target="_blank">
+                  Git
+                </a>{" "}
+                workflow by running multiple linters like{" "}
+                <a href="http://eslint.org" rel="noopener" target="_blank">
+                  ESLint
+                </a>{" "}
+                or{" "}
+                <a href="https://prettier.io" rel="noopener" target="_blank">
+                  Prettier
+                </a>{" "}
+                against the files you have staged for a commit. I originally
+                contributed perfomance improvements to the project, and have
+                been primarily maintaining it since 2019.
+              </>
+            ),
+            href: "https://www.npmjs.com/package/lint-staged",
+            icon: <Npm />,
+            title: "lint-staged",
+          },
+          {
+            description: (
+              <>
+                React bindings for{" "}
+                <a
+                  href="https://usercentrics.com"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  Usercentrics
+                </a>
+                , a GDPR consent management platform. Created mainly for S-group
+                website usage, but published as open-source because I believe
+                everyone has the right to privacy.
+              </>
+            ),
+            href: "https://www.npmjs.com/package/@s-group/react-usercentrics",
+            icon: <Npm />,
+            title: "@s-group/react-usercentrics",
+          },
+        ]}
+      </Projects>
+    </section>
+
+    <section>
+      <h3>Links</h3>
       <Nav>
         {[
           {
             href: "https://codeberg.org/iiroj",
             icon: <Codeberg />,
-            rel: "author",
-            target: "_blank",
             title: "Codeberg",
           },
           {
             href: "https://github.com/iiroj",
             icon: <GitHub />,
-            rel: "author",
-            target: "_blank",
             title: "GitHub",
           },
           {
             href: "https://linkedin.com/in/iiroj",
             icon: <LinkedIn />,
-            rel: "author",
-            target: "_blank",
             title: "LinkedIn",
           },
         ]}
       </Nav>
-    </footer>
+    </section>
   </>
 );
 

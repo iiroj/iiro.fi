@@ -8,6 +8,8 @@ const htmlRouter = new Bun.FileSystemRouter({
 
 const notFoundFile = Bun.file(htmlRouter.routes["/404"]);
 
+console.log(`🌍 Serving on http://localhost:3000`);
+
 Bun.serve({
   hostname: "localhost",
   port: 3000,

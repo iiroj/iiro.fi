@@ -20,8 +20,17 @@ for (const [route, src] of Object.entries(pagesRouter.routes)) {
   if (dest.endsWith("/")) dest += "index";
   dest += ".html";
 
+  console.log(`⚙️  Building ${dest}`);
+
   const response = await prerenderResponse(src);
 
   await Bun.write(dest, await response.text());
-  await Bun.$`prettier --ignore-path=.prettier-ignore --write "${dest}"`;
+  const prettier = Bun.spawn([
+    "prettier",
+    "--ignore-path=.prettier-ignore",
+    "--write",
+    dest,
+  ]);
+  const prettierOutput = await prettier.stdout.text();
+  console.log(`💅 Prettier: ${prettierOutput}`);
 }

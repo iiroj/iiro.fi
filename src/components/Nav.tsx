@@ -1,10 +1,8 @@
-import type { FC, HTMLAttributeAnchorTarget, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 
 interface Link {
   href: string;
   icon?: ReactNode;
-  rel?: string;
-  target?: HTMLAttributeAnchorTarget;
   title: string;
 }
 
@@ -15,9 +13,9 @@ interface Props {
 export const Nav: FC<Props> = ({ children }) => (
   <nav>
     <ul>
-      {children.map(({ href, icon, rel, target, title }) => (
+      {children.map(({ href, icon, title }) => (
         <li key={href}>
-          <a href={href} rel={rel} target={target}>
+          <a href={href} rel="author noopener" target="_blank">
             {icon}
             <span>{title}</span>
           </a>
