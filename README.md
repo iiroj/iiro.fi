@@ -1,6 +1,6 @@
 # iiro.fi
 
-My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and server from [Codeberg Pages](https://codeberg.page).
+My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and served from [Vercel](https://vercel.com).
 
 ## Development and Deployment
 
@@ -34,15 +34,6 @@ Build production assets with _Bun_:
 bun run bundle
 ```
 
-Commit changes to the `pages/` submodule and push changes to [Codeberg](https://codeberg.org):
-
-```shell
-cd pages/
-git commit --all --amend --no-edit
-git push --force --force-with-lease
-cd ..
-```
-
 Commit changes to the root repo using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), and create a new version:
 
 ```shell
@@ -54,4 +45,10 @@ Push changes to [Codeberg](https://codeberg.org):
 
 ```shell
 git push --follow-tags
+```
+
+Deploy latest version to [Vercel](https://vercel.com):
+
+```shell
+bun run deploy
 ```
