@@ -1,0 +1,143 @@
+:root {
+  --background: white;
+  --foreground: black;
+  --highlight: hsl(91, 84%, 27%);
+  --active: hsl(91, 95%, 15%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: black;
+    --foreground: white;
+    --highlight: hsl(91, 80%, 40%);
+    --active: hsl(91, 84%, 27%);
+  }
+}
+
+html {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.2;
+  max-width: 21cm;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+header img {
+  background: #45810c;
+  border-radius: 6rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: block;
+  object-fit: cover;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.025ch;
+}
+
+header h1 {
+  margin: 0;
+}
+
+h2,
+h3,
+h4 {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0 0 0.5em;
+}
+
+section + section {
+  margin: 1em 0 0 0;
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 0.5em;
+}
+
+article.oss {
+  background-origin: border-box;
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.1),
+    0 2px 4px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25em;
+  padding: 0.8em 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  article.oss {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  }
+}
+
+article.oss header {
+  margin: 0;
+}
+
+article.oss h4 {
+  align-items: center;
+  display: flex;
+  gap: 0.25em;
+}
+
+ul {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  align-items: center;
+  border-radius: 0.05rem;
+  color: inherit;
+  column-gap: 0.25rem;
+  text-decoration: none;
+  transition: color 125ms ease-out;
+}
+
+a:hover {
+  color: var(--highlight);
+}
+
+a:focus-visible {
+  color: var(--highlight);
+  outline: 2px solid var(--highlight);
+  outline-offset: 2px;
+}
+
+a:active {
+  color: var(--active);
+}
+
+a > svg {
+  display: inline-block;
+  margin-right: 0.25em;
+  vertical-align: -0.1337em;
+}

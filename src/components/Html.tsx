@@ -1,12 +1,9 @@
 import type { FC, ReactNode } from "react";
 
-const Html: FC<{ children: ReactNode }> = async ({ children }) => {
-  const styles = Bun.file("./pages/static/styles.css");
-
-  const integrity = new Bun.CryptoHasher("sha256")
-    .update(await styles.text())
-    .digest("base64");
-
+const Html: FC<{ children: ReactNode; integrity: string }> = async ({
+  children,
+  integrity,
+}) => {
   return (
     <html lang="en">
       <head>

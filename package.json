@@ -25,7 +25,9 @@
     "start": "bun --watch run dev.tsx",
     "lint": "biome check",
     "bundle": "bun run bundle.tsx",
-    "version": "commit-and-tag-version"
+    "version": "commit-and-tag-version",
+    "predeploy": "bun run bundle",
+    "deploy": "vercel deploy --prod"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.13",
@@ -39,6 +41,7 @@
     "lint-staged.sh": "0.1.2",
     "prettier": "3.8.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "vercel": "50.22.1"
   }
 }
