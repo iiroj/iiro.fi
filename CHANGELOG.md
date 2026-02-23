@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.8.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.7.0...v34.8.0) (2026-02-23)
+
+### Features
+
+- deploy as static site to Vercel ([823a427](https://codeberg.org/iiroj/iiro.fi/commit/823a427d8ef19318d1a149ac72c7160c8b2f38f5))
+
 ## [34.7.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.6.0...v34.7.0) (2026-02-15)
 
 ### Features
