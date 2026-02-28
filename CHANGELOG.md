@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.9.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.8.1...v34.9.0) (2026-02-28)
+
+### Features
+
+- add Bluesky/Eurosky link ([184c7f3](https://codeberg.org/iiroj/iiro.fi/commit/184c7f3bf2e470e1a2c2c9cb5feb715d994eff1b))
+
+### Bug Fixes
+
+- **Nav:** open relative links in current window ([28cb432](https://codeberg.org/iiroj/iiro.fi/commit/28cb43253b9d67f29425907dbba64474da908201))
+
 ## [34.8.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.8.0...v34.8.1) (2026-02-28)
 
 ## [34.8.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.7.0...v34.8.0) (2026-02-23)
