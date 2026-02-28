@@ -1,6 +1,7 @@
 import type { FC } from "react";
 
 import { Avatar } from "../components/Avatar.tsx";
+import { Bluesky } from "../components/Bluesky.tsx";
 import { Codeberg } from "../components/Codeberg.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
@@ -118,6 +119,11 @@ const Index: FC = () => (
       <h3>Links</h3>
       <Nav>
         {[
+          {
+            href: "https://bsky.app/profile/iiroj.eurosky.social",
+            icon: <Bluesky />,
+            title: "Bluesky",
+          },
           {
             href: "https://codeberg.org/iiroj",
             icon: <Codeberg />,

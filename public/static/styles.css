@@ -116,8 +116,9 @@ ul {
 a {
   align-items: center;
   border-radius: 0.05rem;
+  display: inline-flex;
   color: inherit;
-  column-gap: 0.25rem;
+  column-gap: 0.5rem;
   text-decoration: none;
   transition: color 125ms ease-out;
 }
@@ -136,8 +137,6 @@ a:active {
   color: var(--active);
 }
 
-a > svg {
-  display: inline-block;
-  margin-right: 0.25em;
-  vertical-align: -0.1337em;
+a:has(svg) {
+  line-height: 24px;
 }
