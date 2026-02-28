@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.9.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.0...v34.9.1) (2026-02-28)
+
+### Bug Fixes
+
+- split html-only headers ([b5bd3b3](https://codeberg.org/iiroj/iiro.fi/commit/b5bd3b30ae44d243068c34d5bda2886d8ebb37c4))
+
 ## [34.9.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.8.1...v34.9.0) (2026-02-28)
 
 ### Features
