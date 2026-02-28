@@ -14,7 +14,8 @@ export default {
   cleanUrls: true,
   framework: null,
   headers: [
-    routes.header("/(.*)", [
+    /** Without any dots, HTML files */
+    routes.header("/([^.]*)", [
       {
         key: "Link",
         value: [
@@ -28,6 +29,18 @@ export default {
         value: `default-src 'self'; style-src 'self' 'sha256-${stylesCssHash}'`,
       },
       {
+        key: "Permissions-Policy",
+        value:
+          "browsing-topics=(), conversion-measurement=(), interest-cohort=(), join-ad-interest-group=(), run-ad-auction=()",
+      },
+    ]),
+    routes.header("/(.*)", [
+      {
+        key: "Access-Control-Allow-Origin",
+        value: "https://iiro.fi",
+      },
+
+      {
         key: "Cross-Origin-Embedder-Policy",
         value: "require-corp",
       },
@@ -39,11 +52,7 @@ export default {
         key: "Cross-Origin-Resource-Policy",
         value: "require-corp; same-site",
       },
-      {
-        key: "Permissions-Policy",
-        value:
-          "browsing-topics=(), conversion-measurement=(), interest-cohort=(), join-ad-interest-group=(), run-ad-auction=()",
-      },
+
       {
         key: "Referrer-Policy",
         value: "strict-origin-when-cross-origin",
