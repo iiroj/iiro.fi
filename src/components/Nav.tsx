@@ -15,7 +15,11 @@ export const Nav: FC<Props> = ({ children }) => (
     <ul>
       {children.map(({ href, icon, title }) => (
         <li key={href}>
-          <a href={href} rel="author noopener" target="_blank">
+          <a
+            href={href}
+            rel={href.startsWith("/") ? undefined : "author noopener"}
+            target={href.startsWith("/") ? undefined : "_blank"}
+          >
             {icon}
             <span>{title}</span>
           </a>
