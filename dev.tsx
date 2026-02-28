@@ -1,4 +1,4 @@
-import "./bundle.tsx";
+import "./build.tsx";
 
 const htmlRouter = new Bun.FileSystemRouter({
   dir: "./pages",

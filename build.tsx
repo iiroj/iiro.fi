@@ -40,14 +40,3 @@ for (const [route, src] of Object.entries(pagesRouter.routes)) {
   const prettierOutput = await prettier.stdout.text();
   console.log(`💅 Prettier: ${prettierOutput}`);
 }
-
-console.log("⚙️  Emitting vercel.json");
-type VercelJson = typeof import("./src/vercel.json");
-const vercelJson = (await Bun.file("./src/vercel.json").json()) as VercelJson;
-
-vercelJson.headers.at(0)?.headers.push({
-  key: "Content-Security-Policy",
-  value: `default-src 'self'; style-src 'self' 'sha256-${integrity}'`,
-});
-
-await Bun.write("./vercel.json", JSON.stringify(vercelJson, null, 2));

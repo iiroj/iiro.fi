@@ -24,7 +24,7 @@
     "prepare": "husky",
     "start": "bun --watch run dev.tsx",
     "lint": "biome check",
-    "build": "bun run bundle.tsx",
+    "build": "bun run build.tsx",
     "version": "commit-and-tag-version",
     "predeploy": "bun run build",
     "deploy": "vercel deploy --prod"
@@ -36,6 +36,8 @@
     "@types/bun": "1.3.8",
     "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
+    "@typescript/native-preview": "7.0.0-dev.20260228.1",
+    "@vercel/config": "0.0.36",
     "commit-and-tag-version": "12.6.1",
     "husky": "9.1.7",
     "lint-staged.sh": "0.1.2",

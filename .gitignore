@@ -2,4 +2,3 @@
 /.vercel
 /node_modules
 /public/**/*.html
-/vercel.json
