@@ -31,7 +31,7 @@ bun run lint
 Build production assets with _Bun_:
 
 ```shell
-bun run bundle
+bun run build
 ```
 
 Commit changes to the root repo using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), and create a new version:

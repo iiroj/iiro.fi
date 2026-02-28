@@ -24,9 +24,9 @@
     "prepare": "husky",
     "start": "bun --watch run dev.tsx",
     "lint": "biome check",
-    "bundle": "bun run bundle.tsx",
+    "build": "bun run bundle.tsx",
     "version": "commit-and-tag-version",
-    "predeploy": "bun run bundle",
+    "predeploy": "bun run build",
     "deploy": "vercel deploy --prod"
   },
   "devDependencies": {
