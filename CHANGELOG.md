@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.9.2](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.1...v34.9.2) (2026-03-08)
+
+### Bug Fixes
+
+- use public/ directory in dev.tsx ([36e5a5a](https://codeberg.org/iiroj/iiro.fi/commit/36e5a5a7fb2f8431c720437d2fe13bf56d496339))
+
 ## [34.9.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.0...v34.9.1) (2026-02-28)
 
 ### Bug Fixes
