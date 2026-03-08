@@ -1,0 +1,36 @@
+name: Deployment
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+enable-email-notifications: true
+
+jobs:
+  deploy:
+    name: Deploy to Vercel
+    runs-on: codeberg-tiny
+    container:
+      image: oven/bun:latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Bun cache
+        id: bun-cache
+        uses: actions/cache@v5
+        with:
+          path: |
+            ~/.bun/install/cache
+          key: bun-${{ hashFiles('bun.lock') }}
+
+      - name: Bun install
+        run: bun install --frozen-lockfile
+
+      - name: Build & Deploy
+        run: bun run deploy
+        env:
+          VERCEL_TELEMETRY_DISABLED: "1"
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
