@@ -1,7 +1,7 @@
 import "./build.tsx";
 
 const htmlRouter = new Bun.FileSystemRouter({
-  dir: "./pages",
+  dir: "./public",
   fileExtensions: [".html"],
   style: "nextjs",
 });
@@ -24,7 +24,7 @@ Bun.serve({
           urlPathname = `/${html.src}`;
         }
 
-        const staticFile = Bun.file(`./pages${urlPathname}`);
+        const staticFile = Bun.file(`./public${urlPathname}`);
         if (await staticFile.exists()) {
           return new Response(staticFile);
         }
