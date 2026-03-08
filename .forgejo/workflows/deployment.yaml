@@ -35,7 +35,7 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Deploy
-        run: bunx vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+        run: bunx vercel deploy --prod --yes --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_TELEMETRY_DISABLED: "1"
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
