@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.9.4](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.3...v34.9.4) (2026-03-08)
+
 ## [34.9.3](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.2...v34.9.3) (2026-03-08)
 
 ## [34.9.2](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.1...v34.9.2) (2026-03-08)
