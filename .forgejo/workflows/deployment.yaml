@@ -27,8 +27,16 @@ jobs:
       - name: Bun install
         run: bun install --frozen-lockfile
 
-      - name: Build & Deploy
-        run: bun run deploy
+      - name: Build
+        run: bunx vercel build --prod --yes
+        env:
+          VERCEL_TELEMETRY_DISABLED: "1"
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Deploy
+        run: bunx vercel deploy --prod --yes --prebuilt
         env:
           VERCEL_TELEMETRY_DISABLED: "1"
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

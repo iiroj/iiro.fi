@@ -25,9 +25,7 @@
     "start": "bun --watch run dev.tsx",
     "lint": "biome check",
     "build": "bun run build.tsx",
-    "version": "commit-and-tag-version",
-    "predeploy": "bunx vercel build --prod --yes",
-    "deploy": "bunx vercel deploy --prod --prebuilt"
+    "version": "commit-and-tag-version"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.6",

@@ -47,8 +47,4 @@ Push changes to [Codeberg](https://codeberg.org):
 git push --follow-tags
 ```
 
-Deploy latest version to [Vercel](https://vercel.com):
-
-```shell
-bun run deploy
-```
+The latest version will be deployed automatically to [Vercel](https://vercel.com) via [Codeberg actions (Forgejo)](https://codeberg.org/iiroj/iiro.fi/actions).
