@@ -120,7 +120,7 @@ const Index: FC = () => (
       <Nav>
         {[
           {
-            href: "https://bsky.app/profile/iiroj.eurosky.social",
+            href: "https://bsky.app/profile/iiroj.fi",
             icon: <Bluesky />,
             title: "Bluesky",
           },
