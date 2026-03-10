@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.10.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.10.0...v34.10.1) (2026-03-10)
+
+### Bug Fixes
+
+- update Eurosky/Blusky link to custom domain ([9c01cea](https://codeberg.org/iiroj/iiro.fi/commit/9c01ceab70215fea559c067a61702aa188abe4b3))
+
 ## [34.10.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.6...v34.10.0) (2026-03-10)
 
 ### Features
