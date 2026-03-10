@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.10.2](https://codeberg.org/iiroj/iiro.fi/compare/v34.10.1...v34.10.2) (2026-03-10)
+
+### Bug Fixes
+
+- fix Eurosky/Bluesky link ([87b6b8f](https://codeberg.org/iiroj/iiro.fi/commit/87b6b8fb58bb0a1e7590de5d818a312a750e7424))
+
 ## [34.10.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.10.0...v34.10.1) (2026-03-10)
 
 ### Bug Fixes
