@@ -25,7 +25,8 @@
     "start": "bun --watch run dev.tsx",
     "lint": "biome check",
     "build": "bun run build.tsx",
-    "version": "commit-and-tag-version"
+    "version": "commit-and-tag-version",
+    "deploy": "tofu -chdir=infra apply"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.6",
@@ -35,13 +36,11 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@typescript/native-preview": "7.0.0-dev.20260307.1",
-    "@vercel/config": "0.0.37",
     "commit-and-tag-version": "12.6.1",
     "husky": "9.1.7",
     "lint-staged.sh": "0.1.2",
     "prettier": "3.8.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "vercel": "50.28.0"
+    "react-dom": "19.2.4"
   }
 }

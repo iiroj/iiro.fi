@@ -1,13 +1,13 @@
 # iiro.fi
 
-My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and served from [Vercel](https://vercel.com).
+My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and served from [Bunny.net](https://bunny.net).
 
 ## Development and Deployment
 
-Install [Bun](https://bun.com/docs/installation) for macOS with [Homebrew](https://brew.sh):
+Install [Bun](https://bun.com/docs/installation) and [OpenTofu](https://opentofu.org) for macOS with [Homebrew](https://brew.sh):
 
 ```shell
-brew install oven-sh/bun/bun
+brew install oven-sh/bun/bun opentofu
 ```
 
 Install development dependencies with _Bun_:
@@ -47,4 +47,8 @@ Push changes to [Codeberg](https://codeberg.org):
 git push --follow-tags
 ```
 
-The latest version will be deployed automatically to [Vercel](https://vercel.com) via [Codeberg actions (Forgejo)](https://codeberg.org/iiroj/iiro.fi/actions).
+Deploy changes to [Bunny.net](https://bunny.net) using [OpenTofu](https://opentofu.org):
+
+```shell
+tofu -chdir=infra apply
+```
