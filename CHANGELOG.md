@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.10.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.6...v34.10.0) (2026-03-10)
+
+### Features
+
+- go back to using Bunny.net instead of Vercel ([d5f4c3b](https://codeberg.org/iiroj/iiro.fi/commit/d5f4c3be31bf4c93e249a8e19a5fbe40507cf1dd))
+
 ## [34.9.6](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.5...v34.9.6) (2026-03-08)
 
 ## [34.9.5](https://codeberg.org/iiroj/iiro.fi/compare/v34.9.4...v34.9.5) (2026-03-08)
