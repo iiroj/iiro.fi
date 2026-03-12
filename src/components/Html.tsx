@@ -1,8 +1,17 @@
 import type { FC, ReactNode } from "react";
 
-const globalCss = await Bun.file("./src/styles.css").text();
+const INLINE_STYLES = [
+  ":root { --background: white; --foreground: black }",
+  "@media (prefers-color-scheme: dark) {",
+  ":root { --background: white; --foreground: black }",
+  "}",
+  "html { background: var(--background); color: var(--foreground) }",
+].join("\n");
 
-const Html: FC<{ children: ReactNode }> = async ({ children }) => {
+const Html: FC<{ children: ReactNode; integrity: string }> = async ({
+  children,
+  integrity,
+}) => {
   return (
     <html lang="en">
       <head>
@@ -24,10 +33,17 @@ const Html: FC<{ children: ReactNode }> = async ({ children }) => {
         <meta content="https://iiro.fi" property="og:url" />
         <style
           // biome-ignore lint/security/noDangerouslySetInnerHtml: critical inline styles
-          dangerouslySetInnerHTML={{ __html: globalCss }}
+          dangerouslySetInnerHTML={{ __html: INLINE_STYLES }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <link
+          href="/static/styles.css"
+          integrity={integrity}
+          rel="stylesheet"
+        />
+      </body>
     </html>
   );
 };

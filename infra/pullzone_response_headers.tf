@@ -7,8 +7,14 @@ resource "bunnynet_pullzone_edgerule" "response_headers" {
   actions = [
     {
       type       = "SetResponseHeader"
+      parameter1 = "Link"
+      parameter2 = "</static/styles.css>; rel=preload; as=style"
+      parameter3 = null
+    },
+    {
+      type       = "SetResponseHeader"
       parameter1 = "Content-Security-Policy"
-      parameter2 = "default-src 'self'"
+      parameter2 = "default-src 'self'; style-src 'self' 'sha256-${base64sha256(file("../public/static/styles.css"))}'"
       parameter3 = null
     },
     {
