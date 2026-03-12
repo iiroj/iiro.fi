@@ -3,23 +3,17 @@ import { prerender } from "react-dom/static";
 import Html from "./src/components/Html.tsx";
 import { pagesRouter } from "./src/router.ts";
 
-export const prerenderResponse = async (src: string, integrity: string) => {
+export const prerenderResponse = async (src: string) => {
   const PageComponent = (await import(src)).default as React.FC;
 
   const { prelude } = await prerender(
-    <Html integrity={integrity}>
+    <Html>
       <PageComponent />
     </Html>,
   );
 
   return new Response(prelude);
 };
-
-const styles = Bun.file("./public/static/styles.css");
-
-const integrity = new Bun.CryptoHasher("sha256")
-  .update(await styles.text())
-  .digest("base64");
 
 for (const [route, src] of Object.entries(pagesRouter.routes)) {
   let dest = `./public${route}`;
@@ -28,7 +22,7 @@ for (const [route, src] of Object.entries(pagesRouter.routes)) {
 
   console.log(`⚙️  Building ${dest}`);
 
-  const response = await prerenderResponse(src, integrity);
+  const response = await prerenderResponse(src);
 
   await Bun.write(dest, await response.text());
   const prettier = Bun.spawn([
