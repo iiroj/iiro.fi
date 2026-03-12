@@ -1,5 +1,13 @@
 import type { FC, ReactNode } from "react";
 
+const INLINE_STYLES = [
+  ":root { --background: white; --foreground: black }",
+  "@media (prefers-color-scheme: dark) {",
+  ":root { --background: white; --foreground: black }",
+  "}",
+  "html { background: var(--background); color: var(--foreground) }",
+].join("\n");
+
 const Html: FC<{ children: ReactNode; integrity: string }> = async ({
   children,
   integrity,
@@ -23,13 +31,19 @@ const Html: FC<{ children: ReactNode; integrity: string }> = async ({
           property="og:description"
         />
         <meta content="https://iiro.fi" property="og:url" />
+        <style
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: critical inline styles
+          dangerouslySetInnerHTML={{ __html: INLINE_STYLES }}
+        />
+      </head>
+      <body>
+        {children}
         <link
           href="/static/styles.css"
           integrity={integrity}
           rel="stylesheet"
         />
-      </head>
-      <body>{children}</body>
+      </body>
     </html>
   );
 };
