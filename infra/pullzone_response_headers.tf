@@ -13,18 +13,6 @@ resource "bunnynet_pullzone_edgerule" "response_headers" {
     },
     {
       type       = "SetResponseHeader"
-      parameter1 = "Link"
-      parameter2 = "</static/profile-96.webp>; rel=preload; as=image; type=\"image/webp\" imagesrcset=\"/static/profile-96.webp 1x, /static/profile-192.webp 2x, /static/profile-288.webp 3x\""
-      parameter3 = null
-    },
-    {
-      type       = "SetResponseHeader"
-      parameter1 = "Link"
-      parameter2 = "</static/profile-96.jpg>; rel=preload; as=image; type=\"image/jpg\" imagesrcset=\"/static/profile-96.jpg 1x, /static/profile-192.jpg 2x, /static/profile-288.jpg 3x\""
-      parameter3 = null
-    },
-    {
-      type       = "SetResponseHeader"
       parameter1 = "Content-Security-Policy"
       parameter2 = "default-src 'self'; style-src 'self' 'sha256-${base64sha256(file("../public/static/styles.css"))}'"
       parameter3 = null
