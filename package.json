@@ -16,8 +16,7 @@
     "fmt": "oxfmt check .",
     "lint": "oxlint check .",
     "build": "bun run build.tsx",
-    "version": "commit-and-tag-version --noBumpWhenEmptyChanges",
-    "deploy": "tofu -chdir=infra apply"
+    "version": "commit-and-tag-version --noBumpWhenEmptyChanges"
   },
   "devDependencies": {
     "@commitlint/cli": "20.5.0",

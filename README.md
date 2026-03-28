@@ -1,19 +1,19 @@
 # iiro.fi
 
-My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and served from [Bunny.net](https://bunny.net).
+My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and deployed to [GitHub Pages](https://docs.github.com/en/pages) automatically from [GitHub Actions](https://github.com/features/actions).
 
 ## Development and Deployment
 
-Install [Bun](https://bun.com/docs/installation) and [OpenTofu](https://opentofu.org) for macOS with [Homebrew](https://brew.sh):
+Install [Bun](https://bun.com/docs/installation) for macOS with [Homebrew](https://brew.sh):
 
 ```shell
-brew install oven-sh/bun/bun opentofu
+brew install oven-sh/bun/bun
 ```
 
 Install development dependencies with _Bun_:
 
 ```shell
-bun install
+bun install --frozen-lockfile
 ```
 
 Start development server with _Bun_:
@@ -48,8 +48,4 @@ Push changes to origin:
 git push --follow-tags
 ```
 
-Deploy changes to [Bunny.net](https://bunny.net) using [OpenTofu](https://opentofu.org):
-
-```shell
-bun run deploy
-```
+A _GitHub Actions_ workflow will automatically deploy the latest version to _GitHub Pages_.
