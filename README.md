@@ -22,9 +22,10 @@ Start development server with _Bun_:
 bun run start
 ```
 
-Lint code changes with [Biome](https://biomejs.dev):
+Format and lint code changes with [oxc](https://oxc.rs):
 
 ```shell
+bun run fmt
 bun run lint
 ```
 
