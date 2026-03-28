@@ -25,7 +25,7 @@
     "start": "bun --watch run dev.tsx",
     "lint": "biome check",
     "build": "bun run build.tsx",
-    "version": "commit-and-tag-version",
+    "version": "commit-and-tag-version --noBumpWhenEmptyChanges",
     "deploy": "tofu -chdir=infra apply"
   },
   "devDependencies": {
