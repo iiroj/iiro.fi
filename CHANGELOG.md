@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.10.5](https://github.com/iiroj/iiro.fi/compare/v34.10.4...v34.10.5) (2026-03-28)
+
+### Bug Fixes
+
+- remove Codeberg link ([586e852](https://github.com/iiroj/iiro.fi/commit/586e8520a1ad8ab5ed01573511dcf7b79dbc9f71))
+
 ## [34.10.4](https://codeberg.org/iiroj/iiro.fi/compare/v34.10.3...v34.10.4) (2026-03-12)
 
 ## [34.10.3](https://codeberg.org/iiroj/iiro.fi/compare/v34.10.2...v34.10.3) (2026-03-12)
