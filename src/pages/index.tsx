@@ -2,7 +2,6 @@ import type { FC } from "react";
 
 import { Avatar } from "../components/Avatar.tsx";
 import { Bluesky } from "../components/Bluesky.tsx";
-import { Codeberg } from "../components/Codeberg.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
 import { Nav } from "../components/Nav.tsx";
@@ -123,11 +122,6 @@ const Index: FC = () => (
             href: "https://bsky.app/profile/iiro.fi",
             icon: <Bluesky />,
             title: "Bluesky",
-          },
-          {
-            href: "https://codeberg.org/iiroj",
-            icon: <Codeberg />,
-            title: "Codeberg",
           },
           {
             href: "https://github.com/iiroj",
