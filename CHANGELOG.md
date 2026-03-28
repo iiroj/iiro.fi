@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.11.0](https://github.com/iiroj/iiro.fi/compare/v34.10.5...v34.11.0) (2026-03-28)
+
+### Features
+
+- replace Terraform deployment with GitHub Actions to Pages ([b9ff353](https://github.com/iiroj/iiro.fi/commit/b9ff353450b8a2c12b3b034c568a419f8678afd8))
+
 ## [34.10.5](https://github.com/iiroj/iiro.fi/compare/v34.10.4...v34.10.5) (2026-03-28)
 
 ### Bug Fixes
