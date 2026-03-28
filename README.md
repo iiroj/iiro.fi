@@ -41,7 +41,7 @@ git commit -am "feat: my new feature"
 bun run version
 ```
 
-Push changes to [Codeberg](https://codeberg.org):
+Push changes to origin:
 
 ```shell
 git push --follow-tags
@@ -50,5 +50,5 @@ git push --follow-tags
 Deploy changes to [Bunny.net](https://bunny.net) using [OpenTofu](https://opentofu.org):
 
 ```shell
-tofu -chdir=infra apply
+bun run deploy
 ```
