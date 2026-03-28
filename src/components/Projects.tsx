@@ -15,7 +15,7 @@ export const Projects: FC<{
       <li key={title}>
         <article className="oss">
           <header>
-            <a href={href} rel="noopener" target="_blank">
+            <a href={href} rel="noopener noreferrer" target="_blank">
               <h4>
                 {icon}
                 <code>{title}</code>

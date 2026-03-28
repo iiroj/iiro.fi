@@ -1,35 +1,25 @@
 {
   "name": "iiro.fi",
   "version": "34.10.5",
+  "private": true,
   "description": "A static site",
-  "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "license": "MIT",
+  "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": {
     "type": "git",
     "url": "https://github.com/iiroj/iiro.fi.git"
   },
-  "private": true,
   "type": "module",
-  "devEngines": {
-    "runtime": {
-      "name": "bun",
-      "onFail": "error"
-    },
-    "packageManager": {
-      "name": "bun",
-      "onFail": "error"
-    }
-  },
   "scripts": {
     "prepare": "husky",
     "start": "bun --watch run dev.tsx",
-    "lint": "biome check",
+    "fmt": "oxfmt check .",
+    "lint": "oxlint check .",
     "build": "bun run build.tsx",
     "version": "commit-and-tag-version --noBumpWhenEmptyChanges",
     "deploy": "tofu -chdir=infra apply"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.9",
     "@commitlint/cli": "20.5.0",
     "@commitlint/config-conventional": "20.5.0",
     "@types/bun": "1.3.11",
@@ -38,8 +28,20 @@
     "commit-and-tag-version": "12.7.1",
     "husky": "9.1.7",
     "lint-staged.sh": "0.2.0",
-    "prettier": "3.8.1",
+    "oxfmt": "0.42.0",
+    "oxlint": "1.57.0",
+    "oxlint-tsgolint": "0.18.1",
     "react": "19.2.4",
     "react-dom": "19.2.4"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "bun",
+      "onFail": "error"
+    },
+    "runtime": {
+      "name": "bun",
+      "onFail": "error"
+    }
   }
 }

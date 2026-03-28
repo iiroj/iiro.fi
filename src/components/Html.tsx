@@ -1,9 +1,6 @@
 import type { FC, ReactNode } from "react";
 
-const Html: FC<{ children: ReactNode; integrity: string }> = async ({
-  children,
-  integrity,
-}) => {
+const Html: FC<{ children: ReactNode; integrity: string }> = ({ children, integrity }) => {
   return (
     <html lang="en">
       <head>
@@ -14,20 +11,13 @@ const Html: FC<{ children: ReactNode; integrity: string }> = async ({
         <meta content="Principal Engineer at SOK" name="description" />
         <meta content="width=device-width,initial-scale=1" name="viewport" />
         <meta content="/static/icon-512.png" property="og:image" />
-        <meta
-          content="Iiro Jäppinen, Principal Engineer at SOK"
-          property="og:title"
-        />
+        <meta content="Iiro Jäppinen, Principal Engineer at SOK" property="og:title" />
         <meta
           content="I’m a software engineer with roots in user interface design."
           property="og:description"
         />
         <meta content="https://iiro.fi" property="og:url" />
-        <link
-          href="/static/styles.css"
-          integrity={integrity}
-          rel="stylesheet"
-        />
+        <link href="/static/styles.css" integrity={integrity} rel="stylesheet" />
       </head>
       <body>{children}</body>
     </html>

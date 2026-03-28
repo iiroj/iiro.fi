@@ -4,6 +4,7 @@ import Html from "./src/components/Html.tsx";
 import { pagesRouter } from "./src/router.ts";
 
 export const prerenderResponse = async (src: string, integrity: string) => {
+  // oxlint-disable-next-line typescript/no-unsafe-member-access
   const PageComponent = (await import(src)).default as React.FC;
 
   const { prelude } = await prerender(
@@ -17,26 +18,21 @@ export const prerenderResponse = async (src: string, integrity: string) => {
 
 const styles = Bun.file("./public/static/styles.css");
 
-const integrity = new Bun.CryptoHasher("sha256")
-  .update(await styles.text())
-  .digest("base64");
+const integrity = new Bun.CryptoHasher("sha256").update(await styles.text()).digest("base64");
 
-for (const [route, src] of Object.entries(pagesRouter.routes)) {
-  let dest = `./public${route}`;
-  if (dest.endsWith("/")) dest += "index";
-  dest += ".html";
+await Promise.all(
+  Object.entries(pagesRouter.routes).map(async ([route, src]) => {
+    let dest = `./public${route}`;
+    if (dest.endsWith("/")) dest += "index";
+    dest += ".html";
 
-  console.log(`⚙️  Building ${dest}`);
+    console.log(`⚙️  Building ${dest}`);
 
-  const response = await prerenderResponse(src, integrity);
+    const response = await prerenderResponse(src, integrity);
 
-  await Bun.write(dest, await response.text());
-  const prettier = Bun.spawn([
-    "prettier",
-    "--ignore-path=.prettier-ignore",
-    "--write",
-    dest,
-  ]);
-  const prettierOutput = await prettier.stdout.text();
-  console.log(`💅 Prettier: ${prettierOutput}`);
-}
+    await Bun.write(dest, await response.text());
+    const prettier = Bun.spawn(["oxfmt", "--write", dest]);
+    const prettierOutput = await prettier.stdout.text();
+    console.log(`💅 Prettier: ${prettierOutput}`);
+  }),
+);

@@ -22,7 +22,7 @@ const Index: FC = () => (
           Principal Engineer at{" "}
           <a
             href="https://s-ryhma.fi/en/investors/sok-corporation"
-            rel="noopener"
+            rel="noopener noreferrer"
             target="_blank"
             title="SOK Corporation"
           >
@@ -35,24 +35,22 @@ const Index: FC = () => (
     <section>
       <h3>About</h3>
       <p>
-        I’m a software engineer with roots in user interface design. I have an
-        eye for detail and like to solve complex problems. I believe to create
-        business, you need to use design as a plan and technology as a tool to
-        get there. I've learned helping others grow in their career is the true
-        force multiplier.
+        I’m a software engineer with roots in user interface design. I have an eye for detail and
+        like to solve complex problems. I believe to create business, you need to use design as a
+        plan and technology as a tool to get there. I’ve learned helping others grow in their career
+        is the true force multiplier.
       </p>
       <p>
         Currently I’m bringing digitalization to{" "}
-        <a href="https://s-ryhma.fi/en" rel="noopener" target="_blank">
+        <a href="https://s-ryhma.fi/en" rel="noopener noreferrer" target="_blank">
           S Group
         </a>{" "}
         grocery stores across Finland. Previously I worked on creating{" "}
-        <a href="https://www.s-kaupat.fi" rel="noopener" target="_blank">
+        <a href="https://www.s-kaupat.fi" rel="noopener noreferrer" target="_blank">
           S-kaupat
         </a>
-        , the biggest e-commerce platform for grocery in Finland. Before that, I
-        worked at{" "}
-        <a href="https://www.verkkokauppa.com" rel="noopener" target="_blank">
+        , the biggest e-commerce platform for grocery in Finland. Before that, I worked at{" "}
+        <a href="https://www.verkkokauppa.com" rel="noopener noreferrer" target="_blank">
           Verkkokauppa.com
         </a>
         , the largest Finnish online retailer at the time.
@@ -66,24 +64,23 @@ const Index: FC = () => (
           {
             description: (
               <>
-                <a href="https://nodejs.org/en" rel="noopener" target="_blank">
+                <a href="https://nodejs.org/en" rel="noopener noreferrer" target="_blank">
                   Node.js
                 </a>
                 -based tool to improve your{" "}
-                <a href="https://git-scm.com" rel="noopener" target="_blank">
+                <a href="https://git-scm.com" rel="noopener noreferrer" target="_blank">
                   Git
                 </a>{" "}
                 workflow by running multiple linters like{" "}
-                <a href="http://eslint.org" rel="noopener" target="_blank">
+                <a href="http://eslint.org" rel="noopener noreferrer" target="_blank">
                   ESLint
                 </a>{" "}
                 or{" "}
-                <a href="https://prettier.io" rel="noopener" target="_blank">
+                <a href="https://prettier.io" rel="noopener noreferrer" target="_blank">
                   Prettier
                 </a>{" "}
-                against the files you have staged for a commit. I originally
-                contributed perfomance improvements to the project, and have
-                been primarily maintaining it since 2019.
+                against the files you have staged for a commit. I originally contributed perfomance
+                improvements to the project, and have been primarily maintaining it since 2019.
               </>
             ),
             href: "https://www.npmjs.com/package/lint-staged",
@@ -94,16 +91,11 @@ const Index: FC = () => (
             description: (
               <>
                 React bindings for{" "}
-                <a
-                  href="https://usercentrics.com"
-                  rel="noopener"
-                  target="_blank"
-                >
+                <a href="https://usercentrics.com" rel="noopener noreferrer" target="_blank">
                   Usercentrics
                 </a>
-                , a GDPR consent management platform. Created mainly for S-group
-                website usage, but published as open-source because I believe
-                everyone has the right to privacy.
+                , a GDPR consent management platform. Created mainly for S-group website usage, but
+                published as open-source because I believe everyone has the right to privacy.
               </>
             ),
             href: "https://www.npmjs.com/package/@s-group/react-usercentrics",

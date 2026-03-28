@@ -18,6 +18,7 @@ export const Nav: FC<Props> = ({ children }) => (
           <a
             href={href}
             rel={href.startsWith("/") ? undefined : "author noopener"}
+            // oxlint-disable-next-line react/jsx-no-target-blank
             target={href.startsWith("/") ? undefined : "_blank"}
           >
             {icon}

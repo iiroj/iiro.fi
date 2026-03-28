@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error",
+    "pedantic": "error",
+    "perf": "error"
+  },
+  "options": {
+    "typeAware": true,
+    "typeCheck": true
+  },
+  "plugins": ["import", "eslint", "typescript", "oxc", "react"],
+  "rules": {
+    "eslint/max-lines-per-function": "off"
+  }
+}
