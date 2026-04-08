@@ -1,6 +1,7 @@
 resource "null_resource" "cache_purge" {
   triggers = {
-    always_run = uuid()
+    public_hash = md5(join(",", [for file in bunnynet_storage_file.public : file.checksum]))
+    infra_hash  = md5(join(",", [for file in fileset(path.module, "**") : filemd5(file)]))
   }
 
   provisioner "local-exec" {
