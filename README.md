@@ -1,6 +1,6 @@
 # iiro.fi
 
-My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and deployed to [GitHub Pages](https://docs.github.com/en/pages) automatically from [GitHub Actions](https://github.com/features/actions).
+My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and deployed to [Bunny.net](https://bunny.net) automatically from [GitHub Actions](https://github.com/features/actions).
 
 ## Development and Deployment
 
@@ -48,4 +48,4 @@ Push changes to origin:
 git push --follow-tags
 ```
 
-A _GitHub Actions_ workflow will automatically deploy the latest version to _GitHub Pages_.
+A _GitHub Actions_ workflow will automatically deploy the latest version to _Bunny.net_.
