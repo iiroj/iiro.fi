@@ -19,7 +19,7 @@ const Index: FC = () => (
         <h1>Iiro Jäppinen</h1>
 
         <h2>
-          Principal Engineer at{" "}
+          Principal Architect at{" "}
           <a
             href="https://s-ryhma.fi/en/investors/sok-corporation"
             rel="noopener noreferrer"
