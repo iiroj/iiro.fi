@@ -32,8 +32,9 @@ resource "bunnynet_pullzone_shield" "shield" {
   tier     = "Basic"
 
   ddos {
-    level = "High"
-    mode  = "Block"
+    level            = "High"
+    mode             = "Block"
+    challenge_window = 900
   }
 
   waf {
