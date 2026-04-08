@@ -67,6 +67,27 @@ resource "bunnynet_pullzone_shield" "shield" {
   }
 }
 
+resource "bunnynet_pullzone_ratelimit_rule" "http_errors" {
+  pullzone    = bunnynet_pullzone.iiro.id
+  name        = "Ratelimit HTTP errors"
+  description = "Ratelimit HTTP errors"
+
+  condition {
+    variable = "RESPONSE_STATUS"
+    operator = "GT"
+    value    = "200"
+  }
+
+  limit {
+    requests = 3
+    interval = 10
+  }
+
+  response {
+    interval = 60
+  }
+}
+
 resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
