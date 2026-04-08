@@ -20,6 +20,8 @@ resource "bunnynet_pullzone" "iiro" {
   cache_stale                   = ["updating"]
   cors_enabled                  = false
   cors_extensions               = []
+  limit_burst                   = 18
+  limit_requests                = 9
   tls_support                   = []
   use_background_update         = true
   websockets_enabled            = false
