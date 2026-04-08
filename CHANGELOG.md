@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.12.2](https://github.com/iiroj/iiro.fi/compare/v34.12.1...v34.12.2) (2026-04-08)
+
 ## [34.12.1](https://github.com/iiroj/iiro.fi/compare/v34.12.0...v34.12.1) (2026-04-08)
 
 ## [34.12.0](https://github.com/iiroj/iiro.fi/compare/v34.11.0...v34.12.0) (2026-04-08)
