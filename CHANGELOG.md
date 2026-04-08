@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.13.0](https://github.com/iiroj/iiro.fi/compare/v34.12.4...v34.13.0) (2026-04-08)
+
+### Features
+
+- update job title ([53dc689](https://github.com/iiroj/iiro.fi/commit/53dc689cb9a9ff08753a24dfae2812e1d23a3b6f))
+
 ## [34.12.4](https://github.com/iiroj/iiro.fi/compare/v34.12.3...v34.12.4) (2026-04-08)
 
 ### Bug Fixes
