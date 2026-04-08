@@ -13,7 +13,7 @@
   "scripts": {
     "prepare": "husky",
     "start": "bun --watch run dev.tsx",
-    "fmt": "oxfmt check .",
+    "fmt": "oxfmt check . && tofu fmt -check infra",
     "lint": "oxlint check .",
     "build": "bun run build.tsx",
     "version": "commit-and-tag-version --noBumpWhenEmptyChanges"

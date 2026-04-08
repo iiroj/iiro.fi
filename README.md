@@ -1,13 +1,14 @@
 # iiro.fi
 
-My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and deployed to [Bunny.net](https://bunny.net) automatically from [GitHub Actions](https://github.com/features/actions).
+My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and deployed to [Bunny.net](https://bunny.net) automatically from [GitHub Actions](https://github.com/features/actions) using [OpenTofu](https://opentofu.org).
 
 ## Development and Deployment
 
-Install [Bun](https://bun.com/docs/installation) for macOS with [Homebrew](https://brew.sh):
+Install [Bun](https://bun.com/docs/installation) and [OpenTofu](https://opentofu.org) for macOS with [Homebrew](https://brew.sh):
 
 ```shell
-brew install oven-sh/bun/bun
+brew update
+brew install oven-sh/bun/bun opentofu
 ```
 
 Install development dependencies with _Bun_:

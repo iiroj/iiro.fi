@@ -2,3 +2,4 @@
 
 lint-staged.sh "oxfmt check --no-error-on-unmatched-pattern" "*"
 lint-staged.sh "oxlint check" "*"
+lint-staged.sh "tofu fmt -check" "*.tf"
