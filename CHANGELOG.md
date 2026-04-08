@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.12.4](https://github.com/iiroj/iiro.fi/compare/v34.12.3...v34.12.4) (2026-04-08)
+
+### Bug Fixes
+
+- add request limits ([bee03bc](https://github.com/iiroj/iiro.fi/commit/bee03bc98465abe57aaf5cd75c7447907fb7cb97))
+- add shield rate-limit rule for non-200 responses ([a13667a](https://github.com/iiroj/iiro.fi/commit/a13667a86aa5977e92b195060d0c0372560911fc))
+- lower DDoS challenge window to 15 minutes ([7e81734](https://github.com/iiroj/iiro.fi/commit/7e817347dc5dc05052db135193329289988a1209))
+
 ## [34.12.3](https://github.com/iiroj/iiro.fi/compare/v34.12.2...v34.12.3) (2026-04-08)
 
 ## [34.12.2](https://github.com/iiroj/iiro.fi/compare/v34.12.1...v34.12.2) (2026-04-08)
