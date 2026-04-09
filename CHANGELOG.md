@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.13.1](https://github.com/iiroj/iiro.fi/compare/v34.13.0...v34.13.1) (2026-04-09)
+
+### Bug Fixes
+
+- block requests to Bunny.net CDN hostname ([02ea888](https://github.com/iiroj/iiro.fi/commit/02ea888cfa0290024bc3c25776d432be2fc923bb))
+
 ## [34.13.0](https://github.com/iiroj/iiro.fi/compare/v34.12.4...v34.13.0) (2026-04-08)
 
 ### Features
