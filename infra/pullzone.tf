@@ -88,11 +88,39 @@ resource "bunnynet_pullzone_ratelimit_rule" "http_errors" {
   }
 }
 
+resource "bunnynet_pullzone_edgerule" "redirect_cdn_hostname" {
+  enabled     = true
+  pullzone    = bunnynet_pullzone.iiro.id
+  description = "Block Requests to CDN Hostname"
+  priority    = 1
+
+  actions = [
+    {
+      type       = "BlockRequest"
+      parameter1 = null
+      parameter2 = null
+      parameter3 = null
+    }
+  ]
+
+  match_type = "MatchAll"
+
+  triggers = [
+    {
+      match_type = "MatchAny"
+      type       = "Url"
+      patterns   = ["https://iiro.b-cdn.net/*"]
+      parameter1 = null
+      parameter2 = null
+    }
+  ]
+}
+
 resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
   description = "Redirect requests to canonical domain"
-  priority    = 1
+  priority    = 2
 
   actions = [
     {
@@ -107,9 +135,9 @@ resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
 
   triggers = [
     {
-      match_type = "MatchNone"
+      match_type = "MatchAny"
       type       = "Url"
-      patterns   = ["https://iiro.fi*", "*://*/.well-know*"]
+      patterns   = ["https://www.iiro.fi*"]
       parameter1 = null
       parameter2 = null
     }
