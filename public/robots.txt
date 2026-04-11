@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /
+Allow: /$
 
 Sitemap: https://iiro.fi/sitemap.xml
