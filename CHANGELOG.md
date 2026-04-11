@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.13.2](https://github.com/iiroj/iiro.fi/compare/v34.13.1...v34.13.2) (2026-04-11)
+
+### Bug Fixes
+
+- update robots.txt ([f4169c2](https://github.com/iiroj/iiro.fi/commit/f4169c2ef2bd33258a9aeee069b6065cdf59af42))
+- update WAF config ([0f57334](https://github.com/iiroj/iiro.fi/commit/0f573342d0136d9acb44cdac6c9dc247817a9a33))
+
 ## [34.13.1](https://github.com/iiroj/iiro.fi/compare/v34.13.0...v34.13.1) (2026-04-09)
 
 ### Bug Fixes
