@@ -43,20 +43,14 @@ resource "bunnynet_pullzone_shield" "shield" {
     allowed_http_methods = [
       "GET",
       "HEAD",
-      "OPTIONS",
     ]
     allowed_http_versions = [
-      "HTTP/1.0",
       "HTTP/1.1",
       "HTTP/2",
       "HTTP/2.0",
     ]
     allowed_request_content_types = [
-      "application/csp-report",
-      "application/json",
-      "application/xss-auditor-report",
       "text/plain",
-      "text/xml",
     ]
     blocking_sensitivity  = 3
     body_limit_request    = "Block"
@@ -74,8 +68,8 @@ resource "bunnynet_pullzone_ratelimit_rule" "http_errors" {
 
   condition {
     variable = "RESPONSE_STATUS"
-    operator = "GT"
-    value    = "200"
+    operator = "GE"
+    value    = "400"
   }
 
   limit {
