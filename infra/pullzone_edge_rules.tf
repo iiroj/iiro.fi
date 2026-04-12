@@ -27,50 +27,11 @@ resource "bunnynet_pullzone_edgerule" "block_cdn_hostname" {
   ]
 }
 
-locals {
-  allowed_paths = concat(
-    ["*/", "*/404"],
-    [
-      for f in fileset(path.module, "../public/**") : replace(f, "../public/", "*/")
-      if !endswith(f, ".html")
-    ]
-  )
-
-  // Supports up to 5 patterns per trigger rule
-  pattern_chunks = chunklist(local.allowed_paths, 5)
-}
-
-resource "bunnynet_pullzone_edgerule" "not_found" {
+resource "bunnynet_pullzone_edgerule" "redirect_www" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
-  description = "Not Found Requests"
+  description = "Redirect www to apex"
   priority    = 2
-
-  actions = [
-    {
-      type       = "BlockRequest"
-      parameter1 = null
-      parameter2 = null
-      parameter3 = null
-    }
-  ]
-
-  match_type = "MatchAll"
-
-  triggers = [for patterns in local.pattern_chunks : {
-    match_type = "MatchNone"
-    type       = "Url"
-    patterns : patterns
-    parameter1 = null
-    parameter2 = null
-  }]
-}
-
-resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
-  enabled     = true
-  pullzone    = bunnynet_pullzone.iiro.id
-  description = "Redirect requests to canonical domain"
-  priority    = 3
 
   actions = [
     {
@@ -98,7 +59,7 @@ resource "bunnynet_pullzone_edgerule" "response_headers" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
   description = "Response Headers"
-  priority    = 4
+  priority    = 3
 
   actions = [
     {

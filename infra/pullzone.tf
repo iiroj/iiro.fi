@@ -52,10 +52,10 @@ resource "bunnynet_pullzone_shield" "shield" {
     allowed_request_content_types = [
       "text/plain",
     ]
-    blocking_sensitivity  = 3
     body_limit_request    = "Block"
-    detection_sensitivity = 3
-    execution_sensitivity = 3
+    blocking_sensitivity  = 4
+    detection_sensitivity = 4
+    execution_sensitivity = 4
     log_headers           = true
     log_headers_excluded  = []
   }
