@@ -68,8 +68,8 @@ resource "bunnynet_pullzone_ratelimit_rule" "http_errors" {
 
   condition {
     variable = "RESPONSE_STATUS"
-    operator = "GE"
-    value    = "400"
+    operator = "GT"
+    value    = "200"
   }
 
   limit {
@@ -82,7 +82,7 @@ resource "bunnynet_pullzone_ratelimit_rule" "http_errors" {
   }
 }
 
-resource "bunnynet_pullzone_edgerule" "redirect_cdn_hostname" {
+resource "bunnynet_pullzone_edgerule" "block_cdn_hostname" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
   description = "Block Requests to CDN Hostname"
@@ -136,4 +136,43 @@ resource "bunnynet_pullzone_edgerule" "redirect_canonical" {
       parameter2 = null
     }
   ]
+}
+
+locals {
+  allowed_paths = concat(
+    ["*/", "*/404"],
+    [
+      for f in fileset(path.module, "../public/**") : replace(f, "../public/", "*/")
+      if !endswith(f, ".html")
+    ]
+  )
+
+  // Supports up to 5 patterns per trigger rule
+  pattern_chunks = chunklist(local.allowed_paths, 5)
+}
+
+resource "bunnynet_pullzone_edgerule" "not_found" {
+  enabled     = true
+  pullzone    = bunnynet_pullzone.iiro.id
+  description = "Not Found Requests"
+  priority    = 3
+
+  actions = [
+    {
+      type       = "BlockRequest"
+      parameter1 = null
+      parameter2 = null
+      parameter3 = null
+    }
+  ]
+
+  match_type = "MatchAll"
+
+  triggers = [for patterns in local.pattern_chunks : {
+    match_type = "MatchNone"
+    type       = "Url"
+    patterns : patterns
+    parameter1 = null
+    parameter2 = null
+  }]
 }
