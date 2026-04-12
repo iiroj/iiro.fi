@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.14.0](https://github.com/iiroj/iiro.fi/compare/v34.13.2...v34.14.0) (2026-04-12)
+
+### Features
+
+- block requests to unknown paths ([b6800b7](https://github.com/iiroj/iiro.fi/commit/b6800b7c3591192a146e6e26a641969cb46d5f35))
+
 ## [34.13.2](https://github.com/iiroj/iiro.fi/compare/v34.13.1...v34.13.2) (2026-04-11)
 
 ### Bug Fixes
