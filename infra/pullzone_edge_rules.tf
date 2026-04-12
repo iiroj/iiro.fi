@@ -1,9 +1,43 @@
 
+resource "bunnynet_pullzone_edgerule" "cache_404" {
+  enabled     = true
+  pullzone    = bunnynet_pullzone.iiro.id
+  description = "Cache 404 errors"
+  priority    = 1
+
+  actions = [
+    {
+      type       = "OverrideBrowserCacheTime"
+      parameter1 = "0" // don't cache in browser
+      parameter2 = null
+      parameter3 = null
+    },
+    {
+      type       = "OverrideCacheTime"
+      parameter1 = "31919000" // cache for 1 year on server
+      parameter2 = null
+      parameter3 = null
+    }
+  ]
+
+  match_type = "MatchAll"
+
+  triggers = [
+    {
+      match_type = "MatchAny"
+      type       = "StatusCode"
+      patterns   = ["404"]
+      parameter1 = null
+      parameter2 = null
+    }
+  ]
+}
+
 resource "bunnynet_pullzone_edgerule" "block_cdn_hostname" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
-  description = "Block Requests to CDN Hostname"
-  priority    = 1
+  description = "Block requests to CDN Hostname"
+  priority    = 2
 
   actions = [
     {
@@ -31,7 +65,7 @@ resource "bunnynet_pullzone_edgerule" "redirect_www" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
   description = "Redirect www to apex"
-  priority    = 2
+  priority    = 3
 
   actions = [
     {
@@ -59,7 +93,7 @@ resource "bunnynet_pullzone_edgerule" "response_headers" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
   description = "Response Headers"
-  priority    = 3
+  priority    = 4
 
   actions = [
     {
