@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.15.0](https://github.com/iiroj/iiro.fi/compare/v34.14.0...v34.15.0) (2026-04-12)
+
+### Features
+
+- raise WAF levels ([9ce80b5](https://github.com/iiroj/iiro.fi/commit/9ce80b5468ac9fd873ad5ce875ccefece6989c36))
+
 ## [34.14.0](https://github.com/iiroj/iiro.fi/compare/v34.13.2...v34.14.0) (2026-04-12)
 
 ### Features
