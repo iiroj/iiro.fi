@@ -1,38 +1,3 @@
-
-resource "bunnynet_pullzone_edgerule" "cache_404" {
-  enabled     = true
-  pullzone    = bunnynet_pullzone.iiro.id
-  description = "Cache 404 errors"
-  priority    = 1
-
-  actions = [
-    {
-      type       = "OverrideBrowserCacheTime"
-      parameter1 = "0" // don't cache in browser
-      parameter2 = null
-      parameter3 = null
-    },
-    {
-      type       = "OverrideCacheTime"
-      parameter1 = "31919000" // cache for 1 year on server
-      parameter2 = null
-      parameter3 = null
-    }
-  ]
-
-  match_type = "MatchAll"
-
-  triggers = [
-    {
-      match_type = "MatchAny"
-      type       = "StatusCode"
-      patterns   = ["404"]
-      parameter1 = null
-      parameter2 = null
-    }
-  ]
-}
-
 resource "bunnynet_pullzone_edgerule" "block_cdn_hostname" {
   enabled     = true
   pullzone    = bunnynet_pullzone.iiro.id
