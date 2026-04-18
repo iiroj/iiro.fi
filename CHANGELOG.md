@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.15.2](https://github.com/iiroj/iiro.fi/compare/v34.15.1...v34.15.2) (2026-04-18)
+
+### Bug Fixes
+
+- remove 404 cache rule ([c3bd399](https://github.com/iiroj/iiro.fi/commit/c3bd399e16e5ea82eb62f9dee5852d88e7fe7a1d))
+
 ## [34.15.1](https://github.com/iiroj/iiro.fi/compare/v34.15.0...v34.15.1) (2026-04-12)
 
 ### Bug Fixes
