@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.16.0](https://github.com/iiroj/iiro.fi/compare/v34.15.2...v34.16.0) (2026-04-19)
+
+### Features
+
+- update geo-replication ([f4ae9f8](https://github.com/iiroj/iiro.fi/commit/f4ae9f8231041ace6c5c1972a9a90e6ba537dbee))
+
 ## [34.15.2](https://github.com/iiroj/iiro.fi/compare/v34.15.1...v34.15.2) (2026-04-18)
 
 ### Bug Fixes
