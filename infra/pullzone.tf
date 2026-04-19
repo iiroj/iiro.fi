@@ -8,8 +8,8 @@ resource "bunnynet_pullzone" "iiro" {
 
   routing {
     tier    = "Standard"
-    zones   = ["EU"]
-    filters = ["eu"]
+    zones   = ["EU", "US", "ASIA"]
+    filters = ["all"]
   }
 
   block_post_requests           = true

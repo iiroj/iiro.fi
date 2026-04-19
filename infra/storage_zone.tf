@@ -5,10 +5,13 @@ resource "random_uuid" "storage_zone_name" {
 }
 
 resource "bunnynet_storage_zone" "storage" {
-  name                = random_uuid.storage_zone_name.id
-  zone_tier           = "Edge"
-  region              = "DE"   // Frankfurth
-  replication_regions = ["SE"] // Stockholm
+  name      = random_uuid.storage_zone_name.id
+  zone_tier = "Edge"
+  region    = "DE" // Frankfurth
+  replication_regions = [
+    "MI", // Miami
+    "SG"  // Singapore
+  ]
 
   custom_404_file_path = "/404.html"
 }
