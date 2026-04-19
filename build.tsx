@@ -20,6 +20,8 @@ const styles = Bun.file("./public/static/styles.css");
 
 const integrity = new Bun.CryptoHasher("sha256").update(await styles.text()).digest("base64");
 
+const buildFiles: string[] = [];
+
 await Promise.all(
   Object.entries(pagesRouter.routes).map(async ([route, src]) => {
     let dest = `./public${route}`;
@@ -31,8 +33,10 @@ await Promise.all(
     const response = await prerenderResponse(src, integrity);
 
     await Bun.write(dest, await response.text());
-    const prettier = Bun.spawn(["oxfmt", "--write", dest]);
-    const prettierOutput = await prettier.stdout.text();
-    console.log(`💅 Prettier: ${prettierOutput}`);
+    buildFiles.push(dest);
   }),
 );
+
+const prettier = Bun.spawn(["oxfmt", "--write", ...buildFiles]);
+const prettierOutput = await prettier.stdout.text();
+console.log(`💅 Prettier: ${prettierOutput}`);

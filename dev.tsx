@@ -13,27 +13,24 @@ console.log(`🌍 Serving on http://localhost:3000`);
 Bun.serve({
   hostname: "localhost",
   port: 3000,
+  fetch: async (req) => {
+    try {
+      let urlPathname = new URL(req.url).pathname;
 
-  routes: {
-    "/*": async (req) => {
-      try {
-        let urlPathname = new URL(req.url).pathname;
-
-        const html = htmlRouter.match(urlPathname);
-        if (html) {
-          urlPathname = `/${html.src}`;
-        }
-
-        const staticFile = Bun.file(`./public${urlPathname}`);
-        if (await staticFile.exists()) {
-          return new Response(staticFile);
-        }
-
-        return new Response(notFoundFile, { status: 404 });
-      } catch (error) {
-        console.error(error);
-        return new Response(null, { status: 500 });
+      const html = htmlRouter.match(urlPathname);
+      if (html) {
+        urlPathname = `/${html.src}`;
       }
-    },
+
+      const staticFile = Bun.file(`./public${urlPathname}`);
+      if (await staticFile.exists()) {
+        return new Response(staticFile);
+      }
+
+      return new Response(notFoundFile, { status: 404 });
+    } catch (error) {
+      console.error(error);
+      return new Response(null, { status: 500 });
+    }
   },
 });
