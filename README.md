@@ -1,6 +1,6 @@
 # iiro.fi
 
-My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and deployed to [Bunny.net](https://bunny.net) automatically from [Codeberg Actions (Forgejo)](https://docs.codeberg.org/ci/actions/) using [OpenTofu](https://opentofu.org).
+My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and deployed to [Bunny.net](https://bunny.net) automatically from [Forgejo Actions (Codeberg)](https://docs.codeberg.org/ci/actions/) using [OpenTofu](https://opentofu.org).
 
 ## Development and Deployment
 
@@ -49,4 +49,4 @@ Push changes to origin:
 git push --follow-tags
 ```
 
-A _GitHub Actions_ workflow will automatically deploy the latest version to _Bunny.net_.
+A _Forgejo Actions_ workflow will automatically deploy the latest version to _Bunny.net_.
