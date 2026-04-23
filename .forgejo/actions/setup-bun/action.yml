@@ -1,0 +1,26 @@
+name: Setup Bun
+
+inputs:
+  version:
+    default: "1.3.13"
+  checksum:
+    default: "79c0771fa8b92c33aae41e15a0e0d307ea99d0e2f00317c71c6c53237a78e25a"
+
+runs:
+  using: composite
+  steps:
+    - uses: https://data.forgejo.org/actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      id: bun-cache
+      with:
+        path: /usr/local/bin/bun
+        key: bun-v${{ inputs.version }}
+    - if: steps.bun-cache.outputs.cache-hit != 'true'
+      run: |
+        set -euo pipefail
+        cd "$(mktemp -d)"
+        curl -fsSLO "https://github.com/oven-sh/bun/releases/download/bun-v${{ inputs.version }}/bun-linux-x64.zip"
+        echo "${{ inputs.checksum }}  bun-linux-x64.zip" | sha256sum -c -
+        unzip -q bun-linux-x64.zip
+        mv bun-linux-x64/bun /usr/local/bin/bun
+        chmod +x /usr/local/bin/bun
+    - run: bun --version

@@ -7,7 +7,7 @@
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iiroj/iiro.fi.git"
+    "url": "https://codeberg.org/iiroj/iiro.fi.git"
   },
   "type": "module",
   "scripts": {

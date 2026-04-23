@@ -1,6 +1,6 @@
 # iiro.fi
 
-My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and deployed to [Bunny.net](https://bunny.net) automatically from [GitHub Actions](https://github.com/features/actions) using [OpenTofu](https://opentofu.org).
+My personal website, available at [iiro.fi](https://iiro.fi), built with [Bun](https://bun.sh) and deployed to [Bunny.net](https://bunny.net) automatically from [Codeberg Actions (Forgejo)](https://docs.codeberg.org/ci/actions/) using [OpenTofu](https://opentofu.org).
 
 ## Development and Deployment
 

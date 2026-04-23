@@ -1,0 +1,26 @@
+name: Setup OpenTofu
+
+inputs:
+  version:
+    default: "1.11.6"
+  checksum:
+    default: "68026be376f8910a318645acc65f21da8b39ab86946cb0dd6cd16ef1705f34b3"
+
+runs:
+  using: composite
+  steps:
+    - uses: https://data.forgejo.org/actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      id: tofu-cache
+      with:
+        path: /usr/local/bin/tofu
+        key: tofu-v${{ inputs.version }}
+    - if: steps.tofu-cache.outputs.cache-hit != 'true'
+      run: |
+        set -euo pipefail
+        cd "$(mktemp -d)"
+        curl -fsSLO "https://github.com/opentofu/opentofu/releases/download/v${{ inputs.version }}/tofu_${{ inputs.version }}_linux_amd64.zip"
+        echo "${{ inputs.checksum }}  tofu_${{ inputs.version }}_linux_amd64.zip" | sha256sum -c -
+        unzip -q tofu_${{ inputs.version }}_linux_amd64.zip
+        mv tofu /usr/local/bin/tofu
+        chmod +x /usr/local/bin/tofu
+    - run: tofu --version
