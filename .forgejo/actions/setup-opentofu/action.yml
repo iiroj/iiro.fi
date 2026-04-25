@@ -5,22 +5,32 @@ inputs:
     default: "1.11.6"
   checksum:
     default: "68026be376f8910a318645acc65f21da8b39ab86946cb0dd6cd16ef1705f34b3"
+  bin-path:
+    default: /usr/local/bin/tofu
 
 runs:
   using: composite
   steps:
-    - uses: https://data.forgejo.org/actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-      id: tofu-cache
+    - uses: https://data.forgejo.org/actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      id: cache
       with:
-        path: /usr/local/bin/tofu
+        path: ${{ inputs.bin-path }}
         key: tofu-v${{ inputs.version }}
-    - if: steps.tofu-cache.outputs.cache-hit != 'true'
+
+    - if: steps.cache.outputs.cache-hit != 'true'
       run: |
         set -euo pipefail
         cd "$(mktemp -d)"
         curl -fsSLO "https://github.com/opentofu/opentofu/releases/download/v${{ inputs.version }}/tofu_${{ inputs.version }}_linux_amd64.zip"
         echo "${{ inputs.checksum }}  tofu_${{ inputs.version }}_linux_amd64.zip" | sha256sum -c -
         unzip -q tofu_${{ inputs.version }}_linux_amd64.zip
-        mv tofu /usr/local/bin/tofu
-        chmod +x /usr/local/bin/tofu
+        mv tofu ${{ inputs.bin-path }}
+        chmod +x ${{ inputs.bin-path }}
+
+    - if: steps.cache.outputs.cache-hit != 'true'
+      uses: https://data.forgejo.org/actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      with:
+        path: ${{ inputs.bin-path }}
+        key: ${{ steps.cache.outputs.cache-primary-key }}
+
     - run: tofu --version
