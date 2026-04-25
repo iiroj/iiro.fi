@@ -15,36 +15,45 @@ jobs:
   Deploy:
     runs-on: codeberg-tiny
     steps:
-      - uses: https://data.forgejo.org/actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Checkout repository
+        uses: https://data.forgejo.org/actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - uses: ./.forgejo/actions/setup-bun
+      - name: Setup Bun
+        uses: ./.forgejo/actions/setup-bun
 
-      - uses: https://data.forgejo.org/actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      - name: Restore Bun cache
+        uses: https://data.forgejo.org/actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         id: cache
         with:
           path: ~/.bun/install/cache
           key: ${{ hashFiles('bun.lock') }}
 
-      - run: bun install --frozen-lockfile
+      - name: Bun install
+        run: bun install --frozen-lockfile
 
-      - if: steps.cache.outputs.cache-hit != 'true'
+      - name: Save Bun cache
+        if: steps.cache.outputs.cache-hit != 'true'
         uses: https://data.forgejo.org/actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: ~/.bun/install/cache
           key: ${{ steps.cache.outputs.cache-primary-key }}
 
-      - run: bun run build
+      - name: Build
+        run: bun run build
 
-      - uses: ./.forgejo/actions/setup-opentofu
+      - name: Setup OpenTofu
+        uses: ./.forgejo/actions/setup-opentofu
 
-      - run: tofu init
+      - name: Tofu init
+        run: tofu init
         working-directory: infra
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           BUNNYNET_API_KEY: ${{ secrets.BUNNYNET_API_KEY }}
 
-      - run: tofu apply -auto-approve
+      - name: Tofu apply
+        run: tofu apply -auto-approve
         working-directory: infra
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
