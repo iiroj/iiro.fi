@@ -1,14 +1,15 @@
-name: Bunny.net
+name: Statichost.eu
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 enable-email-notifications: true
 
 concurrency:
-  group: "opentofu"
+  group: "statichost.eu"
   cancel-in-progress: false
 
 jobs:
@@ -41,21 +42,18 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Setup OpenTofu
-        uses: ./.forgejo/actions/setup-opentofu
+      - name: Zip
+        run: |
+          cd public
+          zip -qr "statichost.zip" .
 
-      - name: Tofu init
-        run: tofu init
-        working-directory: infra
+      - name: Drop
+        run: |
+          curl --fail-with-body \
+            -X POST "https://builder.statichost.eu/iiro/drop" \
+            -H "Authorization: Bearer $STATICHOST_APIKEY" \
+            -H "Content-Type: application/zip" \
+            -H "Accept: text/plain" \
+            --data-binary "@public/statichost.zip"
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          BUNNYNET_API_KEY: ${{ secrets.BUNNYNET_API_KEY }}
-
-      - name: Tofu apply
-        run: tofu apply -auto-approve
-        working-directory: infra
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          BUNNYNET_API_KEY: ${{ secrets.BUNNYNET_API_KEY }}
+          STATICHOST_APIKEY: ${{ secrets.STATICHOST_APIKEY }}
