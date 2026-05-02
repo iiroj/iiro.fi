@@ -3,6 +3,7 @@
   "version": "34.17.0",
   "private": true,
   "description": "A static site",
+  "homepage": "https://codeberg.org/iiroj/iiro.fi",
   "license": "MIT",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": {
