@@ -5,11 +5,14 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "lib": ["ESNext"],
-    "module": "ESNext",
+    "module": "preserve",
+    "moduleDetection": "force",
     "moduleResolution": "bundler",
     "noEmit": true,
+    "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
-    "types": ["bun"]
+    "types": ["bun"],
+    "verbatimModuleSyntax": true
   }
 }
