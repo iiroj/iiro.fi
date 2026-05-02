@@ -1,8 +1,9 @@
-import type { FC } from "react";
-
-export const GitHub: FC<{ fill?: string; size?: string }> = ({
+export const GitHub = ({
   fill = "currentColor",
   size = "24",
+}: {
+  fill?: string;
+  size?: string;
 }) => (
   <svg
     height={size}

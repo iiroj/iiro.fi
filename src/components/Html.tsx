@@ -1,6 +1,6 @@
-import type { FC, ReactNode } from "react";
+import type { ReactNode } from "react";
 
-const Html: FC<{ children: ReactNode; integrity: string }> = ({ children, integrity }) => {
+const Html = ({ children, integrity }: { children: ReactNode; integrity: string }) => {
   return (
     <html lang="en">
       <head>

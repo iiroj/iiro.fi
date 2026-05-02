@@ -1,8 +1,6 @@
-import type { FC } from "react";
-
 import { Nav } from "../components/Nav.tsx";
 
-const NotFound: FC = () => (
+const NotFound = () => (
   <>
     <title>Page Not Found</title>
     <meta content="noarchive, noindex" name="robots" />

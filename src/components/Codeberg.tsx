@@ -1,8 +1,11 @@
-import { type FC, useId } from "react";
+import { useId } from "react";
 
-export const Codeberg: FC<{ fill?: string; size?: string }> = ({
+export const Codeberg = ({
   fill = "currentColor",
   size = "24",
+}: {
+  fill?: string;
+  size?: string;
 }) => {
   const id = useId();
 

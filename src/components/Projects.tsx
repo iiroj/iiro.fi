@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface Project {
   description: ReactNode;
@@ -7,9 +7,7 @@ interface Project {
   title: string;
 }
 
-export const Projects: FC<{
-  children: Project[];
-}> = ({ children }) => (
+export const Projects = ({ children }: { children: Project[] }) => (
   <ul>
     {children.map(({ description, href, icon, title }) => (
       <li key={title}>

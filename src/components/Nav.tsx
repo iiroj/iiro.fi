@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface Link {
   href: string;
@@ -10,7 +10,7 @@ interface Props {
   children: Link[];
 }
 
-export const Nav: FC<Props> = ({ children }) => (
+export const Nav = ({ children }: Props) => (
   <nav>
     <ul>
       {children.map(({ href, icon, title }) => (

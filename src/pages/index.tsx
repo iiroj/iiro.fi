@@ -1,5 +1,3 @@
-import type { FC } from "react";
-
 import { Avatar } from "../components/Avatar.tsx";
 import { Bluesky } from "../components/Bluesky.tsx";
 import { Codeberg } from "../components/Codeberg.tsx";
@@ -9,7 +7,7 @@ import { Nav } from "../components/Nav.tsx";
 import { Npm } from "../components/Npm.tsx";
 import { Projects } from "../components/Projects.tsx";
 
-const Index: FC = () => (
+const Index = () => (
   <>
     <title>Iiro Jäppinen</title>
 

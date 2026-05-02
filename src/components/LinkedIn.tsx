@@ -1,8 +1,9 @@
-import type { FC } from "react";
-
-export const LinkedIn: FC<{ fill?: string; size?: string }> = ({
+export const LinkedIn = ({
   fill = "currentColor",
   size = "24",
+}: {
+  fill?: string;
+  size?: string;
 }) => (
   <svg
     height={size}
