@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.19.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.18.0...v34.19.0) (2026-05-02)
+
+### Features
+
+- add Simple Analytics ([129d185](https://codeberg.org/iiroj/iiro.fi/commit/129d18522083bfdb72afa1d2b127511248ebf0d7))
+
 ## [34.18.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.17.0...v34.18.0) (2026-05-02)
 
 ## [34.17.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.16.0...v34.17.0) (2026-04-23)
