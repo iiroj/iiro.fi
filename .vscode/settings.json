@@ -1,6 +1,3 @@
 {
-  "editor.defaultFormatter": "oxc.oxc-vscode",
-  "[opentofu]": {
-    "editor.defaultFormatter": "opentofu.vscode-opentofu"
-  }
+  "editor.defaultFormatter": "oxc.oxc-vscode"
 }
