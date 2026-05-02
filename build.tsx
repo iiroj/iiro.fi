@@ -42,8 +42,7 @@ const HEADERS = "./public/_headers";
 const CSP = [
   `default-src 'self'`,
   `style-src 'self' 'sha256-${integrity}'`,
-  `img-src 'self' https://queue.simpleanalyticscdn.com https://simpleanalyticsbadges.com`,
-  `script-src 'self' https://scripts.simpleanalyticscdn.com`,
+  `img-src 'self' https://queue.simpleanalyticscdn.com`,
   `connect-src 'self' https://queue.simpleanalyticscdn.com`,
 ].join(";");
 
