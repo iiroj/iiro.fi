@@ -3,7 +3,6 @@ name: Statichost.eu
 on:
   push:
     branches: [main]
-  pull_request:
   workflow_dispatch:
 
 enable-email-notifications: true
@@ -49,7 +48,7 @@ jobs:
 
       - name: Drop
         run: |
-          curl --fail-with-body \
+          curl --silent --fail-with-body \
             -X POST "https://builder.statichost.eu/iiro/drop" \
             -H "Authorization: Bearer $STATICHOST_APIKEY" \
             -H "Content-Type: application/zip" \
