@@ -21,10 +21,10 @@ const Html = ({ children, integrity }: { children: ReactNode; integrity: string 
       </head>
       <body>
         {children}
-        <script async src="https://scripts.simpleanalyticscdn.com/latest.js" />
+        <script async src="/monocular.js" />
         <noscript>
           <img
-            src="https://queue.simpleanalyticscdn.com/noscript.gif"
+            src="/monocular.gif"
             alt=""
             referrerPolicy="no-referrer-when-downgrade"
             role="presentation"
