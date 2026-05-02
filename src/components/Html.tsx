@@ -19,7 +19,18 @@ const Html = ({ children, integrity }: { children: ReactNode; integrity: string 
         <meta content="https://iiro.fi" property="og:url" />
         <link href="/static/styles.css" integrity={integrity} rel="stylesheet" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <script async src="https://scripts.simpleanalyticscdn.com/latest.js" />
+        <noscript>
+          <img
+            src="https://queue.simpleanalyticscdn.com/noscript.gif"
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+            role="presentation"
+          />
+        </noscript>
+      </body>
     </html>
   );
 };

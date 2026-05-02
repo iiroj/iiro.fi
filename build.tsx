@@ -38,10 +38,19 @@ await Promise.all(
 );
 
 const HEADERS = "./public/_headers";
+
+const CSP = [
+  `default-src 'self'`,
+  `style-src 'self' 'sha256-${integrity}'`,
+  `img-src 'self' https://queue.simpleanalyticscdn.com https://simpleanalyticsbadges.com`,
+  `script-src 'self' https://scripts.simpleanalyticscdn.com`,
+  `connect-src 'self' https://queue.simpleanalyticscdn.com`,
+].join(";");
+
 await Bun.write(
   HEADERS,
   `*
-  Content-Security-Policy: default-src 'self'; style-src 'self' 'sha256-${integrity}'
+  Content-Security-Policy: ${CSP}
   Cross-Origin-Embedder-Policy: require-corp; report-to="default"
   Cross-Origin-Opener-Policy: same-site; report-to="default"
   Cross-Origin-Resource-Policy: same-site
