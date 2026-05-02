@@ -12,10 +12,10 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "start": "bun --watch run dev.tsx",
+    "start": "bun --watch dev.tsx",
     "fmt": "oxfmt check .",
     "lint": "oxlint check .",
-    "build": "bun run build.tsx",
+    "build": "bun build.tsx",
     "version": "commit-and-tag-version --noBumpWhenEmptyChanges"
   },
   "devDependencies": {

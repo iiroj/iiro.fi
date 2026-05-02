@@ -1,4 +1,7 @@
-import "./build.tsx";
+Bun.spawn({
+  cmd: ["bun", "build.tsx"],
+  stdio: ["ignore", "inherit", "inherit"],
+});
 
 const htmlRouter = new Bun.FileSystemRouter({
   dir: "./public",
