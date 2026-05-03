@@ -11,7 +11,7 @@ export const Projects = ({ children }: { children: Project[] }) => (
   <ul>
     {children.map(({ description, href, icon, title }) => (
       <li key={title}>
-        <article className="oss">
+        <article>
           <header>
             <a href={href} rel="noopener noreferrer" target="_blank">
               <h4>

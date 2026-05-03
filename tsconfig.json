@@ -4,7 +4,7 @@
     "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "lib": ["ESNext"],
+    "lib": ["DOM", "ESNext"],
     "module": "preserve",
     "moduleDetection": "force",
     "moduleResolution": "bundler",
@@ -14,5 +14,7 @@
     "target": "ESNext",
     "types": ["bun"],
     "verbatimModuleSyntax": true
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

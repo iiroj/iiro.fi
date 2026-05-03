@@ -1,6 +1,10 @@
+import path from "path";
 import type { ReactNode } from "react";
 
-const Html = ({ children, integrity }: { children: ReactNode; integrity: string }) => {
+const Html = async ({ children }: { children: ReactNode }) => {
+  const styles = Bun.file(path.resolve(import.meta.dirname, "../../public/static/styles.css"));
+  const integrity = new Bun.CryptoHasher("sha256").update(await styles.text()).digest("base64");
+
   return (
     <html lang="en">
       <head>
