@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.19.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.19.0...v34.19.1) (2026-05-03)
+
+### Bug Fixes
+
+- optimize CSP header ([08e07a3](https://codeberg.org/iiroj/iiro.fi/commit/08e07a3c4cb136cc1cc57fae927f60db14236dd3))
+- remove Simple Analytics ([fb67094](https://codeberg.org/iiroj/iiro.fi/commit/fb6709471418267bc628fcfddec0f069408900ca))
+
 ## [34.19.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.18.0...v34.19.0) (2026-05-02)
 
 ### Features
