@@ -39,12 +39,7 @@ await Promise.all(
 
 const HEADERS = "./public/_headers";
 
-const CSP = [
-  `default-src 'self'`,
-  `style-src 'self' 'sha256-${integrity}'`,
-  `img-src 'self' https://queue.simpleanalyticscdn.com`,
-  `connect-src 'self' https://queue.simpleanalyticscdn.com`,
-].join(";");
+const CSP = [`default-src 'self'`, `style-src 'self' 'sha256-${integrity}'`].join(";");
 
 await Bun.write(
   HEADERS,

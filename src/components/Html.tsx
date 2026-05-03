@@ -19,18 +19,7 @@ const Html = ({ children, integrity }: { children: ReactNode; integrity: string 
         <meta content="https://iiro.fi" property="og:url" />
         <link href="/static/styles.css" integrity={integrity} rel="stylesheet" />
       </head>
-      <body>
-        {children}
-        <script async src="/monocular.js" />
-        <noscript>
-          <img
-            src="/monocular.gif"
-            alt=""
-            referrerPolicy="no-referrer-when-downgrade"
-            role="presentation"
-          />
-        </noscript>
-      </body>
+      <body>{children}</body>
     </html>
   );
 };
