@@ -1,9 +1,8 @@
-import path from "path";
 import type { ReactNode } from "react";
+import { getIntegrity } from "../integrity";
 
 const Html = async ({ children }: { children: ReactNode }) => {
-  const styles = Bun.file(path.resolve(import.meta.dirname, "../../public/static/styles.css"));
-  const integrity = new Bun.CryptoHasher("sha256").update(await styles.text()).digest("base64");
+  const integrity = await getIntegrity();
 
   return (
     <html lang="en">
@@ -21,7 +20,7 @@ const Html = async ({ children }: { children: ReactNode }) => {
           property="og:description"
         />
         <meta content="https://iiro.fi" property="og:url" />
-        <link href="/static/styles.css" integrity={integrity} rel="stylesheet" />
+        <link href="/static/styles.css" integrity={integrity.styles} rel="stylesheet" />
       </head>
       <body>{children}</body>
     </html>

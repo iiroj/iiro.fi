@@ -1,5 +1,3 @@
-import path from "path";
-
 import { Avatar } from "../components/Avatar.tsx";
 import { Bluesky } from "../components/Bluesky.tsx";
 import { Codeberg } from "../components/Codeberg.tsx";
@@ -8,10 +6,10 @@ import { LinkedIn } from "../components/LinkedIn.tsx";
 import { Nav } from "../components/Nav.tsx";
 import { Npm } from "../components/Npm.tsx";
 import { Projects } from "../components/Projects.tsx";
+import { getIntegrity } from "../integrity.ts";
 
 const Index = async () => {
-  const bootstrap = Bun.file(path.resolve(import.meta.dirname, "../../public/index.js"));
-  const integrity = new Bun.CryptoHasher("sha256").update(await bootstrap.text()).digest("base64");
+  const integrity = await getIntegrity();
 
   return (
     <>
@@ -140,7 +138,7 @@ const Index = async () => {
         </Projects>
       </section>
 
-      <script defer type="module" src="/index.js" integrity={integrity} />
+      <script defer type="module" src="/index.js" integrity={integrity.bootstrap} />
     </>
   );
 };
