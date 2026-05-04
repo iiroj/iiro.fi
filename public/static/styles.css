@@ -30,18 +30,18 @@ html {
 
 body {
   margin: 0;
-  padding: 2rem 1rem;
+  padding: 2em 1em;
 }
 
 header {
   align-items: center;
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 1em;
+  margin-bottom: 1em;
 
   img {
     background: #45810c;
-    border-radius: 6rem;
+    border-radius: 6em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: block;
     object-fit: cover;
@@ -63,10 +63,9 @@ h1 {
 }
 
 header h2,
-h3,
-h4 {
+h3 {
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0 0 0.5em;
 }
 
@@ -92,7 +91,10 @@ article {
     h4 {
       align-items: center;
       display: flex;
+      font-size: inherit;
+      font-weight: inherit;
       gap: 0.25em;
+      margin: 0 0 0.5em;
     }
   }
 }
@@ -108,15 +110,14 @@ nav ul {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem 2rem;
+  gap: 1em 2em;
 }
 
 a {
   align-items: center;
-  border-radius: 0.05rem;
   display: inline-flex;
   color: inherit;
-  column-gap: 0.5rem;
+  column-gap: 0.5em;
   text-decoration: none;
   transition: color 125ms ease-out;
 
