@@ -50,7 +50,7 @@ const Index = async () => {
           <a href="https://s-ryhma.fi/en" rel="noopener noreferrer" target="_blank">
             S Group
           </a>{" "}
-          member-owners across all our services. Before that I was creating{" "}
+          member-owners across all our services. Previously I was creating{" "}
           <a href="https://www.s-kaupat.fi" rel="noopener noreferrer" target="_blank">
             S-kaupat
           </a>
