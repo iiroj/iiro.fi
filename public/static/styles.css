@@ -62,7 +62,12 @@ h1 {
   letter-spacing: -0.025ch;
 }
 
-header h2,
+h2 {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0;
+}
+
 h3 {
   font-size: 1em;
   font-weight: 600;
