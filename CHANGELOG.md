@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.20.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.20.0...v34.20.1) (2026-05-04)
+
+### Bug Fixes
+
+- add Bluesky API url to CSP header ([63b38dd](https://codeberg.org/iiroj/iiro.fi/commit/63b38dd7281e247c0f600055f8bb661bb468f64c))
+
 ## [34.20.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.19.1...v34.20.0) (2026-05-04)
 
 ### Features
