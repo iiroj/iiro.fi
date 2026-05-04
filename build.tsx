@@ -56,6 +56,7 @@ const HEADERS = `${OUTDIR}/_headers`;
 const CSP = [
   `default-src 'self'`,
   `script-src 'self' 'sha256-${bootstrapIntegrity}'`,
+  `connect-src 'self' https://public.api.bsky.app/`,
   `style-src 'self' 'sha256-${stylesIntegrity}'`,
 ].join("; ");
 
