@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.20.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.19.1...v34.20.0) (2026-05-04)
+
+### Features
+
+- add thoughts sections from Bluesky ([110b1c3](https://codeberg.org/iiroj/iiro.fi/commit/110b1c3d3443adb3bcab5dca6cac9c6d80831782))
+
 ## [34.19.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.19.0...v34.19.1) (2026-05-03)
 
 ### Bug Fixes
