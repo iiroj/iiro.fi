@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.20.4](https://codeberg.org/iiroj/iiro.fi/compare/v34.20.3...v34.20.4) (2026-05-04)
+
+### Bug Fixes
+
+- adjust h2 weight ([bc9dd47](https://codeberg.org/iiroj/iiro.fi/commit/bc9dd4797ed3ff52b557abf6b915e158e6a04309))
+
 ## [34.20.3](https://codeberg.org/iiroj/iiro.fi/compare/v34.20.2...v34.20.3) (2026-05-04)
 
 ### Bug Fixes
