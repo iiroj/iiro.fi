@@ -13,5 +13,13 @@
   "rules": {
     "eslint/max-lines-per-function": "off",
     "typescript/prefer-readonly-parameter-types": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["public/index.js"],
+      "rules": {
+        "typescript/no-unsafe-assignment": "off"
+      }
+    }
+  ]
 }

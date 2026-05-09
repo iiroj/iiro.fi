@@ -6,15 +6,6 @@ import { emitStatichostHeaders } from "./src/headers.ts";
 
 const OUTDIR = "./public";
 
-await Bun.build({
-  entrypoints: ["src/index.ts"],
-  format: "esm",
-  minify: true,
-  outdir: OUTDIR,
-  sourcemap: "none",
-  target: "browser",
-});
-
 export const prerenderResponse = async (route: string) => {
   const { prelude } = await prerender(
     <Html>

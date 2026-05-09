@@ -1,34 +1,40 @@
-type Response = {
-  feed: {
-    post: {
-      author: {
-        handle: string;
-        displayName: string;
-      };
-      record: {
-        text: string;
-        createdAt: string;
-      };
-      uri: string;
-    };
-  }[];
-};
+/**
+ * @typedef {object} BskyFeedResponse
+ * @property {{
+ *   post: {
+ *     author: {
+ *       handle: string,
+ *       displayName: string
+ *     },
+ *     record: {
+ *       text: string,
+ *       createdAt: string
+ *     },
+ *     uri: string
+ *   }
+ * }[]} feed
+ */
 
 const url = new URL(
   `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=iiro.fi&limit=5&filter=posts_no_replies`,
 );
 
 const response = await fetch(url);
-const feed = ((await response.json().catch(() => null)) as Response | null)?.feed;
+/** @type {BskyFeedResponse | null} */
+const data = await response.json().catch(() => null);
+const feed = data?.feed;
 
 const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
-const getRelativeTime = (isoDate: string) => {
+
+/** @param {string} isoDate */
+const getRelativeTime = (isoDate) => {
   const days = Math.round((new Date(isoDate).getTime() - Date.now()) / 86_400_000);
   if (Math.abs(days) < 7) return rtf.format(days, "day");
   return rtf.format(Math.round(days / 7), "week");
 };
 
-const capitalize = (input: string) => {
+/** @param {string} input */
+const capitalize = (input) => {
   return input.slice(0, 1).toUpperCase() + input.slice(1);
 };
 

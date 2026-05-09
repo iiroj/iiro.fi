@@ -2,5 +2,4 @@
 /.vercel
 /node_modules
 /public/**/_headers
-/public/**/index.js
 /public/**/*.html
