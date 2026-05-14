@@ -1,4 +1,6 @@
-import path from "path";
+import { writeFile } from "node:fs/promises";
+import path from "node:path";
+
 import { getIntegrity } from "./integrity";
 
 export const emitStatichostHeaders = async () => {
@@ -13,7 +15,7 @@ export const emitStatichostHeaders = async () => {
     `style-src 'self' 'sha256-${integrity.styles}'`,
   ].join("; ");
 
-  await Bun.write(
+  await writeFile(
     headersFile,
     `*
       Content-Security-Policy: ${contentSecurityPolicy}
