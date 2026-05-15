@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.21.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.20.4...v34.21.0) (2026-05-15)
+
+### Features
+
+- replace Bun with plain Node.js ([bf182b7](https://codeberg.org/iiroj/iiro.fi/commit/bf182b7923c71d721308013eca2fda57da4d5133))
+
+### Bug Fixes
+
+- build correct 404 route ([d1edf8e](https://codeberg.org/iiroj/iiro.fi/commit/d1edf8eeb24e162f159cdf4872cc39268ee29810))
+
 ## [34.20.4](https://codeberg.org/iiroj/iiro.fi/compare/v34.20.3...v34.20.4) (2026-05-04)
 
 ### Bug Fixes
