@@ -24,7 +24,6 @@ await Promise.all(
     let dest = `${OUTDIR}${route}`;
     if (dest.endsWith("/")) dest += "index";
     dest += ".html";
-
     console.log(`⚙️  Building ${dest}`);
 
     const response = await prerenderResponse(route);
