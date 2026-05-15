@@ -14,20 +14,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  Deploy:
+  Build:
     runs-on: codeberg-tiny
+    outputs:
+      artifact-url: ${{ steps.artifact.outputs.artifact-url }}
     steps:
       - name: Checkout repository
-        uses: https://data.forgejo.org/actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        # https://code.forgejo.org/actions/checkout/commit/de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        uses: https://data.forgejo.org/actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
       - name: Setup Node.js
-        uses: https://data.forgejo.org/actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        # https://code.forgejo.org/actions/setup-node/commit/48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        uses: https://data.forgejo.org/actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version-file: ".node-version"
           package-manager-cache: false
 
       - name: Restore npm cache
-        uses: https://data.forgejo.org/actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        # https://code.forgejo.org/actions/cache/commit/27d5ce7f107fe9357f9df03efb73ab90386fccae
+        uses: https://data.forgejo.org/actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae
         id: npm-cache
         with:
           path: node_modules
@@ -39,7 +44,8 @@ jobs:
 
       - name: Save npm cache
         if: steps.npm-cache.outputs.cache-hit != 'true'
-        uses: https://data.forgejo.org/actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        # https://code.forgejo.org/actions/cache/commit/27d5ce7f107fe9357f9df03efb73ab90386fccae
+        uses: https://data.forgejo.org/actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae
         with:
           path: node_modules
           key: ${{ steps.npm-cache.outputs.cache-primary-key }}
@@ -47,20 +53,33 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Zip
-        if: ${{ forgejo.event_name == 'push' && forgejo.ref_name == 'main' }}
+      - name: Upload artifact
+        id: artifact
+        # https://code.forgejo.org/forgejo/upload-artifact/commit/16871d9e8cfcf27ff31822cac382bbb5450f1e1e
+        uses: https://data.forgejo.org/forgejo/upload-artifact@16871d9e8cfcf27ff31822cac382bbb5450f1e1e
+        with:
+          name: statichost
+          path: public
+          retention-days: 1
+
+  Deploy:
+    if: ${{ forgejo.event_name == 'push' && forgejo.ref_name == 'main' }}
+    needs: Build
+    runs-on: codeberg-tiny
+    steps:
+      - name: Download artifact
         run: |
-          cd public
-          zip -qr "statichost.zip" .
+          curl --silent ${{ needs.Build.outputs.artifact-url }} \
+            -H "Authorization: Bearer $FORGEJO_TOKEN" \
+            -o statichost.zip
 
       - name: Drop
-        if: ${{ forgejo.event_name == 'push' && forgejo.ref_name == 'main' }}
         run: |
           curl --silent --fail-with-body \
             -X POST "https://builder.statichost.eu/iiro/drop" \
             -H "Authorization: Bearer $STATICHOST_APIKEY" \
             -H "Content-Type: application/zip" \
             -H "Accept: text/plain" \
-            --data-binary "@public/statichost.zip"
+            --data-binary "@statichost.zip"
         env:
           STATICHOST_APIKEY: ${{ secrets.STATICHOST_APIKEY }}
