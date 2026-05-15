@@ -13,7 +13,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "start": "serve -p 3000 public",
+    "start": "node --import tsx --watch build.tsx",
     "fmt": "oxfmt check .",
     "lint": "oxlint check .",
     "build": "node --import tsx build.tsx",
@@ -25,6 +25,7 @@
     "@types/node": "25.8.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
+    "@types/serve-handler": "6.1.4",
     "commit-and-tag-version": "12.7.3",
     "husky": "9.1.7",
     "lint-staged.sh": "0.6.0",
@@ -33,7 +34,8 @@
     "oxlint-tsgolint": "0.22.1",
     "react": "19.2.6",
     "react-dom": "19.2.6",
-    "serve": "14.2.6",
+    "serve-handler": "6.1.7",
+    "tinyexec": "1.1.2",
     "tsx": "4.22.0"
   },
   "devEngines": {

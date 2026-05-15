@@ -17,6 +17,12 @@ Install development dependencies:
 npm ci
 ```
 
+Start development server:
+
+```shell
+npm start
+```
+
 Format and lint code changes with [oxc](https://oxc.rs):
 
 ```shell

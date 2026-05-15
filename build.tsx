@@ -1,5 +1,5 @@
 import { writeFile } from "node:fs/promises";
-import { spawnSync } from "node:child_process";
+import { exec } from "tinyexec";
 
 import { prerender } from "react-dom/static";
 
@@ -29,13 +29,26 @@ await Promise.all(
 
     const response = await prerenderResponse(route);
 
-    await writeFile(dest, await response.text());
+    await writeFile(dest, await response.bytes());
     buildFiles.push(dest);
   }),
 );
 
 const headersFile = await emitStatichostHeaders();
 
-const prettier = spawnSync("oxfmt", ["--write", ...buildFiles, headersFile]);
-const prettierOutput = prettier.stdout?.toString() ?? "";
-console.log(`💅 Prettier: ${prettierOutput}`);
+const oxfmt = await exec("oxfmt", ["--write", ...buildFiles, headersFile]);
+console.log(`💅 Prettier: ${oxfmt.stdout}`);
+
+/** Using `node --watch` */
+if (process.env.WATCH_REPORT_DEPENDENCIES === "1") {
+  const { createServer } = await import("node:http");
+  const serve = (await import("serve-handler")).default;
+
+  createServer((request, response) => {
+    void serve(request, response, {
+      public: "public",
+    });
+  }).listen(3000, () => {
+    console.log("🌐 Serving at http://localhost:3000");
+  });
+}
