@@ -4,15 +4,18 @@ import { exec } from "tinyexec";
 import { prerender } from "react-dom/static";
 
 import Html from "./src/components/Html.tsx";
-import { Router, routes } from "./src/router.tsx";
 import { emitStatichostHeaders } from "./src/headers.ts";
+import { generateRoutes } from "./src/gen-routes.ts";
+import type { FunctionComponent, LazyExoticComponent } from "react";
 
 const OUTDIR = "./public";
 
-export const prerenderResponse = async (route: keyof typeof routes) => {
+const routes = await generateRoutes();
+
+export const prerenderResponse = async (Content: LazyExoticComponent<FunctionComponent>) => {
   const { prelude } = await prerender(
     <Html>
-      <Router route={route} />
+      <Content />
     </Html>,
   );
   return new Response(prelude);
@@ -20,16 +23,14 @@ export const prerenderResponse = async (route: keyof typeof routes) => {
 
 const buildFiles: string[] = [];
 await Promise.all(
-  (Object.keys(routes) as (keyof typeof routes)[]).map(async (route) => {
-    let dest = `${OUTDIR}${route}`;
-    if (dest.endsWith("/")) dest += "index";
-    dest += ".html";
-    console.log(`⚙️  Building ${dest}`);
+  Object.entries(routes).map(async ([route, content]) => {
+    const destination = `${OUTDIR}/${route}`;
+    console.log(`⚙️  Building ${destination}`);
 
-    const response = await prerenderResponse(route);
+    const response = await prerenderResponse(content);
 
-    await writeFile(dest, await response.bytes());
-    buildFiles.push(dest);
+    await writeFile(destination, await response.bytes());
+    buildFiles.push(destination);
   }),
 );
 
