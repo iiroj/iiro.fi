@@ -16,7 +16,7 @@
  */
 
 const url = new URL(
-  `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=iiro.fi&limit=5&filter=posts_no_replies`,
+  `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=did:plc:bw5mjfbdm62hve55psw3pum6&limit=5&filter=posts_no_replies`,
 );
 
 const response = await fetch(url);

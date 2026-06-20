@@ -65,7 +65,7 @@ const Index = async () => {
         <Nav>
           {[
             {
-              href: "https://bsky.app/profile/iiro.fi",
+              href: "https://bsky.app/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
               icon: <Bluesky />,
               title: "Bluesky",
             },
