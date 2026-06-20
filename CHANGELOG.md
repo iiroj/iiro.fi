@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.21.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.21.0...v34.21.1) (2026-06-20)
+
+### Bug Fixes
+
+- use DID ID in Bluesky link ([3161756](https://codeberg.org/iiroj/iiro.fi/commit/31617564f12c4f410401b1ee58260576124bb5ea))
+
 ## [34.21.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.20.4...v34.21.0) (2026-05-15)
 
 ### Features
