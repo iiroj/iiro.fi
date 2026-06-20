@@ -1,6 +1,6 @@
 # iiro.fi
 
-My personal website — available at [iiro.fi](https://iiro.fi) — built with [Node.js](https://nodejs.org) and deployed to [statichost.eu](https://statichost.eu) automatically from [Codeberg](https://codeberg.org/about) with [Forgejo Actions](https://docs.codeberg.org/ci/actions/).
+My personal website — available at [iiro.fi](https://iiro.fi) — built with [Node.js](https://nodejs.org) and deployed to [statichost.eu](https://statichost.eu).
 
 ## Development and Deployment
 
