@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   Build:
-    runs-on: codeberg-tiny
+    runs-on: codeberg-small
     outputs:
       artifact-url: ${{ steps.artifact.outputs.artifact-url }}
     steps:
