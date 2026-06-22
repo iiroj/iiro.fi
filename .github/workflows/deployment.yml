@@ -1,0 +1,86 @@
+name: Statichost.eu
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: "statichost.eu"
+  cancel-in-progress: false
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    outputs:
+      artifact-url: ${{ steps.artifact.outputs.artifact-url }}
+    steps:
+      - name: Checkout repository
+        # https://github.com/actions/checkout/commit/9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+
+      - name: Setup Node.js
+        # https://github.com/actions/setup-node/commit/48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version-file: ".node-version"
+          package-manager-cache: false
+
+      - name: Restore npm cache
+        # https://github.com/actions/cache/commit/27d5ce7f107fe9357f9df03efb73ab90386fccae
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae
+        id: npm-cache
+        with:
+          path: node_modules
+          key: ${{ hashFiles('package-lock.json') }}
+
+      - name: Run npm ci
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Save npm cache
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        # https://github.com/actions/cache/commit/27d5ce7f107fe9357f9df03efb73ab90386fccae
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae
+        with:
+          path: node_modules
+          key: ${{ steps.npm-cache.outputs.cache-primary-key }}
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload artifact
+        id: artifact
+        # https://github.com/actions/upload-artifact/commit/043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: statichost
+          path: public
+          retention-days: 1
+
+  Deploy:
+    if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
+    needs: Build
+    runs-on: ubuntu-latest
+    environment:
+      name: Statichost.eu
+      url: https://iiro.fi
+    steps:
+      - name: Download artifact
+        run: |
+          curl --silent ${{ needs.Build.outputs.artifact-url }} \
+            -H "Authorization: Bearer $FORGEJO_TOKEN" \
+            -o statichost.zip
+
+      - name: Drop
+        run: |
+          curl --silent --fail-with-body \
+            -X POST "https://builder.statichost.eu/iiro/drop" \
+            -H "Authorization: Bearer $STATICHOST_APIKEY" \
+            -H "Content-Type: application/zip" \
+            -H "Accept: text/plain" \
+            --data-binary "@statichost.zip"
+        env:
+          STATICHOST_APIKEY: ${{ secrets.STATICHOST_APIKEY }}

@@ -1,26 +1,9 @@
-/**
- * @typedef {object} BskyFeedResponse
- * @property {{
- *   post: {
- *     author: {
- *       handle: string,
- *       displayName: string
- *     },
- *     record: {
- *       text: string,
- *       createdAt: string
- *     },
- *     uri: string
- *   }
- * }[]} feed
- */
-
 const url = new URL(
   `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=did:plc:bw5mjfbdm62hve55psw3pum6&limit=5&filter=posts_no_replies`,
 );
 
 const response = await fetch(url);
-/** @type {BskyFeedResponse | null} */
+/** @type {import('@atproto/api').AppBskyFeedGetAuthorFeed.OutputSchema | null} */
 const data = await response.json().catch(() => null);
 const feed = data?.feed;
 
@@ -50,6 +33,14 @@ if (feed && feed.length > 0) {
   const ol = document.createElement("ol");
   thoughts.appendChild(ol);
 
+  const structuredDataScript = document.querySelector('script[type="application/ld+json"]');
+
+  /** @type {import('schema-dts').Graph} */
+  const graph = JSON.parse(structuredDataScript.textContent);
+
+  /** @type {import('schema-dts').ProfilePage | undefined} */
+  const profilePage = graph["@graph"].find((g) => g["@type"] === "ProfilePage");
+
   for (const { post } of feed) {
     const li = document.createElement("li");
 
@@ -65,8 +56,26 @@ if (feed && feed.length > 0) {
     time.dateTime = post.record.createdAt;
     time.textContent = capitalize(getRelativeTime(post.record.createdAt));
 
+    if (Array.isArray(profilePage?.hasPart)) {
+      /** @type {import('schema-dts').BlogPosting} */
+      const blogPosting = {
+        "@type": "BlogPosting",
+        "@id": "#BlogPosting#" + post.cid,
+        headline: p.textContent.slice(0, 78) + "…",
+        url: a.href,
+        datePublished: time.dateTime,
+        author: { "@id": "#Person" },
+      };
+
+      profilePage.hasPart.push(blogPosting);
+    }
+
     a.replaceChildren(time, p);
     li.replaceChildren(a);
     ol.appendChild(li);
+  }
+
+  if (profilePage) {
+    structuredDataScript.textContent = JSON.stringify(graph);
   }
 }
