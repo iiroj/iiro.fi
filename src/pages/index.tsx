@@ -1,3 +1,5 @@
+import type { Graph } from "schema-dts";
+
 import { Avatar } from "../components/Avatar.tsx";
 import { Bluesky } from "../components/Bluesky.tsx";
 import { GitHub } from "../components/GitHub.tsx";
@@ -6,6 +8,41 @@ import { Nav } from "../components/Nav.tsx";
 import { Npm } from "../components/Npm.tsx";
 import { Projects } from "../components/Projects.tsx";
 import { getIntegrity } from "../integrity.ts";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "#Person",
+      name: "Iiro Jäppinen",
+      alternateName: "iiroj",
+      image: [
+        "https://iiro.fi/static/profile-96.jpg",
+        "https://iiro.fi/static/profile-96.webp",
+        "https://iiro.fi/static/profile-192.jpg",
+        "https://iiro.fi/static/profile-192.webp",
+        "https://iiro.fi/static/profile-288.jpg",
+        "https://iiro.fi/static/profile-288.webp",
+      ],
+      sameAs: [
+        "https://bsky.app/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
+        "https://codeberg.org/iiroj",
+        "https://github.com/iiroj",
+        "https://linkedin.com/in/iiroj",
+        "https://www.npmjs.com/~iiroj",
+      ],
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "#ProfilePage",
+      mainEntity: {
+        "@id": "#Person",
+      },
+      hasPart: [],
+    },
+  ],
+} satisfies Graph;
 
 const Index = async () => {
   const integrity = await getIntegrity();
@@ -133,6 +170,8 @@ const Index = async () => {
       </section>
 
       <script defer type="module" src="/index.js" integrity={integrity.bootstrap} />
+
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </>
   );
 };
