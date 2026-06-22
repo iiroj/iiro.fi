@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.22.0](https://github.com/iiroj/iiro.fi/compare/v34.21.1...v34.22.0) (2026-06-22)
+
+### Features
+
+- add some JSON+LD structured data ([3032642](https://github.com/iiroj/iiro.fi/commit/303264275e93461efd480769c2cb80c16d09c4eb))
+- remove Codeberg link ([cc242dd](https://github.com/iiroj/iiro.fi/commit/cc242ddedf80eb59a5f549c4d6d7e99765daca96))
+
 ## [34.21.1](https://codeberg.org/iiroj/iiro.fi/compare/v34.21.0...v34.21.1) (2026-06-20)
 
 ### Bug Fixes
