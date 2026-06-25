@@ -1,7 +1,7 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import { getIntegrity } from "./integrity";
+import { getIntegrity } from "./integrity.ts";
 
 export const emitStatichostHeaders = async () => {
   const integrity = await getIntegrity();

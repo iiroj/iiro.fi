@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { getIntegrity } from "../integrity";
+
+import { getIntegrity } from "../integrity.ts";
 
 const Html = async ({ children }: { children: ReactNode }) => {
   const integrity = await getIntegrity();
