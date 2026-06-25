@@ -1,5 +1,6 @@
 import { glob } from "node:fs/promises";
 import path from "node:path";
+
 import { lazy, type FunctionComponent, type LazyExoticComponent } from "react";
 
 const pagesDir = path.join(import.meta.dirname, "pages");

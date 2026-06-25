@@ -1,12 +1,12 @@
 import { writeFile } from "node:fs/promises";
+
+import type { FunctionComponent, LazyExoticComponent } from "react";
+import { prerender } from "react-dom/static";
 import { exec } from "tinyexec";
 
-import { prerender } from "react-dom/static";
-
 import Html from "./src/components/Html.tsx";
-import { emitStatichostHeaders } from "./src/headers.ts";
 import { generateRoutes } from "./src/gen-routes.ts";
-import type { FunctionComponent, LazyExoticComponent } from "react";
+import { emitStatichostHeaders } from "./src/headers.ts";
 
 const OUTDIR = "./public";
 
