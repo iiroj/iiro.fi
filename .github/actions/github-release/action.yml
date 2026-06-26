@@ -1,0 +1,19 @@
+name: GitHub Release
+description: Create a GitHub release from CHANGELOG.md
+
+inputs:
+  git-tag:
+    description: Git tag to release
+    required: true
+  github-token:
+    description: GitHub token for gh
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Create GitHub release
+      shell: sh
+      run: ./.github/actions/github-release/github-release.sh "${{ inputs.git-tag }}"
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
