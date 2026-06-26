@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.23.1](https://github.com/iiroj/iiro.fi/compare/v34.23.0...v34.23.1) (2026-06-26)
+
+### Bug Fixes
+
+- use $GITHUB_ACTION_PATH variable ([76e0d2f](https://github.com/iiroj/iiro.fi/commit/76e0d2fdff11d4221a6c892797274cd4f70903ac))
+
 ## [34.23.0](https://github.com/iiroj/iiro.fi/compare/v34.22.0...v34.23.0) (2026-06-26)
 
 ### Features
