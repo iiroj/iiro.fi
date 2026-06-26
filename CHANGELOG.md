@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.23.0](https://github.com/iiroj/iiro.fi/compare/v34.22.0...v34.23.0) (2026-06-26)
+
+### Features
+
+- create GitHub release from tags ([eee2b16](https://github.com/iiroj/iiro.fi/commit/eee2b1609ecdfd529f48b49b9b496b0f345fd012))
+
 ## [34.22.0](https://github.com/iiroj/iiro.fi/compare/v34.21.1...v34.22.0) (2026-06-22)
 
 ### Features
