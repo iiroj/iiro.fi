@@ -14,6 +14,6 @@ runs:
   steps:
     - name: Create GitHub release
       shell: sh
-      run: ./.github/actions/github-release/github-release.sh "${{ inputs.git-tag }}"
+      run: $GITHUB_ACTION_PATH/github-release.sh "${{ inputs.git-tag }}"
       env:
         GH_TOKEN: ${{ inputs.github-token }}
