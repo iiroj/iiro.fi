@@ -1,5 +1,6 @@
 .DS_Store
-/.vercel
 /node_modules
 /public/**/_headers
 /public/**/*.html
+
+statichost.zip

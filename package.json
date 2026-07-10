@@ -3,12 +3,12 @@
   "version": "34.23.1",
   "private": true,
   "description": "A static site",
-  "homepage": "https://github.com/iiroj/iiro.fi",
+  "homepage": "https://iiro.fi",
   "license": "MIT",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iiroj/iiro.fi.git"
+    "url": "https://codeberg.org/iiroj/iiro.fi.git"
   },
   "type": "module",
   "scripts": {
@@ -17,7 +17,8 @@
     "fmt": "oxfmt check .",
     "lint": "oxlint check .",
     "build": "node --import ./oxc-loader.ts build.tsx",
-    "version": "commit-and-tag-version --noBumpWhenEmptyChanges"
+    "version": "commit-and-tag-version --noBumpWhenEmptyChanges",
+    "deploy": "./shcli iiro public"
   },
   "devDependencies": {
     "@atproto/api": "0.20.21",
