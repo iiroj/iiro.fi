@@ -18,7 +18,7 @@
     "lint": "oxlint check .",
     "build": "node --import ./oxc-loader.ts build.tsx",
     "version": "commit-and-tag-version --noBumpWhenEmptyChanges",
-    "deploy": "./shcli iiro public"
+    "deploy": "./deploy.ts"
   },
   "devDependencies": {
     "@atproto/api": "0.20.21",
