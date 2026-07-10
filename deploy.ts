@@ -42,4 +42,4 @@ if (!response.ok) {
   process.exit(1);
 }
 
-console.log("Upload complete!");
+console.log("\nUpload complete!");
