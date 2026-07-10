@@ -48,3 +48,9 @@ Push changes to origin to trigger deployment:
 ```shell
 git push --follow-tags
 ```
+
+Deploy the build output to [statichost.eu](https://statichost.eu):
+
+```shell
+npm run deploy
+```
