@@ -117,6 +117,11 @@ const Index = async () => {
               title: "GitHub",
             },
             {
+              href: "https://www.npmjs.com/~iiroj",
+              icon: <Npm />,
+              title: "npm",
+            },
+            {
               href: "https://linkedin.com/in/iiroj",
               icon: <LinkedIn />,
               title: "LinkedIn",
