@@ -5,18 +5,17 @@ import { Writable } from "node:stream";
 
 const apiKey = process.env.STATICHOST_APIKEY;
 if (apiKey === undefined) {
-  throw new Error("Missing STATICHOST_APIKEY");
+  throw new Error("Missing process.env.STATICHOST_APIKEY!");
 }
 
 const PUBLIC_DIR = path.resolve(import.meta.dirname, "./public");
 
 const stats = await fs.stat(PUBLIC_DIR);
-
 if (!stats.isDirectory()) {
-  throw new Error("Missing public/");
+  throw new Error(`Missing directory "${PUBLIC_DIR}"!`);
 }
 
-console.log(`Zipping directory ${PUBLIC_DIR}...`);
+console.log(`Zipping directory "${PUBLIC_DIR}"...`);
 const archive = execFileSync("zip", ["-qr", "-", "."], {
   cwd: PUBLIC_DIR,
 });
