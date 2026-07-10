@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.24.0](https://codeberg.org/iiroj/iiro.fi/compare/v34.23.3...v34.24.0) (2026-07-10)
+
+### Features
+
+- add npm link ([856c691](https://codeberg.org/iiroj/iiro.fi/commit/856c691ff2df30c42895e0bbc9936a7a14f167cb))
+
 ## [34.23.3](https://codeberg.org/iiroj/iiro.fi/compare/v34.23.2...v34.23.3) (2026-07-10)
 
 ## [34.23.2](https://codeberg.org/iiroj/iiro.fi/compare/v34.23.1...v34.23.2) (2026-07-10)
