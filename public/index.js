@@ -1,5 +1,7 @@
+const DID = "did:plc:bw5mjfbdm62hve55psw3pum6";
+
 const url = new URL(
-  `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=did:plc:bw5mjfbdm62hve55psw3pum6&limit=5&filter=posts_no_replies`,
+  `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${DID}&limit=5&filter=posts_no_replies`,
 );
 
 const response = await fetch(url);
@@ -42,11 +44,13 @@ if (feed && feed.length > 0) {
   const profilePage = graph["@graph"].find((g) => g["@type"] === "ProfilePage");
 
   for (const { post } of feed) {
+    const isRepost = post.author.did !== DID;
+
     const li = document.createElement("li");
 
     const a = document.createElement("a");
     a.href = `https://bsky.app/profile/${post.author.handle}/post/${post.uri.split("/").pop()}`;
-    a.rel = "author noopener";
+    a.rel = isRepost ? "external noopener" : "author external noopener";
     a.target = "_blank";
 
     const p = document.createElement("p");
@@ -56,7 +60,7 @@ if (feed && feed.length > 0) {
     time.dateTime = post.record.createdAt;
     time.textContent = capitalize(getRelativeTime(post.record.createdAt));
 
-    if (Array.isArray(profilePage?.hasPart)) {
+    if (Array.isArray(profilePage?.hasPart) && !isRepost) {
       /** @type {import('schema-dts').BlogPosting} */
       const blogPosting = {
         "@type": "BlogPosting",
@@ -70,8 +74,16 @@ if (feed && feed.length > 0) {
       profilePage.hasPart.push(blogPosting);
     }
 
-    a.replaceChildren(time, p);
-    li.replaceChildren(a);
+    a.appendChild(p);
+    a.appendChild(time);
+
+    if (isRepost) {
+      const aside = document.createElement("aside");
+      aside.textContent = "Reposted";
+      a.appendChild(aside);
+    }
+
+    li.appendChild(a);
     ol.appendChild(li);
   }
 
