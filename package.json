@@ -8,7 +8,7 @@
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": {
     "type": "git",
-    "url": "https://codeberg.org/iiroj/iiro.fi.git"
+    "url": "https://github.com/iiroj/iiro.fi.git"
   },
   "type": "module",
   "scripts": {
@@ -17,11 +17,10 @@
     "fmt": "oxfmt check .",
     "lint": "oxlint check .",
     "build": "node --import ./oxc-loader.ts build.tsx",
-    "version": "commit-and-tag-version --noBumpWhenEmptyChanges",
-    "deploy": "node ./deploy.ts"
+    "version": "commit-and-tag-version --noBumpWhenEmptyChanges"
   },
   "devDependencies": {
-    "@atproto/api": "0.20.31",
+    "@atproto/api": "0.20.32",
     "@commitlint/cli": "21.2.1",
     "@commitlint/config-conventional": "21.2.0",
     "@types/node": "26.1.1",

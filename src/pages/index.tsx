@@ -2,7 +2,6 @@ import type { Graph } from "schema-dts";
 
 import { Avatar } from "../components/Avatar.tsx";
 import { Bluesky } from "../components/Bluesky.tsx";
-import { Codeberg } from "../components/Codeberg.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
 import { Nav } from "../components/Nav.tsx";
@@ -28,7 +27,6 @@ const structuredData = {
       ],
       sameAs: [
         "https://bsky.app/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
-        "https://codeberg.org/iiroj",
         "https://github.com/iiroj",
         "https://linkedin.com/in/iiroj",
         "https://www.npmjs.com/~iiroj",
@@ -105,11 +103,6 @@ const Index = async () => {
               href: "https://bsky.app/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
               icon: <Bluesky />,
               title: "Bluesky",
-            },
-            {
-              href: "https://codeberg.org/iiroj",
-              icon: <Codeberg />,
-              title: "Codeberg",
             },
             {
               href: "https://github.com/iiroj",
