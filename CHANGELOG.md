@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.25.0](https://github.com///compare/v34.24.1...v34.25.0) (2026-07-23)
+
+### Features
+
+- move project back to GitHub ([a80c89b](https://github.com///commit/a80c89bcce7ee5dae5f9b690a7410963b1460d86))
+
 ## [34.24.1](https://github.com///compare/v34.24.0...v34.24.1) (2026-07-19)
 
 ### Bug Fixes
