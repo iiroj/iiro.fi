@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.26.0](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/compare/v34.25.0...v34.26.0) (2026-07-23)
+
+### Features
+
+- add Tangled link ([9416be0](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/commit/9416be055430d5cd077773da84e27f8651ecd5b0))
+- move project to Tangled ([ff5fc7d](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/commit/ff5fc7d5ec3bf59ca6a5f6d1a67a461c591f134f))
+
 ## [34.25.0](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/compare/v34.24.1...v34.25.0) (2026-07-23)
 
 ### Features
