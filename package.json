@@ -7,7 +7,7 @@
   "license": "MIT",
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": {
-    "type": "git",
+    "type": "git+https",
     "url": "https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr"
   },
   "type": "module",
@@ -17,7 +17,7 @@
     "fmt": "oxfmt check .",
     "lint": "oxlint check .",
     "build": "node --import ./oxc-loader.ts build.tsx",
-    "version": "commit-and-tag-version --noBumpWhenEmptyChanges",
+    "version": "commit-and-tag-version --sign --noBumpWhenEmptyChanges",
     "deploy": "node ./deploy.ts"
   },
   "devDependencies": {

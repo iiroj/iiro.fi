@@ -1,4 +1,7 @@
 {
+  "commitUrlFormat": "https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/commit/{{hash}}",
+  "compareUrlFormat": "https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/compare/{{previousTag}}...{{currentTag}}",
+  "issueUrlFormat": "https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/issues/{{id}}",
   "scripts": {
     "postchangelog": "oxfmt --write CHANGELOG.md"
   }
