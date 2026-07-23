@@ -7,6 +7,7 @@ import { LinkedIn } from "../components/LinkedIn.tsx";
 import { Nav } from "../components/Nav.tsx";
 import { Npm } from "../components/Npm.tsx";
 import { Projects } from "../components/Projects.tsx";
+import { Tangled } from "../components/Tangled.tsx";
 import { getIntegrity } from "../integrity.ts";
 
 const structuredData = {
@@ -27,6 +28,7 @@ const structuredData = {
       ],
       sameAs: [
         "https://bsky.app/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
+        "https://tangled.org/did:plc:bw5mjfbdm62hve55psw3pum6",
         "https://github.com/iiroj",
         "https://linkedin.com/in/iiroj",
         "https://www.npmjs.com/~iiroj",
@@ -103,6 +105,11 @@ const Index = async () => {
               href: "https://bsky.app/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
               icon: <Bluesky />,
               title: "Bluesky",
+            },
+            {
+              href: "https://tangled.org/did:plc:bw5mjfbdm62hve55psw3pum6",
+              icon: <Tangled />,
+              title: "Tangled",
             },
             {
               href: "https://github.com/iiroj",
