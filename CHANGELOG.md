@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.27.0](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/compare/v34.26.0...v34.27.0) (2026-07-24)
+
+### Features
+
+- replace "Bluesky" with "Atmosphere" link to mu ([fbe75ba](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/commit/fbe75bacfd7868c3ba034a6c1b629770dfbb198b))
+
 ## [34.26.0](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/compare/v34.25.0...v34.26.0) (2026-07-23)
 
 ### Features
