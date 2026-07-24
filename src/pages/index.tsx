@@ -1,7 +1,7 @@
 import type { Graph } from "schema-dts";
 
+import { Atmosphere } from "../components/Atmosphere.tsx";
 import { Avatar } from "../components/Avatar.tsx";
-import { Bluesky } from "../components/Bluesky.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
 import { Nav } from "../components/Nav.tsx";
@@ -27,7 +27,7 @@ const structuredData = {
         "https://iiro.fi/static/profile-288.webp",
       ],
       sameAs: [
-        "https://bsky.app/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
+        "https://mu.social/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
         "https://tangled.org/did:plc:bw5mjfbdm62hve55psw3pum6",
         "https://github.com/iiroj",
         "https://linkedin.com/in/iiroj",
@@ -102,9 +102,9 @@ const Index = async () => {
         <Nav>
           {[
             {
-              href: "https://bsky.app/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
-              icon: <Bluesky />,
-              title: "Bluesky",
+              href: "https://mu.social/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
+              icon: <Atmosphere />,
+              title: "Atmosphere",
             },
             {
               href: "https://tangled.org/did:plc:bw5mjfbdm62hve55psw3pum6",
