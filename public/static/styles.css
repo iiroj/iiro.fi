@@ -193,6 +193,10 @@ a {
         flex-direction: row;
         flex-wrap: wrap;
 
+        p {
+          flex-basis: 100%;
+        }
+
         aside,
         time {
           font-size: small;

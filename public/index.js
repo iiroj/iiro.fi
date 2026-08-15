@@ -1,7 +1,7 @@
 const DID = "did:plc:bw5mjfbdm62hve55psw3pum6";
 
 const url = new URL(
-  `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${DID}&limit=5&filter=posts_no_replies`,
+  `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${DID}&limit=5&filter=posts_with_replies`,
 );
 
 const response = await fetch(url);
@@ -44,6 +44,7 @@ if (feed && feed.length > 0) {
   const profilePage = graph["@graph"].find((g) => g["@type"] === "ProfilePage");
 
   for (const { post } of feed) {
+    const isReply = "reply" in post.record;
     const isRepost = post.author.did !== DID;
 
     const li = document.createElement("li");
@@ -77,9 +78,9 @@ if (feed && feed.length > 0) {
     a.appendChild(p);
     a.appendChild(time);
 
-    if (isRepost) {
+    if (isReply || isRepost) {
       const aside = document.createElement("aside");
-      aside.textContent = "Reposted";
+      aside.textContent = isReply ? "Reply" : "Reposted";
       a.appendChild(aside);
     }
 
