@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.28.0](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/compare/v34.27.0...v34.28.0) (2026-08-15)
+
+### Features
+
+- include atproto replies ([92cdcdf](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/commit/92cdcdf4419c4fbb7f5c83c0088c4726bdc447d6))
+
+### Bug Fixes
+
+- adjust reply and repost style ([ad04c6d](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/commit/ad04c6d7e3d15767eee6da01b1c19a6c1de83679))
+
 ## [34.27.0](https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr/compare/v34.26.0...v34.27.0) (2026-07-24)
 
 ### Features
