@@ -197,20 +197,10 @@ a {
           flex-basis: 100%;
         }
 
-        aside,
         time {
           font-size: small;
           margin-top: 0.2em;
           opacity: 0.5;
-        }
-
-        aside {
-          &::before {
-            content: "(";
-          }
-          &::after {
-            content: ")";
-          }
         }
       }
     }

@@ -55,7 +55,14 @@ if (feed && feed.length > 0) {
     a.target = "_blank";
 
     const p = document.createElement("p");
-    p.textContent = post.record.text;
+
+    if (isReply || isRepost) {
+      const i = document.createElement("i");
+      i.textContent = isReply ? "Replied:" : "Reposted: ";
+      p.replaceChildren(i, " ", post.record.text);
+    } else {
+      p.textContent = post.record.text;
+    }
 
     const time = document.createElement("time");
     time.dateTime = post.record.createdAt;
@@ -77,12 +84,6 @@ if (feed && feed.length > 0) {
 
     a.appendChild(p);
     a.appendChild(time);
-
-    if (isReply || isRepost) {
-      const aside = document.createElement("aside");
-      aside.textContent = isReply ? "Reply" : "Reposted";
-      a.appendChild(aside);
-    }
 
     li.appendChild(a);
     ol.appendChild(li);
