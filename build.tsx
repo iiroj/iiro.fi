@@ -12,9 +12,11 @@ const OUTDIR = "./public";
 
 const routes = await generateRoutes();
 
+const version = (await exec("git", ["rev-parse", "--short", "HEAD"])).stdout || "HEAD";
+
 export const prerenderResponse = async (Content: LazyExoticComponent<FunctionComponent>) => {
   const { prelude } = await prerender(
-    <Html>
+    <Html version={version}>
       <Content />
     </Html>,
   );

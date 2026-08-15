@@ -2,13 +2,14 @@ import type { ReactNode } from "react";
 
 import { getIntegrity } from "../integrity.ts";
 
-const Html = async ({ children }: { children: ReactNode }) => {
+const Html = async ({ children, version }: { children: ReactNode; version: string }) => {
   const integrity = await getIntegrity();
 
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
+        <meta name="version" content={version} />
         <link href="/favicon.ico" rel="icon" sizes="48x48" />
         <link href="/favicon.svg" rel="icon" sizes="any" type="image/svg+xml" />
         <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
