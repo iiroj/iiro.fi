@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.29.0](https://github.com///compare/v34.28.0...v34.29.0) (2026-08-26)
+
+### Features
+
+- change upstream back to GitHub ([8934016](https://github.com///commit/893401606b490860a781931f600623f3a45e4272))
+
 ## [34.28.0](https://github.com/iiroj/iiro.fi/compare/v34.27.0...v34.28.0) (2026-08-15)
 
 ### Features
