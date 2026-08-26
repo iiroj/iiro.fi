@@ -8,7 +8,7 @@
   "author": "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)",
   "repository": {
     "type": "git+https",
-    "url": "https://tangled.org/did:plc:h4ctmrqsbkpqosbym2rnlugr"
+    "url": "https://github.com/iiroj/iiro.fi"
   },
   "type": "module",
   "scripts": {
