@@ -39,7 +39,7 @@ await Promise.all(
 const headersFile = await emitStatichostHeaders();
 
 const oxfmt = await exec("oxfmt", ["--write", ...buildFiles, headersFile]);
-console.log(`💅 Prettier: ${oxfmt.stdout}`);
+console.log(`💅 oxfmt: ${oxfmt.stdout}`);
 
 /** Using `node --watch` */
 if (process.env.WATCH_REPORT_DEPENDENCIES === "1") {
