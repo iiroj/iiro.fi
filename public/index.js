@@ -1,7 +1,7 @@
 const DID = "did:plc:bw5mjfbdm62hve55psw3pum6";
 
 const url = new URL(
-  `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${DID}&limit=5&filter=posts_with_replies`,
+  `https://api.eurosky.network/xrpc/app.bsky.feed.getAuthorFeed?actor=${DID}&limit=5&filter=posts_with_replies`,
 );
 
 const response = await fetch(url);
