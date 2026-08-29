@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.30.1](https://github.com///compare/v34.30.0...v34.30.1) (2026-08-29)
+
+### Bug Fixes
+
+- update CSP headers for Eurosky ([070fcaf](https://github.com///commit/070fcafcf5c413770491fe3c67f6a4bee6ddf19b))
+
 ## [34.30.0](https://github.com///compare/v34.29.0...v34.30.0) (2026-08-29)
 
 ### Features
