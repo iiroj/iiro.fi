@@ -102,7 +102,7 @@ const Index = async () => {
             {
               href: "https://mu.social/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
               icon: <Atmosphere />,
-              title: "Atmosphere",
+              title: "Eurosky",
             },
             {
               href: "https://github.com/iiroj",
