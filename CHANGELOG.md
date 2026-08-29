@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.30.0](https://github.com///compare/v34.29.0...v34.30.0) (2026-08-29)
+
+### Features
+
+- use Eurosky API instead of Bluesky ([20fcbd6](https://github.com///commit/20fcbd640ac2e94030923d2c4703e3820e3750c4))
+
+### Bug Fixes
+
+- adjust link title ([6063edc](https://github.com///commit/6063edc0b03085741d0e5f26b130cb2ef4577c9a))
+
 ## [34.29.0](https://github.com///compare/v34.28.0...v34.29.0) (2026-08-26)
 
 ### Features
