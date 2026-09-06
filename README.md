@@ -26,7 +26,6 @@ npm start
 Format and lint code changes with [oxc](https://oxc.rs):
 
 ```shell
-npm run fmt
 npm run lint
 ```
 
