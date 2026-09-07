@@ -1,13 +1,17 @@
 import type { Graph } from "schema-dts";
 
-import { Atmosphere } from "../components/Atmosphere.tsx";
 import { Avatar } from "../components/Avatar.tsx";
+import { Eurosky } from "../components/Eurosky.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
-import { Nav } from "../components/Nav.tsx";
 import { Npm } from "../components/Npm.tsx";
 import { Projects } from "../components/Projects.tsx";
 import { getIntegrity } from "../integrity.ts";
+
+const LINKEDIN_URL = "https://linkedin.com/in/iiroj";
+const MU_SOCIAL_URL = "https://mu.social/profile/did:plc:bw5mjfbdm62hve55psw3pum6";
+const NPM_URL = "https://www.npmjs.com/~iiroj";
+const GITHUB_URL = "https://github.com/iiroj";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -25,12 +29,7 @@ const structuredData = {
         "https://iiro.fi/static/profile-288.jpg",
         "https://iiro.fi/static/profile-288.webp",
       ],
-      sameAs: [
-        "https://mu.social/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
-        "https://github.com/iiroj",
-        "https://linkedin.com/in/iiroj",
-        "https://www.npmjs.com/~iiroj",
-      ],
+      sameAs: [MU_SOCIAL_URL, GITHUB_URL, LINKEDIN_URL, NPM_URL],
     },
     {
       "@type": "ProfilePage",
@@ -71,7 +70,6 @@ const Index = async () => {
       </header>
 
       <section>
-        <h3>About</h3>
         <p>
           I’m a software engineer with roots in user interface design. I have an eye for detail and
           like to solve complex problems. I believe to create business, you need to use design as a
@@ -93,38 +91,30 @@ const Index = async () => {
           </a>
           , the largest Finnish online retailer at the time.
         </p>
+        <p>
+          You can also check out my{" "}
+          <a href={LINKEDIN_URL} rel="author noopener noreferrer" target="_blank">
+            <LinkedIn />
+            &nbsp;LinkedIn
+          </a>{" "}
+          profile.
+        </p>
       </section>
 
       <section>
-        <h3>Links</h3>
-        <Nav>
-          {[
-            {
-              href: "https://mu.social/profile/did:plc:bw5mjfbdm62hve55psw3pum6",
-              icon: <Atmosphere />,
-              title: "Eurosky",
-            },
-            {
-              href: "https://github.com/iiroj",
-              icon: <GitHub />,
-              title: "GitHub",
-            },
-            {
-              href: "https://www.npmjs.com/~iiroj",
-              icon: <Npm />,
-              title: "npm",
-            },
-            {
-              href: "https://linkedin.com/in/iiroj",
-              icon: <LinkedIn />,
-              title: "LinkedIn",
-            },
-          ]}
-        </Nav>
-      </section>
-
-      <section>
-        <h3>Open-Source</h3>
+        <h3>
+          I sometimes publish software on{" "}
+          <a href={GITHUB_URL} rel="author noopener noreferrer" target="_blank">
+            <GitHub />
+            &nbsp;GitHub
+          </a>{" "}
+          or{" "}
+          <a href={NPM_URL} rel="author noopener noreferrer" target="_blank">
+            <Npm />
+            &nbsp;npm
+          </a>
+        </h3>
+        <p>Here are some highlights:</p>
         <Projects>
           {[
             {
@@ -171,6 +161,16 @@ const Index = async () => {
             },
           ]}
         </Projects>
+      </section>
+
+      <section id="thoughts">
+        <h3>
+          Other times I post thoughts on{" "}
+          <a href={MU_SOCIAL_URL} rel="author noopener noreferrer" target="_blank">
+            <Eurosky />
+            &nbsp;Eurosky
+          </a>
+        </h3>
       </section>
 
       <script defer type="module" src="/index.js" integrity={integrity.bootstrap} />

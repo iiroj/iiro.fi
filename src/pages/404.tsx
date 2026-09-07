@@ -1,5 +1,3 @@
-import { Nav } from "../components/Nav.tsx";
-
 const NotFound = () => (
   <>
     <title>Page Not Found</title>
@@ -13,7 +11,7 @@ const NotFound = () => (
     </header>
 
     <footer>
-      <Nav>{[{ href: "/", title: "Back Home" }]}</Nav>
+      <a href="/">Back home</a>
     </footer>
   </>
 );

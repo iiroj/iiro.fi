@@ -15,8 +15,7 @@ export const Projects = ({ children }: { children: Project[] }) => (
           <header>
             <a href={href} rel="noopener noreferrer" target="_blank">
               <h4>
-                {icon}
-                <code>{title}</code>
+                {icon} <code>{title}</code>
               </h4>
             </a>
           </header>

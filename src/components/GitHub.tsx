@@ -1,6 +1,6 @@
 export const GitHub = ({
   fill = "currentColor",
-  size = "24",
+  size = "16",
 }: {
   fill?: string;
   size?: string;

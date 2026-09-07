@@ -94,11 +94,8 @@ article {
     margin: 0;
 
     h4 {
-      align-items: center;
-      display: flex;
       font-size: inherit;
       font-weight: inherit;
-      gap: 0.25em;
       margin: 0 0 0.5em;
     }
   }
@@ -110,19 +107,9 @@ ul {
   padding: 0;
 }
 
-nav ul {
-  align-items: flex-start;
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1em 2em;
-}
-
 a {
-  align-items: center;
-  display: inline-flex;
   color: inherit;
-  column-gap: 0.5em;
+  display: inline-block;
   text-decoration: none;
   transition: color 125ms ease-out;
 
@@ -140,8 +127,10 @@ a {
     color: var(--active);
   }
 
-  &:has(svg) {
-    line-height: 24px;
+  svg {
+    display: inline;
+    transform: translateY(-1px);
+    vertical-align: text-bottom;
   }
 }
 
@@ -157,7 +146,7 @@ a {
 #thoughts {
   --animation: fadeIn 200ms ease-in forwards;
 
-  h4 {
+  p {
     animation: var(--animation);
   }
 

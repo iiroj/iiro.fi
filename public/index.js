@@ -24,12 +24,10 @@ const capitalize = (input) => {
 };
 
 if (feed && feed.length > 0) {
-  const thoughts = document.createElement("section");
-  thoughts.id = "thoughts";
-  document.body.appendChild(thoughts);
+  const thoughts = document.getElementById("thoughts");
 
-  const title = document.createElement("h4");
-  title.textContent = "Thoughts";
+  const title = document.createElement("p");
+  title.textContent = "Here are some of them:";
   thoughts.appendChild(title);
 
   const ol = document.createElement("ol");
