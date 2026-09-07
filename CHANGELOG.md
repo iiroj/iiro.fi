@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.31.0](https://github.com///compare/v34.30.1...v34.31.0) (2026-09-07)
+
+### Features
+
+- move links to inline text ([0d9a13c](https://github.com///commit/0d9a13c370fea05f816806c671f9da3894b35b16))
+
 ## [34.30.1](https://github.com///compare/v34.30.0...v34.30.1) (2026-08-29)
 
 ### Bug Fixes
