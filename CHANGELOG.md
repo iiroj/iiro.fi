@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.32.0](https://github.com///compare/v34.31.0...v34.32.0) (2026-09-09)
+
+### Features
+
+- remove Eurosky integration ([8bd2b0b](https://github.com///commit/8bd2b0b5a49ee81e60cd0c977889112ce483048a))
+
 ## [34.31.0](https://github.com///compare/v34.30.1...v34.31.0) (2026-09-07)
 
 ### Features
