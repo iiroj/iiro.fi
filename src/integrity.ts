@@ -9,10 +9,7 @@ const getHash = async (filePath: string) =>
 
 export const getIntegrity = async () => {
   const stylesFile = path.join(import.meta.dirname, "../public/static/styles.css");
-  const bootstrapFile = path.join(import.meta.dirname, "../public/index.js");
-  const [bootstrap, styles] = await Promise.all([getHash(bootstrapFile), getHash(stylesFile)]);
   return {
-    bootstrap,
-    styles,
+    styles: await getHash(stylesFile),
   };
 };

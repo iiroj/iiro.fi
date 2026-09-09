@@ -1,17 +1,14 @@
 import type { Graph } from "schema-dts";
 
 import { Avatar } from "../components/Avatar.tsx";
-import { Eurosky } from "../components/Eurosky.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
 import { Npm } from "../components/Npm.tsx";
 import { Projects } from "../components/Projects.tsx";
-import { getIntegrity } from "../integrity.ts";
 
 const LINKEDIN_URL = "https://linkedin.com/in/iiroj";
-const MU_SOCIAL_URL = "https://mu.social/profile/did:plc:bw5mjfbdm62hve55psw3pum6";
-const NPM_URL = "https://www.npmjs.com/~iiroj";
 const GITHUB_URL = "https://github.com/iiroj";
+const NPM_URL = "https://www.npmjs.com/~iiroj";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -29,7 +26,7 @@ const structuredData = {
         "https://iiro.fi/static/profile-288.jpg",
         "https://iiro.fi/static/profile-288.webp",
       ],
-      sameAs: [MU_SOCIAL_URL, GITHUB_URL, LINKEDIN_URL, NPM_URL],
+      sameAs: [LINKEDIN_URL, GITHUB_URL, NPM_URL],
     },
     {
       "@type": "ProfilePage",
@@ -42,9 +39,7 @@ const structuredData = {
   ],
 } satisfies Graph;
 
-const Index = async () => {
-  const integrity = await getIntegrity();
-
+const Index = () => {
   return (
     <>
       <title>Iiro Jäppinen</title>
@@ -113,8 +108,8 @@ const Index = async () => {
             <Npm />
             &nbsp;npm
           </a>
+          :
         </h3>
-        <p>Here are some highlights:</p>
         <Projects>
           {[
             {
@@ -162,18 +157,6 @@ const Index = async () => {
           ]}
         </Projects>
       </section>
-
-      <section id="thoughts">
-        <h3>
-          Other times I post thoughts on{" "}
-          <a href={MU_SOCIAL_URL} rel="author noopener noreferrer" target="_blank">
-            <Eurosky />
-            &nbsp;Eurosky
-          </a>
-        </h3>
-      </section>
-
-      <script defer type="module" src="/index.js" integrity={integrity.bootstrap} />
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </>

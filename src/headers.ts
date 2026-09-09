@@ -10,7 +10,6 @@ export const emitStatichostHeaders = async () => {
 
   const contentSecurityPolicy = [
     `default-src 'self'`,
-    `script-src 'self' 'sha256-${integrity.bootstrap}'`,
     `connect-src 'self' https://api.eurosky.network`,
     `style-src 'self' 'sha256-${integrity.styles}'`,
   ].join("; ");
