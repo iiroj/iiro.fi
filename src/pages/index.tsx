@@ -4,7 +4,6 @@ import { Avatar } from "../components/Avatar.tsx";
 import { GitHub } from "../components/GitHub.tsx";
 import { LinkedIn } from "../components/LinkedIn.tsx";
 import { Npm } from "../components/Npm.tsx";
-import { Projects } from "../components/Projects.tsx";
 
 const LINKEDIN_URL = "https://linkedin.com/in/iiroj";
 const GITHUB_URL = "https://github.com/iiroj";
@@ -61,102 +60,31 @@ const Index = () => {
               SOK
             </a>
           </h2>
+
+          <nav>
+            <ul>
+              <li>
+                <a href={LINKEDIN_URL} rel="author noreferrer" target="_blank">
+                  <LinkedIn />
+                  <span> LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a href={GITHUB_URL} rel="author noreferrer" target="_blank">
+                  <GitHub />
+                  <span> GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a href={NPM_URL} rel="author noreferrer" target="_blank">
+                  <Npm />
+                  <span> npm</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </header>
-
-      <section>
-        <p>
-          I’m a software engineer with roots in user interface design. I have an eye for detail and
-          like to solve complex problems. I believe to create business, you need to use design as a
-          plan and technology as a tool to get there. I’ve learned helping others grow in their
-          career is the true force multiplier.
-        </p>
-        <p>
-          Currently I’m helping create a unified experience for{" "}
-          <a href="https://s-ryhma.fi/en" rel="noopener noreferrer" target="_blank">
-            S Group
-          </a>{" "}
-          member-owners across all our services. Previously I was creating{" "}
-          <a href="https://www.s-kaupat.fi" rel="noopener noreferrer" target="_blank">
-            S-kaupat
-          </a>
-          , the biggest e-commerce platform for grocery in Finland. Before that, I worked at{" "}
-          <a href="https://www.verkkokauppa.com" rel="noopener noreferrer" target="_blank">
-            Verkkokauppa.com
-          </a>
-          , the largest Finnish online retailer at the time.
-        </p>
-        <p>
-          You can also check out my{" "}
-          <a href={LINKEDIN_URL} rel="author noopener noreferrer" target="_blank">
-            <LinkedIn />
-            &nbsp;LinkedIn
-          </a>{" "}
-          profile.
-        </p>
-      </section>
-
-      <section>
-        <h3>
-          I sometimes publish software on{" "}
-          <a href={GITHUB_URL} rel="author noopener noreferrer" target="_blank">
-            <GitHub />
-            &nbsp;GitHub
-          </a>{" "}
-          or{" "}
-          <a href={NPM_URL} rel="author noopener noreferrer" target="_blank">
-            <Npm />
-            &nbsp;npm
-          </a>
-          :
-        </h3>
-        <Projects>
-          {[
-            {
-              description: (
-                <>
-                  <a href="https://nodejs.org/en" rel="noopener noreferrer" target="_blank">
-                    Node.js
-                  </a>
-                  -based tool to improve your{" "}
-                  <a href="https://git-scm.com" rel="noopener noreferrer" target="_blank">
-                    Git
-                  </a>{" "}
-                  workflow by running multiple linters like{" "}
-                  <a href="http://eslint.org" rel="noopener noreferrer" target="_blank">
-                    ESLint
-                  </a>{" "}
-                  or{" "}
-                  <a href="https://prettier.io" rel="noopener noreferrer" target="_blank">
-                    Prettier
-                  </a>{" "}
-                  against the files you have staged for a commit. I originally contributed
-                  perfomance improvements to the project, and have been primarily maintaining it
-                  since 2019.
-                </>
-              ),
-              href: "https://www.npmjs.com/package/lint-staged",
-              icon: <Npm />,
-              title: "lint-staged",
-            },
-            {
-              description: (
-                <>
-                  React bindings for{" "}
-                  <a href="https://usercentrics.com" rel="noopener noreferrer" target="_blank">
-                    Usercentrics
-                  </a>
-                  , a GDPR consent management platform. Created mainly for S-group website usage,
-                  but published as open-source because I believe everyone has the right to privacy.
-                </>
-              ),
-              href: "https://www.npmjs.com/package/@s-group/react-usercentrics",
-              icon: <Npm />,
-              title: "@s-group/react-usercentrics",
-            },
-          ]}
-        </Projects>
-      </section>
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </>

@@ -9,7 +9,7 @@
     "moduleDetection": "force",
     "moduleResolution": "nodenext",
     "noEmit": true,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "strict": true,
     "target": "ESNext",
     "types": ["node"],

@@ -7,12 +7,11 @@ const NotFound = () => (
       <div>
         <h1>Page Not Found</h1>
         <h2>Four Zero Four</h2>
+        <nav>
+          <a href="/">Back home</a>
+        </nav>
       </div>
     </header>
-
-    <footer>
-      <a href="/">Back home</a>
-    </footer>
   </>
 );
 
