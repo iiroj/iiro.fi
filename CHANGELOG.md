@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.33.0](https://github.com///compare/v34.32.0...v34.33.0) (2026-09-25)
+
+### Features
+
+- strip most content from the site ([7c34b17](https://github.com///commit/7c34b1749f978de5c5b7987ac8cf487c2d13a724))
+
 ## [34.32.0](https://github.com///compare/v34.31.0...v34.32.0) (2026-09-09)
 
 ### Features
