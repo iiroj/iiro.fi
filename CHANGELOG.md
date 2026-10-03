@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.33.1](https://github.com///compare/v34.33.0...v34.33.1) (2026-10-03)
+
+### Bug Fixes
+
+- remove unused headers ([9e9ed8c](https://github.com///commit/9e9ed8c165f48202495e2353da9fad5cea04f55d))
+
 ## [34.33.0](https://github.com///compare/v34.32.0...v34.33.0) (2026-09-25)
 
 ### Features
