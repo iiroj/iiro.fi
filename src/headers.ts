@@ -10,7 +10,6 @@ export const emitStatichostHeaders = async () => {
 
   const contentSecurityPolicy = [
     `default-src 'self'`,
-    `connect-src 'self' https://api.eurosky.network`,
     `style-src 'self' 'sha256-${integrity.styles}'`,
   ].join("; ");
 
@@ -21,7 +20,6 @@ export const emitStatichostHeaders = async () => {
       Cross-Origin-Embedder-Policy: require-corp; report-to="default"
       Cross-Origin-Opener-Policy: same-site; report-to="default"
       Cross-Origin-Resource-Policy: same-site
-      Link: </index.js>; rel=preload; as=script
       Link: </static/styles.css>; rel=preload; as=style
       Permissions-Policy: browsing-topics=(), conversion-measurement=(), interest-cohort=(), join-ad-interest-group=(), run-ad-auction=()
       Referrer-Policy: strict-origin-when-cross-origin
