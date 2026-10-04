@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.34.0](https://github.com///compare/v34.33.1...v34.34.0) (2026-10-04)
+
+### Features
+
+- inline external CSS file to style tag ([400dc44](https://github.com///commit/400dc4427b4e7644a23ced342ebcef35e1b2a0ae))
+
 ## [34.33.1](https://github.com///compare/v34.33.0...v34.33.1) (2026-10-03)
 
 ### Bug Fixes
