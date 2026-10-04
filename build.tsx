@@ -7,6 +7,7 @@ import { exec } from "tinyexec";
 import Html from "./src/components/Html.tsx";
 import { generateRoutes } from "./src/generateRoutes.ts";
 import { emitStatichostHeaders } from "./src/headers.ts";
+import { emitSitemap } from "./src/sitemap.ts";
 
 const OUTDIR = "./public";
 
@@ -36,6 +37,7 @@ await Promise.all(
   }),
 );
 
+await emitSitemap();
 await emitStatichostHeaders();
 
 /** Using `node --watch` */
