@@ -7,6 +7,7 @@ export const Avatar = () => (
     <img
       alt="Iiro Jäppinen"
       decoding="async"
+      fetchPriority="high"
       height="96px"
       loading="eager"
       src="/static/profile-96.jpg"
