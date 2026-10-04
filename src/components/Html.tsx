@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
-import { getIntegrity } from "../integrity.ts";
+import { generateStyles } from "../generateStyles.ts";
 
 const Html = async ({ children, version }: { children: ReactNode; version: string }) => {
-  const integrity = await getIntegrity();
+  const styles = await generateStyles();
 
   return (
     <html lang="en">
@@ -22,7 +22,7 @@ const Html = async ({ children, version }: { children: ReactNode; version: strin
           property="og:description"
         />
         <meta content="https://iiro.fi" property="og:url" />
-        <link href="/static/styles.css" integrity={integrity.styles} rel="stylesheet" />
+        <style dangerouslySetInnerHTML={{ __html: styles.css }} />
       </head>
       <body>{children}</body>
     </html>
