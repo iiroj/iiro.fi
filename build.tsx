@@ -36,10 +36,7 @@ await Promise.all(
   }),
 );
 
-const headersFile = await emitStatichostHeaders();
-
-const oxfmt = await exec("oxfmt", ["--write", ...buildFiles, headersFile]);
-console.log(`💅 oxfmt: ${oxfmt.stdout}`);
+await emitStatichostHeaders();
 
 /** Using `node --watch` */
 if (process.env.WATCH_REPORT_DEPENDENCIES === "1") {
