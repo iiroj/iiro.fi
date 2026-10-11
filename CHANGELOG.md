@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.34.2](https://github.com///compare/v34.34.1...v34.34.2) (2026-10-11)
+
+### Bug Fixes
+
+- do not use `dangerouslySetInnerHTML` for style tag ([4e1acd3](https://github.com///commit/4e1acd35af734bb7597e1eda6666c6679d201651))
+- optimize inline svgs ([03a8302](https://github.com///commit/03a830242cda49ca938ba48dea0e4bc965795529))
+- use numeric height/width for avatar ([1af795e](https://github.com///commit/1af795e281fa978be80e8575328d75b91e358646))
+
 ## [34.34.1](https://github.com///compare/v34.34.0...v34.34.1) (2026-10-04)
 
 ### Bug Fixes
