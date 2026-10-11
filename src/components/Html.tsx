@@ -22,7 +22,7 @@ const Html = async ({ children, version }: { children: ReactNode; version: strin
           property="og:description"
         />
         <meta content="https://iiro.fi" property="og:url" />
-        <style dangerouslySetInnerHTML={{ __html: styles.css }} />
+        <style>{styles.css}</style>
       </head>
       <body>{children}</body>
     </html>
