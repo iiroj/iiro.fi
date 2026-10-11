@@ -16,8 +16,7 @@
     "start": "node --import ./oxc-loader.ts --watch build.tsx",
     "lint": "oxfmt && oxlint",
     "build": "node --import ./oxc-loader.ts build.tsx",
-    "version": "commit-and-tag-version --sign --noBumpWhenEmptyChanges",
-    "deploy": "node ./deploy.ts"
+    "version": "commit-and-tag-version --sign --noBumpWhenEmptyChanges"
   },
   "devDependencies": {
     "@commitlint/cli": "21.2.3",
