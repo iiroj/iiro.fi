@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [34.35.0](https://github.com///compare/v34.34.2...v34.35.0) (2026-10-14)
+
+### Features
+
+- deploy site to Cloudflare Workers ([c557651](https://github.com///commit/c557651fd1ca3053437e8e7efc15f7f263ba2fbf))
+
 ## [34.34.2](https://github.com///compare/v34.34.1...v34.34.2) (2026-10-11)
 
 ### Bug Fixes
