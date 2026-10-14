@@ -1,3 +1,0 @@
-image: node:26-alpine
-command: npm ci && npm run build
-public: ./public
