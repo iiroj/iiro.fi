@@ -1,21 +1,20 @@
-name: Statichost.eu
+name: Cloudflare
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
   push:
     branches: [main]
   workflow_dispatch:
 
 concurrency:
-  group: "statichost.eu"
+  group: "cloudflare"
   cancel-in-progress: false
 
 jobs:
-  Build:
+  Deployment:
     runs-on: ubuntu-latest
-    outputs:
-      artifact-url: ${{ steps.artifact.outputs.artifact-url }}
+    environment:
+      name: Cloudflare
+      url: https://iiro.fi
     steps:
       - name: Checkout repository
         # https://github.com/actions/checkout/commit/3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -51,36 +50,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
-        id: artifact
-        # https://github.com/actions/upload-artifact/commit/043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
-        with:
-          name: statichost
-          path: public
-          retention-days: 1
-
-  Deploy:
-    if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
-    needs: Build
-    runs-on: ubuntu-latest
-    environment:
-      name: Statichost.eu
-      url: https://iiro.fi
-    steps:
-      - name: Download artifact
-        # https://github.com/actions/download-artifact/commit/3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
-        with:
-          skip-decompress: true
-
-      - name: Drop
-        run: |
-          curl --silent --fail-with-body \
-            -X POST "https://builder.statichost.eu/iiro/drop" \
-            -H "Authorization: Bearer $STATICHOST_APIKEY" \
-            -H "Content-Type: application/zip" \
-            -H "Accept: text/plain" \
-            --data-binary "@statichost.zip"
+      - name: Deploy
+        run: npm run deploy
         env:
-          STATICHOST_APIKEY: ${{ secrets.STATICHOST_APIKEY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

@@ -3,7 +3,7 @@ import path from "node:path";
 
 import { generateStyles } from "./generateStyles.ts";
 
-export const emitStatichostHeaders = async () => {
+export const emitHeaders = async () => {
   const headersFile = path.join(import.meta.dirname, "../public/_headers");
   const styles = await generateStyles();
 
@@ -14,7 +14,7 @@ export const emitStatichostHeaders = async () => {
 
   await fs.writeFile(
     headersFile,
-    `*
+    `/*
       Content-Security-Policy: ${contentSecurityPolicy}
       Cross-Origin-Embedder-Policy: require-corp; report-to="default"
       Cross-Origin-Opener-Policy: same-site; report-to="default"

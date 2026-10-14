@@ -1,6 +1,6 @@
 # iiro.fi
 
-My personal website — available at [iiro.fi](https://iiro.fi) — built with [Node.js](https://nodejs.org) and deployed to [statichost.eu](https://statichost.eu).
+My personal website — available at [iiro.fi](https://iiro.fi) — built with [Node.js](https://nodejs.org).
 
 ## Development and Deployment
 
