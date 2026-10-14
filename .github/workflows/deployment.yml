@@ -1,4 +1,4 @@
-name: Cloudflare
+name: Deployment
 
 on:
   push:
@@ -10,7 +10,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  Deployment:
+  deploy:
+    name: Deploy to Cloudflare Workers
     runs-on: ubuntu-latest
     environment:
       name: Cloudflare
