@@ -41,9 +41,3 @@ Commit changes to the root repo using [Conventional Commits](https://www.convent
 git commit -am "feat: my new feature"
 npm run version
 ```
-
-Push changes to origin to trigger deployment:
-
-```shell
-git push --follow-tags
-```
